@@ -9,22 +9,23 @@ using Random = UnityEngine.Random;
 
 namespace Views.Units.Units
 {
-    public class UnitView : MonoBehaviour
+    public class PlayerView : MonoBehaviour
     {
-        [SerializeField] private UnitFollowPath _unitFollowPath;
-        [SerializeField] private Transform _body;
-        [SerializeField] private Animator _bodyAnimator;
-        [SerializeField] private Damageable _damageable;
-        [SerializeField] private AttackBlockView _attackBlockView;
+       // [SerializeField] private UnitFollowPath _unitFollowPath;
+       // [SerializeField] private Transform _body;
+       // [SerializeField] private Animator _bodyAnimator;
+      //  [SerializeField] private Damageable _damageable;
+       // [SerializeField] private AttackBlockView _attackBlockView;
+       [SerializeField] private PlayerUnitTypeEnum _unitType;
+        public PlayerUnitTypeEnum UnitType => _unitType;
+      //  public UnitFollowPath UnitFollowPath => _unitFollowPath;
+     //   public Animator BodyAnimator => _bodyAnimator;
+        //public Damageable Damageable => _damageable;
         
-        public UnitFollowPath UnitFollowPath => _unitFollowPath;
-        public Animator BodyAnimator => _bodyAnimator;
-        public Damageable Damageable => _damageable;
-        
-        private Action _enableAction;
-        private Action _disableAction;
+       // private Action _enableAction;
+       // private Action _disableAction;
 
-        public void InitUnityActions(Action enableAction, Action disableAction)
+        /*public void InitUnityActions(Action enableAction, Action disableAction)
         {
             _enableAction = enableAction;
             _disableAction = disableAction;
@@ -50,6 +51,6 @@ namespace Views.Units.Units
         public void InitUnitMove(PathTypesEnum pathTypes, Transform[] pathElements)
         {
             _unitFollowPath.Init(pathTypes, pathElements);
-        }
+        }*/
     }
 }

@@ -126,7 +126,7 @@ namespace I2.Loc
         public static string GetPluralParameter(string text, bool forceTag)  // force tag requires that the parameter has the form {[#param]}
         {
             // Try finding the "plural parameter" that has the form {[#name]}
-            // this allows using the second parameter as plural:  "Player {[name1]} has {[#value]} points"
+            // this allows using the second parameter as plural:  "PlayerUnit {[name1]} has {[#value]} points"
             int idx0 = text.IndexOf("{[#", StringComparison.Ordinal);
             if (idx0 < 0)
             {

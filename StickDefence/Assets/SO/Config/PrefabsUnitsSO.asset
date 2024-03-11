@@ -15,4 +15,11 @@ MonoBehaviour:
   _unitPrefabsModels:
   - <UnitType>k__BackingField: 1
     <GO>k__BackingField: {fileID: 5685439457548488733, guid: c4c0520b058b2624c93bd9629f1f89fa, type: 3}
+  _playerUnitPrefabsModels:
+  - <UnitType>k__BackingField: 1
+    <GO>k__BackingField: {fileID: 3112461647232183731, guid: 0f84d270d210d6a4e96bd0f217bb13e0, type: 3}
+  - <UnitType>k__BackingField: 2
+    <GO>k__BackingField: {fileID: 4453006002604957852, guid: 24f3ce303384dc145a9d0b3011ab3e14, type: 3}
+  - <UnitType>k__BackingField: 3
+    <GO>k__BackingField: {fileID: 1352383823696196539, guid: 96f94e89b647e9d43b02b390e00274df, type: 3}
   <FortressView>k__BackingField: {fileID: 7790035769800290002, guid: 2c06f1b513875b948b29a62cce67534f, type: 3}

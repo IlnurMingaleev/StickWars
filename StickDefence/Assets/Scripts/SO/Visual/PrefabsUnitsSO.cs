@@ -10,17 +10,27 @@ namespace SO.Visual
     public class PrefabsUnitsSO : ScriptableObject
     {
         [SerializeField] private List<UnitPrefabModel> _unitPrefabsModels;
+        [SerializeField] private List<PlayerPrefabModel> _playerUnitPrefabsModels;
         [field: SerializeField] public FortressView FortressView { get; private set; }
         
         private Dictionary<UnitTypeEnum, GameObject> _dictionaryUnitPrefabs =
             new Dictionary<UnitTypeEnum, GameObject>();
+        private Dictionary<PlayerUnitTypeEnum, GameObject> _dictionaryPlayerUnitPrefabs =
+            new Dictionary<PlayerUnitTypeEnum, GameObject>();
+        
         
         public IReadOnlyDictionary<UnitTypeEnum, GameObject> UnitPrefabs  => _dictionaryUnitPrefabs;
-        
+        public IReadOnlyDictionary<PlayerUnitTypeEnum, GameObject> PlayerUnitPrefabs  => _dictionaryPlayerUnitPrefabs;
         public void Init()
         {
             foreach (var unitPrefab in _unitPrefabsModels)
                 _dictionaryUnitPrefabs.Add(unitPrefab.UnitType, unitPrefab.GO);
+
+            foreach (var playerUnitPrefabs in _playerUnitPrefabsModels)
+            {
+                _dictionaryPlayerUnitPrefabs.Add(playerUnitPrefabs.UnitType, playerUnitPrefabs.GO);   
+            }
+            
         }
     }
 }

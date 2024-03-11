@@ -10,4 +10,11 @@ namespace Models.SO.Visual
         [field: SerializeField] public UnitTypeEnum UnitType { get; private set; }
         [field: SerializeField] public GameObject GO { get; private set; }
     }
+
+    [Serializable]
+    public struct PlayerPrefabModel
+    {
+        [field: SerializeField] public PlayerUnitTypeEnum UnitType { get; private set; }
+        [field: SerializeField] public GameObject GO { get; private set; } 
+    }
 }
