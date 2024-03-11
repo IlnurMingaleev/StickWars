@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Enums;
 using Models.SO.Core;
-using NorskaLib.GoogleSheetsDatabase;
 using SO.Core;
 using UI.Content.Rewards;
 using UnityEditor;
@@ -11,7 +10,7 @@ using UnityEngine;
 namespace Tools.Configs
 {
     [CreateAssetMenu(fileName = "UnitsStatsConfigSOUpdater", menuName = "MyAssets/EditorOnly/UnitsStatsConfigSOUpdater", order = 3)]
-    public class UnitsStatsConfigSOUpdater  : DataContainerBase
+    public class UnitsStatsConfigSOUpdater // : DataContainerBase
     {
         [SerializeField] private EnemyUnitsStatsSO _enemyUnitsStatsSO;
         
@@ -24,7 +23,7 @@ namespace Tools.Configs
             Debug.Log("Update Config");
         }
 
-        [PageName("EnemyUnitsStats")] 
+        //[PageName("EnemyUnitsStats")] 
         [HideInInspector] public List<EnemyUnitConfig> EnemyUnitConfigModel;
         
         [Serializable]
