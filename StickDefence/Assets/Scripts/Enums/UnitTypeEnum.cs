@@ -3,6 +3,7 @@
     public enum UnitTypeEnum
     {
         None,
-        Skeleton
+        Skeleton,
+        
     }
 }

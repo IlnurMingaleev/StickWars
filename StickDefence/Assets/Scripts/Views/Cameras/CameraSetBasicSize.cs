@@ -8,10 +8,10 @@ namespace Views.Cameras
         
         private Camera _camera;
 
-        private void Awake()
+        private void Start()
         {
             _camera = Camera.main;
-            
+            if (_camera != null) _camera.orthographicSize = _sizeCamera;
         }
     }
 }
