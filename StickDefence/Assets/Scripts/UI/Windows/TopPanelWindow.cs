@@ -1,0 +1,110 @@
+﻿using TonkoGames.StateMachine;
+using Models.DataModels;
+using UI.Common;
+using UI.Content.TopPanel;
+using UI.UIManager;
+using UniRx;
+using UnityEngine;
+using VContainer;
+
+namespace UI.Windows
+{
+    public class TopPanelWindow : Window
+    {
+        [SerializeField] private UIButton _backArrow;
+        [SerializeField] private UIButton _settingsButton;
+        [SerializeField] private UIButton _buttonExit;
+        [SerializeField] private FinanceBar _financeBar;
+        [SerializeField] private GameObject _statusBar;
+        [SerializeField] private Transform _playerRespect;
+        [Inject] private IDataCentralService _dataCentralService;
+
+        private CompositeDisposable _openShopDisposable = new CompositeDisposable();
+        
+        public Transform CashLabelTransform => _financeBar.CoinLabelTransform;
+        public Transform GoldLabelTransform => _financeBar.GemLabelTransform;
+        public Transform RespectLabelTransform => _playerRespect;
+        public UIButton ButtonExit => _buttonExit;
+        protected override bool DisableMultiTouchOnShow => false;
+
+        [Inject] private readonly ICoreStateMachine _coreStateMachine;
+        
+        protected override void OnActivate()
+        {
+            base.OnActivate();
+            _backArrow.OnClickAsObservable.Subscribe(_ => OnBackArrowClick()).AddTo(ActivateDisposables);
+            _financeBar.SetAction(ShowShopWindow, ShowShopWindow);
+
+            _manager.LastWindowsCount.Subscribe(CheckBackButtonActive).AddTo(ActivateDisposables);
+            _settingsButton.OnClickAsObservable.Subscribe(_ => _manager.Show<SettingsWindow>(WindowPriority.AboveTopPanel)).AddTo(ActivateDisposables);
+        }
+
+        public void SetTopGameState()
+        {
+            _backArrow.gameObject.SetActive(false);
+            _statusBar.SetActive(false);
+            // if (_coreStateMachine.TutorialStateMachine.IsMainTutorialShown)
+            // {
+            //     _buttonExit.gameObject.SetActive(true);
+            // }
+            _settingsButton.gameObject.SetActive(false);
+        }
+        
+        public void SetTopLobbyState()
+        {
+            _statusBar.SetActive(true);
+            _buttonExit.gameObject.SetActive(false);
+            _settingsButton.gameObject.SetActive(true);
+        }
+
+        public void SetMapStageState()
+        {
+            _statusBar.SetActive(false);
+            _settingsButton.gameObject.SetActive(false);
+        }
+        
+        private void ShowShopWindow()
+        {
+            _manager.Hide(_manager.GetLastWindow(false));
+            
+            _manager.Show<ShopWindow>().IsShowingReactive.Subscribe(value =>
+            {
+                _financeBar.IsShopButtonVisible = !value;
+                if (!value)
+                {
+                    _openShopDisposable.Clear();
+                }
+            }).AddTo(_openShopDisposable);
+        }
+
+        public void ChowSettingsButton(bool value)
+        {
+            _settingsButton.gameObject.SetActive(value);
+        }
+
+        private void OnBackArrowClick()
+        {
+            Window currentWindow = _manager.GetLastWindow();
+            Window lastWindow = _manager.GetLastWindow();
+            _manager.Show(lastWindow);
+            _manager.Hide(currentWindow);
+        }
+
+        public void SetIgnoreNextProfileChange()
+        {
+            _financeBar.SetIgnoreNextProfileChange();
+        }
+
+        public void PlayProfileChangedAnimation()
+        {
+            _financeBar.PlayProfileChangedAnimation();
+        }
+
+        public void SkipProfileChangedAnimation()
+        {
+            _financeBar.SkipProfileChangedAnimation();
+        }
+        
+        private void CheckBackButtonActive(int value) => _backArrow.gameObject.SetActive(value > 1);
+    }
+}

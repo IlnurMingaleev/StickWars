@@ -1,0 +1,208 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dd05a674cc84964ba39d8c759c6a77e, type: 3}
+  m_Name: PumpingConfigSO
+  m_EditorClassIdentifier: 
+  _coinFarmerConfigModel:
+  - CoinSmeltingGoldTick: 0
+    CoinSmeltingCost: 0
+    StorageCapacity: 0
+    StorageCost: 0
+  - CoinSmeltingGoldTick: 10
+    CoinSmeltingCost: 20
+    StorageCapacity: 100
+    StorageCost: 20
+  - CoinSmeltingGoldTick: 20
+    CoinSmeltingCost: 1440
+    StorageCapacity: 1440
+    StorageCost: 1440
+  - CoinSmeltingGoldTick: 40
+    CoinSmeltingCost: 2160
+    StorageCapacity: 2160
+    StorageCost: 2160
+  - CoinSmeltingGoldTick: 80
+    CoinSmeltingCost: 2880
+    StorageCapacity: 2880
+    StorageCost: 2880
+  _basePlayerPerks:
+  - PerkType: 0
+    BaseValue: 10
+    AdditionalValue: 2
+    LevelCount: 10
+    BaseCost: 10
+    AdditionalCost: 2
+    CurrencyType: 0
+  - PerkType: 1
+    BaseValue: 60
+    AdditionalValue: 2
+    LevelCount: 10
+    BaseCost: 10
+    AdditionalCost: 2
+    CurrencyType: 0
+  - PerkType: 2
+    BaseValue: 10
+    AdditionalValue: 2
+    LevelCount: 10
+    BaseCost: 10
+    AdditionalCost: 2
+    CurrencyType: 0
+  - PerkType: 3
+    BaseValue: 0.1
+    AdditionalValue: 0.02
+    LevelCount: 10
+    BaseCost: 10
+    AdditionalCost: 2
+    CurrencyType: 0
+  - PerkType: 4
+    BaseValue: 0.1
+    AdditionalValue: 0.02
+    LevelCount: 10
+    BaseCost: 10
+    AdditionalCost: 2
+    CurrencyType: 0
+  - PerkType: 5
+    BaseValue: 10
+    AdditionalValue: 2
+    LevelCount: 10
+    BaseCost: 10
+    AdditionalCost: 2
+    CurrencyType: 0
+  - PerkType: 6
+    BaseValue: 10
+    AdditionalValue: 2
+    LevelCount: 10
+    BaseCost: 10
+    AdditionalCost: 2
+    CurrencyType: 0
+  - PerkType: 7
+    BaseValue: 0.1
+    AdditionalValue: 0.02
+    LevelCount: 10
+    BaseCost: 10
+    AdditionalCost: 2
+    CurrencyType: 0
+  - PerkType: 8
+    BaseValue: 10
+    AdditionalValue: 2
+    LevelCount: 10
+    BaseCost: 10
+    AdditionalCost: 2
+    CurrencyType: 0
+  - PerkType: 9
+    BaseValue: 10
+    AdditionalValue: 2
+    LevelCount: 10
+    BaseCost: 10
+    AdditionalCost: 2
+    CurrencyType: 0
+  _gamePlayerPerks:
+  - PerkType: 0
+    BaseValue: 10
+    AdditionalValue: 2
+    LevelCount: 10
+    BaseCost: 10
+    AdditionalCost: 2
+    CurrencyType: 2
+  - PerkType: 1
+    BaseValue: 10
+    AdditionalValue: 2
+    LevelCount: 10
+    BaseCost: 10
+    AdditionalCost: 2
+    CurrencyType: 2
+  - PerkType: 2
+    BaseValue: 10
+    AdditionalValue: 2
+    LevelCount: 10
+    BaseCost: 10
+    AdditionalCost: 2
+    CurrencyType: 2
+  - PerkType: 3
+    BaseValue: 0.1
+    AdditionalValue: 0.02
+    LevelCount: 10
+    BaseCost: 10
+    AdditionalCost: 2
+    CurrencyType: 2
+  - PerkType: 4
+    BaseValue: 0.1
+    AdditionalValue: 0.02
+    LevelCount: 10
+    BaseCost: 10
+    AdditionalCost: 2
+    CurrencyType: 2
+  - PerkType: 5
+    BaseValue: 10
+    AdditionalValue: 2
+    LevelCount: 10
+    BaseCost: 10
+    AdditionalCost: 2
+    CurrencyType: 2
+  - PerkType: 6
+    BaseValue: 10
+    AdditionalValue: 2
+    LevelCount: 10
+    BaseCost: 10
+    AdditionalCost: 2
+    CurrencyType: 2
+  - PerkType: 7
+    BaseValue: 0.1
+    AdditionalValue: 0.02
+    LevelCount: 10
+    BaseCost: 10
+    AdditionalCost: 2
+    CurrencyType: 2
+  - PerkType: 8
+    BaseValue: 10
+    AdditionalValue: 2
+    LevelCount: 10
+    BaseCost: 10
+    AdditionalCost: 2
+    CurrencyType: 2
+  - PerkType: 9
+    BaseValue: 10
+    AdditionalValue: 2
+    LevelCount: 10
+    BaseCost: 10
+    AdditionalCost: 2
+    CurrencyType: 2
+  _playerSkills:
+  - SkillType: 1
+    BaseValue: 10
+    AdditionalValue: 2
+    LevelCount: 10
+    BaseCost: 10
+    AdditionalCost: 2
+    CurrencyType: 0
+  - SkillType: 2
+    BaseValue: 10
+    AdditionalValue: 2
+    LevelCount: 10
+    BaseCost: 10
+    AdditionalCost: 2
+    CurrencyType: 0
+  - SkillType: 3
+    BaseValue: 10
+    AdditionalValue: 2
+    LevelCount: 10
+    BaseCost: 10
+    AdditionalCost: 2
+    CurrencyType: 0
+  _skillCellConfigs:
+  - Cost: 10
+    CurrencyType: 0
+  - Cost: 11
+    CurrencyType: 0
+  - Cost: 12
+    CurrencyType: 0
+  - Cost: 13
+    CurrencyType: 1

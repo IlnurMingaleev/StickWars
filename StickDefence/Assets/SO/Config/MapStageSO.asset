@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed19da728cbf4c57b2d2c17215e9f4f4, type: 3}
+  m_Name: MapStageSO
+  m_EditorClassIdentifier: 
+  _mapStageRewardModels:
+  - StageType: 1
+    Coin: 10
+    Gem: 0
+  - StageType: 2
+    Coin: 10
+    Gem: 0
+  - StageType: 3
+    Coin: 10
+    Gem: 0
+  - StageType: 4
+    Coin: 10
+    Gem: 0
+  _mapBuilder:
+  - MapStage: 1
+    Days:
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 0
+        Delay: 3
+      - GroupUnitsIndex: 1
+        Delay: 3
+    - IsBossDay: 1
+      Groups:
+      - GroupUnitsIndex: 0
+        Delay: 3
+      - GroupUnitsIndex: 1
+        Delay: 3
+  - MapStage: 2
+    Days:
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 0
+        Delay: 3
+      - GroupUnitsIndex: 1
+        Delay: 3
+    - IsBossDay: 1
+      Groups:
+      - GroupUnitsIndex: 0
+        Delay: 3
+      - GroupUnitsIndex: 1
+        Delay: 3
+  _unitGroups:
+  - Units:
+    - UnitType: 1
+      Count: 3
+      Delay: 0.2
+      MovementType: 0
+    - UnitType: 1
+      Count: 1
+      Delay: 1
+      MovementType: 0
+  - Units:
+    - UnitType: 1
+      Count: 3
+      Delay: 0.2
+      MovementType: 0
+    - UnitType: 1
+      Count: 1
+      Delay: 1
+      MovementType: 0

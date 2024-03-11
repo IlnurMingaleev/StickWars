@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "543704393970",
+    "project_id": "flyingtowerlands",
+    "storage_bucket": "flyingtowerlands.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:543704393970:android:cc133424af035a421d086b",
+        "android_client_info": {
+          "package_name": "com.TonkoGames.FlyingTowerLands"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSTBTf6x9xeIw6VOelNKjhS3FcdeP82-Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

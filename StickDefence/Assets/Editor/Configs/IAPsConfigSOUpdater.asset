@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2cc83d4eb174a12bba8830034a9e17a, type: 3}
+  m_Name: IAPsConfigSOUpdater
+  m_EditorClassIdentifier: 
+  documentID: 1dV1jWH8q0vZdXHckJ9HrQMcwTtWyyXKSqdMvaJXljuc
+  _iAPSO: {fileID: 11400000, guid: 80ae67f4e481b3940aa88552b5b383e6, type: 2}
+  IapRewardData:
+  - IapType: 0
+    Value: 5
+    Cost: 0
+  - IapType: 1
+    Value: 500
+    Cost: 5
+  - IapType: 2
+    Value: 1100
+    Cost: 10
+  - IapType: 3
+    Value: 1700
+    Cost: 15
+  - IapType: 4
+    Value: 2400
+    Cost: 20
+  - IapType: 5
+    Value: 3600
+    Cost: 30
+  WeeklyReward:
+  - RewardIconType: 0
+    CoinReward: 350
+    GemReward: 0
+  - RewardIconType: 0
+    CoinReward: 700
+    GemReward: 0
+  - RewardIconType: 1
+    CoinReward: 0
+    GemReward: 10
+  - RewardIconType: 2
+    CoinReward: 500
+    GemReward: 5
+  - RewardIconType: 0
+    CoinReward: 700
+    GemReward: 0
+  - RewardIconType: 1
+    CoinReward: 0
+    GemReward: 15
+  - RewardIconType: 3
+    CoinReward: 700
+    GemReward: 30
+  LuckySpin:
+  - RewardIconType: 3
+    CoinReward: 700
+    GemReward: 20
+  - RewardIconType: 0
+    CoinReward: 350
+    GemReward: 0
+  - RewardIconType: 1
+    CoinReward: 0
+    GemReward: 15
+  - RewardIconType: 2
+    CoinReward: 500
+    GemReward: 5
+  - RewardIconType: 0
+    CoinReward: 700
+    GemReward: 0
+  - RewardIconType: 1
+    CoinReward: 0
+    GemReward: 10
+  - RewardIconType: 0
+    CoinReward: 700
+    GemReward: 0
+  - RewardIconType: 0
+    CoinReward: 350
+    GemReward: 0
+  InApp:
+  - PaymentProduct: 1
+    Gem: 29
+  - PaymentProduct: 2
+    Gem: 59
+  - PaymentProduct: 3
+    Gem: 119
+  - PaymentProduct: 4
+    Gem: 164
+  - PaymentProduct: 5
+    Gem: 310

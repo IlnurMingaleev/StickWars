@@ -1,0 +1,1190 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f0b0c553be8edd4682e9180fdd13e37, type: 3}
+  m_Name: I2Languages
+  m_EditorClassIdentifier: 
+  mSource:
+    UserAgreesToHaveItOnTheScene: 0
+    UserAgreesToHaveItInsideThePluginsFolder: 0
+    GoogleLiveSyncIsUptoDate: 1
+    mTerms:
+    - Term: BaseWords/DayValue
+      TermType: 0
+      Description: 
+      Languages:
+      - Day {[value]}
+      - "\u0414\u0435\u043D\u044C {[value]}"
+      - "G\xFCn  {[value]}"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: BaseWords/Health
+      TermType: 0
+      Description: 
+      Languages:
+      - Health
+      - "\u0417\u0434\u043E\u0440\u043E\u0432\u044C\u0435"
+      - "Sa\u011Fl\u0131k"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: BaseWords/Level
+      TermType: 0
+      Description: 
+      Languages:
+      - Level
+      - "\u0423\u0440\u043E\u0432\u0435\u043D\u044C"
+      - Seviye
+      Flags: 000000
+      Languages_Touch: []
+    - Term: BaseWords/Maximum
+      TermType: 0
+      Description: 
+      Languages:
+      - Maximum
+      - "\u041C\u0430\u043A\u0441\u0438\u043C\u0443\u043C"
+      - 
+      Flags: 000000
+      Languages_Touch: []
+    - Term: BaseWords/MaximumShort
+      TermType: 0
+      Description: 
+      Languages:
+      - Max.
+      - "\u041C\u0430\u043A\u0441."
+      - 
+      Flags: 000000
+      Languages_Touch: []
+    - Term: BaseWords/Results
+      TermType: 0
+      Description: 
+      Languages:
+      - Results
+      - "\u0420\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442\u044B"
+      - "Sonu\xE7lar"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Buttons/Back
+      TermType: 0
+      Description: 
+      Languages:
+      - Back
+      - "\u041D\u0430\u0437\u0430\u0434"
+      - "\u041D\u0430\u0437\u0430\u0434"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Buttons/Battle
+      TermType: 0
+      Description: 
+      Languages:
+      - Battle
+      - "\u0411\u043E\u0439"
+      - "Sava\u015F"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Buttons/Cancel
+      TermType: 0
+      Description: 
+      Languages:
+      - Cancel
+      - "\u041E\u0442\u043C\u0435\u043D\u0430"
+      - "\u0130ptal etmek"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Buttons/Collect/Label
+      TermType: 0
+      Description: 
+      Languages:
+      - Collect
+      - "\u0417\u0430\u0431\u0440\u0430\u0442\u044C"
+      - Almak
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Buttons/Collection
+      TermType: 0
+      Description: 
+      Languages:
+      - Collection
+      - "\u041A\u043E\u043B\u043B\u0435\u043A\u0446\u0438\u044F"
+      - "\u041A\u043E\u043B\u043B\u0435\u043A\u0446\u0438\u044F"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Buttons/Continue
+      TermType: 0
+      Description: 
+      Languages:
+      - Continue
+      - "\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C"
+      - Devam etmek
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Buttons/DailyReward/Available
+      TermType: 0
+      Description: 
+      Languages:
+      - Collect Reward
+      - "\u0417\u0430\u0431\u0440\u0430\u0442\u044C \u041D\u0430\u0433\u0440\u0430\u0434\u0443"
+      - "\xD6d\xFCl Talep Et"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Buttons/DailyReward/Collected
+      TermType: 0
+      Description: 
+      Languages:
+      - Collected
+      - "\u0421\u043E\u0431\u0440\u0430\u043D\u043E"
+      - "Toplanm\u0131\u015F"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Buttons/DailyReward/TimerText
+      TermType: 0
+      Description: 
+      Languages:
+      - Reward in
+      - "\u041D\u0430\u0433\u0440\u0430\u0434\u0430 \u0447\u0435\u0440\u0435\u0437"
+      - "Arac\u0131l\u0131\u011F\u0131yla \xF6d\xFCl"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Buttons/DailyReward/Unavailable
+      TermType: 0
+      Description: 
+      Languages:
+      - Day {[DaysNumber]}
+      - "\u0414\u0435\u043D\u044C {[DaysNumber]}"
+      - "G\xFCn {[DaysNumber]}"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Buttons/Free
+      TermType: 0
+      Description: 
+      Languages:
+      - Free
+      - "\u0411\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u043E"
+      - "\xDCcretsiz"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Buttons/Info
+      TermType: 0
+      Description: 
+      Languages:
+      - Info
+      - "\u041F\u043E\u0434\u0440\u043E\u0431\u043D\u0435\u0435"
+      - Daha
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Buttons/No
+      TermType: 0
+      Description: 
+      Languages:
+      - No
+      - "\u041D\u0435\u0442"
+      - Hayir
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Buttons/Ok
+      TermType: 0
+      Description: 
+      Languages:
+      - Ok
+      - "\u041E\u043A"
+      - Tamam
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Buttons/Play
+      TermType: 0
+      Description: 
+      Languages:
+      - Play
+      - "\u0418\u0433\u0440\u0430\u0442\u044C"
+      - Oynamak
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Buttons/Remove
+      TermType: 0
+      Description: 
+      Languages:
+      - Remove
+      - "\u0423\u0434\u0430\u043B\u0438\u0442\u044C"
+      - Silmek
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Buttons/ResetProgress
+      TermType: 0
+      Description: 
+      Languages:
+      - Reset progress
+      - "\u0421\u0431\u0440\u043E\u0441\u0438\u0442\u044C \u043F\u0440\u043E\u0433\u0440\u0435\u0441\u0441"
+      - "\u0130lerlemeyi s\u0131f\u0131rla"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Buttons/Restart
+      TermType: 0
+      Description: 
+      Languages:
+      - Restart
+      - "\u041F\u0435\u0440\u0435\u0437\u0430\u043F\u0443\u0441\u0442\u0438\u0442\u044C"
+      - "Tekrar ba\u015Flat"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Buttons/Select
+      TermType: 0
+      Description: 
+      Languages:
+      - Select
+      - "\u0412\u044B\u0431\u0440\u0430\u0442\u044C"
+      - "Se\xE7mek"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Buttons/UIMainMenuRareItems/FreeBox
+      TermType: 0
+      Description: 
+      Languages:
+      - Free Box
+      - "\u0411\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u044B\u0439 \u042F\u0449\u0438\u043A"
+      - "\xDCcretsiz Sand\u0131k"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Buttons/UIMainMenuRareItems/Shop
+      TermType: 0
+      Description: 
+      Languages:
+      - Shop
+      - "\u041C\u0430\u0433\u0430\u0437\u0438\u043D"
+      - "Ma\u011Faza"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Buttons/UIStore/PaymentImpossible
+      TermType: 0
+      Description: 
+      Languages:
+      - 'Impossible to make payments, reason: {0}'
+      - "\u041D\u0435\u0432\u043E\u0437\u043C\u043E\u0436\u043D\u043E \u043F\u0440\u043E\u0438\u0437\u0432\u0435\u0441\u0442\u0438
+        \u043F\u043B\u0430\u0442\u0435\u0436, \u043F\u0440\u0438\u0447\u0438\u043D\u0430:
+        {[0]}"
+      - "\xD6deme yap\u0131lam\u0131yor, nedeni: {[0]}"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Buttons/UIStore/PaymentImpossibleWithParam
+      TermType: 0
+      Description: 
+      Languages:
+      - 'Impossible to make payments, reason: {[0]}'
+      - "\u041D\u0435\u0432\u043E\u0437\u043C\u043E\u0436\u043D\u043E \u043F\u0440\u043E\u0438\u0437\u0432\u0435\u0441\u0442\u0438
+        \u043F\u043B\u0430\u0442\u0435\u0436, \u043F\u0440\u0438\u0447\u0438\u043D\u0430:
+        {[0]}"
+      - "\xD6deme yap\u0131lam\u0131yor, neden: {[0]}"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Buttons/UIStore/Positive
+      TermType: 0
+      Description: 
+      Languages:
+      - Continue
+      - "\u0414\u0430\u043B\u044C\u0448\u0435"
+      - "Daha \xF6te"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Buttons/UIStore/StoreIsUnavailable
+      TermType: 0
+      Description: 
+      Languages:
+      - Store service is unavailable
+      - "\u041C\u0430\u0433\u0430\u0437\u0438\u043D \u043D\u0435\u0434\u043E\u0441\u0442\u0443\u043F\u0435\u043D"
+      - "Ma\u011Faza kullan\u0131lam\u0131yor"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Buttons/Unlock
+      TermType: 0
+      Description: 
+      Languages:
+      - Unlock
+      - "\u0420\u0430\u0437\u0431\u043B\u043E\u043A\u0438\u0440\u043E\u0432\u0430\u0442\u044C"
+      - "Kilidini a\xE7"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Buttons/Upgrade
+      TermType: 0
+      Description: 
+      Languages:
+      - Upgrade
+      - "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C"
+      - "Geli\u015Ftirmek"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Buttons/ViewResults
+      TermType: 0
+      Description: 
+      Languages:
+      - View Results
+      - "\u0421\u043C\u043E\u0442\u0440\u0435\u0442\u044C \u0440\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442\u044B"
+      - "Sonu\xE7lar\u0131 g\xF6r"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Buttons/Yes
+      TermType: 0
+      Description: 
+      Languages:
+      - Yes
+      - "\u0414\u0430"
+      - Evet
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Days
+      TermType: 0
+      Description: 
+      Languages:
+      - '{0}d'
+      - "{0}\u0434"
+      - '{0}d'
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Difficulty/Challenging
+      TermType: 0
+      Description: 
+      Languages:
+      - Challenging
+      - "\u041D\u0435\u043F\u0440\u043E\u0441\u0442\u043E"
+      - "Kolay de\u011Fil"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Difficulty/Easy
+      TermType: 0
+      Description: 
+      Languages:
+      - Easy
+      - "\u041B\u0435\u0433\u043A\u043E"
+      - Kolayca
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Difficulty/Extreme
+      TermType: 0
+      Description: 
+      Languages:
+      - Extreme
+      - "\u042D\u043A\u0441\u0442\u0440\u0435\u043C\u0430\u043B\u044C\u043D\u043E"
+      - "A\u015F\u0131r\u0131"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Difficulty/Hard
+      TermType: 0
+      Description: 
+      Languages:
+      - Hard
+      - "\u0422\u044F\u0436\u0435\u043B\u043E"
+      - Zor
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Font
+      TermType: 0
+      Description: 
+      Languages:
+      - Fonts & Materials/gogono-cocoa-mochi-cyrillic SDF
+      - Fonts & Materials/gogono-cocoa-mochi-cyrillic SDF
+      - Fonts & Materials/gogono-cocoa-mochi-cyrillic SDF
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Hours
+      TermType: 0
+      Description: 
+      Languages:
+      - '{0}h'
+      - "{0}\u0447"
+      - '{0}h'
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Inaps/DOLLAR
+      TermType: 0
+      Description: 
+      Languages:
+      - $
+      - $
+      - $
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Inaps/GP
+      TermType: 0
+      Description: 
+      Languages:
+      - GP
+      - GP
+      - GP
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Inaps/OK
+      TermType: 0
+      Description: 
+      Languages:
+      - OK
+      - OK
+      - OK
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Inaps/RUB
+      TermType: 0
+      Description: 
+      Languages:
+      - Rub.
+      - "\u0420\u0443\u0431."
+      - Rub.
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Inaps/VOTE
+      TermType: 0
+      Description: 
+      Languages:
+      - VOTE
+      - VOTE
+      - VOTE
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Inaps/YAN
+      TermType: 0
+      Description: 
+      Languages:
+      - Yan
+      - "\u042F\u043D"
+      - Yan
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Language
+      TermType: 0
+      Description: 
+      Languages:
+      - Language
+      - "\u042F\u0437\u044B\u043A"
+      - Language
+      Flags: 000000
+      Languages_Touch: []
+    - Term: LocalCarDriver
+      TermType: 0
+      Description: 
+      Languages:
+      - Player
+      - "\u0418\u0433\u0440\u043E\u043A"
+      - Player
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Messages/ComingSoon
+      TermType: 0
+      Description: 
+      Languages:
+      - Coming soon!
+      - "\u0412 \u0441\u043A\u043E\u0440\u043E\u043C \u0432\u0440\u0435\u043C\u0435\u043D\u0438!"
+      - "Yak\u0131nda!"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Messages/Defeat
+      TermType: 0
+      Description: 
+      Languages:
+      - Defeat!
+      - "\u041F\u043E\u0440\u0430\u0436\u0435\u043D\u0438\u0435!"
+      - Yenmek!
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Messages/Give up
+      TermType: 0
+      Description: 
+      Languages:
+      - Give up!
+      - "\u0421\u0434\u0430\u0442\u044C\u0441\u044F!"
+      - Teslim olmak!
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Messages/Go
+      TermType: 0
+      Description: 
+      Languages:
+      - Go!
+      - "\u0412\u043F\u0435\u0440\u0451\u0434!"
+      - "\u0130leri!"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Messages/Lose
+      TermType: 0
+      Description: 
+      Languages:
+      - You lose!
+      - "\u0422\u044B \u043F\u0440\u043E\u0438\u0433\u0440\u0430\u043B!"
+      - Kaybettin!
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Messages/MaxLevel
+      TermType: 0
+      Description: 
+      Languages:
+      - Maximum level!
+      - "\u041C\u0430\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u044B\u0439
+        \u0443\u0440\u043E\u0432\u0435\u043D\u044C!"
+      - Maksimum seviye!
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Messages/NeedLogin
+      TermType: 0
+      Description: 
+      Languages:
+      - To make a purchase, you must log in. Do you want to log in?
+      - "\u0427\u0442\u043E\u0431\u044B \u0441\u043E\u0432\u0435\u0440\u0448\u0438\u0442\u044C
+        \u043F\u043E\u043A\u0443\u043F\u043A\u0443, \u043D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u043E
+        \u0430\u0432\u0442\u043E\u0440\u0438\u0437\u043E\u0432\u0430\u0442\u044C\u0441\u044F.
+        \u0425\u043E\u0442\u0438\u0442\u0435 \u0430\u0432\u0442\u043E\u0440\u0438\u0437\u043E\u0432\u0430\u0442\u044C\u0441\u044F."
+      - "Sat\u0131n alma i\u015Flemi ger\xE7ekle\u015Ftirmek i\xE7in giri\u015F yapmal\u0131s\u0131n\u0131z.
+        Giri\u015F yapmak istiyor musunuz?"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Messages/NewRecord
+      TermType: 0
+      Description: 
+      Languages:
+      - New record!
+      - "\u041D\u043E\u0432\u044B\u0439 \u0440\u0435\u043A\u043E\u0440\u0434!"
+      - Yeni Rekor!
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Messages/Resurrect
+      TermType: 0
+      Description: 
+      Languages:
+      - Resurrect!
+      - "\u0412\u043E\u0441\u043A\u0440\u0435\u0441\u0438\u0442\u044C!"
+      - Diril!
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Messages/TurnYourPhoneHorizontally
+      TermType: 0
+      Description: 
+      Languages:
+      - Turn your phone horizontally!
+      - "\u041F\u043E\u0432\u0435\u0440\u043D\u0438\u0442\u0435 \u0442\u0435\u043B\u0435\u0444\u043E\u043D
+        \u0433\u043E\u0440\u0438\u0437\u043E\u043D\u0442\u0430\u043B\u044C\u043D\u043E!"
+      - "Telefonunuzu yatay olarak d\xF6nd\xFCr\xFCn!"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Messages/Win
+      TermType: 0
+      Description: 
+      Languages:
+      - You win!
+      - "\u0422\u044B \u0432\u044B\u0438\u0433\u0440\u0430\u043B!"
+      - "Kazand\u0131n!"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Milliseconds
+      TermType: 0
+      Description: 
+      Languages:
+      - '{0}ms'
+      - "{0}\u043C\u0441"
+      - '{0}ms'
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Minutes
+      TermType: 0
+      Description: 
+      Languages:
+      - '{0}m'
+      - "{0}\u043C"
+      - '{0}ms'
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Names/Perks/AttackRange
+      TermType: 0
+      Description: 
+      Languages:
+      - Attack Range
+      - "\u0414\u0430\u043B\u044C\u043D\u043E\u0441\u0442\u044C \u0410\u0442\u0430\u043A\u0438"
+      - 
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Names/Perks/AttackSpeed
+      TermType: 0
+      Description: 
+      Languages:
+      - Attack Speed
+      - "\u0421\u043A\u043E\u0440\u043E\u0441\u0442\u044C \u0410\u0442\u0430\u043A\u0438"
+      - 
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Names/Perks/CriticalChance
+      TermType: 0
+      Description: 
+      Languages:
+      - "Critical \u0421hance"
+      - "\u0428\u0430\u043D\u0441 \u041A\u0440\u0438\u0442\u0430"
+      - 
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Names/Perks/CriticalMultiplier
+      TermType: 0
+      Description: 
+      Languages:
+      - Critical Multiplier
+      - "\u041C\u043D\u043E\u0436\u0438\u0442\u0435\u043B\u044C \u041A\u0440\u0438\u0442\u0430"
+      - 
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Names/Perks/DailyGoldBonus
+      TermType: 0
+      Description: 
+      Languages:
+      - Daily Gold Bonus
+      - "\u0415\u0436\u0435\u0434\u0435\u0432\u043D\u044B\u0439 \u0417\u043E\u043B\u043E\u0442\u043E\u0439
+        \u0411\u043E\u043D\u0443\u0441"
+      - 
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Names/Perks/Damage
+      TermType: 0
+      Description: 
+      Languages:
+      - Damage
+      - "\u0423\u0440\u043E\u043D"
+      - 
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Names/Perks/Defense
+      TermType: 0
+      Description: 
+      Languages:
+      - Defense
+      - "\u0417\u0430\u0449\u0438\u0442\u0430"
+      - 
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Names/Perks/Health
+      TermType: 0
+      Description: 
+      Languages:
+      - Health
+      - "\u0416\u0438\u0437\u043D\u0438"
+      - 
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Names/Perks/KillSilverBonus
+      TermType: 0
+      Description: 
+      Languages:
+      - Kill Silver Bonus
+      - "\u0411\u043E\u043D\u0443\u0441 \u0417\u0430 \u0423\u0431\u0438\u0439\u0441\u0442\u0432\u043E"
+      - 
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Names/Perks/RegenHealth
+      TermType: 0
+      Description: 
+      Languages:
+      - Regen Health
+      - "\u0420\u0435\u0433\u0435\u043D \u0417\u0434\u043E\u0440\u043E\u0432\u044C\u044F"
+      - 
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Names/Skills/Lightning
+      TermType: 0
+      Description: 
+      Languages:
+      - Lightning
+      - "\u041C\u043E\u043B\u043D\u0438\u044F"
+      - 
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Names/Skills/ShockWave
+      TermType: 0
+      Description: 
+      Languages:
+      - Shock Wave
+      - "\u0428\u043E\u043A\u043E\u0432\u0430\u044F \u0412\u043E\u043B\u043D\u0430"
+      - 
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Names/Skills/Spikes
+      TermType: 0
+      Description: 
+      Languages:
+      - Spikes
+      - "\u0428\u0438\u043F\u044B"
+      - 
+      Flags: 000000
+      Languages_Touch: []
+    - Term: OK
+      TermType: 0
+      Description: 
+      Languages:
+      - OK
+      - OK
+      - OK
+      Flags: 000000
+      Languages_Touch: []
+    - Term: RewardValue
+      TermType: 0
+      Description: 
+      Languages:
+      - '{[Reward]}'
+      - '{[Reward]}'
+      - '{[Reward]}'
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Seconds
+      TermType: 0
+      Description: 
+      Languages:
+      - '{0}s'
+      - "{0}\u0441"
+      - '{0}s'
+      Flags: 000000
+      Languages_Touch: []
+    - Term: SimpleActions/Add
+      TermType: 0
+      Description: 
+      Languages:
+      - Add to Cart
+      - "\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C"
+      - Eklemek
+      Flags: 000000
+      Languages_Touch: []
+    - Term: SimpleActions/Buy
+      TermType: 0
+      Description: 
+      Languages:
+      - Buy
+      - "\u041A\u0443\u043F\u0438\u0442\u044C"
+      - "Sat\u0131n almak"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Windows/
+      TermType: 0
+      Description: 
+      Languages:
+      - 
+      - 
+      - 
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Windows/Adblock/AdBlocker
+      TermType: 0
+      Description: 
+      Languages:
+      - Ad Blocker
+      - "\u0411\u043B\u043E\u043A\u0438\u0440\u043E\u0432\u0449\u0438\u043A \u0440\u0435\u043A\u043B\u0430\u043C\u044B"
+      - Reklam engelleyici
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Windows/Adblock/AndReloadGame
+      TermType: 0
+      Description: 
+      Languages:
+      - and reload game
+      - "\u0438 \u043F\u0435\u0440\u0435\u0437\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u0435
+        \u0438\u0433\u0440\u0443"
+      - "ve oyunu yeniden ba\u015Flat"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Windows/Adblock/PleaseDisable
+      TermType: 0
+      Description: 
+      Languages:
+      - Please disable
+      - "\u041F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430 \u043E\u0442\u043A\u043B\u044E\u0447\u0438\u0442\u0435"
+      - "l\xFCtfen devre d\u0131\u015F\u0131 b\u0131rak"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Windows/Battle/Additionally
+      TermType: 0
+      Description: 
+      Languages:
+      - Additionally
+      - "\u0414\u043E\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u043E"
+      - 
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Windows/Battle/Base
+      TermType: 0
+      Description: 
+      Languages:
+      - Base
+      - "\u0411\u0430\u0437\u0430"
+      - 
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Windows/CoinSmelting/CoinSmelting
+      TermType: 0
+      Description: 
+      Languages:
+      - Coin smelting
+      - "\u0412\u044B\u043F\u043B\u0430\u0432\u043A\u0430 \u043C\u043E\u043D\u0435\u0442"
+      - 
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Windows/CoinSmelting/Description
+      TermType: 0
+      Description: 
+      Languages:
+      - Upgrade the volume of the smelter, which smelts gold and supplies it to storage.
+      - "\u041F\u0440\u043E\u043A\u0430\u0447\u0438\u0432\u0430\u0439 \u043E\u0431\u044A\u0451\u043C
+        \u043F\u043B\u0430\u0432\u0438\u043B\u044C\u043D\u0438, \u043A\u043E\u0442\u043E\u0440\u0430\u044F
+        \u0432\u044B\u043F\u043B\u0430\u0432\u043B\u044F\u0435\u0442 \u0437\u043E\u043B\u043E\u0442\u043E
+        \u0438 \u043F\u043E\u0441\u0442\u0430\u0432\u043B\u044F\u0435\u0442 \u0432
+        \u0445\u0440\u0430\u043D\u0438\u043B\u0438\u0449\u0435."
+      - 
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Windows/CoinSmelting/In5Seconds
+      TermType: 0
+      Description: 
+      Languages:
+      - in 5 seconds
+      - "\u0437\u0430 5 \u0441\u0435\u043A\u0443\u043D\u0434"
+      - 
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Windows/CoinSmelting/SmelterVolume
+      TermType: 0
+      Description: 
+      Languages:
+      - Smelter volume
+      - "\u041E\u0431\u044A\u0435\u043C \u043F\u043B\u0430\u0432\u0438\u043B\u044C\u043D\u0438"
+      - 
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Windows/Foundry/Income
+      TermType: 0
+      Description: 
+      Languages:
+      - 'Income: {[value]} / h'
+      - "\u0414\u043E\u0445\u043E\u0434: {[value]} / \u0447"
+      - 'Gelir: {[value]}/sa'
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Windows/Foundry/NeedCompleteLevel
+      TermType: 0
+      Description: 
+      Languages:
+      - 'Required level: {[value]}'
+      - "\u041D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u043E \u043F\u0440\u043E\u0439\u0442\u0438
+        \u0443\u0440\u043E\u0432\u0435\u043D\u044C: {[value]}"
+      - 'Gerekli seviye: {[value]}'
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Windows/Foundry/OpenFoundry
+      TermType: 0
+      Description: 
+      Languages:
+      - 'Income after opening: {[value]} / h'
+      - "\u0414\u043E\u0445\u043E\u0434 \u043F\u043E\u0441\u043B\u0435 \u043E\u0442\u043A\u0440\u044B\u0442\u0438\u044F:
+        {[value]} / \u0447"
+      - "A\xE7\u0131l\u0131\u015Ftan sonraki gelir: {[value]} / sa"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Windows/Foundry/UpgradeFoundry
+      TermType: 0
+      Description: 
+      Languages:
+      - 'Income after upgrading: {[value]} / h'
+      - "\u0414\u043E\u0445\u043E\u0434 \u043F\u043E\u0441\u043B\u0435 \u0443\u043B\u0443\u0447\u0448\u0435\u043D\u0438\u044F:
+        {[value]} / \u0447"
+      - "\u0130yile\u015Ftirme sonras\u0131 gelir: {[value]} / sa"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Windows/LoadingScreen/Space
+      TermType: 0
+      Description: 
+      Languages:
+      - Space
+      - "\u041F\u0440\u043E\u0431\u0435\u043B"
+      - Uzay
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Windows/Lobby/Battle
+      TermType: 0
+      Description: 
+      Languages:
+      - Battle
+      - "\u0411\u043E\u0439"
+      - "Sava\u015F"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Windows/PlayResult/Bonus
+      TermType: 0
+      Description: 
+      Languages:
+      - Bonus
+      - "\u0411\u043E\u043D\u0443\u0441"
+      - Bonus
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Windows/PlayResult/Claim
+      TermType: 0
+      Description: 
+      Languages:
+      - Claim
+      - "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C"
+      - Elde etmek
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Windows/PlayResult/Rewards
+      TermType: 0
+      Description: 
+      Languages:
+      - Rewards
+      - "\u041D\u0430\u0433\u0440\u0430\u0434\u044B"
+      - "\xD6d\xFCller"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Windows/PlayResult/StageClear
+      TermType: 0
+      Description: 
+      Languages:
+      - Stage Clear!
+      - "\u042D\u0442\u0430\u043F \u0447\u0438\u0441\u0442!"
+      - Sahne belli!
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Windows/PlayResult/x2Claim
+      TermType: 0
+      Description: 
+      Languages:
+      - x2 Claim
+      - "x2 \u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C"
+      - x2 Elde etmek
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Windows/Settings/Music
+      TermType: 0
+      Description: 
+      Languages:
+      - Music
+      - "\u041C\u0443\u0437\u044B\u043A\u0430"
+      - "M\xFCzik"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Windows/Settings/Sound
+      TermType: 0
+      Description: 
+      Languages:
+      - Sound
+      - "\u0417\u0432\u0443\u043A\u0438"
+      - Sesler
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Windows/Shop/GoldPack
+      TermType: 0
+      Description: 
+      Languages:
+      - Gold pack
+      - "\u0417\u043E\u043B\u043E\u0442\u043E\u0439 \u043F\u0430\u043A\u0435\u0442"
+      - "Alt\u0131n Paketi"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Windows/Shop/RemoveADS
+      TermType: 0
+      Description: 
+      Languages:
+      - 'Remove ads:'
+      - "\u0423\u0431\u0440\u0430\u0442\u044C \u0440\u0435\u043A\u043B\u0430\u043C\u0443: "
+      - "Reklamlar\u0131 kald\u0131rmak:"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Windows/Storage/Capacity
+      TermType: 0
+      Description: 
+      Languages:
+      - Capacity
+      - "\u0412\u043C\u0435\u0441\u0442\u0438\u043C\u043E\u0441\u0442\u044C"
+      - 
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Windows/Storage/Description
+      TermType: 0
+      Description: 
+      Languages:
+      - 'Stores the gold smelted in the smelter.
+
+        It is not smelted when
+        the storage is full.'
+      - "\u0425\u0440\u0430\u043D\u0438\u0442 \u0432\u044B\u043F\u043B\u0430\u0432\u043B\u0435\u043D\u043D\u043E\u0435
+        \u0432 \u043F\u043B\u0430\u0432\u0438\u043B\u044C\u043D\u0435 \u0437\u043E\u043B\u043E\u0442\u043E.\n\u041E\u043D\u043E
+        \u043D\u0435 \u0432\u044B\u043F\u043B\u0430\u0432\u043B\u044F\u0435\u0442\u0441\u044F,
+        \u043A\u043E\u0433\u0434\u0430 \u0445\u0440\u0430\u043D\u0438\u043B\u0438\u0449\u0435
+        \u0437\u0430\u043F\u043E\u043B\u043D\u0435\u043D\u043E."
+      - 
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Windows/Storage/Filled
+      TermType: 0
+      Description: 
+      Languages:
+      - Filled
+      - "\u0417\u0430\u043F\u043E\u043B\u043D\u0435\u043D\u043E"
+      - 
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Windows/Storage/Storage
+      TermType: 0
+      Description: 
+      Languages:
+      - Storage
+      - "\u0425\u0440\u0430\u043D\u0438\u043B\u0438\u0449\u0435"
+      - 
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Windows/UpgradeBaseWindow/AttackUpgrades
+      TermType: 0
+      Description: 
+      Languages:
+      - Attack Upgrades
+      - "\u0423\u043B\u0443\u0447\u0448\u0435\u043D\u0438\u044F \u0410\u0442\u0430\u043A\u0438"
+      - 
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Windows/UpgradeBaseWindow/DefenceUpgrades
+      TermType: 0
+      Description: 
+      Languages:
+      - Defence Upgrades
+      - "\u0423\u043B\u0443\u0447\u0448\u0435\u043D\u0438\u044F \u0417\u0430\u0449\u0438\u0442\u044B"
+      - 
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Windows/UpgradeBaseWindow/LightningDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - Lightning strikes in a random place
+      - "\u0412 \u0441\u043B\u0443\u0447\u0430\u0439\u043D\u043E\u043C \u043C\u0435\u0441\u0442\u0435
+        \u0431\u044C\u0435\u0442 \u043C\u043E\u043B\u043D\u0438\u044F"
+      - 
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Windows/UpgradeBaseWindow/Permanent
+      TermType: 0
+      Description: 
+      Languages:
+      - 'Permanent '
+      - "\u041F\u043E\u0441\u0442\u043E\u044F\u043D\u043D\u044Be"
+      - 
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Windows/UpgradeBaseWindow/PermanentUpgrades
+      TermType: 0
+      Description: 
+      Languages:
+      - Permanent Upgrades
+      - "\u041F\u043E\u0441\u0442\u043E\u044F\u043D\u043D\u044B\u0435 \u0423\u043B\u0443\u0447\u0448\u0435\u043D\u0438\u044F"
+      - 
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Windows/UpgradeBaseWindow/ShockWaveDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - The tower releases a shock wave that deals damage
+      - "\u0411\u0430\u0448\u043D\u044F \u0432\u044B\u043F\u0443\u0441\u043A\u0430\u0435\u0442
+        \u0448\u043E\u043A\u043E\u0432\u0443\u044E \u0432\u043E\u043B\u043D\u0443
+        \u0441 \u043D\u0430\u043D\u0435\u0441\u0435\u043D\u0438\u0435\u043C \u0443\u0440\u043E\u043D\u0430."
+      - 
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Windows/UpgradeBaseWindow/Skills
+      TermType: 0
+      Description: 
+      Languages:
+      - Skills
+      - "\u0421\u043F\u043E\u0441\u043E\u0431\u043D\u043E\u0441\u0442\u0438"
+      - 
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Windows/UpgradeBaseWindow/SpikesDescription
+      TermType: 0
+      Description: 
+      Languages:
+      - Spikes around the tower that deal damage over time
+      - "\u0428\u0438\u043F\u044B \u0432\u043E\u043A\u0440\u0443\u0433 \u0431\u0430\u0448\u043D\u0438,
+        \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043D\u0430\u043D\u043E\u0441\u044F\u0442
+        \u043F\u0435\u0440\u0438\u043E\u0434\u0438\u0447\u0435\u0441\u043A\u0438\u0439
+        \u0443\u0440\u043E\u043D"
+      - 
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Windows/UpgradeBaseWindow/TowerSkills
+      TermType: 0
+      Description: 
+      Languages:
+      - Tower abilities
+      - "\u0421\u043F\u043E\u0441\u043E\u0431\u043D\u043E\u0441\u0442\u0438 \u0411\u0430\u0448\u043D\u0438"
+      - 
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Windows/UpgradeBaseWindow/UtilityUpgrades
+      TermType: 0
+      Description: 
+      Languages:
+      - Utility Upgrades
+      - "\u0412\u0441\u043F\u043E\u043C\u043E\u0433\u0430\u0442\u0435\u043B\u044C\u043D\u044B\u0435
+        \u0423\u043B\u0443\u0447\u0448\u0435\u043D\u0438\u044F"
+      - 
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Windows/WeeklyDailyBonus/DefaultChest
+      TermType: 0
+      Description: 
+      Languages:
+      - Chest x
+      - "\u0421\u0443\u043D\u0434\u0443\u043A x"
+      - "G\xF6\u011F\xFCs x"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Windows/WeeklyDailyBonus/Title
+      TermType: 0
+      Description: 
+      Languages:
+      - Daily Bonus
+      - "\u0414\u043D\u0435\u0432\u043D\u043E\u0439 \u0411\u043E\u043D\u0443\u0441"
+      - "G\xFCnl\xFCk bonus x"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Windows/WeeklyDailyBonus/VipChest
+      TermType: 0
+      Description: 
+      Languages:
+      - Special Chest x
+      - "\u0421\u043F\u0435\u0446\u0438\u0430\u043B\u044C\u043D\u044B\u0439 \u0441\u0443\u043D\u0434\u0443\u043A
+        x"
+      - "\xD6zel sand\u0131k x"
+      Flags: 000000
+      Languages_Touch: []
+    CaseInsensitiveTerms: 0
+    OnMissingTranslation: 1
+    mTerm_AppName: 
+    mLanguages:
+    - Name: English
+      Code: en
+      Flags: 0
+    - Name: Russian
+      Code: ru
+      Flags: 0
+    - Name: Turkish
+      Code: tr
+      Flags: 0
+    IgnoreDeviceLanguage: 0
+    _AllowUnloadingLanguages: 0
+    Google_WebServiceURL: https://script.google.com/macros/s/AKfycbzxFRBGlxa1DfhhEhsJ9I6zbdzTGmpVs_U3G3WUvylkKMJ5z-N-_DSnxp1tlMf-BYhs/exec
+    Google_SpreadsheetKey: 1RsAIBHkzgx_NudSP3Ro8KykKfM33ETFDTFi-5zo21DA
+    Google_SpreadsheetName: I2Loc FlyingTowerLands Localization
+    Google_LastUpdatedVersion: 1707883193752
+    Google_Password: 
+    GoogleUpdateFrequency: 1
+    GoogleInEditorCheckFrequency: 1
+    GoogleUpdateSynchronization: 0
+    GoogleUpdateDelay: 0
+    Assets: []
+    Spreadsheet_LocalFileName: 
+    Spreadsheet_LocalCSVSeparator: ','
+    Spreadsheet_LocalCSVEncoding: utf-8
+    Spreadsheet_SpecializationAsRows: 1
+    Spreadsheet_SortRows: 1

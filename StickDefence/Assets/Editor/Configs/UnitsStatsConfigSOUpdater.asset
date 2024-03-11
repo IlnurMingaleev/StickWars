@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5f3f67a75f3429090b80572c85b6307, type: 3}
+  m_Name: UnitsStatsConfigSOUpdater
+  m_EditorClassIdentifier: 
+  documentID: 1dV1jWH8q0vZdXHckJ9HrQMcwTtWyyXKSqdMvaJXljuc
+  _enemyUnitsStatsSO: {fileID: 11400000, guid: d77f93fd8f995024eb8229f22f5a1552, type: 2}
+  EnemyUnitConfigModel:
+  - UnitType: 0
+    Health: 40
+    Armor: 0
+    Damage: 10
+    Reloading: 0.5
+    RewardType: 3
+    RewardCount: 1
+  - UnitType: 1
+    Health: 70
+    Armor: 0
+    Damage: 15
+    Reloading: 0.7
+    RewardType: 3
+    RewardCount: 2
