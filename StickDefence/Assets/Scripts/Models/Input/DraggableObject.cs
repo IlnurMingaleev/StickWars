@@ -16,11 +16,10 @@ namespace Models.Input
         private PlayerView _playerView;
         private Vector2 _mousePosition;
         private float offsetX, offsetY;
-        public static bool _mouseButtonReleased;
 
         private Rigidbody2D rb;
         private Camera mainCamera;
-        private bool isDragging = false;
+        private bool _mouseButtonReleased = false;
         private Vector3 offset;
         
 
@@ -61,7 +60,7 @@ namespace Models.Input
                 }
             }
 
-            if (isDragging)
+            if (_mouseButtonReleased)
             {
                 Vector3 currentPosition;
 #if UNITY_EDITOR || UNITY_STANDALONE || UNITY_WEBGL
@@ -80,7 +79,7 @@ namespace Models.Input
             worldPosition.z = 0;
             if (Vector2.Distance(rb.position, worldPosition) < 1f) // Example threshold for starting drag
             {
-                isDragging = true;
+                _mouseButtonReleased = false;
                 offset = transform.position - worldPosition;
             }
         }
@@ -92,7 +91,7 @@ namespace Models.Input
 
         private void EndDrag()
         {
-            isDragging = false;
+            _mouseButtonReleased = true;
         }
 
 
@@ -100,7 +99,7 @@ namespace Models.Input
         {
             if (other.TryGetComponent(out PlayerView otherPlayerView))
             {
-                if (!isDragging && _playerView.UnitType == otherPlayerView.UnitType &&
+                if (_mouseButtonReleased && _playerView.UnitType == otherPlayerView.UnitType &&
                     (int) _playerView.UnitType != 2)
                 {
                     GameObject playerUnit = Instantiate(
