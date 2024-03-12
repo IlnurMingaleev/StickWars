@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Enums;
+using Models.Fabrics;
 using Models.Timers;
 using TonkoGames.Controllers.Core;
 using UI.UIManager;
@@ -13,6 +14,7 @@ namespace Models.Controllers
 {
     public class BoxSpawner:MonoBehaviour
     {
+        [Inject] private PrefabInject _prefabInject;
         [Inject] private ITimerService _timerService;
         [Inject] private IWindowManager _windowManager;
         [Inject] private ConfigManager _configManager;
@@ -40,6 +42,7 @@ namespace Models.Controllers
                         GameObject _currentPlayer = Instantiate(
                             _configManager.PrefabsUnitsSO.PlayerUnitPrefabs[PlayerUnitTypeEnum.PlayerOne],
                             tileToSpawn.position, tileToSpawn.rotation);
+                        _prefabInject.InjectGameObject(_currentPlayer);
                         _listOfAvailableTiles.Remove(tileToSpawn);
                         StartTimer();
 

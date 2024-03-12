@@ -1,4 +1,5 @@
-﻿using Enums;
+﻿using System;
+using Enums;
 using Models.Fabrics;
 using TMPro;
 using TonkoGames.Controllers.Core;
@@ -21,7 +22,9 @@ namespace Models.Input
         private Camera mainCamera;
         private bool _mouseButtonReleased = false;
         private Vector3 offset;
-        
+        [SerializeField] private LayerMask _layer;
+        private bool isDragging;
+
 
         void Start()
         {
@@ -30,8 +33,28 @@ namespace Models.Input
             mainCamera = Camera.main;
             _playerView = GetComponent<PlayerView>();
         }
+        
 
-        void Update()
+        private void OnMouseDown()
+        {
+            StartDrag();
+        }
+
+        private void OnMouseUp()
+        {
+            EndDrag();
+        }
+
+        private void OnMouseDrag()
+        {
+            if (isDragging)
+            {
+                transform.position = new Vector3(mainCamera.ScreenToWorldPoint(UnityEngine.Input.mousePosition).x,
+                    mainCamera.ScreenToWorldPoint(UnityEngine.Input.mousePosition).y, transform.position.z);
+            }
+        }
+
+        void UpdateOld()
         {
             // Handle mouse input
             if (UnityEngine.Input.GetMouseButtonDown(0))
@@ -60,17 +83,7 @@ namespace Models.Input
                 }
             }
 
-            if (_mouseButtonReleased)
-            {
-                Vector3 currentPosition;
-#if UNITY_EDITOR || UNITY_STANDALONE || UNITY_WEBGL
-                currentPosition = mainCamera.ScreenToWorldPoint(UnityEngine.Input.mousePosition) + offset;
-#else
-            currentPosition = mainCamera.ScreenToWorldPoint(Input.GetTouch(0).position) + offset;
-#endif
-                currentPosition.z = 0; // Ensure we're not moving the object in Z-axis
-                rb.MovePosition(currentPosition);
-            }
+           
         }
 
         private void StartDrag(Vector3 inputPosition)
@@ -79,7 +92,7 @@ namespace Models.Input
             worldPosition.z = 0;
             if (Vector2.Distance(rb.position, worldPosition) < 1f) // Example threshold for starting drag
             {
-                _mouseButtonReleased = false;
+                isDragging = true;
                 offset = transform.position - worldPosition;
             }
         }
@@ -91,11 +104,35 @@ namespace Models.Input
 
         private void EndDrag()
         {
-            _mouseButtonReleased = true;
+            isDragging =false;
+            var hit2d = Physics2D.Raycast(mainCamera.ScreenToWorldPoint(UnityEngine.Input.mousePosition),
+                mainCamera.transform.forward, 10f, _layer);
+
+            if (hit2d)
+            {
+                if(hit2d.collider.TryGetComponent(out PlayerView playerView) 
+                   && _playerView.UnitType == playerView.UnitType 
+                   && _playerView.UnitType != PlayerUnitTypeEnum.PLayerThree
+                   && hit2d.collider.gameObject != gameObject) 
+                {
+                    Debug.Log("This is what we hit" + hit2d.collider);
+                    var transform1 = hit2d.collider.transform;
+                    GameObject go =
+                        Instantiate(
+                            _configManager.PrefabsUnitsSO.PlayerUnitPrefabs[
+                               (PlayerUnitTypeEnum)((int)_playerView.UnitType+1)],
+                            transform1.position,
+                            transform1.rotation); 
+                    _prefabInject.InjectGameObject(go);
+                    Destroy(hit2d.collider.gameObject);
+                    Destroy(gameObject);
+                }
+            }
         }
+        
 
 
-        private void OnTriggerStay2D(Collider2D other)
+        /*private void OnTriggerStay2D(Collider2D other)
         {
             if (other.TryGetComponent(out PlayerView otherPlayerView))
             {
@@ -113,7 +150,7 @@ namespace Models.Input
 
                 }
             }
-        }
+        }*/
     }
 
 }

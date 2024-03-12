@@ -2,9 +2,9 @@
 {
     public enum PlayerUnitTypeEnum
     {
-        None,
-        PlayerOne,
-        PLayerTwo,
-        PLayerThree
+        None = 0,
+        PlayerOne = 1,
+        PLayerTwo = 2 ,
+        PLayerThree = 3,
     }
 }

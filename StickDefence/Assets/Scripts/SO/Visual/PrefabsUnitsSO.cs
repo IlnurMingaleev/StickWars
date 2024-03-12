@@ -23,6 +23,8 @@ namespace SO.Visual
         public IReadOnlyDictionary<PlayerUnitTypeEnum, GameObject> PlayerUnitPrefabs  => _dictionaryPlayerUnitPrefabs;
         public void Init()
         {
+            _dictionaryUnitPrefabs.Clear();
+            _dictionaryPlayerUnitPrefabs.Clear();
             foreach (var unitPrefab in _unitPrefabsModels)
                 _dictionaryUnitPrefabs.Add(unitPrefab.UnitType, unitPrefab.GO);
 
