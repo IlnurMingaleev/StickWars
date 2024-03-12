@@ -7,6 +7,7 @@ public class Slot : MonoBehaviour
     public int id;
     public Item currentItem;
     public SlotState state = SlotState.Empty;
+    public SlotTypeEnum slotType = SlotTypeEnum.None;
 
     public void CreateItem(int id) 
     {

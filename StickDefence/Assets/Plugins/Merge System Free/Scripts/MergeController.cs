@@ -63,40 +63,44 @@ public class MergeController : MonoBehaviour
         if(hit.collider != null)
         {
             //we are grabbing the item in a full slot
-            var slot = hit.transform.GetComponent<Slot>();
-            if (slot.state == SlotState.Full && carryingItem == null)
+            if (hit.collider.gameObject.TryGetComponent(out Slot slot))
             {
-                var itemGO = (GameObject)Instantiate(Resources.Load("Prefabs/ItemDummy"));
-                itemGO.transform.position = slot.transform.position;
-                itemGO.transform.localScale = Vector3.one * 2;
-
-                carryingItem = itemGO.GetComponent<ItemInfo>();
-                carryingItem.InitDummy(slot.id, slot.currentItem.id);
-
-                slot.ItemGrabbed();
-            }
-            //we are dropping an item to empty slot
-            else if (slot.state == SlotState.Empty && carryingItem != null)
-            {
-                slot.CreateItem(carryingItem.itemId);
-                Destroy(carryingItem.gameObject);
-            }
-
-            //we are dropping to full
-            else if (slot.state == SlotState.Full && carryingItem != null)
-            {
-                //check item in the slot
-                if (slot.currentItem.id == carryingItem.itemId)
+                if (slot.state == SlotState.Full && carryingItem == null)
                 {
-                    print("merged");
-                    OnItemMergedWithTarget(slot.id);
+                    var itemGO = (GameObject) Instantiate(Resources.Load("Prefabs/ItemDummy"));
+                    itemGO.transform.position = slot.transform.position;
+                    itemGO.transform.localScale = Vector3.one * 2;
+
+                    carryingItem = itemGO.GetComponent<ItemInfo>();
+                    carryingItem.InitDummy(slot.id, slot.currentItem.id);
+
+                    slot.ItemGrabbed();
+
                 }
-                else
+
+                //we are dropping an item to empty slot
+                else if (slot.state == SlotState.Empty && carryingItem != null)
                 {
-                    OnItemCarryFail();
+                    slot.CreateItem(carryingItem.itemId);
+                    Destroy(carryingItem.gameObject);
+                }
+
+                //we are dropping to full
+                else if (slot.state == SlotState.Full && carryingItem != null)
+                {
+                    //check item in the slot
+                    if (slot.currentItem.id == carryingItem.itemId)
+                    {
+                        print("merged");
+                        OnItemMergedWithTarget(slot.id);
+                    }
+                    else
+                    {
+                        SwitchItems(slot);
+                    }
                 }
             }
-            
+
         }
         else
         {
@@ -106,6 +110,16 @@ public class MergeController : MonoBehaviour
             }
             OnItemCarryFail();
         }
+    }
+
+    private void SwitchItems(Slot slot)
+    {
+        var targetSlot = GetSlotById(slot.id);
+        var startSlot = GetSlotById(carryingItem.slotId);
+        startSlot.CreateItem(targetSlot.currentItem.id);
+        Destroy(targetSlot.currentItem.gameObject);
+        targetSlot.CreateItem(carryingItem.itemId);
+        Destroy(carryingItem.gameObject);
     }
 
     void OnItemSelected()
@@ -143,12 +157,12 @@ public class MergeController : MonoBehaviour
             return;
         }
 
-        var rand = UnityEngine.Random.Range(0, slots.Length);
+        var rand = UnityEngine.Random.Range(0, slots.Length - 5);
         var slot = GetSlotById(rand);
 
         while (slot.state == SlotState.Full)
         {
-            rand = UnityEngine.Random.Range(0, slots.Length);
+            rand = UnityEngine.Random.Range(0, slots.Length- 5);
             slot = GetSlotById(rand);
         }
 
@@ -157,14 +171,23 @@ public class MergeController : MonoBehaviour
 
     bool AllSlotsOccupied()
     {
-        foreach (var slot in slots)
+        /*foreach (var slot in slots)
         {
             if (slot.state == SlotState.Empty)
             {
                 //empty slot found
                 return false;
             }
+        }*/
+        for (var i = 0; i < slots.Length - 5; i++)
+        {
+            if (slots[i].state == SlotState.Empty)
+            {
+                return false;
+            }
         }
+        
+
         //no slot empty 
         return true;
     }
