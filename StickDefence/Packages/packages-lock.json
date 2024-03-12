@@ -1,12 +1,5 @@
 {
   "dependencies": {
-    "com.norska-lib.unity-google-sheets-database": {
-      "version": "https://github.com/vetcat/UnityGoogleSheetsDatabase.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "d71aa4c7aa80c984ba0f7428c06ee89f2b8e3fc3"
-    },
     "com.unity.2d.animation": {
       "version": "9.0.4",
       "depth": 1,
