@@ -5,12 +5,13 @@ public class ItemInfo : MonoBehaviour
     public int slotId;
     public int itemId;
 
-    public SpriteRenderer visualRenderer;
+    public Transform unitParent;
+    public GameObject unitGameObject;
 
     public void InitDummy(int slotId, int itemId) 
     {
         this.slotId = slotId;
         this.itemId = itemId;
-        visualRenderer.sprite = Utils.GetItemVisualById(itemId);
+        unitGameObject = Instantiate(Utils.GetUnitById(itemId),unitParent);
     }
 }

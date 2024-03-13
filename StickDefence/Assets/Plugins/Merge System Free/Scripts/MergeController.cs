@@ -171,14 +171,6 @@ public class MergeController : MonoBehaviour
 
     bool AllSlotsOccupied()
     {
-        /*foreach (var slot in slots)
-        {
-            if (slot.state == SlotState.Empty)
-            {
-                //empty slot found
-                return false;
-            }
-        }*/
         for (var i = 0; i < slots.Length - 5; i++)
         {
             if (slots[i].state == SlotState.Empty)
@@ -186,8 +178,6 @@ public class MergeController : MonoBehaviour
                 return false;
             }
         }
-        
-
         //no slot empty 
         return true;
     }
