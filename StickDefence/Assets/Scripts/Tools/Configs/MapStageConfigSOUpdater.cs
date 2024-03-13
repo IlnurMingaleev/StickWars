@@ -4,6 +4,7 @@ using System.Linq;
 using Enums;
 using Models.Move;
 using Models.SO.Core;
+using NorskaLib.GoogleSheetsDatabase;
 using SO.Core;
 using UnityEditor;
 using UnityEngine;
@@ -11,7 +12,7 @@ using UnityEngine;
 namespace Tools.Configs
 {
     [CreateAssetMenu(fileName = "MapStageConfigSOUpdater", menuName = "MyAssets/EditorOnly/MapStageConfigSOUpdater", order = 2)]
-    public class MapStageConfigSOUpdater // : DataContainerBase
+    public class MapStageConfigSOUpdater  : DataContainerBase
     {
         [SerializeField] private MapStageSO _mapStageSo;
         
@@ -23,13 +24,13 @@ namespace Tools.Configs
             Debug.Log("Update MapStageConfigSOUpdater");
         }
         
-       // [PageName("MapStageReward")] 
+        [PageName("MapStageReward")] 
         [HideInInspector] public List<MapStageRewardConfig> MapStageReward;
         
-       // [PageName("MapBuilder")] 
+        [PageName("MapBuilder")] 
         [HideInInspector] public List<EditorMapStageLine> MapBuilder;
         
-       // [PageName("GroupUnits")] 
+        [PageName("GroupUnits")] 
         [HideInInspector] public List<EditorGroupUnitLine> GroupUnits;
         
         [Serializable]

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Models.SO.Core;
+using NorskaLib.GoogleSheetsDatabase;
 using SO.Core;
 using UnityEditor;
 using UnityEngine;
@@ -7,7 +8,7 @@ using UnityEngine;
 namespace Tools.Configs
 {
     [CreateAssetMenu(fileName = "PumpingConfigSOUpdater", menuName = "MyAssets/EditorOnly/PumpingConfigSOUpdater", order = 1)]
-    public class PumpingConfigSOUpdater// : DataContainerBase
+    public class PumpingConfigSOUpdater : DataContainerBase
     {
         [SerializeField] private PumpingConfigSO _pumpingConfig;
         
@@ -20,19 +21,19 @@ namespace Tools.Configs
             Debug.Log("Update Config");
         }
         
-       // [PageName("CoinFarmer")] 
+        [PageName("CoinFarmer")] 
         [HideInInspector] public List<CoinFarmerConfigModel> CoinFarmer;
 
-       // [PageName("BasePlayerPerks")] 
+        [PageName("BasePlayerPerks")] 
         [HideInInspector] public List<PlayerPerkConfigModel> BasePlayerPerks;
         
-       // [PageName("GamePlayerPerks")] 
+        [PageName("GamePlayerPerks")] 
         [HideInInspector] public List<PlayerPerkConfigModel> GamePlayerPerks;
         
-       // [PageName("PlayerSkills")] 
+        [PageName("PlayerSkills")] 
         [HideInInspector] public List<PlayerSkillConfigModel> PlayerSkills;
         
-       // [PageName("SkillCells")] 
+        [PageName("SkillCells")] 
         [HideInInspector] public List<SkillCellConfig> SkillCells;
         
         private void CompressionPumping()

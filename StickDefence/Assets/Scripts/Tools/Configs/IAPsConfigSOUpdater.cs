@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Models.SO.Iaps;
+using NorskaLib.GoogleSheetsDatabase;
 using SO.Iaps;
 using UnityEditor;
 using UnityEngine;
@@ -7,7 +8,7 @@ using UnityEngine;
 namespace Tools.Configs
 {
     [CreateAssetMenu(fileName = "IAPsConfigSOUpdater", menuName = "MyAssets/EditorOnly/IAPsConfigSOUpdater", order = 4)]
-    public class IAPsConfigSOUpdater// :DataContainerBase
+    public class IAPsConfigSOUpdater :DataContainerBase
     {
         [SerializeField] private IAPSO _iAPSO;
         
@@ -20,16 +21,16 @@ namespace Tools.Configs
             Debug.Log("Update Config");
         }
         
-        //[PageName("IAP")] 
+        [PageName("IAP")] 
         [HideInInspector] public List<IapRewardData> IapRewardData;
         
-        //[PageName("WeeklyReward")] 
+        [PageName("WeeklyReward")] 
         [HideInInspector] public List<RewardConfig> WeeklyReward;
         
-       // [PageName("LuckySpin")] 
+       [PageName("LuckySpin")] 
         [HideInInspector] public List<RewardConfig> LuckySpin;
         
-        //[PageName("InApp")] 
+        [PageName("InApp")] 
         [HideInInspector] public List<InAppRewardConfig> InApp;
         private void UpdateIAPSO()
         {
