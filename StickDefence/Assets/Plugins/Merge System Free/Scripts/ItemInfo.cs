@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class ItemInfo : MonoBehaviour 
@@ -13,5 +14,10 @@ public class ItemInfo : MonoBehaviour
         this.slotId = slotId;
         this.itemId = itemId;
         unitGameObject = Instantiate(Utils.GetUnitById(itemId),unitParent);
+    }
+
+    private void OnDestroy()
+    {
+        Destroy(unitGameObject);
     }
 }
