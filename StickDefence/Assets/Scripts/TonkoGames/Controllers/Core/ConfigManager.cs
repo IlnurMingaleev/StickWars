@@ -1,4 +1,5 @@
-﻿using SO.Core;
+﻿using Models.SO.Core;
+using SO.Core;
 using SO.Iaps;
 using SO.Visual;
 using UnityEngine;
@@ -14,12 +15,14 @@ namespace TonkoGames.Controllers.Core
         [field: SerializeField] public IAPSO IapSO { get; private set; }
         [field: SerializeField] public MapStageSO MapStageSO { get; private set; }
         [field: SerializeField] public PrefabsUnitsSO PrefabsUnitsSO { get; private set; }
+        [field: SerializeField] public StickmanUnitStatsSO StickmanUnitsSO { get; private set; }
 
         private void Awake()
         {
             SpritesSo.Init();
             PumpingConfigSo.Init();
             EnemyUnitsStatsSO.Init();
+            StickmanUnitsSO.Init();
             PrefabsUnitsSO.Init();
             IapSO.Init();
             MapStageSO.Init();
