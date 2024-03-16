@@ -10,10 +10,14 @@ namespace SO.Core
     {
         [SerializeField] private List<StickmanStatsConfig> _stickmanUnitsStatsConfigs;
 
+        public IReadOnlyCollection<StickmanStatsConfig> StickmanStatsConfigs => _stickmanUnitsStatsConfigs;
+
         private Dictionary<PlayerUnitTypeEnum,StickmanStatsConfig> _dictionaryStickmanConfigs =
             new Dictionary<PlayerUnitTypeEnum, StickmanStatsConfig>();
-        
-        
+
+        public IReadOnlyDictionary<PlayerUnitTypeEnum, StickmanStatsConfig> DictionaryStickmanConfigs =>
+            _dictionaryStickmanConfigs;
+
         public void Init()
         {
             _dictionaryStickmanConfigs.Clear();

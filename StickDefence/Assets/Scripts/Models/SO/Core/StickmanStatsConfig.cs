@@ -13,6 +13,8 @@ namespace Models.SO.Core
         public int Level;
         public int Damage;
         public float Reloading;
+        public int Price;
         
+
     }
 }

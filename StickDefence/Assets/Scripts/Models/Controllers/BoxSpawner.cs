@@ -23,10 +23,10 @@ namespace Models.Controllers
         private bool _cooldown;
         public List<Transform> _listOfAvailableTiles = new List<Transform>();
         private ITimerModel _timerModel;
-        private BattleWindow _battleWindow;
+        private BottomPanelWindow _battleWindow;
         private void Start()
         {
-            _battleWindow = _windowManager.GetWindow<BattleWindow>();
+            _battleWindow = _windowManager.GetWindow<BottomPanelWindow>();
             StartTimer();
         }
 
@@ -52,7 +52,7 @@ namespace Models.Controllers
 
         private void UpdateFill(float f)
         {
-            if (_battleWindow != null) _battleWindow.SetImageFill(1 - (f / _cooldownTime));
+            if (_battleWindow != null) _battleWindow.SetBoxImageFill(1 - (f / _cooldownTime));
         }
     }
 }

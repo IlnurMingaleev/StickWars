@@ -99,7 +99,7 @@ namespace Models.Battle
         private void OnStartBattleState()
         {
             _coreStateMachine.RunTimeStateMachine.SetRunTimeState(RunTimeStateEnum.Play);
-            _windowManager.Show<BattleWindow>();
+            _windowManager.Show<BottomPanelWindow>();
 
             _currentDayIndex.Value = 0;
         }
