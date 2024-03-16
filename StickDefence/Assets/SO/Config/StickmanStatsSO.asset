@@ -12,4 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b055d36b5d140ca85ec3d29ecdca37d, type: 3}
   m_Name: StickmanStatsSO
   m_EditorClassIdentifier: 
-  _stickmanUnitsStatsConfigs: []
+  _stickmanUnitsStatsConfigs:
+  - UnitType: 0
+    stickmanGO: {fileID: 0}
+    uiIcon: {fileID: 0}
+    Level: 0
+    Damage: 0
+    Reloading: 0
