@@ -1,3 +1,5 @@
+using Enums;
+using TonkoGames.Controllers.Core;
 using UnityEngine;
 
 namespace Models.Merge
@@ -10,11 +12,12 @@ namespace Models.Merge
         public Transform unitParent;
         public GameObject unitGameObject;
 
-        public void InitDummy(int slotId, int itemId) 
+        public void InitDummy(int slotId, int itemId, ConfigManager configManager) 
         {
             this.slotId = slotId;
             this.itemId = itemId;
-            unitGameObject = Instantiate(Utils.GetUnitById(itemId),unitParent);
+            unitGameObject =
+                Instantiate(configManager.StickmanUnitsSO.DictionaryStickmanConfigs[(PlayerUnitTypeEnum) itemId].stickmanGO,unitParent);
         }
 
         private void OnDestroy()

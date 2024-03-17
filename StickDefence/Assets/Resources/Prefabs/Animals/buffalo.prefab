@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4130944503364575243}
   - component: {fileID: 3570061527188312163}
+  - component: {fileID: 9025794488411581232}
   m_Layer: 0
   m_Name: buffalo
   m_TagString: Untagged
@@ -84,3 +85,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &9025794488411581232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5137887980892843910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25e34fbcc4a3e4dc2aa3f3b5d1916000, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0
+  parentSlot: {fileID: 0}
+  unitParent: {fileID: 0}
+  unitGameObject: {fileID: 0}

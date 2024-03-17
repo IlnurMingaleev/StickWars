@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Enums;
 using Models.SO.Core;
+using UniRx;
 using UnityEngine;
 
 namespace SO.Core
@@ -10,7 +11,7 @@ namespace SO.Core
     {
         [SerializeField] private List<StickmanStatsConfig> _stickmanUnitsStatsConfigs;
 
-        public IReadOnlyCollection<StickmanStatsConfig> StickmanStatsConfigs => _stickmanUnitsStatsConfigs;
+        public List<StickmanStatsConfig> StickmanStatsConfigs => _stickmanUnitsStatsConfigs;
 
         private Dictionary<PlayerUnitTypeEnum,StickmanStatsConfig> _dictionaryStickmanConfigs =
             new Dictionary<PlayerUnitTypeEnum, StickmanStatsConfig>();

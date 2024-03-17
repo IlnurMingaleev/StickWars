@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Enums;
 using TonkoGames.Controllers.Core;
+using Unity.VisualScripting;
 using UnityEngine;
 using VContainer;
 
@@ -18,14 +19,14 @@ namespace Models.Merge
 
         public void CreateItem(int id) 
         {
-            var itemGO = Instantiate(_configManager.StickmanUnitsSO.DictionaryStickmanConfigs[(PlayerUnitTypeEnum)id+1].stickmanGO);
+            var itemGO = Instantiate((GameObject)Resources.Load("Prefabs/Item"));
         
             itemGO.transform.SetParent(this.transform);
             itemGO.transform.localPosition = Vector3.zero;
             itemGO.transform.localScale = Vector3.one;
 
             currentItem = itemGO.GetComponent<Item>();
-            currentItem.Init(id, this);
+            currentItem.Init(id, this, _configManager);
 
             ChangeStateTo(SlotState.Full);
         }

@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using TonkoGames.Controllers.Core;
 using UnityEngine;
+using VContainer;
 
 namespace Models.Merge
 {
@@ -18,7 +20,7 @@ namespace Models.Merge
         private ItemInfo carryingItem;
 
         private Dictionary<int, Slot> slotDictionary;
-
+        [Inject] private ConfigManager _configManager;
         private void Awake() {
             instance = this;
             Utils.InitResources();
@@ -77,7 +79,7 @@ namespace Models.Merge
                         itemGO.transform.localScale = Vector3.one * 2;
 
                         carryingItem = itemGO.GetComponent<ItemInfo>();
-                        carryingItem.InitDummy(slot.id, slot.currentItem.id);
+                        carryingItem.InitDummy(slot.id, slot.currentItem.id,_configManager);
 
                         slot.ItemGrabbed();
 

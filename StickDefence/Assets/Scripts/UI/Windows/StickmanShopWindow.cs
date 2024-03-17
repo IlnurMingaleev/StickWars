@@ -1,7 +1,9 @@
 ﻿using Models.Merge;
 using TonkoGames.Controllers.Core;
+using UI.Common;
 using UI.Content.Shop;
 using UI.UIManager;
+using UniRx;
 using UnityEngine;
 using VContainer;
 
@@ -14,27 +16,43 @@ namespace UI.Windows
 
         [Header("Scroll Content Transform")]
         [SerializeField] private Transform _scrollContentTransform;
-        [Inject] private ConfigManager _configManager;
+
+        [Header("Close window Btn")] 
+        [SerializeField] private UIButton _closeWindowBtn;
         
+        [Inject] private ConfigManager _configManager;
+
+        public WindowPriority Priority = WindowPriority.AboveTopPanel;
+        private IPlaceableUnit _mergeController; 
+        public void Init(IPlaceableUnit mergeController)
+        {
+            _mergeController = mergeController;
+        }
 
         protected override void OnActivate()
         {
             base.OnActivate();
-
+            InitWindowButtons();
             InitStickmanUIItems();
+        }
+
+        private void InitWindowButtons()
+        {
+            _closeWindowBtn.OnClickAsObservable.Subscribe(_ =>
+            {
+                _manager.Hide(this);
+            }).AddTo(ActivateDisposables);
         }
 
         private void InitStickmanUIItems()
         {
-            while (_scrollContentTransform.childCount != 0)
+            if (_mergeController != null)
             {
-                Destroy(_scrollContentTransform.GetChild(0));
-            }
-            MergeController mergeController = FindObjectOfType<MergeController>();
-            foreach (var stickmanStatsConfig in _configManager.StickmanUnitsSO.StickmanStatsConfigs)
-            {
-                StickManUIItem stickman = Instantiate(_stickManUIItem, _scrollContentTransform);
-                stickman.Init(mergeController.GetComponent<IPlaceableUnit>(), ActivateDisposables, stickmanStatsConfig);
+                foreach (var stickmanStatsConfig in _configManager.StickmanUnitsSO.StickmanStatsConfigs)
+                {
+                    StickManUIItem stickman = Instantiate(_stickManUIItem, _scrollContentTransform);
+                    stickman.Init(_mergeController, ActivateDisposables, stickmanStatsConfig);
+                }
             }
         }
     }
