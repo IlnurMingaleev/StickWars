@@ -325,8 +325,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _levelLabel: {fileID: 7797914898391475042}
   _buyBtn: {fileID: 2470167701665861769}
-  _stickmanImage: {fileID: 0}
-  _buyConditionsLabel: {fileID: 0}
+  _stickmanImage: {fileID: 5071699049495972458}
+  _buyConditionsLabel: {fileID: 1653871754132406973}
 --- !u!1 &2028165205215295936
 GameObject:
   m_ObjectHideFlags: 0

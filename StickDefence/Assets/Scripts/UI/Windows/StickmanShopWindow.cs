@@ -48,7 +48,7 @@ namespace UI.Windows
         {
             if (_mergeController != null)
             {
-                foreach (var stickmanStatsConfig in _configManager.StickmanUnitsSO.StickmanStatsConfigs)
+                foreach (var stickmanStatsConfig in _configManager.StickmanUnitsSO.StickmanUnitsStatsConfigs)
                 {
                     StickManUIItem stickman = Instantiate(_stickManUIItem, _scrollContentTransform);
                     stickman.Init(_mergeController, ActivateDisposables, stickmanStatsConfig);

@@ -3,6 +3,7 @@ using Enums;
 using Models.Merge;
 using Models.SO.Core;
 using TMPro;
+using TonkoGames.Controllers.Core;
 using UI.Common;
 using UniRx;
 using UnityEngine;
@@ -29,9 +30,9 @@ namespace UI.Content.Shop
         private IPlaceableUnit _mergeController;
         private StickmanStatsConfig _statsConfig;
         public void Init(IPlaceableUnit mergeController, CompositeDisposable activateDisposable,
-            StickmanStatsConfig stickmanStatsConfig)
+           StickmanStatsConfig stickmanStatsConfig)
         {
-            _statsConfig = stickmanStatsConfig;
+            _statsConfig =stickmanStatsConfig ;
             _mergeController = mergeController;
             _stickmanUnitType = stickmanStatsConfig.UnitType;
             _levelLabel.text = stickmanStatsConfig.Level.ToString();
