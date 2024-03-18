@@ -34,7 +34,7 @@ namespace Tools.GameTools
             PlayerPumpingDataCash.SkipLatestValueOnSubscribe().Subscribe(b => Save(nameof(PlayerPumpingDataCash), PlayerPumpingDataCash.Value)).AddTo(_compositeDisposable);
             MapStagesDataCash.SkipLatestValueOnSubscribe().Subscribe(b => Save(nameof(MapStagesDataCash), MapStagesDataCash.Value)).AddTo(_compositeDisposable);
 #if DEVELOPMENT_BUILD || UNITY_EDITOR
-            Debugger.LogBold("PlayerUnit Prefs loaded");
+            Debugger.LogBold("BasePlayerUnit Prefs loaded");
 #endif
         }
 

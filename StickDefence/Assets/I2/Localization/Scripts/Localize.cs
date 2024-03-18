@@ -78,7 +78,7 @@ namespace I2.Loc
         #region Variable Translation Modifiers
 
 
-        public UnityEvent LocalizeEvent = new UnityEvent();             // This allows scripts to modify the translations :  e.g. "PlayerUnit {0} wins"  ->  "PlayerUnit Red wins"	
+        public UnityEvent LocalizeEvent = new UnityEvent();             // This allows scripts to modify the translations :  e.g. "BasePlayerUnit {0} wins"  ->  "BasePlayerUnit Red wins"	
 
 
         public static string MainTranslation, SecondaryTranslation;		// The callback should use and modify this variables
@@ -189,7 +189,7 @@ namespace I2.Loc
 				return;
 
 			{
-				LocalizeCallBack.Execute (this);  // This allows scripts to modify the translations :  e.g. "PlayerUnit {0} wins"  ->  "PlayerUnit Red wins"
+				LocalizeCallBack.Execute (this);  // This allows scripts to modify the translations :  e.g. "BasePlayerUnit {0} wins"  ->  "BasePlayerUnit Red wins"
                 LocalizeEvent.Invoke();
                 if (AllowParameters)
 					LocalizationManager.ApplyLocalizationParams (ref MainTranslation, gameObject, AllowLocalizedParameters);
