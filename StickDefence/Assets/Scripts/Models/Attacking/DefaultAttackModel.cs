@@ -9,7 +9,7 @@ namespace Models.Attacking
 {
     public abstract class DefaultAttackModel
     {
-        private const float WaitTickFind = 0.02f;
+          private const float WaitTickFind = 0.02f;
         
         private float _attackRange;
         private float _cooldownDuration;
@@ -68,7 +68,7 @@ namespace Models.Attacking
         public void StopPlay()
         {
             _isPlay = false;
-            ClearCooldownTimer();
+            ClearAllTimers();
         }
 
         protected void StartFindAttack()
@@ -81,11 +81,15 @@ namespace Models.Attacking
         {
         }
 
-        public void StartCooldown()
+        public void StartCooldown(Action endCooldown)
         {
             ClearAllTimers();
             IsEnemyFinded = false;
-            TimerModelCooldown = TimerService.AddGameTimer(_cooldownDuration, null, EndCooldown, false);
+            TimerModelCooldown = TimerService.AddGameTimer(_cooldownDuration, null, () =>
+            {
+                endCooldown?.Invoke();
+                EndCooldown();
+            }, false);
         }
 
         private void EndCooldown()

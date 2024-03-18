@@ -18,19 +18,20 @@ namespace Views.Health
         [SerializeField] private List<DamageableFlashAnim> _damageableFlash;
         
         private IEnumerator flashingCoroutine;
-        private int _healthBase = 0;
         private float _armor = 0;
         private bool _isInvulnerability = false;
         
         private ReactiveProperty<int> _healthCurrent = new ReactiveProperty<int>();
+        private ReactiveProperty<int> _healthMax = new ReactiveProperty<int>();
         private ReactiveProperty<bool> _isEmptyHealth = new ReactiveProperty<bool>();
 
         public IReadOnlyReactiveProperty<int> HealthCurrent => _healthCurrent;
+        public IReadOnlyReactiveProperty<int> HealthMax => _healthMax;
         public IReadOnlyReactiveProperty<bool> IsEmptyHealth => _isEmptyHealth;
         
         public void Init(int health, float armor)
         {
-            _healthBase = health;
+            _healthMax.Value = health;
             _healthCurrent.Value = health;
             _armor = armor;
         }
@@ -63,10 +64,40 @@ namespace Views.Health
         {
             _isInvulnerability = value;
         }
+
+        public void SetMaxHealth(int health)
+        {
+            if (_healthMax.Value == health)
+                return;
+
+            float deltaCurrent = (float)_healthCurrent.Value / (float)_healthMax.Value;
+            
+            _healthMax.Value = health;
+
+            _healthCurrent.Value = (int) (_healthMax.Value * deltaCurrent);
+        }
+
+        public void AddHealth(int health)
+        {
+            var tmpHealthCurrent = _healthCurrent.Value;
+            tmpHealthCurrent += health;
+
+            if (_healthCurrent.Value > _healthMax.Value)
+            {
+                tmpHealthCurrent = _healthMax.Value;
+            }
+            
+            _healthCurrent.Value = tmpHealthCurrent;
+        }
+
+        public void UpdateDefence(float armor)
+        {
+            _armor = armor;
+        }
         
         public void Resurrect()
         {
-            _healthCurrent.Value = _healthBase;
+            _healthCurrent.Value = _healthMax.Value;
             _isEmptyHealth.Value = false;
         }
 
