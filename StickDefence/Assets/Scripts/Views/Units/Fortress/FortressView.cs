@@ -18,7 +18,8 @@ namespace Views.Units.Fortress
         public Damageable Damageable => _damageable;
         public AttackBlockView AttackBlockView => _attackBlockView;
 
-        public IReadOnlyReactiveProperty<int> HealthCurrent = new ReactiveProperty<int>();//TODO добавить жизни 
+        public IReadOnlyReactiveProperty<int> HealthCurrent => _damageable.HealthCurrent;
+        public IReadOnlyReactiveProperty<int> HealthMax => _damageable.HealthMax;
         public IReadOnlyReactiveProperty<bool> IsActive => _isActive;
           
         public bool IsLaunchIsProgress => _battleFortressLaunch.IsLaunchIsProgress;
