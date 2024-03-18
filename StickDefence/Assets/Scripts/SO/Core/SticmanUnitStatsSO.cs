@@ -13,7 +13,7 @@ namespace SO.Core
 
         public List<StickmanStatsConfig> StickmanUnitsStatsConfigs => stickmanUnitsStatsConfigs;
 
-        private Dictionary<PlayerUnitTypeEnum,StickmanStatsConfig> _dictionaryStickmanConfigs =
+        private  Dictionary<PlayerUnitTypeEnum,StickmanStatsConfig> _dictionaryStickmanConfigs =
             new Dictionary<PlayerUnitTypeEnum, StickmanStatsConfig>();
 
         public IReadOnlyDictionary<PlayerUnitTypeEnum, StickmanStatsConfig> DictionaryStickmanConfigs =>

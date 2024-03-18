@@ -12,25 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b055d36b5d140ca85ec3d29ecdca37d, type: 3}
   m_Name: StickmanStatsSO
   m_EditorClassIdentifier: 
-  _stickmanUnitsStatsConfigs:
+  stickmanUnitsStatsConfigs:
   - UnitType: 1
     stickmanGO: {fileID: 7404111406138869555, guid: 75652605f8e89884d8944bb61ff73d9b, type: 3}
     uiIcon: {fileID: 21300000, guid: fada5bff7ecc14eab897fd34f27d6baf, type: 3}
     Level: 1
     Damage: 10
-    Reloading: 0.5
-    Price: 20
+    Reloading: 0.4
+    Price: 10
   - UnitType: 2
     stickmanGO: {fileID: 5137887980892843910, guid: 1069734ad23eb9c48b074cfcf7aa5ae3, type: 3}
     uiIcon: {fileID: 21300000, guid: d281ac3024ab74fa79b631dbe574758c, type: 3}
     Level: 2
     Damage: 20
-    Reloading: 0.3
-    Price: 40
+    Reloading: 0.4
+    Price: 20
   - UnitType: 3
     stickmanGO: {fileID: 2275183984961251134, guid: 295e45241148f3e4e8fa17e206b5aa44, type: 3}
     uiIcon: {fileID: 21300000, guid: f015d1882348d46139f2f76e19b4fece, type: 3}
     Level: 3
     Damage: 30
-    Reloading: 0.2
-    Price: 80
+    Reloading: 0.4
+    Price: 30
