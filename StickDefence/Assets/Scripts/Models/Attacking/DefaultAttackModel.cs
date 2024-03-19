@@ -102,7 +102,6 @@ namespace Models.Attacking
   
         public virtual void Attack()
         {
-            
         }
 
         private void ClearAllTimers()

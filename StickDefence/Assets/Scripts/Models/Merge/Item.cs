@@ -1,6 +1,15 @@
-﻿using Enums;
+﻿using System.Collections.Generic;
+using Enums;
+using Models.Battle;
+using Models.Timers;
+using Models.Units;
+using Models.Units.Units;
 using TonkoGames.Controllers.Core;
+using TonkoGames.Sound;
+using TonkoGames.StateMachine.Enums;
 using UnityEngine;
+using Views.Projectiles;
+using Views.Units.Units;
 
 namespace Models.Merge
 {
@@ -10,15 +19,19 @@ namespace Models.Merge
         public Slot parentSlot;
 
         public Transform unitParent;
-        public GameObject unitGameObject;
+        public PlayerView unitGameObject;
+        public BasePlayerUnit BasePlayerUnit;
 
-        public void Init(int id, Slot slot, ConfigManager configManager)
+        private static List<ProjectileView> _projectiles = new();
+        public void Init(int id, Slot slot, IPlayerUnitsBuilder playerBuilder)
         {
             this.id = id;
             this.parentSlot = slot;
-            unitGameObject = Instantiate(configManager.StickmanUnitsSO.DictionaryStickmanConfigs[(PlayerUnitTypeEnum) id].stickmanGO,unitParent);
+            unitGameObject = playerBuilder.InstantiateUnit((PlayerUnitTypeEnum) id, unitParent,parentSlot.slotType);
+            
         }
 
+       
         private void OnDestroy()
         {
             Destroy(unitGameObject);

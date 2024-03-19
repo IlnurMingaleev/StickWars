@@ -1,7 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Enums;
+using Models.Battle;
+using Models.Timers;
 using TonkoGames.Controllers.Core;
+using TonkoGames.Sound;
 using Unity.VisualScripting;
 using UnityEngine;
 using VContainer;
@@ -16,8 +19,10 @@ namespace Models.Merge
         public SlotTypeEnum slotType = SlotTypeEnum.None;
 
         [Inject] private ConfigManager _configManager;
+        [Inject] private ITimerService _timerService;
+        [Inject] private ISoundManager _soundManager;
 
-        public void CreateItem(int id) 
+        public void CreateItem(int id, IPlayerUnitsBuilder _playerUnitBuilder) 
         {
             var itemGO = Instantiate((GameObject)Resources.Load("Prefabs/Item"));
         
@@ -26,7 +31,7 @@ namespace Models.Merge
             itemGO.transform.localScale = Vector3.one;
 
             currentItem = itemGO.GetComponent<Item>();
-            currentItem.Init(id, this, _configManager);
+            currentItem.Init(id, this,_playerUnitBuilder);
 
             ChangeStateTo(SlotState.Full);
         }
@@ -48,7 +53,7 @@ namespace Models.Merge
             {
                 case SlotState.Empty: 
 
-                    CreateItem(id);
+                   // CreateItem(id);
                     ChangeStateTo(SlotState.Full);
                     break;
 

@@ -8,11 +8,11 @@ using Views.Units.Units;
 
 namespace Models.Units.Units
 {
-    public class BasePlayerUnitUnitOne: BasePlayerUnit
+    public class BasePlayerUnitUnitThree: BasePlayerUnit
     {
         private static readonly int Dead = Animator.StringToHash("Dead");
         private static readonly int Attack = Animator.StringToHash("Attack");
-        public BasePlayerUnitUnitOne(PlayerView playerView, ITimerService timerService, ISoundManager soundManager) : base(playerView, timerService, soundManager)
+        public BasePlayerUnitUnitThree(PlayerView playerView, ITimerService timerService, ISoundManager soundManager) : base(playerView, timerService, soundManager)
         {
         }
         
@@ -21,8 +21,7 @@ namespace Models.Units.Units
         {
             AttackModel = new RangeOneTargetAttack();
             AttackModel.Init(View.AttackBlockView, TimerService, SoundManager, StartAttackAnim);
-            AttackModel.InitProjectileActions(createProjectile, projectileDestroyed);
-            AttackModel.SetProjectile(View.AttackBlockView.ProjectileView);
+            base.InitAttack(createProjectile, projectileDestroyed);
         }
         protected override void StartAttackAnim()
         {

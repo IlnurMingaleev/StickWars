@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Models.Battle;
 using TonkoGames.Controllers.Core;
 using UnityEngine;
 using VContainer;
@@ -12,22 +13,33 @@ namespace Models.Merge
 
     public class MergeController : MonoBehaviour, IPlaceableUnit
     {
+        [SerializeField] private PlayerUnitsBuilder _playerUnitsBuilder;
         public static MergeController instance;
-
+        
         public Slot[] slots;
 
         private Vector3 _target;
         private ItemInfo carryingItem;
 
         private Dictionary<int, Slot> slotDictionary;
+        private IPlayerUnitsBuilder _playerBuilder;
         [Inject] private ConfigManager _configManager;
-        private void Awake() {
+
+        private void Awake()
+        {
             instance = this;
+            _playerUnitsBuilder.GetComponent<IPlayerUnitsBuilder>();
             Utils.InitResources();
         }
 
-        private void Start() 
+        public void Init()
         {
+            
+        }
+
+        private void Start()
+        {
+            _playerBuilder = _playerUnitsBuilder.GetComponent<IPlayerUnitsBuilder>();
             slotDictionary = new Dictionary<int, Slot>();
 
             for (int i = 0; i < slots.Length; i++)
@@ -88,7 +100,7 @@ namespace Models.Merge
                     //we are dropping an item to empty slot
                     else if (slot.state == SlotState.Empty && carryingItem != null)
                     {
-                        slot.CreateItem(carryingItem.itemId);
+                        slot.CreateItem(carryingItem.itemId,_playerBuilder);
                         Destroy(carryingItem.gameObject);
                     }
 
@@ -123,9 +135,9 @@ namespace Models.Merge
         {
             var targetSlot = GetSlotById(slot.id);
             var startSlot = GetSlotById(carryingItem.slotId);
-            startSlot.CreateItem(targetSlot.currentItem.id);
+            startSlot.CreateItem(targetSlot.currentItem.id, _playerBuilder);
             Destroy(targetSlot.currentItem.gameObject);
-            targetSlot.CreateItem(carryingItem.itemId);
+            targetSlot.CreateItem(carryingItem.itemId,_playerBuilder);
             Destroy(carryingItem.gameObject);
         }
 
@@ -144,7 +156,7 @@ namespace Models.Merge
             var slot = GetSlotById(targetSlotId);
             Destroy(slot.currentItem.gameObject);
         
-            slot.CreateItem(carryingItem.itemId + 1);
+            slot.CreateItem(carryingItem.itemId + 1, _playerBuilder);
 
             Destroy(carryingItem.gameObject);
         }
@@ -152,7 +164,7 @@ namespace Models.Merge
         void OnItemCarryFail()
         {
             var slot = GetSlotById(carryingItem.slotId);
-            slot.CreateItem(carryingItem.itemId);
+            slot.CreateItem(carryingItem.itemId,_playerBuilder);
             Destroy(carryingItem.gameObject);
         }
 
@@ -173,7 +185,7 @@ namespace Models.Merge
                 slot = GetSlotById(rand);
             }
 
-            slot.CreateItem(0);
+            slot.CreateItem(0,_playerBuilder);
         }
 
         public void PlaceDefinedItem(int level)
@@ -194,7 +206,7 @@ namespace Models.Merge
                 }
 
             }
-            slot.CreateItem(level);
+            slot.CreateItem(level,_playerBuilder);
         }
 
 

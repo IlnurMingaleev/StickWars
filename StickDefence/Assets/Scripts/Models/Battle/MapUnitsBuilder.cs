@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Enums;
+using Models.Merge;
 using TonkoGames.Controllers.Core;
 using TonkoGames.StateMachine;
 using TonkoGames.StateMachine.Enums;
@@ -25,7 +26,7 @@ namespace Models.Battle
     {
         [SerializeField] private MovementPathGroups _meleeMovementPathGroups;
         [SerializeField] private Transform _parentSpawnPoint;
-          [Inject] private readonly IPlayer _player;
+        [Inject] private readonly IPlayer _player;
         [Inject] private readonly ConfigManager _configManager;
         [Inject] private readonly ITimerService _timerService;
         [Inject] private readonly ICoreStateMachine _coreStateMachine;
@@ -37,6 +38,7 @@ namespace Models.Battle
         private Queue<MapStageDayGroupConfig> DayGroups = new();
         private ReactiveProperty<bool> _isEmptyDay      = new();
         private List<ProjectileView> _projectiles = new();
+        private List<ProjectileView> _playerProjectiles = new();
 
         public IReadOnlyReactiveProperty<bool> IsEmptyDay => _isEmptyDay;
 

@@ -21,7 +21,8 @@ namespace Models.Move
 
         public void StopMove()
         {
-            _rigidbody2D.velocity = Vector2.zero;
+            if(_rigidbody2D != null)
+                _rigidbody2D.velocity = Vector2.zero;
         }
 
         public void ContinueMove()

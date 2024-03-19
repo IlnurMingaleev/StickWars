@@ -2,6 +2,7 @@
 using Anim.Battle.Fortress;
 using Enums;
 using Models.Attacking;
+using Models.Merge;
 using Models.Move;
 using Models.Units;
 using UniRx;
@@ -21,6 +22,7 @@ namespace Views.Units.Units
         [SerializeField] private Animator _bodyAnimator;
         [SerializeField] private float _timeToDestroy = 1f;
         [SerializeField] private UnitAnimationCallbacks _unitAnimationCallbacks;
+
         public Animator BodyAnimator => _bodyAnimator;
         public float TimerToDestroy => _timeToDestroy;
         public AttackBlockView AttackBlockView => _attackBlockView;
@@ -36,6 +38,8 @@ namespace Views.Units.Units
             _enableAction = enableAction;
             _disableAction = disableAction;
         }
+
+       
 
         private void OnEnable()
         {
