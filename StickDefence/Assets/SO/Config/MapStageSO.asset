@@ -59,17 +59,17 @@ MonoBehaviour:
     - UnitType: 1
       Count: 3
       Delay: 0.2
-      MovementType: 0
+      MovementType: 1
     - UnitType: 1
       Count: 1
       Delay: 1
-      MovementType: 0
+      MovementType: 1
   - Units:
     - UnitType: 1
       Count: 3
       Delay: 0.2
-      MovementType: 0
+      MovementType: 1
     - UnitType: 1
       Count: 1
       Delay: 1
-      MovementType: 0
+      MovementType: 1

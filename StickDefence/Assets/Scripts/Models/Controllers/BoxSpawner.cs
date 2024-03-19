@@ -30,7 +30,7 @@ namespace Models.Controllers
         private void Start()
         {
             _bottomPanelWindow = _windowManager.GetWindow<BottomPanelWindow>();
-            StartTimer();
+           // StartTimer();
         }
 
         private void StartTimer()

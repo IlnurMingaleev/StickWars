@@ -1,5 +1,6 @@
 ﻿using System;
 using Models.Attacking;
+using Models.Attacking.TypesAttack;
 using Models.SO.Core;
 using Models.Timers;
 using TonkoGames.Sound;
@@ -51,6 +52,7 @@ namespace Models.Units
         {
             CreateProjectileAction = createProjectile;
             ProjectileDestroyedAction = projectileDestroyed;
+            ((RangeOneTargetAttack)(AttackModel)).SetProjectile(View.AttackBlockView.ProjectileView);
         }
 
         public void InitUnitConfigStats(UnitStatsConfig unitStatsConfig)
@@ -60,6 +62,7 @@ namespace Models.Units
             _isMoving.Subscribe(OnWalk).AddTo(_disposable);
             AttackModel.SetDamage(UnitStatsConfig.Damage);
             AttackModel.SetReloading(UnitStatsConfig.Reloading);
+           
         }
 
         protected virtual void OnEnable()

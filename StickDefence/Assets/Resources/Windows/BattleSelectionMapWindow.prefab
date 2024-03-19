@@ -51,6 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isUndestroyable: 0
   _isTransparent: 1
+  _windowAnimations: []
 --- !u!1 &87720099187689941
 GameObject:
   m_ObjectHideFlags: 0

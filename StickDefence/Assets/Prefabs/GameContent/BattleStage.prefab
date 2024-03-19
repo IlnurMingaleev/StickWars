@@ -2770,7 +2770,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6813664277786911632}
   - component: {fileID: 2592980357291104582}
-  - component: {fileID: 52814994006189740}
+  - component: {fileID: 2662367301964055688}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -2805,7 +2805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08145fbdc07494f3da9fb5cbc4201ff0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerUnitsBuilder: {fileID: 52814994006189740}
+  _playerUnitsBuilder: {fileID: 2662367301964055688}
   slots:
   - {fileID: 3324015660068254981}
   - {fileID: 5237987973263514145}
@@ -2822,7 +2822,7 @@ MonoBehaviour:
   - {fileID: 3460998694693710280}
   - {fileID: 6325849333178827554}
   - {fileID: 1342114334801461193}
---- !u!114 &52814994006189740
+--- !u!114 &2662367301964055688
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2831,7 +2831,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4313611044068903092}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17b63bad1c8d4fb69a9a876784b87881, type: 3}
+  m_Script: {fileID: 11500000, guid: 2ff7a4e804284d949eb25484ddabbe3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4339926305081468534

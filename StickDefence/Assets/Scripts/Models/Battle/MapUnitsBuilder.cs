@@ -13,6 +13,7 @@ using Models.Units;
 using Models.Units.Units;
 using TonkoGames.Sound;
 using UniRx;
+using Unity.VisualScripting;
 using UnityEngine;
 using VContainer;
 using Views.Move;
@@ -224,6 +225,7 @@ namespace Models.Battle
                 case UnitMovementTypeEnum.Melee:
                     return _meleeMovementPathGroups.GetRandomPath();
                 case UnitMovementTypeEnum.Range:
+                    return _meleeMovementPathGroups.GetRandomPath();
                     break;
                 case UnitMovementTypeEnum.Mix:
                     break;

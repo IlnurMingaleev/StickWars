@@ -653,7 +653,6 @@ GameObject:
   - component: {fileID: 7518601619015936490}
   - component: {fileID: 6411806245254276639}
   - component: {fileID: 1289460091143962387}
-  - component: {fileID: 7971002451792104508}
   m_Layer: 8
   m_Name: Skeleton
   m_TagString: Untagged
@@ -698,7 +697,7 @@ MonoBehaviour:
   _attackBlockView: {fileID: 1289460091143962387}
   _unitCollider: {fileID: 6411806245254276639}
   _timeToDestroy: 1
-  _unitAnimationCallbacks: {fileID: 7971002451792104508}
+  _unitAnimationCallbacks: {fileID: 4743194130689648571}
 --- !u!114 &8556914971002716062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -785,7 +784,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <PosAttack>k__BackingField: {fileID: 4276627545179877204}
-  <AttackRange>k__BackingField: 0.5
+  <AttackRange>k__BackingField: 30
   <ContactFilter>k__BackingField:
     useTriggers: 0
     useLayerMask: 1
@@ -801,18 +800,6 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   <ProjectileView>k__BackingField: {fileID: -4069476757777184573, guid: 2531e8442480fb343afa046281eda6c7, type: 3}
---- !u!114 &7971002451792104508
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5685439457548488733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 851107b814714a0cb8d5f4861ee58a54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5686533308095089061
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,7 +825,7 @@ Transform:
   m_GameObject: {fileID: 5686533308095089061}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.14, y: 0, z: 0}
+  m_LocalPosition: {x: 2.43, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1198,6 +1185,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8856646366096683646}
   - component: {fileID: 2905128584492900397}
+  - component: {fileID: 4743194130689648571}
   m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
@@ -1248,3 +1236,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4743194130689648571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9042013202826404499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 851107b814714a0cb8d5f4861ee58a54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

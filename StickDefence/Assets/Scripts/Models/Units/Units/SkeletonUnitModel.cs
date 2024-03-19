@@ -21,8 +21,9 @@ namespace Models.Units.Units
         public override void InitAttack(Action<ProjectileView> createProjectile,
             Action<ProjectileView> projectileDestroyed)
         {
-            AttackModel = new MeleeOneTargetAttack();
+            AttackModel = new RangeOneTargetAttack();
             AttackModel.Init(View.AttackBlockView, TimerService, SoundManager, StartAttackAnim);
+          
             base.InitAttack(createProjectile, projectileDestroyed);
         }
 
