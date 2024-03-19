@@ -1,6 +1,7 @@
 ﻿
 using System.Collections.Generic;
 using Enums;
+using Models.Fortress;
 using Models.Merge;
 using TonkoGames.Controllers.Core;
 using TonkoGames.StateMachine;
@@ -33,7 +34,7 @@ namespace Models.Battle
         private IBattleStateMachine BattleStateMachine => _coreStateMachine.BattleStateMachine;
         private IRunTimeStateMachine RunTimeStateMachine => _coreStateMachine.RunTimeStateMachine;
 
-        private readonly List<BasePlayerUnit> _spawnedUnits   = new();
+        private readonly List<PlayerUnitModel> _spawnedUnits   = new();
        // private Queue<MapStageDayGroupConfig> DayGroups = new();
         private ReactiveProperty<bool> _isEmptyDay      = new();
         private List<ProjectileView> _projectiles = new();
@@ -69,10 +70,12 @@ namespace Models.Battle
 
         private void OnPlay()
         {
+            /*
             foreach (var baseUnit in _spawnedUnits)
             {
                 baseUnit.OnPlay();
             }
+            */
             
             foreach (var projectileView in _projectiles)
             {
@@ -83,10 +86,10 @@ namespace Models.Battle
 
         private void OnPause()
         {
-            foreach (var baseUnit in _spawnedUnits)
+            /*foreach (var baseUnit in _spawnedUnits)
             {
                 baseUnit.OnPause();
-            }
+            }*/
             
             foreach (var projectileView in _projectiles)
             {
@@ -110,11 +113,10 @@ namespace Models.Battle
         {
             var unitConfig = _configManager.StickmanUnitsSO.DictionaryStickmanConfigs[unitType];
             var unitView = Instantiate(unitConfig.stickmanGO,parent).GetComponent<PlayerView>();
-            var baseUnit = UnitCreate(unitType, unitView);
-            baseUnit.InitParentSlotType(slotType);
-            baseUnit.InitAttack(CreateProjectile, RemoveProjectile);
-            baseUnit.InitUnitConfigStats(unitConfig);
-            _spawnedUnits.Add(baseUnit);
+            //var baseUnit = UnitCreate(unitType, unitView); ;
+           // baseUnit.InitAttack(CreateProjectile, RemoveProjectile);
+          
+           // _spawnedUnits.Add(baseUnit);
             return unitView;
         }
         
@@ -134,7 +136,7 @@ namespace Models.Battle
 
      
 
-        private BasePlayerUnitUnitOne UnitCreate(PlayerUnitTypeEnum unitType, PlayerView unitView)
+        /*private PlayerUnitModel UnitCreate(PlayerUnitTypeEnum unitType, PlayerView unitView)
         {
             /*switch (unitType)
             {
@@ -144,10 +146,10 @@ namespace Models.Battle
                     return new BasePlayerUnitUnitTwo(unitView, _timerService, _soundManager);
                 case PlayerUnitTypeEnum.PLayerThree:
                     return new
-            }*/
-
-            return new BasePlayerUnitUnitOne(unitView, _timerService, _soundManager);
-        }
+            }#1#
+            
+            //return new (unitView,  _soundManager,_timerService, _player.Pumping);
+        }*/
         
         private void CreateProjectile(ProjectileView projectileView)
         {

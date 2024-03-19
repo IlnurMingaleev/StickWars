@@ -13,7 +13,7 @@ namespace Models.Merge
 
     public class MergeController : MonoBehaviour, IPlaceableUnit
     {
-        [SerializeField] private PlayerUnitsBuilder _playerUnitsBuilder;
+        [SerializeField] private PlayerUnitsBuilderTwo _playerUnitsBuilder;
         public static MergeController instance;
         
         public Slot[] slots;
@@ -22,7 +22,7 @@ namespace Models.Merge
         private ItemInfo carryingItem;
 
         private Dictionary<int, Slot> slotDictionary;
-        private IPlayerUnitsBuilder _playerBuilder;
+        private IPlayerUnitsBuilderTwo _playerBuilder;
         [Inject] private ConfigManager _configManager;
 
         private void Awake()
@@ -39,7 +39,7 @@ namespace Models.Merge
 
         private void Start()
         {
-            _playerBuilder = _playerUnitsBuilder.GetComponent<IPlayerUnitsBuilder>();
+            _playerBuilder = _playerUnitsBuilder.GetComponent<IPlayerUnitsBuilderTwo>();
             slotDictionary = new Dictionary<int, Slot>();
 
             for (int i = 0; i < slots.Length; i++)

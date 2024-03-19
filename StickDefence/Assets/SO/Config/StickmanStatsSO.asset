@@ -21,14 +21,14 @@ MonoBehaviour:
     Reloading: 0.4
     Price: 10
   - UnitType: 2
-    stickmanGO: {fileID: 7404111406138869555, guid: 9377626fffaa95d4d816e00388bfc740, type: 3}
+    stickmanGO: {fileID: 5155550405894979362, guid: 9a9372f638a52ce49a7efccf2e874d8a, type: 3}
     uiIcon: {fileID: 21300000, guid: d281ac3024ab74fa79b631dbe574758c, type: 3}
     Level: 2
     Damage: 20
     Reloading: 0.4
     Price: 20
   - UnitType: 3
-    stickmanGO: {fileID: 7404111406138869555, guid: eef3755771ca0964d87e9c0885b65531, type: 3}
+    stickmanGO: {fileID: 5155550405894979362, guid: ae74a7b40554ca04aacde7b5bfc53999, type: 3}
     uiIcon: {fileID: 21300000, guid: f015d1882348d46139f2f76e19b4fece, type: 3}
     Level: 3
     Damage: 30

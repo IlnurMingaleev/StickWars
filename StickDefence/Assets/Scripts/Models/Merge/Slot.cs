@@ -22,7 +22,7 @@ namespace Models.Merge
         [Inject] private ITimerService _timerService;
         [Inject] private ISoundManager _soundManager;
 
-        public void CreateItem(int id, IPlayerUnitsBuilder _playerUnitBuilder) 
+        public void CreateItem(int id, IPlayerUnitsBuilderTwo _playerUnitBuilder) 
         {
             var itemGO = Instantiate((GameObject)Resources.Load("Prefabs/Item"));
         

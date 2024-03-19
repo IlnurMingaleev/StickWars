@@ -98,6 +98,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 5739344803090499027}
+--- !u!1 &2080448346218016634
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8215282934975675961}
+  - component: {fileID: 7625247088405813228}
+  m_Layer: 0
+  m_Name: AnimatorStates
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8215282934975675961
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080448346218016634}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 383299158994225065}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7625247088405813228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080448346218016634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96523fb024cd4389b4d2c94484855bb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 7508388060632036649}
+  _fortressCallback: {fileID: 4941319511185211642}
 --- !u!1 &3268621565803691674
 GameObject:
   m_ObjectHideFlags: 0
@@ -753,8 +799,11 @@ GameObject:
   m_Component:
   - component: {fileID: 383299158994225065}
   - component: {fileID: 409171228503117385}
-  - component: {fileID: 2057460991719956219}
   - component: {fileID: 5083617992331487885}
+  - component: {fileID: 4202860140058619754}
+  - component: {fileID: -4199951652069978523}
+  - component: {fileID: 7508388060632036649}
+  - component: {fileID: 4941319511185211642}
   m_Layer: 0
   m_Name: bear
   m_TagString: Untagged
@@ -775,6 +824,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 8215282934975675961}
   - {fileID: 1552433648912645523}
   - {fileID: 4878704957947723678}
   m_Father: {fileID: 0}
@@ -831,24 +881,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2057460991719956219
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7404111406138869555}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccb6943f3085468b87cbcef6e8e7e1c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _unitType: 1
-  _attackBlockView: {fileID: 5083617992331487885}
-  _body: {fileID: 4878704957947723678}
-  _bodyAnimator: {fileID: 8705765273581096819}
-  _timeToDestroy: 1
-  _unitAnimationCallbacks: {fileID: 8284421255381206679}
 --- !u!114 &5083617992331487885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -878,6 +910,67 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   <ProjectileView>k__BackingField: {fileID: -4069476757777184573, guid: 2531e8442480fb343afa046281eda6c7, type: 3}
+--- !u!114 &4202860140058619754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7404111406138869555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff479e8d7d2e4503975e4e677bd84fad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damageableFlash: []
+--- !u!114 &-4199951652069978523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7404111406138869555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 826af163518744be978263c568cd8d38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _battleFortressLaunch: {fileID: 7625247088405813228}
+  _damageable: {fileID: 4202860140058619754}
+  _attackBlockView: {fileID: 5083617992331487885}
+--- !u!95 &7508388060632036649
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7404111406138869555}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c10b07e775176024985630589ee587df, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4941319511185211642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7404111406138869555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61901eff2e13484fb34ceda12f563852, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7557133080960122536
 GameObject:
   m_ObjectHideFlags: 0

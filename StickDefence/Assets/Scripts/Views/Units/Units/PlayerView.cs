@@ -22,12 +22,14 @@ namespace Views.Units.Units
         [SerializeField] private Animator _bodyAnimator;
         [SerializeField] private float _timeToDestroy = 1f;
         [SerializeField] private UnitAnimationCallbacks _unitAnimationCallbacks;
-
+        [SerializeField] private Damageable _damageable;
+        private ReactiveProperty<bool> _isActive = new ReactiveProperty<bool>(false);
         public Animator BodyAnimator => _bodyAnimator;
+        public Damageable Damageable => _damageable;
         public float TimerToDestroy => _timeToDestroy;
         public AttackBlockView AttackBlockView => _attackBlockView;
         public UnitAnimationCallbacks UnitAnimationCallbacks => _unitAnimationCallbacks;
-
+        public IReadOnlyReactiveProperty<bool> IsActive => _isActive;
         public PlayerUnitTypeEnum UnitType => _unitType;
         
         private Action _enableAction;

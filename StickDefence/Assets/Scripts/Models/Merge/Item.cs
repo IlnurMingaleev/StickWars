@@ -9,6 +9,7 @@ using TonkoGames.Sound;
 using TonkoGames.StateMachine.Enums;
 using UnityEngine;
 using Views.Projectiles;
+using Views.Units.Fortress;
 using Views.Units.Units;
 
 namespace Models.Merge
@@ -19,15 +20,15 @@ namespace Models.Merge
         public Slot parentSlot;
 
         public Transform unitParent;
-        public PlayerView unitGameObject;
+        public PlayerViewTwo unitGameObject;
         public BasePlayerUnit BasePlayerUnit;
 
         private static List<ProjectileView> _projectiles = new();
-        public void Init(int id, Slot slot, IPlayerUnitsBuilder playerBuilder)
+        public void Init(int id, Slot slot, IPlayerUnitsBuilderTwo playerBuilder)
         {
             this.id = id;
             this.parentSlot = slot;
-            unitGameObject = playerBuilder.InstantiateUnit((PlayerUnitTypeEnum) id, unitParent,parentSlot.slotType);
+            unitGameObject = playerBuilder.InitStageLoadBattle((PlayerUnitTypeEnum) id, unitParent,parentSlot.slotType);
             
         }
 
