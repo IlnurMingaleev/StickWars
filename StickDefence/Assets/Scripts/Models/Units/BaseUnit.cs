@@ -52,7 +52,7 @@ namespace Models.Units
         {
             CreateProjectileAction = createProjectile;
             ProjectileDestroyedAction = projectileDestroyed;
-            ((RangeOneTargetAttack)(AttackModel)).SetProjectile(View.AttackBlockView.ProjectileView);
+            
         }
 
         public void InitUnitConfigStats(UnitStatsConfig unitStatsConfig)

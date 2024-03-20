@@ -23,8 +23,8 @@ namespace Models.Units.Units
         {
             AttackModel = new RangeOneTargetAttack();
             AttackModel.Init(View.AttackBlockView, TimerService, SoundManager, StartAttackAnim);
-          
-            base.InitAttack(createProjectile, projectileDestroyed);
+            ((RangeOneTargetAttack) AttackModel).SetProjectile(View.AttackBlockView.ProjectileView);
+            ((RangeOneTargetAttack) AttackModel).InitProjectileActions(createProjectile,projectileDestroyed);
         }
 
         protected override void OnDead(bool value)
