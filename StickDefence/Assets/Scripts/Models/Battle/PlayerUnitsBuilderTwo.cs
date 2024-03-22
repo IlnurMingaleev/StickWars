@@ -86,6 +86,7 @@ namespace Models.Battle
             var unitView = Instantiate(unitConfig.stickmanGO,parent).GetComponent<PlayerViewTwo>();
             _fortressView = unitView;
             _fortressModel = new PlayerUnitModel(unitView, _soundManager, _timerService, _player.Pumping);
+            _fortressModel.SetParentSlotType(slotType);
             _fortressModel.InitAttack(CreateProjectile, RemoveProjectile);
             _fortressModel.InitSubActive();
             playerViewTwo = unitView;

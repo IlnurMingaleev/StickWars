@@ -2,6 +2,7 @@
 using Enums;
 using TonkoGames.Sound;
 using Models.Attacking.TypesAttack;
+using Models.Merge;
 using Models.Player;
 using Models.Timers;
 using UniRx;
@@ -21,11 +22,27 @@ namespace Models.Fortress
         private readonly ITimerService _timerService;
         private bool _isDead;
         
+        private ReactiveProperty<SlotTypeEnum> _parentSlotType = new ReactiveProperty<SlotTypeEnum>(); 
+       
+        
         private CompositeDisposable _disposable = new CompositeDisposable();
         private RangeOneTargetAttack _rangeAttackModel;
         private CompositeDisposable _disposableIsActive = new CompositeDisposable();
         public event Action IsDeadAction;
+
+        #region Getters
+        public IReadOnlyReactiveProperty<SlotTypeEnum> ParentSlotType => _parentSlotType;
         
+        #endregion
+
+        #region Setters
+
+        public void SetParentSlotType(SlotTypeEnum slotType)
+        {
+            _parentSlotType.Value = slotType;
+        }
+
+        #endregion
         public PlayerUnitModel(PlayerViewTwo playerView, ISoundManager soundManager, ITimerService timerService, IPumping pumping)
         {
             _pumping = pumping;
@@ -60,13 +77,22 @@ namespace Models.Fortress
         
         private void OnEnable()
         {
+           
             View.Damageable.IsEmptyHealth.SkipLatestValueOnSubscribe().Subscribe(OnDead).AddTo(_disposable);
             _pumping.GamePerks.ObserveReplace().Subscribe(_ => SubscribeStats()).AddTo(_disposable);
             SubscribeStats();
-            if (!_isDead)
+            _rangeAttackModel.StartPlay();
+            _parentSlotType.Subscribe(slotType =>
             {
-                _rangeAttackModel.StartPlay();
-            }
+                if (slotType == SlotTypeEnum.Attack)
+                {
+                    _rangeAttackModel.StartPlay();
+                }
+                else
+                {
+                    _rangeAttackModel.StopPlay();
+                }
+            }).AddTo(_disposable);
         }
 
         private void OnDisable()

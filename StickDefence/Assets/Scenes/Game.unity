@@ -2303,6 +2303,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 9.700001
       objectReference: {fileID: 0}
+    - target: {fileID: 1342114334801461193, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
+      propertyPath: slotType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1356123437545536067, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.8
@@ -2319,6 +2323,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3460998694693710280, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
+      propertyPath: slotType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4685601691682241837, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.000002
@@ -2326,6 +2334,10 @@ PrefabInstance:
     - target: {fileID: 5342614303562895841, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.400002
+      objectReference: {fileID: 0}
+    - target: {fileID: 6325849333178827554, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
+      propertyPath: slotType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6713299202429206425, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2335,9 +2347,17 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 11.6
       objectReference: {fileID: 0}
+    - target: {fileID: 8295360128433464451, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
+      propertyPath: slotType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8483008782705287514, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 13.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8544437057398654622, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
+      propertyPath: slotType
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
