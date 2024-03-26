@@ -16,5 +16,6 @@ namespace Models.SO.Visual
     {
         [field: SerializeField] public PlayerUnitTypeEnum UnitType { get; private set; }
         [field: SerializeField] public GameObject GO { get; private set; } 
+        [field: SerializeField] public Sprite uiIcon;
     }
 }

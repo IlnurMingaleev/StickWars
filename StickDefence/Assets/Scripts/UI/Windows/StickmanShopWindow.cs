@@ -48,10 +48,10 @@ namespace UI.Windows
         {
             if (_mergeController != null)
             {
-                foreach (var stickmanStatsConfig in _configManager.StickmanUnitsSO.StickmanUnitsStatsConfigs)
+                foreach (var stickmanStatsConfig in _configManager.UnitsStatsSo.StickmanUnitsStatsConfigs)
                 {
                     StickManUIItem stickman = Instantiate(_stickManUIItem, _scrollContentTransform);
-                    stickman.Init(_mergeController, ActivateDisposables, stickmanStatsConfig);
+                    stickman.Init(_mergeController, ActivateDisposables, stickmanStatsConfig, _configManager.PrefabsUnitsSO.PlayerUnitPrefabs[stickmanStatsConfig.UnitType]);
                 }
             }
         }

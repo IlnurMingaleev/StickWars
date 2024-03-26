@@ -11,7 +11,7 @@ namespace TonkoGames.Controllers.Core
         [field: SerializeField] public SpritesSO SpritesSo { get; private set; }
         [field: SerializeField] public RewardsConstSO RewardsConstSO { get; private set; }
         [field: SerializeField] public PumpingConfigSO PumpingConfigSo { get; private set; }
-        [field: SerializeField] public EnemyUnitsStatsSO EnemyUnitsStatsSO { get; private set; }
+        [field: SerializeField] public UnitsStatsSO UnitsStatsSo { get; private set; }
         [field: SerializeField] public IAPSO IapSO { get; private set; }
         [field: SerializeField] public MapStageSO MapStageSO { get; private set; }
         [field: SerializeField] public PrefabsUnitsSO PrefabsUnitsSO { get; private set; }
@@ -21,8 +21,7 @@ namespace TonkoGames.Controllers.Core
         {
             SpritesSo.Init();
             PumpingConfigSo.Init();
-            EnemyUnitsStatsSO.Init();
-            StickmanUnitsSO.Init();
+            UnitsStatsSo.Init();
             PrefabsUnitsSO.Init();
             IapSO.Init();
             MapStageSO.Init();

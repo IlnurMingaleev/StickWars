@@ -2,6 +2,7 @@
 using Enums;
 using Models.Merge;
 using Models.SO.Core;
+using Models.SO.Visual;
 using TMPro;
 using TonkoGames.Controllers.Core;
 using UI.Common;
@@ -30,13 +31,13 @@ namespace UI.Content.Shop
         private IPlaceableUnit _mergeController;
         private StickmanStatsConfig _statsConfig;
         public void Init(IPlaceableUnit mergeController, CompositeDisposable activateDisposable,
-           StickmanStatsConfig stickmanStatsConfig)
+            StickmanStatsConfig stickmanStatsConfig, PlayerPrefabModel playerPrefabModel)
         {
             _statsConfig =stickmanStatsConfig ;
             _mergeController = mergeController;
             _stickmanUnitType = stickmanStatsConfig.UnitType;
             _levelLabel.text = stickmanStatsConfig.Level.ToString();
-            _stickmanImage.sprite = stickmanStatsConfig.uiIcon;
+            _stickmanImage.sprite = playerPrefabModel.uiIcon;
             _buyBtn.OnClickAsObservable.Subscribe(_=>
             {
                 AddStickmanToPlayGround();

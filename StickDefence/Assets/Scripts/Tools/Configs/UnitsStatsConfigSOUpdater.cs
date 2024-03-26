@@ -13,19 +13,21 @@ namespace Tools.Configs
     [CreateAssetMenu(fileName = "UnitsStatsConfigSOUpdater", menuName = "MyAssets/EditorOnly/UnitsStatsConfigSOUpdater", order = 3)]
     public class UnitsStatsConfigSOUpdater  : DataContainerBase
     {
-        [SerializeField] private EnemyUnitsStatsSO _enemyUnitsStatsSO;
+        [SerializeField] private UnitsStatsSO unitsStatsSo;
         
         [ContextMenu("Update config")]
         private void CompressionConfigLevels()
         {
             UpdateEnemyUnitConfigModel();
             
-            EditorUtility.SetDirty(_enemyUnitsStatsSO);
+            EditorUtility.SetDirty(unitsStatsSo);
             Debug.Log("Update Config");
         }
 
         [PageName("EnemyUnitsStats")] 
         [HideInInspector] public List<EnemyUnitConfig> EnemyUnitConfigModel;
+        [PageName("StickManUnitStats")] 
+        [HideInInspector] public List<StickmanStatsConfig> StickmanStatsConfigModel;
         
         [Serializable]
         public struct EnemyUnitConfig
@@ -39,10 +41,12 @@ namespace Tools.Configs
             public int RewardCount;
         }
         
+      
         private void UpdateEnemyUnitConfigModel()
         {
             List<UnitRewardConfig> unitRewards = new();
             List<UnitStatsConfig> unitConfigs = new();
+            List<StickmanStatsConfig> stickmanStatsConfigs = new();
             
             foreach (var enemyUnitConfig in EnemyUnitConfigModel)
             {
@@ -62,8 +66,20 @@ namespace Tools.Configs
                     Reloading = enemyUnitConfig.Reloading,
                 });
             }
+
+            foreach (var stickmanStatsConfig in StickmanStatsConfigModel)
+            {
+                stickmanStatsConfigs.Add(new StickmanStatsConfig()
+                {
+                    UnitType = stickmanStatsConfig.UnitType,
+                    Damage = stickmanStatsConfig.Damage,
+                    AttackSpeed = stickmanStatsConfig.AttackSpeed,
+                    Reloading = stickmanStatsConfig.Reloading,
+
+                });
+            }
             
-            _enemyUnitsStatsSO._CONFIG_ONLY_EnemyUnitsStatsSO(unitConfigs, unitRewards);
+            unitsStatsSo._CONFIG_ONLY_EnemyUnitsStatsSO(unitConfigs, unitRewards,stickmanStatsConfigs);
         }
     }
 }

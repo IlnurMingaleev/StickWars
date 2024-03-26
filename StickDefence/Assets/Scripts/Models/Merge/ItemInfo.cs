@@ -17,7 +17,7 @@ namespace Models.Merge
             this.slotId = slotId;
             this.itemId = itemId;
             unitGameObject =
-                Instantiate(configManager.StickmanUnitsSO.DictionaryStickmanConfigs[(PlayerUnitTypeEnum) itemId].stickmanGO,unitParent);
+                Instantiate(configManager.PrefabsUnitsSO.PlayerUnitPrefabs[(PlayerUnitTypeEnum) itemId].GO,unitParent);
         }
 
         private void OnDestroy()

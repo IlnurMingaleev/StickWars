@@ -6,6 +6,7 @@ using Models.Merge;
 using Models.SO.Core;
 using Models.Timers;
 using TonkoGames.Sound;
+using Tools.Configs;
 using UniRx;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -32,7 +33,7 @@ namespace Models.Units.Units
         private CompositeDisposable _disposableDead = new CompositeDisposable();
         protected RangeOneTargetAttack AttackModel;
 
-        protected StickmanStatsConfig UnitStatsConfig;
+        protected 
 
         private ReactiveProperty<bool> _isMoving = new ReactiveProperty<bool>(false);
         private ReactiveProperty<SlotTypeEnum> _parentSlotType = new ReactiveProperty<SlotTypeEnum>();
@@ -67,9 +68,9 @@ namespace Models.Units.Units
 
         public void InitUnitConfigStats(StickmanStatsConfig unitStatsConfig)
         {
-            UnitStatsConfig = unitStatsConfig;
-            AttackModel.SetDamage(UnitStatsConfig.Damage);
-            AttackModel.SetReloading(UnitStatsConfig.Reloading);
+            StickmanStatsConfig stickmanStatsConfig = unitStatsConfig;
+            AttackModel.SetDamage(stickmanStatsConfig.Damage);
+            AttackModel.SetReloading(stickmanStatsConfig.Reloading);
         }
 
         protected virtual void OnEnable()

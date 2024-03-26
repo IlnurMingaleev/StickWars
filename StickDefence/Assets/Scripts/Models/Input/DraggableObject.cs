@@ -120,7 +120,7 @@ namespace Models.Input
                     GameObject go =
                         Instantiate(
                             _configManager.PrefabsUnitsSO.PlayerUnitPrefabs[
-                               (PlayerUnitTypeEnum)((int)_playerView.UnitType+1)],
+                               (PlayerUnitTypeEnum)((int)_playerView.UnitType+1)].GO,
                             transform1.position,
                             transform1.rotation); 
                     _prefabInject.InjectGameObject(go);

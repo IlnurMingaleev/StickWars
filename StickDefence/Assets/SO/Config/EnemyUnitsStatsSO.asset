@@ -30,3 +30,22 @@ MonoBehaviour:
   - UnitType: 1
     RewardType: 3
     RewardCount: 2
+  stickmanUnitsStatsConfigs:
+  - UnitType: 1
+    Level: 1
+    Damage: 10
+    Reloading: 15
+    Price: 12
+    AttackSpeed: 6
+  - UnitType: 2
+    Level: 2
+    Damage: 20
+    Reloading: 20
+    Price: 18
+    AttackSpeed: 6
+  - UnitType: 3
+    Level: 3
+    Damage: 30
+    Reloading: 20
+    Price: 22
+    AttackSpeed: 6

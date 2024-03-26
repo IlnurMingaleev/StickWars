@@ -9,33 +9,7 @@ namespace SO.Core
     [CreateAssetMenu(fileName = "StickmanStatsSO", menuName = "MyAssets/Config/StickmanStatsSO", order = 6)]
     public class StickmanUnitStatsSO : ScriptableObject
     {
-        [SerializeField] private List<StickmanStatsConfig> stickmanUnitsStatsConfigs;
-
-        public List<StickmanStatsConfig> StickmanUnitsStatsConfigs => stickmanUnitsStatsConfigs;
-
-        private  Dictionary<PlayerUnitTypeEnum,StickmanStatsConfig> _dictionaryStickmanConfigs =
-            new Dictionary<PlayerUnitTypeEnum, StickmanStatsConfig>();
-
-        public IReadOnlyDictionary<PlayerUnitTypeEnum, StickmanStatsConfig> DictionaryStickmanConfigs =>
-            _dictionaryStickmanConfigs;
-
-        public void Init()
-        {
-            _dictionaryStickmanConfigs.Clear();
-            foreach (var unitConfig in stickmanUnitsStatsConfigs)
-            {
-                _dictionaryStickmanConfigs.Add(unitConfig.UnitType, unitConfig);
-            }
-
-        }
+       
         
-#if UNITY_EDITOR
-
-        public void _CONFIG_ONLY_StickmanUnitsConfigs(List<StickmanStatsConfig> stickmanStatsConfigs)
-        {
-            stickmanUnitsStatsConfigs = stickmanStatsConfigs;
-        }
-        
-#endif
     }
 }

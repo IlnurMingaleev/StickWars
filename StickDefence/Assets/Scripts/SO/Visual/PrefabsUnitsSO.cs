@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Enums;
+using Models.SO.Core;
 using Models.SO.Visual;
 using UnityEngine;
 using Views.Units.Fortress;
@@ -15,12 +16,12 @@ namespace SO.Visual
         
         private Dictionary<UnitTypeEnum, GameObject> _dictionaryUnitPrefabs =
             new Dictionary<UnitTypeEnum, GameObject>();
-        private Dictionary<PlayerUnitTypeEnum, GameObject> _dictionaryPlayerUnitPrefabs =
-            new Dictionary<PlayerUnitTypeEnum, GameObject>();
+        private Dictionary<PlayerUnitTypeEnum, PlayerPrefabModel> _dictionaryPlayerUnitPrefabs =
+            new Dictionary<PlayerUnitTypeEnum, PlayerPrefabModel>();
         
         
         public IReadOnlyDictionary<UnitTypeEnum, GameObject> UnitPrefabs  => _dictionaryUnitPrefabs;
-        public IReadOnlyDictionary<PlayerUnitTypeEnum, GameObject> PlayerUnitPrefabs  => _dictionaryPlayerUnitPrefabs;
+        public IReadOnlyDictionary<PlayerUnitTypeEnum, PlayerPrefabModel> PlayerUnitPrefabs  => _dictionaryPlayerUnitPrefabs;
         public void Init()
         {
             _dictionaryUnitPrefabs.Clear();
@@ -30,7 +31,7 @@ namespace SO.Visual
 
             foreach (var playerUnitPrefabs in _playerUnitPrefabsModels)
             {
-                _dictionaryPlayerUnitPrefabs.Add(playerUnitPrefabs.UnitType, playerUnitPrefabs.GO);   
+                _dictionaryPlayerUnitPrefabs.Add(playerUnitPrefabs.UnitType, playerUnitPrefabs);   
             }
             
         }

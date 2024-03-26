@@ -166,7 +166,7 @@ namespace Models.Battle
 
         private void InstantiateUnit(UnitTypeEnum unitType, MovementPath movementPath, float delay)
         {
-            var unitConfig = _configManager.EnemyUnitsStatsSO.EnemyUnitConfigs[unitType];
+            var unitConfig = _configManager.UnitsStatsSo.EnemyUnitConfigs[unitType];
             
             var unitView = Instantiate(_configManager.PrefabsUnitsSO
                 .UnitPrefabs[unitType], movementPath.SpawnPoint.position, Quaternion.identity, _parentSpawnPoint).GetComponent<UnitView>();

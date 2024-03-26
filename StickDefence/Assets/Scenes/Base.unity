@@ -533,7 +533,7 @@ MonoBehaviour:
   <SpritesSo>k__BackingField: {fileID: 11400000, guid: f98449cc0a5e01d488530d810f870a80, type: 2}
   <RewardsConstSO>k__BackingField: {fileID: 11400000, guid: dd77bbe2990618e49863316538f0bbea, type: 2}
   <PumpingConfigSo>k__BackingField: {fileID: 11400000, guid: 9dc51fc763518e74f9c7778a879fd697, type: 2}
-  <EnemyUnitsStatsSO>k__BackingField: {fileID: 11400000, guid: d77f93fd8f995024eb8229f22f5a1552, type: 2}
+  <UnitsStatsSo>k__BackingField: {fileID: 11400000, guid: d77f93fd8f995024eb8229f22f5a1552, type: 2}
   <IapSO>k__BackingField: {fileID: 11400000, guid: 80ae67f4e481b3940aa88552b5b383e6, type: 2}
   <MapStageSO>k__BackingField: {fileID: 11400000, guid: ba80095f1162150419429cd888c0de1c, type: 2}
   <PrefabsUnitsSO>k__BackingField: {fileID: 11400000, guid: 01a1c06ee79b12c4bbd2e96e261437dd, type: 2}
