@@ -36,9 +36,12 @@ namespace Tools.Configs
         [PageName("SkillCells")] 
         [HideInInspector] public List<SkillCellConfig> SkillCells;
         
+        [PageName("WallConfig")] 
+        [HideInInspector] public List<WallConfigsModel> WallConfigsModels;
+        
         private void CompressionPumping()
         {
-            _pumpingConfig._CONFIG_ONLY_InitConfig(CoinFarmer, BasePlayerPerks, GamePlayerPerks, PlayerSkills, SkillCells);
+            _pumpingConfig._CONFIG_ONLY_InitConfig(CoinFarmer, BasePlayerPerks, GamePlayerPerks, PlayerSkills, SkillCells, WallConfigsModels);
         }
         
     }

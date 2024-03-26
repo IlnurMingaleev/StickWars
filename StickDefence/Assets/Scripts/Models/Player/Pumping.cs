@@ -11,9 +11,12 @@ namespace Models.Player
         IReadOnlyReactiveDictionary<PerkTypesEnum, PumpingPerkData> BasePerks { get; }
         IReadOnlyReactiveDictionary<SkillTypesEnum, PumpingSkillData> Skills { get; }
         IReadOnlyReactiveDictionary<PerkTypesEnum, PumpingPerkData> GamePerks { get; }
+        IReadOnlyReactiveDictionary<WallTypeEnum, PumpingWallData> Wall { get; }
+
         void UpgradeBasePerk(PerkTypesEnum perkType);
         void UpgradeGamePerk(PerkTypesEnum perkType);
         void UpgradeSkill(SkillTypesEnum skillType);
+        void UpgradeWall(WallTypeEnum wallType);
         void BattleLoad();
     }
     public class Pumping : IPumping

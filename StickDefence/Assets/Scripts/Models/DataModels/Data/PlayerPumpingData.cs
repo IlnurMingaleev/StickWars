@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Enums;
+using UnityEngine;
 
 namespace Models.DataModels.Data
 {
@@ -31,5 +32,12 @@ namespace Models.DataModels.Data
     {
         public SkillTypesEnum SkillType;
         public bool IsOpen;
+    }
+
+    [Serializable]
+    public struct WallData
+    {
+        public WallTypeEnum WallTypeEnum;
+        public int WallLevel;
     }
 }

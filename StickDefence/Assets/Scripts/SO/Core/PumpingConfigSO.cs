@@ -14,7 +14,7 @@ namespace SO.Core
         [SerializeField] private List<PlayerPerkConfigModel> _gamePlayerPerks;
         [SerializeField] private List<PlayerSkillConfigModel> _playerSkills;
         [SerializeField] private List<SkillCellConfig> _skillCellConfigs;
-
+        [SerializeField] private List<WallConfigsModel> _wallConfigModels;
         public IReadOnlyList<CoinFarmerConfigModel> CoinFarmerConfigModel => _coinFarmerConfigModel;
 
         public IReadOnlyList<SkillCellConfig> SkillCells => _skillCellConfigs;
@@ -27,11 +27,19 @@ namespace SO.Core
         
         private Dictionary<SkillTypesEnum, PlayerSkillConfigModel> _skills =
             new Dictionary<SkillTypesEnum, PlayerSkillConfigModel>();
+
+        private Dictionary<WallTypeEnum, WallConfigsModel> _wallConfigs =
+            new Dictionary<WallTypeEnum, WallConfigsModel>();
+
         public IReadOnlyDictionary<PerkTypesEnum, PlayerPerkConfigModel> BasePerks  => _basePerks;
         public IReadOnlyDictionary<PerkTypesEnum, PlayerPerkConfigModel> GamePerks  => _gamePerks;
         public IReadOnlyDictionary<SkillTypesEnum, PlayerSkillConfigModel> Skills  => _skills;
         public void Init()
         {
+            _basePerks.Clear();
+            _gamePerks.Clear();
+            _skills.Clear();
+            _wallConfigs.Clear();
             foreach (var config in _basePlayerPerks)
                 _basePerks.Add(config.PerkType, config);
             
@@ -40,6 +48,9 @@ namespace SO.Core
             
             foreach (var config in _playerSkills)
                 _skills.Add(config.SkillType, config);
+            
+            foreach (var config in _wallConfigModels)
+                _wallConfigs.Add(config.WallType,config);
         }
 
 #if UNITY_EDITOR
@@ -47,13 +58,15 @@ namespace SO.Core
             List<PlayerPerkConfigModel> basePlayerPerks, 
             List<PlayerPerkConfigModel> gamePlayerPerks,
             List<PlayerSkillConfigModel> playerSkills,
-            List<SkillCellConfig> skillCellConfigs)
+            List<SkillCellConfig> skillCellConfigs,
+            List<WallConfigsModel> wallConfigs)
         {
             _coinFarmerConfigModel = foundryConfigModel;
             _basePlayerPerks = basePlayerPerks;
             _gamePlayerPerks = gamePlayerPerks;
             _playerSkills = playerSkills;
             _skillCellConfigs = skillCellConfigs;
+            _wallConfigModels = wallConfigs;
         }
 #endif
     }

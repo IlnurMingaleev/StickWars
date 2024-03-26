@@ -39,11 +39,12 @@ namespace Models.DataModels.Models
             new ReactiveDictionary<SkillTypesEnum, SkillData>();
 
         private ReactiveCollection<SkillCellData> _skillCellsReactive = new ReactiveCollection<SkillCellData>();
-
+        
+        private ReactiveProperty<WallData> _wallData = new ReactiveProperty<WallData>();
         public IReadOnlyReactiveDictionary<PerkTypesEnum, PerkData> PerksReactive => _playerPerks;
         public IReadOnlyReactiveDictionary<SkillTypesEnum, SkillData> SkillsReactive => _playerSkills;
         public IReadOnlyReactiveCollection<SkillCellData> SkillCellsReactive => _skillCellsReactive;
-
+        public IReadOnlyReactiveProperty<WallData> WallLevelReactive => _wallData;
         #endregion
 
         #region Setters
