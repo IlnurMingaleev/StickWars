@@ -10,5 +10,6 @@ namespace Models.Player.PumpingFragments
         public int CurrentLevel;
         public bool IsMaxLevel;
         public CurrencyTypeEnum CurrencyType;
+        public int HealthValue;
     }
 }

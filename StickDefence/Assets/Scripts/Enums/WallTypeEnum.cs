@@ -2,6 +2,7 @@
 {
     public enum WallTypeEnum
     {
-        
+        None,
+        Basic,
     }
 }

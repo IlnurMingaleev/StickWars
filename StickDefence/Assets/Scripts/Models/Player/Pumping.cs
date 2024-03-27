@@ -11,7 +11,7 @@ namespace Models.Player
         IReadOnlyReactiveDictionary<PerkTypesEnum, PumpingPerkData> BasePerks { get; }
         IReadOnlyReactiveDictionary<SkillTypesEnum, PumpingSkillData> Skills { get; }
         IReadOnlyReactiveDictionary<PerkTypesEnum, PumpingPerkData> GamePerks { get; }
-        IReadOnlyReactiveDictionary<WallTypeEnum, PumpingWallData> Wall { get; }
+        IReadOnlyReactiveDictionary<WallTypeEnum, PumpingWallData> WallData { get; }
 
         void UpgradeBasePerk(PerkTypesEnum perkType);
         void UpgradeGamePerk(PerkTypesEnum perkType);
@@ -38,11 +38,12 @@ namespace Models.Player
         {
             _basePumping.Init();
             _skillsPumping.Init();
-            _wallPumping.Init();
+            
         }
 
         public void BattleLoad()
         {
+            _wallPumping.Init();
             _gamePumping.BattleLoad();
         }
 
@@ -52,7 +53,7 @@ namespace Models.Player
 
         public IReadOnlyReactiveDictionary<PerkTypesEnum, PumpingPerkData> GamePerks => _gamePumping.Perks;
 
-        public IReadOnlyReactiveDictionary<WallTypeEnum, PumpingWallData> Wall => _wallPumping.WallData;
+        public IReadOnlyReactiveDictionary<WallTypeEnum, PumpingWallData> WallData => _wallPumping.WallData;
 
         public void UpgradeBasePerk(PerkTypesEnum perkType) => _basePumping.UpgradePerk(perkType);
 

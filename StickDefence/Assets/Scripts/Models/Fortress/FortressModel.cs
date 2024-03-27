@@ -30,7 +30,7 @@ namespace Models.Fortress
             View = fortressView;
             _soundManager = soundManager;
             _timerService = timerService;
-            View.Damageable.Init((int)_pumping.GamePerks[PerkTypesEnum.Health].Value, (int)_pumping.GamePerks[PerkTypesEnum.Defense].Value);
+            View.Damageable.Init(_pumping.WallData[WallTypeEnum.Basic].HealthValue, (int)_pumping.GamePerks[PerkTypesEnum.Defense].Value);
         }
 
         public void InitSubActive()
@@ -83,7 +83,7 @@ namespace Models.Fortress
             
             _rangeAttackModel.SetReloading(reloading);
 
-            View.Damageable.SetMaxHealth((int)_pumping.GamePerks[PerkTypesEnum.Health].Value);
+            View.Damageable.SetMaxHealth((int)_pumping.WallData[WallTypeEnum.Basic].HealthValue);
             View.Damageable.UpdateDefence(_pumping.GamePerks[PerkTypesEnum.Defense].Value);
             
            // _rangeAttackModel.ReSetupRangeAttack(_pumping.GamePerks[PerkTypesEnum.AttackRange].Value);

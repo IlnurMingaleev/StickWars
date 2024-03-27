@@ -12,8 +12,7 @@ namespace Models.Player.PumpingFragments
         private readonly ConfigManager _configManager;
         private readonly IDataCentralService _dataCentralService;
 
-        public IReadOnlyReactiveDictionary<WallTypeEnum, PumpingWallData> WallData =
-            new ReactiveDictionary<WallTypeEnum, PumpingWallData>();
+        public IReadOnlyReactiveDictionary<WallTypeEnum, PumpingWallData> WallData => _wallData;
 
         public WallPumping(ConfigManager configManager, IDataCentralService dataCentralService)
         {
@@ -40,6 +39,7 @@ namespace Models.Player.PumpingFragments
                 WallType = wallType,
                 Value = configData.BaseValue + configData.AdditionalValue,
                 Cost = configData.BaseCost + configData.AdditionalCost,
+                HealthValue = configData.BaseHealthValue + configData.AdditionalHaalthValue,
                 CurrentLevel = 0,
                 IsMaxLevel = 0 == configData.LevelCount - 1,
                 CurrencyType = configData.CurrencyType
@@ -50,16 +50,15 @@ namespace Models.Player.PumpingFragments
 
         public void UpgradeWall(WallTypeEnum wallType)
         {
-            var configData = _configManager.PumpingConfigSo.WallConfigs[wallType]
-                ;
-            var perkData = _wallData[wallType];
+            var configData = _configManager.PumpingConfigSo.WallConfigs[wallType];
+            var wallData = _wallData[wallType];
             
-            if (!perkData.IsMaxLevel)
+            if (!wallData.IsMaxLevel)
             {
-                perkData.CurrentLevel++;
-                perkData.IsMaxLevel = perkData.CurrentLevel == configData.LevelCount - 1;
+                wallData.CurrentLevel++;
+                wallData.IsMaxLevel = wallData.CurrentLevel == configData.LevelCount - 1;
                 
-                _wallData[wallType] = UpdateWallData(perkData);
+                _wallData[wallType] = UpdateWallData(wallData);
             }
         }
         public PumpingWallData UpdateWallData(PumpingWallData pumpingWallData)
@@ -69,6 +68,7 @@ namespace Models.Player.PumpingFragments
             pumpingWallData.CurrencyType = configData.CurrencyType;
             pumpingWallData.Value = configData.BaseValue + configData.AdditionalValue * pumpingWallData.CurrentLevel;
             pumpingWallData.Cost = configData.BaseCost + configData.AdditionalCost * pumpingWallData.CurrentLevel;
+            pumpingWallData.HealthValue = configData.BaseHealthValue + configData.AdditionalHaalthValue * pumpingWallData.CurrentLevel;
             pumpingWallData.IsMaxLevel = pumpingWallData.CurrentLevel == configData.LevelCount - 1;
             
             return pumpingWallData;
