@@ -1,4 +1,5 @@
-﻿using Models.Merge;
+﻿using System;
+using Models.Merge;
 using TMPro;
 using UI.Common;
 using UI.UIManager;
@@ -25,6 +26,7 @@ namespace UI.Windows
         [Header("Upgrade BarrierHealth Btn")] 
         [SerializeField] private UIButton _upgradeBarrierLvlBtn;
         [SerializeField] private UIBar _wallHealthBar;
+        [SerializeField] private TMP_Text _wallUpgradeCost;
  
         [Header("Free Box")] 
         [SerializeField] private UIButton _freeBoxBtn;
@@ -40,11 +42,14 @@ namespace UI.Windows
         private WindowPriority Priority = WindowPriority.TopPanel;
 
         private MergeController _mergeController;
+        public event Action UpgradeWallClickedEvent;
+
         protected override void OnActivate()
         {
             if(_mergeController == null) _mergeController = FindObjectOfType<MergeController>();
             base.OnActivate();
             InitWindowButtons();
+            InitWallUpgradeButtonClick(UpgradeWallClickedEvent);
         }
 
         private void InitWindowButtons()
@@ -67,5 +72,14 @@ namespace UI.Windows
             _wallHealthBar.SetBarFiilAmount(currentHealth, maxHealth);
         }
 
+        public void UpdateWallCost(int cost)
+        {
+            _wallUpgradeCost.text = $"{cost}";
+        }
+
+        public void InitWallUpgradeButtonClick(Action action)
+        {
+            _upgradeBarrierLvlBtn.OnClickAsObservable.Subscribe(_ => { action?.Invoke(); }).AddTo(ActivateDisposables);
+        }
     }
 }

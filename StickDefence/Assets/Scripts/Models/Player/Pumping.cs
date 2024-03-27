@@ -1,4 +1,5 @@
-﻿using Enums;
+﻿using System;
+using Enums;
 using TonkoGames.Controllers.Core;
 using Models.DataModels;
 using Models.Player.PumpingFragments;
@@ -8,6 +9,7 @@ namespace Models.Player
 {
     public interface IPumping
     {
+        public IWallPumpingEvents WallPumpingEvents { get; }
         IReadOnlyReactiveDictionary<PerkTypesEnum, PumpingPerkData> BasePerks { get; }
         IReadOnlyReactiveDictionary<SkillTypesEnum, PumpingSkillData> Skills { get; }
         IReadOnlyReactiveDictionary<PerkTypesEnum, PumpingPerkData> GamePerks { get; }
@@ -25,7 +27,8 @@ namespace Models.Player
         private GamePumping _gamePumping;
         private SkillsPumping _skillsPumping;
         private WallPumping _wallPumping;
-        
+
+        public IWallPumpingEvents WallPumpingEvents=> _wallPumping;
         public Pumping(ConfigManager configManager, IDataCentralService dataCentralService)
         {
             _basePumping = new BasePumping(configManager, dataCentralService);
@@ -40,7 +43,7 @@ namespace Models.Player
             _skillsPumping.Init();
             
         }
-
+        
         public void BattleLoad()
         {
             _wallPumping.Init();

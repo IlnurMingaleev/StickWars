@@ -78,7 +78,7 @@ namespace Models.Battle
         {
             _fortressView = Instantiate(_configManager.PrefabsUnitsSO.FortressView, _spawnPoint);
             _fortressModel = new FortressModel(_fortressView, _soundManager, _timerService, _player.Pumping, _windowManager);
-            _fortressModel.InitHealthBar();
+            _fortressModel.InitBottomPanelButton();
             _fortressModel.InitAttack(CreateProjectile, RemoveProjectile);
             _fortressModel.InitSubActive();
 

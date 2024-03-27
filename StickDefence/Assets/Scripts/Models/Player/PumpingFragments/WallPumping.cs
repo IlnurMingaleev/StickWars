@@ -1,23 +1,35 @@
-﻿using Enums;
+﻿using System;
+using Enums;
 using Models.DataModels;
 using TonkoGames.Controllers.Core;
 using UniRx;
 
 namespace Models.Player.PumpingFragments
 {
-    public class WallPumping
+    public interface IWallPumpingEvents
+    {
+        void InitEvents(Action<int> wallUpgradeEvent);
+    }
+
+    public class WallPumping : IWallPumpingEvents
     {
         private ReactiveDictionary<WallTypeEnum, PumpingWallData> _wallData =
             new ReactiveDictionary<WallTypeEnum, PumpingWallData>();
         private readonly ConfigManager _configManager;
         private readonly IDataCentralService _dataCentralService;
 
+        public Action<int> WallCostUpgradeEvent;
         public IReadOnlyReactiveDictionary<WallTypeEnum, PumpingWallData> WallData => _wallData;
 
         public WallPumping(ConfigManager configManager, IDataCentralService dataCentralService)
         {
             _configManager = configManager;
             _dataCentralService = dataCentralService;
+        }
+
+        public void InitEvents(Action<int> wallUpgradeEvent)
+        {
+            WallCostUpgradeEvent = wallUpgradeEvent;
         }
 
         public void Init()
@@ -44,7 +56,8 @@ namespace Models.Player.PumpingFragments
                 IsMaxLevel = 0 == configData.LevelCount - 1,
                 CurrencyType = configData.CurrencyType
             };
-
+            
+            WallCostUpgradeEvent?.Invoke(wallData.Cost);
             return wallData;
         }
 
@@ -70,7 +83,8 @@ namespace Models.Player.PumpingFragments
             pumpingWallData.Cost = configData.BaseCost + configData.AdditionalCost * pumpingWallData.CurrentLevel;
             pumpingWallData.HealthValue = configData.BaseHealthValue + configData.AdditionalHaalthValue * pumpingWallData.CurrentLevel;
             pumpingWallData.IsMaxLevel = pumpingWallData.CurrentLevel == configData.LevelCount - 1;
-            
+           
+            WallCostUpgradeEvent?.Invoke(pumpingWallData.Cost);
             return pumpingWallData;
         }
     }

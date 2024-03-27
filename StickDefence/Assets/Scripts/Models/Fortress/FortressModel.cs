@@ -8,6 +8,7 @@ using UI.UIManager;
 using UI.Windows;
 using UniRx;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 using Views.Projectiles;
 using Views.Units.Fortress;
 
@@ -20,6 +21,7 @@ namespace Models.Fortress
         private readonly ISoundManager _soundManager;
         private readonly ITimerService _timerService;
         private readonly IWindowManager _windowManager;
+        private BottomPanelWindow _bottomPanelWindow;
         private bool _isDead;
         
         private CompositeDisposable _disposable = new CompositeDisposable();
@@ -35,6 +37,14 @@ namespace Models.Fortress
             _soundManager = soundManager;
             _timerService = timerService;
             View.Damageable.Init(_pumping.WallData[WallTypeEnum.Basic].HealthValue, (int)_pumping.GamePerks[PerkTypesEnum.Defense].Value);
+            _bottomPanelWindow = _windowManager.GetWindow<BottomPanelWindow>();
+        }
+
+        public void InitBottomPanelButton()
+        {
+            InitHealthBar();
+            InitBottomPanelEvent();
+            SubscribeToOnClickEvent();
         }
 
         public void InitHealthBar()
@@ -43,14 +53,42 @@ namespace Models.Fortress
             View.Damageable.HealthMax.Subscribe(healthMax => UpdateWallHealthMax(healthMax)).AddTo(_disposable);
         }
 
+        public void InitBottomPanelEvent()
+        {
+            if (_bottomPanelWindow)
+            {
+                _bottomPanelWindow.UpdateWallCost(_pumping.WallData[WallTypeEnum.Basic].Cost);
+            }
+            _pumping.WallPumpingEvents.InitEvents((cost) =>
+            {
+                if(_bottomPanelWindow) _bottomPanelWindow.UpdateWallCost(cost);
+                SubscribeStats();
+            });
+        }
+
+        public void SubscribeToOnClickEvent()
+        {
+            if(_bottomPanelWindow) _bottomPanelWindow.UpgradeWallClickedEvent += UpgradeWall;
+        }
+        public void UnsubscribeToOnClickEvent()
+        {
+            if(_bottomPanelWindow) _bottomPanelWindow.UpgradeWallClickedEvent -= UpgradeWall;
+        }
+        private void UpgradeWall()
+        {
+            _pumping.UpgradeWall(WallTypeEnum.Basic);
+        }
+
         private void UpdateWallHealthBar(int health)
         {
-            _windowManager.GetWindow<BottomPanelWindow>().UpdateWallHealthBar(health, View.Damageable.HealthMax.Value);
+            if(_bottomPanelWindow)
+                _bottomPanelWindow.UpdateWallHealthBar(health, View.Damageable.HealthMax.Value);
         }
         
         private void UpdateWallHealthMax(int healthMax)
         {
-            _windowManager.GetWindow<BottomPanelWindow>().UpdateWallHealthBar( View.Damageable.HealthCurrent.Value,healthMax);
+            if(_bottomPanelWindow)
+                _bottomPanelWindow.UpdateWallHealthBar( View.Damageable.HealthCurrent.Value,healthMax);
         }
         public void InitSubActive()
         {
@@ -90,10 +128,12 @@ namespace Models.Fortress
         {
             _disposable.Clear();
             _rangeAttackModel.StopPlay();
+            UnsubscribeToOnClickEvent();
         }
 
         private void SubscribeStats()
         {
+            
             _rangeAttackModel.SetDamage((int) _pumping.GamePerks[PerkTypesEnum.Damage].Value);
 
             float roundsPerMinute = _pumping.GamePerks[PerkTypesEnum.AttackSpeed].Value;
@@ -104,7 +144,7 @@ namespace Models.Fortress
 
             View.Damageable.SetMaxHealth((int)_pumping.WallData[WallTypeEnum.Basic].HealthValue);
             View.Damageable.UpdateDefence(_pumping.GamePerks[PerkTypesEnum.Defense].Value);
-            
+            View.Damageable.Resurrect();
            // _rangeAttackModel.ReSetupRangeAttack(_pumping.GamePerks[PerkTypesEnum.AttackRange].Value);
         }
 
