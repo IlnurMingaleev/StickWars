@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace UI.Common
@@ -6,12 +7,13 @@ namespace UI.Common
     public class UIBar : MonoBehaviour
     {
         [SerializeField] private Slider _barSlider;
-
-        public void SetBarFiilAmount(float amount)
+        [SerializeField] private TMP_Text _healthLabel;
+        public void SetBarFiilAmount(int currentHealth, int maxHealth)
         {
-            _barSlider.value = amount;
+            _barSlider.value = (float) currentHealth / maxHealth;
+            _healthLabel.text = $"{currentHealth}/{maxHealth}";
         }
-
+      
 
     }
 }

@@ -45,12 +45,12 @@ namespace Models.Fortress
 
         private void UpdateWallHealthBar(int health)
         {
-            _windowManager.GetWindow<BottomPanelWindow>().UpdateWallHealthBar((float)health/ View.Damageable.HealthMax.Value);
+            _windowManager.GetWindow<BottomPanelWindow>().UpdateWallHealthBar(health, View.Damageable.HealthMax.Value);
         }
         
         private void UpdateWallHealthMax(int healthMax)
         {
-            _windowManager.GetWindow<BottomPanelWindow>().UpdateWallHealthBar((float) View.Damageable.HealthCurrent.Value/healthMax);
+            _windowManager.GetWindow<BottomPanelWindow>().UpdateWallHealthBar( View.Damageable.HealthCurrent.Value,healthMax);
         }
         public void InitSubActive()
         {

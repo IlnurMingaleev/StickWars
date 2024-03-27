@@ -62,9 +62,9 @@ namespace UI.Windows
             _boxImage.fillAmount = value;
         }
 
-        public void UpdateWallHealthBar(float amount)
+        public void UpdateWallHealthBar(int currentHealth, int maxHealth)
         {
-            _wallHealthBar.SetBarFiilAmount(amount);
+            _wallHealthBar.SetBarFiilAmount(currentHealth, maxHealth);
         }
 
     }
