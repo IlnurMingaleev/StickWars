@@ -34,6 +34,7 @@ namespace SO.Core
         public IReadOnlyDictionary<PerkTypesEnum, PlayerPerkConfigModel> BasePerks  => _basePerks;
         public IReadOnlyDictionary<PerkTypesEnum, PlayerPerkConfigModel> GamePerks  => _gamePerks;
         public IReadOnlyDictionary<SkillTypesEnum, PlayerSkillConfigModel> Skills  => _skills;
+        public IReadOnlyDictionary<WallTypeEnum, WallConfigsModel> WallConfigs => _wallConfigs;
         public void Init()
         {
             _basePerks.Clear();
