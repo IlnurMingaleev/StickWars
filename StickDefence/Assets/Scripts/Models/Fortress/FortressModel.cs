@@ -4,6 +4,8 @@ using TonkoGames.Sound;
 using Models.Attacking.TypesAttack;
 using Models.Player;
 using Models.Timers;
+using UI.UIManager;
+using UI.Windows;
 using UniRx;
 using UnityEngine;
 using Views.Projectiles;
@@ -17,6 +19,7 @@ namespace Models.Fortress
         private readonly IPumping _pumping;
         private readonly ISoundManager _soundManager;
         private readonly ITimerService _timerService;
+        private readonly IWindowManager _windowManager;
         private bool _isDead;
         
         private CompositeDisposable _disposable = new CompositeDisposable();
@@ -24,8 +27,9 @@ namespace Models.Fortress
         private CompositeDisposable _disposableIsActive = new CompositeDisposable();
         public event Action IsDeadAction;
         
-        public FortressModel(FortressView fortressView, ISoundManager soundManager, ITimerService timerService, IPumping pumping)
+        public FortressModel(FortressView fortressView, ISoundManager soundManager, ITimerService timerService, IPumping pumping, IWindowManager windowManager)
         {
+            _windowManager = windowManager;
             _pumping = pumping;
             View = fortressView;
             _soundManager = soundManager;
@@ -33,6 +37,21 @@ namespace Models.Fortress
             View.Damageable.Init(_pumping.WallData[WallTypeEnum.Basic].HealthValue, (int)_pumping.GamePerks[PerkTypesEnum.Defense].Value);
         }
 
+        public void InitHealthBar()
+        {
+            View.Damageable.HealthCurrent.Subscribe(health =>UpdateWallHealthBar(health) ).AddTo(_disposable);
+            View.Damageable.HealthMax.Subscribe(healthMax => UpdateWallHealthMax(healthMax)).AddTo(_disposable);
+        }
+
+        private void UpdateWallHealthBar(int health)
+        {
+            _windowManager.GetWindow<BottomPanelWindow>().UpdateWallHealthBar((float)health/ View.Damageable.HealthMax.Value);
+        }
+        
+        private void UpdateWallHealthMax(int healthMax)
+        {
+            _windowManager.GetWindow<BottomPanelWindow>().UpdateWallHealthBar((float) View.Damageable.HealthCurrent.Value/healthMax);
+        }
         public void InitSubActive()
         {
             View.IsActive.Subscribe(value =>

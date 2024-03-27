@@ -206,3 +206,13 @@ MonoBehaviour:
     CurrencyType: 0
   - Cost: 13
     CurrencyType: 1
+  _wallConfigModels:
+  - WallType: 1
+    BaseValue: 0
+    AdditionalValue: 0
+    LevelCount: 10
+    BaseCost: 10
+    AdditionalCost: 2
+    BaseHealthValue: 100
+    AdditionalHaalthValue: 20
+    CurrencyType: 2

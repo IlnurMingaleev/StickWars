@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO.Pipes;
 using TonkoGames.Controllers.Core;
 using TonkoGames.Sound;
 using TonkoGames.StateMachine;
@@ -7,6 +8,7 @@ using TonkoGames.StateMachine.Enums;
 using Models.Fortress;
 using Models.Player;
 using Models.Timers;
+using UI.UIManager;
 using UnityEngine;
 using VContainer;
 using Views.Projectiles;
@@ -23,6 +25,7 @@ namespace Models.Battle
         [Inject] private readonly ISoundManager _soundManager;
         [Inject] private readonly ITimerService _timerService;
         [Inject] private readonly IPlayer _player;
+        [Inject] private readonly IWindowManager _windowManager;
         
         private int _maxHealth = 1;
         private List<ProjectileView> _projectiles = new();
@@ -74,7 +77,8 @@ namespace Models.Battle
         private void InitFortress()
         {
             _fortressView = Instantiate(_configManager.PrefabsUnitsSO.FortressView, _spawnPoint);
-            _fortressModel = new FortressModel(_fortressView, _soundManager, _timerService, _player.Pumping);
+            _fortressModel = new FortressModel(_fortressView, _soundManager, _timerService, _player.Pumping, _windowManager);
+            _fortressModel.InitHealthBar();
             _fortressModel.InitAttack(CreateProjectile, RemoveProjectile);
             _fortressModel.InitSubActive();
 
@@ -137,15 +141,15 @@ namespace Models.Battle
         // {
         //     var tankPumpingConfigModel = _configManager.PumpingConfigSo.TanksConfigModels[_playerGameStats.PlayerCharacterData.Value.UnitType]
         //         .TankPumpingDatas[_playerGameStats.PlayerCharacterData.Value.LevelPumping - 1];
-        //     _tankModelView.TankVisual.Init(_dataCentralService.SubData);
-        //     _tankModelView.Init(_timerService, _soundManager, _coreStateMachine.RunTimeState, _playerGameStats.PlayerCharacterData.Value.Rangefinder);
+        //     _tankModelView.TankVisual.InitHealthBar(_dataCentralService.SubData);
+        //     _tankModelView.InitHealthBar(_timerService, _soundManager, _coreStateMachine.RunTimeState, _playerGameStats.PlayerCharacterData.Value.Rangefinder);
         //     _playerTankModel = new PlayerTankModel(_tankModelView, _inputController, tankPumpingConfigModel, this, _timerService);
-        //     _parallaxBackGround.Init(_tankModelView.transform);
-        //     _cameraView.Init(_tankModelView.transform);
+        //     _parallaxBackGround.InitHealthBar(_tankModelView.transform);
+        //     _cameraView.InitHealthBar(_tankModelView.transform);
         //     MaxHealth = tankPumpingConfigModel.Health;
         //     
         //     _buildMapStage.InitPlayerTransform(_tankModelView.transform);
-        //     _windowManager.GetWindow<GameMapStageWindow>().Init(tankPumpingConfigModel.UnitType, _tankModelView.HealthCurrent, tankPumpingConfigModel.Health);
+        //     _windowManager.GetWindow<GameMapStageWindow>().InitHealthBar(tankPumpingConfigModel.UnitType, _tankModelView.HealthCurrent, tankPumpingConfigModel.Health);
         // }
         //
         // public void StageStartBattle()

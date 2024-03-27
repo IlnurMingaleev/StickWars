@@ -12,7 +12,7 @@ namespace TonkoGames.Analytics
 #if  UNITY_ANDROID || UNITY_IPHONE
         private bool _canUseAnalytics;
         
-        public override void Init()
+        public override void InitHealthBar()
         {
             FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task => {
                 DependencyStatus dependencyStatus = task.Result;

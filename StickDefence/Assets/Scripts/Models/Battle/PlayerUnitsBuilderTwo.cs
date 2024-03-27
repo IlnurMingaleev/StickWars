@@ -159,15 +159,15 @@ namespace Models.Battle
         // {
         //     var tankPumpingConfigModel = _configManager.PumpingConfigSo.TanksConfigModels[_playerGameStats.PlayerCharacterData.Value.UnitType]
         //         .TankPumpingDatas[_playerGameStats.PlayerCharacterData.Value.LevelPumping - 1];
-        //     _tankModelView.TankVisual.Init(_dataCentralService.SubData);
-        //     _tankModelView.Init(_timerService, _soundManager, _coreStateMachine.RunTimeState, _playerGameStats.PlayerCharacterData.Value.Rangefinder);
+        //     _tankModelView.TankVisual.InitHealthBar(_dataCentralService.SubData);
+        //     _tankModelView.InitHealthBar(_timerService, _soundManager, _coreStateMachine.RunTimeState, _playerGameStats.PlayerCharacterData.Value.Rangefinder);
         //     _playerTankModel = new PlayerTankModel(_tankModelView, _inputController, tankPumpingConfigModel, this, _timerService);
-        //     _parallaxBackGround.Init(_tankModelView.transform);
-        //     _cameraView.Init(_tankModelView.transform);
+        //     _parallaxBackGround.InitHealthBar(_tankModelView.transform);
+        //     _cameraView.InitHealthBar(_tankModelView.transform);
         //     MaxHealth = tankPumpingConfigModel.Health;
         //     
         //     _buildMapStage.InitPlayerTransform(_tankModelView.transform);
-        //     _windowManager.GetWindow<GameMapStageWindow>().Init(tankPumpingConfigModel.UnitType, _tankModelView.HealthCurrent, tankPumpingConfigModel.Health);
+        //     _windowManager.GetWindow<GameMapStageWindow>().InitHealthBar(tankPumpingConfigModel.UnitType, _tankModelView.HealthCurrent, tankPumpingConfigModel.Health);
         // }
         //
         // public void StageStartBattle()

@@ -24,13 +24,16 @@ namespace UI.Windows
 
         [Header("Upgrade BarrierHealth Btn")] 
         [SerializeField] private UIButton _upgradeBarrierLvlBtn;
-
+        [SerializeField] private UIBar _wallHealthBar;
+ 
         [Header("Free Box")] 
         [SerializeField] private UIButton _freeBoxBtn;
         [SerializeField] private Image _boxImage;
         
         [Header("Money ")]
         [SerializeField] private TMP_Text _moneyText;
+        
+        
 
         [Inject] private IWindowManager _windowManager;
 
@@ -58,6 +61,11 @@ namespace UI.Windows
         {
             _boxImage.fillAmount = value;
         }
-        
+
+        public void UpdateWallHealthBar(float amount)
+        {
+            _wallHealthBar.SetBarFiilAmount(amount);
+        }
+
     }
 }

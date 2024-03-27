@@ -52,7 +52,7 @@ namespace Models.Fortress
             View = playerView;
             _soundManager = soundManager;
             _timerService = timerService;
-           // View.Damageable.Init((int)_pumping.GamePerks[PerkTypesEnum.Health].Value, (int)_pumping.GamePerks[PerkTypesEnum.Defense].Value);
+           // View.Damageable.InitHealthBar((int)_pumping.GamePerks[PerkTypesEnum.Health].Value, (int)_pumping.GamePerks[PerkTypesEnum.Defense].Value);
         }
 
         public void InitSubActive()
