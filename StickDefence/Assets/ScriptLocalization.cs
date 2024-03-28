@@ -97,6 +97,9 @@ namespace I2.Loc
 		    public const string AttackRange = "Names/Perks/AttackRange";
 		    public const string Defense = "Names/Perks/Defense";
 		    public const string DailyGoldBonus = "Names/Perks/DailyGoldBonus";
+		    public const string DecreasePrice = "Names/Perks/DecreasePrice";
+		    public const string IncreaseProfit = "Names/Perks/IncreaseProfit";
+		    public const string RecruitsDamage = "Names/Perks/RecruitsDamage";
 		}
 
 		public static class Names_Skills

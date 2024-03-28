@@ -5,16 +5,9 @@ namespace Enums
 {
     public enum PerkTypesEnum
     {
-        Damage,
-        AttackSpeed,
-        AttackRange,
-        CriticalChance,
-        CriticalMultiplier,
-        Health,
-        RegenHealth,
-        Defense,
-        KillSilverBonus,
-        DailyGoldBonus
+        DecreasePrice,
+        IncreaseProfit,
+        RecruitsDamage,
     }
     
     public static class PerkTypeEnumExtensions

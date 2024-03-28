@@ -1158,6 +1158,33 @@ MonoBehaviour:
       - "\xD6zel sand\u0131k x"
       Flags: 000000
       Languages_Touch: []
+    - Term: Names/Perks/DecreasePrice
+      TermType: 0
+      Description: 
+      Languages:
+      - Decrease Prices
+      - "\u0423\u043C\u0435\u043D\u044C\u0448\u0438\u0442\u044C \u0426\u0435\u043D\u044B"
+      - 
+      Flags: 000000
+      Languages_Touch: []
+    - Term: '"Names/Perks/IncreaseProfit'
+      TermType: 0
+      Description: 
+      Languages:
+      - Increase Profits
+      - "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0442\u044C \u0414\u043E\u0445\u043E\u0434\u044B"
+      - 
+      Flags: 000000
+      Languages_Touch: []
+    - Term: '"Names/Perks/RecruitsDamage'
+      TermType: 0
+      Description: 
+      Languages:
+      - Recruits Damage
+      - "\u0423\u0440\u043E\u043D \u041D\u043E\u0432\u043E\u0431\u0440\u0430\u043D\u0446\u0435\u0432"
+      - 
+      Flags: 000000
+      Languages_Touch: []
     CaseInsensitiveTerms: 0
     OnMissingTranslation: 1
     mTerm_AppName: 

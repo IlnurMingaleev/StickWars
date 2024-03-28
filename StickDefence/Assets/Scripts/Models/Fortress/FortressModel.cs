@@ -36,7 +36,7 @@ namespace Models.Fortress
             View = fortressView;
             _soundManager = soundManager;
             _timerService = timerService;
-            View.Damageable.Init(_pumping.WallData[WallTypeEnum.Basic].HealthValue, (int)_pumping.GamePerks[PerkTypesEnum.Defense].Value);
+            View.Damageable.Init(_pumping.WallData[WallTypeEnum.Basic].HealthValue, _pumping.WallData[WallTypeEnum.Basic].Defense);
             _bottomPanelWindow = _windowManager.GetWindow<BottomPanelWindow>();
         }
 
@@ -133,19 +133,9 @@ namespace Models.Fortress
 
         private void SubscribeStats()
         {
-            
-            _rangeAttackModel.SetDamage((int) _pumping.GamePerks[PerkTypesEnum.Damage].Value);
-
-            float roundsPerMinute = _pumping.GamePerks[PerkTypesEnum.AttackSpeed].Value;
-            float ticks = 60f;
-            float reloading = ticks / roundsPerMinute; 
-            
-            _rangeAttackModel.SetReloading(reloading);
-
             View.Damageable.SetMaxHealth((int)_pumping.WallData[WallTypeEnum.Basic].HealthValue);
-            View.Damageable.UpdateDefence(_pumping.GamePerks[PerkTypesEnum.Defense].Value);
+            View.Damageable.UpdateDefence(_pumping.WallData[WallTypeEnum.Basic].Defense);
             View.Damageable.Resurrect();
-           // _rangeAttackModel.ReSetupRangeAttack(_pumping.GamePerks[PerkTypesEnum.AttackRange].Value);
         }
 
         private void OnDead(bool value)

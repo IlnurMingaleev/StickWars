@@ -98,11 +98,11 @@ namespace UI.Content.UpgradeBlock
         {
             switch (_perkType)
             {
-                case PerkTypesEnum.Defense:
+                /*case PerkTypesEnum.Defense:
                 case PerkTypesEnum.CriticalChance:
                 case PerkTypesEnum.CriticalMultiplier:
                     _valueLabel.text = $"{value * 100}%";
-                    break;
+                    break;*/
                 default:
                     _valueLabel.text = SetScoreExt.ConvertIntToStringValue(value, 1);
                     break;

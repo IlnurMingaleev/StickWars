@@ -136,17 +136,9 @@ namespace Models.DataModels.Models
 
             switch (perkTypesEnum)
             {
-                case PerkTypesEnum.Damage:
-                case PerkTypesEnum.AttackSpeed:
-                case PerkTypesEnum.Health:
-                case PerkTypesEnum.AttackRange:
-                    perkData.PerkLevel = 1;
-                    break;
-                case PerkTypesEnum.CriticalChance:
-                case PerkTypesEnum.CriticalMultiplier:
-                case PerkTypesEnum.RegenHealth:
-                case PerkTypesEnum.Defense:
-                case PerkTypesEnum.KillSilverBonus:
+                case PerkTypesEnum.DecreasePrice:
+                case PerkTypesEnum.IncreaseProfit:
+                case PerkTypesEnum.RecruitsDamage:
                     perkData.PerkLevel = 0;
                     break;
                 default:
