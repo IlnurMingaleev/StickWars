@@ -216,7 +216,7 @@ namespace UI.Common
             _tapScaleCompleted = false;
             _clicked = false;
 
-            if (OnClick.Listeners > 0) _soundManager.PlayUiButtonClick();
+//            if (OnClick.Listeners > 0) _soundManager.PlayUiButtonClick();
             OnClick.Invoke(this);
         }
 

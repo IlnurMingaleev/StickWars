@@ -22,7 +22,7 @@ namespace UI.Windows
         
         [Inject] private ConfigManager _configManager;
 
-        public WindowPriority Priority = WindowPriority.AboveTopPanel;
+        private WindowPriority Priority = WindowPriority.AboveTopPanel;
         private IPlaceableUnit _mergeController; 
         public void Init(IPlaceableUnit mergeController)
         {
@@ -51,7 +51,9 @@ namespace UI.Windows
                 foreach (var stickmanStatsConfig in _configManager.UnitsStatsSo.StickmanUnitsStatsConfigs)
                 {
                     StickManUIItem stickman = Instantiate(_stickManUIItem, _scrollContentTransform);
-                    stickman.Init(_mergeController, ActivateDisposables, stickmanStatsConfig, _configManager.PrefabsUnitsSO.PlayerUnitPrefabs[stickmanStatsConfig.UnitType]);
+                    stickman.Init(_mergeController,stickmanStatsConfig, _configManager.PrefabsUnitsSO.PlayerUnitPrefabs[stickmanStatsConfig.UnitType]);
+                    stickman.BuyButton.OnClickAsObservable.Subscribe(_ => { stickman.AddStickmanToPlayGround(); })
+                        .AddTo(ActivateDisposables);
                 }
             }
         }

@@ -1,4 +1,5 @@
 ﻿using System;
+using Models.DataModels;
 using Models.Merge;
 using TMPro;
 using UI.Common;
@@ -36,17 +37,17 @@ namespace UI.Windows
         [SerializeField] private TMP_Text _moneyText;
         
         
-
-        [Inject] private IWindowManager _windowManager;
-
+        [Inject] private IDataCentralService _dataCentralService;
+        
         private WindowPriority Priority = WindowPriority.TopPanel;
-
         private MergeController _mergeController;
+        private StickmanShopWindow _stickmanShopWindow;
         public event Action UpgradeWallClickedEvent;
 
         protected override void OnActivate()
         {
             if(_mergeController == null) _mergeController = FindObjectOfType<MergeController>();
+            if (!_stickmanShopWindow) _stickmanShopWindow = _manager.GetWindow<StickmanShopWindow>();
             base.OnActivate();
             InitWindowButtons();
             InitWallUpgradeButtonClick(UpgradeWallClickedEvent);
@@ -56,10 +57,16 @@ namespace UI.Windows
         {
             _stickmanShopBtn.OnClickAsObservable.Subscribe(_ =>
                 {
-                    _windowManager.GetWindow<StickmanShopWindow>().Init(_mergeController.GetComponent<IPlaceableUnit>());
-                    _windowManager.Show<StickmanShopWindow>();
+                   _stickmanShopWindow.Init(_mergeController.GetComponent<IPlaceableUnit>());
+                   _manager.Show<StickmanShopWindow>();
                 })
                 .AddTo(ActivateDisposables);
+            _dataCentralService.StatsDataModel.CoinsCount.Subscribe(money => UpdateMoneyLabel(money)).AddTo(ActivateDisposables);
+        }
+
+        private void UpdateMoneyLabel(int money)
+        {
+            _moneyText.text = $"{money}";
         }
 
         public void SetBoxImageFill(float value)

@@ -7,6 +7,8 @@ using TMPro;
 using TonkoGames.Controllers.Core;
 using UI.Common;
 using UniRx;
+using Unity.VisualScripting;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -28,30 +30,37 @@ namespace UI.Content.Shop
         [Header("Buy Conditions")]
         [SerializeField] private TMP_Text _buyConditionsLabel;
 
+        public UIButton BuyButton => _buyBtn;
+        
         private IPlaceableUnit _mergeController;
         private StickmanStatsConfig _statsConfig;
-        public void Init(IPlaceableUnit mergeController, CompositeDisposable activateDisposable,
-            StickmanStatsConfig stickmanStatsConfig, PlayerPrefabModel playerPrefabModel)
+        private CompositeDisposable _disposable = new CompositeDisposable();
+        public void Init(IPlaceableUnit mergeController, StickmanStatsConfig stickmanStatsConfig, PlayerPrefabModel playerPrefabModel)
         {
             _statsConfig =stickmanStatsConfig ;
             _mergeController = mergeController;
             _stickmanUnitType = stickmanStatsConfig.UnitType;
             _levelLabel.text = stickmanStatsConfig.Level.ToString();
             _stickmanImage.sprite = playerPrefabModel.uiIcon;
-            _buyBtn.OnClickAsObservable.Subscribe(_=>
+            /*_buyBtn.OnClickAsObservable.Subscribe(_=>
             {
                 AddStickmanToPlayGround();
-            }).AddTo(activateDisposable);
+            }).AddTo(_disposable);*/
            
         }
 
-        private void AddStickmanToPlayGround()
+        public void AddStickmanToPlayGround()
         {
             Debug.LogWarning("Stickman Created");
-            if (_mergeController!= null)
+            if (_mergeController != null)
             {
                 _mergeController.PlaceDefinedItem((int)_stickmanUnitType);
             }
+        }
+
+        private void OnDisable()
+        {
+            _disposable.Clear();
         }
     }
 }
