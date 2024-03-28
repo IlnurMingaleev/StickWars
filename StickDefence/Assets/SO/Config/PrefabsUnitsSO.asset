@@ -25,4 +25,9 @@ MonoBehaviour:
   - <UnitType>k__BackingField: 3
     <GO>k__BackingField: {fileID: 5155550405894979362, guid: ae74a7b40554ca04aacde7b5bfc53999, type: 3}
     uiIcon: {fileID: 21300000, guid: f015d1882348d46139f2f76e19b4fece, type: 3}
+  _perkIconModels:
+  - PerkType: 0
+    PerkIcon: {fileID: 21300000, guid: 413710b631bd5493ebbf1a29b2d82eb3, type: 3}
+  - PerkType: 1
+    PerkIcon: {fileID: 21300000, guid: c3189121f7e3342a3b2fcc2f495c9e31, type: 3}
   <FortressView>k__BackingField: {fileID: 7790035769800290002, guid: 2c06f1b513875b948b29a62cce67534f, type: 3}

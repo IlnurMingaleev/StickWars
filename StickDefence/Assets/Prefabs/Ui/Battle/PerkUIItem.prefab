@@ -222,9 +222,9 @@ GameObject:
   - component: {fileID: 5286350639999432592}
   - component: {fileID: 5319473823071398464}
   - component: {fileID: 3554743039713656606}
-  - component: {fileID: 4141586610682939421}
+  - component: {fileID: 1071839031970373736}
   m_Layer: 0
-  m_Name: StickManUIItem
+  m_Name: PerkUIItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -311,7 +311,7 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
---- !u!114 &4141586610682939421
+--- !u!114 &1071839031970373736
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -320,12 +320,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1922455567523141885}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 837743f8ec914fb0a1d9abe17704cc6d, type: 3}
+  m_Script: {fileID: 11500000, guid: 445589c2a32a4f998b05b6d75701d999, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _levelLabel: {fileID: 7797914898391475042}
   _buyBtn: {fileID: 2470167701665861769}
-  _stickmanImage: {fileID: 5071699049495972458}
+  _perkImage: {fileID: 5071699049495972458}
   _buyConditionsLabel: {fileID: 1653871754132406973}
 --- !u!1 &2028165205215295936
 GameObject:

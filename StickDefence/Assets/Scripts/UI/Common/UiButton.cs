@@ -52,6 +52,8 @@ namespace UI.Common
         #endregion
 
         #region properties
+
+        public Image TargetImage => _targetInteractableImage;
         protected bool IsDown
         {
             get => _isDown;

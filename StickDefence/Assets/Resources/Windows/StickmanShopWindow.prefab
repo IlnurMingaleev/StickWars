@@ -475,6 +475,7 @@ GameObject:
   - component: {fileID: 38621865647610037}
   - component: {fileID: 5628507444687204779}
   - component: {fileID: 7010962173007361247}
+  - component: {fileID: 8718936776504360480}
   m_Layer: 0
   m_Name: UpgradesButton
   m_TagString: Untagged
@@ -582,6 +583,36 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 5628507444687204779}
   m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &8718936776504360480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2952046629974459593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19d953d457084a719d4e4368843b4850, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetInteractableImage: {fileID: 5628507444687204779}
+  _colorActive: {r: 0, g: 0, b: 0, a: 0}
+  _colorInActive: {r: 0, g: 0, b: 0, a: 0}
+  _label: {fileID: 0}
+  _localizedLabel: {fileID: 0}
+  _particles: {fileID: 0}
+  _onClick:
+    m_PersistentCalls:
+      m_Calls: []
+  _onDown:
+    m_PersistentCalls:
+      m_Calls: []
+  _onUp:
+    m_PersistentCalls:
+      m_Calls: []
+  _onLongPress:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &3120410293500963923
@@ -925,6 +956,7 @@ GameObject:
   - component: {fileID: 5443064203972784374}
   - component: {fileID: 3085657376797828759}
   - component: {fileID: 2640883014738259966}
+  - component: {fileID: 9120301405113423400}
   m_Layer: 0
   m_Name: Units
   m_TagString: Untagged
@@ -1034,6 +1066,36 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &9120301405113423400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5064628488882185018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19d953d457084a719d4e4368843b4850, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetInteractableImage: {fileID: 3085657376797828759}
+  _colorActive: {r: 0, g: 0, b: 0, a: 0}
+  _colorInActive: {r: 0, g: 0, b: 0, a: 0}
+  _label: {fileID: 0}
+  _localizedLabel: {fileID: 0}
+  _particles: {fileID: 0}
+  _onClick:
+    m_PersistentCalls:
+      m_Calls: []
+  _onDown:
+    m_PersistentCalls:
+      m_Calls: []
+  _onUp:
+    m_PersistentCalls:
+      m_Calls: []
+  _onLongPress:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5240172044266064775
 GameObject:
   m_ObjectHideFlags: 0
@@ -1089,9 +1151,11 @@ MonoBehaviour:
   _isTransparent: 1
   _windowAnimations: []
   _stickManUIItem: {fileID: 4141586610682939421, guid: 77fef1b9071eabc41aa1fa6b7b599753, type: 3}
+  _perkUIItem: {fileID: 1071839031970373736, guid: 2a9308cb41e206f4db029f1d4dee0d05, type: 3}
   _scrollContentTransform: {fileID: 4038521839996206962}
   _closeWindowBtn: {fileID: 8289674274702891989}
-  Priority: 4
+  _stickmanShopBtn: {fileID: 9120301405113423400}
+  _perksShopBtn: {fileID: 8718936776504360480}
 --- !u!1 &5918337960106414611
 GameObject:
   m_ObjectHideFlags: 0
