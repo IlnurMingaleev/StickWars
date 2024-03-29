@@ -223,7 +223,7 @@ namespace Models.Merge
         }
 
 
-        bool AllSlotsOccupied()
+       public  bool AllSlotsOccupied()
         {
             for (var i = 0; i < slots.Length - 5; i++)
             {

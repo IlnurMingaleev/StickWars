@@ -9,6 +9,7 @@ namespace Models.Timers
     public interface ITimerModel
     {
         void CloseTick();
+        void StopTick();
     }
     public class TimerModel : ITimerModel
     { 

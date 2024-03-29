@@ -20,6 +20,7 @@ namespace Models.Controllers
         [Inject] private IWindowManager _windowManager;
         [Inject] private ConfigManager _configManager;
         [SerializeField] private float _cooldownTime;
+        
 
         [Header("MergeController")] [SerializeField]
         private MergeController _mergeController;
@@ -27,10 +28,12 @@ namespace Models.Controllers
         private bool _cooldown;
         private ITimerModel _timerModel;
         private BottomPanelWindow _bottomPanelWindow;
-        private void Start()
+        private const float IsAvailableCheckInterval = 10.0f;
+
+            private void Start()
         {
             _bottomPanelWindow = _windowManager.GetWindow<BottomPanelWindow>();
-            StartTimer();
+           SetTimerAccordingAvailability();
         }
 
         private void StartTimer()
@@ -41,15 +44,39 @@ namespace Models.Controllers
                     () =>
                     {
                          _mergeController.PlaceDefinedItem((int)PlayerUnitTypeEnum.PlayerOne);
-                         StartTimer();
-
+                        SetTimerAccordingAvailability();
                     });
             
+        }
+
+        private void StartSlotAvailableCheckTimer()
+        {
+            _timerModel = _timerService.AddGameTimer(IsAvailableCheckInterval,
+                f => { },
+                () => { SetTimerAccordingAvailability(); });
+        }
+
+        private void SetTimerAccordingAvailability()
+        {
+            if (_mergeController.AllSlotsOccupied())
+            {
+                StartSlotAvailableCheckTimer();
+            }
+            else
+            {
+                StartTimer();
+            }
         }
 
         private void UpdateFill(float f)
         {
             if (_bottomPanelWindow != null) _bottomPanelWindow.SetBoxImageFill(1 - (f / _cooldownTime));
+        }
+
+        private void OnDisable()
+        {
+            _timerModel.CloseTick();
+            _timerModel.StopTick();
         }
     }
 }
