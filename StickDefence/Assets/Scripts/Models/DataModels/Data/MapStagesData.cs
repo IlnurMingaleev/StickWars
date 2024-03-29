@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using Enums;
+using Models.DataModels.Models;
+using Models.Merge;
 using UnityEngine.Serialization;
 
 namespace Models.DataModels.Data
@@ -9,6 +11,7 @@ namespace Models.DataModels.Data
     public struct MapStagesData
     {
          public List<MapStageData> MapStageBlockDatas;
+         public List<SlotItemData> SlotItemDatas;
     }
 
     [Serializable]
@@ -17,5 +20,12 @@ namespace Models.DataModels.Data
         public bool IsAnimationOpened;
         public bool IsCompleted;
         public MapStagesEnum MapStageType;
+        
+    }
+    [Serializable]
+    public struct SlotItemData
+    {
+        public SlotIdTypeEnum SlotIdTypeEnum;
+        public PlayerUnitTypeEnum PlayerUnitType;
     }
 }

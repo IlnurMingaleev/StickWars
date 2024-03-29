@@ -18,6 +18,7 @@ namespace Models.Merge
     {
         public int id;
         public Slot parentSlot;
+        public PlayerUnitTypeEnum UnitTypeEnum;
 
         public Transform unitParent;
         public PlayerViewTwo unitGameObject;

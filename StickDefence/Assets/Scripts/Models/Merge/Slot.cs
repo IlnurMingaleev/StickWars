@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using Enums;
 using Models.Battle;
+using Models.DataModels;
+using Models.DataModels.Data;
 using Models.Timers;
 using TonkoGames.Controllers.Core;
 using TonkoGames.Sound;
@@ -17,10 +19,12 @@ namespace Models.Merge
         public Item currentItem;
         public SlotState state = SlotState.Empty;
         public SlotTypeEnum slotType = SlotTypeEnum.None;
+        public SlotIdTypeEnum slotIdType = SlotIdTypeEnum.None;
 
         [Inject] private ConfigManager _configManager;
         [Inject] private ITimerService _timerService;
         [Inject] private ISoundManager _soundManager;
+        [Inject] private IDataCentralService _dataCentralService;
 
         public void CreateItem(int id, IPlayerUnitsBuilderTwo _playerUnitBuilder) 
         {
@@ -32,7 +36,13 @@ namespace Models.Merge
 
             currentItem = itemGO.GetComponent<Item>();
             currentItem.Init(id, this,_playerUnitBuilder);
-
+            _dataCentralService.MapStageDataModel.UpdateSlotItemData(
+               new SlotItemData()
+               {
+                   SlotIdTypeEnum = slotIdType,
+                   PlayerUnitType = (PlayerUnitTypeEnum)id,
+               });
+            _dataCentralService.SaveFull();    
             ChangeStateTo(SlotState.Full);
         }
 

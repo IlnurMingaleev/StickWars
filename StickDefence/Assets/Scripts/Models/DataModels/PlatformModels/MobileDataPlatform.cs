@@ -1,5 +1,6 @@
 ﻿using Models.DataModels.Data;
 using Models.DataModels.Models;
+using Models.Merge;
 using Tools.GameTools;
 
 namespace Models.DataModels.PlatformModels
@@ -10,7 +11,6 @@ namespace Models.DataModels.PlatformModels
         private JsonSerialization<StatsData> _jsonSerializationStatsData = new((PRENAME + nameof(StatsDataModel) + ".json"));
         private JsonSerialization<PlayerPumpingData> _jsonSerializationCharacterPumpingData = new((PRENAME + nameof(PumpingDataModel) + ".json"));
         private JsonSerialization<MapStagesData> _jsonSerializationCharacterMapStageData = new((PRENAME + nameof(MapStageDataModel) + ".json"));
-
         #region Save
         public override void SaveSubData() => _jsonSerializationSubData.Serialization(SubDataModel.GetSubData());
         public override void SaveStatsDataModel() => _jsonSerializationStatsData.Serialization(StatsDataModel.GetStatsData());

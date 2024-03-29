@@ -1,5 +1,8 @@
 using System.Collections.Generic;
+using Enums;
 using Models.Battle;
+using Models.DataModels;
+using Models.DataModels.Models;
 using TonkoGames.Controllers.Core;
 using UnityEngine;
 using VContainer;
@@ -24,6 +27,7 @@ namespace Models.Merge
         private Dictionary<int, Slot> slotDictionary;
         private IPlayerUnitsBuilderTwo _playerBuilder;
         [Inject] private ConfigManager _configManager;
+        [Inject] private IDataCentralService _dataCentralService;
 
         private void Awake()
         {
@@ -34,7 +38,15 @@ namespace Models.Merge
 
         public void Init()
         {
-            
+            foreach (var slot in slots)
+            {
+                PlayerUnitTypeEnum playerUnitType = _dataCentralService.MapStageDataModel.SlotItems[slot.slotIdType].PlayerUnitType; 
+                if(playerUnitType == PlayerUnitTypeEnum.None)
+                     continue;
+                else
+                     slot.CreateItem((int)playerUnitType,_playerUnitsBuilder);
+
+            }
         }
 
         private void Start()
@@ -47,6 +59,7 @@ namespace Models.Merge
                 slots[i].id = i;
                 slotDictionary.Add(i, slots[i]);
             }
+            Init();
         }
 
         //handle user input
