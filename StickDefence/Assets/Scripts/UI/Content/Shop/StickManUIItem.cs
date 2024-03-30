@@ -23,15 +23,18 @@ namespace UI.Content.Shop
 
         [Header("Buy Button")]
         [SerializeField] private UIButton _buyBtn;
+        [SerializeField] private TMP_Text _buyBtnLabel;
 
         [Header("StickManIcon")] 
         [SerializeField] private Image _stickmanImage;
 
         [Header("Buy Conditions")]
-        [SerializeField] private TMP_Text _buyConditionsLabel;
+        [SerializeField] private TMP_Text _damageLabel;
 
+        [Header("LockTemplate")]
+        [SerializeField] private LockTemplate _lockTemplate;
         public UIButton BuyButton => _buyBtn;
-        
+        public LockTemplate LockTemplate => _lockTemplate;
         private IPlaceableUnit _mergeController;
         private StickmanStatsConfig _statsConfig;
         private CompositeDisposable _disposable = new CompositeDisposable();
@@ -42,11 +45,13 @@ namespace UI.Content.Shop
             _stickmanUnitType = stickmanStatsConfig.UnitType;
             _levelLabel.text = stickmanStatsConfig.Level.ToString();
             _stickmanImage.sprite = playerPrefabModel.uiIcon;
+            _damageLabel.text = $"Damage: {stickmanStatsConfig.Damage}";
+            _buyBtnLabel.text = $"Buy: {stickmanStatsConfig.Price}";
             /*_buyBtn.OnClickAsObservable.Subscribe(_=>
             {
                 AddStickmanToPlayGround();
             }).AddTo(_disposable);*/
-           
+
         }
 
         public void AddStickmanToPlayGround()

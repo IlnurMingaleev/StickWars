@@ -1185,6 +1185,15 @@ MonoBehaviour:
       - 
       Flags: 000000
       Languages_Touch: []
+    - Term: Buttons/CannonWarning
+      TermType: 0
+      Description: 
+      Languages:
+      - Unlock Cannon
+      - "\u041E\u0442\u043A\u0440\u043E\u0439\u0442\u0435 \u041E\u0440\u0443\u0436\u0438\u0435"
+      - 
+      Flags: 000000
+      Languages_Touch: []
     CaseInsensitiveTerms: 0
     OnMissingTranslation: 1
     mTerm_AppName: 

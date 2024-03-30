@@ -11,6 +11,7 @@ namespace Models.DataModels.Data
         public List<PerkData> PlayerPerksData;
         public List<SkillData> PlayerSkillsData;
         public List<SkillCellData> SkillCellDatas;
+        public PlayerUnitTypeEnum MaxStickmanLevel;
     }
     
     [Serializable]

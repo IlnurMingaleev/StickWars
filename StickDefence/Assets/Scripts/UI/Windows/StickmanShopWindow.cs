@@ -1,5 +1,11 @@
-﻿using Models.Merge;
+﻿using Enums;
+using I2.Loc;
+using Models.DataModels;
+using Models.DataModels.Data;
+using Models.Merge;
 using Models.Player;
+using Models.SO.Core;
+using TMPro;
 using TonkoGames.Controllers.Core;
 using UI.Common;
 using UI.Content.Shop;
@@ -19,7 +25,10 @@ namespace UI.Windows
         [Header("PerkUIItem")] [SerializeField]
         private PerkUIItem _perkUIItem;
 
-            [Header("Scroll Content Transform")] [SerializeField]
+        [Header("MoneyLabel")]
+        [SerializeField] private TMP_Text _moneyLabel;
+        
+        [Header("Scroll Content Transform")] [SerializeField]
         private Transform _scrollContentTransform;
 
         [Header("Close window Btn")] [SerializeField]
@@ -31,6 +40,7 @@ namespace UI.Windows
 
         [Inject] private ConfigManager _configManager;
         [Inject] private IPlayer _player;
+        [Inject] private IDataCentralService _dataCentralService;
 
         private WindowPriority Priority = WindowPriority.AboveTopPanel;
         private IPlaceableUnit _mergeController;
@@ -46,7 +56,21 @@ namespace UI.Windows
         {
             base.OnActivate();
             InitWindowButtons();
+            InitTextFields();
             InitStickmanTab();
+        }
+
+        private void InitTextFields()
+        {
+            _dataCentralService.StatsDataModel.CoinsCount.Subscribe(amount =>
+            {
+                ShowMoneyAmount(amount);
+            }).AddTo(ActivateDisposables);
+        }
+
+        private void ShowMoneyAmount(int amount)
+        {
+            _moneyLabel.text = $"{amount}";
         }
 
         private void InitWindowButtons()
@@ -54,6 +78,10 @@ namespace UI.Windows
             _closeWindowBtn.OnClickAsObservable.Subscribe(_ => { _manager.Hide(this); }).AddTo(ActivateDisposables);
             _stickmanShopBtn.OnClickAsObservable.Subscribe(_ => { InitStickmanTab(); }).AddTo(ActivateDisposables);
             _perksShopBtn.OnClickAsObservable.Subscribe(_ => { InitPerksTab(); }).AddTo(ActivateDisposables);
+            _dataCentralService.PumpingDataModel.MaxStickmanLevel.Subscribe(maxLevel =>
+            {
+                InitStickmanTab();
+            }).AddTo(ActivateDisposables);
         }
 
         private void InitPerksTab()
@@ -79,10 +107,41 @@ namespace UI.Windows
                     StickManUIItem stickman = Instantiate(_stickManUIItem, _scrollContentTransform);
                     stickman.Init(_mergeController, stickmanStatsConfig,
                         _configManager.PrefabsUnitsSO.PlayerUnitPrefabs[stickmanStatsConfig.UnitType]);
-                    stickman.BuyButton.OnClickAsObservable.Subscribe(_ => { stickman.AddStickmanToPlayGround(); })
-                        .AddTo(_shopDisposable);
+                    OpenLevelsLess(stickmanStatsConfig, stickman);
+                    OpenFirstLevelUnit(stickmanStatsConfig, stickman);
                 }
             }
+        }
+
+        private void OpenLevelsLess(StickmanStatsConfig stickmanStatsConfig, StickManUIItem stickman)
+        {
+            if ((int) stickmanStatsConfig.UnitType <= (int) (_dataCentralService.PumpingDataModel.MaxStickmanLevel.Value - 4))
+            {
+                stickman.BuyButton.IsInteractable = true;
+                SubscribeToBuyEvent(stickman);
+            }
+            else
+            {
+                stickman.BuyButton.IsInteractable = false;
+                stickman.LockTemplate.LockLabel.text = $"{ScriptLocalization.Buttons_Shop.UnlockCannon} {stickmanStatsConfig.Level + 3}";
+                stickman.LockTemplate.gameObject.SetActive(true);
+            }
+        }
+
+        private void OpenFirstLevelUnit(StickmanStatsConfig stickmanStatsConfig, StickManUIItem stickman)
+        {
+            if ((int) stickmanStatsConfig.UnitType == (int) PlayerUnitTypeEnum.PlayerOne)
+            {
+                stickman.BuyButton.IsInteractable = true;
+                stickman.LockTemplate.gameObject.SetActive(false);
+                SubscribeToBuyEvent(stickman);
+            }
+        }
+
+        private void SubscribeToBuyEvent(StickManUIItem stickman)
+        {
+            stickman.BuyButton.OnClickAsObservable.Subscribe(_ => { stickman.AddStickmanToPlayGround(); })
+                .AddTo(_shopDisposable);
         }
 
         private void InitPerksUIItems()
@@ -93,13 +152,30 @@ namespace UI.Windows
                 foreach (var perkType in _configManager.PrefabsUnitsSO.PerkIcons.Keys)
                 {
                     PerkUIItem perk = Instantiate(_perkUIItem, _scrollContentTransform);
-                    perk.Init(_configManager.PumpingConfigSo.GamePerks[perkType], _configManager, perkType);
-                    perk.BuyButton.OnClickAsObservable.Subscribe(_ =>
-                        {
-                            _player.Pumping.UpgradeGamePerk(perkType);
-                        })
-                        .AddTo(_shopDisposable);
+                    PlayerPerkConfigModel perkConfigModel = _configManager.PumpingConfigSo.GamePerks[perkType];
+                    PerkData perkData = _dataCentralService.PumpingDataModel.PerksReactive[perkType];
+                    var nextLevel = perkData.PerkLevel + 1;
+                    var perkCost = perkConfigModel.BaseValue + nextLevel * perkConfigModel.AdditionalCost;
+                    perk.Init(perkConfigModel, _configManager, perkType, perkCost,perkData.PerkLevel);
+                    SubscribeToPerkUpgrade(perk, perkType, perkCost);
                 }
+            }
+        }
+
+        private void SubscribeToPerkUpgrade(PerkUIItem perk, PerkTypesEnum perkType,float perkCost)
+        {
+            if (_dataCentralService.StatsDataModel.CoinsCount.Value >= perkCost)
+            {
+                perk.BuyButton.IsInteractable = true;
+                perk.BuyButton.OnClickAsObservable.Subscribe(_ =>
+                    {
+                        _player.Pumping.UpgradeGamePerk(perkType);
+                    })
+                    .AddTo(_shopDisposable);
+            }
+            else
+            {
+                perk.BuyButton.IsInteractable = false;
             }
         }
 

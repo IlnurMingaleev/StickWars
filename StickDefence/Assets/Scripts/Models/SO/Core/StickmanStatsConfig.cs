@@ -7,7 +7,6 @@ namespace Models.SO.Core
     public struct StickmanStatsConfig
     {
         public PlayerUnitTypeEnum UnitType;
-       
         public int Level;
         public int Damage;
         public float Reloading;

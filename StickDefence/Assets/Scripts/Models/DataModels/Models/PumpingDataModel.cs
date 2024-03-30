@@ -14,6 +14,8 @@ namespace Models.DataModels.Models
         IReadOnlyReactiveDictionary<PerkTypesEnum, PerkData> PerksReactive { get; }
         IReadOnlyReactiveDictionary<SkillTypesEnum, SkillData> SkillsReactive { get; }
         IReadOnlyReactiveCollection<SkillCellData> SkillCellsReactive { get; }
+        IReadOnlyReactiveProperty<WallData> WallLevelReactive { get; }
+        IReadOnlyReactiveProperty<PlayerUnitTypeEnum> MaxStickmanLevel { get; }
 
         #endregion
         
@@ -25,6 +27,7 @@ namespace Models.DataModels.Models
 
         void UpdateSkillCellData(int index, SkillCellData skillCellData);
         SkillCellData GetSkillCellData(int index);
+        void UpgradeMaxStickmanLevel();
 
         #endregion
     } 
@@ -32,11 +35,14 @@ namespace Models.DataModels.Models
     {
         #region Fields
 
+        private ReactiveProperty<PlayerUnitTypeEnum> _maxStickmanLevel = new ReactiveProperty<PlayerUnitTypeEnum>();
+
         private ReactiveDictionary<PerkTypesEnum, PerkData> _playerPerks =
             new ReactiveDictionary<PerkTypesEnum, PerkData>();
-        
+
         private ReactiveDictionary<SkillTypesEnum, SkillData> _playerSkills =
             new ReactiveDictionary<SkillTypesEnum, SkillData>();
+        public IReadOnlyReactiveProperty<PlayerUnitTypeEnum> MaxStickmanLevel => _maxStickmanLevel;
 
         private ReactiveCollection<SkillCellData> _skillCellsReactive = new ReactiveCollection<SkillCellData>();
         
@@ -48,6 +54,8 @@ namespace Models.DataModels.Models
         #endregion
 
         #region Setters
+
+        public void UpgradeMaxStickmanLevel() => _maxStickmanLevel.Value += 1;
 
         public void UpdatePlayerPerkData(PerkData perkData) => _playerPerks[perkData.PerkType] = perkData;
 
@@ -96,7 +104,8 @@ namespace Models.DataModels.Models
             {
                 PlayerPerksData = _playerPerks.Values.ToList(),
                 PlayerSkillsData = _playerSkills.Values.ToList(),
-                SkillCellDatas = _skillCellsReactive.ToList()
+                SkillCellDatas = _skillCellsReactive.ToList(),
+                MaxStickmanLevel = _maxStickmanLevel.Value,
             };
             return statsData;
         }
@@ -114,6 +123,8 @@ namespace Models.DataModels.Models
             }
 
             _skillCellsReactive = playerPumpingData.SkillCellDatas.ToReactiveCollection();
+
+            _maxStickmanLevel.Value = playerPumpingData.MaxStickmanLevel;
         }
         
         
@@ -123,7 +134,7 @@ namespace Models.DataModels.Models
             playerPumpingData.PlayerPerksData = new ();
             playerPumpingData.PlayerSkillsData = new ();
             playerPumpingData.SkillCellDatas = new ();
-            
+            playerPumpingData.MaxStickmanLevel = PlayerUnitTypeEnum.PlayerOne;
             SetPlayerPumpingData(playerPumpingData);
         }
 
