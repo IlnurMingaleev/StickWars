@@ -13,19 +13,18 @@ namespace SO.Core
         [SerializeField] private List<MapStageRewardConfig> _mapStageRewardModels;
         [SerializeField] private List<MapStageConfig> _mapBuilder;
         [SerializeField] private List<GroupUnitsConfig> _unitGroups;
-        [SerializeField] private int _waveUnitsQty;
-        
+
         private Dictionary<MapStagesEnum, MapStageRewardConfig> _dictionaryMapStageRewardModels =
             new Dictionary<MapStagesEnum, MapStageRewardConfig>();
         
         private Dictionary<MapStagesEnum, MapStageConfig> _dictionaryMapStage =
             new Dictionary<MapStagesEnum, MapStageConfig>();
-
-        private ReactiveProperty<int> _waveUnitsCount = new ReactiveProperty<int>();
+        
         public IReadOnlyDictionary<MapStagesEnum, MapStageRewardConfig> MapStageRewardModels  => _dictionaryMapStageRewardModels;
         public IReadOnlyDictionary<MapStagesEnum, MapStageConfig> MapStages  => _dictionaryMapStage;
         public IReadOnlyList<GroupUnitsConfig> UnitGroups => _unitGroups;
-        public IReadOnlyReactiveProperty<int> WaveUnitsCount => _waveUnitsCount;
+
+        public List<MapStageConfig> MapBuilder => _mapBuilder;
         public void Init()
         {
             foreach (var mapStage in _mapStageRewardModels)
@@ -33,7 +32,6 @@ namespace SO.Core
             
             foreach (var mapBuilder in _mapBuilder)
                 _dictionaryMapStage.Add(mapBuilder.MapStage, mapBuilder);
-            _waveUnitsCount.Value = _waveUnitsQty;
         }
         
 #if UNITY_EDITOR

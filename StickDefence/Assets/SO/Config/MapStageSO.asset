@@ -64,6 +64,7 @@ MonoBehaviour:
       Count: 1
       Delay: 1
       MovementType: 1
+    WaveUnitsQty: 0
   - Units:
     - UnitType: 1
       Count: 3
@@ -73,4 +74,4 @@ MonoBehaviour:
       Count: 1
       Delay: 1
       MovementType: 1
-  _waveUnitsQty: 16
+    WaveUnitsQty: 16

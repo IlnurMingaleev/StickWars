@@ -9,6 +9,7 @@ namespace Models.SO.Core
     public struct GroupUnitsConfig
     {
         public List<GroupUnitConfig> Units;
+        public int WaveUnitsQty;
     }
 
     [Serializable]

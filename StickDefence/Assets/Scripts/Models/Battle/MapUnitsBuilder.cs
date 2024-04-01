@@ -37,7 +37,7 @@ namespace Models.Battle
         [Inject] private IWindowManager _windowManager;
         private IBattleStateMachine BattleStateMachine => _coreStateMachine.BattleStateMachine;
         private IRunTimeStateMachine RunTimeStateMachine => _coreStateMachine.RunTimeStateMachine;
-
+        private BattleStageControl _battleStageControl;
         private readonly List<BaseUnit> _spawnedUnits   = new();
         private Queue<MapStageDayGroupConfig> DayGroups = new();
         private ReactiveProperty<bool> _isEmptyDay      = new();
@@ -52,6 +52,12 @@ namespace Models.Battle
         private CompositeDisposable _updateDisposable = new CompositeDisposable();
         private TopPanelWindow _topPanelWindow;
         private int _maxUnitsCount = 0;
+
+        private void OnValidate()
+        {
+            if (_battleStageControl == null) _battleStageControl = gameObject.GetComponent<BattleStageControl>();
+        }
+
         private void OnEnable()
         {
             BattleStateMachine.SubscriptionAction(BattleStateEnum.StartBattle, OnStartBattleState);
@@ -71,26 +77,38 @@ namespace Models.Battle
 
         private void Start()
         {
-            /*while (DayGroups.Count > 0)
-            {
-                var dayGroup = DayGroups.Peek();
-                var unitsGroup = _configManager.MapStageSO.UnitGroups[dayGroup.GroupUnitsIndex];
-                for (int i = 0; i < unitsGroup.Units.Count; i++)
-                {
-                    for (int j = 0; j < unitsGroup.Units[i].Count; j++)
-                    {
-                        _maxUnitsCount++;
-                    }
-                }
-            }*/
+            CountAllUnits();
 
+            SubscribeToUnitsKill();
+        }
+
+        private void SubscribeToUnitsKill()
+        {
             _topPanelWindow = _windowManager.GetWindow<TopPanelWindow>();
             if (_topPanelWindow)
                 _unitsCount.Subscribe(unitsCount =>
                 {
-                    _topPanelWindow.LevelProgressBar.SetBarFiilAmount(unitsCount,
-                       _configManager.MapStageSO.WaveUnitsCount.Value);
+                    _topPanelWindow.LevelProgressBar.SetBarFiilAmount(unitsCount, _maxUnitsCount
+                    );
                 }).AddTo(_disposable);
+        }
+
+        private void CountAllUnits()
+        {
+            foreach (var stage in _battleStageControl.MapStageConfig.Days)
+            {
+                foreach (var groupConfig in stage.Groups)
+                {
+                    var unitsGroup = _configManager.MapStageSO.UnitGroups[groupConfig.GroupUnitsIndex];
+                    for (int i = 0; i < unitsGroup.Units.Count; i++)
+                    {
+                        for (int j = 0; j < unitsGroup.Units[i].Count; j++)
+                        {
+                            _maxUnitsCount++;
+                        }
+                    }
+                }
+            }
         }
 
         private void OnStartBattleState()
