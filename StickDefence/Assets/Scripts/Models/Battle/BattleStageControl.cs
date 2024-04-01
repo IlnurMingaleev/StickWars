@@ -100,6 +100,7 @@ namespace Models.Battle
         {
             _coreStateMachine.RunTimeStateMachine.SetRunTimeState(RunTimeStateEnum.Play);
             _windowManager.Show<BottomPanelWindow>();
+            _windowManager.Show<TopPanelWindow>();
 
             _currentDayIndex.Value = 0;
         }

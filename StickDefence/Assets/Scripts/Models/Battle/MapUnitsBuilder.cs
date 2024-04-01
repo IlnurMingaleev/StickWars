@@ -12,6 +12,8 @@ using Models.Timers;
 using Models.Units;
 using Models.Units.Units;
 using TonkoGames.Sound;
+using UI.UIManager;
+using UI.Windows;
 using UniRx;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -32,6 +34,7 @@ namespace Models.Battle
         [Inject] private readonly ITimerService _timerService;
         [Inject] private readonly ICoreStateMachine _coreStateMachine;
         [Inject] private readonly ISoundManager _soundManager;
+        [Inject] private IWindowManager _windowManager;
         private IBattleStateMachine BattleStateMachine => _coreStateMachine.BattleStateMachine;
         private IRunTimeStateMachine RunTimeStateMachine => _coreStateMachine.RunTimeStateMachine;
 
@@ -40,14 +43,15 @@ namespace Models.Battle
         private ReactiveProperty<bool> _isEmptyDay      = new();
         private List<ProjectileView> _projectiles = new();
         private List<ProjectileView> _playerProjectiles = new();
-
+        private ReactiveProperty<int> _unitsCount = new ReactiveProperty<int>(0);
         public IReadOnlyReactiveProperty<bool> IsEmptyDay => _isEmptyDay;
 
         private ITimerModel _timerDayGroups;
 
         private CompositeDisposable _disposable = new CompositeDisposable();
         private CompositeDisposable _updateDisposable = new CompositeDisposable();
-
+        private TopPanelWindow _topPanelWindow;
+        private int _maxUnitsCount = 0;
         private void OnEnable()
         {
             BattleStateMachine.SubscriptionAction(BattleStateEnum.StartBattle, OnStartBattleState);
@@ -63,6 +67,30 @@ namespace Models.Battle
             _disposable.Clear();
             _updateDisposable.Clear();
             DestroyStage();
+        }
+
+        private void Start()
+        {
+            /*while (DayGroups.Count > 0)
+            {
+                var dayGroup = DayGroups.Peek();
+                var unitsGroup = _configManager.MapStageSO.UnitGroups[dayGroup.GroupUnitsIndex];
+                for (int i = 0; i < unitsGroup.Units.Count; i++)
+                {
+                    for (int j = 0; j < unitsGroup.Units[i].Count; j++)
+                    {
+                        _maxUnitsCount++;
+                    }
+                }
+            }*/
+
+            _topPanelWindow = _windowManager.GetWindow<TopPanelWindow>();
+            if (_topPanelWindow)
+                _unitsCount.Subscribe(unitsCount =>
+                {
+                    _topPanelWindow.LevelProgressBar.SetBarFiilAmount(unitsCount,
+                       _configManager.MapStageSO.WaveUnitsCount.Value);
+                }).AddTo(_disposable);
         }
 
         private void OnStartBattleState()
@@ -198,6 +226,7 @@ namespace Models.Battle
             Destroy(baseUnit.View.gameObject);
             _spawnedUnits.Remove(baseUnit);
             CheckIsEmptyDay();
+            _unitsCount.Value += 1;
         } 
         
         

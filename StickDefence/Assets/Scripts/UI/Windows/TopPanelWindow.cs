@@ -17,6 +17,8 @@ namespace UI.Windows
         [SerializeField] private FinanceBar _financeBar;
         [SerializeField] private GameObject _statusBar;
         [SerializeField] private Transform _playerRespect;
+        [SerializeField] private UIBar _experienceBar;
+        [SerializeField] private UIBar _levelProgressBar;
         [Inject] private IDataCentralService _dataCentralService;
 
         private CompositeDisposable _openShopDisposable = new CompositeDisposable();
@@ -25,7 +27,10 @@ namespace UI.Windows
         public Transform GoldLabelTransform => _financeBar.GemLabelTransform;
         public Transform RespectLabelTransform => _playerRespect;
         public UIButton ButtonExit => _buttonExit;
+        public UIBar ExperienceBar => _experienceBar; 
+        public UIBar LevelProgressBar => _levelProgressBar;
         protected override bool DisableMultiTouchOnShow => false;
+        
 
         [Inject] private readonly ICoreStateMachine _coreStateMachine;
         
@@ -43,10 +48,6 @@ namespace UI.Windows
         {
             _backArrow.gameObject.SetActive(false);
             _statusBar.SetActive(false);
-            // if (_coreStateMachine.TutorialStateMachine.IsMainTutorialShown)
-            // {
-            //     _buttonExit.gameObject.SetActive(true);
-            // }
             _settingsButton.gameObject.SetActive(false);
         }
         
@@ -104,6 +105,8 @@ namespace UI.Windows
         {
             _financeBar.SkipProfileChangedAnimation();
         }
+        
+        
         
         private void CheckBackButtonActive(int value) => _backArrow.gameObject.SetActive(value > 1);
     }
