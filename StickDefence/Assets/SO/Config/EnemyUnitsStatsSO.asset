@@ -17,12 +17,12 @@ MonoBehaviour:
     Health: 40
     Armor: 0
     Damage: 10
-    Reloading: 0.1
+    Reloading: 0.7
   - UnitType: 1
     Health: 70
     Armor: 0
     Damage: 15
-    Reloading: 0.1
+    Reloading: 2
   _unitRewardConfigs:
   - UnitType: 0
     RewardType: 3

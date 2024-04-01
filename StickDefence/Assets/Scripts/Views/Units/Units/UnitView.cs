@@ -2,6 +2,8 @@
 using Enums;
 using Models.Attacking;
 using Models.Move;
+using UI.Common;
+using UniRx;
 using UnityEngine;
 using Views.Health;
 using Views.Move;
@@ -20,6 +22,7 @@ namespace Views.Units.Units
         [SerializeField] private Collider2D _unitCollider;
         [SerializeField] private float _timeToDestroy = 1f;
         [SerializeField] private UnitAnimationCallbacks _unitAnimationCallbacks;
+        [SerializeField] private UIBar _healthBar;
         public UnitFollowPath UnitFollowPath => _unitFollowPath;
         public Animator BodyAnimator => _bodyAnimator;
         public Damageable Damageable => _damageable;
@@ -27,10 +30,11 @@ namespace Views.Units.Units
         public Collider2D UnitCollider => _unitCollider;
         public AttackBlockView AttackBlockView => _attackBlockView;
         public UnitAnimationCallbacks UnitAnimationCallbacks => _unitAnimationCallbacks;
+        public UIBar HealthBar => _healthBar;
         
         private Action _enableAction;
         private Action _disableAction;
-
+        private CompositeDisposable _disposable = new CompositeDisposable();
         public void InitUnityActions(Action enableAction, Action disableAction)
         {
             _enableAction = enableAction;
@@ -57,6 +61,13 @@ namespace Views.Units.Units
         public void InitUnitMove(PathTypesEnum pathTypes, Transform[] pathElements)
         {
             _unitFollowPath.Init(pathTypes, pathElements);
+        }
+
+        public void SubscribeOnHealthChanged()
+        {
+            _damageable.HealthCurrent
+                .Subscribe(health => HealthBar.SetBarFiilAmount(health, _damageable.HealthMax.Value))
+                .AddTo(_disposable);
         }
     }
 }

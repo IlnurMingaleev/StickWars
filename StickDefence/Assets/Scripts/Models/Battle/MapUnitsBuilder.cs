@@ -170,6 +170,7 @@ namespace Models.Battle
             
             var unitView = Instantiate(_configManager.PrefabsUnitsSO
                 .UnitPrefabs[unitType], movementPath.SpawnPoint.position, Quaternion.identity, _parentSpawnPoint).GetComponent<UnitView>();
+            
            
             unitView.gameObject.SetActive(false);
             unitView.SetRandomBodyZ();
@@ -180,7 +181,7 @@ namespace Models.Battle
             baseUnit.InitActions(UnitKilled);
             baseUnit.InitAttack(CreateProjectile, RemoveProjectile);
             baseUnit.InitUnitConfigStats(unitConfig);
-            
+            unitView.SubscribeOnHealthChanged();
             _spawnedUnits.Add(baseUnit);
             
             Observable.Timer (System.TimeSpan.FromSeconds(delay), Scheduler.MainThreadIgnoreTimeScale)
