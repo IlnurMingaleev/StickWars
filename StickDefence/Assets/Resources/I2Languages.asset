@@ -1194,6 +1194,24 @@ MonoBehaviour:
       - 
       Flags: 000000
       Languages_Touch: []
+    - Term: Buttons/Units
+      TermType: 0
+      Description: 
+      Languages:
+      - Units
+      - "\u042E\u043D\u0438\u0442\u044B"
+      - 
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Buttons/Upgrades
+      TermType: 0
+      Description: 
+      Languages:
+      - Upgrades
+      - "\u0423\u043B\u0443\u0447\u0448\u0435\u043D\u0438\u044F"
+      - 
+      Flags: 000000
+      Languages_Touch: []
     CaseInsensitiveTerms: 0
     OnMissingTranslation: 1
     mTerm_AppName: 

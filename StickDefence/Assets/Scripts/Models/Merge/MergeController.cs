@@ -4,6 +4,7 @@ using Models.Battle;
 using Models.DataModels;
 using Models.DataModels.Models;
 using TonkoGames.Controllers.Core;
+using UI.Content.Battle;
 using UnityEngine;
 using VContainer;
 
@@ -80,11 +81,7 @@ namespace Models.Merge
                 //Drop item
                 SendRayCast();
             }
-
-            if (UnityEngine.Input.GetKeyDown(KeyCode.Space))
-            {
-                PlaceRandomItem();
-            }
+            
         }
 
         void SendRayCast()
@@ -94,6 +91,13 @@ namespace Models.Merge
             //we hit something
             if(hit.collider != null)
             {
+                if(hit.collider.gameObject.TryGetComponent(out TrashBinSlot trashBin))
+                {
+                    if (carryingItem != null)
+                    {
+                        Destroy(carryingItem.gameObject);
+                    }
+                }
                 //we are grabbing the item in a full slot
                 if (hit.collider.gameObject.TryGetComponent(out Slot slot))
                 {
