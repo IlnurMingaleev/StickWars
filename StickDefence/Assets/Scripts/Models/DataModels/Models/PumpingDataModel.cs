@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using Enums;
 using Models.DataModels.Data;
+using SO.Core;
+using TonkoGames.Controllers.Core;
 using UniRx;
 using UnityEngine;
+using VContainer;
 
 namespace Models.DataModels.Models
 {
@@ -15,6 +18,7 @@ namespace Models.DataModels.Models
         IReadOnlyReactiveDictionary<SkillTypesEnum, SkillData> SkillsReactive { get; }
         IReadOnlyReactiveCollection<SkillCellData> SkillCellsReactive { get; }
         IReadOnlyReactiveProperty<WallData> WallLevelReactive { get; }
+        public IReadOnlyReactiveProperty<LevelData> LevelReactive { get; }
         IReadOnlyReactiveProperty<PlayerUnitTypeEnum> MaxStickmanLevel { get; }
 
         #endregion
@@ -28,6 +32,8 @@ namespace Models.DataModels.Models
         void UpdateSkillCellData(int index, SkillCellData skillCellData);
         SkillCellData GetSkillCellData(int index);
         void UpgradeMaxStickmanLevel();
+        public void IncreaseExperience(int gainedExp, ConfigManager configManager);
+        public void CalculateRequiredExp(ConfigManager configManager);
 
         #endregion
     } 
@@ -35,6 +41,7 @@ namespace Models.DataModels.Models
     {
         #region Fields
 
+        private ReactiveProperty<LevelData> _currentLevelData = new ReactiveProperty<LevelData>();
         private ReactiveProperty<PlayerUnitTypeEnum> _maxStickmanLevel = new ReactiveProperty<PlayerUnitTypeEnum>();
 
         private ReactiveDictionary<PerkTypesEnum, PerkData> _playerPerks =
@@ -47,10 +54,14 @@ namespace Models.DataModels.Models
         private ReactiveCollection<SkillCellData> _skillCellsReactive = new ReactiveCollection<SkillCellData>();
         
         private ReactiveProperty<WallData> _wallData = new ReactiveProperty<WallData>();
+        
+
         public IReadOnlyReactiveDictionary<PerkTypesEnum, PerkData> PerksReactive => _playerPerks;
         public IReadOnlyReactiveDictionary<SkillTypesEnum, SkillData> SkillsReactive => _playerSkills;
         public IReadOnlyReactiveCollection<SkillCellData> SkillCellsReactive => _skillCellsReactive;
         public IReadOnlyReactiveProperty<WallData> WallLevelReactive => _wallData;
+       
+        public IReadOnlyReactiveProperty<LevelData> LevelReactive => _currentLevelData;
         #endregion
 
         #region Setters
@@ -93,8 +104,58 @@ namespace Models.DataModels.Models
             }
             return _skillCellsReactive[index];
         }
+
+        #region Experience
+
+        public void IncreaseExperience(int gainedExp,ConfigManager configManager)
+        {
+            int exp = _currentLevelData.Value.CurrentExp;
+            int requireExp = _currentLevelData.Value.RequiredExp;
+            exp += gainedExp;
+            if (exp >= requireExp)
+            {
+                while (exp >= requireExp)
+                {
+                    exp -= requireExp;
+                    LevelUp(configManager);
+                    requireExp = _currentLevelData.Value.RequiredExp;
+                }
+            }
+
+            _currentLevelData.Value = new LevelData()
+            {
+                Level = _currentLevelData.Value.Level,
+                CurrentExp = exp,
+                RequiredExp = requireExp,
+            };
+        }
+
+        public void LevelUp(ConfigManager configManager)
+        {
+            _currentLevelData.Value =
+                new LevelData()
+                {
+                    Level = _currentLevelData.Value.Level + 1,
+                    CurrentExp = _currentLevelData.Value.CurrentExp,
+                    RequiredExp = _currentLevelData.Value.RequiredExp,
+                };
+            CalculateRequiredExp(configManager);
+        }
+
+        public void CalculateRequiredExp(ConfigManager configManager)
+        {
+            _currentLevelData.Value = new LevelData()
+            {
+                Level = _currentLevelData.Value.Level,
+                CurrentExp = _currentLevelData.Value.CurrentExp,
+                RequiredExp = configManager.UnitsStatsSo.GetRequiredExp(_currentLevelData.Value.Level),
+            };
+        }
+
+        #endregion
+      
         
-        
+
         #endregion
 
         #region Storage
@@ -106,6 +167,7 @@ namespace Models.DataModels.Models
                 PlayerSkillsData = _playerSkills.Values.ToList(),
                 SkillCellDatas = _skillCellsReactive.ToList(),
                 MaxStickmanLevel = _maxStickmanLevel.Value,
+                LevelData =  _currentLevelData.Value,
             };
             return statsData;
         }
@@ -125,6 +187,7 @@ namespace Models.DataModels.Models
             _skillCellsReactive = playerPumpingData.SkillCellDatas.ToReactiveCollection();
 
             _maxStickmanLevel.Value = playerPumpingData.MaxStickmanLevel;
+            _currentLevelData.Value = playerPumpingData.LevelData;
         }
         
         
@@ -135,6 +198,12 @@ namespace Models.DataModels.Models
             playerPumpingData.PlayerSkillsData = new ();
             playerPumpingData.SkillCellDatas = new ();
             playerPumpingData.MaxStickmanLevel = PlayerUnitTypeEnum.PlayerOne;
+            playerPumpingData.LevelData = new LevelData
+            {
+                CurrentExp = 0,
+                Level = 1,
+                RequiredExp = 10,
+            };
             SetPlayerPumpingData(playerPumpingData);
         }
 

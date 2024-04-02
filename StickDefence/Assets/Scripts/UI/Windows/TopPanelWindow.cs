@@ -106,8 +106,6 @@ namespace UI.Windows
             _financeBar.SkipProfileChangedAnimation();
         }
         
-        
-        
         private void CheckBackButtonActive(int value) => _backArrow.gameObject.SetActive(value > 1);
     }
 }

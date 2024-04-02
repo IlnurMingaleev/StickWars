@@ -12,6 +12,7 @@ namespace Models.DataModels.Data
         public List<SkillData> PlayerSkillsData;
         public List<SkillCellData> SkillCellDatas;
         public PlayerUnitTypeEnum MaxStickmanLevel;
+        public LevelData LevelData;
     }
     
     [Serializable]
@@ -40,5 +41,14 @@ namespace Models.DataModels.Data
     {
         public WallTypeEnum WallTypeEnum;
         public int WallLevel;
+    }
+
+    [Serializable]
+
+    public struct LevelData
+    {
+        public int Level;
+        public int CurrentExp;
+        public int RequiredExp;
     }
 }

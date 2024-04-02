@@ -1,0 +1,398 @@
+
+Stickman.png
+size: 4096,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Armor_1
+  rotate: false
+  xy: 3231, 337
+  size: 415, 458
+  orig: 415, 458
+  offset: 0, 0
+  index: -1
+Armor_1
+  rotate: false
+  xy: 3231, 337
+  size: 415, 458
+  orig: 415, 458
+  offset: 0, 0
+  index: -1
+Pistol_street
+  rotate: false
+  xy: 3145, 1647
+  size: 760, 396
+  orig: 760, 398
+  offset: 0, 0
+  index: -1
+armlet_1
+  rotate: false
+  xy: 2077, 149
+  size: 191, 200
+  orig: 191, 200
+  offset: 0, 0
+  index: -1
+armlet_1
+  rotate: false
+  xy: 2077, 149
+  size: 191, 200
+  orig: 191, 200
+  offset: 0, 0
+  index: -1
+helmet_1
+  rotate: false
+  xy: 3231, 797
+  size: 584, 423
+  orig: 585, 424
+  offset: 0, 0
+  index: -1
+Arm2
+  rotate: true
+  xy: 603, 56
+  size: 205, 425
+  orig: 209, 427
+  offset: 2, 1
+  index: -1
+Arm2
+  rotate: true
+  xy: 603, 56
+  size: 205, 425
+  orig: 209, 427
+  offset: 2, 1
+  index: -1
+Arm2
+  rotate: true
+  xy: 603, 56
+  size: 205, 425
+  orig: 209, 427
+  offset: 2, 1
+  index: -1
+Arm2
+  rotate: true
+  xy: 603, 56
+  size: 205, 425
+  orig: 209, 427
+  offset: 2, 1
+  index: -1
+Arm2
+  rotate: true
+  xy: 603, 56
+  size: 205, 425
+  orig: 209, 427
+  offset: 2, 1
+  index: -1
+Body
+  rotate: true
+  xy: 2270, 18
+  size: 357, 873
+  orig: 363, 875
+  offset: 3, 1
+  index: -1
+Body
+  rotate: true
+  xy: 2270, 18
+  size: 357, 873
+  orig: 363, 875
+  offset: 3, 1
+  index: -1
+Body
+  rotate: true
+  xy: 2270, 18
+  size: 357, 873
+  orig: 363, 875
+  offset: 3, 1
+  index: -1
+Body
+  rotate: true
+  xy: 2270, 18
+  size: 357, 873
+  orig: 363, 875
+  offset: 3, 1
+  index: -1
+Body
+  rotate: true
+  xy: 2270, 18
+  size: 357, 873
+  orig: 363, 875
+  offset: 3, 1
+  index: -1
+Foot1
+  rotate: false
+  xy: 230, 22
+  size: 371, 239
+  orig: 373, 242
+  offset: 1, 2
+  index: -1
+Foot1
+  rotate: false
+  xy: 230, 22
+  size: 371, 239
+  orig: 373, 242
+  offset: 1, 2
+  index: -1
+Foot1
+  rotate: false
+  xy: 230, 22
+  size: 371, 239
+  orig: 373, 242
+  offset: 1, 2
+  index: -1
+Foot1
+  rotate: false
+  xy: 230, 22
+  size: 371, 239
+  orig: 373, 242
+  offset: 1, 2
+  index: -1
+Foot1
+  rotate: false
+  xy: 230, 22
+  size: 371, 239
+  orig: 373, 242
+  offset: 1, 2
+  index: -1
+Hand2
+  rotate: true
+  xy: 1977, 878
+  size: 162, 191
+  orig: 164, 193
+  offset: 1, 1
+  index: -1
+Hand2
+  rotate: true
+  xy: 1977, 878
+  size: 162, 191
+  orig: 164, 193
+  offset: 1, 1
+  index: -1
+Hand2
+  rotate: true
+  xy: 1977, 878
+  size: 162, 191
+  orig: 164, 193
+  offset: 1, 1
+  index: -1
+Hand2
+  rotate: true
+  xy: 1977, 878
+  size: 162, 191
+  orig: 164, 193
+  offset: 1, 1
+  index: -1
+Hand2
+  rotate: true
+  xy: 1977, 878
+  size: 162, 191
+  orig: 164, 193
+  offset: 1, 1
+  index: -1
+Head
+  rotate: false
+  xy: 2088, 377
+  size: 499, 499
+  orig: 501, 501
+  offset: 1, 1
+  index: -1
+Head
+  rotate: false
+  xy: 2088, 377
+  size: 499, 499
+  orig: 501, 501
+  offset: 1, 1
+  index: -1
+Head
+  rotate: false
+  xy: 2088, 377
+  size: 499, 499
+  orig: 501, 501
+  offset: 1, 1
+  index: -1
+Head
+  rotate: false
+  xy: 2088, 377
+  size: 499, 499
+  orig: 501, 501
+  offset: 1, 1
+  index: -1
+Head
+  rotate: false
+  xy: 2088, 377
+  size: 499, 499
+  orig: 501, 501
+  offset: 1, 1
+  index: -1
+Leg1
+  rotate: true
+  xy: 1464, 55
+  size: 294, 611
+  orig: 299, 615
+  offset: 1, 2
+  index: -1
+Leg1
+  rotate: true
+  xy: 1464, 55
+  size: 294, 611
+  orig: 299, 615
+  offset: 1, 2
+  index: -1
+Leg1
+  rotate: true
+  xy: 1464, 55
+  size: 294, 611
+  orig: 299, 615
+  offset: 1, 2
+  index: -1
+Leg1
+  rotate: true
+  xy: 1464, 55
+  size: 294, 611
+  orig: 299, 615
+  offset: 1, 2
+  index: -1
+Leg1
+  rotate: true
+  xy: 1464, 55
+  size: 294, 611
+  orig: 299, 615
+  offset: 1, 2
+  index: -1
+Shin1
+  rotate: false
+  xy: 656, 294
+  size: 181, 551
+  orig: 183, 553
+  offset: 1, 1
+  index: -1
+Shin1
+  rotate: false
+  xy: 656, 294
+  size: 181, 551
+  orig: 183, 553
+  offset: 1, 1
+  index: -1
+Shin1
+  rotate: false
+  xy: 656, 294
+  size: 181, 551
+  orig: 183, 553
+  offset: 1, 1
+  index: -1
+Shin1
+  rotate: false
+  xy: 656, 294
+  size: 181, 551
+  orig: 183, 553
+  offset: 1, 1
+  index: -1
+Shin1
+  rotate: false
+  xy: 656, 294
+  size: 181, 551
+  orig: 183, 553
+  offset: 1, 1
+  index: -1
+Shoulder2
+  rotate: true
+  xy: 1030, 2
+  size: 326, 432
+  orig: 330, 436
+  offset: 2, 1
+  index: -1
+Shoulder2
+  rotate: true
+  xy: 1030, 2
+  size: 326, 432
+  orig: 330, 436
+  offset: 2, 1
+  index: -1
+Shoulder2
+  rotate: true
+  xy: 1030, 2
+  size: 326, 432
+  orig: 330, 436
+  offset: 2, 1
+  index: -1
+Shoulder2
+  rotate: true
+  xy: 1030, 2
+  size: 326, 432
+  orig: 330, 436
+  offset: 2, 1
+  index: -1
+Shoulder2
+  rotate: true
+  xy: 1030, 2
+  size: 326, 432
+  orig: 330, 436
+  offset: 2, 1
+  index: -1
+Armlet_2
+  rotate: false
+  xy: 2, 17
+  size: 226, 244
+  orig: 226, 244
+  offset: 0, 0
+  index: -1
+Armor_2
+  rotate: true
+  xy: 1437, 351
+  size: 503, 649
+  orig: 504, 649
+  offset: 1, 0
+  index: -1
+Helmet_3
+  rotate: false
+  xy: 3231, 1222
+  size: 609, 423
+  orig: 609, 424
+  offset: 0, 0
+  index: -1
+assault_rifle_street_metro
+  rotate: true
+  xy: 1293, 856
+  size: 1187, 682
+  orig: 1188, 683
+  offset: 0, 1
+  index: -1
+Helmet_2
+  rotate: false
+  xy: 839, 330
+  size: 596, 515
+  orig: 597, 516
+  offset: 0, 0
+  index: -1
+shotgun_1
+  rotate: true
+  xy: 1977, 1042
+  size: 1001, 418
+  orig: 1002, 422
+  offset: 0, 3
+  index: -1
+Armor_3
+  rotate: false
+  xy: 2589, 386
+  size: 640, 964
+  orig: 640, 964
+  offset: 0, 0
+  index: -1
+Helmet_4
+  rotate: false
+  xy: 2397, 1352
+  size: 694, 691
+  orig: 696, 693
+  offset: 1, 1
+  index: -1
+Shield_1
+  rotate: false
+  xy: 2, 263
+  size: 652, 1780
+  orig: 653, 1804
+  offset: 1, 23
+  index: -1
+assault_rifle_NEW
+  rotate: true
+  xy: 656, 847
+  size: 1196, 635
+  orig: 1196, 635
+  offset: 0, 0
+  index: -1

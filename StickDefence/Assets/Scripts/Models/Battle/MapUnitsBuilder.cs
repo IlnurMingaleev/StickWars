@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Enums;
+using Models.DataModels;
 using Models.Merge;
 using TonkoGames.Controllers.Core;
 using TonkoGames.StateMachine;
@@ -34,6 +35,7 @@ namespace Models.Battle
         [Inject] private readonly ITimerService _timerService;
         [Inject] private readonly ICoreStateMachine _coreStateMachine;
         [Inject] private readonly ISoundManager _soundManager;
+        [Inject] private readonly IDataCentralService _dataCentralService;
         [Inject] private IWindowManager _windowManager;
         private IBattleStateMachine BattleStateMachine => _coreStateMachine.BattleStateMachine;
         private IRunTimeStateMachine RunTimeStateMachine => _coreStateMachine.RunTimeStateMachine;
@@ -80,6 +82,19 @@ namespace Models.Battle
             CountAllUnits();
 
             SubscribeToUnitsKill();
+            _dataCentralService.PumpingDataModel.CalculateRequiredExp(_configManager);
+            SubscribeToExpLvl();
+        }
+
+        private void SubscribeToExpLvl()
+        {
+            if (_topPanelWindow == null)
+                _topPanelWindow = _windowManager.GetWindow<TopPanelWindow>();
+            else
+                _dataCentralService.PumpingDataModel.LevelReactive.Subscribe(levelData =>
+                {
+                    _topPanelWindow.ExperienceBar.SetBarFiilAmount(levelData.CurrentExp, levelData.RequiredExp);
+                }).AddTo(_disposable);
         }
 
         private void SubscribeToUnitsKill()
@@ -245,6 +260,8 @@ namespace Models.Battle
             _spawnedUnits.Remove(baseUnit);
             CheckIsEmptyDay();
             _unitsCount.Value += 1;
+            _dataCentralService.PumpingDataModel.IncreaseExperience(10,_configManager);
+            _dataCentralService.SaveFull();
         } 
         
         

@@ -2,8 +2,10 @@
 using Models.DataModels.Data;
 using Models.DataModels.Models;
 using Models.DataModels.PlatformModels;
+using TonkoGames.Controllers.Core;
 using UniRx;
 using UnityEngine;
+using VContainer;
 
 namespace Models.DataModels
 {
@@ -36,6 +38,7 @@ namespace Models.DataModels
         {
 #if UNITY_EDITOR
             _dataPlatform = new MobileDataPlatform();
+            
 #elif UNITY_WEBGL
                 _dataPlatform = new WebDataPlatform();
 #elif UNITY_ANDROID || UNITY_IPHONE
