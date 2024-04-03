@@ -112,7 +112,7 @@ namespace Models.Input
             {
                 if(hit2d.collider.TryGetComponent(out PlayerView playerView) 
                    && _playerView.UnitType == playerView.UnitType 
-                   && _playerView.UnitType != PlayerUnitTypeEnum.PLayerThree
+                   && _playerView.UnitType != PlayerUnitTypeEnum.PlayerThree
                    && hit2d.collider.gameObject != gameObject) 
                 {
                     Debug.Log("This is what we hit" + hit2d.collider);

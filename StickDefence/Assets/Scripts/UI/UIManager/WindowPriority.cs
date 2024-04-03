@@ -7,6 +7,7 @@
         Dialog,
         TopPanel,
         AboveTopPanel,
+        Warning,
         GameOver,
         Tutorial,
         DialogTutorial,

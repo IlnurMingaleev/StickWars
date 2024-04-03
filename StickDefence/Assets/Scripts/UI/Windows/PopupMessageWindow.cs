@@ -12,6 +12,7 @@ namespace UI.Windows
         [SerializeField] private TMP_Text _messageLabel;
         [SerializeField] private UIButton _okButton;
         
+        private WindowPriority Priority = WindowPriority.Warning;
         protected override void OnActivate()
         {
             base.OnActivate();

@@ -5,6 +5,7 @@
         None = 0,
         PlayerOne = 1,
         PLayerTwo = 2 ,
-        PLayerThree = 3,
+        PlayerThree = 3,
+        PlayerFour = 4,
     }
 }

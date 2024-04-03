@@ -260,7 +260,7 @@ namespace Models.Battle
             _spawnedUnits.Remove(baseUnit);
             CheckIsEmptyDay();
             _unitsCount.Value += 1;
-            _dataCentralService.PumpingDataModel.IncreaseExperience(10,_configManager);
+            _dataCentralService.PumpingDataModel.IncreaseExperience(baseUnit.Experience,_configManager);
             _dataCentralService.SaveFull();
         } 
         

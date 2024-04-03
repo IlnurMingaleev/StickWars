@@ -12,6 +12,7 @@ namespace Models.DataModels.Models
         #region Fields
         IReadOnlyReactiveDictionary<MapStagesEnum, MapStageData> MapStages { get; } 
         IReadOnlyReactiveDictionary<SlotIdTypeEnum, SlotItemData> SlotItems { get; }
+        IReadOnlyReactiveProperty<MapStagesEnum> LastOpenedStage { get; }
 
         #endregion
         
@@ -20,6 +21,8 @@ namespace Models.DataModels.Models
         MapStageData GetMapStageData(MapStagesEnum mapStageType); 
         void UpdateSlotItemData(SlotItemData slotItemData);
         SlotItemData GetSlotItemData(SlotIdTypeEnum slotIdType);
+        void UpgradeLastOpenedStage();
+        void SetLastOpenedStage(MapStagesEnum mapStagesEnum);
 
         #endregion
     } 
@@ -27,6 +30,7 @@ namespace Models.DataModels.Models
     {
         #region Fields
 
+        private ReactiveProperty<MapStagesEnum> _lastOpenedStage = new ReactiveProperty<MapStagesEnum>();
         private ReactiveDictionary<MapStagesEnum, MapStageData> _mapStages =
             new ReactiveDictionary<MapStagesEnum, MapStageData>();
 
@@ -35,14 +39,27 @@ namespace Models.DataModels.Models
         public IReadOnlyReactiveDictionary<MapStagesEnum, MapStageData> MapStages => _mapStages;
         
         public IReadOnlyReactiveDictionary<SlotIdTypeEnum, SlotItemData> SlotItems => _slotItems;
+        
+        public IReadOnlyReactiveProperty<MapStagesEnum> LastOpenedStage => _lastOpenedStage;
 
         #endregion
         
         #region Setters
 
+        public void SetLastOpenedStage(MapStagesEnum mapStagesEnum)
+        {
+            _lastOpenedStage.Value = mapStagesEnum;
+        }
+
+        public void UpgradeLastOpenedStage()
+        {
+            _lastOpenedStage.Value += 1;
+        }
+
         public void UpdateMapStageData(MapStageData mapStageData)
         {
             _mapStages[mapStageData.MapStageType] = mapStageData;
+            if(mapStageData.IsCompleted) SetLastOpenedStage(mapStageData.MapStageType);
         }
         public MapStageData GetMapStageData(MapStagesEnum mapStageType)
         {
@@ -91,15 +108,29 @@ namespace Models.DataModels.Models
             {
                 MapStageBlockDatas = _mapStages.Values.ToList(),
                 SlotItemDatas = _slotItems.Values.ToList(),
+                LastMapStage = _lastOpenedStage.Value,
             };
         }
         
         public void SetMapStageData(MapStagesData mapStagesData)
         {
-            foreach (var playerCharacterData in mapStagesData.MapStageBlockDatas)
+            _lastOpenedStage.Value = mapStagesData.MapStageBlockDatas[1].MapStageType;
+            bool initialized = false;
+            for (int index = 0; index < mapStagesData.MapStageBlockDatas.Count; index++)
             {
-                _mapStages.Add(playerCharacterData.MapStageType, playerCharacterData);
+                _mapStages.Add(mapStagesData.MapStageBlockDatas[index].MapStageType,
+                    mapStagesData.MapStageBlockDatas[index]);
+               
+                if (index > 1 && !initialized)
+                {
+                    if (!mapStagesData.MapStageBlockDatas[index].IsCompleted)
+                    {
+                        _lastOpenedStage.Value = mapStagesData.MapStageBlockDatas[index - 1].MapStageType;
+                        initialized = true;
+                    }
+                }
             }
+            
             foreach (var slotItem in mapStagesData.SlotItemDatas)
             {
                 _slotItems.Add(slotItem.SlotIdTypeEnum,slotItem);
@@ -121,6 +152,7 @@ namespace Models.DataModels.Models
                 });
             }
 
+            mapStagesData.LastMapStage = MapStagesEnum.Stage1_1;
             mapStagesData.SlotItemDatas = slotItems;
             SetMapStageData(mapStagesData);
         }

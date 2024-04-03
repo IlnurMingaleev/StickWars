@@ -60,7 +60,7 @@ namespace Models.Battle
 
         public void Resurrect()
         {
-           // _playerTankModel.Resurrect();
+            _fortressModel.Resurrect();
         }
         
         public float GetDeltaHealth() => (float)_fortressView.HealthCurrent.Value / (float) _maxHealth;
@@ -77,7 +77,8 @@ namespace Models.Battle
         private void InitFortress()
         {
             _fortressView = Instantiate(_configManager.PrefabsUnitsSO.FortressView, _spawnPoint);
-            _fortressModel = new FortressModel(_fortressView, _soundManager, _timerService, _player.Pumping, _windowManager);
+            _fortressModel = new FortressModel(_fortressView, _soundManager, _timerService,
+                _player.Pumping, _windowManager,_coreStateMachine);
             _fortressModel.InitBottomPanelButton();
             _fortressModel.InitAttack(CreateProjectile, RemoveProjectile);
             _fortressModel.InitSubActive();

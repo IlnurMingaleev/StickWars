@@ -49,6 +49,21 @@ namespace I2.Loc
 			{
 				get { return LocalizationManager.GetTranslation("Messages/NeedLogin"); }
 			}
+
+			public static string SlotsFull
+			{
+				get { return LocalizationManager.GetTranslation("Messages/SlotsFull"); }
+			}
+
+			public static string WarningTitle
+			{
+				get { return LocalizationManager.GetTranslation("Messages/WarningTitle"); }
+			}
+
+			public static string NotEnoughFunds
+			{
+				get { return LocalizationManager.GetTranslation("Messages/NotEnoughFunds"); }
+			}
 		}
 
 		public static class Names_Perks
@@ -196,6 +211,9 @@ namespace I2.Loc
 		{
 			public const string Defeat = "Messages/Defeat";
 			public const string NeedLogin = "Messages/NeedLogin";
+			public const string SlotsFull = "Messages/SlotsFull";
+			public const string WarningTitle = "Messages/WarningTitle";
+			public const string NotEnoughFunds = "Messages/NotEnoughFunds";
 		}
 
 		public static class Names_Perks

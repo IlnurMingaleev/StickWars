@@ -1,9 +1,15 @@
-﻿using UI.Common;
+﻿using Models.DataModels;
+using Models.IAP;
+using Models.Player;
+using TonkoGames.StateMachine;
+using TonkoGames.StateMachine.Enums;
+using UI.Common;
 using UI.Content.Lobby;
 using UI.UIManager;
 using UniRx;
 using UnityEngine;
 using UnityEngine.Serialization;
+using VContainer;
 
 namespace UI.Windows
 {
@@ -14,8 +20,12 @@ namespace UI.Windows
         [SerializeField] private UpgradeBasePanel _upgradeBasePanel;
         [SerializeField] private StoragePanel _storagePanel;
 
+        [Inject] private IDataCentralService _dataCentralService; 
+        [Inject] private ICoreStateMachine _coreStateMachine;
+        [Inject] private IPlayer _player;
+        [Inject] private IIAPService _iapService;
         private ReactiveProperty<bool> _clickableLobbyBuilds = new(false);
-
+        
         public IReadOnlyReactiveProperty<bool> CanClickableLobby => _clickableLobbyBuilds;
         
         protected override void OnActivate()
@@ -25,7 +35,7 @@ namespace UI.Windows
             _manager.AddCurrentWindow(this);
             _manager.GetWindow<TopPanelWindow>().SetTopLobbyState();
 
-            _battleSelectionMapButton.OnClickAsObservable.Subscribe(_ => OnBattleSelectionMap())
+            _battleSelectionMapButton.OnClickAsObservable.Subscribe(_ =>SetupStage())
                 .AddTo(ActivateDisposables);
             
             _clickableLobbyBuilds.Value = true;
@@ -59,6 +69,23 @@ namespace UI.Windows
         {
             _clickableLobbyBuilds.Value = false;
             _storagePanel.Open(() => _clickableLobbyBuilds.Value = true);
+        }
+        
+        private void SetupStage()
+        {
+            var isShowing = _iapService.ShowCommercialBreak();
+
+            if (!isShowing)
+            {
+                _manager.Show<FadeWindow>().CloseFade(EndStartBattleFade);
+            }
+        }
+        private void EndStartBattleFade()
+        {
+            _player.SetStageIndex(_dataCentralService.MapStageDataModel.LastOpenedStage.Value);
+            _coreStateMachine.GameStateMachine.SetGameState(GameStateEnum.StageBattle);
+            _coreStateMachine.BattleStateMachine.SetBattleState(BattleStateEnum.LoadBattle);
+            _manager.Hide(this);
         }
     }
 }

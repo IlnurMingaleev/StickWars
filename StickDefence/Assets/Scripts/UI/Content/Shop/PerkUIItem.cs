@@ -43,15 +43,6 @@ namespace UI.Content.Shop
             _levelLabel.text = $"{perkLevel}";
         }
 
-        public void AddStickmanToPlayGround()
-        {
-            Debug.LogWarning("Stickman Created");
-            if (_mergeController != null)
-            {
-                _mergeController.PlaceDefinedItem((int)_stickmanUnitType);
-            }
-        }
-
         private void OnDisable()
         {
             _disposable.Clear();

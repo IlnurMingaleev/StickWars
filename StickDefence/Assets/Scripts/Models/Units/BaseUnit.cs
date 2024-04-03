@@ -33,7 +33,8 @@ namespace Models.Units
         private ReactiveProperty<bool> _isMoving = new ReactiveProperty<bool>(false);
         
         public IReadOnlyReactiveProperty<bool> IsMoving => _isMoving;
-        
+
+        public int Experience => UnitStatsConfig.Experience;
         public BaseUnit(UnitView unitView, ITimerService timerService, ISoundManager soundManager) 
         {
             View = unitView;

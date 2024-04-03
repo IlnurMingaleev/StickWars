@@ -43,5 +43,10 @@ namespace Views.Units.Fortress
         {
             _battleFortressLaunch.StartLaunchAnim();
         }
+
+        public void RessurectHealth()
+        {
+            
+        }
     }
 }

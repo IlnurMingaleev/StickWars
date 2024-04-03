@@ -7,6 +7,8 @@ using Models.Player;
 using Models.SO.Core;
 using TMPro;
 using TonkoGames.Controllers.Core;
+using TonkoGames.StateMachine;
+using TonkoGames.StateMachine.Enums;
 using UI.Common;
 using UI.Content.Shop;
 using UI.UIManager;
@@ -41,6 +43,7 @@ namespace UI.Windows
         [Inject] private ConfigManager _configManager;
         [Inject] private IPlayer _player;
         [Inject] private IDataCentralService _dataCentralService;
+        [Inject] private ICoreStateMachine _coreStateMachine;
 
         private WindowPriority Priority = WindowPriority.AboveTopPanel;
         private IPlaceableUnit _mergeController;
@@ -55,6 +58,7 @@ namespace UI.Windows
         protected override void OnActivate()
         {
             base.OnActivate();
+            _coreStateMachine.RunTimeStateMachine.SetRunTimeState(RunTimeStateEnum.Pause);
             InitWindowButtons();
             InitTextFields();
             InitStickmanTab();
@@ -118,7 +122,7 @@ namespace UI.Windows
             if ((int) stickmanStatsConfig.UnitType <= (int) (_dataCentralService.PumpingDataModel.MaxStickmanLevel.Value - 4))
             {
                 stickman.BuyButton.IsInteractable = true;
-                SubscribeToBuyEvent(stickman);
+                SubscribeToBuyEvent(stickmanStatsConfig,stickman);
             }
             else
             {
@@ -134,14 +138,27 @@ namespace UI.Windows
             {
                 stickman.BuyButton.IsInteractable = true;
                 stickman.LockTemplate.gameObject.SetActive(false);
-                SubscribeToBuyEvent(stickman);
+                SubscribeToBuyEvent(stickmanStatsConfig,stickman);
             }
         }
 
-        private void SubscribeToBuyEvent(StickManUIItem stickman)
+        private void SubscribeToBuyEvent(StickmanStatsConfig stickmanStatsConfig,StickManUIItem stickman)
         {
-            stickman.BuyButton.OnClickAsObservable.Subscribe(_ => { stickman.AddStickmanToPlayGround(); })
+            stickman.BuyButton.OnClickAsObservable.Subscribe(_ => { BuyStickman(stickmanStatsConfig,stickman); })
                 .AddTo(_shopDisposable);
+        }
+
+        private void BuyStickman(StickmanStatsConfig stickmanStatsConfig, StickManUIItem stickman)
+        {
+            if (stickmanStatsConfig.Price <= _dataCentralService.StatsDataModel.CoinsCount.Value)
+            {
+                stickman.AddStickmanToPlayGround();
+            }
+            else
+            {
+                _manager.GetWindow<PopupMessageWindow>().Init(ScriptLocalization.Messages.WarningTitle,ScriptLocalization.Messages.NotEnoughFunds);
+                _manager.Show<PopupMessageWindow>();
+            }
         }
 
         private void InitPerksUIItems()
@@ -202,6 +219,7 @@ namespace UI.Windows
         protected override void OnDeactivate()
         {
             _shopDisposable.Clear();
+            _coreStateMachine.RunTimeStateMachine.SetRunTimeState(RunTimeStateEnum.Play);
         }
     }
 }

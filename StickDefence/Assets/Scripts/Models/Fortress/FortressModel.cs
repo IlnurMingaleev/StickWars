@@ -4,6 +4,7 @@ using TonkoGames.Sound;
 using Models.Attacking.TypesAttack;
 using Models.Player;
 using Models.Timers;
+using TonkoGames.StateMachine;
 using UI.UIManager;
 using UI.Windows;
 using UniRx;
@@ -21,6 +22,7 @@ namespace Models.Fortress
         private readonly ISoundManager _soundManager;
         private readonly ITimerService _timerService;
         private readonly IWindowManager _windowManager;
+        private readonly ICoreStateMachine _coreStateMachine;
         private BottomPanelWindow _bottomPanelWindow;
         private bool _isDead;
         
@@ -29,8 +31,11 @@ namespace Models.Fortress
         private CompositeDisposable _disposableIsActive = new CompositeDisposable();
         public event Action IsDeadAction;
         
-        public FortressModel(FortressView fortressView, ISoundManager soundManager, ITimerService timerService, IPumping pumping, IWindowManager windowManager)
+        public FortressModel(FortressView fortressView, ISoundManager soundManager,
+            ITimerService timerService, IPumping pumping, IWindowManager windowManager,
+            ICoreStateMachine coreStateMachine)
         {
+            _coreStateMachine = coreStateMachine;
             _windowManager = windowManager;
             _pumping = pumping;
             View = fortressView;
@@ -142,6 +147,7 @@ namespace Models.Fortress
         {
             _isDead = true;
             _rangeAttackModel.StopPlay();
+            _coreStateMachine.BattleStateMachine.OnEndBattle(false);
             IsDeadAction?.Invoke();
         }
 
@@ -150,7 +156,12 @@ namespace Models.Fortress
             _rangeAttackModel.Attack();
             _rangeAttackModel.StartCooldown(null);
         }
-        
+
+        public void Resurrect()
+        {
+            View.Damageable.Resurrect();
+        }
+
         ~FortressModel()
         {
             _disposableIsActive.Clear();

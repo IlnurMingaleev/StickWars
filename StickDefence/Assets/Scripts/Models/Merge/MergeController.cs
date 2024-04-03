@@ -1,10 +1,14 @@
 using System.Collections.Generic;
 using Enums;
+using I2.Loc;
 using Models.Battle;
 using Models.DataModels;
 using Models.DataModels.Models;
 using TonkoGames.Controllers.Core;
+using Tools.Blockers;
 using UI.Content.Battle;
+using UI.UIManager;
+using UI.Windows;
 using UnityEngine;
 using VContainer;
 
@@ -29,6 +33,7 @@ namespace Models.Merge
         private IPlayerUnitsBuilderTwo _playerBuilder;
         [Inject] private ConfigManager _configManager;
         [Inject] private IDataCentralService _dataCentralService;
+        [Inject] private IWindowManager _windowManager;
 
         private void Awake()
         {
@@ -210,6 +215,8 @@ namespace Models.Merge
             if (AllSlotsOccupied())
             {
                 Debug.Log("No empty slot available!");
+                _windowManager.GetWindow<PopupMessageWindow>().Init(ScriptLocalization.Messages.WarningTitle, ScriptLocalization.Messages.SlotsFull);
+                _windowManager.Show<PopupMessageWindow>(); 
                 return;
             }
         

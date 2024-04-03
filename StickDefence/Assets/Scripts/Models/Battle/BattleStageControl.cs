@@ -127,6 +127,7 @@ namespace Models.Battle
 
         private void OnBattleEnd(bool value)
         {
+            _windowManager.Hide<BottomPanelWindow>();
             _coreStateMachine.RunTimeStateMachine.SetRunTimeState(RunTimeStateEnum.Pause);
             Debugger.Log($"{this} Battle end is win: {value}" );
             

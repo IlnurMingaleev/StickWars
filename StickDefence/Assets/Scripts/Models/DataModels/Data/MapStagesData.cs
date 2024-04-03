@@ -12,6 +12,7 @@ namespace Models.DataModels.Data
     {
          public List<MapStageData> MapStageBlockDatas;
          public List<SlotItemData> SlotItemDatas;
+         public MapStagesEnum LastMapStage;
     }
 
     [Serializable]

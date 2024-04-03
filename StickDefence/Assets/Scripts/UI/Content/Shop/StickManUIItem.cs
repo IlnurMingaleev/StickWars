@@ -56,7 +56,6 @@ namespace UI.Content.Shop
 
         public void AddStickmanToPlayGround()
         {
-            Debug.LogWarning("Stickman Created");
             if (_mergeController != null)
             {
                 _mergeController.PlaceDefinedItem((int)_stickmanUnitType);

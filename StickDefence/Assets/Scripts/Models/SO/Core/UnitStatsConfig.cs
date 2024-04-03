@@ -11,5 +11,6 @@ namespace Models.SO.Core
         public float Armor;
         public int Damage;
         public float Reloading;
+        public int Experience;
     }
 }
