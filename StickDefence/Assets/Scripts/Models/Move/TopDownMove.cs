@@ -1,9 +1,11 @@
-﻿using Tools.Extensions;
+﻿using System;
+using Tools.Extensions;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace Models.Move
 {
-    public class TopDownMove
+    public class TopDownMove:IDisposable
     {
         private readonly Transform _selfTargetBody;
         private readonly Rigidbody2D _rigidbody2D;
@@ -27,12 +29,14 @@ namespace Models.Move
 
         public void ContinueMove()
         {
-            _rigidbody2D.velocity = _cashVelocity;
+            if(_rigidbody2D != null)
+                _rigidbody2D.velocity = _cashVelocity;
         }
         
         public void MoveXForSpeed()
         {
-            _rigidbody2D.velocity = new Vector2( _speed, 0);
+            if(_rigidbody2D != null)
+                _rigidbody2D.velocity = new Vector2( _speed, 0);
         }
         
         public void CalculateMove(Vector3 target)
@@ -60,6 +64,11 @@ namespace Models.Move
             }
 
             _cashVelocity = new Vector2(direction.x * _speed, direction.y * _speed);
+        }
+
+        public void Dispose()
+        {
+            Object.Destroy((object)this as Object);
         }
     }
 }

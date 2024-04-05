@@ -46,7 +46,7 @@ namespace UI.Windows
 
         public void SetTopGameState()
         {
-            _backArrow.gameObject.SetActive(false);
+            _backArrow.gameObject.SetActive(true);
             _statusBar.SetActive(false);
             _settingsButton.gameObject.SetActive(false);
         }

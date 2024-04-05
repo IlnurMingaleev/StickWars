@@ -70,8 +70,8 @@ namespace UI.Windows
             _clickableLobbyBuilds.Value = false;
             _storagePanel.Open(() => _clickableLobbyBuilds.Value = true);
         }
-        
-        private void SetupStage()
+
+        public void SetupStage()
         {
             var isShowing = _iapService.ShowCommercialBreak();
 

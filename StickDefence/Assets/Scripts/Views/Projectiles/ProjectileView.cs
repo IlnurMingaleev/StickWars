@@ -4,6 +4,7 @@ using Models.Move;
 using Models.Timers;
 using UnityEngine;
 using Views.Health;
+using Object = UnityEngine.Object;
 
 namespace Views.Projectiles
 {
@@ -70,6 +71,7 @@ namespace Views.Projectiles
 
                 _timerModel?.CloseTick();
                 _bulletDestroyedAction?.Invoke(this);
+                _topDownMove.Dispose();
                 Destroy(gameObject);
             }
         }
@@ -92,6 +94,16 @@ namespace Views.Projectiles
 
         protected virtual void OnHit(Collider2D other)
         {
+        }
+
+        private void OnDisable()
+        {
+            _topDownMove.Dispose();
+        }
+
+        private void OnDestroy()
+        {
+          
         }
     }
 }

@@ -1,8 +1,10 @@
 ﻿using System;
 using Enums;
 using I2.Loc;
+using Models.Controllers;
 using Models.DataModels;
 using Models.Merge;
+using Models.Player;
 using Models.SO.Core;
 using TMPro;
 using TonkoGames.Controllers.Core;
@@ -43,7 +45,8 @@ namespace UI.Windows
         
         
         [Inject] private IDataCentralService _dataCentralService;
-        [Inject] private ConfigManager _configManager; 
+        [Inject] private ConfigManager _configManager;
+        [Inject] private IPlayer _player;
         private WindowPriority Priority = WindowPriority.TopPanel;
         private MergeController _mergeController;
         private StickmanShopWindow _stickmanShopWindow;
@@ -60,6 +63,15 @@ namespace UI.Windows
 
         private void InitWindowButtons()
         {
+            _rocketSkillBtn.OnClickAsObservable
+                .Subscribe(_ => SceneInstances.Instance.AimController.StartAiming(SkillTypesEnum.Rocket))
+                .AddTo(ActivateDisposables);
+            _greandesSkillBtn.OnClickAsObservable
+                .Subscribe(_ => SceneInstances.Instance.AimController.StartAiming(SkillTypesEnum.Grenade))
+                .AddTo(ActivateDisposables);
+            _greandesSkillBtn.OnClickAsObservable
+                .Subscribe(_ => SceneInstances.Instance.AimController.StartAiming(SkillTypesEnum.Gas))
+                .AddTo(ActivateDisposables);
             _stickmanShopBtn.OnClickAsObservable.Subscribe(_ =>
                 {
                    _stickmanShopWindow.Init(_mergeController.GetComponent<IPlaceableUnit>());
@@ -72,6 +84,7 @@ namespace UI.Windows
             _quickBuyBtn.OnClickAsObservable.Subscribe(_ =>
                 BuyStickman(_configManager.UnitsStatsSo.DictionaryStickmanConfigs[playerUnitType], playerUnitType));
             _dataCentralService.StatsDataModel.CoinsCount.Subscribe(money => UpdateMoneyLabel(money)).AddTo(ActivateDisposables);
+            
         }
 
         private void UpdateMoneyLabel(int money)
@@ -96,7 +109,42 @@ namespace UI.Windows
 
         public void InitWallUpgradeButtonClick(Action action)
         {
-            _upgradeBarrierLvlBtn.OnClickAsObservable.Subscribe(_ => { action?.Invoke(); }).AddTo(ActivateDisposables);
+            _upgradeBarrierLvlBtn.OnClickAsObservable.Subscribe(_ =>
+            {
+                if (_player.Pumping.WallData[WallTypeEnum.Basic].Cost <= _dataCentralService.StatsDataModel.CoinsCount.Value)
+                {
+                    if (!_player.Pumping.WallData[WallTypeEnum.Basic].IsMaxLevel)
+                    {
+                        _dataCentralService.StatsDataModel.MinusCoinsCount(_player.Pumping.WallData[WallTypeEnum.Basic]
+                            .Cost);
+                        action?.Invoke();
+                    }
+                    else
+                    {
+                        ShowMaxLevelReachedWarning();
+                    }
+                }
+                else
+                {
+                    ShowNotEnoughFundsWarning();
+                }
+
+
+            }).AddTo(ActivateDisposables);
+        }
+
+        private void ShowNotEnoughFundsWarning()
+        {
+            _manager.GetWindow<PopupMessageWindow>().Init(ScriptLocalization.Messages.WarningTitle,
+                ScriptLocalization.Messages.NotEnoughFunds);
+            _manager.Show<PopupMessageWindow>();
+        }
+        
+        private void ShowMaxLevelReachedWarning()
+        {
+            _manager.GetWindow<PopupMessageWindow>().Init(ScriptLocalization.Messages.WarningTitle,
+                ScriptLocalization.Messages.MaxLevel);
+            _manager.Show<PopupMessageWindow>();
         }
         private void BuyStickman(StickmanStatsConfig stickmanStatsConfig, PlayerUnitTypeEnum playerUnitType)
         {
@@ -109,8 +157,7 @@ namespace UI.Windows
             }
             else
             {
-                _manager.GetWindow<PopupMessageWindow>().Init(ScriptLocalization.Messages.WarningTitle,ScriptLocalization.Messages.NotEnoughFunds);
-                _manager.Show<PopupMessageWindow>();
+               ShowNotEnoughFundsWarning();
             }
         }
     }

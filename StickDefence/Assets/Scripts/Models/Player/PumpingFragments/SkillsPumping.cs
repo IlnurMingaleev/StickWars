@@ -50,7 +50,7 @@ namespace Models.Player.PumpingFragments
             var skillData = new PumpingSkillData()
             {
                 SkillType = skillType,
-                Value = configData.BaseValue + configData.AdditionalValue * currentLevel,
+                Damage = configData.BaseDamage + configData.AdditionalDamage * currentLevel,
                 Cost = configData.BaseCost + configData.AdditionalCost * currentLevel,
                 CurrentLevel = currentLevel,
                 IsMaxLevel = currentLevel == configData.LevelCount - 1,

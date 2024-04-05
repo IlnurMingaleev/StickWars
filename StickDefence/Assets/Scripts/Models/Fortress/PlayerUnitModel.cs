@@ -52,7 +52,7 @@ namespace Models.Fortress
             View = playerView;
             _soundManager = soundManager;
             _timerService = timerService;
-           // View.Damageable.InitHealthBar((int)_pumping.GamePerks[PerkTypesEnum.Health].Value, (int)_pumping.GamePerks[PerkTypesEnum.Defense].Value);
+           // View.Damageable.InitHealthBar((int)_pumping.GamePerks[PerkTypesEnum.Health].Damage, (int)_pumping.GamePerks[PerkTypesEnum.Defense].Damage);
         }
 
         public void InitSubActive()
@@ -114,10 +114,10 @@ namespace Models.Fortress
             
             _rangeAttackModel.SetReloading(reloading);
 
-           // View.Damageable.SetMaxHealth((int)_pumping.GamePerks[PerkTypesEnum.Health].Value);
-           // View.Damageable.UpdateDefence(_pumping.GamePerks[PerkTypesEnum.Defense].Value);
+           // View.Damageable.SetMaxHealth((int)_pumping.GamePerks[PerkTypesEnum.Health].Damage);
+           // View.Damageable.UpdateDefence(_pumping.GamePerks[PerkTypesEnum.Defense].Damage);
             
-           // _rangeAttackModel.ReSetupRangeAttack(_pumping.GamePerks[PerkTypesEnum.AttackRange].Value);
+           // _rangeAttackModel.ReSetupRangeAttack(_pumping.GamePerks[PerkTypesEnum.AttackRange].Damage);
         }
 
         private void OnDead(bool value)

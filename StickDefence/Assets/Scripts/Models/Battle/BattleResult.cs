@@ -69,16 +69,6 @@ namespace Models.Battle
                 Coin = rewardModel.Coin,
                 Gem = rewardModel.Gem
             };
-
-            if (isWin)
-            {
-                playResultWindow.SetWin(rewardContains, stars, OnPlayResultWindowClaim);
-            }
-            else
-            {
-                playResultWindow.SetLose(rewardContains, isResurrect,OnPlayResultWindowClaim, Resurrect);
-            }
-        
             var mapStageData = _dataCentralService.MapStageDataModel.GetMapStageData(_player.StageLoadType.Value);
 
             if (!mapStageData.IsCompleted)
@@ -86,6 +76,15 @@ namespace Models.Battle
                 mapStageData.IsCompleted = true;
                 _dataCentralService.MapStageDataModel.UpdateMapStageData(mapStageData);
                 _dataCentralService.SaveFull();
+                
+            }
+            if (isWin)
+            {
+                playResultWindow.SetWin(rewardContains, stars, OnPlayResultWindowClaim,Continue);
+            }
+            else
+            {
+                playResultWindow.SetLose(rewardContains, isResurrect,OnPlayResultWindowClaim, Resurrect);
             }
         }
 
@@ -106,7 +105,14 @@ namespace Models.Battle
         private void Resurrect()
         {
             _playerFortressInstantiate.Resurrect();
+            _windowManager.Show<BottomPanelWindow>();
             _coreStateMachine.RunTimeStateMachine.SetRunTimeState(RunTimeStateEnum.Play);
+        }
+
+        private void Continue()
+        {
+            _windowManager.Hide<PlayResultWindow>();
+            _windowManager.GetWindow<LobbyWindow>().SetupStage();
         }
     }
 }

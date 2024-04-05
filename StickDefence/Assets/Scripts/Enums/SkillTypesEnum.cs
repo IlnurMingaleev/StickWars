@@ -6,9 +6,9 @@ namespace Enums
     public enum SkillTypesEnum
     {
         None,
-        Spikes,
-        ShockWave,
-        Lightning,
+        Grenade,
+        Rocket,
+        Gas,
     }
     public static class SkillTypesEnumExtensions
     {

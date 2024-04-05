@@ -2299,17 +2299,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1839477582591822084, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
-      propertyPath: MapStageConfig.MapStage
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2573299026537956282, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
       propertyPath: m_Name
       value: BattleStage
       objectReference: {fileID: 0}
-    - target: {fileID: 2573299026537956282, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
-      propertyPath: m_IsActive
+    - target: {fileID: 3384835847364885298, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
+      propertyPath: _cameraMain
+      value: 
+      objectReference: {fileID: 1709641390}
+    - target: {fileID: 8174093191253591072, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8452461195761411626, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
+      propertyPath: m_CastShadows
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8452461195761411626, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8452461195761411626, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8452461195761411626, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 640778569
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2326,6 +2342,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2573299026537956282, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
   m_PrefabInstance: {fileID: 768815827}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &768815830 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6221916866098216297, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
+  m_PrefabInstance: {fileID: 768815827}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768815829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5404bf719c5c4fe7aaf4d9f050cc3825, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &803074380
 GameObject:
   m_ObjectHideFlags: 0
@@ -3082,6 +3109,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1127516999 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3384835847364885298, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
+  m_PrefabInstance: {fileID: 768815827}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9ae10246afb4840b1adf10305b057aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1128105880
 GameObject:
   m_ObjectHideFlags: 0
@@ -3428,6 +3466,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1421923555}
   - component: {fileID: 1421923556}
+  - component: {fileID: 1421923557}
   m_Layer: 0
   m_Name: GameSceneControl
   m_TagString: Untagged
@@ -3464,6 +3503,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stageMap: {fileID: 768815829}
   _lobby: {fileID: 2079169158}
+--- !u!114 &1421923557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1421923554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac984bfc2e0840989279104931318c7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _plaerBuilder: {fileID: 768815830}
+  _aimController: {fileID: 1127516999}
 --- !u!1 &1440489434 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8895229305150407179, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
@@ -4099,7 +4152,7 @@ MonoBehaviour:
   m_RendererIndex: -1
   m_VolumeLayerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 0
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 0

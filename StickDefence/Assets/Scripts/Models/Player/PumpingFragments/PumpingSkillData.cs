@@ -7,7 +7,7 @@ namespace Models.Player.PumpingFragments
     public struct PumpingSkillData
     {
         public SkillTypesEnum SkillType;
-        public float Value;
+        public float Damage;
         public int Cost;
         public int CurrentLevel;
         public bool IsMaxLevel;

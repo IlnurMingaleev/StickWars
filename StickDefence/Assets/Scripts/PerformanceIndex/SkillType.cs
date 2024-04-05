@@ -8,24 +8,24 @@ namespace PerfomanceIndex
     {
         public static List<SkillTypesEnum> SkillTypes { get; } = new List<SkillTypesEnum>()
         {
-            SkillTypesEnum.Spikes,
-            SkillTypesEnum.ShockWave,
-            SkillTypesEnum.Lightning,
+            SkillTypesEnum.Rocket,
+            SkillTypesEnum.Grenade,
+            SkillTypesEnum.Gas,
 
         };
         
         public static Dictionary<SkillTypesEnum, string> SkillTypeNames { get; } = new Dictionary<SkillTypesEnum, string>()
         {
-            { SkillTypesEnum.Spikes, ScriptTerms.Names_Skills.Spikes },
-            { SkillTypesEnum.ShockWave, ScriptTerms.Names_Skills.ShockWave },
-            { SkillTypesEnum.Lightning, ScriptTerms.Names_Skills.Lightning },
+            { SkillTypesEnum.Rocket, ScriptTerms.Names_Skills.Spikes },
+            { SkillTypesEnum.Grenade, ScriptTerms.Names_Skills.ShockWave },
+            { SkillTypesEnum.Gas, ScriptTerms.Names_Skills.Lightning },
         };
         
         public static Dictionary<SkillTypesEnum, string> SkillTypeDescriptions { get; } = new Dictionary<SkillTypesEnum, string>()
         {
-            { SkillTypesEnum.Spikes, ScriptTerms.Windows_UpgradeBaseWindow.SpikesDescription },
-            { SkillTypesEnum.ShockWave, ScriptTerms.Windows_UpgradeBaseWindow.ShockWaveDescription },
-            { SkillTypesEnum.Lightning, ScriptTerms.Windows_UpgradeBaseWindow.LightningDescription },
+            { SkillTypesEnum.Rocket, ScriptTerms.Windows_UpgradeBaseWindow.SpikesDescription },
+            { SkillTypesEnum.Grenade, ScriptTerms.Windows_UpgradeBaseWindow.ShockWaveDescription },
+            { SkillTypesEnum.Gas, ScriptTerms.Windows_UpgradeBaseWindow.LightningDescription },
         };
     }
 }

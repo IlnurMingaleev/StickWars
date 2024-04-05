@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using I2.Loc;
+using Models.Battle;
+using Models.Controllers;
 using Models.DataModels;
 using Models.IAP;
 using TMPro;
@@ -36,6 +38,7 @@ namespace UI.Windows
 
         private Action _claim;
         private Action _resurrect;
+        private Action _continue;
 
         private int _coinsCount = 0;
         private int _gemCount = 0;
@@ -73,12 +76,14 @@ namespace UI.Windows
             SaveStats(rewardContains);
         }
         
-        public void SetWin(RewardContains rewardContains, int stars, Action claim)
+        public void SetWin(RewardContains rewardContains, int stars, Action claim,Action goOn)
         {
             _claim = claim;
+            _continue = goOn;
             
             _resurrectBlock.SetActive(false);
             _winBlock.SetActive(true);
+            SceneInstances.Instance.PlayerBuilder.DestroyStage();
             _title.text = LocalizationManager.GetTranslation(ScriptTerms.Windows_PlayResult.StageClear);
             
             foreach (var star in _stars)
@@ -94,6 +99,7 @@ namespace UI.Windows
             _starsBlock.SetActive(true);
 
             SaveStats(rewardContains);
+            
         }
 
         private void SaveStats(RewardContains rewardContains)
@@ -110,6 +116,7 @@ namespace UI.Windows
             _dataCentralService.StatsDataModel.AddCoinsCount(_coinsCount);
             _dataCentralService.StatsDataModel.AddGemsCount(_gemCount);
             _dataCentralService.SaveFull();
+            _continue.Invoke();
         }
 
         private void OnRewardClaim()

@@ -41,12 +41,12 @@ namespace Models.Player
         {
             _basePumping.Init();
             _skillsPumping.Init();
-            
+            _wallPumping.Init();
         }
         
         public void BattleLoad()
         {
-            _wallPumping.Init();
+           
             _gamePumping.BattleLoad();
         }
 

@@ -63,10 +63,10 @@ namespace I2.Loc
 			EditorGUI.PropertyField (r, serializedElement.FindPropertyRelative ("Name"),content);
 
             r = rect;  r.xMin = (r.xMax + r.xMin) / 2 + 2; r.xMax = r.xMin+40;
-            GUI.Label(r, "Value");
+            GUI.Label(r, "Damage");
 
             r = rect;	r.xMin = (r.xMax + r.xMin)/2 + 2 + 40;
-			EditorGUI.PropertyField (r, serializedElement.FindPropertyRelative ("Value"), content);
+			EditorGUI.PropertyField (r, serializedElement.FindPropertyRelative ("Damage"), content);
 		}
 
         void OnEnable()

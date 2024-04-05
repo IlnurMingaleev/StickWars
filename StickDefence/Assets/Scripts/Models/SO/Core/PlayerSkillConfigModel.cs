@@ -7,8 +7,8 @@ namespace Models.SO.Core
     public struct PlayerSkillConfigModel
     {
         public SkillTypesEnum SkillType;
-        public float BaseValue;
-        public float AdditionalValue;
+        public float BaseDamage;
+        public float AdditionalDamage;
         public int LevelCount;
         public int BaseCost;
         public int AdditionalCost;

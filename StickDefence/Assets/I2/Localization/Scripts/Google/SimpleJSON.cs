@@ -707,7 +707,7 @@ namespace I2.Loc.SimpleJSON
 				foreach (var kvp in m_Dict)
 				{
 					if (aIndex==0)
-						return kvp.Value;
+						return kvp.Damage;
 					aIndex--;
 				}
 				return null;
@@ -780,7 +780,7 @@ namespace I2.Loc.SimpleJSON
 			{
 #if DISABLE_LINQ_EXT
 				foreach (var kvp in m_Dict)
-					if (kvp.Value == aNode)
+					if (kvp.Damage == aNode)
 					{
 						m_Dict.Remove(kvp.Key);
 						break;

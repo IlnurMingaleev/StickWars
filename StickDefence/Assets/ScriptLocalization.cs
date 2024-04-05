@@ -64,6 +64,11 @@ namespace I2.Loc
 			{
 				get { return LocalizationManager.GetTranslation("Messages/NotEnoughFunds"); }
 			}
+
+			public static string MaxLevel
+			{
+				get { return LocalizationManager.GetTranslation("Messages/MaxLevel"); }
+			}
 		}
 
 		public static class Names_Perks
@@ -214,6 +219,7 @@ namespace I2.Loc
 			public const string SlotsFull = "Messages/SlotsFull";
 			public const string WarningTitle = "Messages/WarningTitle";
 			public const string NotEnoughFunds = "Messages/NotEnoughFunds";
+			public const string MaxLevel = "Messages/MaxLevel";
 		}
 
 		public static class Names_Perks

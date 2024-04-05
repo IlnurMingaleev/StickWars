@@ -85,7 +85,7 @@ namespace UI.Content.UpgradeBlock
         public void Init(PumpingSkillData pumpingSkillData)
         {
             _costUpgrade = pumpingSkillData.Cost;
-            SetValue(pumpingSkillData.Value);
+            SetValue(pumpingSkillData.Damage);
             _isMax = pumpingSkillData.IsMaxLevel;
 
             if (pumpingSkillData.IsMaxLevel)

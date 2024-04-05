@@ -35,7 +35,6 @@ namespace Models.Player.PumpingFragments
         public void Init()
         {
             _wallData.Clear();
-            
             foreach (var wallType in _configManager.PumpingConfigSo.WallConfigs.Keys)
             {
                 _wallData.Add(wallType, CreateWallData(wallType));

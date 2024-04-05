@@ -75,7 +75,8 @@ namespace Models.Battle
         {
             foreach (var projectileView in _projectiles)
             {
-                Destroy(projectileView.gameObject);
+                if(projectileView != null)
+                    Destroy(projectileView.gameObject);
             }
             _projectiles.Clear();
         }
@@ -157,10 +158,10 @@ namespace Models.Battle
         //
         // public void InitStageLoadBattle()
         // {
-        //     var tankPumpingConfigModel = _configManager.PumpingConfigSo.TanksConfigModels[_playerGameStats.PlayerCharacterData.Value.UnitType]
-        //         .TankPumpingDatas[_playerGameStats.PlayerCharacterData.Value.LevelPumping - 1];
+        //     var tankPumpingConfigModel = _configManager.PumpingConfigSo.TanksConfigModels[_playerGameStats.PlayerCharacterData.Damage.UnitType]
+        //         .TankPumpingDatas[_playerGameStats.PlayerCharacterData.Damage.LevelPumping - 1];
         //     _tankModelView.TankVisual.InitHealthBar(_dataCentralService.SubData);
-        //     _tankModelView.InitHealthBar(_timerService, _soundManager, _coreStateMachine.RunTimeState, _playerGameStats.PlayerCharacterData.Value.Rangefinder);
+        //     _tankModelView.InitHealthBar(_timerService, _soundManager, _coreStateMachine.RunTimeState, _playerGameStats.PlayerCharacterData.Damage.Rangefinder);
         //     _playerTankModel = new PlayerTankModel(_tankModelView, _inputController, tankPumpingConfigModel, this, _timerService);
         //     _parallaxBackGround.InitHealthBar(_tankModelView.transform);
         //     _cameraView.InitHealthBar(_tankModelView.transform);

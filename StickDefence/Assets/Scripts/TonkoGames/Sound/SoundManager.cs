@@ -35,7 +35,7 @@ namespace TonkoGames.Sound
 
         [Inject] private readonly IDataCentralService _dataCentralService;
 
-        #region Value
+        #region Damage
 
         private void OnEnable()
         {

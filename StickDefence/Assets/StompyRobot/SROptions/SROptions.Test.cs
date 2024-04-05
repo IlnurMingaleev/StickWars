@@ -26,7 +26,7 @@ public partial class SROptions
     }
 
     private bool _testBoolean = true;
-    private string _testString = "Test String Value";
+    private string _testString = "Test String Damage";
     private short _testShort = -10;
     private byte _testByte = 2;
     private int _testInt = 30000;

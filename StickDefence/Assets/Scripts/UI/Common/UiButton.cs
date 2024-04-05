@@ -237,12 +237,12 @@ namespace UI.Common
                                                     || Input.touches.Any(touch=> touch.fingerId == pointerId && touch
                                                     .phase != TouchPhase.Ended && touch.phase != TouchPhase.Canceled))
                 .TakeUntilDisable(this)
-                .TakeWhile(b => IsPressed.Value)
+                .TakeWhile(b => IsPressed.Damage)
                 .FirstOrDefault(press => !press)
                 .Subscribe(press =>
                 {
                     //UnityEngine.Debug.LogWarning($"{this.name} TouchUp\r\n{eventData.ToString()}");
-                    IsPressed.Value = false;
+                    IsPressed.Damage = false;
                     UpdateIsDownState();
                 });
 */
