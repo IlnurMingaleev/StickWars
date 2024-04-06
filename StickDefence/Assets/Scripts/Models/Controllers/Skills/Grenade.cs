@@ -17,10 +17,20 @@ namespace Models.Controllers.Skills
 
         public override void LaunchMissile(Vector3 mousePosition)
         {
-            StartCoroutine(Curve(mousePosition));
+            if (_skillCooldownPassed)
+            {
+                _skillCooldownPassed = false;
+                StartCoroutine(Curve(mousePosition));
+                StartTimer();
+            }
         }
 
-        public override void DetectAndDestroyEnemies()
+        protected override void UpdateUIBar(float value)
+        {
+            _bottomPanelWindow.UpdateGrenadeFill(value);
+        }
+
+        public void DetectAndDestroyEnemies()
         {
             _explosionRadius = 3f;
             Collider2D[]
@@ -29,8 +39,8 @@ namespace Models.Controllers.Skills
                         _explosionRadius); // Assuming the radius of your aim is 1 unit.
             foreach (var hitCollider in hitColliders)
             {
-                hitCollider.gameObject.TryGetComponent(out IDamageable unitView);
-                PlayParticleOneShot(unitView, (int) _player.Pumping.Skills[SkillTypesEnum.Grenade].Damage);
+                hitCollider.gameObject.TryGetComponent(out IDamageable damageable);
+                PlayParticleOneShot(damageable, (int) _player.Pumping.Skills[SkillTypesEnum.Grenade].Damage);
             }
 
         }

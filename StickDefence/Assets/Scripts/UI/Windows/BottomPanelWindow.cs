@@ -24,6 +24,9 @@ namespace UI.Windows
         [SerializeField] private UIButton _rocketSkillBtn;
         [SerializeField] private UIButton _greandesSkillBtn;
         [SerializeField] private UIButton _poisonSkillBtn;
+        [SerializeField] private Image _rocketImage;
+        [SerializeField] private Image _greandesImage;
+        [SerializeField] private Image _poisonSkillImage;
 
         [Header("Quick Buy Btn")]
         [SerializeField] private UIButton _quickBuyBtn;
@@ -69,7 +72,7 @@ namespace UI.Windows
             _greandesSkillBtn.OnClickAsObservable
                 .Subscribe(_ => SceneInstances.Instance.AimController.StartAiming(SkillTypesEnum.Grenade))
                 .AddTo(ActivateDisposables);
-            _greandesSkillBtn.OnClickAsObservable
+            _poisonSkillBtn.OnClickAsObservable
                 .Subscribe(_ => SceneInstances.Instance.AimController.StartAiming(SkillTypesEnum.Gas))
                 .AddTo(ActivateDisposables);
             _stickmanShopBtn.OnClickAsObservable.Subscribe(_ =>
@@ -160,5 +163,21 @@ namespace UI.Windows
                ShowNotEnoughFundsWarning();
             }
         }
+
+        public void UpdateRocketFill(float value)
+        {
+            _rocketImage.fillAmount = value;
+        }
+
+        public void UpdateGrenadeFill(float value)
+        {
+            _greandesImage.fillAmount = value;
+        }
+
+        public void UpdateGasFill(float value)
+        {
+            _poisonSkillImage.fillAmount = value;
+        }
+        
     }
 }
