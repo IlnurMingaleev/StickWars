@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Security.Cryptography.X509Certificates;
 using TonkoGames.Sound;
 using Models.Move;
 using Models.Timers;
@@ -13,7 +15,7 @@ namespace Views.Projectiles
         [Header("Physics")]
         [SerializeField] private Rigidbody2D _rigidbody2D;
         [SerializeField] private float _speed;
-        [field: SerializeField] public int DeathTime { get; private set; } = 5;  
+        [field: SerializeField] public int DeathTime { get; private set; } = 3;  
         
         [Header("Visual")]
         [SerializeField] protected ParticleSystem _particlePrefabTrail;
@@ -23,6 +25,8 @@ namespace Views.Projectiles
         [Header("Audio")]
         [SerializeField] private AudioClip _hitTargetClip;
 
+        [Header("Bullet Dispose Time")] [SerializeField]
+        private float _disposeTime = 2.0f;
         private Action<ProjectileView> _bulletDestroyedAction;
         
         protected int Damage = 0;
@@ -56,6 +60,7 @@ namespace Views.Projectiles
         public void StartMove()
         {
             _topDownMove.ContinueMove();
+            StartCoroutine(DisposeBulletTimeOut());
         }
 
         public void StopMove()
@@ -98,12 +103,23 @@ namespace Views.Projectiles
 
         private void OnDisable()
         {
-            _topDownMove.Dispose();
+            if(_topDownMove!= null) _topDownMove.Dispose();
         }
 
         private void OnDestroy()
         {
-          
+            if(_topDownMove!= null) _topDownMove.Dispose();
+        }
+
+        public void DisposeTopDownMove()
+        {
+            if(_topDownMove!= null)_topDownMove.Dispose();
+        }
+
+        public IEnumerator DisposeBulletTimeOut()
+        {
+            yield return new WaitForSeconds(_disposeTime);
+            if(_topDownMove!= null) _topDownMove.Dispose();
         }
     }
 }

@@ -31,10 +31,15 @@ namespace Models.Attacking.TypesAttack
                 var projectile = Object.Instantiate(_projectileViewPrefab, PosAttack.position, Quaternion.identity);
                 var deadTimer = TimerService.AddGameTimer(projectile.DeathTime, null, () =>
                 {
-                    Object.Destroy(projectile.gameObject);
+                    if (projectile != null)
+                    {
+                        projectile.DisposeTopDownMove();
+                        Object.Destroy(projectile.gameObject);
+                    }
                 });
                 projectile.Init(Damage, TargetDamageable.GetTransform().position, ContactFilter.layerMask, SoundManager, _projectileDestroyed, deadTimer);
                 _createProjectile?.Invoke(projectile);
+               
             }
         }
     }

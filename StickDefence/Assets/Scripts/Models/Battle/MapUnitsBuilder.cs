@@ -164,7 +164,10 @@ namespace Models.Battle
         {
             foreach (var projectileView in _projectiles)
             {
-                Destroy(projectileView.gameObject);
+                if (projectileView != null)
+                {
+                    Destroy(projectileView.gameObject);
+                }
             }
             _projectiles.Clear();
         }
