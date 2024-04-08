@@ -60,7 +60,6 @@ namespace Views.Projectiles
         public void StartMove()
         {
             _topDownMove.ContinueMove();
-            StartCoroutine(DisposeBulletTimeOut());
         }
 
         public void StopMove()
@@ -105,21 +104,11 @@ namespace Views.Projectiles
         {
             if(_topDownMove!= null) _topDownMove.Dispose();
         }
-
-        private void OnDestroy()
-        {
-            if(_topDownMove!= null) _topDownMove.Dispose();
-        }
-
+        
         public void DisposeTopDownMove()
         {
             if(_topDownMove!= null)_topDownMove.Dispose();
         }
-
-        public IEnumerator DisposeBulletTimeOut()
-        {
-            yield return new WaitForSeconds(_disposeTime);
-            if(_topDownMove!= null) _topDownMove.Dispose();
-        }
+        
     }
 }

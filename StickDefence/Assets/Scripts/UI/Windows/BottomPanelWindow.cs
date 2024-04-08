@@ -27,17 +27,19 @@ namespace UI.Windows
         [SerializeField] private Image _rocketImage;
         [SerializeField] private Image _greandesImage;
         [SerializeField] private Image _poisonSkillImage;
-
+        
         [Header("Quick Buy Btn")]
         [SerializeField] private UIButton _quickBuyBtn;
 
         [Header("Stickman Shop Btn")] 
         [SerializeField] private UIButton _stickmanShopBtn;
+        [SerializeField] private GameObject _alertShopIcon;
 
         [Header("Upgrade BarrierHealth Btn")] 
         [SerializeField] private UIButton _upgradeBarrierLvlBtn;
         [SerializeField] private UIBar _wallHealthBar;
         [SerializeField] private TMP_Text _wallUpgradeCost;
+        [SerializeField] private GameObject _alertWallIcon;
  
         [Header("Free Box")] 
         [SerializeField] private UIButton _freeBoxBtn;
@@ -62,6 +64,7 @@ namespace UI.Windows
             base.OnActivate();
             InitWindowButtons();
             InitWallUpgradeButtonClick(UpgradeWallClickedEvent);
+            InitAlertEvents();
         }
 
         private void InitWindowButtons()
@@ -87,6 +90,22 @@ namespace UI.Windows
             _quickBuyBtn.OnClickAsObservable.Subscribe(_ =>
                 BuyStickman(_configManager.UnitsStatsSo.DictionaryStickmanConfigs[playerUnitType], playerUnitType));
             _dataCentralService.StatsDataModel.CoinsCount.Subscribe(money => UpdateMoneyLabel(money)).AddTo(ActivateDisposables);
+            
+        }
+
+        private void InitAlertEvents()
+        {
+            _dataCentralService.StatsDataModel.CoinsCount.Subscribe(coins =>
+            {
+                if (coins >= _player.Pumping.WallData[WallTypeEnum.Basic].Cost)
+                {
+                    _alertWallIcon.SetActive(true);
+                }
+                else
+                {
+                    _alertWallIcon.SetActive(false);
+                }
+            }).AddTo(ActivateDisposables);
             
         }
 
