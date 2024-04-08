@@ -10,6 +10,7 @@ namespace Models.Timers
     {
         void CloseTick();
         void StopTick();
+       void AddTimeToExistingTimer(float time);
     }
     public class TimerModel : ITimerModel
     { 
@@ -92,5 +93,10 @@ namespace Models.Timers
             _timeModelTick = null;
             _timeModelEnd = null;
         } 
+        
+        public void AddTimeToExistingTimer(float time)
+        {
+            _currentSec += time;
+        }
     }
 }

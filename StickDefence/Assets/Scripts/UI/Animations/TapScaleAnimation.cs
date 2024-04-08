@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace UI.Animations
+namespace Ui.Animations
 {
     public class TapScaleAnimation : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {

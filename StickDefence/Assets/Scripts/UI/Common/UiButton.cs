@@ -5,7 +5,7 @@ using TonkoGames.Sound;
 using Cysharp.Threading.Tasks;
 using I2.Loc;
 using TMPro;
-using UI.Animations;
+using Ui.Animations;
 using UI.Constants;
 using UniRx;
 using UnityEngine;

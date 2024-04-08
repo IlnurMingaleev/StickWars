@@ -4,11 +4,13 @@ using I2.Loc;
 using Models.Battle;
 using Models.DataModels;
 using Models.DataModels.Models;
+using Models.Timers;
 using TonkoGames.Controllers.Core;
 using Tools.Blockers;
 using UI.Content.Battle;
 using UI.UIManager;
 using UI.Windows;
+using UnityEditor.VersionControl;
 using UnityEngine;
 using VContainer;
 
@@ -34,6 +36,7 @@ namespace Models.Merge
         [Inject] private ConfigManager _configManager;
         [Inject] private IDataCentralService _dataCentralService;
         [Inject] private IWindowManager _windowManager;
+        [Inject] private ITimerService _timerService;
 
         private void Awake()
         {
@@ -251,5 +254,31 @@ namespace Models.Merge
         {
             return slotDictionary[id];
         }
+
+        #region AutoMerge
+
+        public void AutoMerge()
+        {
+            for (int slotIndex = 0; slotIndex < slots.Length - 5; slotIndex++)
+            {
+                if (slots[slotIndex].state == SlotState.Full)
+                {
+                    for (int innerSlotIndex = slotIndex + 1; innerSlotIndex < slots.Length - 5; innerSlotIndex++)
+                    {
+                        if (slots[innerSlotIndex].state == SlotState.Full &&
+                            slots[slotIndex].currentItem.UnitTypeEnum == slots[innerSlotIndex].currentItem.UnitTypeEnum)
+                        {
+                            PlayerUnitTypeEnum unitType = slots[slotIndex].currentItem.UnitTypeEnum;
+                            Destroy(slots[slotIndex].currentItem);
+                            Destroy(slots[innerSlotIndex].currentItem);
+                            slots[innerSlotIndex].CreateItem((int)unitType, _playerBuilder);
+                        }
+                    }
+                }
+            }
+        }
+
+
+        #endregion
     }
 }
