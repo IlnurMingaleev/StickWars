@@ -24,6 +24,7 @@ namespace Models.Merge
     public class MergeController : MonoBehaviour, IPlaceableUnit
     {
         [SerializeField] private PlayerUnitsBuilderTwo _playerUnitsBuilder;
+        private Camera _mainCamera;
         public static MergeController instance;
         
         public Slot[] slots;
@@ -40,6 +41,7 @@ namespace Models.Merge
 
         private void Awake()
         {
+          
             instance = this;
             _playerUnitsBuilder.GetComponent<IPlayerUnitsBuilder>();
             Utils.InitResources();
@@ -60,6 +62,7 @@ namespace Models.Merge
 
         private void Start()
         {
+            _mainCamera = Camera.main;
             _playerBuilder = _playerUnitsBuilder.GetComponent<IPlayerUnitsBuilderTwo>();
             slotDictionary = new Dictionary<int, Slot>();
 
@@ -94,7 +97,7 @@ namespace Models.Merge
 
         void SendRayCast()
         {
-            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(UnityEngine.Input.mousePosition), Vector2.zero);
+            RaycastHit2D hit = Physics2D.Raycast(_mainCamera.ScreenToWorldPoint(UnityEngine.Input.mousePosition), Vector2.zero);
  
             //we hit something
             if(hit.collider != null)

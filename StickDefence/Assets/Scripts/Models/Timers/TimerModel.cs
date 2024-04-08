@@ -8,9 +8,10 @@ namespace Models.Timers
 {
     public interface ITimerModel
     {
+        void StartTick();
         void CloseTick();
         void StopTick();
-       void AddTimeToExistingTimer(float time);
+        void AddTimeToExistingTimer(float time);
     }
     public class TimerModel : ITimerModel
     { 
@@ -79,6 +80,7 @@ namespace Models.Timers
         {
             _disposable.Clear();
         }
+        
 
         public void RestartTick()
         {

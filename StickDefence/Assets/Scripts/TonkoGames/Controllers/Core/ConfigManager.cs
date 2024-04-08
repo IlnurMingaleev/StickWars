@@ -16,6 +16,7 @@ namespace TonkoGames.Controllers.Core
         [field: SerializeField] public MapStageSO MapStageSO { get; private set; }
         [field: SerializeField] public PrefabsUnitsSO PrefabsUnitsSO { get; private set; }
         [field: SerializeField] public StickmanUnitStatsSO StickmanUnitsSO { get; private set; }
+        [field: SerializeField] public BoosterSpritesSO BoostSpritesSO { get; private set;}
 
         private void Awake()
         {
@@ -25,6 +26,7 @@ namespace TonkoGames.Controllers.Core
             PrefabsUnitsSO.Init();
             IapSO.Init();
             MapStageSO.Init();
+            BoostSpritesSO.Init();
         }
     }
 }

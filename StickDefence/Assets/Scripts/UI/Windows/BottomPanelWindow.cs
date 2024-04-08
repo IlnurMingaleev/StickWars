@@ -1,5 +1,6 @@
 ﻿using System;
 using Enums;
+using Helpers.Time;
 using I2.Loc;
 using Models.Controllers;
 using Models.DataModels;
@@ -8,10 +9,12 @@ using Models.Player;
 using Models.SO.Core;
 using TMPro;
 using TonkoGames.Controllers.Core;
+using Ui.Common;
 using UI.Common;
 using UI.Content.Shop;
 using UI.UIManager;
 using UniRx;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using VContainer;
@@ -48,6 +51,9 @@ namespace UI.Windows
         [Header("Money ")]
         [SerializeField] private TMP_Text _moneyText;
         
+        [Header("UIBooster")]
+        [SerializeField] private UIBooster _timerUI;
+        [SerializeField] private Transform _timerParent;
         
         [Inject] private IDataCentralService _dataCentralService;
         [Inject] private ConfigManager _configManager;
@@ -55,6 +61,11 @@ namespace UI.Windows
         private WindowPriority Priority = WindowPriority.TopPanel;
         private MergeController _mergeController;
         private StickmanShopWindow _stickmanShopWindow;
+        public UIBooster TimerUI => _timerUI;
+        private ReactiveDictionary<BoosterTypeEnum, UIBooster> _boostersDictionary =
+            new ReactiveDictionary<BoosterTypeEnum, UIBooster>(); 
+        public IReadOnlyReactiveDictionary<BoosterTypeEnum, UIBooster> BoosterDictionary => 
+            _boostersDictionary;
         public event Action UpgradeWallClickedEvent;
 
         protected override void OnActivate()
@@ -109,25 +120,7 @@ namespace UI.Windows
             
         }
 
-        private void UpdateMoneyLabel(int money)
-        {
-            _moneyText.text = $"{money}";
-        }
-
-        public void SetBoxImageFill(float value)
-        {
-            _boxImage.fillAmount = value;
-        }
-
-        public void UpdateWallHealthBar(int currentHealth, int maxHealth)
-        {
-            _wallHealthBar.SetBarFiilAmount(currentHealth, maxHealth);
-        }
-
-        public void UpdateWallCost(int cost)
-        {
-            _wallUpgradeCost.text = $"{cost}";
-        }
+       
 
         public void InitWallUpgradeButtonClick(Action action)
         {
@@ -183,6 +176,26 @@ namespace UI.Windows
             }
         }
 
+        #region UpdateUIElements
+        private void UpdateMoneyLabel(int money)
+        {
+            _moneyText.text = $"{money}";
+        }
+
+        public void SetBoxImageFill(float value)
+        {
+            _boxImage.fillAmount = value;
+        }
+
+        public void UpdateWallHealthBar(int currentHealth, int maxHealth)
+        {
+            _wallHealthBar.SetBarFiilAmount(currentHealth, maxHealth);
+        }
+
+        public void UpdateWallCost(int cost)
+        {
+            _wallUpgradeCost.text = $"{cost}";
+        }
         public void UpdateRocketFill(float value)
         {
             _rocketImage.fillAmount = value;
@@ -197,6 +210,36 @@ namespace UI.Windows
         {
             _poisonSkillImage.fillAmount = value;
         }
-        
+
+        #endregion
+
+        public void SetTimer(float seconds, BoosterTypeEnum boosterTypeEnum)
+        {
+            int minutes = TimeHelpers.TimeStampToDataTime((long)seconds).Minute;
+            int sec = TimeHelpers.TimeStampToDataTime((long) seconds).Second;
+            UIBooster uiBooster = null;
+            if (_boostersDictionary.ContainsKey(boosterTypeEnum))
+            {
+                uiBooster = _boostersDictionary[boosterTypeEnum];
+            }
+            else
+            {
+                uiBooster = Instantiate(_timerUI.gameObject, _timerParent).GetComponent<UIBooster>();
+                uiBooster.BoosterImage.sprite = _configManager.BoostSpritesSO.BoosterSprites[boosterTypeEnum];
+                uiBooster.SetBoosterTypeEnum(boosterTypeEnum);
+                _boostersDictionary.Add(boosterTypeEnum,uiBooster);
+            }
+
+            if (uiBooster != null)
+            {
+                uiBooster.gameObject.SetActive(true);
+                uiBooster.TimerText.text = String.Format($"{minutes}:{sec}");
+            }
+        } 
+        public void RemoveBooster(BoosterTypeEnum boosterType)
+        {
+            if(_boostersDictionary.ContainsKey(boosterType))
+                _boostersDictionary.Remove(boosterType);
+        }
     }
 }
