@@ -36,6 +36,11 @@ namespace Models.Battle
         
         private PlayerViewTwo _fortressView;
         private PlayerUnitModel _fortressModel;
+        private bool _attackSpeedActive = false;
+        
+        public bool AttackSpeedActive => _attackSpeedActive;
+
+        public void SetAttackSpeedActive(bool value) => _attackSpeedActive = value;
         public bool IsLaunchIsProgress => _fortressView.IsLaunchIsProgress;
 
         private void OnEnable()
@@ -89,7 +94,7 @@ namespace Models.Battle
             var unitConfig = _configManager.UnitsStatsSo.DictionaryStickmanConfigs[unitType];
             var unitView = Instantiate(_configManager.PrefabsUnitsSO.PlayerUnitPrefabs[unitType].GO,parent).GetComponent<PlayerViewTwo>();
             _fortressView = unitView;
-            _fortressModel = new PlayerUnitModel(unitView, _soundManager, _timerService,unitConfig);
+            _fortressModel = new PlayerUnitModel(unitView, _soundManager, _timerService,unitConfig, _attackSpeedActive);
             _fortressModel.SetParentSlotType(slotType);
             _fortressModel.InitAttack(CreateProjectile, RemoveProjectile);
             _fortressModel.InitSubActive();

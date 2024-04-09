@@ -47,6 +47,8 @@ namespace Models.Battle
         private CompositeDisposable _disposable = new CompositeDisposable();
         private CompositeDisposable _updateDisposable = new CompositeDisposable();
 
+        public List<PlayerUnitModel> SpawnedUnits => _spawnedUnits;
+
         private void OnEnable()
         {
             BattleStateMachine.SubscriptionAction(BattleStateEnum.StartBattle, OnStartBattleState);

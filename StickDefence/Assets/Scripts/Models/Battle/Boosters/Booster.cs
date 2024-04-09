@@ -3,6 +3,7 @@ using Enums;
 using Models.Timers;
 using UI.UIManager;
 using UI.Windows;
+using UnityEngine.Rendering;
 using VContainer;
 
 namespace Models.Battle.Boosters
@@ -26,8 +27,24 @@ namespace Models.Battle.Boosters
 
         public ITimerModel TimerModel => _timerModel;
         public float BoostersActiveTime => _boosterActiveTime;
-        public abstract void ApplyBooster(); 
-        public abstract void CreateNewTimerModel(Action timerEndAction);
+        public abstract void ApplyBooster();
+
+        public void CreateNewTimerModel(Action timerEndAction)
+        {
+            _timerModel = _timerService.AddGameTimer( _boosterActiveTime,
+                f =>
+                {
+                    _windowManager.GetWindow<BottomPanelWindow>().SetTimer(f, _boosterType);
+                },
+                () =>
+                {
+                    SwitchBoosterOff();
+                    timerEndAction?.Invoke();
+                    DeactivateTimerUI();
+                },true);
+            
+            _timerModel.StartTick();
+        }
 
         public void UpdateExistingTimer()
         {
@@ -44,5 +61,8 @@ namespace Models.Battle.Boosters
             _bottomPanelWindow.BoosterDictionary[_boosterType].gameObject.SetActive(false);
             _bottomPanelWindow.RemoveBooster(_boosterType);
         }
+
+        public abstract void SwitchBoosterOn(); 
+        public abstract void SwitchBoosterOff();
     }
 }

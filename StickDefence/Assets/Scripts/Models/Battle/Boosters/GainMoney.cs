@@ -15,7 +15,12 @@ namespace Models.Battle.Boosters
             throw new System.NotImplementedException();
         }
 
-        public override void CreateNewTimerModel(Action timerEndAction)
+        public override void SwitchBoosterOn()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void SwitchBoosterOff()
         {
             throw new NotImplementedException();
         }

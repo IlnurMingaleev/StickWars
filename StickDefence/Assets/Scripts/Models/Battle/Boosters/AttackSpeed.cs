@@ -1,23 +1,43 @@
 ﻿using System;
 using Models.Timers;
 using UI.UIManager;
+using UI.Windows;
 
 namespace Models.Battle.Boosters
 {
     public class AttackSpeed: Booster
     {
-        public AttackSpeed(BoosterManager boosterManager, ITimerService timerService, IWindowManager windowManager) : base(boosterManager, timerService, windowManager)
+        private PlayerUnitsBuilder _unitsBuilder;
+        private PlayerUnitsBuilderTwo _playerUnitsBuilderTwo;
+        public AttackSpeed(BoosterManager boosterManager, ITimerService timerService, IWindowManager windowManager,
+            PlayerUnitsBuilder playerUnitsBuilder, PlayerUnitsBuilderTwo playerUnitsBuilderTwo) : base(boosterManager, timerService, windowManager)
         {
+            _unitsBuilder = playerUnitsBuilder;
+            _playerUnitsBuilderTwo = playerUnitsBuilderTwo;
         }
 
         public override void ApplyBooster()
         {
             throw new NotImplementedException();
         }
-
-        public override void CreateNewTimerModel(Action timerEndAction)
+        public override void SwitchBoosterOn()
         {
-            throw new NotImplementedException();
+            _playerUnitsBuilderTwo.SetAttackSpeedActive(true);
+            foreach (var playerUnit in _unitsBuilder.SpawnedUnits)
+            {
+                playerUnit.SetAttackSpeedActive(true);
+                playerUnit.SubscribeStatsWhileAttackSpeedActive();
+            }
+        }
+
+        public override void SwitchBoosterOff()
+        {
+            _playerUnitsBuilderTwo.SetAttackSpeedActive(false);
+            foreach (var playerUnit in _unitsBuilder.SpawnedUnits)
+            {
+                playerUnit.SetAttackSpeedActive(false);
+                playerUnit.SubscribeStatsWhileAttackSpeedActive();
+            }
         }
     }
 }
