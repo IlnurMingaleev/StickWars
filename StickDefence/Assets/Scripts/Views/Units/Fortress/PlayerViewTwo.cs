@@ -1,6 +1,8 @@
 ﻿using System;
 using Anim.Battle.Fortress;
 using Models.Attacking;
+using Models.Battle;
+using Models.Fortress;
 using UniRx;
 using UnityEngine;
 using Views.Health;
@@ -14,7 +16,6 @@ namespace Views.Units.Fortress
         [SerializeField] private AttackBlockView _attackBlockView;
 
         private ReactiveProperty<bool> _isActive = new ReactiveProperty<bool>(false);
-        
         public Damageable Damageable => _damageable;
         public AttackBlockView AttackBlockView => _attackBlockView;
 
@@ -23,7 +24,9 @@ namespace Views.Units.Fortress
         public IReadOnlyReactiveProperty<bool> IsActive => _isActive;
           
         public bool IsLaunchIsProgress => _battleFortressLaunch.IsLaunchIsProgress;
-        
+
+        private PlayerUnitsBuilderTwo _playerUnitsBuilder;
+        private PlayerUnitModel _playerUnitModel;
         private void OnEnable()
         {
             _isActive.Value = true;
@@ -43,5 +46,6 @@ namespace Views.Units.Fortress
         {
             _battleFortressLaunch.StartLaunchAnim();
         }
+        
     }
 }

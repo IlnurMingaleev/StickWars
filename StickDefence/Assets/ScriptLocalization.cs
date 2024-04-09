@@ -69,6 +69,21 @@ namespace I2.Loc
 			{
 				get { return LocalizationManager.GetTranslation("Messages/MaxLevel"); }
 			}
+
+			public static string AttackSpeed
+			{
+				get { return LocalizationManager.GetTranslation("Messages/AttackSpeedMessage"); }
+			}
+
+			public static string GainCoins
+			{
+				get { return LocalizationManager.GetTranslation("Messages/GainCoinsMessage"); }
+			}
+
+			public static string AutoMerge
+			{
+				get { return LocalizationManager.GetTranslation("Messages/AutoMergeMessage"); }
+			}
 		}
 
 		public static class Names_Perks
@@ -220,6 +235,9 @@ namespace I2.Loc
 			public const string WarningTitle = "Messages/WarningTitle";
 			public const string NotEnoughFunds = "Messages/NotEnoughFunds";
 			public const string MaxLevel = "Messages/MaxLevel";
+			public const string AttackSpeed = "Messages/AttackSpeedMessage";
+			public const string GainCoins = "Messages/GainCoinsMessage";
+			public const string AutoMerge = "Messages/AutoMergeMessage";
 		}
 
 		public static class Names_Perks

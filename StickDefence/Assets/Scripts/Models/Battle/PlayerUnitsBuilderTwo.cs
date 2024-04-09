@@ -33,13 +33,15 @@ namespace Models.Battle
         
         private int _maxHealth = 1;
         private List<ProjectileView> _projectiles = new();
-        
+        private readonly List<PlayerUnitModel> _spawnedUnits   = new();
+
+
         private PlayerViewTwo _fortressView;
         private PlayerUnitModel _fortressModel;
         private bool _attackSpeedActive = false;
         
         public bool AttackSpeedActive => _attackSpeedActive;
-
+        public List<PlayerUnitModel> SpawnedUnits => _spawnedUnits;
         public void SetAttackSpeedActive(bool value) => _attackSpeedActive = value;
         public bool IsLaunchIsProgress => _fortressView.IsLaunchIsProgress;
 
@@ -98,9 +100,17 @@ namespace Models.Battle
             _fortressModel.SetParentSlotType(slotType);
             _fortressModel.InitAttack(CreateProjectile, RemoveProjectile);
             _fortressModel.InitSubActive();
+            _fortressModel.OnModelRemove += FortressModelOnModelRemove;
+            _spawnedUnits.Add(_fortressModel);
             playerViewTwo = unitView;
         }
-        
+
+        private void FortressModelOnModelRemove(PlayerUnitModel playerUnitModel)
+        {
+           _spawnedUnits.Remove(playerUnitModel);
+           playerUnitModel.OnModelRemove -= FortressModelOnModelRemove;
+        }
+
         /*public PlayerView InstantiateUnit(PlayerUnitTypeEnum unitType, Transform parent,SlotTypeEnum slotType)
         {
            

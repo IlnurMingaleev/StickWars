@@ -1240,6 +1240,35 @@ MonoBehaviour:
       - 
       Flags: 000000
       Languages_Touch: []
+    - Term: Messages/AutoMergeMessage
+      TermType: 0
+      Description: 
+      Languages:
+      - Auto Merge 60 sec
+      - "\u0410\u0432\u0442\u043E \u041C\u0435\u0440\u0434\u0436 60 \u0441\u0435\u043A"
+      - 
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Messages/GainCoinsMessage
+      TermType: 0
+      Description: 
+      Languages:
+      - Increased Income 60 sec
+      - "\u0423\u0432\u043C\u0435\u043B\u0438\u0447\u0435\u043D\u043D\u044B\u0439
+        \u0434\u043E\u0445\u043E\u0434 60 \u0441\u0435\u043A"
+      - Artan Gelir 60 sn
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Messages/AttackSpeedMessage
+      TermType: 0
+      Description: 
+      Languages:
+      - Increased Attack Speed 60 sec
+      - "\u0421\u043A\u043E\u0440\u043E\u0441\u0442\u0440\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u044C
+        60 \u0441\u0435\u043A"
+      - 
+      Flags: 000000
+      Languages_Touch: []
     CaseInsensitiveTerms: 0
     OnMissingTranslation: 1
     mTerm_AppName: 

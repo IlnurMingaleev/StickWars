@@ -538,6 +538,7 @@ MonoBehaviour:
   <MapStageSO>k__BackingField: {fileID: 11400000, guid: ba80095f1162150419429cd888c0de1c, type: 2}
   <PrefabsUnitsSO>k__BackingField: {fileID: 11400000, guid: 01a1c06ee79b12c4bbd2e96e261437dd, type: 2}
   <StickmanUnitsSO>k__BackingField: {fileID: 11400000, guid: 7bc18ccc8c2333848a6276462a750d2b, type: 2}
+  <BoostSpritesSO>k__BackingField: {fileID: 11400000, guid: 237de7c41c3fb3a478d8ebfe4abf1cde, type: 2}
 --- !u!1 &1076970957
 GameObject:
   m_ObjectHideFlags: 0

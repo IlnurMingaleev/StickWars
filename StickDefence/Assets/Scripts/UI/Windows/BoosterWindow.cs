@@ -10,13 +10,16 @@ using I2.Loc;
 using Models.Battle.Boosters;
 using Models.IAP;
 using Models.Timers;
+using Sirenix.OdinInspector.Editor.Drawers;
 using TonkoGames.StateMachine;
+using TonkoGames.StateMachine.Enums;
 using Ui.Common;
 using UI.Common;
 using UI.UIManager;
 using UI.Windows;
 using Unity.VisualScripting;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 namespace Ui.Windows
 {
@@ -25,7 +28,7 @@ namespace Ui.Windows
         [SerializeField] private TMP_Text _titleLabel;
         [SerializeField] private UIButton _skipBtn;
         [SerializeField] private UIButton _continueBtn;
-        
+        [SerializeField] private UIButton _closeBtn;
         [SerializeField] private Image _attackSpeedImage;
         [SerializeField] private Image _gainCoinsImage;
         [SerializeField] private Image _autoMerge;
@@ -34,61 +37,38 @@ namespace Ui.Windows
         
         [Inject] private ICoreStateMachine _coreStateMachine;
         [Inject] private IIAPService _iapService;
-        [Inject] protected BoosterManager _boosterManager;
         [Inject] private ITimerService _timerService;
 
-        private BoosterTypeEnum _lastBoosterTypeEnum; 
-        private LocalizedString _currentLocalizedString;
-
-        private Booster _selectableBooster;
+        private BoosterTypeEnum _lastBoosterTypeEnum;
+        private BoosterManager _boosterManager;
+        private WindowPriority Priority = WindowPriority.TopPanel;
         
         protected override void OnActivate()
         {
             base.OnActivate();
-            //_continueBtn.OnClickAsObservable.Subscribe(_ => OnClickContinueBtn()).AddTo(_disposable);
-            LocalizationManager.OnLocalizeEvent += UpdateLanguage;
-            StartCoroutine(BlinkAnimation());
+            //StartCoroutine(BlinkAnimation());
             Cursor.lockState = CursorLockMode.None;
             
             _skipBtn.OnClickAsObservable.Subscribe(_ => ShowRewardBooster()).AddTo(ActivateDisposables);
-        }
-
-        private void UpdateLanguage()
-        {
-            SetTitleLabel(_currentLocalizedString);
-        }
-
-        public void SetTitleLabel(LocalizedString titleText)
-        {
-            if(_currentLocalizedString != titleText)_currentLocalizedString = titleText;
-            _titleLabel.text = titleText;
-        }
-
-        private void OnClickContinueBtn()
-        {
-           
-            _manager.Hide(this);
-            _manager.Show<TopPanelWindow>(WindowPriority.TopPanel);
-           
+            _closeBtn.OnClickAsObservable.Subscribe(_ => CloseWindow()).AddTo(ActivateDisposables);
             
+            _coreStateMachine.RunTimeStateMachine.SetRunTimeState(RunTimeStateEnum.Pause);
         }
 
-        private void OnClickMainMenuBtn()
+        private void CloseWindow()
         {
-            
             _manager.Hide(this);
         }
 
-        public void Subscribe(Booster booster)
+        public void Init(BoosterManager boosterManager)
         {
-            _selectableBooster = booster;
+            _boosterManager = boosterManager;
+            SelectRandomBooster();
         }
-
+        
+        
         private void ShowRewardBooster()
         {
-            if (_selectableBooster == null)
-                return;
-            
             _iapService.RewardedBreakComplete += ShownRewardBooster;
             Debug.Log("asdf _skipBtn");
             _iapService.ShowRewardedBreak();
@@ -101,10 +81,9 @@ namespace Ui.Windows
             
             if (value)
             {
-                OnRewardClaim(_selectableBooster);
+                OnRewardClaim();
             }
-
-            _selectableBooster = null;
+            
         }
 
         private IEnumerator BlinkAnimation()
@@ -118,9 +97,9 @@ namespace Ui.Windows
             }
         }
         
-        private void OnRewardClaim(Booster booster)
+        private void OnRewardClaim()
         {
-
+            _boosterManager.ApplyBooster(_lastBoosterTypeEnum);
         }
      
         public void DeactivateAllImages()
@@ -135,31 +114,47 @@ namespace Ui.Windows
         {
             DeactivateAllImages();
             _attackSpeedImage.gameObject.SetActive(true);
-            //_lastBoosterTypeEnum = BoosterTypeEnum.PogoStick;
-
+            _titleLabel.text = ScriptLocalization.Messages.AttackSpeed;
         }
 
         public void ActivateAutoMergeImage()
         {
             DeactivateAllImages();
             _autoMerge.gameObject.SetActive(true);
-            //_lastBoosterTypeEnum = BoosterTypeEnum.Boots;
+            _titleLabel.text = ScriptLocalization.Messages.AutoMerge;
         }
 
         public void ActivateCoinsImage()
         {
             DeactivateAllImages();
             _gainCoinsImage.gameObject.SetActive(true);
-           // _lastBoosterTypeEnum = BoosterTypeEnum.Shield;
+            _titleLabel.text = ScriptLocalization.Messages.GainCoins;
         }
-        
+
+        public void SelectRandomBooster()
+        {
+            int randomInt = Random.Range(1, 3);
+            _lastBoosterTypeEnum = (BoosterTypeEnum) randomInt;
+            switch (_lastBoosterTypeEnum)
+            {
+                case BoosterTypeEnum.AttackSpeed:
+                    ActivateAttackSpeedImage();
+                    break;
+                case BoosterTypeEnum.AutoMerge:
+                    ActivateAutoMergeImage();
+                    break;
+                case BoosterTypeEnum.GainCoins:
+                    ActivateCoinsImage();
+                    break;
+            }
+           
+        }
+
         protected override void OnDeactivate()
         {
             base.OnDeactivate();
-            LocalizationManager.OnLocalizeEvent -= UpdateLanguage;
-            
+            _coreStateMachine.RunTimeStateMachine.SetRunTimeState(RunTimeStateEnum.Play);
         }
-       
     }
     
 }

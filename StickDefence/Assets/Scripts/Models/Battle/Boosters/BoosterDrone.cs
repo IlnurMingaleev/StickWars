@@ -1,34 +1,42 @@
 ﻿using System;
 using System.Collections.Generic;
 using UI.UIManager;
+using Ui.Windows;
 using UI.Windows;
+using UniRx;
 using UnityEngine;
 using VContainer;
 
 namespace Models.Battle.Boosters
 {
-    public class BoosterDrone: MonoBehaviour
-    { 
-        [SerializeField]private Transform[] waypoints;
+    public class BoosterDrone : MonoBehaviour
+    {
+        [SerializeField] private BoosterManager _boosterManager;
+        [SerializeField] private Transform[] waypoints;
         [SerializeField] private float _speed;
         private const float _epsilon = 0.001f;
         private int waypointIndex = 0;
-        private bool _isMoving = false;
+        private ReactiveProperty<bool> _isMoving = new ReactiveProperty<bool>(false);
         private Camera _mainCamera;
         public Action AdDroneMoveEnd;
         private bool _boosterWindowShown = false;
         [Inject] private IWindowManager _windowManager;
-        
-        
+        public IReadOnlyReactiveProperty<bool> IsMoving => _isMoving;
+
         public void Start()
         {
-            _isMoving = true;
             _mainCamera = Camera.main;
+        }
+
+        public void StartDrone()
+        {
+            _isMoving.Value = true;
+            
         }
 
         public void Update()
         {
-            if(_isMoving)
+            if(_isMoving.Value)
                 MoveToWaypoint();
             if (UnityEngine.Input.GetMouseButtonDown(0))
                 SendRaycast();
@@ -43,8 +51,9 @@ namespace Models.Battle.Boosters
                 waypointIndex++;
                 if (waypointIndex == waypoints.Length)
                 {
-                    _isMoving = false;
+                    _isMoving.Value = false;
                     waypointIndex = 0;
+                    transform.position = waypoints[0].position;
                     _boosterWindowShown = false;
                     AdDroneMoveEnd?.Invoke();
                 }
@@ -58,6 +67,9 @@ namespace Models.Battle.Boosters
             {
                 if (hit.collider.gameObject.TryGetComponent(out BoosterDrone boosterDrone))
                 {
+                    transform.position = waypoints[0].position;
+                    _isMoving.Value = false;
+                    waypointIndex = 0;
                     boosterDrone.ShowBoosterWindow();
                 }
             }
@@ -65,7 +77,9 @@ namespace Models.Battle.Boosters
 
         private void ShowBoosterWindow()
         {
-            _windowManager.GetWindow<BottomPanelWindow>();
+            BoosterWindow boosterWindow = _windowManager.GetWindow<BoosterWindow>();
+            boosterWindow.Init(_boosterManager);
+            _windowManager.Show(boosterWindow);
         }
     }
 }

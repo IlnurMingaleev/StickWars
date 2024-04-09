@@ -29,6 +29,7 @@ namespace Models.Merge
         {
             this.id = id;
             this.parentSlot = slot;
+            UnitTypeEnum = (PlayerUnitTypeEnum) id;
             unitGameObject = playerBuilder.InitStageLoadBattle((PlayerUnitTypeEnum) id, unitParent,parentSlot.slotType);
             
         }

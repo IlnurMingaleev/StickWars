@@ -274,7 +274,8 @@ namespace Models.Merge
                             PlayerUnitTypeEnum unitType = slots[slotIndex].currentItem.UnitTypeEnum;
                             Destroy(slots[slotIndex].currentItem);
                             Destroy(slots[innerSlotIndex].currentItem);
-                            slots[innerSlotIndex].CreateItem((int)unitType, _playerBuilder);
+                            slots[innerSlotIndex].CreateItem((int)unitType + 1, _playerBuilder);
+                            return;
                         }
                     }
                 }

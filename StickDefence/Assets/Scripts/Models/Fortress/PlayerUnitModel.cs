@@ -33,8 +33,9 @@ namespace Models.Fortress
         private CompositeDisposable _disposableIsActive = new CompositeDisposable();
         private StickmanStatsConfig _stickmanStatsConfig;
         private bool _attackSpeedActive = false;
-        public event Action IsDeadAction;
         
+        public event Action IsDeadAction;
+        public Action<PlayerUnitModel> OnModelRemove;
 
         #region Getters
         public RangeOneTargetAttack RangeAttackModel => _rangeAttackModel;
@@ -120,6 +121,7 @@ namespace Models.Fortress
 
         private void OnDisable()
         {
+            OnModelRemove?.Invoke(this);
             _disposable.Clear();
             _rangeAttackModel.StopPlay();
         }
