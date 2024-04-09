@@ -6,23 +6,23 @@ namespace Models.Battle.Boosters
 {
     public class GainMoney: Booster
     {
-        public GainMoney(BoosterManager boosterManager, ITimerService timerService, IWindowManager windowManager) : base(boosterManager, timerService, windowManager)
+        private MapUnitsBuilder _mapUnitsBuilder;
+        public GainMoney(BoosterManager boosterManager, ITimerService timerService, IWindowManager windowManager,
+            MapUnitsBuilder mapUnitsBuilder) : base(boosterManager, timerService, windowManager)
         {
+            _mapUnitsBuilder = mapUnitsBuilder;
         }
 
-        public override void ApplyBooster()
-        {
-            throw new System.NotImplementedException();
-        }
+      
 
         public override void SwitchBoosterOn()
         {
-            throw new NotImplementedException();
+            _mapUnitsBuilder.SetGainCoins(true);
         }
 
         public override void SwitchBoosterOff()
         {
-            throw new NotImplementedException();
+            _mapUnitsBuilder.SetGainCoins(false);
         }
     }
 }

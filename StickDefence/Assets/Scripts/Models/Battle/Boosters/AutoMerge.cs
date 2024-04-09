@@ -16,13 +16,7 @@ namespace Models.Battle.Boosters
         {
             _mergeController = mergeController;
         }
-
-
-        public override void ApplyBooster()
-        {
-            throw new NotImplementedException();
-        }
-
+        
         public override void SwitchBoosterOn()
         { 
             _shouldRun = true;

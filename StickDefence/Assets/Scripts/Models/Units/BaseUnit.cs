@@ -35,6 +35,7 @@ namespace Models.Units
         public IReadOnlyReactiveProperty<bool> IsMoving => _isMoving;
 
         public int Experience => UnitStatsConfig.Experience;
+        public int Coins => UnitStatsConfig.Coins;
         public BaseUnit(UnitView unitView, ITimerService timerService, ISoundManager soundManager) 
         {
             View = unitView;

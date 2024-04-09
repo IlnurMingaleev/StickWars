@@ -12,5 +12,6 @@ namespace Models.SO.Core
         public int Damage;
         public float Reloading;
         public int Experience;
+        public int Coins;
     }
 }

@@ -16,6 +16,7 @@ namespace Models.Battle.Boosters
         [SerializeField] private PlayerUnitsBuilder _unitsBuilder;
         [SerializeField] private MergeController _mergeController;
         [SerializeField] private PlayerUnitsBuilderTwo _playerUnitsBuilderTwo;
+        [SerializeField] private MapUnitsBuilder _mapUnitsBuilder;
         [Inject] private IWindowManager _windowManager;
         [Inject] private ITimerService _timerService;
         
@@ -56,7 +57,7 @@ namespace Models.Battle.Boosters
                     result = new AutoMerge(this, _timerService, _windowManager,_mergeController);
                     break;
                 case BoosterTypeEnum.GainCoins:
-                    result =  new GainMoney(this, _timerService, _windowManager);
+                    result =  new GainMoney(this, _timerService, _windowManager,_mapUnitsBuilder);
                     break;
                 
             }

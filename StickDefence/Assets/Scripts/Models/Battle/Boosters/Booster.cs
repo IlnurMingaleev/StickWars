@@ -27,7 +27,6 @@ namespace Models.Battle.Boosters
 
         public ITimerModel TimerModel => _timerModel;
         public float BoostersActiveTime => _boosterActiveTime;
-        public abstract void ApplyBooster();
 
         public void CreateNewTimerModel(Action timerEndAction)
         {

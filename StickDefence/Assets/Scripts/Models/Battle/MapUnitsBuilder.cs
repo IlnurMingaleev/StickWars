@@ -54,6 +54,23 @@ namespace Models.Battle
         private CompositeDisposable _updateDisposable = new CompositeDisposable();
         private TopPanelWindow _topPanelWindow;
         private int _maxUnitsCount = 0;
+        private bool _gainCoins = false;
+
+
+        #region Getters
+
+        public bool GainCoins => _gainCoins;
+
+        #endregion
+
+        #region Setters
+
+        public void SetGainCoins(bool value)
+        {
+            _gainCoins = value;
+        }
+
+        #endregion
 
         private void OnValidate()
         {
@@ -264,6 +281,7 @@ namespace Models.Battle
             CheckIsEmptyDay();
             _unitsCount.Value += 1;
             _dataCentralService.PumpingDataModel.IncreaseExperience(baseUnit.Experience,_configManager);
+            AddCoins(baseUnit);
             _dataCentralService.SaveFull();
         } 
         
@@ -332,5 +350,17 @@ namespace Models.Battle
         {
             _projectiles.Remove(projectileView);
         }
+
+        public void AddCoins(BaseUnit baseUnit)
+        {
+            int coins = baseUnit.Coins;
+            if (_gainCoins)
+            {
+                coins = Mathf.RoundToInt(coins * 1.5f);
+            }
+
+            _dataCentralService.StatsDataModel.AddCoinsCount(coins);
+        }
+        
     }
 }

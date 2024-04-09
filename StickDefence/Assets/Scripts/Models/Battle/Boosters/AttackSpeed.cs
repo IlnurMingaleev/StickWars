@@ -15,11 +15,7 @@ namespace Models.Battle.Boosters
             _unitsBuilder = playerUnitsBuilder;
             _playerUnitsBuilderTwo = playerUnitsBuilderTwo;
         }
-
-        public override void ApplyBooster()
-        {
-            throw new NotImplementedException();
-        }
+        
         public override void SwitchBoosterOn()
         {
             _playerUnitsBuilderTwo.SetAttackSpeedActive(true);
