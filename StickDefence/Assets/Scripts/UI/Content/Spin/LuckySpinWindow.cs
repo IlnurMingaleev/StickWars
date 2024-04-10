@@ -5,11 +5,8 @@ using TonkoGames.Controllers.Core;
 using TonkoGames.StateMachine;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
-using Enums;
 using TonkoGames.StateMachine.Enums;
 using Helpers;
-using Models.Controllers;
-using Models.DataModels;
 using Models.IAP;
 using Models.Player;
 using Models.SO.Iaps;
@@ -26,7 +23,7 @@ using Random = UnityEngine.Random;
 
 namespace UI.Content.Spin
 {
-    public class LuckySpinPanel : UIBehaviour
+    public class LuckySpinWindow :Window
     {
         [SerializeField] private UIButton _exitButton;
         [SerializeField] private List<SpinSlot> _spinSlots;
@@ -45,6 +42,8 @@ namespace UI.Content.Spin
         [Inject] private readonly IIAPService _iapService;
         [Inject] private readonly ICoreStateMachine _coreStateMachine;
         
+        private WindowPriority Priority = WindowPriority.AboveTopPanel;
+        
         protected override void Awake()
         {
             base.Awake();
@@ -54,9 +53,10 @@ namespace UI.Content.Spin
             }
         }
 
-        protected override void OnEnable()
+        protected override void OnActivate()
         {
-            base.OnEnable();
+            base.OnActivate();
+
             _exitButton.OnClickAsObservable.Subscribe(_ => ClosePopup()).AddTo(_disposable);
             _spin.OnClickAsObservable.Subscribe(_ => StartSpin()).AddTo(_disposable);
             _rewardSpinButton.OnClickAsObservable.Subscribe(_ => RewardSpinButton()).AddTo(_disposable);
@@ -72,13 +72,14 @@ namespace UI.Content.Spin
             
             if (!_coreStateMachine.TutorialStateMachine.IsLuckySpinTutorialShown && _coreStateMachine.TutorialStateMachine.LuckySpinTutorialStep.Value == TutorialStepsEnum.NoneStart) 
             {
-             //   _coreStateMachine.TutorialStateMachine.SetLuckySpinTutorialState(TutorialStepsEnum.LuckySpinDialog);
+                //   _coreStateMachine.TutorialStateMachine.SetLuckySpinTutorialState(TutorialStepsEnum.LuckySpinDialog);
             }
         }
 
-        protected override void OnDisable()
+        
+        protected override void OnDeactivate()
         {
-            base.OnDisable();
+            base.OnDeactivate();
             _disposable.Clear();
 
             if (_tween != null)

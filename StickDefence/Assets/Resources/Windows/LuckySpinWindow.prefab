@@ -319,7 +319,7 @@ GameObject:
   - component: {fileID: 3000802957577317576}
   - component: {fileID: 6326209807538377313}
   m_Layer: 5
-  m_Name: LuckySpinPanel
+  m_Name: LuckySpinWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -357,6 +357,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f460e59d12764a8497f86e39a041cf05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isUndestroyable: 0
+  _isTransparent: 1
+  _windowAnimations: []
   _exitButton: {fileID: 6813501251152586686}
   _spinSlots:
   - {fileID: 7862735287009848520}

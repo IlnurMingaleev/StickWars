@@ -2,6 +2,7 @@
 using Enums;
 using Helpers.Time;
 using I2.Loc;
+using Models.Battle.Boosters;
 using Models.Controllers;
 using Models.DataModels;
 using Models.Merge;
@@ -11,10 +12,9 @@ using TMPro;
 using TonkoGames.Controllers.Core;
 using Ui.Common;
 using UI.Common;
-using UI.Content.Shop;
+using UI.Content.Spin;
 using UI.UIManager;
 using UniRx;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using VContainer;
@@ -54,6 +54,11 @@ namespace UI.Windows
         [Header("UIBooster")]
         [SerializeField] private UIBooster _timerUI;
         [SerializeField] private Transform _timerParent;
+
+        [Header("Buttons")] 
+        [SerializeField] private UIButton _fortuneWheelBtn;
+        [SerializeField] private UIButton _mergeBtn;
+        
         
         [Inject] private IDataCentralService _dataCentralService;
         [Inject] private ConfigManager _configManager;
@@ -61,6 +66,7 @@ namespace UI.Windows
         private WindowPriority Priority = WindowPriority.TopPanel;
         private MergeController _mergeController;
         private StickmanShopWindow _stickmanShopWindow;
+        private BoosterManager _boosterManager;
         public UIBooster TimerUI => _timerUI;
         private ReactiveDictionary<BoosterTypeEnum, UIBooster> _boostersDictionary =
             new ReactiveDictionary<BoosterTypeEnum, UIBooster>(); 
@@ -70,14 +76,15 @@ namespace UI.Windows
 
         protected override void OnActivate()
         {
-            if(_mergeController == null) _mergeController = FindObjectOfType<MergeController>();
+            if (_mergeController == null) _mergeController = SceneInstances.Instance.MergeController;
+            if (_boosterManager == null) _boosterManager = SceneInstances.Instance.BoosterManager;
             if (!_stickmanShopWindow) _stickmanShopWindow = _manager.GetWindow<StickmanShopWindow>();
             base.OnActivate();
             InitWindowButtons();
             InitWallUpgradeButtonClick(UpgradeWallClickedEvent);
             InitAlertEvents();
         }
-
+        
         private void InitWindowButtons()
         {
             _rocketSkillBtn.OnClickAsObservable
@@ -95,6 +102,14 @@ namespace UI.Windows
                    _manager.Show<StickmanShopWindow>();
                 })
                 .AddTo(ActivateDisposables);
+            _fortuneWheelBtn.OnClickAsObservable.Subscribe(_ =>
+            {
+                _manager.Show<LuckySpinWindow>(WindowPriority.AboveTopPanel);
+            }).AddTo(ActivateDisposables);
+            _mergeBtn.OnClickAsObservable.Subscribe(_ =>
+            {
+                _boosterManager.ApplyBooster(BoosterTypeEnum.AutoMerge);
+            }).AddTo(ActivateDisposables);
             PlayerUnitTypeEnum playerUnitType = PlayerUnitTypeEnum.PlayerOne;
             if(_dataCentralService.PumpingDataModel.MaxStickmanLevel.Value >= PlayerUnitTypeEnum.PlayerFour)
                 playerUnitType = (PlayerUnitTypeEnum)((int)_dataCentralService.PumpingDataModel.MaxStickmanLevel.Value - 3);
