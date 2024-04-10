@@ -9,6 +9,7 @@ using Models.Fortress;
 using Models.Player;
 using Models.Timers;
 using UI.UIManager;
+using Unity.VisualScripting;
 using UnityEngine;
 using VContainer;
 using Views.Projectiles;
@@ -67,6 +68,7 @@ namespace Models.Battle
 
         public void DestroyStage()
         {
+           
             foreach (var projectileView in _projectiles)
             {
                 Destroy(projectileView.gameObject);
@@ -76,6 +78,12 @@ namespace Models.Battle
 
         private void InitFortress()
         {
+            if(_fortressView != null) Destroy(_fortressView.gameObject);
+               // Destroy(_fortressView.gameObject);
+            /*if (_spawnPoint.childCount > 0)
+            {
+                Destroy(_spawnPoint.GetChild(0).gameObject);
+            }*/
             _fortressView = Instantiate(_configManager.PrefabsUnitsSO.FortressView, _spawnPoint);
             _fortressModel = new FortressModel(_fortressView, _soundManager, _timerService,
                 _player.Pumping, _windowManager,_coreStateMachine);

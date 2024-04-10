@@ -38,6 +38,7 @@ namespace Models.Merge
         private void OnDestroy()
         {
             Destroy(unitGameObject);
+            
         }
     }
 }

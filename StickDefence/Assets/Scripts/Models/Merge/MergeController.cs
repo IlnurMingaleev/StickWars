@@ -164,7 +164,7 @@ namespace Models.Merge
             var targetSlot = GetSlotById(slot.id);
             var startSlot = GetSlotById(carryingItem.slotId);
             startSlot.CreateItem(targetSlot.currentItem.id, _playerBuilder);
-            Destroy(targetSlot.currentItem.gameObject);
+            targetSlot.DestroyItem();
             targetSlot.CreateItem(carryingItem.itemId,_playerBuilder);
             Destroy(carryingItem.gameObject);
         }
@@ -182,7 +182,7 @@ namespace Models.Merge
         void OnItemMergedWithTarget(int targetSlotId)
         {
             var slot = GetSlotById(targetSlotId);
-            Destroy(slot.currentItem.gameObject);
+            slot.DestroyItem();
         
             slot.CreateItem(carryingItem.itemId + 1, _playerBuilder);
 
@@ -268,12 +268,13 @@ namespace Models.Merge
                 {
                     for (int innerSlotIndex = slotIndex + 1; innerSlotIndex < slots.Length - 5; innerSlotIndex++)
                     {
+                        PlayerUnitTypeEnum unitType = slots[slotIndex].currentItem.UnitTypeEnum;
+                        PlayerUnitTypeEnum innerUnitType= slots[innerSlotIndex].currentItem.UnitTypeEnum;
                         if (slots[innerSlotIndex].state == SlotState.Full &&
-                            slots[slotIndex].currentItem.UnitTypeEnum == slots[innerSlotIndex].currentItem.UnitTypeEnum)
+                           unitType == innerUnitType && unitType != PlayerUnitTypeEnum.PlayerThree)
                         {
-                            PlayerUnitTypeEnum unitType = slots[slotIndex].currentItem.UnitTypeEnum;
-                            Destroy(slots[slotIndex].currentItem);
-                            Destroy(slots[innerSlotIndex].currentItem);
+                            slots[slotIndex].DestroyItem(); 
+                            slots[innerSlotIndex].DestroyItem();
                             slots[innerSlotIndex].CreateItem((int)unitType + 1, _playerBuilder);
                             return;
                         }
@@ -282,7 +283,8 @@ namespace Models.Merge
             }
         }
 
-
+        
         #endregion
+        
     }
 }

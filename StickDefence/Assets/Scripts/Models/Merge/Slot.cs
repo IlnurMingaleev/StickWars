@@ -46,6 +46,21 @@ namespace Models.Merge
             ChangeStateTo(SlotState.Full);
         }
 
+        public void DestroyItem()
+        {
+            ChangeStateTo(SlotState.Empty);
+            Destroy(currentItem.gameObject);
+          
+            _dataCentralService.MapStageDataModel.UpdateSlotItemData(
+                new SlotItemData()
+                {
+                    SlotIdTypeEnum = slotIdType,
+                    PlayerUnitType = (PlayerUnitTypeEnum)id,
+                });
+            _dataCentralService.SaveFull();  
+            
+        }
+
         private void ChangeStateTo(SlotState targetState)
         {
             state = targetState;
@@ -53,15 +68,7 @@ namespace Models.Merge
 
         public void ItemGrabbed()
         {
-            Destroy(currentItem.gameObject);
-            _dataCentralService.MapStageDataModel.UpdateSlotItemData(
-                new SlotItemData()
-                {
-                    SlotIdTypeEnum = slotIdType,
-                    PlayerUnitType = PlayerUnitTypeEnum.None,
-                });
-            _dataCentralService.SaveFull();
-            ChangeStateTo(SlotState.Empty);
+            DestroyItem();
         }
 
         private void ReceiveItem(int id)

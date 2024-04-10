@@ -133,8 +133,8 @@ namespace Ui.Windows
 
         public void SelectRandomBooster()
         {
-            int randomInt = Random.Range(1, 3);
-            _lastBoosterTypeEnum = (BoosterTypeEnum) randomInt;
+           // int randomInt = Random.Range(1, 3);
+            _lastBoosterTypeEnum = BoosterTypeEnum.AutoMerge;
             switch (_lastBoosterTypeEnum)
             {
                 case BoosterTypeEnum.AttackSpeed:
