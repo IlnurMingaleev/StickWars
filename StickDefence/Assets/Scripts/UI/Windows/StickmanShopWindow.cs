@@ -4,6 +4,7 @@ using Models.DataModels;
 using Models.DataModels.Data;
 using Models.Merge;
 using Models.Player;
+using Models.Player.PumpingFragments;
 using Models.SO.Core;
 using TMPro;
 using TonkoGames.Controllers.Core;
@@ -96,6 +97,7 @@ namespace UI.Windows
 
         private void InitStickmanTab()
         {
+            _shopDisposable.Clear();
             InitStickmanUIItems();
             ActivateStickmanTab();
             
@@ -110,19 +112,20 @@ namespace UI.Windows
                 {
                     StickManUIItem stickman = Instantiate(_stickManUIItem, _scrollContentTransform);
                     stickman.Init(_mergeController, stickmanStatsConfig,
-                        _configManager.PrefabsUnitsSO.PlayerUnitPrefabs[stickmanStatsConfig.UnitType]);
-                    OpenLevelsLess(stickmanStatsConfig, stickman);
-                    OpenFirstLevelUnit(stickmanStatsConfig, stickman);
+                        _configManager.PrefabsUnitsSO.PlayerUnitPrefabs[stickmanStatsConfig.UnitType],_player);
+                    OpenLevelsLess(stickmanStatsConfig, stickman,_player.Pumping.GamePerks[PerkTypesEnum.DecreasePrice]);
+                    OpenFirstLevelUnit(stickmanStatsConfig, stickman,_player.Pumping.GamePerks[PerkTypesEnum.DecreasePrice]);
                 }
             }
         }
 
-        private void OpenLevelsLess(StickmanStatsConfig stickmanStatsConfig, StickManUIItem stickman)
+        private void OpenLevelsLess(StickmanStatsConfig stickmanStatsConfig, StickManUIItem stickman,
+            PumpingPerkData pumpingGamePerk)
         {
             if ((int) stickmanStatsConfig.UnitType <= (int) (_dataCentralService.PumpingDataModel.MaxStickmanLevel.Value - 4))
             {
                 stickman.BuyButton.IsInteractable = true;
-                SubscribeToBuyEvent(stickmanStatsConfig,stickman);
+                SubscribeToBuyEvent(stickmanStatsConfig,stickman,pumpingGamePerk);
             }
             else
             {
@@ -132,25 +135,29 @@ namespace UI.Windows
             }
         }
 
-        private void OpenFirstLevelUnit(StickmanStatsConfig stickmanStatsConfig, StickManUIItem stickman)
+        private void OpenFirstLevelUnit(StickmanStatsConfig stickmanStatsConfig, StickManUIItem stickman,
+            PumpingPerkData pumpingGamePerk)
         {
             if ((int) stickmanStatsConfig.UnitType == (int) PlayerUnitTypeEnum.PlayerOne)
             {
                 stickman.BuyButton.IsInteractable = true;
                 stickman.LockTemplate.gameObject.SetActive(false);
-                SubscribeToBuyEvent(stickmanStatsConfig,stickman);
+                SubscribeToBuyEvent(stickmanStatsConfig,stickman,pumpingGamePerk);
             }
         }
 
-        private void SubscribeToBuyEvent(StickmanStatsConfig stickmanStatsConfig,StickManUIItem stickman)
+        private void SubscribeToBuyEvent(StickmanStatsConfig stickmanStatsConfig, StickManUIItem stickman,
+            PumpingPerkData pumpingGamePerk)
         {
-            stickman.BuyButton.OnClickAsObservable.Subscribe(_ => { BuyStickman(stickmanStatsConfig,stickman); })
+            stickman.BuyButton.OnClickAsObservable.Subscribe(_ => { BuyStickman(stickmanStatsConfig,stickman,pumpingGamePerk); })
                 .AddTo(_shopDisposable);
         }
 
-        private void BuyStickman(StickmanStatsConfig stickmanStatsConfig, StickManUIItem stickman)
+        private void BuyStickman(StickmanStatsConfig stickmanStatsConfig, StickManUIItem stickman,
+            PumpingPerkData pumpingGamePerk)
         {
-            if (stickmanStatsConfig.Price <= _dataCentralService.StatsDataModel.CoinsCount.Value)
+            int price = (int) (stickmanStatsConfig.Price * (1 - pumpingGamePerk.Value / 100));
+            if (price <= _dataCentralService.StatsDataModel.CoinsCount.Value)
             {
                 stickman.AddStickmanToPlayGround();
             }
@@ -173,7 +180,13 @@ namespace UI.Windows
                     PerkData perkData = _dataCentralService.PumpingDataModel.PerksReactive[perkType];
                     var nextLevel = perkData.PerkLevel + 1;
                     var perkCost = perkConfigModel.BaseValue + nextLevel * perkConfigModel.AdditionalCost;
-                    perk.Init(perkConfigModel, _configManager, perkType, perkCost,perkData.PerkLevel);
+                    perk.Init(_player.Pumping.GamePerks[perkType], _configManager, perkType);
+                   _player.Pumping.GamePerks.ObserveReplace().Subscribe(_ =>
+                       {
+                           perk.Init(_player.Pumping.GamePerks[perkType], _configManager, perkType);
+                           
+                       })
+                       .AddTo(_shopDisposable);
                     SubscribeToPerkUpgrade(perk, perkType, perkCost);
                 }
             }
@@ -181,19 +194,18 @@ namespace UI.Windows
 
         private void SubscribeToPerkUpgrade(PerkUIItem perk, PerkTypesEnum perkType,float perkCost)
         {
-            if (_dataCentralService.StatsDataModel.CoinsCount.Value >= perkCost)
+            _dataCentralService.StatsDataModel.CoinsCount.Subscribe(_ =>
             {
-                perk.BuyButton.IsInteractable = true;
-                perk.BuyButton.OnClickAsObservable.Subscribe(_ =>
+                perk.BuyButton.IsInteractable = (_ >= perkCost);
+            }).AddTo(_shopDisposable);
+            perk.BuyButton.OnClickAsObservable.Subscribe(_ =>
+                {
+                    if (_dataCentralService.StatsDataModel.CoinsCount.Value >= perkCost)
                     {
                         _player.Pumping.UpgradeGamePerk(perkType);
-                    })
-                    .AddTo(_shopDisposable);
-            }
-            else
-            {
-                perk.BuyButton.IsInteractable = false;
-            }
+                    }
+                }).AddTo(_shopDisposable);
+          
         }
 
         private void ClearAllChildUnderGO(Transform tranformGO)

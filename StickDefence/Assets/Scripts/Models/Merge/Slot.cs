@@ -55,7 +55,7 @@ namespace Models.Merge
                 new SlotItemData()
                 {
                     SlotIdTypeEnum = slotIdType,
-                    PlayerUnitType = (PlayerUnitTypeEnum)id,
+                    PlayerUnitType = PlayerUnitTypeEnum.None,
                 });
             _dataCentralService.SaveFull();  
             

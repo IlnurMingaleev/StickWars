@@ -21521,7 +21521,7 @@ Transform:
   m_GameObject: {fileID: 2531182496573801214}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.0999985, y: 8, z: 0}
+  m_LocalPosition: {x: -40.6, y: -3.3999996, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -21537,7 +21537,7 @@ Transform:
   - {fileID: 2599547963025912930}
   - {fileID: 8895229305150407176}
   - {fileID: 2074915680503076859}
-  m_Father: {fileID: 251069352935000877}
+  m_Father: {fileID: 5533264888163892173}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2573299026537956282
 GameObject:
@@ -21573,7 +21573,6 @@ Transform:
   m_Children:
   - {fileID: 2509256064256756173}
   - {fileID: 6813664277786911632}
-  - {fileID: 6804532391048752381}
   - {fileID: 5533264888163892173}
   - {fileID: 6133105956948400674}
   - {fileID: 1213936018115747987}
@@ -21597,7 +21596,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerFortressInstantiate: {fileID: 6221916866098216297}
   _mapUnitsBuilder: {fileID: 1257911148735898245}
-  _mergeController: {fileID: 0}
   MapStageConfig:
     MapStage: 1
     Days: []
@@ -48691,7 +48689,8 @@ Transform:
   m_LocalPosition: {x: 38.5, y: 11.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6804532391048752381}
   m_Father: {fileID: 251069352935000877}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2453152874197849368

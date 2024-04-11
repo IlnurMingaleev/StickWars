@@ -1,6 +1,7 @@
 ﻿using System;
 using Enums;
 using Models.Merge;
+using Models.Player.PumpingFragments;
 using Models.SO.Core;
 using Models.SO.Visual;
 using TMPro;
@@ -41,6 +42,14 @@ namespace UI.Content.Shop
             _perkImage.sprite = _configManager.PrefabsUnitsSO.PerkIcons[perkType].PerkIcon;
             _buyBtnLabel.text = $"{cost}";
             _levelLabel.text = $"{perkLevel}";
+        }
+
+        public void Init(PumpingPerkData pumpingPerkData, ConfigManager configManager, PerkTypesEnum perkType)
+        {
+            _configManager = configManager;
+            _perkImage.sprite = _configManager.PrefabsUnitsSO.PerkIcons[perkType].PerkIcon;
+            _buyBtnLabel.text = $"{pumpingPerkData.Cost}";
+            _levelLabel.text = $"{pumpingPerkData.CurrentLevel}";
         }
 
         private void OnDisable()

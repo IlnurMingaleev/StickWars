@@ -353,7 +353,7 @@ namespace Models.Battle
 
         public void AddCoins(BaseUnit baseUnit)
         {
-            int coins = baseUnit.Coins;
+            int coins = (int) (baseUnit.Coins  *(1+ _player.Pumping.GamePerks[PerkTypesEnum.IncreaseProfit].Value/100));
             if (_gainCoins)
             {
                 coins = Mathf.RoundToInt(coins * 1.5f);

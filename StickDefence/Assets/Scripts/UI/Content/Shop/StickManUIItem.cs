@@ -1,6 +1,8 @@
 ﻿using System;
 using Enums;
 using Models.Merge;
+using Models.Player;
+using Models.Player.PumpingFragments;
 using Models.SO.Core;
 using Models.SO.Visual;
 using TMPro;
@@ -37,16 +39,19 @@ namespace UI.Content.Shop
         public LockTemplate LockTemplate => _lockTemplate;
         private IPlaceableUnit _mergeController;
         private StickmanStatsConfig _statsConfig;
+        private PumpingPerkData _perkData;
         private CompositeDisposable _disposable = new CompositeDisposable();
-        public void Init(IPlaceableUnit mergeController, StickmanStatsConfig stickmanStatsConfig, PlayerPrefabModel playerPrefabModel)
+        public void Init(IPlaceableUnit mergeController, StickmanStatsConfig stickmanStatsConfig, PlayerPrefabModel playerPrefabModel,IPlayer player)
         {
             _statsConfig =stickmanStatsConfig ;
             _mergeController = mergeController;
             _stickmanUnitType = stickmanStatsConfig.UnitType;
             _levelLabel.text = stickmanStatsConfig.Level.ToString();
             _stickmanImage.sprite = playerPrefabModel.uiIcon;
-            _damageLabel.text = $"Damage: {stickmanStatsConfig.Damage}";
-            _buyBtnLabel.text = $"Buy: {stickmanStatsConfig.Price}";
+             PumpingPerkData perkDataDamage = player.Pumping.GamePerks[PerkTypesEnum.RecruitsDamage];
+             PumpingPerkData perkDataPrice = player.Pumping.GamePerks[PerkTypesEnum.DecreasePrice];
+            _damageLabel.text = $"Damage: {(int)(stickmanStatsConfig.Damage*(1+perkDataDamage.Value/100))}";
+            _buyBtnLabel.text = $"Buy: {(int)(stickmanStatsConfig.Price *(1 - perkDataPrice.Value/100))}";
             /*_buyBtn.OnClickAsObservable.Subscribe(_=>
             {
                 AddStickmanToPlayGround();
@@ -54,6 +59,7 @@ namespace UI.Content.Shop
 
         }
 
+      
         public void AddStickmanToPlayGround()
         {
             if (_mergeController != null)

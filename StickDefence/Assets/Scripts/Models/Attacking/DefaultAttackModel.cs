@@ -29,6 +29,8 @@ namespace Models.Attacking
         protected bool IsEnemyFinded = false;
 
         private bool _isPlay;
+        
+        public int GetDamage()=> Damage;
 
         public virtual void Init(AttackBlockView attackView, ITimerService timerService, ISoundManager soundManager, Action startAttackAnim)
         {

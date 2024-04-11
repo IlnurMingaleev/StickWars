@@ -9,6 +9,7 @@ using Models.Fortress;
 using Models.Merge;
 using Models.Player;
 using Models.Timers;
+using UniRx;
 using UnityEngine;
 using VContainer;
 using Views.Projectiles;
@@ -39,6 +40,7 @@ namespace Models.Battle
         private PlayerViewTwo _fortressView;
         private PlayerUnitModel _fortressModel;
         private bool _attackSpeedActive = false;
+        private CompositeDisposable _disposable = new CompositeDisposable();
         
         public bool AttackSpeedActive => _attackSpeedActive;
         public List<PlayerUnitModel> SpawnedUnits => _spawnedUnits;
@@ -49,6 +51,7 @@ namespace Models.Battle
         {
             _coreStateMachine.RunTimeStateMachine.SubscriptionAction(RunTimeStateEnum.Play, OnPlayRunTimes);
             _coreStateMachine.RunTimeStateMachine.SubscriptionAction(RunTimeStateEnum.Pause, OnPauseRunTime);
+            _player.Pumping.GamePerks.ObserveReplace().Subscribe(_ => UpdateDamage()).AddTo(_disposable);
         }
 
         private void OnDisable()
@@ -56,6 +59,7 @@ namespace Models.Battle
             _coreStateMachine.RunTimeStateMachine.UnSubscriptionAction(RunTimeStateEnum.Play, OnPlayRunTimes);
             _coreStateMachine.RunTimeStateMachine.UnSubscriptionAction(RunTimeStateEnum.Pause, OnPauseRunTime);
             DestroyStage();
+            _disposable.Clear();
         }
         
         public PlayerViewTwo InitStageLoadBattle(PlayerUnitTypeEnum playerUnitType, Transform parent, SlotTypeEnum slotTypeEnum)
@@ -156,8 +160,17 @@ namespace Models.Battle
                 projectileView.StopMove();
             }  
         }
-        
-        
+
+        public void UpdateDamage()
+        {
+            foreach (var playerUnitModel in _spawnedUnits)
+            {
+                int oldDamage = playerUnitModel.RangeAttackModel.GetDamage();
+                int newDamage = (int) (oldDamage * (1 +_player.Pumping.GamePerks[PerkTypesEnum.RecruitsDamage].Value/100));
+                    playerUnitModel.RangeAttackModel.SetDamage(newDamage);
+            }
+        }
+
         // [SerializeField] private BuildMapStage _buildMapStage;
         //
         // [Inject] private readonly ConfigManager _configManager;
