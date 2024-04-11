@@ -1269,6 +1269,15 @@ MonoBehaviour:
       - 
       Flags: 000000
       Languages_Touch: []
+    - Term: Buttons/FreeUnit
+      TermType: 0
+      Description: 
+      Languages:
+      - Free Unit
+      - "\u0411\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u044B\u0439 \u044E\u043D\u0438\u0442"
+      - 
+      Flags: 000000
+      Languages_Touch: []
     CaseInsensitiveTerms: 0
     OnMissingTranslation: 1
     mTerm_AppName: 

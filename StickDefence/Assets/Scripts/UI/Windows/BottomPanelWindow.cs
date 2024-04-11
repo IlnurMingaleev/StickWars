@@ -256,5 +256,10 @@ namespace UI.Windows
             if(_boostersDictionary.ContainsKey(boosterType))
                 _boostersDictionary.Remove(boosterType);
         }
+
+        public void AlertShopBtn(bool value)
+        {
+            _alertShopIcon.SetActive(value);
+        }
     }
 }

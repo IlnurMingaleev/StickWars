@@ -35,7 +35,12 @@ namespace UI.Content.Shop
 
         [Header("LockTemplate")]
         [SerializeField] private LockTemplate _lockTemplate;
+
+        [Header("FreeUnitBtn")] 
+        [SerializeField] private UIButton _freeUnitBtn;
+        
         public UIButton BuyButton => _buyBtn;
+        public UIButton FreeUnitBtn => _freeUnitBtn;
         public LockTemplate LockTemplate => _lockTemplate;
         private IPlaceableUnit _mergeController;
         private StickmanStatsConfig _statsConfig;
@@ -52,14 +57,22 @@ namespace UI.Content.Shop
              PumpingPerkData perkDataPrice = player.Pumping.GamePerks[PerkTypesEnum.DecreasePrice];
             _damageLabel.text = $"Damage: {(int)(stickmanStatsConfig.Damage*(1+perkDataDamage.Value/100))}";
             _buyBtnLabel.text = $"Buy: {(int)(stickmanStatsConfig.Price *(1 - perkDataPrice.Value/100))}";
-            /*_buyBtn.OnClickAsObservable.Subscribe(_=>
-            {
-                AddStickmanToPlayGround();
-            }).AddTo(_disposable);*/
+           
 
         }
 
-      
+        public void ActiveAdButton()
+        {
+            _buyBtn.gameObject.SetActive(false);
+            _freeUnitBtn.gameObject.SetActive(true);
+        }
+
+        public void ActivateCommonButton()
+        {
+            _freeUnitBtn.gameObject.SetActive(false);
+            _buyBtn.gameObject.SetActive(true);
+        }
+
         public void AddStickmanToPlayGround()
         {
             if (_mergeController != null)

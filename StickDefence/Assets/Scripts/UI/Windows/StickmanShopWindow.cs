@@ -1,11 +1,14 @@
-﻿using Enums;
+﻿using System.Collections.Generic;
+using Enums;
 using I2.Loc;
 using Models.DataModels;
 using Models.DataModels.Data;
+using Models.IAP;
 using Models.Merge;
 using Models.Player;
 using Models.Player.PumpingFragments;
 using Models.SO.Core;
+using Models.Timers;
 using TMPro;
 using TonkoGames.Controllers.Core;
 using TonkoGames.StateMachine;
@@ -40,17 +43,25 @@ namespace UI.Windows
         [Header("Tab Buttons")]
         [SerializeField] private UIButton _stickmanShopBtn;
         [SerializeField] private UIButton _perksShopBtn;
-
+        [SerializeField] private GameObject _stickmanShopBtnAlert;
+        [SerializeField] private GameObject _perksShopBtnAlert;
         [Inject] private ConfigManager _configManager;
         [Inject] private IPlayer _player;
         [Inject] private IDataCentralService _dataCentralService;
         [Inject] private ICoreStateMachine _coreStateMachine;
+        [Inject] private IIAPService _iapService;
+        [Inject] private ITimerService _timerService;
 
         private WindowPriority Priority = WindowPriority.AboveTopPanel;
         private IPlaceableUnit _mergeController;
         private CompositeDisposable _shopDisposable = new CompositeDisposable();
 
+        private Dictionary<PlayerUnitTypeEnum, StickManUIItem> _stickManUIItems =
+            new Dictionary<PlayerUnitTypeEnum, StickManUIItem>();
 
+        private ITimerModel _timerModel;
+        private const float _adTimerCooldown = 10;
+        private bool _showAd = false;
         public void Init(IPlaceableUnit mergeController)
         {
             _mergeController = mergeController;
@@ -63,6 +74,7 @@ namespace UI.Windows
             InitWindowButtons();
             InitTextFields();
             InitStickmanTab();
+            StartAdTimer();
         }
 
         private void InitTextFields()
@@ -106,6 +118,7 @@ namespace UI.Windows
         private void InitStickmanUIItems()
         {
             ClearAllChildUnderGO(_scrollContentTransform);
+            _stickManUIItems.Clear();
             if (_mergeController != null)
             {
                 foreach (var stickmanStatsConfig in _configManager.UnitsStatsSo.StickmanUnitsStatsConfigs)
@@ -113,8 +126,10 @@ namespace UI.Windows
                     StickManUIItem stickman = Instantiate(_stickManUIItem, _scrollContentTransform);
                     stickman.Init(_mergeController, stickmanStatsConfig,
                         _configManager.PrefabsUnitsSO.PlayerUnitPrefabs[stickmanStatsConfig.UnitType],_player);
+                    _stickManUIItems.Add(stickmanStatsConfig.UnitType,stickman);
                     OpenLevelsLess(stickmanStatsConfig, stickman,_player.Pumping.GamePerks[PerkTypesEnum.DecreasePrice]);
                     OpenFirstLevelUnit(stickmanStatsConfig, stickman,_player.Pumping.GamePerks[PerkTypesEnum.DecreasePrice]);
+                   
                 }
             }
         }
@@ -151,6 +166,14 @@ namespace UI.Windows
         {
             stickman.BuyButton.OnClickAsObservable.Subscribe(_ => { BuyStickman(stickmanStatsConfig,stickman,pumpingGamePerk); })
                 .AddTo(_shopDisposable);
+            stickman.FreeUnitBtn.OnClickAsObservable.Subscribe(_ =>
+            {
+                OnRewardClaim();
+            });
+            if (stickmanStatsConfig.UnitType == _dataCentralService.PumpingDataModel.MaxStickmanLevel.Value - 3 && _showAd)
+            {
+                stickman.ActiveAdButton();
+            }
         }
 
         private void BuyStickman(StickmanStatsConfig stickmanStatsConfig, StickManUIItem stickman,
@@ -166,6 +189,11 @@ namespace UI.Windows
                 _manager.GetWindow<PopupMessageWindow>().Init(ScriptLocalization.Messages.WarningTitle,ScriptLocalization.Messages.NotEnoughFunds);
                 _manager.Show<PopupMessageWindow>();
             }
+        }
+
+        private void AddFreeUnitForAdWatch()
+        {
+            
         }
 
         private void InitPerksUIItems()
@@ -233,5 +261,49 @@ namespace UI.Windows
             _shopDisposable.Clear();
             _coreStateMachine.RunTimeStateMachine.SetRunTimeState(RunTimeStateEnum.Play);
         }
+       
+        private void OnRewardClaim()
+        {
+           
+            _iapService.RewardedBreakComplete += RewardBreak;
+            _iapService.ShowRewardedBreak();
+
+            void RewardBreak(bool value)
+            {
+                _iapService.RewardedBreakComplete -= RewardBreak;
+
+                if (value)
+                {
+                    StickManUIItem stickman =
+                        _stickManUIItems[_dataCentralService.PumpingDataModel.MaxStickmanLevel.Value - 3];
+                    stickman.AddStickmanToPlayGround();
+                    stickman.ActivateCommonButton();
+                   _showAd = false;
+                   AlertUnitsTab(false);
+                   _manager.GetWindow<BottomPanelWindow>().AlertShopBtn(_perksShopBtnAlert.activeSelf);
+                }
+            }
+        }
+
+        public void StartAdTimer()
+        {
+            _timerModel = _timerService.AddGameTimer(_adTimerCooldown, f => { }, () =>
+            {
+                _showAd = true;
+                AlertUnitsTab(true);
+                _manager.GetWindow<BottomPanelWindow>().AlertShopBtn(true);
+            });
+        }
+
+        public void AlertUnitsTab(bool value)
+        {
+            _stickmanShopBtnAlert.SetActive(value);
+        }
+
+        public void AlertPerksTab(bool value)
+        {
+            _perksShopBtnAlert.SetActive(value);
+        }
+
     }
 }
