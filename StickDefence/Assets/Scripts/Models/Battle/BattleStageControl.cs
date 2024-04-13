@@ -41,7 +41,7 @@ namespace Models.Battle
 
         private void Awake()
         {
-            MapStageConfig = _configManager.MapStageSO.MapStages[_player.StageLoadType.Value];
+           
             _battleAnimations = new BattleAnimations(_playerFortressInstantiate, _coreStateMachine);
             _battleResult = new BattleResult(_playerFortressInstantiate, _windowManager, _configManager, _player,
                 _dataCentralService, _coreStateMachine);
@@ -80,6 +80,7 @@ namespace Models.Battle
 
         private void OnLoadBattleState()
         {
+            MapStageConfig = _configManager.MapStageSO.MapStages[ _dataCentralService.PumpingDataModel.StageLoadType.Value];
             _player.Pumping.BattleLoad();
             _battleResult.OnLoadBattleState();
             _playerFortressInstantiate.InitStageLoadBattle();

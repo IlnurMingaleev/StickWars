@@ -32,26 +32,30 @@ MonoBehaviour:
       Groups:
       - GroupUnitsIndex: 0
         Delay: 3
-      - GroupUnitsIndex: 1
-        Delay: 3
     - IsBossDay: 1
       Groups:
       - GroupUnitsIndex: 0
-        Delay: 3
-      - GroupUnitsIndex: 1
         Delay: 3
   - MapStage: 2
     Days:
     - IsBossDay: 0
       Groups:
-      - GroupUnitsIndex: 0
-        Delay: 3
       - GroupUnitsIndex: 1
         Delay: 3
     - IsBossDay: 1
       Groups:
+      - GroupUnitsIndex: 1
+        Delay: 3
+  - MapStage: 3
+    Days:
+    - IsBossDay: 0
+      Groups:
       - GroupUnitsIndex: 0
         Delay: 3
+  - MapStage: 0
+    Days:
+    - IsBossDay: 0
+      Groups:
       - GroupUnitsIndex: 1
         Delay: 3
   _unitGroups:

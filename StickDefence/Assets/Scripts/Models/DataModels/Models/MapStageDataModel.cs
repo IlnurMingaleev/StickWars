@@ -108,13 +108,11 @@ namespace Models.DataModels.Models
             {
                 MapStageBlockDatas = _mapStages.Values.ToList(),
                 SlotItemDatas = _slotItems.Values.ToList(),
-                LastMapStage = _lastOpenedStage.Value,
             };
         }
         
         public void SetMapStageData(MapStagesData mapStagesData)
         {
-            _lastOpenedStage.Value = mapStagesData.MapStageBlockDatas[1].MapStageType;
             bool initialized = false;
             for (int index = 0; index < mapStagesData.MapStageBlockDatas.Count; index++)
             {
@@ -151,8 +149,7 @@ namespace Models.DataModels.Models
                     PlayerUnitType = PlayerUnitTypeEnum.None,
                 });
             }
-
-            mapStagesData.LastMapStage = MapStagesEnum.Stage1_1;
+            
             mapStagesData.SlotItemDatas = slotItems;
             SetMapStageData(mapStagesData);
         }

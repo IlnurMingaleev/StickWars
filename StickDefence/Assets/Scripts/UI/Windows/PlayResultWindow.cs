@@ -115,6 +115,7 @@ namespace UI.Windows
             _claim?.Invoke();
             _dataCentralService.StatsDataModel.AddCoinsCount(_coinsCount);
             _dataCentralService.StatsDataModel.AddGemsCount(_gemCount);
+            _dataCentralService.PumpingDataModel.SetStageIndex((int)_dataCentralService.PumpingDataModel.StageLoadType.Value + 1);
             _dataCentralService.SaveFull();
             _continue?.Invoke();
         }
@@ -133,6 +134,8 @@ namespace UI.Windows
                 {
                     _coinsCount *= 2;
                     _coinRewardCountBlock.SetValue(_coinsCount);
+                    _dataCentralService.PumpingDataModel.SetStageIndex((int)_dataCentralService.PumpingDataModel.StageLoadType.Value + 1);
+                    _dataCentralService.SaveFull();
                 }
             }
         }

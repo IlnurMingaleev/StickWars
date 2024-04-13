@@ -1,4 +1,5 @@
-﻿using TonkoGames.Controllers.Core;
+﻿using Enums;
+using TonkoGames.Controllers.Core;
 using TonkoGames.StateMachine;
 using TonkoGames.StateMachine.Enums;
 using Models.DataModels;
@@ -60,7 +61,7 @@ namespace Models.Battle
         private void ShowPlayResult(int stars, bool isWin, bool isResurrect = false)
         {
             var playResultWindow = _windowManager.Show<PlayResultWindow>(WindowPriority.AboveTopPanel);
-            var rewardModel = _configManager.MapStageSO.MapStageRewardModels[_player.StageLoadType.Value];
+            var rewardModel = _configManager.MapStageSO.MapStageRewardModels[ _dataCentralService.PumpingDataModel.StageLoadType.Value];
 
             rewardModel.Coin -= (rewardModel.Coin / 3) * (3 - stars);
 
@@ -69,7 +70,7 @@ namespace Models.Battle
                 Coin = rewardModel.Coin,
                 Gem = rewardModel.Gem
             };
-            var mapStageData = _dataCentralService.MapStageDataModel.GetMapStageData(_player.StageLoadType.Value);
+            var mapStageData = _dataCentralService.MapStageDataModel.GetMapStageData(_dataCentralService.PumpingDataModel.StageLoadType.Value);
 
             if (!mapStageData.IsCompleted)
             {
@@ -80,6 +81,7 @@ namespace Models.Battle
             }
             if (isWin)
             {
+                
                 playResultWindow.SetWin(rewardContains, stars, OnPlayResultWindowClaim,Continue);
             }
             else
@@ -90,6 +92,7 @@ namespace Models.Battle
 
         private void OnPlayResultWindowClaim()
         {
+           
             var playResultWindow = _windowManager.GetWindow<PlayResultWindow>();
             var fadeWindow = _windowManager.Show<FadeWindow>(WindowPriority.LoadScene);
         

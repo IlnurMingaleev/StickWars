@@ -13,6 +13,7 @@ namespace Models.DataModels.Data
         public List<SkillCellData> SkillCellDatas;
         public PlayerUnitTypeEnum MaxStickmanLevel;
         public LevelData LevelData;
+        public MapStagesEnum MapStagesType;
     }
     
     [Serializable]

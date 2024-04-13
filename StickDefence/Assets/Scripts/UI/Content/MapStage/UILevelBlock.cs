@@ -92,7 +92,6 @@ namespace UI.Content.MapStage
 
         private void EndStartBattleFade()
         {
-            _player.SetStageIndex(_mapStageType);
             _coreStateMachine.GameStateMachine.SetGameState(GameStateEnum.StageBattle);
             _coreStateMachine.BattleStateMachine.SetBattleState(BattleStateEnum.LoadBattle);
             _windowManager.Hide<BattleSelectionMapWindow>();

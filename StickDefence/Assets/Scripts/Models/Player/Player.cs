@@ -11,8 +11,6 @@ namespace Models.Player
     {
         IPumping Pumping { get; }
         IDailyModel DailyModel { get; }
-        IReadOnlyReactiveProperty<MapStagesEnum> StageLoadType { get; }
-        void SetStageIndex(MapStagesEnum mapStageType);
         IReadOnlyReactiveProperty<int> SubscribeToCurrencyBuyType(CurrencyTypeEnum currencyTypeEnum);
         void ChangeCurrencyBuyType(CurrencyTypeEnum currencyTypeEnum, int count);
     }
@@ -32,8 +30,7 @@ namespace Models.Player
         
         private ReactiveProperty<int> _silverCurrency = new ReactiveProperty<int>();
 
-        private ReactiveProperty<MapStagesEnum> _stageLoadType = new ReactiveProperty<MapStagesEnum>();
-        public IReadOnlyReactiveProperty<MapStagesEnum> StageLoadType => _stageLoadType;
+       
         
         private DailyModel _dailyModel;
         public IDailyModel DailyModel => _dailyModel;
@@ -53,7 +50,7 @@ namespace Models.Player
         {
         }
 
-        public void SetStageIndex(MapStagesEnum mapStageType) => _stageLoadType.Value = mapStageType;
+       
         
         public void CheckDailyModel()
         {

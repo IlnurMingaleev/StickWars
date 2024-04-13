@@ -28,7 +28,7 @@ MonoBehaviour:
     Experience: 10
     Coins: 0
   - UnitType: 2
-    Health: 10000
+    Health: 50
     Armor: 0
     Damage: 10
     Reloading: 2

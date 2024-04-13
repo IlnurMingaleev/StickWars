@@ -1,4 +1,5 @@
-﻿using Models.DataModels;
+﻿using Enums;
+using Models.DataModels;
 using Models.IAP;
 using Models.Player;
 using TonkoGames.StateMachine;
@@ -82,7 +83,6 @@ namespace UI.Windows
         }
         private void EndStartBattleFade()
         {
-            _player.SetStageIndex(_dataCentralService.MapStageDataModel.LastOpenedStage.Value);
             _coreStateMachine.GameStateMachine.SetGameState(GameStateEnum.StageBattle);
             _coreStateMachine.BattleStateMachine.SetBattleState(BattleStateEnum.LoadBattle);
             _manager.Hide(this);

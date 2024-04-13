@@ -20,10 +20,13 @@ namespace Models.DataModels.Models
         IReadOnlyReactiveProperty<WallData> WallLevelReactive { get; }
         public IReadOnlyReactiveProperty<LevelData> LevelReactive { get; }
         IReadOnlyReactiveProperty<PlayerUnitTypeEnum> MaxStickmanLevel { get; }
+        IReadOnlyReactiveProperty<MapStagesEnum> StageLoadType { get; }
 
         #endregion
         
         #region Setters
+
+        void SetStageIndex(int mapStageIndex);
         void UpdatePlayerPerkData(PerkData perkData);
         PerkData GetPlayerPerkData(PerkTypesEnum unitTypeEnum);
         void UpdatePlayerSkillData(SkillData skillData);
@@ -54,7 +57,8 @@ namespace Models.DataModels.Models
         private ReactiveCollection<SkillCellData> _skillCellsReactive = new ReactiveCollection<SkillCellData>();
         
         private ReactiveProperty<WallData> _wallData = new ReactiveProperty<WallData>();
-        
+        private ReactiveProperty<MapStagesEnum> _stageLoadType = new ReactiveProperty<MapStagesEnum>();
+        public IReadOnlyReactiveProperty<MapStagesEnum> StageLoadType => _stageLoadType;
 
         public IReadOnlyReactiveDictionary<PerkTypesEnum, PerkData> PerksReactive => _playerPerks;
         public IReadOnlyReactiveDictionary<SkillTypesEnum, SkillData> SkillsReactive => _playerSkills;
@@ -65,7 +69,7 @@ namespace Models.DataModels.Models
         #endregion
 
         #region Setters
-
+        public void SetStageIndex(int mapStageIndex) => _stageLoadType.Value = (mapStageIndex <= ((int) MapStagesEnum.Stage1_4))?(MapStagesEnum)mapStageIndex: MapStagesEnum.Stage1_4;
         public void UpgradeMaxStickmanLevel() => _maxStickmanLevel.Value += 1;
 
         public void UpdatePlayerPerkData(PerkData perkData) => _playerPerks[perkData.PerkType] = perkData;
@@ -168,6 +172,7 @@ namespace Models.DataModels.Models
                 SkillCellDatas = _skillCellsReactive.ToList(),
                 MaxStickmanLevel = _maxStickmanLevel.Value,
                 LevelData =  _currentLevelData.Value,
+                MapStagesType = _stageLoadType.Value,
             };
             return statsData;
         }
@@ -188,6 +193,7 @@ namespace Models.DataModels.Models
 
             _maxStickmanLevel.Value = playerPumpingData.MaxStickmanLevel;
             _currentLevelData.Value = playerPumpingData.LevelData;
+            _stageLoadType.Value = playerPumpingData.MapStagesType;
         }
         
         
@@ -198,6 +204,7 @@ namespace Models.DataModels.Models
             playerPumpingData.PlayerSkillsData = new ();
             playerPumpingData.SkillCellDatas = new ();
             playerPumpingData.MaxStickmanLevel = PlayerUnitTypeEnum.PlayerOne;
+            playerPumpingData.MapStagesType = MapStagesEnum.Stage1_1;
             playerPumpingData.LevelData = new LevelData
             {
                 CurrentExp = 0,
