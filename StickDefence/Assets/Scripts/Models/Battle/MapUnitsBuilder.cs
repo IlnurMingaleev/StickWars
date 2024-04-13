@@ -97,7 +97,7 @@ namespace Models.Battle
         private void Start()
         {
             CountAllUnits();
-
+            _unitsCount.Value = 0;
             SubscribeToUnitsKill();
             _dataCentralService.PumpingDataModel.CalculateRequiredExp(_configManager);
             SubscribeToExpLvl();

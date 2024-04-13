@@ -1,5 +1,6 @@
 ﻿using System;
 using Enums;
+using I2.Loc;
 using Models.Merge;
 using Models.Player.PumpingFragments;
 using Models.SO.Core;
@@ -50,6 +51,24 @@ namespace UI.Content.Shop
             _perkImage.sprite = _configManager.PrefabsUnitsSO.PerkIcons[perkType].PerkIcon;
             _buyBtnLabel.text = $"{pumpingPerkData.Cost}";
             _levelLabel.text = $"{pumpingPerkData.CurrentLevel}";
+            UpdatePerkLabel(perkType);
+        }
+
+        private void UpdatePerkLabel(PerkTypesEnum  perkType)
+        {
+            switch (perkType)
+            {
+                case PerkTypesEnum.DecreasePrice:
+                    _buyConditionsLabel.text = ScriptLocalization.Names_Perks.DecreasePrice;
+                    break;
+                case PerkTypesEnum.IncreaseProfit:
+                    _buyConditionsLabel.text = ScriptLocalization.Names_Perks.IncreaseProfit;
+                    break;
+                case PerkTypesEnum.RecruitsDamage:
+                    _buyConditionsLabel.text = ScriptLocalization.Names_Perks.RecruitsDamage;
+                    break;
+            }
+            
         }
 
         private void OnDisable()

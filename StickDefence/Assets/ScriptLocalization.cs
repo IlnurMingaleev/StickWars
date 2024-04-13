@@ -137,6 +137,20 @@ namespace I2.Loc
 			{
 				get { return LocalizationManager.GetTranslation("Names/Perks/DailyGoldBonus"); }
 			}
+			public static string DecreasePrice
+			{
+				get { return LocalizationManager.GetTranslation("Names/Perks/DecreasePrice"); }
+			}
+
+			public static string IncreaseProfit
+			{
+				get { return LocalizationManager.GetTranslation("Names/Perks/IncreaseProfit"); }
+			}
+			
+			public static string RecruitsDamage
+			{
+				get { return LocalizationManager.GetTranslation( "Names/Perks/RecruitsDamage"); }
+			}
 		}
 
 		public static class Names_Skills
