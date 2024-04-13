@@ -91,6 +91,11 @@ namespace UI.Windows
             _manager.Hide(currentWindow);
         }
 
+        private void ExitGameToMainMenu()
+        {
+            
+        }
+
         public void SetIgnoreNextProfileChange()
         {
             _financeBar.SetIgnoreNextProfileChange();

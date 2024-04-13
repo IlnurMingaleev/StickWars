@@ -46,7 +46,6 @@ namespace Models.Player
         
         public void BattleLoad()
         {
-           
             _gamePumping.BattleLoad();
         }
 

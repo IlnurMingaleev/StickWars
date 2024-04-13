@@ -1,6 +1,7 @@
 ﻿using Enums;
 using TonkoGames.Controllers.Core;
 using Models.DataModels;
+using Models.DataModels.Data;
 using UniRx;
 using UnityEngine;
 
@@ -37,33 +38,39 @@ namespace Models.Player.PumpingFragments
         
         public void UpgradePerk(PerkTypesEnum perkType)
         {
-            var configData = _configManager.PumpingConfigSo.BasePerks[perkType];
-            var perkData = _perks[perkType];
-            
-            if (!perkData.IsMaxLevel)
+            var configData = _configManager.PumpingConfigSo.GamePerks[perkType];
+            var pumpingPerkData = _perks[perkType];
+            var perkData = _dataCentralService.PumpingDataModel.PerksReactive[perkType];
+            if (!pumpingPerkData.IsMaxLevel)
             {
-                perkData.CurrentLevel++;
-                perkData.IsMaxLevel = perkData.CurrentLevel == configData.LevelCount - 1;
-                
-                _perks[perkType] = UpdatePerkData(perkData);
+                pumpingPerkData.CurrentLevel = perkData.PerkLevel + 1;
+                pumpingPerkData.IsMaxLevel = pumpingPerkData.CurrentLevel == configData.LevelCount - 1;
+                _perks[perkType] = UpdatePerkData(pumpingPerkData);
+                _dataCentralService.PumpingDataModel.UpdatePlayerPerkData(new PerkData()
+                {
+                    PerkLevel = perkData.PerkLevel + 1,
+                    PerkType = perkType
+                        
+                });
+                _dataCentralService.SaveFull();
             }
         }
         
         private PumpingPerkData CreatePerkData(PerkTypesEnum perkType)
         {
             var configData = _configManager.PumpingConfigSo.GamePerks[perkType];
-
-            var perkData = new PumpingPerkData()
+            var perkData = _dataCentralService.PumpingDataModel.PerksReactive[perkType];
+            var pumpingPerkData = new PumpingPerkData()
             {
                 PerkType = perkType,
-                Value = _basePerks[perkType].Value + configData.BaseValue + configData.AdditionalValue,
-                Cost = configData.BaseCost + configData.AdditionalCost,
-                CurrentLevel = 0,
-                IsMaxLevel = 0 == configData.LevelCount - 1,
+                Value = _basePerks[perkType].Value + configData.BaseValue + configData.AdditionalValue * perkData.PerkLevel,
+                Cost = configData.BaseCost + configData.AdditionalCost* perkData.PerkLevel,
+                CurrentLevel =  perkData.PerkLevel,
+                IsMaxLevel = perkData.PerkLevel == configData.LevelCount - 1,
                 CurrencyType = configData.CurrencyType
             };
 
-            return perkData;
+            return pumpingPerkData;
         }
 
         private PumpingPerkData UpdatePerkData(PumpingPerkData pumpingPerkData)
