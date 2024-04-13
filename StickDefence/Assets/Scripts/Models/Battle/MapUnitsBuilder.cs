@@ -261,6 +261,8 @@ namespace Models.Battle
             var baseUnit = UnitCreate(unitType, unitView);
             baseUnit.InitActions(UnitKilled);
             baseUnit.InitAttack(CreateProjectile, RemoveProjectile);
+            
+
             baseUnit.InitUnitConfigStats(unitConfig);
             unitView.SubscribeOnHealthChanged();
             _spawnedUnits.Add(baseUnit);
@@ -326,6 +328,8 @@ namespace Models.Battle
             {
                 case UnitTypeEnum.Skeleton:
                     return new SkeletonUnitModel(unitView, _timerService, _soundManager);
+                case UnitTypeEnum.MeleeSkeleton:
+                    return new MeleeSkeletonUnitModel(unitView,_timerService, _soundManager);
             }
 
             return new BaseUnit(unitView, _timerService, _soundManager);

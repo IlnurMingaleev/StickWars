@@ -19,12 +19,21 @@ MonoBehaviour:
     Damage: 10
     Reloading: 0.7
     Experience: 0
+    Coins: 0
   - UnitType: 1
     Health: 70
     Armor: 0
     Damage: 15
     Reloading: 2
     Experience: 10
+    Coins: 0
+  - UnitType: 2
+    Health: 10000
+    Armor: 0
+    Damage: 10
+    Reloading: 2
+    Experience: 10
+    Coins: 20
   _unitRewardConfigs:
   - UnitType: 0
     RewardType: 3

@@ -15,6 +15,8 @@ MonoBehaviour:
   _unitPrefabsModels:
   - <UnitType>k__BackingField: 1
     <GO>k__BackingField: {fileID: 5685439457548488733, guid: c4c0520b058b2624c93bd9629f1f89fa, type: 3}
+  - <UnitType>k__BackingField: 2
+    <GO>k__BackingField: {fileID: 5685439457548488733, guid: 3a12fc1ac4dab584d967192d00a3944b, type: 3}
   _playerUnitPrefabsModels:
   - <UnitType>k__BackingField: 1
     <GO>k__BackingField: {fileID: 7404111406138869555, guid: c9932beab41b3c642a7ee5f831eaa379, type: 3}

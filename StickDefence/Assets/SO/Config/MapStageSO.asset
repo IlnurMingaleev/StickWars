@@ -56,6 +56,12 @@ MonoBehaviour:
         Delay: 3
   _unitGroups:
   - Units:
+    - UnitType: 2
+      Count: 6
+      Delay: 0.2
+      MovementType: 0
+    WaveUnitsQty: 0
+  - Units:
     - UnitType: 1
       Count: 3
       Delay: 0.2
