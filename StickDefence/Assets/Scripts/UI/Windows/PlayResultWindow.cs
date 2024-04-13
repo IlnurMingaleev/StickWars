@@ -116,7 +116,7 @@ namespace UI.Windows
             _dataCentralService.StatsDataModel.AddCoinsCount(_coinsCount);
             _dataCentralService.StatsDataModel.AddGemsCount(_gemCount);
             _dataCentralService.SaveFull();
-            _continue.Invoke();
+            _continue?.Invoke();
         }
 
         private void OnRewardClaim()

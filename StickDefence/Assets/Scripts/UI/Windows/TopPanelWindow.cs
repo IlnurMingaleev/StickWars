@@ -20,7 +20,7 @@ namespace UI.Windows
         [SerializeField] private UIBar _experienceBar;
         [SerializeField] private UIBar _levelProgressBar;
         [Inject] private IDataCentralService _dataCentralService;
-
+        [Inject] private ICoreStateMachine _coreStateMachine;
         private CompositeDisposable _openShopDisposable = new CompositeDisposable();
         
         public Transform CashLabelTransform => _financeBar.CoinLabelTransform;
@@ -31,13 +31,11 @@ namespace UI.Windows
         public UIBar LevelProgressBar => _levelProgressBar;
         protected override bool DisableMultiTouchOnShow => false;
         
-
-        [Inject] private readonly ICoreStateMachine _coreStateMachine;
         
         protected override void OnActivate()
         {
             base.OnActivate();
-            _backArrow.OnClickAsObservable.Subscribe(_ => OnBackArrowClick()).AddTo(ActivateDisposables);
+            _backArrow.OnClickAsObservable.Subscribe(_ => ExitGameToMainMenu()).AddTo(ActivateDisposables);
             _financeBar.SetAction(ShowShopWindow, ShowShopWindow);
 
             _manager.LastWindowsCount.Subscribe(CheckBackButtonActive).AddTo(ActivateDisposables);
@@ -93,7 +91,7 @@ namespace UI.Windows
 
         private void ExitGameToMainMenu()
         {
-            
+            _coreStateMachine.BattleStateMachine.OnEndBattle(false);
         }
 
         public void SetIgnoreNextProfileChange()

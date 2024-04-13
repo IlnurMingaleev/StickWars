@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using TonkoGames.StateMachine.Enums;
 using UniRx;
 
@@ -49,7 +50,7 @@ namespace TonkoGames.StateMachine
         
         private void ChangedState(BattleStateEnum state)
         {
-            foreach (var action in _actionSubscribes[state])
+            foreach (var action in _actionSubscribes[state].ToList())
             {
                 action?.Invoke();
             }
