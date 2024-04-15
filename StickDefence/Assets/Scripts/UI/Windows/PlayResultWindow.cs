@@ -123,20 +123,17 @@ namespace UI.Windows
         private void OnRewardClaim()
         {
             _rewarded = true;
-            _iapService.RewardedBreakComplete += RewardBreak;
-            _iapService.ShowRewardedBreak();
+            _iapService.ShowRewardedBreak(RewardedClaim);
+        }
 
-            void RewardBreak(bool value)
+        private void RewardedClaim(bool value)
+        {
+            if (value)
             {
-                _iapService.RewardedBreakComplete -= RewardBreak;
-
-                if (value)
-                {
-                    _coinsCount *= 2;
-                    _coinRewardCountBlock.SetValue(_coinsCount);
-                    _dataCentralService.PumpingDataModel.SetStageIndex((int)_dataCentralService.PumpingDataModel.StageLoadType.Value + 1);
-                    _dataCentralService.SaveFull();
-                }
+                _coinsCount *= 2;
+                _coinRewardCountBlock.SetValue(_coinsCount);
+                _dataCentralService.PumpingDataModel.SetStageIndex((int)_dataCentralService.PumpingDataModel.StageLoadType.Value + 1);
+                _dataCentralService.SaveFull();
             }
         }
 
@@ -155,18 +152,15 @@ namespace UI.Windows
         
         private void OnResurrect()
         {
-            _iapService.RewardedBreakComplete += RewardBreak;
-            _iapService.ShowRewardedBreak();
+            _iapService.ShowRewardedBreak(RewardResurrect);
+        }
 
-            void RewardBreak(bool value)
+        private void RewardResurrect(bool value)
+        {
+            if (value)
             {
-                _iapService.RewardedBreakComplete -= RewardBreak;
-
-                if (value)
-                {
-                    _resurrect?.Invoke();
-                    _manager.Hide(this);
-                }
+                _resurrect?.Invoke();
+                _manager.Hide(this);
             }
         }
     }

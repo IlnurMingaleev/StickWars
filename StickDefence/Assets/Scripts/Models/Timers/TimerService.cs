@@ -35,7 +35,7 @@ namespace Models.Timers
         {
             foreach (var gameTimeModels in _gameTimeModels)
             {
-                gameTimeModels.StopTick();
+                gameTimeModels.PauseTick();
                 gameTimeModels.StartTick();
             }
         }
@@ -44,7 +44,7 @@ namespace Models.Timers
         {
             foreach (var gameTimeModels in _gameTimeModels)
             {
-                gameTimeModels.StopTick();
+                gameTimeModels.PauseTick();
             }
         }
 
@@ -99,7 +99,7 @@ namespace Models.Timers
         {
             foreach (var gameTimeModel in _gameTimeModels)
             {
-                gameTimeModel.RestartTick();
+                gameTimeModel.StopTickNoCash();
                 _tmpTimeModels.Add(gameTimeModel);
             }
             _gameTimeModels.Clear();
@@ -110,7 +110,7 @@ namespace Models.Timers
         {
             foreach (var defaultTimeModel in _defaultTimeModels)
             {
-                defaultTimeModel.RestartTick();
+                defaultTimeModel.StopTickNoCash();
                 _tmpTimeModels.Add(defaultTimeModel);
             }
             _defaultTimeModels.Clear();

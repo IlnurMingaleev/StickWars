@@ -53,7 +53,7 @@ namespace Models.Battle.Boosters
 
         public void Dispose()
         {
-            _timerModel.CloseTick();
+            _timerModel.StopTick();
         }
         public void DeactivateTimerUI()
         {

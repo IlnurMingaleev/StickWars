@@ -122,7 +122,7 @@ namespace Models.Attacking
         {
             if (TimerModelCooldown != null)
             {
-                TimerModelCooldown.CloseTick();
+                TimerModelCooldown.StopTick();
                 TimerModelCooldown = null;
             }
         }

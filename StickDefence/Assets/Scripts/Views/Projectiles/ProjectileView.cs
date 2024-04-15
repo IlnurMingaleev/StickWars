@@ -73,7 +73,7 @@ namespace Views.Projectiles
             {
                 OnHit(other);
 
-                _timerModel?.CloseTick();
+                _timerModel?.StopTick();
                 _bulletDestroyedAction?.Invoke(this);
                 _topDownMove.Dispose();
                 Destroy(gameObject);

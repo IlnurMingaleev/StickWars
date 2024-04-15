@@ -15,9 +15,8 @@ namespace Models.IAP
     public interface IIAPService 
     {
         event Action CommercialBreakComplete;
-        event Action<bool> RewardedBreakComplete;
         bool ShowCommercialBreak();
-        void ShowRewardedBreak();
+        void ShowRewardedBreak(Action<bool> rewardedBreakAction);
         IReadOnlyReactiveProperty<bool> CanShowReward { get; }
         void HappyTime();
         IPaymentModel PaymentModel { get; }
@@ -41,6 +40,8 @@ namespace Models.IAP
 
         public IPaymentModel PaymentModel => _paymentModel;
         public IapModel IapModel => _iapModel;
+
+        private Action<bool> RewardedBreakAction; 
         
         public IAPService(IWindowManager windowManager, ICoreStateMachine coreStateMachine, 
             IDataCentralService dataCentralService, ConfigManager configManager)
@@ -113,7 +114,6 @@ namespace Models.IAP
             return string.Empty;
         }
         public event Action CommercialBreakComplete;
-        public event Action<bool> RewardedBreakComplete;
 
         public void SetGameLoadingStart() => _iapModel.SetGameLoadingStart();   
         
@@ -138,11 +138,12 @@ namespace Models.IAP
 #endif
         }
 
-        public void ShowRewardedBreak()
+        public void ShowRewardedBreak(Action<bool> rewardedBreakAction)
         {
+            RewardedBreakAction = rewardedBreakAction;
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
             Debug.Log("Reward DEVELOPMENT_BUILD");
-            RewardedBreakComplete?.Invoke(true);
+            RewardedBreakAction?.Invoke(true);
             _dataCentralService.StatsDataModel.SetChestRewardsCount(_dataCentralService.StatsDataModel.ChestRewardsCount.Value + 1);
 #else
         _iapRewardModel.ShowRewardedBreak();
@@ -150,7 +151,11 @@ namespace Models.IAP
             
         }
 
-        private void OnRewardedBreakComplete(bool value) => RewardedBreakComplete?.Invoke(value);
+        private void OnRewardedBreakComplete(bool value){
+            RewardedBreakAction?.Invoke(value);
+            RewardedBreakAction = null;
+        }
+        
         private void OnCommercialBreakComplete() => CommercialBreakComplete?.Invoke();
         #endregion
 

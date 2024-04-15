@@ -104,18 +104,13 @@ namespace UI.Content.Lobby
         
         private void OnRewardClaim()
         {
-            _iapService.RewardedBreakComplete += RewardBreak;
-            _iapService.ShowRewardedBreak();
-
-            void RewardBreak(bool value)
+            _iapService.ShowRewardedBreak(value =>
             {
-                _iapService.RewardedBreakComplete -= RewardBreak;
-
                 if (value)
                 {
                     _lobbyModels.CoinFarmerModel.ClaimX2Storage();
                 }
-            }
+            });
         }
         
         private void SetReward(bool canShowReward)

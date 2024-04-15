@@ -75,7 +75,6 @@ namespace Models.Controllers
 
         private void OnDisable()
         {
-            _timerModel.CloseTick();
             _timerModel.StopTick();
         }
     }

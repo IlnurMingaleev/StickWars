@@ -54,14 +54,12 @@ namespace UI.Content.Shop
             
             _showReward.OnClick.AsObservable().TakeUntilDisable(this).Subscribe(_ =>
             {
-                _iapService.RewardedBreakComplete += RewardBreak;
                 GameAnalytics.Instance.PushEvent(StringsHelper.Analytics.click_reward, StringsHelper.Analytics.shop_gems);
-                _iapService.ShowRewardedBreak();
+                _iapService.ShowRewardedBreak(RewardBreak);
             });
         }
         private void RewardBreak(bool value)
         {
-            _iapService.RewardedBreakComplete -= RewardBreak;
             if (value)
             {
                 _dataCentralService.StatsDataModel.AddGemsCount(_rewardCount);

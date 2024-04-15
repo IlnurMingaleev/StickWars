@@ -264,25 +264,19 @@ namespace UI.Windows
        
         private void OnRewardClaim()
         {
-           
-            _iapService.RewardedBreakComplete += RewardBreak;
-            _iapService.ShowRewardedBreak();
-
-            void RewardBreak(bool value)
+            _iapService.ShowRewardedBreak(value =>
             {
-                _iapService.RewardedBreakComplete -= RewardBreak;
-
                 if (value)
                 {
                     StickManUIItem stickman =
                         _stickManUIItems[_dataCentralService.PumpingDataModel.MaxStickmanLevel.Value - 3];
                     stickman.AddStickmanToPlayGround();
                     stickman.ActivateCommonButton();
-                   _showAd = false;
-                   AlertUnitsTab(false);
-                   _manager.GetWindow<BottomPanelWindow>().AlertShopBtn(_perksShopBtnAlert.activeSelf);
-                }
-            }
+                    _showAd = false;
+                    AlertUnitsTab(false);
+                    _manager.GetWindow<BottomPanelWindow>().AlertShopBtn(_perksShopBtnAlert.activeSelf);
+                }    
+            });
         }
 
         public void StartAdTimer()

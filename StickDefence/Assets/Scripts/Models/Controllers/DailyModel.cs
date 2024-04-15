@@ -110,7 +110,7 @@ namespace Models.Controllers
             long currentUnix = TimeHelpers.DataTimeToTimeStamp(DateTime.Now);
             if (_timerModelSpin != null)
             {
-                _timerModelSpin.CloseTick();
+                _timerModelSpin.StopTick();
                 _timerModelSpin = null;
             }
             
@@ -144,7 +144,7 @@ namespace Models.Controllers
         {
             if (_timerModelSpin != null)
             {
-                _timerModelSpin.CloseTick();
+                _timerModelSpin.StopTick();
                 _timerModelSpin = null;
             }
         }

@@ -9,7 +9,6 @@ namespace Models.Timers
     public interface ITimerModel
     {
         void StartTick();
-        void CloseTick();
         void StopTick();
         void AddTimeToExistingTimer(float time);
     }
@@ -18,8 +17,8 @@ namespace Models.Timers
         private float _currentSec = 0;
         private TimerTypeEnum _timerTypeEnum = TimerTypeEnum.Default;
         private readonly TimerService _timerService;
-        private event Action<float> _timeModelTick;
-        private event Action _timeModelEnd;
+        private event Action<float> TimeModelTick;
+        private event Action TimeModelEnd;
 
         private bool _ignoreTimeScale = true;
         private CompositeDisposable _disposable = new CompositeDisposable();
@@ -32,9 +31,9 @@ namespace Models.Timers
         
         public void Init(float currentSec, TimerTypeEnum timerTypeEnum, Action<float> timeModelTick, Action timeModelEnd, bool ignoreTimeScale)
         {
-            _timeModelTick = timeModelTick;
+            TimeModelTick = timeModelTick;
             _currentSec = currentSec;
-            _timeModelEnd = timeModelEnd;
+            TimeModelEnd = timeModelEnd;
             _timerTypeEnum = timerTypeEnum;
             _ignoreTimeScale = ignoreTimeScale;
         }
@@ -69,33 +68,32 @@ namespace Models.Timers
             if (_currentSec <= 0)
             {
                 _currentSec = 0;
-                _timeModelEnd?.Invoke();
+                TimeModelEnd?.Invoke();
                 _timerService.RemoveTimer(_timerTypeEnum, this);
                 _disposable.Clear();
             }
             
-            _timeModelTick?.Invoke(_currentSec);
+            TimeModelTick?.Invoke(_currentSec);
         }
         public void StopTick()
         {
+            StopTickNoCash();
+            _timerService.RemoveTimer(_timerTypeEnum, this);
+        }
+        
+        public void PauseTick()
+        {
             _disposable.Clear();
         }
         
-
-        public void RestartTick()
+        public void StopTickNoCash()
         {
             _disposable.Clear();
             _currentSec = 0;
-            _timeModelTick?.Invoke(0);
-            _timeModelEnd?.Invoke();
+            TimeModelTick = null;
+            TimeModelEnd = null;
         }
 
-        public void CloseTick()
-        {
-            _timeModelTick = null;
-            _timeModelEnd = null;
-        } 
-        
         public void AddTimeToExistingTimer(float time)
         {
             _currentSec += time;

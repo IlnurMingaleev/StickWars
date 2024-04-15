@@ -175,14 +175,11 @@ namespace UI.Content.Spin
         private void RewardSpinButton()
         {
             GameAnalytics.Instance.PushEvent(StringsHelper.Analytics.click_reward, StringsHelper.Analytics.spin);
-            _iapService.RewardedBreakComplete += RewardSpinBreakComplete;
-            _iapService.ShowRewardedBreak();
+            _iapService.ShowRewardedBreak(RewardSpinBreakComplete);
         }
         
         private void RewardSpinBreakComplete(bool value)
         {
-            _iapService.RewardedBreakComplete -= RewardSpinBreakComplete;
-
             if (value)
             {
                 _player.DailyModel.RewardSpinShown();

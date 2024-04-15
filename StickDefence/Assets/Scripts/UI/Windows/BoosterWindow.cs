@@ -69,16 +69,11 @@ namespace Ui.Windows
         
         private void ShowRewardBooster()
         {
-            _iapService.RewardedBreakComplete += ShownRewardBooster;
-            Debug.Log("asdf _skipBtn");
-            _iapService.ShowRewardedBreak();
+            _iapService.ShowRewardedBreak(ShownRewardBooster);
         }
 
         private void ShownRewardBooster(bool value)
         {
-            Debug.Log("asdf _skipBtn " + value);
-            _iapService.RewardedBreakComplete -= ShownRewardBooster;
-            
             if (value)
             {
                 OnRewardClaim();
