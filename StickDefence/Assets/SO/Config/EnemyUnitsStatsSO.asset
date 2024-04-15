@@ -17,23 +17,16 @@ MonoBehaviour:
     Health: 40
     Armor: 0
     Damage: 10
-    Reloading: 0.7
+    Reloading: 0.5
     Experience: 0
     Coins: 0
   - UnitType: 1
     Health: 70
     Armor: 0
     Damage: 15
-    Reloading: 2
-    Experience: 10
+    Reloading: 0.7
+    Experience: 0
     Coins: 0
-  - UnitType: 2
-    Health: 50
-    Armor: 0
-    Damage: 10
-    Reloading: 2
-    Experience: 10
-    Coins: 20
   _unitRewardConfigs:
   - UnitType: 0
     RewardType: 3
@@ -41,25 +34,31 @@ MonoBehaviour:
   - UnitType: 1
     RewardType: 3
     RewardCount: 2
-  stickmanUnitsStatsConfigs:
+  _stickmanUnitsStatsConfigs:
   - UnitType: 1
-    Level: 1
-    Damage: 10
-    Reloading: 1
-    Price: 12
-    AttackSpeed: 45
+    Level: 0
+    Damage: 5
+    Reloading: 0.5
+    Price: 0
+    AttackSpeed: 30
   - UnitType: 2
-    Level: 2
-    Damage: 20
-    Reloading: 20
-    Price: 1
-    AttackSpeed: 45
+    Level: 0
+    Damage: 10
+    Reloading: 0.5
+    Price: 0
+    AttackSpeed: 30
   - UnitType: 3
-    Level: 3
-    Damage: 30
-    Reloading: 1
-    Price: 22
-    AttackSpeed: 45
+    Level: 0
+    Damage: 15
+    Reloading: 0.5
+    Price: 0
+    AttackSpeed: 30
+  - UnitType: 4
+    Level: 0
+    Damage: 20
+    Reloading: 0.5
+    Price: 0
+    AttackSpeed: 30
   animationCurve:
     serializedVersion: 2
     m_Curve:

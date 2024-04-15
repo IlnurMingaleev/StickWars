@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5f3f67a75f3429090b80572c85b6307, type: 3}
   m_Name: UnitsStatsConfigSOUpdater
   m_EditorClassIdentifier: 
-  documentID: 1dV1jWH8q0vZdXHckJ9HrQMcwTtWyyXKSqdMvaJXljuc
-  _enemyUnitsStatsSO: {fileID: 11400000, guid: d77f93fd8f995024eb8229f22f5a1552, type: 2}
+  documentID: 12oIKswhQvuS3_tuBN_bfR_fghh0zLutQkqWQiRmB72g
+  unitsStatsSo: {fileID: 11400000, guid: d77f93fd8f995024eb8229f22f5a1552, type: 2}
   EnemyUnitConfigModel:
   - UnitType: 0
     Health: 40
@@ -29,3 +29,28 @@ MonoBehaviour:
     Reloading: 0.7
     RewardType: 3
     RewardCount: 2
+  StickmanStatsConfigModel:
+  - UnitType: 1
+    Level: 1
+    Damage: 5
+    Reloading: 0.5
+    Price: 10
+    AttackSpeed: 30
+  - UnitType: 2
+    Level: 2
+    Damage: 10
+    Reloading: 0.5
+    Price: 10
+    AttackSpeed: 30
+  - UnitType: 3
+    Level: 3
+    Damage: 15
+    Reloading: 0.5
+    Price: 10
+    AttackSpeed: 30
+  - UnitType: 4
+    Level: 4
+    Damage: 20
+    Reloading: 0.5
+    Price: 10
+    AttackSpeed: 30

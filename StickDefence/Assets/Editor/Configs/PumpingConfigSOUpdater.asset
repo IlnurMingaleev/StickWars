@@ -111,48 +111,12 @@ MonoBehaviour:
   - Cost: 13
     CurrencyType: 1
   WallConfigModels:
-  - WallType: 0
+  - WallType: 1
     BaseValue: 0
     AdditionalValue: 0
-    LevelCount: 0
-    BaseCost: 0
-    AdditionalCost: 0
-    BaseHealthValue: 0
-    AdditionalHaalthValue: 0
-    CurrencyType: 0
-  - WallType: 0
-    BaseValue: 0
-    AdditionalValue: 0
-    LevelCount: 0
-    BaseCost: 0
-    AdditionalCost: 0
-    BaseHealthValue: 0
-    AdditionalHaalthValue: 0
-    CurrencyType: 0
-  - WallType: 0
-    BaseValue: 0
-    AdditionalValue: 0
-    LevelCount: 0
-    BaseCost: 0
-    AdditionalCost: 0
-    BaseHealthValue: 0
-    AdditionalHaalthValue: 0
-    CurrencyType: 0
-  - WallType: 0
-    BaseValue: 0
-    AdditionalValue: 0
-    LevelCount: 0
-    BaseCost: 0
-    AdditionalCost: 0
-    BaseHealthValue: 0
-    AdditionalHaalthValue: 0
-    CurrencyType: 0
-  - WallType: 0
-    BaseValue: 0
-    AdditionalValue: 0
-    LevelCount: 0
-    BaseCost: 0
-    AdditionalCost: 0
-    BaseHealthValue: 0
+    LevelCount: 10
+    BaseCost: 10
+    AdditionalCost: 2
+    BaseHealthValue: 10000
     AdditionalHaalthValue: 0
     CurrencyType: 0

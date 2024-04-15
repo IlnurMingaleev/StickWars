@@ -12,9 +12,109 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dd05a674cc84964ba39d8c759c6a77e, type: 3}
   m_Name: PumpingConfigSO
   m_EditorClassIdentifier: 
-  _coinFarmerConfigModel: []
-  _basePlayerPerks: []
-  _gamePlayerPerks: []
-  _playerSkills: []
-  _skillCellConfigs: []
-  _wallConfigModels: []
+  _coinFarmerConfigModel:
+  - CoinSmeltingGoldTick: 0
+    CoinSmeltingCost: 0
+    StorageCapacity: 0
+    StorageCost: 0
+  - CoinSmeltingGoldTick: 10
+    CoinSmeltingCost: 20
+    StorageCapacity: 100
+    StorageCost: 20
+  - CoinSmeltingGoldTick: 20
+    CoinSmeltingCost: 1440
+    StorageCapacity: 1440
+    StorageCost: 1440
+  - CoinSmeltingGoldTick: 40
+    CoinSmeltingCost: 2160
+    StorageCapacity: 2160
+    StorageCost: 2160
+  - CoinSmeltingGoldTick: 80
+    CoinSmeltingCost: 2880
+    StorageCapacity: 2880
+    StorageCost: 2880
+  _basePlayerPerks:
+  - PerkType: 0
+    BaseValue: 0
+    AdditionalValue: 5
+    LevelCount: 10
+    BaseCost: 10
+    AdditionalCost: 2
+    CurrencyType: 0
+  - PerkType: 1
+    BaseValue: 0
+    AdditionalValue: 5
+    LevelCount: 10
+    BaseCost: 10
+    AdditionalCost: 2
+    CurrencyType: 0
+  - PerkType: 2
+    BaseValue: 0
+    AdditionalValue: 5
+    LevelCount: 10
+    BaseCost: 10
+    AdditionalCost: 2
+    CurrencyType: 0
+  _gamePlayerPerks:
+  - PerkType: 0
+    BaseValue: 10
+    AdditionalValue: 2
+    LevelCount: 10
+    BaseCost: 10
+    AdditionalCost: 2
+    CurrencyType: 0
+  - PerkType: 1
+    BaseValue: 10
+    AdditionalValue: 2
+    LevelCount: 10
+    BaseCost: 10
+    AdditionalCost: 2
+    CurrencyType: 0
+  - PerkType: 2
+    BaseValue: 10
+    AdditionalValue: 2
+    LevelCount: 10
+    BaseCost: 10
+    AdditionalCost: 2
+    CurrencyType: 0
+  _playerSkills:
+  - SkillType: 1
+    BaseDamage: 0
+    AdditionalDamage: 0
+    LevelCount: 10
+    BaseCost: 10
+    AdditionalCost: 2
+    CurrencyType: 0
+  - SkillType: 2
+    BaseDamage: 0
+    AdditionalDamage: 0
+    LevelCount: 10
+    BaseCost: 10
+    AdditionalCost: 2
+    CurrencyType: 0
+  - SkillType: 3
+    BaseDamage: 0
+    AdditionalDamage: 0
+    LevelCount: 10
+    BaseCost: 10
+    AdditionalCost: 2
+    CurrencyType: 0
+  _skillCellConfigs:
+  - Cost: 10
+    CurrencyType: 0
+  - Cost: 11
+    CurrencyType: 0
+  - Cost: 12
+    CurrencyType: 0
+  - Cost: 13
+    CurrencyType: 1
+  _wallConfigModels:
+  - WallType: 1
+    BaseValue: 0
+    AdditionalValue: 0
+    LevelCount: 10
+    BaseCost: 10
+    AdditionalCost: 2
+    BaseHealthValue: 10000
+    AdditionalHaalthValue: 0
+    CurrencyType: 0

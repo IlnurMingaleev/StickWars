@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1afc392dcc3f4a5fa1f0958a2f50464e, type: 3}
   m_Name: MapStageConfigSOUpdater
   m_EditorClassIdentifier: 
-  documentID: 1dV1jWH8q0vZdXHckJ9HrQMcwTtWyyXKSqdMvaJXljuc
+  documentID: 12oIKswhQvuS3_tuBN_bfR_fghh0zLutQkqWQiRmB72g
   _mapStageSo: {fileID: 11400000, guid: ba80095f1162150419429cd888c0de1c, type: 2}
   MapStageReward:
   - StageType: 1
@@ -35,7 +35,7 @@ MonoBehaviour:
     IsBossDay: 0
   - MapStage: 1
     Day: 1
-    GroupUnitsIndex: 1
+    GroupUnitsIndex: 0
     Delay: 3
     IsBossDay: 0
   - MapStage: 1
@@ -68,24 +68,54 @@ MonoBehaviour:
     GroupUnitsIndex: 1
     Delay: 3
     IsBossDay: 1
+  - MapStage: 3
+    Day: 1
+    GroupUnitsIndex: 0
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 3
+    Day: 1
+    GroupUnitsIndex: 1
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 3
+    Day: 2
+    GroupUnitsIndex: 0
+    Delay: 3
+    IsBossDay: 1
+  - MapStage: 3
+    Day: 2
+    GroupUnitsIndex: 1
+    Delay: 3
+    IsBossDay: 1
+  - MapStage: 4
+    Day: 1
+    GroupUnitsIndex: 1
+    Delay: 3
+    IsBossDay: 0
   GroupUnits:
   - Index: 0
-    UnitType: 1
-    Count: 3
+    UnitType: 2
+    Count: 6
     Delay: 0.2
-    MovementType: 0
-  - Index: 0
-    UnitType: 1
-    Count: 1
-    Delay: 1
     MovementType: 0
   - Index: 1
     UnitType: 1
     Count: 3
     Delay: 0.2
-    MovementType: 0
+    MovementType: 1
   - Index: 1
     UnitType: 1
     Count: 1
     Delay: 1
-    MovementType: 0
+    MovementType: 1
+  - Index: 2
+    UnitType: 1
+    Count: 3
+    Delay: 0.2
+    MovementType: 1
+  - Index: 2
+    UnitType: 1
+    Count: 1
+    Delay: 1
+    MovementType: 1
