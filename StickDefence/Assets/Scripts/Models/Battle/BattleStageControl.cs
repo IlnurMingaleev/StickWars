@@ -41,7 +41,6 @@ namespace Models.Battle
 
         private void Awake()
         {
-           
             _battleAnimations = new BattleAnimations(_playerFortressInstantiate, _coreStateMachine);
             _battleResult = new BattleResult(_playerFortressInstantiate, _windowManager, _configManager, _player,
                 _dataCentralService, _coreStateMachine);

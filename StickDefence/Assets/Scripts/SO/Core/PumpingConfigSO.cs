@@ -60,14 +60,14 @@ namespace SO.Core
             List<PlayerPerkConfigModel> gamePlayerPerks,
             List<PlayerSkillConfigModel> playerSkills,
             List<SkillCellConfig> skillCellConfigs,
-            List<WallConfigsModel> wallConfigs)
+            List<WallConfigsModel> wallConfigModels)
         {
             _coinFarmerConfigModel = foundryConfigModel;
             _basePlayerPerks = basePlayerPerks;
             _gamePlayerPerks = gamePlayerPerks;
             _playerSkills = playerSkills;
             _skillCellConfigs = skillCellConfigs;
-            _wallConfigModels = wallConfigs;
+            _wallConfigModels =wallConfigModels;
         }
 #endif
     }

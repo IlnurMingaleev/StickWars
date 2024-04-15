@@ -32,18 +32,26 @@ MonoBehaviour:
       Groups:
       - GroupUnitsIndex: 0
         Delay: 3
+      - GroupUnitsIndex: 0
+        Delay: 3
     - IsBossDay: 1
       Groups:
       - GroupUnitsIndex: 0
+        Delay: 3
+      - GroupUnitsIndex: 1
         Delay: 3
   - MapStage: 2
     Days:
     - IsBossDay: 0
       Groups:
+      - GroupUnitsIndex: 0
+        Delay: 3
       - GroupUnitsIndex: 1
         Delay: 3
     - IsBossDay: 1
       Groups:
+      - GroupUnitsIndex: 0
+        Delay: 3
       - GroupUnitsIndex: 1
         Delay: 3
   - MapStage: 3
@@ -52,7 +60,15 @@ MonoBehaviour:
       Groups:
       - GroupUnitsIndex: 0
         Delay: 3
-  - MapStage: 0
+      - GroupUnitsIndex: 1
+        Delay: 3
+    - IsBossDay: 1
+      Groups:
+      - GroupUnitsIndex: 0
+        Delay: 3
+      - GroupUnitsIndex: 1
+        Delay: 3
+  - MapStage: 4
     Days:
     - IsBossDay: 0
       Groups:
@@ -64,7 +80,6 @@ MonoBehaviour:
       Count: 6
       Delay: 0.2
       MovementType: 0
-    WaveUnitsQty: 0
   - Units:
     - UnitType: 1
       Count: 3
@@ -74,7 +89,6 @@ MonoBehaviour:
       Count: 1
       Delay: 1
       MovementType: 1
-    WaveUnitsQty: 0
   - Units:
     - UnitType: 1
       Count: 3
@@ -84,4 +98,3 @@ MonoBehaviour:
       Count: 1
       Delay: 1
       MovementType: 1
-    WaveUnitsQty: 16

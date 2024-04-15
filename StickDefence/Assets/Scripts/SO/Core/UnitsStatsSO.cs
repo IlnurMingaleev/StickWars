@@ -11,7 +11,7 @@ namespace SO.Core
     {
         [SerializeField] private List<UnitStatsConfig> _enemyUnitConfig;
         [SerializeField] private List<UnitRewardConfig> _unitRewardConfigs;
-        [SerializeField] private List<StickmanStatsConfig> stickmanUnitsStatsConfigs;
+        [SerializeField] private List<StickmanStatsConfig> _stickmanUnitsStatsConfigs;
        // [SerializeField] private List<PlayerLevelConfig> _playerLevelConfigsList;
 
         [Header("Animation Curve")] public AnimationCurve animationCurve;
@@ -26,7 +26,7 @@ namespace SO.Core
             new Dictionary<UnitTypeEnum, UnitStatsConfig>();
 
         private Dictionary<int, PlayerLevelConfig> _dictionaryLevelConfigs = new Dictionary<int, PlayerLevelConfig>();
-        public List<StickmanStatsConfig> StickmanUnitsStatsConfigs => stickmanUnitsStatsConfigs;
+        public List<StickmanStatsConfig> StickmanUnitsStatsConfigs => _stickmanUnitsStatsConfigs;
 
         private  Dictionary<PlayerUnitTypeEnum,StickmanStatsConfig> _dictionaryStickmanConfigs =
             new Dictionary<PlayerUnitTypeEnum, StickmanStatsConfig>();
@@ -46,7 +46,7 @@ namespace SO.Core
         {
             _dictionaryStickmanConfigs.Clear();
             _dictionaryLevelConfigs.Clear();
-            foreach (var unitConfig in stickmanUnitsStatsConfigs)
+            foreach (var unitConfig in _stickmanUnitsStatsConfigs)
             {
                 _dictionaryStickmanConfigs.Add(unitConfig.UnitType, unitConfig);
             }
@@ -72,7 +72,7 @@ namespace SO.Core
         {
             _enemyUnitConfig = enemyUnitConfig;
             _unitRewardConfigs = unitRewards;
-            stickmanUnitsStatsConfigs = stickmanStatsConfigs;
+            _stickmanUnitsStatsConfigs = stickmanStatsConfigs;
         }
         
 #endif

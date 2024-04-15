@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80e86500c0ae40268b4d8d3468262c20, type: 3}
   m_Name: PumpingConfigSOUpdater
   m_EditorClassIdentifier: 
-  documentID: 1dV1jWH8q0vZdXHckJ9HrQMcwTtWyyXKSqdMvaJXljuc
+  documentID: 12oIKswhQvuS3_tuBN_bfR_fghh0zLutQkqWQiRmB72g
   _pumpingConfig: {fileID: 11400000, guid: 9dc51fc763518e74f9c7778a879fd697, type: 2}
   CoinFarmer:
   - CoinSmeltingGoldTick: 0
@@ -37,71 +37,22 @@ MonoBehaviour:
     StorageCost: 2880
   BasePlayerPerks:
   - PerkType: 0
-    BaseValue: 10
-    AdditionalValue: 2
+    BaseValue: 0
+    AdditionalValue: 5
     LevelCount: 10
     BaseCost: 10
     AdditionalCost: 2
     CurrencyType: 0
   - PerkType: 1
-    BaseValue: 60
-    AdditionalValue: 2
+    BaseValue: 0
+    AdditionalValue: 5
     LevelCount: 10
     BaseCost: 10
     AdditionalCost: 2
     CurrencyType: 0
   - PerkType: 2
-    BaseValue: 10
-    AdditionalValue: 2
-    LevelCount: 10
-    BaseCost: 10
-    AdditionalCost: 2
-    CurrencyType: 0
-  - PerkType: 3
-    BaseValue: 0.1
-    AdditionalValue: 0.02
-    LevelCount: 10
-    BaseCost: 10
-    AdditionalCost: 2
-    CurrencyType: 0
-  - PerkType: 4
-    BaseValue: 0.1
-    AdditionalValue: 0.02
-    LevelCount: 10
-    BaseCost: 10
-    AdditionalCost: 2
-    CurrencyType: 0
-  - PerkType: 5
-    BaseValue: 10
-    AdditionalValue: 2
-    LevelCount: 10
-    BaseCost: 10
-    AdditionalCost: 2
-    CurrencyType: 0
-  - PerkType: 6
-    BaseValue: 10
-    AdditionalValue: 2
-    LevelCount: 10
-    BaseCost: 10
-    AdditionalCost: 2
-    CurrencyType: 0
-  - PerkType: 7
-    BaseValue: 0.1
-    AdditionalValue: 0.02
-    LevelCount: 10
-    BaseCost: 10
-    AdditionalCost: 2
-    CurrencyType: 0
-  - PerkType: 8
-    BaseValue: 10
-    AdditionalValue: 2
-    LevelCount: 10
-    BaseCost: 10
-    AdditionalCost: 2
-    CurrencyType: 0
-  - PerkType: 9
-    BaseValue: 10
-    AdditionalValue: 2
+    BaseValue: 0
+    AdditionalValue: 5
     LevelCount: 10
     BaseCost: 10
     AdditionalCost: 2
@@ -113,88 +64,39 @@ MonoBehaviour:
     LevelCount: 10
     BaseCost: 10
     AdditionalCost: 2
-    CurrencyType: 2
+    CurrencyType: 0
   - PerkType: 1
     BaseValue: 10
     AdditionalValue: 2
     LevelCount: 10
     BaseCost: 10
     AdditionalCost: 2
-    CurrencyType: 2
+    CurrencyType: 0
   - PerkType: 2
     BaseValue: 10
     AdditionalValue: 2
     LevelCount: 10
     BaseCost: 10
     AdditionalCost: 2
-    CurrencyType: 2
-  - PerkType: 3
-    BaseValue: 0.1
-    AdditionalValue: 0.02
-    LevelCount: 10
-    BaseCost: 10
-    AdditionalCost: 2
-    CurrencyType: 2
-  - PerkType: 4
-    BaseValue: 0.1
-    AdditionalValue: 0.02
-    LevelCount: 10
-    BaseCost: 10
-    AdditionalCost: 2
-    CurrencyType: 2
-  - PerkType: 5
-    BaseValue: 10
-    AdditionalValue: 2
-    LevelCount: 10
-    BaseCost: 10
-    AdditionalCost: 2
-    CurrencyType: 2
-  - PerkType: 6
-    BaseValue: 10
-    AdditionalValue: 2
-    LevelCount: 10
-    BaseCost: 10
-    AdditionalCost: 2
-    CurrencyType: 2
-  - PerkType: 7
-    BaseValue: 0.1
-    AdditionalValue: 0.02
-    LevelCount: 10
-    BaseCost: 10
-    AdditionalCost: 2
-    CurrencyType: 2
-  - PerkType: 8
-    BaseValue: 10
-    AdditionalValue: 2
-    LevelCount: 10
-    BaseCost: 10
-    AdditionalCost: 2
-    CurrencyType: 2
-  - PerkType: 9
-    BaseValue: 10
-    AdditionalValue: 2
-    LevelCount: 10
-    BaseCost: 10
-    AdditionalCost: 2
-    CurrencyType: 2
+    CurrencyType: 0
   PlayerSkills:
   - SkillType: 1
-    BaseValue: 10
-    AdditionalValue: 2
+    BaseDamage: 0
+    AdditionalDamage: 0
     LevelCount: 10
     BaseCost: 10
     AdditionalCost: 2
     CurrencyType: 0
   - SkillType: 2
-    BaseValue: 10
-    AdditionalValue: 2
+    BaseDamage: 0
+    AdditionalDamage: 0
     LevelCount: 10
     BaseCost: 10
     AdditionalCost: 2
     CurrencyType: 0
   - SkillType: 3
-    BaseValue: 10
-    AdditionalValue: 2
+    BaseDamage: 0
+    AdditionalDamage: 0
     LevelCount: 10
     BaseCost: 10
     AdditionalCost: 2
@@ -208,3 +110,49 @@ MonoBehaviour:
     CurrencyType: 0
   - Cost: 13
     CurrencyType: 1
+  WallConfigModels:
+  - WallType: 0
+    BaseValue: 0
+    AdditionalValue: 0
+    LevelCount: 0
+    BaseCost: 0
+    AdditionalCost: 0
+    BaseHealthValue: 0
+    AdditionalHaalthValue: 0
+    CurrencyType: 0
+  - WallType: 0
+    BaseValue: 0
+    AdditionalValue: 0
+    LevelCount: 0
+    BaseCost: 0
+    AdditionalCost: 0
+    BaseHealthValue: 0
+    AdditionalHaalthValue: 0
+    CurrencyType: 0
+  - WallType: 0
+    BaseValue: 0
+    AdditionalValue: 0
+    LevelCount: 0
+    BaseCost: 0
+    AdditionalCost: 0
+    BaseHealthValue: 0
+    AdditionalHaalthValue: 0
+    CurrencyType: 0
+  - WallType: 0
+    BaseValue: 0
+    AdditionalValue: 0
+    LevelCount: 0
+    BaseCost: 0
+    AdditionalCost: 0
+    BaseHealthValue: 0
+    AdditionalHaalthValue: 0
+    CurrencyType: 0
+  - WallType: 0
+    BaseValue: 0
+    AdditionalValue: 0
+    LevelCount: 0
+    BaseCost: 0
+    AdditionalCost: 0
+    BaseHealthValue: 0
+    AdditionalHaalthValue: 0
+    CurrencyType: 0
