@@ -9,9 +9,9 @@
 
         public bool IsLaunchIsProgress { get; private set; }
         
-        private readonly int _launchAnim = Animator.StringToHash("fortress_launch");
-        private readonly int _prepareAnim = Animator.StringToHash("fortress_prepare_launch");
-        private readonly int _defaultAnim = Animator.StringToHash("fortress_default_state");
+        private readonly int _launchAnim = Animator.StringToHash("Skeleton_Attack");
+        private readonly int _prepareAnim = Animator.StringToHash("Skeleton_Idle");
+        private readonly int _defaultAnim = Animator.StringToHash("Skeleton_Idle");
 
         private void OnEnable()
         {

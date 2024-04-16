@@ -37,9 +37,9 @@ MonoBehaviour:
     - IsBossDay: 0
       Groups:
       - GroupUnitsIndex: 0
-        Delay: 3
+        Delay: 1
       - GroupUnitsIndex: 1
-        Delay: 3
+        Delay: 1
     - IsBossDay: 0
       Groups:
       - GroupUnitsIndex: 20

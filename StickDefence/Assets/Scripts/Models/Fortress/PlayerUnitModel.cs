@@ -19,6 +19,9 @@ namespace Models.Fortress
 {
     public class PlayerUnitModel
     {
+        private static readonly int Dead = Animator.StringToHash("Dead");
+        private static readonly int Walk = Animator.StringToHash("Walk");
+        private static readonly int Attack = Animator.StringToHash("Attack");
         public readonly PlayerViewTwo View;
         private readonly IPumping _pumping;
         private readonly ISoundManager _soundManager;
@@ -27,7 +30,7 @@ namespace Models.Fortress
         
         private ReactiveProperty<SlotTypeEnum> _parentSlotType = new ReactiveProperty<SlotTypeEnum>(); 
        
-        
+        private bool _isAttacking = false;
         private CompositeDisposable _disposable = new CompositeDisposable();
         private RangeOneTargetAttack _rangeAttackModel;
         private CompositeDisposable _disposableIsActive = new CompositeDisposable();
@@ -36,6 +39,7 @@ namespace Models.Fortress
         
         public event Action IsDeadAction;
         public Action<PlayerUnitModel> OnModelRemove;
+        public Action StartAttackAction;
 
         #region Getters
         public RangeOneTargetAttack RangeAttackModel => _rangeAttackModel;
@@ -83,13 +87,16 @@ namespace Models.Fortress
         {
             _rangeAttackModel = new RangeOneTargetAttack();
             _rangeAttackModel.Init(View.AttackBlockView, _timerService, _soundManager, StartAttackAnim);
-            _rangeAttackModel.InitProjectileActions(createProjectile, projectileDestroyed);
             _rangeAttackModel.SetProjectile(View.AttackBlockView.ProjectileView);
+            _rangeAttackModel.InitProjectileActions(createProjectile, projectileDestroyed);
+            View.UnitAnimationCallbacks.AttackAction += AttackActionAnimCallback;
+            View.UnitAnimationCallbacks.StartCooldownAttackAction += StartCooldownAttackAnimCallback;
         }
-        
+       
         private void OnEnable()
         {
-           
+          
+            View.Animator.speed = 1;
            // View.Damageable.IsEmptyHealth.SkipLatestValueOnSubscribe().Subscribe(OnDead).AddTo(_disposable);
            // _pumping.GamePerks.ObserveReplace().Subscribe(_ => SubscribeStats()).AddTo(_disposable);
            SetAttackStats();
@@ -121,6 +128,9 @@ namespace Models.Fortress
 
         private void OnDisable()
         {
+            View.UnitAnimationCallbacks.AttackAction -= AttackActionAnimCallback;
+            View.UnitAnimationCallbacks.StartCooldownAttackAction -= StartCooldownAttackAnimCallback;
+            View.Animator.speed = 0;
             OnModelRemove?.Invoke(this);
             _disposable.Clear();
             _rangeAttackModel.StopPlay();
@@ -155,16 +165,35 @@ namespace Models.Fortress
             _rangeAttackModel.StopPlay();
             IsDeadAction?.Invoke();
         }
-
-        private void StartAttackAnim()
-        {
-            _rangeAttackModel.Attack();
-            _rangeAttackModel.StartCooldown(null);
-        }
+        
+        
         
         ~PlayerUnitModel()
         {
             _disposableIsActive.Clear();
+        }
+        protected virtual void StartAttackAnim()
+        {
+            _isAttacking = true;
+        }
+        public void OnPlay()
+        {
+            
+            _rangeAttackModel.StartPlay();
+        }
+
+        public void OnPause()
+        {
+            _rangeAttackModel.StopPlay();
+        }
+        protected virtual void AttackActionAnimCallback()
+        {
+            _rangeAttackModel.Attack();
+        }
+
+        protected virtual void StartCooldownAttackAnimCallback()
+        {
+            _rangeAttackModel.StartCooldown(() => _isAttacking = false);
         }
     }
 }
