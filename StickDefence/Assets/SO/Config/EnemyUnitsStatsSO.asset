@@ -13,50 +13,326 @@ MonoBehaviour:
   m_Name: EnemyUnitsStatsSO
   m_EditorClassIdentifier: 
   _enemyUnitConfig:
-  - UnitType: 0
+  - UnitType: 1
+    Health: 20
+    Armor: 0.3
+    Damage: 3
+    Reloading: 1
+    Experience: 0
+    Coins: 0
+  - UnitType: 2
     Health: 40
-    Armor: 0
-    Damage: 10
+    Armor: 0.5
+    Damage: 2
+    Reloading: 1
+    Experience: 0
+    Coins: 0
+  - UnitType: 3
+    Health: 40
+    Armor: 1.5
+    Damage: 2
+    Reloading: 2
+    Experience: 0
+    Coins: 0
+  - UnitType: 4
+    Health: 40
+    Armor: 0.2
+    Damage: 3
     Reloading: 0.5
     Experience: 0
     Coins: 0
-  - UnitType: 1
-    Health: 70
-    Armor: 0
-    Damage: 15
+  - UnitType: 5
+    Health: 10
+    Armor: 0.1
+    Damage: 2
     Reloading: 0.7
     Experience: 0
     Coins: 0
+  - UnitType: 6
+    Health: 60
+    Armor: 0.3
+    Damage: 3
+    Reloading: 1
+    Experience: 0
+    Coins: 0
+  - UnitType: 7
+    Health: 30
+    Armor: 0.6
+    Damage: 4
+    Reloading: 1.2
+    Experience: 0
+    Coins: 0
+  - UnitType: 8
+    Health: 100
+    Armor: 1
+    Damage: 3
+    Reloading: 2
+    Experience: 0
+    Coins: 0
+  - UnitType: 9
+    Health: 60
+    Armor: 1
+    Damage: 2
+    Reloading: 1.5
+    Experience: 0
+    Coins: 0
+  - UnitType: 10
+    Health: 80
+    Armor: 1
+    Damage: 3
+    Reloading: 2
+    Experience: 0
+    Coins: 0
+  - UnitType: 11
+    Health: 30
+    Armor: 0.1
+    Damage: 3
+    Reloading: 1
+    Experience: 0
+    Coins: 0
+  - UnitType: 12
+    Health: 30
+    Armor: 0.2
+    Damage: 3
+    Reloading: 1.2
+    Experience: 0
+    Coins: 0
+  - UnitType: 13
+    Health: 40
+    Armor: 0.1
+    Damage: 3
+    Reloading: 0.7
+    Experience: 0
+    Coins: 0
+  - UnitType: 14
+    Health: 50
+    Armor: 0.1
+    Damage: 2
+    Reloading: 0.7
+    Experience: 0
+    Coins: 0
+  - UnitType: 15
+    Health: 50
+    Armor: 0.2
+    Damage: 3
+    Reloading: 1
+    Experience: 0
+    Coins: 0
+  - UnitType: 16
+    Health: 40
+    Armor: 0.5
+    Damage: 2
+    Reloading: 1
+    Experience: 0
+    Coins: 0
+  - UnitType: 17
+    Health: 40
+    Armor: 0.4
+    Damage: 2
+    Reloading: 0.8
+    Experience: 0
+    Coins: 0
+  - UnitType: 18
+    Health: 100
+    Armor: 0.1
+    Damage: 3
+    Reloading: 1.2
+    Experience: 0
+    Coins: 0
+  - UnitType: 19
+    Health: 60
+    Armor: 0.3
+    Damage: 2
+    Reloading: 1.2
+    Experience: 0
+    Coins: 0
+  - UnitType: 20
+    Health: 80
+    Armor: 0.2
+    Damage: 3
+    Reloading: 1.5
+    Experience: 0
+    Coins: 0
   _unitRewardConfigs:
-  - UnitType: 0
-    RewardType: 3
-    RewardCount: 1
   - UnitType: 1
-    RewardType: 3
+    RewardType: 0
     RewardCount: 2
+  - UnitType: 2
+    RewardType: 0
+    RewardCount: 4
+  - UnitType: 3
+    RewardType: 0
+    RewardCount: 5
+  - UnitType: 4
+    RewardType: 0
+    RewardCount: 4
+  - UnitType: 5
+    RewardType: 0
+    RewardCount: 1
+  - UnitType: 6
+    RewardType: 0
+    RewardCount: 5
+  - UnitType: 7
+    RewardType: 0
+    RewardCount: 5
+  - UnitType: 8
+    RewardType: 0
+    RewardCount: 8
+  - UnitType: 9
+    RewardType: 0
+    RewardCount: 3
+  - UnitType: 10
+    RewardType: 0
+    RewardCount: 8
+  - UnitType: 11
+    RewardType: 0
+    RewardCount: 2
+  - UnitType: 12
+    RewardType: 0
+    RewardCount: 2
+  - UnitType: 13
+    RewardType: 0
+    RewardCount: 2
+  - UnitType: 14
+    RewardType: 0
+    RewardCount: 3
+  - UnitType: 15
+    RewardType: 0
+    RewardCount: 7
+  - UnitType: 16
+    RewardType: 0
+    RewardCount: 3
+  - UnitType: 17
+    RewardType: 0
+    RewardCount: 4
+  - UnitType: 18
+    RewardType: 0
+    RewardCount: 5
+  - UnitType: 19
+    RewardType: 0
+    RewardCount: 4
+  - UnitType: 20
+    RewardType: 0
+    RewardCount: 4
   _stickmanUnitsStatsConfigs:
   - UnitType: 1
     Level: 0
     Damage: 5
     Reloading: 0.5
     Price: 0
-    AttackSpeed: 30
+    AttackSpeed: 15
   - UnitType: 2
     Level: 0
-    Damage: 10
+    Damage: 8
     Reloading: 0.5
     Price: 0
-    AttackSpeed: 30
+    AttackSpeed: 15
   - UnitType: 3
+    Level: 0
+    Damage: 12
+    Reloading: 0.5
+    Price: 0
+    AttackSpeed: 15
+  - UnitType: 4
     Level: 0
     Damage: 15
     Reloading: 0.5
     Price: 0
-    AttackSpeed: 30
-  - UnitType: 4
+    AttackSpeed: 15
+  - UnitType: 5
+    Level: 0
+    Damage: 18
+    Reloading: 0
+    Price: 0
+    AttackSpeed: 15
+  - UnitType: 6
     Level: 0
     Damage: 20
-    Reloading: 0.5
+    Reloading: 0
+    Price: 0
+    AttackSpeed: 20
+  - UnitType: 7
+    Level: 0
+    Damage: 24
+    Reloading: 0
+    Price: 0
+    AttackSpeed: 20
+  - UnitType: 8
+    Level: 0
+    Damage: 28
+    Reloading: 0
+    Price: 0
+    AttackSpeed: 20
+  - UnitType: 9
+    Level: 0
+    Damage: 32
+    Reloading: 0
+    Price: 0
+    AttackSpeed: 20
+  - UnitType: 10
+    Level: 0
+    Damage: 36
+    Reloading: 0
+    Price: 0
+    AttackSpeed: 20
+  - UnitType: 11
+    Level: 0
+    Damage: 40
+    Reloading: 0
+    Price: 0
+    AttackSpeed: 25
+  - UnitType: 12
+    Level: 0
+    Damage: 45
+    Reloading: 0
+    Price: 0
+    AttackSpeed: 25
+  - UnitType: 13
+    Level: 0
+    Damage: 50
+    Reloading: 0
+    Price: 0
+    AttackSpeed: 25
+  - UnitType: 14
+    Level: 0
+    Damage: 55
+    Reloading: 0
+    Price: 0
+    AttackSpeed: 25
+  - UnitType: 15
+    Level: 0
+    Damage: 60
+    Reloading: 0
+    Price: 0
+    AttackSpeed: 25
+  - UnitType: 16
+    Level: 0
+    Damage: 65
+    Reloading: 0
+    Price: 0
+    AttackSpeed: 30
+  - UnitType: 17
+    Level: 0
+    Damage: 70
+    Reloading: 0
+    Price: 0
+    AttackSpeed: 30
+  - UnitType: 18
+    Level: 0
+    Damage: 75
+    Reloading: 0
+    Price: 0
+    AttackSpeed: 30
+  - UnitType: 19
+    Level: 0
+    Damage: 80
+    Reloading: 0
+    Price: 0
+    AttackSpeed: 30
+  - UnitType: 20
+    Level: 0
+    Damage: 85
+    Reloading: 0
     Price: 0
     AttackSpeed: 30
   animationCurve:

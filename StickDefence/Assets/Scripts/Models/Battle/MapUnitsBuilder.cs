@@ -264,7 +264,7 @@ namespace Models.Battle
             
 
             baseUnit.InitUnitConfigStats(unitConfig);
-            unitView.SubscribeOnHealthChanged();
+            unitView.SubscribeOnHealthChanged(unitType);
             _spawnedUnits.Add(baseUnit);
             
             Observable.Timer (System.TimeSpan.FromSeconds(delay), Scheduler.MainThreadIgnoreTimeScale)
@@ -324,15 +324,11 @@ namespace Models.Battle
 
         private BaseUnit UnitCreate(UnitTypeEnum unitType, UnitView unitView)
         {
-            switch (unitType)
-            {
-                case UnitTypeEnum.Skeleton:
-                    return new SkeletonUnitModel(unitView, _timerService, _soundManager);
-                case UnitTypeEnum.MeleeSkeleton:
-                    return new MeleeSkeletonUnitModel(unitView,_timerService, _soundManager);
-            }
-
-            return new BaseUnit(unitView, _timerService, _soundManager);
+           
+            return new SkeletonUnitModel(unitView, _timerService, _soundManager);
+           
+            
+            //return new BaseUnit(unitView, _timerService, _soundManager);
         }
         
         private void CreateProjectile(ProjectileView projectileView)

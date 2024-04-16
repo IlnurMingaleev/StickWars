@@ -110,8 +110,8 @@ namespace UI.Windows
             {
                 _boosterManager.ApplyBooster(BoosterTypeEnum.AutoMerge);
             }).AddTo(ActivateDisposables);
-            PlayerUnitTypeEnum playerUnitType = PlayerUnitTypeEnum.PlayerOne;
-            if(_dataCentralService.PumpingDataModel.MaxStickmanLevel.Value >= PlayerUnitTypeEnum.PlayerFour)
+            PlayerUnitTypeEnum playerUnitType = PlayerUnitTypeEnum.One;
+            if(_dataCentralService.PumpingDataModel.MaxStickmanLevel.Value >= PlayerUnitTypeEnum.Four)
                 playerUnitType = (PlayerUnitTypeEnum)((int)_dataCentralService.PumpingDataModel.MaxStickmanLevel.Value - 3);
             _quickBuyBtn.OnClickAsObservable.Subscribe(_ =>
                 BuyStickman(_configManager.UnitsStatsSo.DictionaryStickmanConfigs[playerUnitType], playerUnitType));
@@ -202,6 +202,10 @@ namespace UI.Windows
             _boxImage.fillAmount = value;
         }
 
+        public void UpdateWallHealthBar(int currentHealth, int maxHealth, UnitTypeEnum unitType)
+        {
+            _wallHealthBar.SetBarFiilAmount(currentHealth, maxHealth, unitType);
+        }
         public void UpdateWallHealthBar(int currentHealth, int maxHealth)
         {
             _wallHealthBar.SetBarFiilAmount(currentHealth, maxHealth);

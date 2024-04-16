@@ -16,7 +16,43 @@ MonoBehaviour:
   - <UnitType>k__BackingField: 1
     <GO>k__BackingField: {fileID: 5685439457548488733, guid: c4c0520b058b2624c93bd9629f1f89fa, type: 3}
   - <UnitType>k__BackingField: 2
-    <GO>k__BackingField: {fileID: 5685439457548488733, guid: 3a12fc1ac4dab584d967192d00a3944b, type: 3}
+    <GO>k__BackingField: {fileID: 5685439457548488733, guid: c4c0520b058b2624c93bd9629f1f89fa, type: 3}
+  - <UnitType>k__BackingField: 3
+    <GO>k__BackingField: {fileID: 5685439457548488733, guid: c4c0520b058b2624c93bd9629f1f89fa, type: 3}
+  - <UnitType>k__BackingField: 4
+    <GO>k__BackingField: {fileID: 5685439457548488733, guid: c4c0520b058b2624c93bd9629f1f89fa, type: 3}
+  - <UnitType>k__BackingField: 5
+    <GO>k__BackingField: {fileID: 5685439457548488733, guid: c4c0520b058b2624c93bd9629f1f89fa, type: 3}
+  - <UnitType>k__BackingField: 6
+    <GO>k__BackingField: {fileID: 5685439457548488733, guid: c4c0520b058b2624c93bd9629f1f89fa, type: 3}
+  - <UnitType>k__BackingField: 7
+    <GO>k__BackingField: {fileID: 5685439457548488733, guid: c4c0520b058b2624c93bd9629f1f89fa, type: 3}
+  - <UnitType>k__BackingField: 8
+    <GO>k__BackingField: {fileID: 5685439457548488733, guid: c4c0520b058b2624c93bd9629f1f89fa, type: 3}
+  - <UnitType>k__BackingField: 9
+    <GO>k__BackingField: {fileID: 5685439457548488733, guid: c4c0520b058b2624c93bd9629f1f89fa, type: 3}
+  - <UnitType>k__BackingField: 10
+    <GO>k__BackingField: {fileID: 5685439457548488733, guid: c4c0520b058b2624c93bd9629f1f89fa, type: 3}
+  - <UnitType>k__BackingField: 11
+    <GO>k__BackingField: {fileID: 5685439457548488733, guid: c4c0520b058b2624c93bd9629f1f89fa, type: 3}
+  - <UnitType>k__BackingField: 12
+    <GO>k__BackingField: {fileID: 5685439457548488733, guid: c4c0520b058b2624c93bd9629f1f89fa, type: 3}
+  - <UnitType>k__BackingField: 13
+    <GO>k__BackingField: {fileID: 5685439457548488733, guid: c4c0520b058b2624c93bd9629f1f89fa, type: 3}
+  - <UnitType>k__BackingField: 14
+    <GO>k__BackingField: {fileID: 5685439457548488733, guid: c4c0520b058b2624c93bd9629f1f89fa, type: 3}
+  - <UnitType>k__BackingField: 15
+    <GO>k__BackingField: {fileID: 5685439457548488733, guid: c4c0520b058b2624c93bd9629f1f89fa, type: 3}
+  - <UnitType>k__BackingField: 16
+    <GO>k__BackingField: {fileID: 5685439457548488733, guid: c4c0520b058b2624c93bd9629f1f89fa, type: 3}
+  - <UnitType>k__BackingField: 17
+    <GO>k__BackingField: {fileID: 5685439457548488733, guid: c4c0520b058b2624c93bd9629f1f89fa, type: 3}
+  - <UnitType>k__BackingField: 18
+    <GO>k__BackingField: {fileID: 5685439457548488733, guid: c4c0520b058b2624c93bd9629f1f89fa, type: 3}
+  - <UnitType>k__BackingField: 19
+    <GO>k__BackingField: {fileID: 5685439457548488733, guid: c4c0520b058b2624c93bd9629f1f89fa, type: 3}
+  - <UnitType>k__BackingField: 20
+    <GO>k__BackingField: {fileID: 5685439457548488733, guid: c4c0520b058b2624c93bd9629f1f89fa, type: 3}
   _playerUnitPrefabsModels:
   - <UnitType>k__BackingField: 1
     <GO>k__BackingField: {fileID: 7404111406138869555, guid: c9932beab41b3c642a7ee5f831eaa379, type: 3}
@@ -27,6 +63,57 @@ MonoBehaviour:
   - <UnitType>k__BackingField: 3
     <GO>k__BackingField: {fileID: 5155550405894979362, guid: ae74a7b40554ca04aacde7b5bfc53999, type: 3}
     uiIcon: {fileID: 21300000, guid: f015d1882348d46139f2f76e19b4fece, type: 3}
+  - <UnitType>k__BackingField: 4
+    <GO>k__BackingField: {fileID: 5155550405894979362, guid: 7e251699e52ed7c4d90c734d506e6cde, type: 3}
+    uiIcon: {fileID: 21300000, guid: 08befea0e973a45a0a1c1c8bf0b06103, type: 3}
+  - <UnitType>k__BackingField: 5
+    <GO>k__BackingField: {fileID: 5155550405894979362, guid: d11cc46c7696cf5478881e326b41e4f5, type: 3}
+    uiIcon: {fileID: 21300000, guid: 3eae5b9e53e18428ca1fc317e6135059, type: 3}
+  - <UnitType>k__BackingField: 6
+    <GO>k__BackingField: {fileID: 5155550405894979362, guid: e518f4f0c20b5494088158254a88f33d, type: 3}
+    uiIcon: {fileID: 21300000, guid: 07bb2eeba85fc4291815b664f5eae983, type: 3}
+  - <UnitType>k__BackingField: 7
+    <GO>k__BackingField: {fileID: 5155550405894979362, guid: 282163db7caf07e4caa484f16eb0eadd, type: 3}
+    uiIcon: {fileID: 21300000, guid: 981a2b56ebf074f398c47a0eb2af6f49, type: 3}
+  - <UnitType>k__BackingField: 8
+    <GO>k__BackingField: {fileID: 5155550405894979362, guid: fa91c18c6d88aa74e932dd4d7f27d7cb, type: 3}
+    uiIcon: {fileID: 21300000, guid: 84f24fec6194249de9786b735dbdd356, type: 3}
+  - <UnitType>k__BackingField: 9
+    <GO>k__BackingField: {fileID: 5155550405894979362, guid: ececdf61af23b0e4ba9d061fca692c3f, type: 3}
+    uiIcon: {fileID: 21300000, guid: e33d77fa230af4fcf8f2fb52a04eeea6, type: 3}
+  - <UnitType>k__BackingField: 10
+    <GO>k__BackingField: {fileID: 5155550405894979362, guid: b6e84cb57b283e44f80e0e0998c722cc, type: 3}
+    uiIcon: {fileID: 21300000, guid: 43e81a0faabee4fa8a93ce6c09a8d026, type: 3}
+  - <UnitType>k__BackingField: 11
+    <GO>k__BackingField: {fileID: 5155550405894979362, guid: 2ff3037da20e6344fbe5ea8afd585d1f, type: 3}
+    uiIcon: {fileID: 21300000, guid: ff58c718f1da9462aa7733e52d5dc0aa, type: 3}
+  - <UnitType>k__BackingField: 12
+    <GO>k__BackingField: {fileID: 5155550405894979362, guid: f327e991407eb894f9b3c1d59daa3ae9, type: 3}
+    uiIcon: {fileID: 21300000, guid: aaeaefe59d58b459d8a87d83ac106ef9, type: 3}
+  - <UnitType>k__BackingField: 13
+    <GO>k__BackingField: {fileID: 5155550405894979362, guid: 1b5c3c1997e6b3047a12be3de2755af1, type: 3}
+    uiIcon: {fileID: 21300000, guid: ec5b6ef21f12c4c168be3b8357462eba, type: 3}
+  - <UnitType>k__BackingField: 14
+    <GO>k__BackingField: {fileID: 5155550405894979362, guid: 3342a333bfd68124abc8ed4aefcaba2e, type: 3}
+    uiIcon: {fileID: 21300000, guid: d7a04cb5ddc9745dcb3ad1d317190ae0, type: 3}
+  - <UnitType>k__BackingField: 15
+    <GO>k__BackingField: {fileID: 5155550405894979362, guid: da356afff5aff9648975deeca03a1044, type: 3}
+    uiIcon: {fileID: 21300000, guid: b012d35a6ad8345b79b1bf3862b9efb8, type: 3}
+  - <UnitType>k__BackingField: 16
+    <GO>k__BackingField: {fileID: 5155550405894979362, guid: b128ff69b40269d4ea2f955fd7a1e654, type: 3}
+    uiIcon: {fileID: 21300000, guid: 081bc2a1c80274d2f9cabbc8baa0b266, type: 3}
+  - <UnitType>k__BackingField: 17
+    <GO>k__BackingField: {fileID: 5155550405894979362, guid: f2be65fd820733547bea760b9bdb2759, type: 3}
+    uiIcon: {fileID: 21300000, guid: 0755cc80394904ced8fbee83bb3507f7, type: 3}
+  - <UnitType>k__BackingField: 18
+    <GO>k__BackingField: {fileID: 5155550405894979362, guid: cba1be24e6d89d94bbc7a047027dbe63, type: 3}
+    uiIcon: {fileID: 21300000, guid: 85d119cfcb3214895b4ee6112040e6dc, type: 3}
+  - <UnitType>k__BackingField: 19
+    <GO>k__BackingField: {fileID: 5155550405894979362, guid: 6684cfed4bd30b543820492b65c0aff5, type: 3}
+    uiIcon: {fileID: 21300000, guid: b05fb54b13ab3487f8e548faae82e72d, type: 3}
+  - <UnitType>k__BackingField: 20
+    <GO>k__BackingField: {fileID: 5155550405894979362, guid: 70ec38b0547f6c74d8e561f348edcb2f, type: 3}
+    uiIcon: {fileID: 21300000, guid: 51c0b03b5c4bd41b0a3faeb00048fbe9, type: 3}
   _perkIconModels:
   - PerkType: 0
     PerkIcon: {fileID: 21300000, guid: 413710b631bd5493ebbf1a29b2d82eb3, type: 3}

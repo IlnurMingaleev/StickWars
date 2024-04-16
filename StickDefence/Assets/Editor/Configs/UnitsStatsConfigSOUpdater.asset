@@ -15,42 +15,264 @@ MonoBehaviour:
   documentID: 12oIKswhQvuS3_tuBN_bfR_fghh0zLutQkqWQiRmB72g
   unitsStatsSo: {fileID: 11400000, guid: d77f93fd8f995024eb8229f22f5a1552, type: 2}
   EnemyUnitConfigModel:
-  - UnitType: 0
-    Health: 40
-    Armor: 0
-    Damage: 10
-    Reloading: 0.5
-    RewardType: 3
-    RewardCount: 1
   - UnitType: 1
-    Health: 70
-    Armor: 0
-    Damage: 15
-    Reloading: 0.7
-    RewardType: 3
+    Health: 20
+    Armor: 0.3
+    Damage: 3
+    Reloading: 1
+    RewardType: 0
     RewardCount: 2
+  - UnitType: 2
+    Health: 40
+    Armor: 0.5
+    Damage: 2
+    Reloading: 1
+    RewardType: 0
+    RewardCount: 4
+  - UnitType: 3
+    Health: 40
+    Armor: 1.5
+    Damage: 2
+    Reloading: 2
+    RewardType: 0
+    RewardCount: 5
+  - UnitType: 4
+    Health: 40
+    Armor: 0.2
+    Damage: 3
+    Reloading: 0.5
+    RewardType: 0
+    RewardCount: 4
+  - UnitType: 5
+    Health: 10
+    Armor: 0.1
+    Damage: 2
+    Reloading: 0.7
+    RewardType: 0
+    RewardCount: 1
+  - UnitType: 6
+    Health: 60
+    Armor: 0.3
+    Damage: 3
+    Reloading: 1
+    RewardType: 0
+    RewardCount: 5
+  - UnitType: 7
+    Health: 30
+    Armor: 0.6
+    Damage: 4
+    Reloading: 1.2
+    RewardType: 0
+    RewardCount: 5
+  - UnitType: 8
+    Health: 100
+    Armor: 1
+    Damage: 3
+    Reloading: 2
+    RewardType: 0
+    RewardCount: 8
+  - UnitType: 9
+    Health: 60
+    Armor: 1
+    Damage: 2
+    Reloading: 1.5
+    RewardType: 0
+    RewardCount: 3
+  - UnitType: 10
+    Health: 80
+    Armor: 1
+    Damage: 3
+    Reloading: 2
+    RewardType: 0
+    RewardCount: 8
+  - UnitType: 11
+    Health: 30
+    Armor: 0.1
+    Damage: 3
+    Reloading: 1
+    RewardType: 0
+    RewardCount: 2
+  - UnitType: 12
+    Health: 30
+    Armor: 0.2
+    Damage: 3
+    Reloading: 1.2
+    RewardType: 0
+    RewardCount: 2
+  - UnitType: 13
+    Health: 40
+    Armor: 0.1
+    Damage: 3
+    Reloading: 0.7
+    RewardType: 0
+    RewardCount: 2
+  - UnitType: 14
+    Health: 50
+    Armor: 0.1
+    Damage: 2
+    Reloading: 0.7
+    RewardType: 0
+    RewardCount: 3
+  - UnitType: 15
+    Health: 50
+    Armor: 0.2
+    Damage: 3
+    Reloading: 1
+    RewardType: 0
+    RewardCount: 7
+  - UnitType: 16
+    Health: 40
+    Armor: 0.5
+    Damage: 2
+    Reloading: 1
+    RewardType: 0
+    RewardCount: 3
+  - UnitType: 17
+    Health: 40
+    Armor: 0.4
+    Damage: 2
+    Reloading: 0.8
+    RewardType: 0
+    RewardCount: 4
+  - UnitType: 18
+    Health: 100
+    Armor: 0.1
+    Damage: 3
+    Reloading: 1.2
+    RewardType: 0
+    RewardCount: 5
+  - UnitType: 19
+    Health: 60
+    Armor: 0.3
+    Damage: 2
+    Reloading: 1.2
+    RewardType: 0
+    RewardCount: 4
+  - UnitType: 20
+    Health: 80
+    Armor: 0.2
+    Damage: 3
+    Reloading: 1.5
+    RewardType: 0
+    RewardCount: 4
   StickmanStatsConfigModel:
   - UnitType: 1
     Level: 1
     Damage: 5
     Reloading: 0.5
-    Price: 10
-    AttackSpeed: 30
+    Price: 15
+    AttackSpeed: 15
   - UnitType: 2
     Level: 2
-    Damage: 10
+    Damage: 8
     Reloading: 0.5
-    Price: 10
-    AttackSpeed: 30
+    Price: 20
+    AttackSpeed: 15
   - UnitType: 3
     Level: 3
-    Damage: 15
+    Damage: 12
     Reloading: 0.5
-    Price: 10
-    AttackSpeed: 30
+    Price: 25
+    AttackSpeed: 15
   - UnitType: 4
     Level: 4
-    Damage: 20
+    Damage: 15
     Reloading: 0.5
-    Price: 10
+    Price: 30
+    AttackSpeed: 15
+  - UnitType: 5
+    Level: 5
+    Damage: 18
+    Reloading: 0
+    Price: 35
+    AttackSpeed: 15
+  - UnitType: 6
+    Level: 6
+    Damage: 20
+    Reloading: 0
+    Price: 40
+    AttackSpeed: 20
+  - UnitType: 7
+    Level: 7
+    Damage: 24
+    Reloading: 0
+    Price: 45
+    AttackSpeed: 20
+  - UnitType: 8
+    Level: 8
+    Damage: 28
+    Reloading: 0
+    Price: 50
+    AttackSpeed: 20
+  - UnitType: 9
+    Level: 9
+    Damage: 32
+    Reloading: 0
+    Price: 55
+    AttackSpeed: 20
+  - UnitType: 10
+    Level: 10
+    Damage: 36
+    Reloading: 0
+    Price: 60
+    AttackSpeed: 20
+  - UnitType: 11
+    Level: 11
+    Damage: 40
+    Reloading: 0
+    Price: 65
+    AttackSpeed: 25
+  - UnitType: 12
+    Level: 12
+    Damage: 45
+    Reloading: 0
+    Price: 70
+    AttackSpeed: 25
+  - UnitType: 13
+    Level: 13
+    Damage: 50
+    Reloading: 0
+    Price: 80
+    AttackSpeed: 25
+  - UnitType: 14
+    Level: 14
+    Damage: 55
+    Reloading: 0
+    Price: 90
+    AttackSpeed: 25
+  - UnitType: 15
+    Level: 15
+    Damage: 60
+    Reloading: 0
+    Price: 100
+    AttackSpeed: 25
+  - UnitType: 16
+    Level: 16
+    Damage: 65
+    Reloading: 0
+    Price: 120
+    AttackSpeed: 30
+  - UnitType: 17
+    Level: 17
+    Damage: 70
+    Reloading: 0
+    Price: 140
+    AttackSpeed: 30
+  - UnitType: 18
+    Level: 18
+    Damage: 75
+    Reloading: 0
+    Price: 160
+    AttackSpeed: 30
+  - UnitType: 19
+    Level: 19
+    Damage: 80
+    Reloading: 0
+    Price: 180
+    AttackSpeed: 30
+  - UnitType: 20
+    Level: 20
+    Damage: 85
+    Reloading: 0
+    Price: 200
     AttackSpeed: 30

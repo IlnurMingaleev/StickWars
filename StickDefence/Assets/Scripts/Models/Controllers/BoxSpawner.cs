@@ -43,7 +43,7 @@ namespace Models.Controllers
                     f => { UpdateFill(f); },
                     () =>
                     {
-                         _mergeController.PlaceDefinedItem((int)PlayerUnitTypeEnum.PlayerOne);
+                         _mergeController.PlaceDefinedItem((int)PlayerUnitTypeEnum.One);
                         SetTimerAccordingAvailability();
                     });
             

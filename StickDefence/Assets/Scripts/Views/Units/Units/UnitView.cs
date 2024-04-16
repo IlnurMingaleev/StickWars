@@ -63,10 +63,10 @@ namespace Views.Units.Units
             _unitFollowPath.Init(pathTypes, pathElements);
         }
 
-        public void SubscribeOnHealthChanged()
+        public void SubscribeOnHealthChanged(UnitTypeEnum unitType)
         {
             _damageable.HealthCurrent
-                .Subscribe(health => HealthBar.SetBarFiilAmount(health, _damageable.HealthMax.Value))
+                .Subscribe(health => HealthBar.SetBarFiilAmount(health, _damageable.HealthMax.Value, unitType))
                 .AddTo(_disposable);
         }
     }

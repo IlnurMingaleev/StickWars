@@ -153,7 +153,7 @@ namespace UI.Windows
         private void OpenFirstLevelUnit(StickmanStatsConfig stickmanStatsConfig, StickManUIItem stickman,
             PumpingPerkData pumpingGamePerk)
         {
-            if ((int) stickmanStatsConfig.UnitType == (int) PlayerUnitTypeEnum.PlayerOne)
+            if ((int) stickmanStatsConfig.UnitType == (int) PlayerUnitTypeEnum.One)
             {
                 stickman.BuyButton.IsInteractable = true;
                 stickman.LockTemplate.gameObject.SetActive(false);

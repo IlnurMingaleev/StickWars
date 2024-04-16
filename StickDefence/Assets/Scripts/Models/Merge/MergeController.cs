@@ -271,7 +271,7 @@ namespace Models.Merge
                         PlayerUnitTypeEnum unitType = slots[slotIndex].currentItem.UnitTypeEnum;
                         PlayerUnitTypeEnum innerUnitType= slots[innerSlotIndex].currentItem.UnitTypeEnum;
                         if (slots[innerSlotIndex].state == SlotState.Full &&
-                           unitType == innerUnitType && unitType != PlayerUnitTypeEnum.PlayerThree)
+                           unitType == innerUnitType && unitType != PlayerUnitTypeEnum.Twenty)
                         {
                             slots[slotIndex].DestroyItem(); 
                             slots[innerSlotIndex].DestroyItem();

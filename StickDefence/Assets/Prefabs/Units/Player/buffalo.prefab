@@ -992,7 +992,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <PosAttack>k__BackingField: {fileID: 6215573802483671562}
-  <AttackRange>k__BackingField: 50
+  <AttackRange>k__BackingField: 150
   <ContactFilter>k__BackingField:
     useTriggers: 0
     useLayerMask: 1

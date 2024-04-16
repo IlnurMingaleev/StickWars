@@ -31,70 +31,463 @@ MonoBehaviour:
     - IsBossDay: 0
       Groups:
       - GroupUnitsIndex: 0
-        Delay: 3
+        Delay: 2
       - GroupUnitsIndex: 0
-        Delay: 3
-    - IsBossDay: 1
+        Delay: 2
+    - IsBossDay: 0
       Groups:
       - GroupUnitsIndex: 0
         Delay: 3
       - GroupUnitsIndex: 1
         Delay: 3
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 20
+        Delay: 3
+      - GroupUnitsIndex: 20
+        Delay: 3
+      - GroupUnitsIndex: 60
+        Delay: 3
+      - GroupUnitsIndex: 61
+        Delay: 3
+      - GroupUnitsIndex: 70
+        Delay: 2
   - MapStage: 2
     Days:
     - IsBossDay: 0
       Groups:
-      - GroupUnitsIndex: 0
-        Delay: 3
-      - GroupUnitsIndex: 1
-        Delay: 3
-    - IsBossDay: 1
-      Groups:
-      - GroupUnitsIndex: 0
-        Delay: 3
-      - GroupUnitsIndex: 1
-        Delay: 3
-  - MapStage: 3
-    Days:
+      - GroupUnitsIndex: 20
+        Delay: 2
+      - GroupUnitsIndex: 20
+        Delay: 2
     - IsBossDay: 0
       Groups:
-      - GroupUnitsIndex: 0
+      - GroupUnitsIndex: 40
         Delay: 3
-      - GroupUnitsIndex: 1
+      - GroupUnitsIndex: 41
         Delay: 3
-    - IsBossDay: 1
-      Groups:
-      - GroupUnitsIndex: 0
-        Delay: 3
-      - GroupUnitsIndex: 1
-        Delay: 3
-  - MapStage: 4
-    Days:
     - IsBossDay: 0
       Groups:
-      - GroupUnitsIndex: 1
+      - GroupUnitsIndex: 20
         Delay: 3
+      - GroupUnitsIndex: 20
+        Delay: 3
+      - GroupUnitsIndex: 60
+        Delay: 3
+      - GroupUnitsIndex: 61
+        Delay: 3
+      - GroupUnitsIndex: 70
+        Delay: 2
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 60
+        Delay: 3
+      - GroupUnitsIndex: 61
+        Delay: 3
+      - GroupUnitsIndex: 60
+        Delay: 3
+      - GroupUnitsIndex: 61
+        Delay: 3
+      - GroupUnitsIndex: 70
+        Delay: 2
   _unitGroups:
   - Units:
+    - UnitType: 11
+      Count: 1
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 12
+      Count: 1
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 13
+      Count: 1
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 14
+      Count: 1
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 15
+      Count: 1
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 16
+      Count: 1
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 17
+      Count: 1
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 18
+      Count: 1
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 19
+      Count: 1
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 20
+      Count: 1
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 1
+      Count: 1
+      Delay: 0.2
+      MovementType: 1
+  - Units:
     - UnitType: 2
-      Count: 6
+      Count: 1
       Delay: 0.2
-      MovementType: 0
+      MovementType: 1
+  - Units:
+    - UnitType: 3
+      Count: 1
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 4
+      Count: 1
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 5
+      Count: 1
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 6
+      Count: 1
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 7
+      Count: 1
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 8
+      Count: 1
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 9
+      Count: 1
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 10
+      Count: 1
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 11
+      Count: 2
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 12
+      Count: 2
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 13
+      Count: 2
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 14
+      Count: 2
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 15
+      Count: 2
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 16
+      Count: 2
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 17
+      Count: 2
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 18
+      Count: 2
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 19
+      Count: 2
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 20
+      Count: 2
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 1
+      Count: 2
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 2
+      Count: 2
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 3
+      Count: 2
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 4
+      Count: 2
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 5
+      Count: 2
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 6
+      Count: 2
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 7
+      Count: 2
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 8
+      Count: 2
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 9
+      Count: 2
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 10
+      Count: 2
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 11
+      Count: 3
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 12
+      Count: 3
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 13
+      Count: 3
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 14
+      Count: 3
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 15
+      Count: 3
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 16
+      Count: 3
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 17
+      Count: 3
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 18
+      Count: 3
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 19
+      Count: 3
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 20
+      Count: 3
+      Delay: 0.2
+      MovementType: 1
   - Units:
     - UnitType: 1
       Count: 3
       Delay: 0.2
       MovementType: 1
-    - UnitType: 1
-      Count: 1
-      Delay: 1
-      MovementType: 1
   - Units:
-    - UnitType: 1
+    - UnitType: 2
       Count: 3
       Delay: 0.2
       MovementType: 1
+  - Units:
+    - UnitType: 3
+      Count: 3
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 4
+      Count: 3
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 5
+      Count: 3
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 6
+      Count: 3
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 7
+      Count: 3
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 8
+      Count: 3
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 9
+      Count: 3
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 10
+      Count: 3
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 11
+      Count: 4
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 12
+      Count: 4
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 13
+      Count: 4
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 14
+      Count: 4
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 15
+      Count: 4
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 16
+      Count: 4
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 17
+      Count: 4
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 18
+      Count: 4
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 19
+      Count: 4
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 20
+      Count: 4
+      Delay: 0.2
+      MovementType: 1
+  - Units:
     - UnitType: 1
-      Count: 1
-      Delay: 1
+      Count: 4
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 2
+      Count: 4
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 3
+      Count: 4
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 4
+      Count: 4
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 5
+      Count: 4
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 6
+      Count: 4
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 7
+      Count: 4
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 8
+      Count: 4
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 9
+      Count: 4
+      Delay: 0.2
+      MovementType: 1
+  - Units:
+    - UnitType: 10
+      Count: 4
+      Delay: 0.2
       MovementType: 1
