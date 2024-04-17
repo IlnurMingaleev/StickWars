@@ -1,13 +1,13 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1102 &-6060784353198955237
+--- !u!1102 &-1901254517763365317
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: fortress_launch
+  m_Name: fortress_prepare_launch
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -20,7 +20,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 6d7e6d45cdac66347bc0247523de9386, type: 2}
+  m_Motion: {fileID: 7400000, guid: 6045506346dda6344a1f1294e9ce5fa7, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -36,14 +36,14 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-    m_State: {fileID: -6060784353198955237}
-    m_Position: {x: 340, y: 100, z: 0}
+    m_State: {fileID: 3348358835848722335}
+    m_Position: {x: 360, y: 40, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 8341632170025351594}
-    m_Position: {x: 340, y: 170, z: 0}
+    m_State: {fileID: 4437480592333555439}
+    m_Position: {x: 350, y: 110, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 272255394324530504}
-    m_Position: {x: 350, y: 40, z: 0}
+    m_State: {fileID: -1901254517763365317}
+    m_Position: {x: 330, y: -10, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -53,7 +53,7 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 100, y: 170, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 8341632170025351594}
+  m_DefaultState: {fileID: 4437480592333555439}
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0
@@ -76,15 +76,15 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
---- !u!1102 &272255394324530504
+--- !u!1102 &3348358835848722335
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: fortress_prepare_launch
-  m_Speed: 0
+  m_Name: fortress_launch
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -96,13 +96,13 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 49f4da221dc4eac47ba50359ae3b5ed4, type: 2}
+  m_Motion: {fileID: 7400000, guid: 31b9ba3d800d8d5478f4b63da20cc22b, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &8341632170025351594
+--- !u!1102 &4437480592333555439
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
@@ -110,7 +110,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: fortress_default_state
-  m_Speed: 0
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -122,7 +122,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: f0af803ba8e3d6444b1870ee9f8b3eca, type: 2}
+  m_Motion: {fileID: 7400000, guid: 6045506346dda6344a1f1294e9ce5fa7, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

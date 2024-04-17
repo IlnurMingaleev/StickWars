@@ -2316,6 +2316,18 @@ PrefabInstance:
       propertyPath: _mergeController
       value: 
       objectReference: {fileID: 768815831}
+    - target: {fileID: 1839477582591822084, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
+      propertyPath: MapStageConfig.MapStage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839477582591822084, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
+      propertyPath: MapStageConfig.Days.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839477582591822084, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
+      propertyPath: MapStageConfig.Days.Array.data[0].Groups.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2573299026537956282, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
       propertyPath: m_Name
       value: BattleStage

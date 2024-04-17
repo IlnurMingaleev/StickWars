@@ -25,6 +25,7 @@ namespace Models.Attacking
         protected ITimerModel TimerModelCooldown;
         protected Action StartAttackAnimAction;
         protected CompositeDisposable _timerFindDisposable = new CompositeDisposable();
+        protected CompositeDisposable _timerAttackDisposable = new CompositeDisposable();
         private bool _isFind = false;
         protected bool IsEnemyFinded = false;
 
@@ -87,11 +88,12 @@ namespace Models.Attacking
         {
             ClearAllTimers();
             IsEnemyFinded = false;
-            TimerModelCooldown = TimerService.AddGameTimer(_cooldownDuration, null, () =>
+            Observable.Timer(TimeSpan.FromSeconds(_cooldownDuration)).Repeat().Subscribe(_ =>EndCooldown() ).AddTo(_timerAttackDisposable);
+            /*TimerModelCooldown = TimerService.AddGameTimer(_cooldownDuration, null, () =>
             {
                 endCooldown?.Invoke();
                 EndCooldown();
-            }, false);
+            }, false)*/;
         }
 
         private void EndCooldown()
@@ -120,11 +122,12 @@ namespace Models.Attacking
 
         private void ClearCooldownTimer()
         {
-            if (TimerModelCooldown != null)
+            /*if (TimerModelCooldown != null)
             {
-                TimerModelCooldown.StopTick();
+               // TimerModelCooldown.StopTick();
                 TimerModelCooldown = null;
-            }
+            }*/
+            _timerAttackDisposable.Clear();
         }
     }
 }

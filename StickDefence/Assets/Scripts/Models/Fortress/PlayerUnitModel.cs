@@ -132,7 +132,7 @@ namespace Models.Fortress
 
             float roundsPerMinute = _stickmanStatsConfig.AttackSpeed;
             float ticks = 60f;
-            float reloading = ticks / roundsPerMinute; 
+            float reloading = 0.7f; //ticks / roundsPerMinute;
             
             _rangeAttackModel.SetReloading(reloading); ;
         }
@@ -143,7 +143,7 @@ namespace Models.Fortress
 
             float roundsPerMinute = _stickmanStatsConfig.AttackSpeed * 1.5f;
             float ticks = 60f;
-            float reloading = ticks / roundsPerMinute; 
+            float reloading = 0.7f; //ticks / roundsPerMinute; 
             
             _rangeAttackModel.SetReloading(reloading);
             
@@ -158,6 +158,7 @@ namespace Models.Fortress
 
         private void StartAttackAnim()
         {
+            View.StartLaunchAnim();
             _rangeAttackModel.Attack();
             _rangeAttackModel.StartCooldown(null);
         }
@@ -165,6 +166,16 @@ namespace Models.Fortress
         ~PlayerUnitModel()
         {
             _disposableIsActive.Clear();
+        }
+
+        public void Pause()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Play()
+        {
+            throw new NotImplementedException();
         }
     }
 }

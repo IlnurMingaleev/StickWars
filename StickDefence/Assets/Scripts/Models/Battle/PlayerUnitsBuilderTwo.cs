@@ -66,7 +66,6 @@ namespace Models.Battle
         {
             PlayerViewTwo playerViewTwo = null;
             InitFortress(playerUnitType, parent, slotTypeEnum,out playerViewTwo );
-            _fortressView.StartPrepare();
             return playerViewTwo;
         }
         
@@ -147,6 +146,10 @@ namespace Models.Battle
 
         private void OnPlayRunTimes()
         {
+            /*foreach (var unit in _spawnedUnits)
+            {
+                unit.Play();
+            }*/
             foreach (var projectileView in _projectiles)
             {
                 projectileView.StartMove();
@@ -155,6 +158,10 @@ namespace Models.Battle
 
         private void OnPauseRunTime()
         {
+            /*foreach (var unit in _spawnedUnits)
+            {
+                unit.Pause();
+            }*/
             foreach (var projectileView in _projectiles)
             {
                 projectileView.StopMove();
