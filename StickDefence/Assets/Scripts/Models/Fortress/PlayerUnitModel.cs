@@ -132,7 +132,7 @@ namespace Models.Fortress
 
             float roundsPerMinute = _stickmanStatsConfig.AttackSpeed;
             float ticks = 60f;
-            float reloading = 0.7f; //ticks / roundsPerMinute;
+            float reloading = ticks / roundsPerMinute;
             
             _rangeAttackModel.SetReloading(reloading); ;
         }
@@ -143,7 +143,7 @@ namespace Models.Fortress
 
             float roundsPerMinute = _stickmanStatsConfig.AttackSpeed * 1.5f;
             float ticks = 60f;
-            float reloading = 0.7f; //ticks / roundsPerMinute; 
+            float reloading = ticks / roundsPerMinute; 
             
             _rangeAttackModel.SetReloading(reloading);
             

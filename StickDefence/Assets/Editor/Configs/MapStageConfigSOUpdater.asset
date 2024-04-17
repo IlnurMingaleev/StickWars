@@ -21,10 +21,10 @@ MonoBehaviour:
   - StageType: 2
     Coin: 10
     Gem: 0
-  - StageType: 3
+  - StageType: 0
     Coin: 10
     Gem: 0
-  - StageType: 4
+  - StageType: 0
     Coin: 10
     Gem: 0
   MapBuilder:
@@ -72,36 +72,6 @@ MonoBehaviour:
     Day: 3
     GroupUnitsIndex: 70
     Delay: 2
-    IsBossDay: 0
-  - MapStage: 0
-    Day: 0
-    GroupUnitsIndex: 0
-    Delay: 0
-    IsBossDay: 0
-  - MapStage: 0
-    Day: 0
-    GroupUnitsIndex: 0
-    Delay: 0
-    IsBossDay: 0
-  - MapStage: 0
-    Day: 0
-    GroupUnitsIndex: 0
-    Delay: 0
-    IsBossDay: 0
-  - MapStage: 0
-    Day: 0
-    GroupUnitsIndex: 0
-    Delay: 0
-    IsBossDay: 0
-  - MapStage: 0
-    Day: 0
-    GroupUnitsIndex: 0
-    Delay: 0
-    IsBossDay: 0
-  - MapStage: 0
-    Day: 0
-    GroupUnitsIndex: 0
-    Delay: 0
     IsBossDay: 0
   - MapStage: 0
     Day: 0
