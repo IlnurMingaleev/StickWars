@@ -492,8 +492,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96523fb024cd4389b4d2c94484855bb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 0}
-  _fortressCallback: {fileID: 0}
+  _animator: {fileID: 6197531946171819463}
+  _fortressCallback: {fileID: 3211764036672064171}
 --- !u!1 &4114218841079841862
 GameObject:
   m_ObjectHideFlags: 0
@@ -900,6 +900,8 @@ GameObject:
   - component: {fileID: 7003881373563839734}
   - component: {fileID: 7473427583956471415}
   - component: {fileID: 6582406904687017853}
+  - component: {fileID: 6197531946171819463}
+  - component: {fileID: 3211764036672064171}
   m_Layer: 0
   m_Name: hippo
   m_TagString: Untagged
@@ -1031,10 +1033,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 826af163518744be978263c568cd8d38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _battleFortressLaunch: {fileID: 8572631870639881399}
   _damageable: {fileID: 7473427583956471415}
   _attackBlockView: {fileID: 7003881373563839734}
-  _animator: {fileID: 3263178634632330121}
-  _unitAnimationCallbacks: {fileID: 2054795232237417163}
+--- !u!95 &6197531946171819463
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5155550405894979362}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c10b07e775176024985630589ee587df, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3211764036672064171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5155550405894979362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61901eff2e13484fb34ceda12f563852, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5839157000785420032
 GameObject:
   m_ObjectHideFlags: 0

@@ -35,14 +35,17 @@ namespace Models.Battle
         private int _maxHealth = 1;
         private List<ProjectileView> _projectiles = new();
         private readonly List<PlayerUnitModel> _spawnedUnits   = new();
-        
+
+
+        private PlayerViewTwo _fortressView;
+        private PlayerUnitModel _fortressModel;
         private bool _attackSpeedActive = false;
         private CompositeDisposable _disposable = new CompositeDisposable();
         
         public bool AttackSpeedActive => _attackSpeedActive;
         public List<PlayerUnitModel> SpawnedUnits => _spawnedUnits;
         public void SetAttackSpeedActive(bool value) => _attackSpeedActive = value;
-      
+        public bool IsLaunchIsProgress => _fortressView.IsLaunchIsProgress;
 
         private void OnEnable()
         {
@@ -58,14 +61,26 @@ namespace Models.Battle
             DestroyStage();
             _disposable.Clear();
         }
-
+        
         public PlayerViewTwo InitStageLoadBattle(PlayerUnitTypeEnum playerUnitType, Transform parent, SlotTypeEnum slotTypeEnum)
         {
             PlayerViewTwo playerViewTwo = null;
             InitFortress(playerUnitType, parent, slotTypeEnum,out playerViewTwo );
+            _fortressView.StartPrepare();
             return playerViewTwo;
         }
         
+        public void StartLaunchAnim()
+        {
+            _fortressView.StartLaunchAnim();
+        }
+
+        public void Resurrect()
+        {
+           // _playerTankModel.Resurrect();
+        }
+        
+        public float GetDeltaHealth() => (float)_fortressView.HealthCurrent.Value / (float) _maxHealth;
 
         private void DestroyStage()
         {
@@ -84,13 +99,13 @@ namespace Models.Battle
         { 
             var unitConfig = _configManager.UnitsStatsSo.DictionaryStickmanConfigs[unitType];
             var unitView = Instantiate(_configManager.PrefabsUnitsSO.PlayerUnitPrefabs[unitType].GO,parent).GetComponent<PlayerViewTwo>();
-            
-            var playerUnitModel= new PlayerUnitModel(unitView, _soundManager, _timerService,unitConfig, _attackSpeedActive);
-            playerUnitModel.SetParentSlotType(slotType);
-            playerUnitModel.InitAttack(CreateProjectile, RemoveProjectile);
-            playerUnitModel.InitSubActive();
-            playerUnitModel.OnModelRemove += FortressModelOnModelRemove;
-            _spawnedUnits.Add(playerUnitModel);
+            _fortressView = unitView;
+            _fortressModel = new PlayerUnitModel(unitView, _soundManager, _timerService,unitConfig, _attackSpeedActive);
+            _fortressModel.SetParentSlotType(slotType);
+            _fortressModel.InitAttack(CreateProjectile, RemoveProjectile);
+            _fortressModel.InitSubActive();
+            _fortressModel.OnModelRemove += FortressModelOnModelRemove;
+            _spawnedUnits.Add(_fortressModel);
             playerViewTwo = unitView;
         }
 
@@ -132,10 +147,6 @@ namespace Models.Battle
 
         private void OnPlayRunTimes()
         {
-            foreach (var baseUnit in _spawnedUnits)
-            {
-                baseUnit.OnPlay();
-            }
             foreach (var projectileView in _projectiles)
             {
                 projectileView.StartMove();
@@ -144,11 +155,6 @@ namespace Models.Battle
 
         private void OnPauseRunTime()
         {
-            foreach (var baseUnit in _spawnedUnits)
-            {
-                baseUnit.OnPause();
-            }
-
             foreach (var projectileView in _projectiles)
             {
                 projectileView.StopMove();
