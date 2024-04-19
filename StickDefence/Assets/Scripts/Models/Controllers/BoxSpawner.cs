@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Enums;
+using Models.DataModels;
 using Models.Fabrics;
 using Models.Merge;
 using Models.Timers;
@@ -29,7 +30,7 @@ namespace Models.Controllers
         private ITimerModel _timerModel;
         private BottomPanelWindow _bottomPanelWindow;
         private const float IsAvailableCheckInterval = 10.0f;
-
+        [Inject] private IDataCentralService _dataCentralService;
             private void Start()
         {
             _bottomPanelWindow = _windowManager.GetWindow<BottomPanelWindow>();
@@ -43,7 +44,10 @@ namespace Models.Controllers
                     f => { UpdateFill(f); },
                     () =>
                     {
-                         _mergeController.PlaceDefinedItem((int)PlayerUnitTypeEnum.One);
+                        if((int)_dataCentralService.PumpingDataModel.MaxStickmanLevel.Value >= (int)PlayerUnitTypeEnum.Four )
+                         _mergeController.PlaceDefinedItem(((int)_dataCentralService.PumpingDataModel.MaxStickmanLevel.Value - 3));
+                        else
+                            _mergeController.PlaceDefinedItem((int)PlayerUnitTypeEnum.One);
                         SetTimerAccordingAvailability();
                     });
             

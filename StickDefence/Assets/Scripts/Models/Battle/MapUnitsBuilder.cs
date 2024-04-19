@@ -236,14 +236,16 @@ namespace Models.Battle
                 for (int j = 0; j < unitsGroup.Units[i].Count; j++)
                 {
                     var delay = (i + j + 1) * unitsGroup.Units[i].Delay;
-                    InstantiateUnit(unitsGroup.Units[i].UnitType, GetUnitMovementPath(unitsGroup.Units[i].MovementType), delay);
+                    InstantiateUnit(unitsGroup.Units[i].UnitType, GetUnitMovementPath(unitsGroup.Units[i].MovementType), unitsGroup.Units[i].MovementType, delay);
                 }
             }
         }
 
-        private void InstantiateUnit(UnitTypeEnum unitType, MovementPath movementPath, float delay)
+        private void InstantiateUnit(UnitTypeEnum unitType, MovementPath movementPath,
+            UnitMovementTypeEnum unitMovementTypeEnum, float delay)
         {
             var unitConfig = _configManager.UnitsStatsSo.EnemyUnitConfigs[unitType];
+            var rewardConfig = _configManager.UnitsStatsSo.UnitRewardConfigs[unitType];
             
             var unitView = Instantiate(_configManager.PrefabsUnitsSO
                 .UnitPrefabs[unitType], movementPath.SpawnPoint.position, Quaternion.identity, _parentSpawnPoint).GetComponent<UnitView>();
@@ -254,13 +256,12 @@ namespace Models.Battle
             
             unitView.InitUnitMove(movementPath.PathTypes, movementPath.PathElements);
             
-            var baseUnit = UnitCreate(unitType, unitView);
-            baseUnit.InitBase(unitView,_timerService,_soundManager);
+            var baseUnit = UnitCreate(unitType, unitView,unitMovementTypeEnum);
+            baseUnit.InitBase(unitView,_timerService,_soundManager,unitConfig,rewardConfig);
+            
             baseUnit.InitActions(UnitKilled);
             baseUnit.InitAttack(CreateProjectile, RemoveProjectile);
-            
-
-            baseUnit.InitUnitConfigStats(unitConfig);
+            baseUnit.InitUnitConfigStats();
             unitView.SubscribeOnHealthChanged(unitType);
             _spawnedUnits.Add(baseUnit);
             
@@ -275,12 +276,13 @@ namespace Models.Battle
 
         private void UnitKilled(BaseUnit baseUnit)
         {
+            _dataCentralService.PumpingDataModel.IncreaseExperience(baseUnit.Experience,_configManager);
+            AddCoins(baseUnit);
             //Destroy(baseUnit.View.gameObject);
             _spawnedUnits.Remove(baseUnit);
             CheckIsEmptyDay();
             _unitsCount.Value += 1;
-            _dataCentralService.PumpingDataModel.IncreaseExperience(baseUnit.Experience,_configManager);
-            AddCoins(baseUnit);
+
             _dataCentralService.SaveFull();
         } 
         
@@ -319,13 +321,17 @@ namespace Models.Battle
             return _meleeMovementPathGroups.GetRandomPath();
         }
 
-        private BaseUnit UnitCreate(UnitTypeEnum unitType, UnitView unitView)
+        private BaseUnit UnitCreate(UnitTypeEnum unitType, UnitView unitView, UnitMovementTypeEnum unitMovementType)
         {
+            switch (unitMovementType)
+            {
+                case UnitMovementTypeEnum.Melee:
+                    return new SkeletonMeleeUnitModel();
+                case UnitMovementTypeEnum.Range:
+                    return new SkeletonRangeUnitModel();
+            }
 
-             return new SkeletonRangeUnitModel();
-
-
-            //return new BaseUnit(unitView, _timerService, _soundManager);
+            return new BaseUnit();
         }
         
         private void CreateProjectile(ProjectileView projectileView)

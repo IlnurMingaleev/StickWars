@@ -30,18 +30,22 @@ namespace Models.Units
         protected DefaultAttackModel AttackModel;
         
         protected UnitStatsConfig UnitStatsConfig;
+        protected UnitRewardConfig UnitRewardConfig;
         
         private ReactiveProperty<bool> _isMoving = new ReactiveProperty<bool>(false);
         
         public IReadOnlyReactiveProperty<bool> IsMoving => _isMoving;
 
-        public int Experience => UnitStatsConfig.Experience;
-        public int Coins => UnitStatsConfig.Coins;
-        public void InitBase(UnitView unitView, ITimerService timerService, ISoundManager soundManager) 
+        public int Experience => UnitRewardConfig.Experience;
+        public int Coins => UnitRewardConfig.RewardCount;
+        public void InitBase(UnitView unitView, ITimerService timerService, ISoundManager soundManager,
+            UnitStatsConfig unitStatsConfig, UnitRewardConfig unitRewardConfig) 
         {
             View = unitView;
             TimerService = timerService;
             SoundManager = soundManager;
+            UnitStatsConfig = unitStatsConfig;
+            UnitRewardConfig = unitRewardConfig;
             unitView.InitUnityActions(OnEnable, OnDisable);
         }
 
@@ -58,9 +62,8 @@ namespace Models.Units
             
         }
 
-        public void InitUnitConfigStats(UnitStatsConfig unitStatsConfig)
+        public void InitUnitConfigStats()
         {
-            UnitStatsConfig = unitStatsConfig;
             View.Damageable.Init(UnitStatsConfig.Health, UnitStatsConfig.Armor);
             _isMoving.Subscribe(OnWalk).AddTo(_disposable);
             AttackModel.SetDamage(UnitStatsConfig.Damage);

@@ -39,6 +39,7 @@ namespace Tools.Configs
             public float Reloading;
             public RewardType RewardType;
             public int RewardCount;
+            public int Experience;
         }
         
       
@@ -54,7 +55,8 @@ namespace Tools.Configs
                 {
                     UnitType = enemyUnitConfig.UnitType,
                     RewardType = enemyUnitConfig.RewardType,
-                    RewardCount = enemyUnitConfig.RewardCount
+                    RewardCount = enemyUnitConfig.RewardCount,
+                    Experience = enemyUnitConfig.Experience,
                 });
                 
                 unitConfigs.Add(new UnitStatsConfig()
@@ -64,6 +66,7 @@ namespace Tools.Configs
                     Armor = enemyUnitConfig.Armor,
                     Damage = enemyUnitConfig.Damage,
                     Reloading = enemyUnitConfig.Reloading,
+                   
                 });
             }
 
@@ -72,9 +75,11 @@ namespace Tools.Configs
                 stickmanStatsConfigs.Add(new StickmanStatsConfig()
                 {
                     UnitType = stickmanStatsConfig.UnitType,
+                    Level = stickmanStatsConfig.Level, 
                     Damage = stickmanStatsConfig.Damage,
                     AttackSpeed = stickmanStatsConfig.AttackSpeed,
                     Reloading = stickmanStatsConfig.Reloading,
+                    Price = stickmanStatsConfig.Price,
 
                 });
             }

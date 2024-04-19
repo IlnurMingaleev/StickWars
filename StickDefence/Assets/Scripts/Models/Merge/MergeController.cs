@@ -181,11 +181,14 @@ namespace Models.Merge
 
         void OnItemMergedWithTarget(int targetSlotId)
         {
+            if ((PlayerUnitTypeEnum) carryingItem.itemId == _dataCentralService.PumpingDataModel.MaxStickmanLevel.Value)
+            {
+                _dataCentralService.PumpingDataModel.UpgradeMaxStickmanLevel();
+                _dataCentralService.SaveFull();
+            } 
             var slot = GetSlotById(targetSlotId);
             slot.DestroyItem();
-        
             slot.CreateItem(carryingItem.itemId + 1, _playerBuilder);
-
             Destroy(carryingItem.gameObject);
         }
 

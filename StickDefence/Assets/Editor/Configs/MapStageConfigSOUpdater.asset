@@ -21,10 +21,7 @@ MonoBehaviour:
   - StageType: 2
     Coin: 10
     Gem: 0
-  - StageType: 0
-    Coin: 10
-    Gem: 0
-  - StageType: 0
+  - StageType: 3
     Coin: 10
     Gem: 0
   MapBuilder:
@@ -73,21 +70,6 @@ MonoBehaviour:
     GroupUnitsIndex: 70
     Delay: 2
     IsBossDay: 0
-  - MapStage: 0
-    Day: 0
-    GroupUnitsIndex: 0
-    Delay: 0
-    IsBossDay: 0
-  - MapStage: 0
-    Day: 0
-    GroupUnitsIndex: 0
-    Delay: 0
-    IsBossDay: 0
-  - MapStage: 0
-    Day: 0
-    GroupUnitsIndex: 0
-    Delay: 0
-    IsBossDay: 0
   - MapStage: 2
     Day: 1
     GroupUnitsIndex: 20
@@ -133,22 +115,67 @@ MonoBehaviour:
     GroupUnitsIndex: 70
     Delay: 2
     IsBossDay: 0
-  - MapStage: 2
+  - MapStage: 3
+    Day: 1
+    GroupUnitsIndex: 20
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 3
+    Day: 1
+    GroupUnitsIndex: 20
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 3
+    Day: 2
+    GroupUnitsIndex: 40
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 3
+    Day: 2
+    GroupUnitsIndex: 41
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 3
+    Day: 3
+    GroupUnitsIndex: 20
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 3
+    Day: 3
+    GroupUnitsIndex: 20
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 3
+    Day: 3
+    GroupUnitsIndex: 60
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 3
+    Day: 3
+    GroupUnitsIndex: 61
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 3
+    Day: 3
+    GroupUnitsIndex: 70
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 3
     Day: 4
     GroupUnitsIndex: 60
     Delay: 3
     IsBossDay: 0
-  - MapStage: 2
+  - MapStage: 3
     Day: 4
     GroupUnitsIndex: 61
     Delay: 3
     IsBossDay: 0
-  - MapStage: 2
+  - MapStage: 3
     Day: 4
     GroupUnitsIndex: 60
     Delay: 3
     IsBossDay: 0
-  - MapStage: 2
+  - MapStage: 3
     Day: 4
     GroupUnitsIndex: 61
     Delay: 3
@@ -163,7 +190,7 @@ MonoBehaviour:
     UnitType: 11
     Count: 1
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 1
     UnitType: 12
     Count: 1
@@ -173,7 +200,7 @@ MonoBehaviour:
     UnitType: 13
     Count: 1
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 3
     UnitType: 14
     Count: 1
@@ -183,7 +210,7 @@ MonoBehaviour:
     UnitType: 15
     Count: 1
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 5
     UnitType: 16
     Count: 1
@@ -193,7 +220,7 @@ MonoBehaviour:
     UnitType: 17
     Count: 1
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 7
     UnitType: 18
     Count: 1
@@ -203,7 +230,7 @@ MonoBehaviour:
     UnitType: 19
     Count: 1
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 9
     UnitType: 20
     Count: 1
@@ -213,57 +240,57 @@ MonoBehaviour:
     UnitType: 1
     Count: 1
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 11
     UnitType: 2
     Count: 1
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 12
     UnitType: 3
     Count: 1
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 13
     UnitType: 4
     Count: 1
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 14
     UnitType: 5
     Count: 1
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 15
     UnitType: 6
     Count: 1
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 16
     UnitType: 7
     Count: 1
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 17
     UnitType: 8
     Count: 1
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 18
     UnitType: 9
     Count: 1
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 19
     UnitType: 10
     Count: 1
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 20
     UnitType: 11
     Count: 2
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 21
     UnitType: 12
     Count: 2
@@ -273,7 +300,7 @@ MonoBehaviour:
     UnitType: 13
     Count: 2
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 23
     UnitType: 14
     Count: 2
@@ -283,7 +310,7 @@ MonoBehaviour:
     UnitType: 15
     Count: 2
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 25
     UnitType: 16
     Count: 2
@@ -293,7 +320,7 @@ MonoBehaviour:
     UnitType: 17
     Count: 2
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 27
     UnitType: 18
     Count: 2
@@ -303,7 +330,7 @@ MonoBehaviour:
     UnitType: 19
     Count: 2
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 29
     UnitType: 20
     Count: 2
@@ -313,57 +340,57 @@ MonoBehaviour:
     UnitType: 1
     Count: 2
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 31
     UnitType: 2
     Count: 2
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 32
     UnitType: 3
     Count: 2
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 33
     UnitType: 4
     Count: 2
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 34
     UnitType: 5
     Count: 2
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 35
     UnitType: 6
     Count: 2
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 36
     UnitType: 7
     Count: 2
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 37
     UnitType: 8
     Count: 2
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 38
     UnitType: 9
     Count: 2
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 39
     UnitType: 10
     Count: 2
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 40
     UnitType: 11
     Count: 3
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 41
     UnitType: 12
     Count: 3
@@ -373,7 +400,7 @@ MonoBehaviour:
     UnitType: 13
     Count: 3
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 43
     UnitType: 14
     Count: 3
@@ -383,7 +410,7 @@ MonoBehaviour:
     UnitType: 15
     Count: 3
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 45
     UnitType: 16
     Count: 3
@@ -393,7 +420,7 @@ MonoBehaviour:
     UnitType: 17
     Count: 3
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 47
     UnitType: 18
     Count: 3
@@ -403,7 +430,7 @@ MonoBehaviour:
     UnitType: 19
     Count: 3
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 49
     UnitType: 20
     Count: 3
@@ -413,57 +440,57 @@ MonoBehaviour:
     UnitType: 1
     Count: 3
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 51
     UnitType: 2
     Count: 3
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 52
     UnitType: 3
     Count: 3
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 53
     UnitType: 4
     Count: 3
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 54
     UnitType: 5
     Count: 3
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 55
     UnitType: 6
     Count: 3
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 56
     UnitType: 7
     Count: 3
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 57
     UnitType: 8
     Count: 3
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 58
     UnitType: 9
     Count: 3
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 59
     UnitType: 10
     Count: 3
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 60
     UnitType: 11
     Count: 4
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 61
     UnitType: 12
     Count: 4
@@ -473,7 +500,7 @@ MonoBehaviour:
     UnitType: 13
     Count: 4
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 63
     UnitType: 14
     Count: 4
@@ -483,7 +510,7 @@ MonoBehaviour:
     UnitType: 15
     Count: 4
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 65
     UnitType: 16
     Count: 4
@@ -493,7 +520,7 @@ MonoBehaviour:
     UnitType: 17
     Count: 4
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 67
     UnitType: 18
     Count: 4
@@ -503,7 +530,7 @@ MonoBehaviour:
     UnitType: 19
     Count: 4
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 69
     UnitType: 20
     Count: 4
@@ -513,49 +540,49 @@ MonoBehaviour:
     UnitType: 1
     Count: 4
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 71
     UnitType: 2
     Count: 4
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 72
     UnitType: 3
     Count: 4
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 73
     UnitType: 4
     Count: 4
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 74
     UnitType: 5
     Count: 4
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 75
     UnitType: 6
     Count: 4
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 76
     UnitType: 7
     Count: 4
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 77
     UnitType: 8
     Count: 4
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 78
     UnitType: 9
     Count: 4
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0
   - Index: 79
     UnitType: 10
     Count: 4
     Delay: 0.2
-    MovementType: 1
+    MovementType: 0

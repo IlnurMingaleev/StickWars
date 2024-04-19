@@ -137,9 +137,10 @@ namespace UI.Windows
         private void OpenLevelsLess(StickmanStatsConfig stickmanStatsConfig, StickManUIItem stickman,
             PumpingPerkData pumpingGamePerk)
         {
-            if ((int) stickmanStatsConfig.UnitType <= (int) (_dataCentralService.PumpingDataModel.MaxStickmanLevel.Value - 4))
+            if ((int) stickmanStatsConfig.UnitType <= (int) (_dataCentralService.PumpingDataModel.MaxStickmanLevel.Value - 3))
             {
                 stickman.BuyButton.IsInteractable = true;
+                stickman.LockTemplate.gameObject.SetActive(false);
                 SubscribeToBuyEvent(stickmanStatsConfig,stickman,pumpingGamePerk);
             }
             else

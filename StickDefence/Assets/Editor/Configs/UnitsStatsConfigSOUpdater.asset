@@ -19,170 +19,190 @@ MonoBehaviour:
     Health: 20
     Armor: 0.3
     Damage: 3
-    Reloading: 1
+    Reloading: 3
     RewardType: 0
-    RewardCount: 2
+    RewardCount: 4
+    Experience: 10
   - UnitType: 2
     Health: 40
     Armor: 0.5
     Damage: 2
     Reloading: 1
     RewardType: 0
-    RewardCount: 4
+    RewardCount: 8
+    Experience: 10
   - UnitType: 3
     Health: 40
     Armor: 1.5
     Damage: 2
     Reloading: 2
     RewardType: 0
-    RewardCount: 5
+    RewardCount: 6
+    Experience: 10
   - UnitType: 4
     Health: 40
     Armor: 0.2
     Damage: 3
     Reloading: 0.5
     RewardType: 0
-    RewardCount: 4
+    RewardCount: 6
+    Experience: 10
   - UnitType: 5
     Health: 10
     Armor: 0.1
     Damage: 2
     Reloading: 0.7
     RewardType: 0
-    RewardCount: 1
+    RewardCount: 4
+    Experience: 10
   - UnitType: 6
     Health: 60
     Armor: 0.3
     Damage: 3
     Reloading: 1
     RewardType: 0
-    RewardCount: 5
+    RewardCount: 7
+    Experience: 10
   - UnitType: 7
     Health: 30
     Armor: 0.6
     Damage: 4
     Reloading: 1.2
     RewardType: 0
-    RewardCount: 5
+    RewardCount: 7
+    Experience: 10
   - UnitType: 8
     Health: 100
     Armor: 1
     Damage: 3
     Reloading: 2
     RewardType: 0
-    RewardCount: 8
+    RewardCount: 10
+    Experience: 10
   - UnitType: 9
     Health: 60
     Armor: 1
     Damage: 2
     Reloading: 1.5
     RewardType: 0
-    RewardCount: 3
+    RewardCount: 4
+    Experience: 10
   - UnitType: 10
     Health: 80
     Armor: 1
     Damage: 3
     Reloading: 2
     RewardType: 0
-    RewardCount: 8
+    RewardCount: 10
+    Experience: 10
   - UnitType: 11
-    Health: 30
+    Health: 10
     Armor: 0.1
     Damage: 3
-    Reloading: 1
+    Reloading: 3
     RewardType: 0
-    RewardCount: 2
+    RewardCount: 4
+    Experience: 20
   - UnitType: 12
-    Health: 30
+    Health: 10
     Armor: 0.2
     Damage: 3
-    Reloading: 1.2
+    Reloading: 3
     RewardType: 0
-    RewardCount: 2
+    RewardCount: 4
+    Experience: 20
   - UnitType: 13
     Health: 40
     Armor: 0.1
     Damage: 3
     Reloading: 0.7
     RewardType: 0
-    RewardCount: 2
+    RewardCount: 4
+    Experience: 20
   - UnitType: 14
     Health: 50
     Armor: 0.1
     Damage: 2
     Reloading: 0.7
     RewardType: 0
-    RewardCount: 3
+    RewardCount: 4
+    Experience: 20
   - UnitType: 15
     Health: 50
     Armor: 0.2
     Damage: 3
     Reloading: 1
     RewardType: 0
-    RewardCount: 7
+    RewardCount: 10
+    Experience: 20
   - UnitType: 16
     Health: 40
     Armor: 0.5
     Damage: 2
     Reloading: 1
     RewardType: 0
-    RewardCount: 3
+    RewardCount: 4
+    Experience: 20
   - UnitType: 17
     Health: 40
     Armor: 0.4
     Damage: 2
     Reloading: 0.8
     RewardType: 0
-    RewardCount: 4
+    RewardCount: 6
+    Experience: 26
   - UnitType: 18
     Health: 100
     Armor: 0.1
     Damage: 3
     Reloading: 1.2
     RewardType: 0
-    RewardCount: 5
+    RewardCount: 10
+    Experience: 20
   - UnitType: 19
     Health: 60
     Armor: 0.3
     Damage: 2
     Reloading: 1.2
     RewardType: 0
-    RewardCount: 4
+    RewardCount: 8
+    Experience: 20
   - UnitType: 20
     Health: 80
     Armor: 0.2
     Damage: 3
     Reloading: 1.5
     RewardType: 0
-    RewardCount: 4
+    RewardCount: 8
+    Experience: 29
   StickmanStatsConfigModel:
   - UnitType: 1
     Level: 1
-    Damage: 5
+    Damage: 8
     Reloading: 0.5
     Price: 15
     AttackSpeed: 15
   - UnitType: 2
     Level: 2
-    Damage: 8
+    Damage: 12
     Reloading: 0.5
     Price: 20
     AttackSpeed: 15
   - UnitType: 3
     Level: 3
-    Damage: 12
+    Damage: 15
     Reloading: 0.5
     Price: 25
     AttackSpeed: 15
   - UnitType: 4
     Level: 4
-    Damage: 15
+    Damage: 18
     Reloading: 0.5
     Price: 30
     AttackSpeed: 15
   - UnitType: 5
     Level: 5
-    Damage: 18
+    Damage: 20
     Reloading: 0
     Price: 35
     AttackSpeed: 15

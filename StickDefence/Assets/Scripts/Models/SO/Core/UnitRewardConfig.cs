@@ -10,5 +10,6 @@ namespace Models.SO.Core
         public UnitTypeEnum UnitType;
         public RewardType RewardType;
         public int RewardCount;
+        public int Experience;
     }
 }

@@ -115,6 +115,6 @@ MonoBehaviour:
     LevelCount: 10
     BaseCost: 10
     AdditionalCost: 2
-    BaseHealthValue: 100
+    BaseHealthValue: 200
     AdditionalHaalthValue: 0
     CurrencyType: 0
