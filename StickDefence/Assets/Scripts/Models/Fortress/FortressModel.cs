@@ -146,7 +146,7 @@ namespace Models.Fortress
         private void OnDead(bool value)
         {
             _isDead = true;
-            _rangeAttackModel.StopPlay();
+            _rangeAttackModel.Dead();
             _coreStateMachine.BattleStateMachine.OnEndBattle(false);
             IsDeadAction?.Invoke();
         }

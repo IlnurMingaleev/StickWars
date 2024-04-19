@@ -1,6 +1,6 @@
 ﻿namespace Models.Attacking.TypesAttack
 {
-    public class MeleeOneTargetAttack : OneTargetAttack
+    public class MeleeSplashTargetAttack : SplashTargetAttack
     {
         public override void Attack()
         {
@@ -11,7 +11,12 @@
                 return;
             }
             
-            SetDamage(TargetDamageable);
+            foreach (var damageable in SplashDamageables)
+            {
+                SetDamage(damageable);
+            }
+            
+            SplashDamageables.Clear();
         }
     }
 }

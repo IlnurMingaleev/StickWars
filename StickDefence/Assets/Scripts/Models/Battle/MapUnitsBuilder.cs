@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Enums;
 using Models.DataModels;
-using Models.Merge;
 using TonkoGames.Controllers.Core;
 using TonkoGames.StateMachine;
 using TonkoGames.StateMachine.Enums;
@@ -11,18 +9,15 @@ using Models.Player;
 using Models.SO.Core;
 using Models.Timers;
 using Models.Units;
-using Models.Units.Units;
 using TonkoGames.Sound;
 using UI.UIManager;
 using UI.Windows;
 using UniRx;
-using Unity.VisualScripting;
 using UnityEngine;
 using VContainer;
 using Views.Move;
 using Views.Projectiles;
 using Views.Units.Units;
-using Random = UnityEngine.Random;
 
 namespace Models.Battle
 {
@@ -325,7 +320,7 @@ namespace Models.Battle
         private BaseUnit UnitCreate(UnitTypeEnum unitType, UnitView unitView)
         {
            
-            return new SkeletonUnitModel(unitView, _timerService, _soundManager);
+            return new BaseUnit();
            
             
             //return new BaseUnit(unitView, _timerService, _soundManager);

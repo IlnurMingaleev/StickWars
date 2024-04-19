@@ -1,14 +1,14 @@
 ﻿using Tools.GameTools;
-using UnityEngine;
 
 namespace TonkoGames.Analytics
 {
     public class GameAnalytics : Singleton<GameAnalytics>
     {
         private AbstractAnalyticPlatform _analyticPlatform;
- 
-        private void Awake()
+
+        protected override void Awake()
         {
+            base.Awake();
 #if UNITY_EDITOR
             _analyticPlatform = new FirebaseAnalyticPlatform();
 #elif UNITY_WEBGL

@@ -10,7 +10,6 @@ namespace Views.Home
         [SerializeField] private DOTweenAnimation _buttonTween;
         [SerializeField] private Collider2D _colliderButton;
 
-        public event System.Action T;
         private void OnEnable()
         {
             _buttonTween.onComplete.AddListener(OnAnimationEnd);

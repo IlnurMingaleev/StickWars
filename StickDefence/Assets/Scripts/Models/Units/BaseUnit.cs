@@ -1,20 +1,21 @@
 ﻿using System;
+using Cysharp.Threading.Tasks;
 using Models.Attacking;
-using Models.Attacking.TypesAttack;
 using Models.SO.Core;
 using Models.Timers;
 using TonkoGames.Sound;
 using UniRx;
 using Views.Projectiles;
 using Views.Units.Units;
+using Object = UnityEngine.Object;
 
 namespace Models.Units
 {
     public class BaseUnit
     {
-        public readonly UnitView View;
-        protected readonly ITimerService TimerService;
-        protected readonly ISoundManager SoundManager;
+        public UnitView View;
+        protected ITimerService TimerService;
+        protected ISoundManager SoundManager;
 
         protected Action<BaseUnit> UnitKilledAction;
         protected Action<ProjectileView> CreateProjectileAction;
@@ -36,7 +37,7 @@ namespace Models.Units
 
         public int Experience => UnitStatsConfig.Experience;
         public int Coins => UnitStatsConfig.Coins;
-        public BaseUnit(UnitView unitView, ITimerService timerService, ISoundManager soundManager) 
+        public void InitBase(UnitView unitView, ITimerService timerService, ISoundManager soundManager) 
         {
             View = unitView;
             TimerService = timerService;
@@ -64,7 +65,6 @@ namespace Models.Units
             _isMoving.Subscribe(OnWalk).AddTo(_disposable);
             AttackModel.SetDamage(UnitStatsConfig.Damage);
             AttackModel.SetReloading(UnitStatsConfig.Reloading);
-           
         }
 
         protected virtual void OnEnable()
@@ -115,7 +115,7 @@ namespace Models.Units
         protected virtual void OnDead(bool value)
         {
             _isDead = true;
-            AttackModel.StopPlay();
+            AttackModel.Dead();
             View.UnitCollider.enabled = false;
         }
 
@@ -136,6 +136,16 @@ namespace Models.Units
         protected virtual void StartCooldownAttackAnimCallback()
         {
             AttackModel.StartCooldown(() => _isAttacking = false);
+        }
+
+        protected async UniTaskVoid DeadDelay()
+        {
+            await UniTask.Delay(TimeSpan.FromSeconds(View.TimerToDestroy));
+
+            if (View != null)
+            {
+                Object.Destroy(View.gameObject);
+            }
         }
     }
 }

@@ -146,13 +146,12 @@ namespace Models.Fortress
             float reloading = ticks / roundsPerMinute; 
             
             _rangeAttackModel.SetReloading(reloading);
-            
         }
         
         private void OnDead(bool value)
         {
             _isDead = true;
-            _rangeAttackModel.StopPlay();
+            _rangeAttackModel.Dead();
             IsDeadAction?.Invoke();
         }
 

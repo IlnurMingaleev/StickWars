@@ -25,21 +25,14 @@ namespace Models.Attacking.TypesAttack
         public override void Attack()
         {
             base.Attack();
-
-            if (TargetDamageable != null)
+            if (TargetDamageable != null && PosAttack != null)
             {
-                var projectile = Object.Instantiate(_projectileViewPrefab, PosAttack.position, Quaternion.identity);
-                var deadTimer = TimerService.AddGameTimer(projectile.DeathTime, null, () =>
-                {
-                    if (projectile != null)
-                    {
-                        projectile.DisposeTopDownMove();
-                        Object.Destroy(projectile.gameObject);
-                    }
-                });
-                projectile.Init(Damage, TargetDamageable.GetTransform().position, ContactFilter.layerMask, SoundManager, _projectileDestroyed, deadTimer);
+                var projectile = Object.Instantiate(_projectileViewPrefab, PosSpawnProjectile.position, Quaternion.identity);
+
+                var isCritical = IsCritical();
+                
+                projectile.Init(DamageCritical(isCritical), TargetDamageable.GetTransform().position, isCritical, ContactFilter.layerMask, SoundManager, _projectileDestroyed, TimerService);
                 _createProjectile?.Invoke(projectile);
-               
             }
         }
     }

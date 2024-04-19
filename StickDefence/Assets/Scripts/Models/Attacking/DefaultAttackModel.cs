@@ -1,21 +1,29 @@
 ﻿using System;
+using System.Collections.Generic;
 using TonkoGames.Sound;
 using Models.Timers;
 using UniRx;
 using UnityEngine;
 using Views.Health;
+using Random = UnityEngine.Random;
 
 namespace Models.Attacking
 {
     public abstract class DefaultAttackModel
     {
-          private const float WaitTickFind = 0.02f;
+        private const float WaitTickFind = 0.06f;
         
         private float _attackRange;
         private float _cooldownDuration;
         protected int Damage;
+        protected float CriticalChance;
+        protected float CriticalMultiplier = 1;
+        
         protected Transform PosAttack;
+        protected Transform PosSpawnProjectile;
         protected IDamageable TargetDamageable;
+        
+        protected List<IDamageable> SplashDamageables = new();
         protected ITimerService TimerService;
         protected ISoundManager SoundManager;
         
@@ -26,10 +34,10 @@ namespace Models.Attacking
         protected Action StartAttackAnimAction;
         protected CompositeDisposable _timerFindDisposable = new CompositeDisposable();
         protected CompositeDisposable _timerAttackDisposable = new CompositeDisposable();
-        private bool _isFind = false;
         protected bool IsEnemyFinded = false;
 
         private bool _isPlay;
+        private bool _canFindAttack;
         
         public int GetDamage()=> Damage;
 
@@ -42,23 +50,14 @@ namespace Models.Attacking
             SoundManager = soundManager;
             AttackingCircle.Init(_attackRange, attackView.ContactFilter, PosAttack);
             StartAttackAnimAction = startAttackAnim;
+            StartLoopUpdate();
         }
-
-        public void ReSetupRangeAttack(float attackRange)
-        {
-            _attackRange = attackRange;
-        }
-
-        public void SetReloading(float reloading)
-        {
-            _cooldownDuration = reloading;
-        }
+        public void ReSetupRangeAttack(float attackRange) => _attackRange = attackRange;
+        public void SetReloading(float reloading) => _cooldownDuration = reloading;
+        public void SetDamage(int value) => Damage = value;
+        public void SetCriticalChance(float value) => CriticalChance = value;
+        public void SetCriticalMultiplier(float value = 1) => CriticalMultiplier = value;
         
-        public void SetDamage(int value)
-        {
-            Damage = value;
-        }
-
         public void StartPlay()
         {
             _isPlay = true;
@@ -71,36 +70,67 @@ namespace Models.Attacking
         public void StopPlay()
         {
             _isPlay = false;
-            ClearAllTimers();
+            StopCanAttacking();
         }
 
-        protected void StartFindAttack()
+        public void Dead()
         {
+            StopPlay();
             ClearAllTimers();
-            Observable.Timer(TimeSpan.FromSeconds(WaitTickFind)).Repeat().Subscribe(_ => EndFindAttackTick()).AddTo(_timerFindDisposable);
         }
-
-        protected virtual void EndFindAttackTick()
+        
+        protected void StartLoopUpdate()
         {
+            Observable.Timer(TimeSpan.FromSeconds(WaitTickFind)).Repeat().Subscribe(_ => TickUpdate()).AddTo(_timerFindDisposable);
         }
-
-        public void StartCooldown(Action endCooldown)
+        
+        private void TickUpdate()
         {
-            ClearAllTimers();
-            IsEnemyFinded = false;
-            Observable.Timer(TimeSpan.FromSeconds(_cooldownDuration)).Repeat().Subscribe(_ =>EndCooldown() ).AddTo(_timerAttackDisposable);
-            /*TimerModelCooldown = TimerService.AddGameTimer(_cooldownDuration, null, () =>
+            if (_canFindAttack)
+            {
+                EndFindAttackTick();
+            }
+        }
+        
+        protected void StartFindAttack(Action endCooldown = null)
+        {
+            ClearCooldownTimer();
+            var result = EndFindAttackTick();
+            
+            if (!result)
             {
                 endCooldown?.Invoke();
-                EndCooldown();
-            }, false)*/;
+                _canFindAttack = true;
+            }
+        }
+        
+        protected virtual bool EndFindAttackTick()
+        {
+            return false;
+        }
+        
+        public void StartCooldown(Action endCooldown)
+        {
+            ClearCooldownTimer();
+            IsEnemyFinded = false;
+
+            TimerModelCooldown = TimerService.AddGameTimer(_cooldownDuration, null, () =>
+            {
+                EndCooldown(endCooldown);
+            }, false);
         }
 
-        private void EndCooldown()
+        private void EndCooldown(Action endCooldown)
         {
+            TimerModelCooldown = null;
+            
             if (_isPlay)
             {
-                StartFindAttack();
+                StartFindAttack(endCooldown);
+            }
+            else
+            {
+                endCooldown?.Invoke();
             }
         }
   
@@ -110,24 +140,33 @@ namespace Models.Attacking
 
         private void ClearAllTimers()
         {
-            ClearFindAttackTimer();
+            _timerFindDisposable.Clear();
             ClearCooldownTimer();
         }
         
-        protected void ClearFindAttackTimer()
+        protected void StopCanAttacking()
         {
-            _timerFindDisposable.Clear();
-            _isFind = false;
+            _canFindAttack = false;
         }
 
         private void ClearCooldownTimer()
         {
-            /*if (TimerModelCooldown != null)
+            if (TimerModelCooldown != null)
             {
-               // TimerModelCooldown.StopTick();
+                TimerModelCooldown.StopTick();
                 TimerModelCooldown = null;
-            }*/
-            _timerAttackDisposable.Clear();
+            }
+        }
+
+        protected bool IsCritical() => Random.Range(0, 100) <= CriticalChance;
+        protected int DamageCritical(bool value) => value ? (int)(Damage * CriticalMultiplier) : Damage;
+        protected void SetDamage(IDamageable damageable)
+        {
+            damageable?.SetDamage(DamageCritical(IsCritical()));
+        }
+        
+        ~DefaultAttackModel(){
+            ClearAllTimers();
         }
     }
 }

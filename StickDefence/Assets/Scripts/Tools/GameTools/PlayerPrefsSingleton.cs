@@ -15,8 +15,7 @@ namespace Tools.GameTools
 #else
         private const string PRENAME= "FlyingTowerLands.PlayerPrefs.Prod.";
 #endif
-        public static PlayerPrefsSingleton Instance { get; } = new PlayerPrefsSingleton();
-        
+
         public ReactiveProperty<StatsData> StatsDataCash = new ReactiveProperty<StatsData>(new StatsData());
         public ReactiveProperty<SubData> SubDataCash = new ReactiveProperty<SubData>(new SubData());
         public ReactiveProperty<MapStagesData> MapStagesDataCash = new ReactiveProperty<MapStagesData>(new MapStagesData());

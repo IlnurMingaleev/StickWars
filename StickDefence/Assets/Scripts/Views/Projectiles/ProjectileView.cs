@@ -35,6 +35,7 @@ namespace Views.Projectiles
 
         private LayerMask _layerMask;
         private ITimerModel _timerModel;
+        private bool _isCritical;
 
         private void Awake()
         {
@@ -44,17 +45,24 @@ namespace Views.Projectiles
             }
         }
 
-        public void Init(int damage, Vector3 damageablePosition,
+        public void Init(int damage, Vector3 damageablePosition, bool isCritical,
             LayerMask attackMask, ISoundManager soundManager, Action<ProjectileView> bulletDestroyed,
-            ITimerModel deadTimer)
+            ITimerService timerService)
         {
             Damage = damage;
+            _isCritical = isCritical;
+            
             _topDownMove = new TopDownMove(transform, _rigidbody2D, _speed);
             _topDownMove.CalculateMove(damageablePosition);
             _layerMask = attackMask;
             _soundManager = soundManager;
             _bulletDestroyedAction = bulletDestroyed;
-            _timerModel = deadTimer;
+            
+            _timerModel = timerService.AddGameTimer(DeathTime, null, () =>
+            {
+                _bulletDestroyedAction?.Invoke(this);
+                Destroy(gameObject);
+            });
         }
 
         public void StartMove()

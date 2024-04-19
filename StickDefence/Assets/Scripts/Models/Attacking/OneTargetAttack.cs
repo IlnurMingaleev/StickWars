@@ -2,7 +2,7 @@
 {
     public class OneTargetAttack : DefaultAttackModel
     {
-        protected override void EndFindAttackTick()
+        protected override bool EndFindAttackTick()
         {
             base.EndFindAttackTick();
             
@@ -11,9 +11,12 @@
             if (TargetDamageable != null)
             {
                 IsEnemyFinded = true;
-                ClearFindAttackTimer();
+                StopCanAttacking();
                 StartAttackAnimAction?.Invoke();
+                return true;
             }
+            
+            return false;
         }
     }
 }
