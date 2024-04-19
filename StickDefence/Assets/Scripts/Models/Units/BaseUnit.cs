@@ -117,6 +117,7 @@ namespace Models.Units
             _isDead = true;
             AttackModel.Dead();
             View.UnitCollider.enabled = false;
+            UnitKilledAction?.Invoke(this);
         }
 
         protected virtual void OnWalk(bool value)

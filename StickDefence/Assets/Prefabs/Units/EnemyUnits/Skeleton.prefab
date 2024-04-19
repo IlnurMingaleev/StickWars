@@ -1035,6 +1035,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <PosAttack>k__BackingField: {fileID: 4276627545179877204}
+  <PosSpawnProjectile>k__BackingField: {fileID: 0}
   <AttackRange>k__BackingField: 30
   <ContactFilter>k__BackingField:
     useTriggers: 0

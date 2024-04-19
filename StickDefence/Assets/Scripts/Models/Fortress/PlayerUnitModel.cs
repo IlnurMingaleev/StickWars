@@ -93,8 +93,7 @@ namespace Models.Fortress
            // View.Damageable.IsEmptyHealth.SkipLatestValueOnSubscribe().Subscribe(OnDead).AddTo(_disposable);
            // _pumping.GamePerks.ObserveReplace().Subscribe(_ => SubscribeStats()).AddTo(_disposable);
            SetAttackStats();
-           _rangeAttackModel.StartPlay();
-            _parentSlotType.Subscribe(slotType =>
+           _parentSlotType.Subscribe(slotType =>
             {
                 if (slotType == SlotTypeEnum.Attack)
                 {

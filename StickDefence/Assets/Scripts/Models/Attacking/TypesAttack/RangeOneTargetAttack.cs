@@ -27,7 +27,7 @@ namespace Models.Attacking.TypesAttack
             base.Attack();
             if (TargetDamageable != null && PosAttack != null)
             {
-                var projectile = Object.Instantiate(_projectileViewPrefab, PosSpawnProjectile.position, Quaternion.identity);
+                var projectile = Object.Instantiate(_projectileViewPrefab, PosAttack.position, Quaternion.identity);
 
                 var isCritical = IsCritical();
                 

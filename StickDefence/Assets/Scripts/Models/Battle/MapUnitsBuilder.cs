@@ -9,6 +9,7 @@ using Models.Player;
 using Models.SO.Core;
 using Models.Timers;
 using Models.Units;
+using Models.Units.Units.Skeleton;
 using TonkoGames.Sound;
 using UI.UIManager;
 using UI.Windows;
@@ -254,6 +255,7 @@ namespace Models.Battle
             unitView.InitUnitMove(movementPath.PathTypes, movementPath.PathElements);
             
             var baseUnit = UnitCreate(unitType, unitView);
+            baseUnit.InitBase(unitView,_timerService,_soundManager);
             baseUnit.InitActions(UnitKilled);
             baseUnit.InitAttack(CreateProjectile, RemoveProjectile);
             
@@ -273,7 +275,7 @@ namespace Models.Battle
 
         private void UnitKilled(BaseUnit baseUnit)
         {
-            Destroy(baseUnit.View.gameObject);
+            //Destroy(baseUnit.View.gameObject);
             _spawnedUnits.Remove(baseUnit);
             CheckIsEmptyDay();
             _unitsCount.Value += 1;
@@ -319,10 +321,10 @@ namespace Models.Battle
 
         private BaseUnit UnitCreate(UnitTypeEnum unitType, UnitView unitView)
         {
-           
-            return new BaseUnit();
-           
-            
+
+             return new SkeletonRangeUnitModel();
+
+
             //return new BaseUnit(unitView, _timerService, _soundManager);
         }
         

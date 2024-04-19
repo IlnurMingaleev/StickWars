@@ -51,7 +51,7 @@ namespace Models.Battle
             DefaultStates();
 
             _mapUnitsBuilder.IsEmptyDay.SkipLatestValueOnSubscribe().Subscribe(AllEnemyUnitsDead).AddTo(_activeDisposables);
-            _currentDayIndex.SkipLatestValueOnSubscribe().Subscribe(CheckStartSpawnNextDay).AddTo(_activeDisposables);
+            _currentDayIndex.SkipLatestValueOnSubscribe().Subscribe( CheckStartSpawnNextDay).AddTo(_activeDisposables);
             BattleStateMachine.SubscriptionAction(BattleStateEnum.None, OnCloseBattle);
             BattleStateMachine.SubscriptionAction(BattleStateEnum.LoadBattle, OnLoadBattleState);
             BattleStateMachine.SubscriptionAction(BattleStateEnum.LaunchAnim, OnLaunchState);
