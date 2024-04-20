@@ -22,6 +22,12 @@ MonoBehaviour:
   - StageType: 3
     Coin: 10
     Gem: 0
+  - StageType: 4
+    Coin: 10
+    Gem: 0
+  - StageType: 5
+    Coin: 10
+    Gem: 0
   _mapBuilder:
   - MapStage: 1
     Days:
@@ -75,10 +81,6 @@ MonoBehaviour:
         Delay: 3
       - GroupUnitsIndex: 70
         Delay: 2
-    - IsBossDay: 0
-      Groups:
-      - GroupUnitsIndex: 70
-        Delay: 2
   - MapStage: 3
     Days:
     - IsBossDay: 0
@@ -115,6 +117,108 @@ MonoBehaviour:
         Delay: 3
       - GroupUnitsIndex: 61
         Delay: 3
+      - GroupUnitsIndex: 70
+        Delay: 2
+  - MapStage: 4
+    Days:
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 10
+        Delay: 3
+      - GroupUnitsIndex: 10
+        Delay: 3
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 40
+        Delay: 3
+      - GroupUnitsIndex: 41
+        Delay: 3
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 21
+        Delay: 2
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 10
+        Delay: 2
+      - GroupUnitsIndex: 0
+        Delay: 2
+      - GroupUnitsIndex: 1
+        Delay: 2
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 22
+        Delay: 2
+      - GroupUnitsIndex: 22
+        Delay: 3
+      - GroupUnitsIndex: 0
+        Delay: 1
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 1
+        Delay: 1
+      - GroupUnitsIndex: 1
+        Delay: 1
+      - GroupUnitsIndex: 1
+        Delay: 1
+      - GroupUnitsIndex: 10
+        Delay: 1
+      - GroupUnitsIndex: 10
+        Delay: 1
+      - GroupUnitsIndex: 10
+        Delay: 1
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 10
+        Delay: 3
+  - MapStage: 5
+    Days:
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 11
+        Delay: 3
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 20
+        Delay: 1
+      - GroupUnitsIndex: 21
+        Delay: 1
+      - GroupUnitsIndex: 10
+        Delay: 1
+      - GroupUnitsIndex: 10
+        Delay: 1
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 0
+        Delay: 2
+      - GroupUnitsIndex: 0
+        Delay: 2
+      - GroupUnitsIndex: 11
+        Delay: 2
+      - GroupUnitsIndex: 22
+        Delay: 2
+      - GroupUnitsIndex: 1
+        Delay: 2
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 21
+        Delay: 2
+      - GroupUnitsIndex: 20
+        Delay: 2
+      - GroupUnitsIndex: 21
+        Delay: 2
+      - GroupUnitsIndex: 20
+        Delay: 2
+      - GroupUnitsIndex: 50
+        Delay: 4
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 11
+        Delay: 2
+      - GroupUnitsIndex: 10
+        Delay: 2
+      - GroupUnitsIndex: 11
+        Delay: 2
   _unitGroups:
   - Units:
     - UnitType: 11

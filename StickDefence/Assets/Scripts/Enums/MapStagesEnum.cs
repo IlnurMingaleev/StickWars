@@ -6,5 +6,7 @@
         Stage1_1 = 1,
         Stage1_2 = 2,
         Stage1_3 = 3,
+        Stage1_4 = 4,
+        Stage1_5 = 5,
     }
 }

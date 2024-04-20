@@ -129,6 +129,8 @@ namespace Models.Merge
                     else if (slot.state == SlotState.Empty && carryingItem != null)
                     {
                         slot.CreateItem(carryingItem.itemId,_playerBuilder);
+                        var prevSlot = GetSlotById(carryingItem.slotId);
+                        prevSlot.state = SlotState.Empty;
                         Destroy(carryingItem.gameObject);
                     }
 
@@ -189,6 +191,8 @@ namespace Models.Merge
             var slot = GetSlotById(targetSlotId);
             slot.DestroyItem();
             slot.CreateItem(carryingItem.itemId + 1, _playerBuilder);
+            var prevSlot = GetSlotById(carryingItem.slotId);
+            prevSlot.state = SlotState.Empty;
             Destroy(carryingItem.gameObject);
         }
 

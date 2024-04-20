@@ -49,7 +49,8 @@ namespace Models.Merge
         public void DestroyItem()
         {
             ChangeStateTo(SlotState.Empty);
-            Destroy(currentItem.gameObject);
+            if(currentItem.gameObject != null)
+                Destroy(currentItem.gameObject);
           
             _dataCentralService.MapStageDataModel.UpdateSlotItemData(
                 new SlotItemData()
@@ -68,7 +69,16 @@ namespace Models.Merge
 
         public void ItemGrabbed()
         {
-            DestroyItem();
+            if(currentItem.gameObject!= null)
+                Destroy(currentItem.gameObject);
+          
+            _dataCentralService.MapStageDataModel.UpdateSlotItemData(
+                new SlotItemData()
+                {
+                    SlotIdTypeEnum = slotIdType,
+                    PlayerUnitType = PlayerUnitTypeEnum.None,
+                });
+            _dataCentralService.SaveFull();  ;
         }
 
         private void ReceiveItem(int id)

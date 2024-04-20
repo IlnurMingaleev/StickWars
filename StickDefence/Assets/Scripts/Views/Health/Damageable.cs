@@ -55,8 +55,9 @@ namespace Views.Health
             {
                 _healthCurrent.Value -= value;
 
-                foreach (var damageableFlashAnim in _damageableFlash)
-                    damageableFlashAnim.Flash();
+               //TODO  damageable flashAnimation
+               ///*foreach (var damageableFlashAnim in _damageableFlash)
+                    //damageableFlashAnim.Flash();*/
             }
         }
 

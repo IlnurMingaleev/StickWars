@@ -61,7 +61,8 @@ namespace Views.Projectiles
             _timerModel = timerService.AddGameTimer(DeathTime, null, () =>
             {
                 _bulletDestroyedAction?.Invoke(this);
-                Destroy(gameObject);
+                if(gameObject != null)
+                    Destroy(gameObject);
             });
         }
 

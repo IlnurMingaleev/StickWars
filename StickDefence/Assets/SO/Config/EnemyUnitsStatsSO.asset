@@ -24,7 +24,7 @@ MonoBehaviour:
     Health: 40
     Armor: 0.5
     Damage: 2
-    Reloading: 1
+    Reloading: 2.5
     Experience: 0
     Coins: 0
   - UnitType: 3
@@ -101,7 +101,7 @@ MonoBehaviour:
     Health: 40
     Armor: 0.1
     Damage: 3
-    Reloading: 0.7
+    Reloading: 2
     Experience: 0
     Coins: 0
   - UnitType: 14
@@ -237,31 +237,31 @@ MonoBehaviour:
   _stickmanUnitsStatsConfigs:
   - UnitType: 1
     Level: 1
-    Damage: 8
+    Damage: 5
     Reloading: 0.5
     Price: 15
     AttackSpeed: 15
   - UnitType: 2
     Level: 2
-    Damage: 12
+    Damage: 8
     Reloading: 0.5
     Price: 20
     AttackSpeed: 15
   - UnitType: 3
     Level: 3
-    Damage: 15
+    Damage: 12
     Reloading: 0.5
     Price: 25
     AttackSpeed: 15
   - UnitType: 4
     Level: 4
-    Damage: 18
+    Damage: 15
     Reloading: 0.5
     Price: 30
     AttackSpeed: 15
   - UnitType: 5
     Level: 5
-    Damage: 20
+    Damage: 18
     Reloading: 0
     Price: 35
     AttackSpeed: 15
