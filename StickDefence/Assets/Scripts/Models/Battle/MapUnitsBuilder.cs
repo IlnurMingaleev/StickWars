@@ -132,6 +132,7 @@ namespace Models.Battle
 
         public void CountAllUnits()
         {
+            _maxUnitsCount = 0;
             foreach (var stage in _battleStageControl.MapStageConfig.Days)
             {
                 foreach (var groupConfig in stage.Groups)
