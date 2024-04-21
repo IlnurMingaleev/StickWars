@@ -17,6 +17,7 @@ namespace Models.DataModels
         IMapStageDataModel MapStageDataModel { get; }
         void SaveFull();
         void Sync();
+        void Restart();
     }
     
     public class DataCentralService: IDataCentralService

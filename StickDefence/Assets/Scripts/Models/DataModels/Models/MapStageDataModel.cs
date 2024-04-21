@@ -113,6 +113,7 @@ namespace Models.DataModels.Models
         
         public void SetMapStageData(MapStagesData mapStagesData)
         {
+            _mapStages.Clear();
             bool initialized = false;
             for (int index = 0; index < mapStagesData.MapStageBlockDatas.Count; index++)
             {
@@ -128,7 +129,7 @@ namespace Models.DataModels.Models
                     }
                 }
             }
-            
+            _slotItems.Clear();
             foreach (var slotItem in mapStagesData.SlotItemDatas)
             {
                 _slotItems.Add(slotItem.SlotIdTypeEnum,slotItem);

@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel;
 using TonkoGames.StateMachine;
 using Models.DataModels;
+using UnityEditor;
 
 namespace Tools.Debugs.Cheats.SRDebuggerOptions
 {
@@ -14,7 +15,19 @@ namespace Tools.Debugs.Cheats.SRDebuggerOptions
             _dataCentralService = dataCentralService;
             _coreStateMachineCheat = coreStateMachineCheat;
         }
+
+        [Category("Main")]
+        public void ClearUser()
+        {
+            _dataCentralService.Restart();
+#if UNITY_EDITOR
+            EditorApplication.isPlaying = false;
+#else
+            UnityEngine.Application.Quit();
+#endif
+        }
         
+
         [Category("Common")]
         [SROptions.IncrementAttribute(10)]
         public int Coins

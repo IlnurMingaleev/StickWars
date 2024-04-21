@@ -179,6 +179,9 @@ namespace Models.DataModels.Models
 
         public void SetPlayerPumpingData(PlayerPumpingData playerPumpingData)
         {
+            _playerPerks.Clear();
+            _playerSkills.Clear();
+            _skillCellsReactive.Clear();
             foreach (var playerCharacterData in playerPumpingData.PlayerPerksData)
             {
                 _playerPerks.Add(playerCharacterData.PerkType, playerCharacterData);
@@ -199,7 +202,6 @@ namespace Models.DataModels.Models
         
         public void SetAndInitEmptyPlayerPumpingData(PlayerPumpingData playerPumpingData)
         {
-            _playerPerks.Clear();
             playerPumpingData.PlayerPerksData = new ();
             playerPumpingData.PlayerSkillsData = new ();
             playerPumpingData.SkillCellDatas = new ();
