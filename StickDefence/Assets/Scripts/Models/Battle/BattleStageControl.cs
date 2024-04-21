@@ -103,6 +103,8 @@ namespace Models.Battle
             _windowManager.Show<TopPanelWindow>();
 
             _currentDayIndex.Value = 0;
+            _mapUnitsBuilder.CountAllUnits();
+            _mapUnitsBuilder.ZeroUnitCount();
         }
 
         private void CheckStartSpawnNextDay(int dayIndex)

@@ -107,6 +107,7 @@ namespace Models.Merge
                     if (carryingItem != null)
                     {
                         Destroy(carryingItem.gameObject);
+                        SetGrabbedFlag();
                     }
                 }
                 //we are grabbing the item in a full slot
@@ -129,8 +130,7 @@ namespace Models.Merge
                     else if (slot.state == SlotState.Empty && carryingItem != null)
                     {
                         slot.CreateItem(carryingItem.itemId,_playerBuilder);
-                        var prevSlot = GetSlotById(carryingItem.slotId);
-                        prevSlot.state = SlotState.Empty;
+                        SetGrabbedFlag();
                         Destroy(carryingItem.gameObject);
                     }
 
@@ -168,6 +168,7 @@ namespace Models.Merge
             startSlot.CreateItem(targetSlot.currentItem.id, _playerBuilder);
             targetSlot.DestroyItem();
             targetSlot.CreateItem(carryingItem.itemId,_playerBuilder);
+            SetGrabbedFlag();
             Destroy(carryingItem.gameObject);
         }
 
@@ -191,15 +192,21 @@ namespace Models.Merge
             var slot = GetSlotById(targetSlotId);
             slot.DestroyItem();
             slot.CreateItem(carryingItem.itemId + 1, _playerBuilder);
-            var prevSlot = GetSlotById(carryingItem.slotId);
-            prevSlot.state = SlotState.Empty;
+            SetGrabbedFlag();
             Destroy(carryingItem.gameObject);
+        }
+
+        private void SetGrabbedFlag()
+        {
+            var prevSlot = GetSlotById(carryingItem.slotId);
+            prevSlot.itemGrabbed = false;
         }
 
         void OnItemCarryFail()
         {
             var slot = GetSlotById(carryingItem.slotId);
             slot.CreateItem(carryingItem.itemId,_playerBuilder);
+            SetGrabbedFlag();
             Destroy(carryingItem.gameObject);
         }
 
@@ -237,7 +244,7 @@ namespace Models.Merge
             for (int index = 0; index < slots.Length - 5 ; index++)
             {
                 slot = GetSlotById(index);
-                if (slot.state == SlotState.Empty)
+                if (slot.state == SlotState.Empty && (!slot.itemGrabbed))
                 {
                     break;
                 }
@@ -251,7 +258,7 @@ namespace Models.Merge
         {
             for (var i = 0; i < slots.Length - 5; i++)
             {
-                if (slots[i].state == SlotState.Empty)
+                if (slots[i].state == SlotState.Empty && (!slots[i].itemGrabbed))
                 {
                     return false;
                 }

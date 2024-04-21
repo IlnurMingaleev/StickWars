@@ -66,6 +66,16 @@ namespace Models.Battle
             _gainCoins = value;
         }
 
+        public void SetUnitCount(int value)
+        {
+            _unitsCount.Value = value;
+        }
+
+        public void ZeroUnitCount()
+        {
+            _unitsCount.Value = 0;
+        }
+
         #endregion
 
         private void OnValidate()
@@ -92,7 +102,6 @@ namespace Models.Battle
 
         private void Start()
         {
-            CountAllUnits();
             _unitsCount.Value = 0;
             SubscribeToUnitsKill();
             _dataCentralService.PumpingDataModel.CalculateRequiredExp(_configManager);
@@ -121,7 +130,7 @@ namespace Models.Battle
                 }).AddTo(_disposable);
         }
 
-        private void CountAllUnits()
+        public void CountAllUnits()
         {
             foreach (var stage in _battleStageControl.MapStageConfig.Days)
             {

@@ -20,7 +20,7 @@ namespace Models.Merge
         public SlotState state = SlotState.Empty;
         public SlotTypeEnum slotType = SlotTypeEnum.None;
         public SlotIdTypeEnum slotIdType = SlotIdTypeEnum.None;
-
+        public bool itemGrabbed = false;
         [Inject] private ConfigManager _configManager;
         [Inject] private ITimerService _timerService;
         [Inject] private ISoundManager _soundManager;
@@ -49,7 +49,7 @@ namespace Models.Merge
         public void DestroyItem()
         {
             ChangeStateTo(SlotState.Empty);
-            if(currentItem.gameObject != null)
+            if(currentItem != null)
                 Destroy(currentItem.gameObject);
           
             _dataCentralService.MapStageDataModel.UpdateSlotItemData(
@@ -69,16 +69,8 @@ namespace Models.Merge
 
         public void ItemGrabbed()
         {
-            if(currentItem.gameObject!= null)
-                Destroy(currentItem.gameObject);
-          
-            _dataCentralService.MapStageDataModel.UpdateSlotItemData(
-                new SlotItemData()
-                {
-                    SlotIdTypeEnum = slotIdType,
-                    PlayerUnitType = PlayerUnitTypeEnum.None,
-                });
-            _dataCentralService.SaveFull();  ;
+            itemGrabbed = true;
+           DestroyItem();
         }
 
         private void ReceiveItem(int id)

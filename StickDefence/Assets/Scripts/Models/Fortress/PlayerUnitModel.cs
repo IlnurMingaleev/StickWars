@@ -97,6 +97,7 @@ namespace Models.Fortress
             {
                 if (slotType == SlotTypeEnum.Attack)
                 {
+                    _rangeAttackModel.StartCooldown(null);
                     _rangeAttackModel.StartPlay();
                 }
                 else
