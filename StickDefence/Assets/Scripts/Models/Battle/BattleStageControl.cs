@@ -84,6 +84,8 @@ namespace Models.Battle
             _battleResult.OnLoadBattleState();
             _playerFortressInstantiate.InitStageLoadBattle();
             _windowManager.GetWindow<FadeWindow>().OpenFade(OnBattleEndFade);
+            _mapUnitsBuilder.CountAllUnits();
+            _mapUnitsBuilder.ZeroUnitCount();
         }
         
         private void OnBattleEndFade()
@@ -103,8 +105,7 @@ namespace Models.Battle
             _windowManager.Show<TopPanelWindow>();
 
             _currentDayIndex.Value = 0;
-            _mapUnitsBuilder.CountAllUnits();
-            _mapUnitsBuilder.ZeroUnitCount();
+           
         }
 
         private void CheckStartSpawnNextDay(int dayIndex)

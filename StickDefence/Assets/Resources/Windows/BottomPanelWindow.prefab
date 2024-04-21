@@ -2051,7 +2051,7 @@ MonoBehaviour:
   _wallUpgradeCost: {fileID: 6599048944645137007}
   _alertWallIcon: {fileID: 3235034146041415523}
   _freeBoxBtn: {fileID: 354946618053931636}
-  _boxImage: {fileID: 7901703001017384613}
+  _boxImage: {fileID: 1303769498662730448}
   _moneyText: {fileID: 4398897859756051253}
   _timerUI: {fileID: 7277660209955584047, guid: 3d5cdd26ef5b6a544bdd4e36bec64d76, type: 3}
   _timerParent: {fileID: 3019267558502537753}
@@ -2446,7 +2446,7 @@ GameObject:
   - component: {fileID: 4461616462770131581}
   - component: {fileID: 1303769498662730448}
   m_Layer: 0
-  m_Name: Image
+  m_Name: BoxImageFill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4687,17 +4687,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6306657953888986203, guid: b61b0f1f9f774c244afb5094ee488e71, type: 3}
   m_PrefabInstance: {fileID: 8890274528626680632}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7901703001017384613 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1641813403284037021, guid: b61b0f1f9f774c244afb5094ee488e71, type: 3}
-  m_PrefabInstance: {fileID: 8890274528626680632}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3235034146041415523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &8527775756603948116 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 952554522569334636, guid: b61b0f1f9f774c244afb5094ee488e71, type: 3}
