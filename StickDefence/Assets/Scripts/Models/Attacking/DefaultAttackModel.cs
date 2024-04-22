@@ -113,12 +113,12 @@ namespace Models.Attacking
         {
             ClearCooldownTimer();
             IsEnemyFinded = false;
-
-            /*TimerModelCooldown = TimerService.AddGameTimer(_cooldownDuration, null, () =>
+            //TODO DefaultAttackModel
+            TimerModelCooldown = TimerService.AddGameTimer(_cooldownDuration, null, () =>
             {
                 EndCooldown(endCooldown);
-            }, false);*/
-            Observable.Timer(TimeSpan.FromSeconds(_cooldownDuration)).Subscribe(_ => { EndCooldown(endCooldown);}).AddTo(_timerAttackDisposable);
+            }, false);
+           // Observable.Timer(TimeSpan.FromSeconds(_cooldownDuration)).Subscribe(_ => { EndCooldown(endCooldown);}).AddTo(_timerAttackDisposable);
         }
 
         private void EndCooldown(Action endCooldown)
@@ -152,12 +152,13 @@ namespace Models.Attacking
 
         private void ClearCooldownTimer()
         {
-            _timerAttackDisposable.Clear();
-            /*if (TimerModelCooldown != null)
+            //TODO DefaultAttackModel
+            //_timerAttackDisposable.Clear();
+            if (TimerModelCooldown != null)
             {
                 TimerModelCooldown.StopTick();
                 TimerModelCooldown = null;
-            }*/
+            }
         }
 
         protected bool IsCritical() => Random.Range(0, 100) <= CriticalChance;

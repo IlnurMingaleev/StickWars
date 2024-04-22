@@ -9,10 +9,9 @@ using TonkoGames.Controllers.Core;
 using UI.UIManager;
 using UI.Windows;
 using UniRx;
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using VContainer;
-using Random = UnityEngine.Random;
+
 
 namespace Models.Controllers
 {
@@ -36,7 +35,7 @@ namespace Models.Controllers
         private CompositeDisposable _mainTimerDisposable = new CompositeDisposable();
         private float _currentSec;
         [Inject] private IDataCentralService _dataCentralService;
-            private void Start()
+        private void Start()
         {
             _bottomPanelWindow = _windowManager.GetWindow<BottomPanelWindow>();
            SetTimerAccordingAvailability();
@@ -46,9 +45,10 @@ namespace Models.Controllers
         {
             _mainTimerDisposable.Clear();
             _currentSec = _cooldownTime; 
-            Observable.Timer(TimeSpan.FromMilliseconds(100)).Repeat()
-                .Subscribe(_ => TimerSet()).AddTo(_mainTimerDisposable);
-            /*_timerModel = _timerService.AddGameTimer(_cooldownTime,
+           //TODO BoxSpawner
+            /*Observable.Timer(TimeSpan.FromMilliseconds(100)).Repeat()
+                .Subscribe(_ => TimerSet()).AddTo(_mainTimerDisposable);*/
+            _timerModel = _timerService.AddGameTimer(_cooldownTime,
                     f => { UpdateFill(f); },
                     () =>
                     {
@@ -57,18 +57,19 @@ namespace Models.Controllers
                         else
                             _mergeController.PlaceDefinedItem((int)PlayerUnitTypeEnum.One);
                         SetTimerAccordingAvailability();
-                    });*/
+                    });
             
         }
 
         private void StartSlotAvailableCheckTimer()
         {
             _isAvailableDisposable.Clear();
-            Observable.Timer(TimeSpan.FromSeconds(IsAvailableCheckInterval))
-                .Subscribe(_ => SetTimerAccordingAvailability()).AddTo(_isAvailableDisposable);
-            /*_timerModel = _timerService.AddGameTimer(IsAvailableCheckInterval,
+            //TODO BoxSpawner
+           // Observable.Timer(TimeSpan.FromSeconds(IsAvailableCheckInterval))
+            //    .Subscribe(_ => SetTimerAccordingAvailability()).AddTo(_isAvailableDisposable);
+            _timerModel = _timerService.AddGameTimer(IsAvailableCheckInterval,
                 f => { },
-                () => { SetTimerAccordingAvailability(); });*/
+                () => { SetTimerAccordingAvailability(); });
         }
 
         private void SetTimerAccordingAvailability()

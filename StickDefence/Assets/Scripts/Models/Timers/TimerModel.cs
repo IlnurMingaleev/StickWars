@@ -88,10 +88,11 @@ namespace Models.Timers
         
         public void StopTickNoCash()
         {
-            _disposable.Clear();
-            _currentSec = 0;
             TimeModelTick = null;
             TimeModelEnd = null;
+            _disposable.Clear();
+            _currentSec = 0;
+           
         }
 
         public void AddTimeToExistingTimer(float time)
