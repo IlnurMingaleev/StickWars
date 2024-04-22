@@ -74,7 +74,6 @@ namespace Models.Battle
 
         private void OnCloseBattle()
         {
-            gameObject.SetActive(false);
         }
 
         private void OnLoadBattleState()

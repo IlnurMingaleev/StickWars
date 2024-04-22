@@ -3575,6 +3575,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stageMap: {fileID: 768815829}
   _lobby: {fileID: 2079169158}
+  _stageMapPrefab: {fileID: 2573299026537956282, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
+  _stageMapParent: {fileID: 1744152164}
 --- !u!114 &1421923557
 MonoBehaviour:
   m_ObjectHideFlags: 0

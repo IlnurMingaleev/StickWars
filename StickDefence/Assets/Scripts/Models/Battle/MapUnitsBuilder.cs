@@ -78,7 +78,7 @@ namespace Models.Battle
 
         #endregion
 
-        private void OnValidate()
+        private void Awake()
         {
             if (_battleStageControl == null) _battleStageControl = gameObject.GetComponent<BattleStageControl>();
         }
