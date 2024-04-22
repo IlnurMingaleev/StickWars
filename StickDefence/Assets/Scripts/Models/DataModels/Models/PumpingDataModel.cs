@@ -69,7 +69,7 @@ namespace Models.DataModels.Models
         #endregion
 
         #region Setters
-        public void SetStageIndex(int mapStageIndex) => _stageLoadType.Value = (mapStageIndex <= ((int) MapStagesEnum.Stage1_5))?(MapStagesEnum)mapStageIndex: MapStagesEnum.Stage1_5;
+        public void SetStageIndex(int mapStageIndex) => _stageLoadType.Value = (mapStageIndex <= ((int) MapStagesEnum.Stage1_20))?(MapStagesEnum)mapStageIndex: MapStagesEnum.Stage1_20;
         public void UpgradeMaxStickmanLevel() => _maxStickmanLevel.Value += 1;
 
         public void UpdatePlayerPerkData(PerkData perkData) => _playerPerks[perkData.PerkType] = perkData;

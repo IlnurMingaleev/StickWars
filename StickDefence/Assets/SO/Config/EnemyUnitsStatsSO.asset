@@ -42,8 +42,8 @@ MonoBehaviour:
     Experience: 0
     Coins: 0
   - UnitType: 5
-    Health: 40
-    Armor: 0.4
+    Health: 80
+    Armor: 0.2
     Damage: 2
     Reloading: 2
     Experience: 0
@@ -56,29 +56,29 @@ MonoBehaviour:
     Experience: 0
     Coins: 0
   - UnitType: 7
-    Health: 30
-    Armor: 0.6
+    Health: 90
+    Armor: 0.3
     Damage: 2
     Reloading: 2
     Experience: 0
     Coins: 0
   - UnitType: 8
-    Health: 100
-    Armor: 1
+    Health: 200
+    Armor: 0.3
     Damage: 3
     Reloading: 2
     Experience: 0
     Coins: 0
   - UnitType: 9
-    Health: 60
-    Armor: 1
+    Health: 120
+    Armor: 0.3
     Damage: 2
     Reloading: 1.5
     Experience: 0
     Coins: 0
   - UnitType: 10
-    Health: 80
-    Armor: 1
+    Health: 160
+    Armor: 0.3
     Damage: 3
     Reloading: 1.5
     Experience: 0
@@ -119,15 +119,15 @@ MonoBehaviour:
     Experience: 0
     Coins: 0
   - UnitType: 16
-    Health: 40
-    Armor: 0.5
+    Health: 80
+    Armor: 0.2
     Damage: 2
     Reloading: 2
     Experience: 0
     Coins: 0
   - UnitType: 17
-    Health: 40
-    Armor: 0.4
+    Health: 80
+    Armor: 0.2
     Damage: 2
     Reloading: 2
     Experience: 0

@@ -8,7 +8,7 @@
         Stage1_3 = 3,
         Stage1_4 = 4,
         Stage1_5 = 5,
-        /*Stage1_6 = 6,
+        Stage1_6 = 6,
         Stage1_7 = 7,
         Stage1_8 = 8,
         Stage1_9 = 9,
@@ -21,7 +21,7 @@
         Stage1_16 = 16,
         Stage1_17 = 17,
         Stage1_18 = 18,
-        Stage1_19 = 19,*/
+        Stage1_19 = 19,
         Stage1_20 = 20,
     }
 }

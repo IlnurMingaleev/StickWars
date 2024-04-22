@@ -97,6 +97,8 @@ namespace UI.Windows
             }
             
             _starsBlock.SetActive(true);
+            _dataCentralService.PumpingDataModel.SetStageIndex((int)_dataCentralService.PumpingDataModel.StageLoadType.Value + 1);
+            _dataCentralService.SaveFull();
 
             SaveStats(rewardContains);
             
@@ -115,7 +117,6 @@ namespace UI.Windows
             _claim?.Invoke();
             _dataCentralService.StatsDataModel.AddCoinsCount(_coinsCount);
             _dataCentralService.StatsDataModel.AddGemsCount(_gemCount);
-            _dataCentralService.PumpingDataModel.SetStageIndex((int)_dataCentralService.PumpingDataModel.StageLoadType.Value + 1);
             _dataCentralService.SaveFull();
             _continue?.Invoke();
         }

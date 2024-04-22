@@ -28,6 +28,51 @@ MonoBehaviour:
   - StageType: 5
     Coin: 10
     Gem: 0
+  - StageType: 6
+    Coin: 10
+    Gem: 0
+  - StageType: 7
+    Coin: 10
+    Gem: 0
+  - StageType: 8
+    Coin: 10
+    Gem: 0
+  - StageType: 9
+    Coin: 10
+    Gem: 0
+  - StageType: 10
+    Coin: 10
+    Gem: 0
+  - StageType: 11
+    Coin: 10
+    Gem: 0
+  - StageType: 12
+    Coin: 10
+    Gem: 0
+  - StageType: 13
+    Coin: 10
+    Gem: 0
+  - StageType: 14
+    Coin: 10
+    Gem: 0
+  - StageType: 15
+    Coin: 10
+    Gem: 0
+  - StageType: 16
+    Coin: 10
+    Gem: 0
+  - StageType: 17
+    Coin: 10
+    Gem: 0
+  - StageType: 18
+    Coin: 10
+    Gem: 0
+  - StageType: 19
+    Coin: 10
+    Gem: 0
+  - StageType: 20
+    Coin: 10
+    Gem: 0
   _mapBuilder:
   - MapStage: 1
     Days:
@@ -219,6 +264,990 @@ MonoBehaviour:
         Delay: 2
       - GroupUnitsIndex: 11
         Delay: 2
+  - MapStage: 6
+    Days:
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 50
+        Delay: 3
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 20
+        Delay: 1
+      - GroupUnitsIndex: 21
+        Delay: 1
+      - GroupUnitsIndex: 22
+        Delay: 1
+      - GroupUnitsIndex: 11
+        Delay: 1
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 2
+        Delay: 2
+      - GroupUnitsIndex: 2
+        Delay: 2
+      - GroupUnitsIndex: 11
+        Delay: 2
+      - GroupUnitsIndex: 22
+        Delay: 2
+      - GroupUnitsIndex: 50
+        Delay: 2
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 22
+        Delay: 2
+      - GroupUnitsIndex: 20
+        Delay: 2
+      - GroupUnitsIndex: 21
+        Delay: 2
+      - GroupUnitsIndex: 20
+        Delay: 2
+      - GroupUnitsIndex: 50
+        Delay: 4
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 10
+        Delay: 2
+      - GroupUnitsIndex: 21
+        Delay: 2
+      - GroupUnitsIndex: 22
+        Delay: 2
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 2
+        Delay: 2
+      - GroupUnitsIndex: 2
+        Delay: 2
+      - GroupUnitsIndex: 11
+        Delay: 2
+      - GroupUnitsIndex: 22
+        Delay: 2
+      - GroupUnitsIndex: 50
+        Delay: 2
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 21
+        Delay: 2
+      - GroupUnitsIndex: 20
+        Delay: 2
+      - GroupUnitsIndex: 11
+        Delay: 2
+      - GroupUnitsIndex: 22
+        Delay: 2
+      - GroupUnitsIndex: 50
+        Delay: 2
+  - MapStage: 7
+    Days:
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 21
+        Delay: 3
+      - GroupUnitsIndex: 22
+        Delay: 3
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 40
+        Delay: 3
+      - GroupUnitsIndex: 41
+        Delay: 3
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 30
+        Delay: 2
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 31
+        Delay: 2
+      - GroupUnitsIndex: 21
+        Delay: 2
+      - GroupUnitsIndex: 22
+        Delay: 2
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 31
+        Delay: 2
+      - GroupUnitsIndex: 30
+        Delay: 3
+      - GroupUnitsIndex: 10
+        Delay: 1
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 11
+        Delay: 1
+      - GroupUnitsIndex: 2
+        Delay: 1
+      - GroupUnitsIndex: 2
+        Delay: 1
+      - GroupUnitsIndex: 41
+        Delay: 1
+      - GroupUnitsIndex: 20
+        Delay: 1
+      - GroupUnitsIndex: 2
+        Delay: 1
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 2
+        Delay: 3
+  - MapStage: 8
+    Days:
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 20
+        Delay: 3
+      - GroupUnitsIndex: 20
+        Delay: 3
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 21
+        Delay: 3
+      - GroupUnitsIndex: 22
+        Delay: 3
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 31
+        Delay: 2
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 20
+        Delay: 2
+      - GroupUnitsIndex: 20
+        Delay: 2
+      - GroupUnitsIndex: 21
+        Delay: 2
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 22
+        Delay: 2
+      - GroupUnitsIndex: 21
+        Delay: 3
+      - GroupUnitsIndex: 20
+        Delay: 1
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 31
+        Delay: 1
+      - GroupUnitsIndex: 1
+        Delay: 1
+      - GroupUnitsIndex: 1
+        Delay: 1
+      - GroupUnitsIndex: 40
+        Delay: 1
+      - GroupUnitsIndex: 20
+        Delay: 1
+      - GroupUnitsIndex: 31
+        Delay: 1
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 1
+        Delay: 3
+  - MapStage: 9
+    Days:
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 50
+        Delay: 3
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 20
+        Delay: 1
+      - GroupUnitsIndex: 20
+        Delay: 1
+      - GroupUnitsIndex: 21
+        Delay: 1
+      - GroupUnitsIndex: 21
+        Delay: 1
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 0
+        Delay: 2
+      - GroupUnitsIndex: 0
+        Delay: 2
+      - GroupUnitsIndex: 30
+        Delay: 2
+      - GroupUnitsIndex: 22
+        Delay: 2
+      - GroupUnitsIndex: 51
+        Delay: 2
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 20
+        Delay: 2
+      - GroupUnitsIndex: 20
+        Delay: 2
+      - GroupUnitsIndex: 22
+        Delay: 2
+      - GroupUnitsIndex: 22
+        Delay: 2
+      - GroupUnitsIndex: 51
+        Delay: 4
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 2
+        Delay: 2
+      - GroupUnitsIndex: 2
+        Delay: 2
+      - GroupUnitsIndex: 2
+        Delay: 2
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 0
+        Delay: 2
+      - GroupUnitsIndex: 0
+        Delay: 2
+      - GroupUnitsIndex: 20
+        Delay: 2
+      - GroupUnitsIndex: 21
+        Delay: 2
+      - GroupUnitsIndex: 50
+        Delay: 2
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 20
+        Delay: 2
+      - GroupUnitsIndex: 20
+        Delay: 2
+      - GroupUnitsIndex: 21
+        Delay: 2
+      - GroupUnitsIndex: 22
+        Delay: 2
+      - GroupUnitsIndex: 31
+        Delay: 2
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 20
+        Delay: 2
+      - GroupUnitsIndex: 21
+        Delay: 2
+      - GroupUnitsIndex: 11
+        Delay: 2
+      - GroupUnitsIndex: 21
+        Delay: 2
+      - GroupUnitsIndex: 31
+        Delay: 2
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 2
+        Delay: 2
+      - GroupUnitsIndex: 2
+        Delay: 2
+      - GroupUnitsIndex: 11
+        Delay: 2
+      - GroupUnitsIndex: 10
+        Delay: 2
+      - GroupUnitsIndex: 31
+        Delay: 2
+  - MapStage: 10
+    Days:
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 3
+        Delay: 3
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 4
+        Delay: 1
+      - GroupUnitsIndex: 12
+        Delay: 1
+      - GroupUnitsIndex: 13
+        Delay: 1
+      - GroupUnitsIndex: 14
+        Delay: 1
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 23
+        Delay: 2
+      - GroupUnitsIndex: 24
+        Delay: 2
+      - GroupUnitsIndex: 34
+        Delay: 2
+      - GroupUnitsIndex: 33
+        Delay: 2
+      - GroupUnitsIndex: 53
+        Delay: 2
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 23
+        Delay: 2
+      - GroupUnitsIndex: 24
+        Delay: 2
+      - GroupUnitsIndex: 21
+        Delay: 2
+      - GroupUnitsIndex: 20
+        Delay: 2
+      - GroupUnitsIndex: 54
+        Delay: 4
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 23
+        Delay: 2
+      - GroupUnitsIndex: 24
+        Delay: 2
+      - GroupUnitsIndex: 22
+        Delay: 2
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 3
+        Delay: 2
+      - GroupUnitsIndex: 4
+        Delay: 2
+      - GroupUnitsIndex: 10
+        Delay: 2
+      - GroupUnitsIndex: 11
+        Delay: 2
+      - GroupUnitsIndex: 13
+        Delay: 2
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 14
+        Delay: 2
+      - GroupUnitsIndex: 54
+        Delay: 2
+      - GroupUnitsIndex: 14
+        Delay: 2
+      - GroupUnitsIndex: 24
+        Delay: 2
+      - GroupUnitsIndex: 50
+        Delay: 2
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 24
+        Delay: 2
+      - GroupUnitsIndex: 24
+        Delay: 2
+      - GroupUnitsIndex: 11
+        Delay: 2
+      - GroupUnitsIndex: 22
+        Delay: 2
+      - GroupUnitsIndex: 50
+        Delay: 2
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 4
+        Delay: 2
+      - GroupUnitsIndex: 4
+        Delay: 2
+      - GroupUnitsIndex: 13
+        Delay: 2
+      - GroupUnitsIndex: 23
+        Delay: 2
+      - GroupUnitsIndex: 50
+        Delay: 2
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 21
+        Delay: 2
+      - GroupUnitsIndex: 24
+        Delay: 2
+      - GroupUnitsIndex: 54
+        Delay: 2
+      - GroupUnitsIndex: 3
+        Delay: 2
+      - GroupUnitsIndex: 3
+        Delay: 2
+      - GroupUnitsIndex: 3
+        Delay: 2
+      - GroupUnitsIndex: 13
+        Delay: 2
+      - GroupUnitsIndex: 13
+        Delay: 2
+      - GroupUnitsIndex: 14
+        Delay: 2
+  - MapStage: 11
+    Days:
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 13
+        Delay: 3
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 23
+        Delay: 1
+      - GroupUnitsIndex: 24
+        Delay: 1
+      - GroupUnitsIndex: 14
+        Delay: 1
+      - GroupUnitsIndex: 13
+        Delay: 1
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 3
+        Delay: 2
+      - GroupUnitsIndex: 4
+        Delay: 2
+      - GroupUnitsIndex: 13
+        Delay: 2
+      - GroupUnitsIndex: 24
+        Delay: 2
+      - GroupUnitsIndex: 1
+        Delay: 2
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 23
+        Delay: 2
+      - GroupUnitsIndex: 24
+        Delay: 2
+      - GroupUnitsIndex: 22
+        Delay: 2
+      - GroupUnitsIndex: 20
+        Delay: 2
+      - GroupUnitsIndex: 53
+        Delay: 4
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 13
+        Delay: 2
+      - GroupUnitsIndex: 14
+        Delay: 2
+      - GroupUnitsIndex: 13
+        Delay: 2
+  - MapStage: 12
+    Days:
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 53
+        Delay: 3
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 23
+        Delay: 1
+      - GroupUnitsIndex: 24
+        Delay: 1
+      - GroupUnitsIndex: 23
+        Delay: 1
+      - GroupUnitsIndex: 13
+        Delay: 1
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 4
+        Delay: 2
+      - GroupUnitsIndex: 4
+        Delay: 2
+      - GroupUnitsIndex: 13
+        Delay: 2
+      - GroupUnitsIndex: 24
+        Delay: 2
+      - GroupUnitsIndex: 53
+        Delay: 2
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 14
+        Delay: 2
+      - GroupUnitsIndex: 15
+        Delay: 2
+      - GroupUnitsIndex: 25
+        Delay: 2
+      - GroupUnitsIndex: 24
+        Delay: 2
+      - GroupUnitsIndex: 53
+        Delay: 4
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 13
+        Delay: 2
+      - GroupUnitsIndex: 24
+        Delay: 2
+      - GroupUnitsIndex: 23
+        Delay: 2
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 4
+        Delay: 2
+      - GroupUnitsIndex: 4
+        Delay: 2
+      - GroupUnitsIndex: 14
+        Delay: 2
+      - GroupUnitsIndex: 24
+        Delay: 2
+      - GroupUnitsIndex: 34
+        Delay: 2
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 25
+        Delay: 2
+      - GroupUnitsIndex: 25
+        Delay: 2
+      - GroupUnitsIndex: 14
+        Delay: 2
+      - GroupUnitsIndex: 25
+        Delay: 2
+      - GroupUnitsIndex: 34
+        Delay: 2
+  - MapStage: 13
+    Days:
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 10
+        Delay: 3
+      - GroupUnitsIndex: 15
+        Delay: 3
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 45
+        Delay: 3
+      - GroupUnitsIndex: 25
+        Delay: 3
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 15
+        Delay: 2
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 5
+        Delay: 2
+      - GroupUnitsIndex: 4
+        Delay: 2
+      - GroupUnitsIndex: 4
+        Delay: 2
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 25
+        Delay: 2
+      - GroupUnitsIndex: 25
+        Delay: 3
+      - GroupUnitsIndex: 4
+        Delay: 1
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 5
+        Delay: 1
+      - GroupUnitsIndex: 5
+        Delay: 1
+      - GroupUnitsIndex: 5
+        Delay: 1
+      - GroupUnitsIndex: 14
+        Delay: 1
+      - GroupUnitsIndex: 14
+        Delay: 1
+      - GroupUnitsIndex: 15
+        Delay: 1
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 15
+        Delay: 3
+  - MapStage: 14
+    Days:
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 25
+        Delay: 3
+      - GroupUnitsIndex: 26
+        Delay: 3
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 45
+        Delay: 3
+      - GroupUnitsIndex: 44
+        Delay: 3
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 35
+        Delay: 2
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 36
+        Delay: 2
+      - GroupUnitsIndex: 25
+        Delay: 2
+      - GroupUnitsIndex: 24
+        Delay: 2
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 23
+        Delay: 2
+      - GroupUnitsIndex: 35
+        Delay: 3
+      - GroupUnitsIndex: 14
+        Delay: 1
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 15
+        Delay: 1
+      - GroupUnitsIndex: 6
+        Delay: 1
+      - GroupUnitsIndex: 6
+        Delay: 1
+      - GroupUnitsIndex: 43
+        Delay: 1
+      - GroupUnitsIndex: 25
+        Delay: 1
+      - GroupUnitsIndex: 6
+        Delay: 1
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 6
+        Delay: 3
+  - MapStage: 15
+    Days:
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 26
+        Delay: 3
+      - GroupUnitsIndex: 26
+        Delay: 3
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 27
+        Delay: 3
+      - GroupUnitsIndex: 23
+        Delay: 3
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 35
+        Delay: 2
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 26
+        Delay: 2
+      - GroupUnitsIndex: 26
+        Delay: 2
+      - GroupUnitsIndex: 25
+        Delay: 2
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 24
+        Delay: 2
+      - GroupUnitsIndex: 23
+        Delay: 3
+      - GroupUnitsIndex: 26
+        Delay: 1
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 35
+        Delay: 1
+      - GroupUnitsIndex: 6
+        Delay: 1
+      - GroupUnitsIndex: 15
+        Delay: 1
+      - GroupUnitsIndex: 46
+        Delay: 1
+      - GroupUnitsIndex: 25
+        Delay: 1
+      - GroupUnitsIndex: 35
+        Delay: 1
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 16
+        Delay: 3
+  - MapStage: 16
+    Days:
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 56
+        Delay: 3
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 26
+        Delay: 1
+      - GroupUnitsIndex: 26
+        Delay: 1
+      - GroupUnitsIndex: 25
+        Delay: 1
+      - GroupUnitsIndex: 25
+        Delay: 1
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 6
+        Delay: 2
+      - GroupUnitsIndex: 6
+        Delay: 2
+      - GroupUnitsIndex: 35
+        Delay: 2
+      - GroupUnitsIndex: 24
+        Delay: 2
+      - GroupUnitsIndex: 55
+        Delay: 2
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 27
+        Delay: 2
+      - GroupUnitsIndex: 27
+        Delay: 2
+      - GroupUnitsIndex: 27
+        Delay: 2
+      - GroupUnitsIndex: 27
+        Delay: 2
+      - GroupUnitsIndex: 57
+        Delay: 4
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 6
+        Delay: 2
+      - GroupUnitsIndex: 6
+        Delay: 2
+      - GroupUnitsIndex: 7
+        Delay: 2
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 6
+        Delay: 2
+      - GroupUnitsIndex: 6
+        Delay: 2
+      - GroupUnitsIndex: 25
+        Delay: 2
+      - GroupUnitsIndex: 27
+        Delay: 2
+      - GroupUnitsIndex: 56
+        Delay: 2
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 24
+        Delay: 2
+      - GroupUnitsIndex: 26
+        Delay: 2
+      - GroupUnitsIndex: 25
+        Delay: 2
+      - GroupUnitsIndex: 24
+        Delay: 2
+      - GroupUnitsIndex: 36
+        Delay: 2
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 25
+        Delay: 2
+      - GroupUnitsIndex: 25
+        Delay: 2
+      - GroupUnitsIndex: 15
+        Delay: 2
+      - GroupUnitsIndex: 16
+        Delay: 2
+      - GroupUnitsIndex: 34
+        Delay: 2
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 6
+        Delay: 2
+      - GroupUnitsIndex: 7
+        Delay: 2
+      - GroupUnitsIndex: 15
+        Delay: 2
+      - GroupUnitsIndex: 16
+        Delay: 2
+      - GroupUnitsIndex: 35
+        Delay: 2
+  - MapStage: 17
+    Days:
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 17
+        Delay: 3
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 28
+        Delay: 1
+      - GroupUnitsIndex: 27
+        Delay: 1
+      - GroupUnitsIndex: 16
+        Delay: 1
+      - GroupUnitsIndex: 18
+        Delay: 1
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 8
+        Delay: 2
+      - GroupUnitsIndex: 8
+        Delay: 2
+      - GroupUnitsIndex: 17
+        Delay: 2
+      - GroupUnitsIndex: 28
+        Delay: 2
+      - GroupUnitsIndex: 7
+        Delay: 2
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 27
+        Delay: 2
+      - GroupUnitsIndex: 26
+        Delay: 2
+      - GroupUnitsIndex: 25
+        Delay: 2
+      - GroupUnitsIndex: 27
+        Delay: 2
+      - GroupUnitsIndex: 57
+        Delay: 4
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 18
+        Delay: 2
+      - GroupUnitsIndex: 18
+        Delay: 2
+      - GroupUnitsIndex: 17
+        Delay: 2
+  - MapStage: 18
+    Days:
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 58
+        Delay: 3
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 28
+        Delay: 1
+      - GroupUnitsIndex: 37
+        Delay: 1
+      - GroupUnitsIndex: 26
+        Delay: 1
+      - GroupUnitsIndex: 19
+        Delay: 1
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 9
+        Delay: 2
+      - GroupUnitsIndex: 9
+        Delay: 2
+      - GroupUnitsIndex: 17
+        Delay: 2
+      - GroupUnitsIndex: 28
+        Delay: 2
+      - GroupUnitsIndex: 38
+        Delay: 2
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 29
+        Delay: 2
+      - GroupUnitsIndex: 26
+        Delay: 2
+      - GroupUnitsIndex: 25
+        Delay: 2
+      - GroupUnitsIndex: 26
+        Delay: 2
+      - GroupUnitsIndex: 36
+        Delay: 4
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 18
+        Delay: 2
+      - GroupUnitsIndex: 26
+        Delay: 2
+      - GroupUnitsIndex: 27
+        Delay: 2
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 8
+        Delay: 2
+      - GroupUnitsIndex: 9
+        Delay: 2
+      - GroupUnitsIndex: 14
+        Delay: 2
+      - GroupUnitsIndex: 25
+        Delay: 2
+      - GroupUnitsIndex: 57
+        Delay: 2
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 28
+        Delay: 2
+      - GroupUnitsIndex: 27
+        Delay: 2
+      - GroupUnitsIndex: 17
+        Delay: 2
+      - GroupUnitsIndex: 28
+        Delay: 2
+      - GroupUnitsIndex: 56
+        Delay: 2
+  - MapStage: 19
+    Days:
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 29
+        Delay: 3
+      - GroupUnitsIndex: 28
+        Delay: 3
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 49
+        Delay: 3
+      - GroupUnitsIndex: 48
+        Delay: 3
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 39
+        Delay: 2
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 38
+        Delay: 2
+      - GroupUnitsIndex: 28
+        Delay: 2
+      - GroupUnitsIndex: 29
+        Delay: 2
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 37
+        Delay: 2
+      - GroupUnitsIndex: 38
+        Delay: 3
+      - GroupUnitsIndex: 18
+        Delay: 1
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 19
+        Delay: 1
+      - GroupUnitsIndex: 8
+        Delay: 1
+      - GroupUnitsIndex: 9
+        Delay: 1
+      - GroupUnitsIndex: 49
+        Delay: 1
+      - GroupUnitsIndex: 29
+        Delay: 1
+      - GroupUnitsIndex: 9
+        Delay: 1
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 9
+        Delay: 3
+  - MapStage: 20
+    Days:
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 29
+        Delay: 3
+      - GroupUnitsIndex: 29
+        Delay: 3
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 28
+        Delay: 3
+      - GroupUnitsIndex: 28
+        Delay: 3
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 39
+        Delay: 2
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 28
+        Delay: 2
+      - GroupUnitsIndex: 28
+        Delay: 2
+      - GroupUnitsIndex: 29
+        Delay: 2
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 28
+        Delay: 2
+      - GroupUnitsIndex: 29
+        Delay: 3
+      - GroupUnitsIndex: 28
+        Delay: 1
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 38
+        Delay: 1
+      - GroupUnitsIndex: 9
+        Delay: 1
+      - GroupUnitsIndex: 9
+        Delay: 1
+      - GroupUnitsIndex: 49
+        Delay: 1
+      - GroupUnitsIndex: 28
+        Delay: 1
+      - GroupUnitsIndex: 39
+        Delay: 1
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 9
+        Delay: 3
   _unitGroups:
   - Units:
     - UnitType: 11

@@ -48,8 +48,8 @@ MonoBehaviour:
     RewardCount: 6
     Experience: 10
   - UnitType: 5
-    Health: 40
-    Armor: 0.4
+    Health: 80
+    Armor: 0.2
     Damage: 2
     Reloading: 2
     RewardType: 0
@@ -64,32 +64,32 @@ MonoBehaviour:
     RewardCount: 7
     Experience: 10
   - UnitType: 7
-    Health: 30
-    Armor: 0.6
+    Health: 90
+    Armor: 0.3
     Damage: 2
     Reloading: 2
     RewardType: 0
     RewardCount: 7
     Experience: 10
   - UnitType: 8
-    Health: 100
-    Armor: 1
+    Health: 200
+    Armor: 0.3
     Damage: 3
     Reloading: 2
     RewardType: 0
     RewardCount: 10
     Experience: 10
   - UnitType: 9
-    Health: 60
-    Armor: 1
+    Health: 120
+    Armor: 0.3
     Damage: 2
     Reloading: 1.5
     RewardType: 0
     RewardCount: 4
     Experience: 10
   - UnitType: 10
-    Health: 80
-    Armor: 1
+    Health: 160
+    Armor: 0.3
     Damage: 3
     Reloading: 1.5
     RewardType: 0
@@ -136,16 +136,16 @@ MonoBehaviour:
     RewardCount: 10
     Experience: 20
   - UnitType: 16
-    Health: 40
-    Armor: 0.5
+    Health: 80
+    Armor: 0.2
     Damage: 2
     Reloading: 2
     RewardType: 0
     RewardCount: 4
     Experience: 20
   - UnitType: 17
-    Health: 40
-    Armor: 0.4
+    Health: 80
+    Armor: 0.2
     Damage: 2
     Reloading: 2
     RewardType: 0

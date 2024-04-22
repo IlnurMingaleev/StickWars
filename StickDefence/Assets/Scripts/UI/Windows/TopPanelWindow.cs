@@ -1,5 +1,6 @@
 ﻿using TonkoGames.StateMachine;
 using Models.DataModels;
+using TMPro;
 using UI.Common;
 using UI.Content.TopPanel;
 using UI.UIManager;
@@ -19,6 +20,7 @@ namespace UI.Windows
         [SerializeField] private Transform _playerRespect;
         [SerializeField] private UIBar _experienceBar;
         [SerializeField] private UIBar _levelProgressBar;
+        [SerializeField] private TMP_Text _levelNumber;
         [Inject] private IDataCentralService _dataCentralService;
         [Inject] private ICoreStateMachine _coreStateMachine;
         private CompositeDisposable _openShopDisposable = new CompositeDisposable();
@@ -35,9 +37,10 @@ namespace UI.Windows
         protected override void OnActivate()
         {
             base.OnActivate();
+            _dataCentralService.PumpingDataModel.StageLoadType.Subscribe(_ => _levelNumber.text = $"{(int) _}")
+                .AddTo(ActivateDisposables);
             _backArrow.OnClickAsObservable.Subscribe(_ => ExitGameToMainMenu()).AddTo(ActivateDisposables);
             _financeBar.SetAction(ShowShopWindow, ShowShopWindow);
-
             _manager.LastWindowsCount.Subscribe(CheckBackButtonActive).AddTo(ActivateDisposables);
             _settingsButton.OnClickAsObservable.Subscribe(_ => _manager.Show<SettingsWindow>(WindowPriority.AboveTopPanel)).AddTo(ActivateDisposables);
         }

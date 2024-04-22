@@ -30,6 +30,51 @@ MonoBehaviour:
   - StageType: 5
     Coin: 10
     Gem: 0
+  - StageType: 6
+    Coin: 10
+    Gem: 0
+  - StageType: 7
+    Coin: 10
+    Gem: 0
+  - StageType: 8
+    Coin: 10
+    Gem: 0
+  - StageType: 9
+    Coin: 10
+    Gem: 0
+  - StageType: 10
+    Coin: 10
+    Gem: 0
+  - StageType: 11
+    Coin: 10
+    Gem: 0
+  - StageType: 12
+    Coin: 10
+    Gem: 0
+  - StageType: 13
+    Coin: 10
+    Gem: 0
+  - StageType: 14
+    Coin: 10
+    Gem: 0
+  - StageType: 15
+    Coin: 10
+    Gem: 0
+  - StageType: 16
+    Coin: 10
+    Gem: 0
+  - StageType: 17
+    Coin: 10
+    Gem: 0
+  - StageType: 18
+    Coin: 10
+    Gem: 0
+  - StageType: 19
+    Coin: 10
+    Gem: 0
+  - StageType: 20
+    Coin: 10
+    Gem: 0
   MapBuilder:
   - MapStage: 1
     Day: 1
@@ -370,6 +415,1851 @@ MonoBehaviour:
     Day: 5
     GroupUnitsIndex: 11
     Delay: 2
+    IsBossDay: 0
+  - MapStage: 6
+    Day: 1
+    GroupUnitsIndex: 50
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 6
+    Day: 2
+    GroupUnitsIndex: 20
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 6
+    Day: 2
+    GroupUnitsIndex: 21
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 6
+    Day: 2
+    GroupUnitsIndex: 22
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 6
+    Day: 2
+    GroupUnitsIndex: 11
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 6
+    Day: 3
+    GroupUnitsIndex: 2
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 6
+    Day: 3
+    GroupUnitsIndex: 2
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 6
+    Day: 3
+    GroupUnitsIndex: 11
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 6
+    Day: 3
+    GroupUnitsIndex: 22
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 6
+    Day: 3
+    GroupUnitsIndex: 50
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 6
+    Day: 4
+    GroupUnitsIndex: 22
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 6
+    Day: 4
+    GroupUnitsIndex: 20
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 6
+    Day: 4
+    GroupUnitsIndex: 21
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 6
+    Day: 4
+    GroupUnitsIndex: 20
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 6
+    Day: 4
+    GroupUnitsIndex: 50
+    Delay: 4
+    IsBossDay: 0
+  - MapStage: 6
+    Day: 5
+    GroupUnitsIndex: 10
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 6
+    Day: 5
+    GroupUnitsIndex: 21
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 6
+    Day: 5
+    GroupUnitsIndex: 22
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 6
+    Day: 6
+    GroupUnitsIndex: 2
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 6
+    Day: 6
+    GroupUnitsIndex: 2
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 6
+    Day: 6
+    GroupUnitsIndex: 11
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 6
+    Day: 6
+    GroupUnitsIndex: 22
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 6
+    Day: 6
+    GroupUnitsIndex: 50
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 6
+    Day: 7
+    GroupUnitsIndex: 21
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 6
+    Day: 7
+    GroupUnitsIndex: 20
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 6
+    Day: 7
+    GroupUnitsIndex: 11
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 6
+    Day: 7
+    GroupUnitsIndex: 22
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 6
+    Day: 7
+    GroupUnitsIndex: 50
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 7
+    Day: 1
+    GroupUnitsIndex: 21
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 7
+    Day: 1
+    GroupUnitsIndex: 22
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 7
+    Day: 2
+    GroupUnitsIndex: 40
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 7
+    Day: 2
+    GroupUnitsIndex: 41
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 7
+    Day: 3
+    GroupUnitsIndex: 30
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 7
+    Day: 4
+    GroupUnitsIndex: 31
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 7
+    Day: 4
+    GroupUnitsIndex: 21
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 7
+    Day: 4
+    GroupUnitsIndex: 22
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 7
+    Day: 5
+    GroupUnitsIndex: 31
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 7
+    Day: 5
+    GroupUnitsIndex: 30
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 7
+    Day: 5
+    GroupUnitsIndex: 10
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 7
+    Day: 6
+    GroupUnitsIndex: 11
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 7
+    Day: 6
+    GroupUnitsIndex: 2
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 7
+    Day: 6
+    GroupUnitsIndex: 2
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 7
+    Day: 6
+    GroupUnitsIndex: 41
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 7
+    Day: 6
+    GroupUnitsIndex: 20
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 7
+    Day: 6
+    GroupUnitsIndex: 2
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 7
+    Day: 7
+    GroupUnitsIndex: 2
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 8
+    Day: 1
+    GroupUnitsIndex: 20
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 8
+    Day: 1
+    GroupUnitsIndex: 20
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 8
+    Day: 2
+    GroupUnitsIndex: 21
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 8
+    Day: 2
+    GroupUnitsIndex: 22
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 8
+    Day: 3
+    GroupUnitsIndex: 31
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 8
+    Day: 4
+    GroupUnitsIndex: 20
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 8
+    Day: 4
+    GroupUnitsIndex: 20
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 8
+    Day: 4
+    GroupUnitsIndex: 21
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 8
+    Day: 5
+    GroupUnitsIndex: 22
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 8
+    Day: 5
+    GroupUnitsIndex: 21
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 8
+    Day: 5
+    GroupUnitsIndex: 20
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 8
+    Day: 6
+    GroupUnitsIndex: 31
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 8
+    Day: 6
+    GroupUnitsIndex: 1
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 8
+    Day: 6
+    GroupUnitsIndex: 1
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 8
+    Day: 6
+    GroupUnitsIndex: 40
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 8
+    Day: 6
+    GroupUnitsIndex: 20
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 8
+    Day: 6
+    GroupUnitsIndex: 31
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 8
+    Day: 7
+    GroupUnitsIndex: 1
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 9
+    Day: 1
+    GroupUnitsIndex: 50
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 9
+    Day: 2
+    GroupUnitsIndex: 20
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 9
+    Day: 2
+    GroupUnitsIndex: 20
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 9
+    Day: 2
+    GroupUnitsIndex: 21
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 9
+    Day: 2
+    GroupUnitsIndex: 21
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 9
+    Day: 3
+    GroupUnitsIndex: 0
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 9
+    Day: 3
+    GroupUnitsIndex: 0
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 9
+    Day: 3
+    GroupUnitsIndex: 30
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 9
+    Day: 3
+    GroupUnitsIndex: 22
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 9
+    Day: 3
+    GroupUnitsIndex: 51
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 9
+    Day: 4
+    GroupUnitsIndex: 20
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 9
+    Day: 4
+    GroupUnitsIndex: 20
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 9
+    Day: 4
+    GroupUnitsIndex: 22
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 9
+    Day: 4
+    GroupUnitsIndex: 22
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 9
+    Day: 4
+    GroupUnitsIndex: 51
+    Delay: 4
+    IsBossDay: 0
+  - MapStage: 9
+    Day: 5
+    GroupUnitsIndex: 2
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 9
+    Day: 5
+    GroupUnitsIndex: 2
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 9
+    Day: 5
+    GroupUnitsIndex: 2
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 9
+    Day: 6
+    GroupUnitsIndex: 0
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 9
+    Day: 6
+    GroupUnitsIndex: 0
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 9
+    Day: 6
+    GroupUnitsIndex: 20
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 9
+    Day: 6
+    GroupUnitsIndex: 21
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 9
+    Day: 6
+    GroupUnitsIndex: 50
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 9
+    Day: 7
+    GroupUnitsIndex: 20
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 9
+    Day: 7
+    GroupUnitsIndex: 20
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 9
+    Day: 7
+    GroupUnitsIndex: 21
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 9
+    Day: 7
+    GroupUnitsIndex: 22
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 9
+    Day: 7
+    GroupUnitsIndex: 31
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 9
+    Day: 8
+    GroupUnitsIndex: 20
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 9
+    Day: 8
+    GroupUnitsIndex: 21
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 9
+    Day: 8
+    GroupUnitsIndex: 11
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 9
+    Day: 8
+    GroupUnitsIndex: 21
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 9
+    Day: 8
+    GroupUnitsIndex: 31
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 9
+    Day: 9
+    GroupUnitsIndex: 2
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 9
+    Day: 9
+    GroupUnitsIndex: 2
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 9
+    Day: 9
+    GroupUnitsIndex: 11
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 9
+    Day: 9
+    GroupUnitsIndex: 10
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 9
+    Day: 9
+    GroupUnitsIndex: 31
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 1
+    GroupUnitsIndex: 3
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 2
+    GroupUnitsIndex: 4
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 2
+    GroupUnitsIndex: 12
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 2
+    GroupUnitsIndex: 13
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 2
+    GroupUnitsIndex: 14
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 3
+    GroupUnitsIndex: 23
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 3
+    GroupUnitsIndex: 24
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 3
+    GroupUnitsIndex: 34
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 3
+    GroupUnitsIndex: 33
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 3
+    GroupUnitsIndex: 53
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 4
+    GroupUnitsIndex: 23
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 4
+    GroupUnitsIndex: 24
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 4
+    GroupUnitsIndex: 21
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 4
+    GroupUnitsIndex: 20
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 4
+    GroupUnitsIndex: 54
+    Delay: 4
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 5
+    GroupUnitsIndex: 23
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 5
+    GroupUnitsIndex: 24
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 5
+    GroupUnitsIndex: 22
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 6
+    GroupUnitsIndex: 3
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 6
+    GroupUnitsIndex: 4
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 6
+    GroupUnitsIndex: 10
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 6
+    GroupUnitsIndex: 11
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 6
+    GroupUnitsIndex: 13
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 7
+    GroupUnitsIndex: 14
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 7
+    GroupUnitsIndex: 54
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 7
+    GroupUnitsIndex: 14
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 7
+    GroupUnitsIndex: 24
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 7
+    GroupUnitsIndex: 50
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 8
+    GroupUnitsIndex: 24
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 8
+    GroupUnitsIndex: 24
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 8
+    GroupUnitsIndex: 11
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 8
+    GroupUnitsIndex: 22
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 8
+    GroupUnitsIndex: 50
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 9
+    GroupUnitsIndex: 4
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 9
+    GroupUnitsIndex: 4
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 9
+    GroupUnitsIndex: 13
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 9
+    GroupUnitsIndex: 23
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 9
+    GroupUnitsIndex: 50
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 10
+    GroupUnitsIndex: 21
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 10
+    GroupUnitsIndex: 24
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 10
+    GroupUnitsIndex: 54
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 10
+    GroupUnitsIndex: 3
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 10
+    GroupUnitsIndex: 3
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 10
+    GroupUnitsIndex: 3
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 10
+    GroupUnitsIndex: 13
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 10
+    GroupUnitsIndex: 13
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 10
+    Day: 10
+    GroupUnitsIndex: 14
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 11
+    Day: 1
+    GroupUnitsIndex: 13
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 11
+    Day: 2
+    GroupUnitsIndex: 23
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 11
+    Day: 2
+    GroupUnitsIndex: 24
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 11
+    Day: 2
+    GroupUnitsIndex: 14
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 11
+    Day: 2
+    GroupUnitsIndex: 13
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 11
+    Day: 3
+    GroupUnitsIndex: 3
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 11
+    Day: 3
+    GroupUnitsIndex: 4
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 11
+    Day: 3
+    GroupUnitsIndex: 13
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 11
+    Day: 3
+    GroupUnitsIndex: 24
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 11
+    Day: 3
+    GroupUnitsIndex: 1
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 11
+    Day: 4
+    GroupUnitsIndex: 23
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 11
+    Day: 4
+    GroupUnitsIndex: 24
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 11
+    Day: 4
+    GroupUnitsIndex: 22
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 11
+    Day: 4
+    GroupUnitsIndex: 20
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 11
+    Day: 4
+    GroupUnitsIndex: 53
+    Delay: 4
+    IsBossDay: 0
+  - MapStage: 11
+    Day: 5
+    GroupUnitsIndex: 13
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 11
+    Day: 5
+    GroupUnitsIndex: 14
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 11
+    Day: 5
+    GroupUnitsIndex: 13
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 12
+    Day: 1
+    GroupUnitsIndex: 53
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 12
+    Day: 2
+    GroupUnitsIndex: 23
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 12
+    Day: 2
+    GroupUnitsIndex: 24
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 12
+    Day: 2
+    GroupUnitsIndex: 23
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 12
+    Day: 2
+    GroupUnitsIndex: 13
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 12
+    Day: 3
+    GroupUnitsIndex: 4
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 12
+    Day: 3
+    GroupUnitsIndex: 4
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 12
+    Day: 3
+    GroupUnitsIndex: 13
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 12
+    Day: 3
+    GroupUnitsIndex: 24
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 12
+    Day: 3
+    GroupUnitsIndex: 53
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 12
+    Day: 4
+    GroupUnitsIndex: 14
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 12
+    Day: 4
+    GroupUnitsIndex: 15
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 12
+    Day: 4
+    GroupUnitsIndex: 25
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 12
+    Day: 4
+    GroupUnitsIndex: 24
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 12
+    Day: 4
+    GroupUnitsIndex: 53
+    Delay: 4
+    IsBossDay: 0
+  - MapStage: 12
+    Day: 5
+    GroupUnitsIndex: 13
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 12
+    Day: 5
+    GroupUnitsIndex: 24
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 12
+    Day: 5
+    GroupUnitsIndex: 23
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 12
+    Day: 6
+    GroupUnitsIndex: 4
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 12
+    Day: 6
+    GroupUnitsIndex: 4
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 12
+    Day: 6
+    GroupUnitsIndex: 14
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 12
+    Day: 6
+    GroupUnitsIndex: 24
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 12
+    Day: 6
+    GroupUnitsIndex: 34
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 12
+    Day: 7
+    GroupUnitsIndex: 25
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 12
+    Day: 7
+    GroupUnitsIndex: 25
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 12
+    Day: 7
+    GroupUnitsIndex: 14
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 12
+    Day: 7
+    GroupUnitsIndex: 25
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 12
+    Day: 7
+    GroupUnitsIndex: 34
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 13
+    Day: 1
+    GroupUnitsIndex: 10
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 13
+    Day: 1
+    GroupUnitsIndex: 15
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 13
+    Day: 2
+    GroupUnitsIndex: 45
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 13
+    Day: 2
+    GroupUnitsIndex: 25
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 13
+    Day: 3
+    GroupUnitsIndex: 15
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 13
+    Day: 4
+    GroupUnitsIndex: 5
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 13
+    Day: 4
+    GroupUnitsIndex: 4
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 13
+    Day: 4
+    GroupUnitsIndex: 4
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 13
+    Day: 5
+    GroupUnitsIndex: 25
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 13
+    Day: 5
+    GroupUnitsIndex: 25
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 13
+    Day: 5
+    GroupUnitsIndex: 4
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 13
+    Day: 6
+    GroupUnitsIndex: 5
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 13
+    Day: 6
+    GroupUnitsIndex: 5
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 13
+    Day: 6
+    GroupUnitsIndex: 5
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 13
+    Day: 6
+    GroupUnitsIndex: 14
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 13
+    Day: 6
+    GroupUnitsIndex: 14
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 13
+    Day: 6
+    GroupUnitsIndex: 15
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 13
+    Day: 7
+    GroupUnitsIndex: 15
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 14
+    Day: 1
+    GroupUnitsIndex: 25
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 14
+    Day: 1
+    GroupUnitsIndex: 26
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 14
+    Day: 2
+    GroupUnitsIndex: 45
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 14
+    Day: 2
+    GroupUnitsIndex: 44
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 14
+    Day: 3
+    GroupUnitsIndex: 35
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 14
+    Day: 4
+    GroupUnitsIndex: 36
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 14
+    Day: 4
+    GroupUnitsIndex: 25
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 14
+    Day: 4
+    GroupUnitsIndex: 24
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 14
+    Day: 5
+    GroupUnitsIndex: 23
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 14
+    Day: 5
+    GroupUnitsIndex: 35
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 14
+    Day: 5
+    GroupUnitsIndex: 14
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 14
+    Day: 6
+    GroupUnitsIndex: 15
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 14
+    Day: 6
+    GroupUnitsIndex: 6
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 14
+    Day: 6
+    GroupUnitsIndex: 6
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 14
+    Day: 6
+    GroupUnitsIndex: 43
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 14
+    Day: 6
+    GroupUnitsIndex: 25
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 14
+    Day: 6
+    GroupUnitsIndex: 6
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 14
+    Day: 7
+    GroupUnitsIndex: 6
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 15
+    Day: 1
+    GroupUnitsIndex: 26
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 15
+    Day: 1
+    GroupUnitsIndex: 26
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 15
+    Day: 2
+    GroupUnitsIndex: 27
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 15
+    Day: 2
+    GroupUnitsIndex: 23
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 15
+    Day: 3
+    GroupUnitsIndex: 35
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 15
+    Day: 4
+    GroupUnitsIndex: 26
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 15
+    Day: 4
+    GroupUnitsIndex: 26
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 15
+    Day: 4
+    GroupUnitsIndex: 25
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 15
+    Day: 5
+    GroupUnitsIndex: 24
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 15
+    Day: 5
+    GroupUnitsIndex: 23
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 15
+    Day: 5
+    GroupUnitsIndex: 26
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 15
+    Day: 6
+    GroupUnitsIndex: 35
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 15
+    Day: 6
+    GroupUnitsIndex: 6
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 15
+    Day: 6
+    GroupUnitsIndex: 15
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 15
+    Day: 6
+    GroupUnitsIndex: 46
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 15
+    Day: 6
+    GroupUnitsIndex: 25
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 15
+    Day: 6
+    GroupUnitsIndex: 35
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 15
+    Day: 7
+    GroupUnitsIndex: 16
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 16
+    Day: 1
+    GroupUnitsIndex: 56
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 16
+    Day: 2
+    GroupUnitsIndex: 26
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 16
+    Day: 2
+    GroupUnitsIndex: 26
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 16
+    Day: 2
+    GroupUnitsIndex: 25
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 16
+    Day: 2
+    GroupUnitsIndex: 25
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 16
+    Day: 3
+    GroupUnitsIndex: 6
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 16
+    Day: 3
+    GroupUnitsIndex: 6
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 16
+    Day: 3
+    GroupUnitsIndex: 35
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 16
+    Day: 3
+    GroupUnitsIndex: 24
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 16
+    Day: 3
+    GroupUnitsIndex: 55
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 16
+    Day: 4
+    GroupUnitsIndex: 27
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 16
+    Day: 4
+    GroupUnitsIndex: 27
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 16
+    Day: 4
+    GroupUnitsIndex: 27
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 16
+    Day: 4
+    GroupUnitsIndex: 27
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 16
+    Day: 4
+    GroupUnitsIndex: 57
+    Delay: 4
+    IsBossDay: 0
+  - MapStage: 16
+    Day: 5
+    GroupUnitsIndex: 6
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 16
+    Day: 5
+    GroupUnitsIndex: 6
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 16
+    Day: 5
+    GroupUnitsIndex: 7
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 16
+    Day: 6
+    GroupUnitsIndex: 6
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 16
+    Day: 6
+    GroupUnitsIndex: 6
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 16
+    Day: 6
+    GroupUnitsIndex: 25
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 16
+    Day: 6
+    GroupUnitsIndex: 27
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 16
+    Day: 6
+    GroupUnitsIndex: 56
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 16
+    Day: 7
+    GroupUnitsIndex: 24
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 16
+    Day: 7
+    GroupUnitsIndex: 26
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 16
+    Day: 7
+    GroupUnitsIndex: 25
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 16
+    Day: 7
+    GroupUnitsIndex: 24
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 16
+    Day: 7
+    GroupUnitsIndex: 36
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 16
+    Day: 8
+    GroupUnitsIndex: 25
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 16
+    Day: 8
+    GroupUnitsIndex: 25
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 16
+    Day: 8
+    GroupUnitsIndex: 15
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 16
+    Day: 8
+    GroupUnitsIndex: 16
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 16
+    Day: 8
+    GroupUnitsIndex: 34
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 16
+    Day: 9
+    GroupUnitsIndex: 6
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 16
+    Day: 9
+    GroupUnitsIndex: 7
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 16
+    Day: 9
+    GroupUnitsIndex: 15
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 16
+    Day: 9
+    GroupUnitsIndex: 16
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 16
+    Day: 9
+    GroupUnitsIndex: 35
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 17
+    Day: 1
+    GroupUnitsIndex: 17
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 17
+    Day: 2
+    GroupUnitsIndex: 28
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 17
+    Day: 2
+    GroupUnitsIndex: 27
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 17
+    Day: 2
+    GroupUnitsIndex: 16
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 17
+    Day: 2
+    GroupUnitsIndex: 18
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 17
+    Day: 3
+    GroupUnitsIndex: 8
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 17
+    Day: 3
+    GroupUnitsIndex: 8
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 17
+    Day: 3
+    GroupUnitsIndex: 17
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 17
+    Day: 3
+    GroupUnitsIndex: 28
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 17
+    Day: 3
+    GroupUnitsIndex: 7
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 17
+    Day: 4
+    GroupUnitsIndex: 27
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 17
+    Day: 4
+    GroupUnitsIndex: 26
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 17
+    Day: 4
+    GroupUnitsIndex: 25
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 17
+    Day: 4
+    GroupUnitsIndex: 27
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 17
+    Day: 4
+    GroupUnitsIndex: 57
+    Delay: 4
+    IsBossDay: 0
+  - MapStage: 17
+    Day: 5
+    GroupUnitsIndex: 18
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 17
+    Day: 5
+    GroupUnitsIndex: 18
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 17
+    Day: 5
+    GroupUnitsIndex: 17
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 18
+    Day: 1
+    GroupUnitsIndex: 58
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 18
+    Day: 2
+    GroupUnitsIndex: 28
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 18
+    Day: 2
+    GroupUnitsIndex: 37
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 18
+    Day: 2
+    GroupUnitsIndex: 26
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 18
+    Day: 2
+    GroupUnitsIndex: 19
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 18
+    Day: 3
+    GroupUnitsIndex: 9
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 18
+    Day: 3
+    GroupUnitsIndex: 9
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 18
+    Day: 3
+    GroupUnitsIndex: 17
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 18
+    Day: 3
+    GroupUnitsIndex: 28
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 18
+    Day: 3
+    GroupUnitsIndex: 38
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 18
+    Day: 4
+    GroupUnitsIndex: 29
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 18
+    Day: 4
+    GroupUnitsIndex: 26
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 18
+    Day: 4
+    GroupUnitsIndex: 25
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 18
+    Day: 4
+    GroupUnitsIndex: 26
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 18
+    Day: 4
+    GroupUnitsIndex: 36
+    Delay: 4
+    IsBossDay: 0
+  - MapStage: 18
+    Day: 5
+    GroupUnitsIndex: 18
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 18
+    Day: 5
+    GroupUnitsIndex: 26
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 18
+    Day: 5
+    GroupUnitsIndex: 27
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 18
+    Day: 6
+    GroupUnitsIndex: 8
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 18
+    Day: 6
+    GroupUnitsIndex: 9
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 18
+    Day: 6
+    GroupUnitsIndex: 14
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 18
+    Day: 6
+    GroupUnitsIndex: 25
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 18
+    Day: 6
+    GroupUnitsIndex: 57
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 18
+    Day: 7
+    GroupUnitsIndex: 28
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 18
+    Day: 7
+    GroupUnitsIndex: 27
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 18
+    Day: 7
+    GroupUnitsIndex: 17
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 18
+    Day: 7
+    GroupUnitsIndex: 28
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 18
+    Day: 7
+    GroupUnitsIndex: 56
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 19
+    Day: 1
+    GroupUnitsIndex: 29
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 19
+    Day: 1
+    GroupUnitsIndex: 28
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 19
+    Day: 2
+    GroupUnitsIndex: 49
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 19
+    Day: 2
+    GroupUnitsIndex: 48
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 19
+    Day: 3
+    GroupUnitsIndex: 39
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 19
+    Day: 4
+    GroupUnitsIndex: 38
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 19
+    Day: 4
+    GroupUnitsIndex: 28
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 19
+    Day: 4
+    GroupUnitsIndex: 29
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 19
+    Day: 5
+    GroupUnitsIndex: 37
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 19
+    Day: 5
+    GroupUnitsIndex: 38
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 19
+    Day: 5
+    GroupUnitsIndex: 18
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 19
+    Day: 6
+    GroupUnitsIndex: 19
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 19
+    Day: 6
+    GroupUnitsIndex: 8
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 19
+    Day: 6
+    GroupUnitsIndex: 9
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 19
+    Day: 6
+    GroupUnitsIndex: 49
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 19
+    Day: 6
+    GroupUnitsIndex: 29
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 19
+    Day: 6
+    GroupUnitsIndex: 9
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 19
+    Day: 7
+    GroupUnitsIndex: 9
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 20
+    Day: 1
+    GroupUnitsIndex: 29
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 20
+    Day: 1
+    GroupUnitsIndex: 29
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 20
+    Day: 2
+    GroupUnitsIndex: 28
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 20
+    Day: 2
+    GroupUnitsIndex: 28
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 20
+    Day: 3
+    GroupUnitsIndex: 39
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 20
+    Day: 4
+    GroupUnitsIndex: 28
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 20
+    Day: 4
+    GroupUnitsIndex: 28
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 20
+    Day: 4
+    GroupUnitsIndex: 29
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 20
+    Day: 5
+    GroupUnitsIndex: 28
+    Delay: 2
+    IsBossDay: 0
+  - MapStage: 20
+    Day: 5
+    GroupUnitsIndex: 29
+    Delay: 3
+    IsBossDay: 0
+  - MapStage: 20
+    Day: 5
+    GroupUnitsIndex: 28
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 20
+    Day: 6
+    GroupUnitsIndex: 38
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 20
+    Day: 6
+    GroupUnitsIndex: 9
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 20
+    Day: 6
+    GroupUnitsIndex: 9
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 20
+    Day: 6
+    GroupUnitsIndex: 49
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 20
+    Day: 6
+    GroupUnitsIndex: 28
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 20
+    Day: 6
+    GroupUnitsIndex: 39
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 20
+    Day: 7
+    GroupUnitsIndex: 9
+    Delay: 3
     IsBossDay: 0
   GroupUnits:
   - Index: 0

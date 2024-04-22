@@ -57,22 +57,22 @@ MonoBehaviour:
     CurrencyType: 0
   _gamePlayerPerks:
   - PerkType: 0
-    BaseValue: 10
-    AdditionalValue: 2
+    BaseValue: 0
+    AdditionalValue: 0
     LevelCount: 10
     BaseCost: 10
     AdditionalCost: 2
     CurrencyType: 0
   - PerkType: 1
-    BaseValue: 10
-    AdditionalValue: 2
+    BaseValue: 0
+    AdditionalValue: 0
     LevelCount: 10
     BaseCost: 10
     AdditionalCost: 2
     CurrencyType: 0
   - PerkType: 2
-    BaseValue: 10
-    AdditionalValue: 2
+    BaseValue: 0
+    AdditionalValue: 0
     LevelCount: 10
     BaseCost: 10
     AdditionalCost: 2
