@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 94968730263828332}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.000002, y: -1, z: 0}
+  m_LocalPosition: {x: 18.299997, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16147,7 +16147,7 @@ Transform:
   m_GameObject: {fileID: 1648834626611920710}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.400002, y: -1, z: 0}
+  m_LocalPosition: {x: 17.5, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21241,7 +21241,7 @@ Transform:
   m_GameObject: {fileID: 1882592930560723668}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.1, y: -1, z: 0}
+  m_LocalPosition: {x: 20.699997, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21597,7 +21597,7 @@ MonoBehaviour:
   _playerFortressInstantiate: {fileID: 6221916866098216297}
   _mapUnitsBuilder: {fileID: 1257911148735898245}
   MapStageConfig:
-    MapStage: 1
+    MapStage: 0
     Days: []
 --- !u!114 &6221916866098216297
 MonoBehaviour:
@@ -26759,7 +26759,7 @@ Transform:
   m_GameObject: {fileID: 2986779004941388687}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.800001, y: -1, z: 0}
+  m_LocalPosition: {x: 17.399998, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -48367,7 +48367,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -23.291101, y: 13.618601}
+  m_Offset: {x: -20.148884, y: 13.618601}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -48378,7 +48378,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 70.62122, y: 39.03014}
+  m_Size: {x: 76.90566, y: 39.03014}
   m_EdgeRadius: 0
 --- !u!1 &6371147391490283338
 GameObject:
@@ -48705,7 +48705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c7acc4b3bdb42f9849b05a4ecf3fdf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cooldownTime: 5
+  _cooldownTime: 10
   _mergeController: {fileID: 2592980357291104582}
 --- !u!1 &6921749999035383016
 GameObject:
@@ -48732,7 +48732,7 @@ Transform:
   m_GameObject: {fileID: 6921749999035383016}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.400001, y: -1, z: 0}
+  m_LocalPosition: {x: 15.5, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -49397,7 +49397,7 @@ Transform:
   m_GameObject: {fileID: 7799393725027737845}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.700001, y: -1, z: 0}
+  m_LocalPosition: {x: 17.499998, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -49926,7 +49926,7 @@ Transform:
   m_GameObject: {fileID: 8169797943637860769}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.6, y: -1, z: 0}
+  m_LocalPosition: {x: 19.099998, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -79653,7 +79653,7 @@ Transform:
   m_GameObject: {fileID: 9005576293646330304}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.8, y: -1, z: 0}
+  m_LocalPosition: {x: 16, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

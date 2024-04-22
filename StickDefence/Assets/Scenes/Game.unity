@@ -2302,35 +2302,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 856700926485364928, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.499998
+      value: 21.399998
       objectReference: {fileID: 0}
     - target: {fileID: 1356123437545536067, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16
+      value: 19.9
       objectReference: {fileID: 0}
     - target: {fileID: 1631891424116532782, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1839477582591822084, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
-      propertyPath: _mergeController
-      value: 
-      objectReference: {fileID: 768815831}
-    - target: {fileID: 1839477582591822084, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
-      propertyPath: MapStageConfig.MapStage
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1839477582591822084, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
-      propertyPath: MapStageConfig.Days.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1839477582591822084, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
-      propertyPath: MapStageConfig.Days.Array.data[0].Groups.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2453152874197849368, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
-      propertyPath: _cooldownTime
-      value: 10
+      value: 19.4
       objectReference: {fileID: 0}
     - target: {fileID: 2573299026537956282, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
       propertyPath: m_Name
@@ -2346,31 +2326,23 @@ PrefabInstance:
       objectReference: {fileID: 1709641390}
     - target: {fileID: 4685601691682241837, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.299997
+      value: 22.199997
       objectReference: {fileID: 0}
     - target: {fileID: 5342614303562895841, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.5
+      value: 21.4
       objectReference: {fileID: 0}
     - target: {fileID: 6713299202429206425, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.399998
-      objectReference: {fileID: 0}
-    - target: {fileID: 6933737034982869779, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
-      propertyPath: m_Size.x
-      value: 76.90566
-      objectReference: {fileID: 0}
-    - target: {fileID: 6933737034982869779, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
-      propertyPath: m_Offset.x
-      value: -20.148884
+      value: 21.299997
       objectReference: {fileID: 0}
     - target: {fileID: 7484936721102413098, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 19.099998
+      value: 22.999998
       objectReference: {fileID: 0}
     - target: {fileID: 8483008782705287514, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.699997
+      value: 24.599997
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
