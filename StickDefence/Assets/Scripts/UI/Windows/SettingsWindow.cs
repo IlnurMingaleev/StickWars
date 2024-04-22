@@ -18,7 +18,7 @@ namespace UI.Windows
         [SerializeField] private Slider _soundSlider;
         [SerializeField] private Slider _musicSlider;
         [SerializeField] private TMP_Text _uidLabel;
-
+        [SerializeField] private UIButton _resetProgressBtn;
         [Inject] private readonly IDataCentralService _dataCentralService;
         [Inject] private readonly ICoreStateMachine _coreStateMachine;
         [Inject] private readonly IIAPService _iapService;
@@ -41,6 +41,7 @@ namespace UI.Windows
         protected override void OnActivate()
         {
             base.OnActivate();
+            _resetProgressBtn.OnClickAsObservable.Subscribe(_ => _dataCentralService.Restart());
             _soundSlider.value = _dataCentralService.SubData.SoundVolume.Value;
             _musicSlider.value = _dataCentralService.SubData.MusicVolume.Value;
             

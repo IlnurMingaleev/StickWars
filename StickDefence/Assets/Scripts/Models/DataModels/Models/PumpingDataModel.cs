@@ -191,8 +191,7 @@ namespace Models.DataModels.Models
             {
                 _playerSkills.Add(playerSkillsData.SkillType, playerSkillsData);
             }
-
-            _skillCellsReactive = playerPumpingData.SkillCellDatas.ToReactiveCollection();
+            
 
             _maxStickmanLevel.Value = playerPumpingData.MaxStickmanLevel;
             _currentLevelData.Value = playerPumpingData.LevelData;
@@ -202,9 +201,43 @@ namespace Models.DataModels.Models
         
         public void SetAndInitEmptyPlayerPumpingData(PlayerPumpingData playerPumpingData)
         {
-            playerPumpingData.PlayerPerksData = new ();
-            playerPumpingData.PlayerSkillsData = new ();
-            playerPumpingData.SkillCellDatas = new ();
+            playerPumpingData.PlayerPerksData = new ()
+            {
+                new PerkData()
+                {
+                    PerkType = PerkTypesEnum.DecreasePrice,
+                    PerkLevel = 1,
+                },
+               
+                new PerkData()
+                {
+                    PerkType = PerkTypesEnum.IncreaseProfit,
+                    PerkLevel = 1,
+                },
+                new PerkData()
+                {
+                    PerkType = PerkTypesEnum.RecruitsDamage,
+                    PerkLevel = 1,
+                },
+            };
+            playerPumpingData.PlayerSkillsData = new ()
+            {
+                new SkillData()
+                {
+                    SkillType = SkillTypesEnum.Grenade,
+                    SkillLevel = 1,
+                },
+                new SkillData()
+                {
+                    SkillType = SkillTypesEnum.Rocket,
+                    SkillLevel = 1,
+                },
+                new SkillData()
+                {
+                    SkillType = SkillTypesEnum.Gas,
+                    SkillLevel = 1,
+                }
+            };
             playerPumpingData.MaxStickmanLevel = PlayerUnitTypeEnum.One;
             playerPumpingData.MapStagesType = MapStagesEnum.Stage1_1;
             playerPumpingData.LevelData = new LevelData
