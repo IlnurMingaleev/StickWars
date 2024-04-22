@@ -4,6 +4,7 @@ using System.Security.Cryptography.X509Certificates;
 using TonkoGames.Sound;
 using Models.Move;
 using Models.Timers;
+using UnityEditor;
 using UnityEngine;
 using Views.Health;
 using Object = UnityEngine.Object;
@@ -36,6 +37,7 @@ namespace Views.Projectiles
         private LayerMask _layerMask;
         private ITimerModel _timerModel;
         private bool _isCritical;
+        public float Speed => _speed;
 
         private void Awake()
         {

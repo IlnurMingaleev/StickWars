@@ -64,7 +64,7 @@ namespace Models.Units
 
         public void InitUnitConfigStats()
         {
-            View.Damageable.Init(UnitStatsConfig.Health, UnitStatsConfig.Armor);
+            View.Damageable.Init(UnitStatsConfig.Health, UnitStatsConfig.Armor, View.Speed);
             _isMoving.Subscribe(OnWalk).AddTo(_disposable);
             AttackModel.SetDamage(UnitStatsConfig.Damage);
             AttackModel.SetReloading(UnitStatsConfig.Reloading);

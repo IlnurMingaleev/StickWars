@@ -23,6 +23,7 @@ namespace Views.Move
         private float _lastPosX;
 
         private ReactiveProperty<bool> _isScaleBodyRight = new ReactiveProperty<bool>(false);
+        public ReactiveProperty<float> CurrentSpeed { get;private set; }
 
         private void OnEnable()
         {
@@ -37,6 +38,7 @@ namespace Views.Move
             
             _pointInPath = _unitMovementPath.GetNextPathPoint();
             _pointInPath.MoveNext();
+            CurrentSpeed.Value = _speed;
         }
 
         private void OnScale(bool value)
@@ -57,6 +59,7 @@ namespace Views.Move
         
         private void EndOneWay()
         {
+            CurrentSpeed.Value = 0;
             _boolEndOneWay = true;
         }
 
@@ -88,6 +91,11 @@ namespace Views.Move
             if (distanceSqr < _maxDistance * _maxDistance)
             {
                 _pointInPath.MoveNext();
+                CurrentSpeed.Value = _speed;
+            }
+            else
+            {
+                CurrentSpeed.Value = 0;
             }
 
             _isScaleBodyRight.Value = _lastPosX <= selfPosition.x;

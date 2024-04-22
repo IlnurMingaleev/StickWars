@@ -68,9 +68,9 @@ namespace Models.Timers
             if (_currentSec <= 0)
             {
                 _currentSec = 0;
-                TimeModelEnd?.Invoke();
                 _timerService.RemoveTimer(_timerTypeEnum, this);
                 _disposable.Clear();
+                TimeModelEnd?.Invoke();
             }
             
             TimeModelTick?.Invoke(_currentSec);

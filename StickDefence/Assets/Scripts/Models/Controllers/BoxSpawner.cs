@@ -91,9 +91,9 @@ namespace Models.Controllers
 
         private void OnDisable()
         {
-            _isAvailableDisposable.Clear();
-            _mainTimerDisposable.Clear();
-            //_timerModel.StopTick();
+           // _isAvailableDisposable.Clear();
+           // _mainTimerDisposable.Clear();
+            _timerModel.StopTick();
         }
         private void TimerSet()
         {

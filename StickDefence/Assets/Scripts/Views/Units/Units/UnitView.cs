@@ -31,7 +31,8 @@ namespace Views.Units.Units
         public AttackBlockView AttackBlockView => _attackBlockView;
         public UnitAnimationCallbacks UnitAnimationCallbacks => _unitAnimationCallbacks;
         public UIBar HealthBar => _healthBar;
-        
+        public ReactiveProperty<float> Speed => _unitFollowPath.CurrentSpeed;
+
         private Action _enableAction;
         private Action _disableAction;
         private CompositeDisposable _disposable = new CompositeDisposable();

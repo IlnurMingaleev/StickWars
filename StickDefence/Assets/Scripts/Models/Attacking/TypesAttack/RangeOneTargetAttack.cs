@@ -1,4 +1,5 @@
 ﻿using System;
+using Tools.Extensions;
 using UnityEngine;
 using Views.Projectiles;
 using Object = UnityEngine.Object;
@@ -30,8 +31,11 @@ namespace Models.Attacking.TypesAttack
                 var projectile = Object.Instantiate(_projectileViewPrefab, PosAttack.position, Quaternion.identity);
 
                 var isCritical = IsCritical();
-                
-                projectile.Init(DamageCritical(isCritical), TargetDamageable.GetTransform().position, isCritical, ContactFilter.layerMask, SoundManager, _projectileDestroyed, TimerService);
+
+                var predictCollisionPoint = projectile.transform.position.CalculatePredictCollision(projectile.Speed,
+                    TargetDamageable.GetTransform().position,
+                    TargetDamageable.SpeedToCalculatePredict.Value);
+                projectile.Init(DamageCritical(isCritical),predictCollisionPoint, isCritical, ContactFilter.layerMask, SoundManager, _projectileDestroyed, TimerService);
                 _createProjectile?.Invoke(projectile);
             }
         }

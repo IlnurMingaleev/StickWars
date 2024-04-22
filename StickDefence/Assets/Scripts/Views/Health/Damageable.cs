@@ -10,13 +10,15 @@ namespace Views.Health
     public interface IDamageable
     {
         void SetDamage(int damage);
+        Transform GetTransformToCenterPoint();
         Transform GetTransform();
+        ReactiveProperty<float> SpeedToCalculatePredict { get; }
     }
 
     public class Damageable : MonoBehaviour, IDamageable
     {
         [SerializeField] private List<DamageableFlashAnim> _damageableFlash;
-        
+        [SerializeField] private Transform _centerPoint;
         private IEnumerator flashingCoroutine;
         private float _armor = 0;
         private bool _isInvulnerability = false;
@@ -29,11 +31,19 @@ namespace Views.Health
         public IReadOnlyReactiveProperty<int> HealthMax => _healthMax;
         public IReadOnlyReactiveProperty<bool> IsEmptyHealth => _isEmptyHealth;
         
+        public void Init(int health, float armor, ReactiveProperty<float> speed)
+        {
+            _healthMax.Value = health;
+            _healthCurrent.Value = health;
+            _armor = armor;
+            SpeedToCalculatePredict = speed;
+        }
         public void Init(int health, float armor)
         {
             _healthMax.Value = health;
             _healthCurrent.Value = health;
             _armor = armor;
+           
         }
         
         public void SetDamage(int value)
@@ -102,7 +112,8 @@ namespace Views.Health
             _isEmptyHealth.Value = false;
         }
 
+        public Transform GetTransformToCenterPoint() => _centerPoint;
         public Transform GetTransform() => transform;
-     
+        public ReactiveProperty<float> SpeedToCalculatePredict { get; private set; }
     }
 }
