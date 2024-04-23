@@ -23,6 +23,7 @@ namespace Models.Timers
         private bool _ignoreTimeScale = true;
         private CompositeDisposable _disposable = new CompositeDisposable();
         
+        
         public TimerModel(TimerService timerService, float currentSec, TimerTypeEnum timerTypeEnum, Action<float> timeModelTick, Action timeModelEnd, bool ignoreTimeScale)
         {
             _timerService = timerService;

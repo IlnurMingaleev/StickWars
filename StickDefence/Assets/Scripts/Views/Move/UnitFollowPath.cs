@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Models.Move;
+using TMPro;
 using UniRx;
 using UnityEngine;
 
@@ -23,7 +24,9 @@ namespace Views.Move
         private float _lastPosX;
 
         private ReactiveProperty<bool> _isScaleBodyRight = new ReactiveProperty<bool>(false);
-        public ReactiveProperty<float> CurrentSpeed { get;private set; }
+
+        public ReactiveProperty<float> CurrentSpeed { get; private set; } = new ReactiveProperty<float>(0);
+        //public IReadOnlyReactiveProperty<float> CurrentSpeed => CurrentSpeed;
 
         private void OnEnable()
         {

@@ -987,6 +987,7 @@ MonoBehaviour:
   - {fileID: 6888214237369847422}
   - {fileID: 226733626385353219}
   - {fileID: 2324964801916086352}
+  _centerPoint: {fileID: 2694818721784827125}
 --- !u!70 &6411806245254276639
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
