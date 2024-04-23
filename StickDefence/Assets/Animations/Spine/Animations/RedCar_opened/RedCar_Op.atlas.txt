@@ -1,0 +1,13 @@
+
+RedCar_Op.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Red_car_open копия
+  rotate: false
+  xy: 2, 2
+  size: 1826, 880
+  orig: 1826, 880
+  offset: 0, 0
+  index: -1

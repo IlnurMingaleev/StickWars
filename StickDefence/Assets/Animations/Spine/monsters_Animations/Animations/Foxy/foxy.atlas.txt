@@ -1,0 +1,76 @@
+
+foxy.png
+size: 4096,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Arm_1
+  rotate: true
+  xy: 935, 390
+  size: 631, 1180
+  orig: 632, 1180
+  offset: 1, 0
+  index: -1
+Head
+  rotate: false
+  xy: 2, 76
+  size: 931, 945
+  orig: 959, 947
+  offset: 1, 1
+  index: -1
+arm_2
+  rotate: false
+  xy: 2117, 16
+  size: 420, 1005
+  orig: 420, 1005
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 2539, 314
+  size: 506, 707
+  orig: 508, 709
+  offset: 1, 1
+  index: -1
+foot
+  rotate: false
+  xy: 2539, 48
+  size: 563, 264
+  orig: 565, 266
+  offset: 1, 1
+  index: -1
+foot2
+  rotate: true
+  xy: 3104, 2
+  size: 499, 234
+  orig: 501, 236
+  offset: 1, 1
+  index: -1
+hip
+  rotate: true
+  xy: 935, 42
+  size: 346, 625
+  orig: 348, 627
+  offset: 1, 1
+  index: -1
+hip2
+  rotate: true
+  xy: 1562, 82
+  size: 306, 553
+  orig: 310, 555
+  offset: 3, 1
+  index: -1
+leg
+  rotate: false
+  xy: 3047, 503
+  size: 250, 518
+  orig: 252, 520
+  offset: 1, 1
+  index: -1
+leg2
+  rotate: false
+  xy: 3299, 563
+  size: 221, 458
+  orig: 223, 460
+  offset: 1, 1
+  index: -1

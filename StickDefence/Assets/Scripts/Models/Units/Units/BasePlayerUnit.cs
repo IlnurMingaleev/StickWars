@@ -1,15 +1,10 @@
 ﻿using System;
-using Enums;
-using Models.Attacking;
 using Models.Attacking.TypesAttack;
 using Models.Merge;
 using Models.SO.Core;
 using Models.Timers;
 using TonkoGames.Sound;
-using Tools.Configs;
 using UniRx;
-using Unity.VisualScripting;
-using UnityEngine;
 using Views.Projectiles;
 using Views.Units.Units;
 using Object = UnityEngine.Object;

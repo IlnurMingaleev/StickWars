@@ -1,0 +1,90 @@
+
+Huggy.png
+size: 4096,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Leg1 копия
+  rotate: false
+  xy: 698, 985
+  size: 327, 1060
+  orig: 327, 1060
+  offset: 0, 0
+  index: -1
+Leg2 копия
+  rotate: false
+  xy: 1027, 985
+  size: 327, 1060
+  orig: 327, 1060
+  offset: 0, 0
+  index: -1
+arm1 копия
+  rotate: false
+  xy: 2, 935
+  size: 347, 1110
+  orig: 347, 1110
+  offset: 0, 0
+  index: -1
+arm2 копия
+  rotate: false
+  xy: 1672, 58
+  size: 461, 928
+  orig: 461, 928
+  offset: 0, 0
+  index: -1
+body копия
+  rotate: false
+  xy: 2135, 481
+  size: 439, 636
+  orig: 439, 636
+  offset: 0, 0
+  index: -1
+head копия
+  rotate: true
+  xy: 835, 48
+  size: 935, 835
+  orig: 935, 835
+  offset: 0, 0
+  index: -1
+Leg1 копия
+  rotate: false
+  xy: 1356, 988
+  size: 324, 1057
+  orig: 327, 1060
+  offset: 2, 1
+  index: -1
+Leg2 копия
+  rotate: false
+  xy: 1682, 988
+  size: 324, 1057
+  orig: 327, 1060
+  offset: 2, 1
+  index: -1
+arm1 копия
+  rotate: false
+  xy: 351, 937
+  size: 345, 1108
+  orig: 347, 1110
+  offset: 1, 1
+  index: -1
+arm2 копия
+  rotate: false
+  xy: 2008, 1119
+  size: 459, 926
+  orig: 461, 928
+  offset: 1, 1
+  index: -1
+body копия
+  rotate: true
+  xy: 2135, 42
+  size: 437, 634
+  orig: 439, 636
+  offset: 1, 1
+  index: -1
+head копия
+  rotate: true
+  xy: 2, 2
+  size: 931, 831
+  orig: 935, 835
+  offset: 2, 2
+  index: -1

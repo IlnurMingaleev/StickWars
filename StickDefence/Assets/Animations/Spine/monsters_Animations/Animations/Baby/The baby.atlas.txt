@@ -1,0 +1,48 @@
+
+The baby.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Arm_1
+  rotate: true
+  xy: 2, 2
+  size: 366, 405
+  orig: 366, 405
+  offset: 0, 0
+  index: -1
+Arm_2
+  rotate: true
+  xy: 928, 135
+  size: 289, 183
+  orig: 289, 183
+  offset: 0, 0
+  index: -1
+Body
+  rotate: false
+  xy: 2, 370
+  size: 424, 639
+  orig: 426, 641
+  offset: 1, 1
+  index: -1
+Leg_1
+  rotate: true
+  xy: 409, 44
+  size: 324, 517
+  orig: 324, 517
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 428, 426
+  size: 527, 583
+  orig: 529, 585
+  offset: 1, 1
+  index: -1
+leg_2
+  rotate: false
+  xy: 957, 512
+  size: 229, 497
+  orig: 229, 497
+  offset: 0, 0
+  index: -1

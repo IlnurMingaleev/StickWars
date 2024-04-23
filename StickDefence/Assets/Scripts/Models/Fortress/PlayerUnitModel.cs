@@ -1,19 +1,13 @@
 ﻿using System;
-using Enums;
 using TonkoGames.Sound;
 using Models.Attacking.TypesAttack;
 using Models.Merge;
 using Models.Player;
 using Models.SO.Core;
 using Models.Timers;
-using Tools.Configs;
 using UniRx;
-using UnityEditor.Tilemaps;
-using UnityEngine;
-using Views.Health;
 using Views.Projectiles;
 using Views.Units.Fortress;
-using Views.Units.Units;
 
 namespace Models.Fortress
 {

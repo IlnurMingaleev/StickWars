@@ -1,0 +1,13 @@
+
+Railtruck.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Railtruck
+  rotate: false
+  xy: 2, 2
+  size: 1923, 991
+  orig: 1925, 993
+  offset: 1, 1
+  index: -1

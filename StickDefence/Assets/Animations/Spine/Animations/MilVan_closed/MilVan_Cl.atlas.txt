@@ -1,0 +1,13 @@
+
+MilVan_Cl.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Van_2 копия
+  rotate: false
+  xy: 2, 2
+  size: 1779, 975
+  orig: 1779, 975
+  offset: 0, 0
+  index: -1

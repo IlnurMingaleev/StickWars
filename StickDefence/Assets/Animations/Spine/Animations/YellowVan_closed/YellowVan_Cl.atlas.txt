@@ -1,0 +1,13 @@
+
+YellowVan_Cl.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Yellow van копия
+  rotate: false
+  xy: 2, 2
+  size: 1883, 1409
+  orig: 1883, 1409
+  offset: 0, 0
+  index: -1

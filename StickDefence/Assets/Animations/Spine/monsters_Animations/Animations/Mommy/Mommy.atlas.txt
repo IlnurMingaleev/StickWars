@@ -1,0 +1,48 @@
+
+Mommy.png
+size: 4096,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Arm_2
+  rotate: true
+  xy: 2, 186
+  size: 728, 1131
+  orig: 728, 1131
+  offset: 0, 0
+  index: -1
+Body
+  rotate: false
+  xy: 2642, 780
+  size: 805, 633
+  orig: 805, 633
+  offset: 0, 0
+  index: -1
+Leg_1
+  rotate: true
+  xy: 1442, 909
+  size: 504, 1198
+  orig: 509, 1198
+  offset: 5, 0
+  index: -1
+Leg_2
+  rotate: true
+  xy: 1135, 137
+  size: 770, 899
+  orig: 770, 899
+  offset: 0, 0
+  index: -1
+arm1
+  rotate: true
+  xy: 2, 916
+  size: 497, 1438
+  orig: 497, 1438
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 2036, 2
+  size: 895, 776
+  orig: 895, 776
+  offset: 0, 0
+  index: -1

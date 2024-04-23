@@ -1,0 +1,27 @@
+
+sirenhead.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Leg_1
+  rotate: true
+  xy: 2, 511
+  size: 350, 1239
+  orig: 350, 1239
+  offset: 0, 0
+  index: -1
+arm_1
+  rotate: true
+  xy: 2, 863
+  size: 260, 1204
+  orig: 261, 1204
+  offset: 1, 0
+  index: -1
+head
+  rotate: true
+  xy: 2, 2
+  size: 507, 1165
+  orig: 509, 1167
+  offset: 1, 1
+  index: -1

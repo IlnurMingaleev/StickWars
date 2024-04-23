@@ -1,0 +1,20 @@
+
+Railtruck.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+trolley
+  rotate: false
+  xy: 2, 87
+  size: 1304, 640
+  orig: 1308, 642
+  offset: 2, 1
+  index: -1
+trolley_2
+  rotate: false
+  xy: 2, 2
+  size: 687, 83
+  orig: 689, 85
+  offset: 1, 1
+  index: -1

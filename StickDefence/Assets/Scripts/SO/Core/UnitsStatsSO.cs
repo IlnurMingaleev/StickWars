@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using Enums;
 using Models.SO.Core;
-using Tools.Configs;
 using UnityEngine;
 
 namespace SO.Core

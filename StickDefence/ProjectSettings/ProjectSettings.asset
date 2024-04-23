@@ -44,8 +44,8 @@ PlayerSettings:
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1920
   defaultScreenHeight: 1080
-  defaultScreenWidthWeb: 960
-  defaultScreenHeightWeb: 600
+  defaultScreenWidthWeb: 1920
+  defaultScreenHeightWeb: 1080
   m_StereoRenderingPath: 0
   m_ActiveColorSpace: 0
   unsupportedMSAAFallback: 0
@@ -519,13 +519,14 @@ PlayerSettings:
   openGLRequireES31AEP: 0
   openGLRequireES32: 0
   m_TemplateCustomTags:
+    GAMEREADY_AUTOCALL_DELAY: 
     OVERLAY_BACKGROUND_COLOR: 
     PROGRESS_BAR_BACKGROUND_COLOR: 
     PROGRESS_BAR_BORDER_COLOR: 
     PROGRESS_BAR_FILL_COLOR: 
-    PROJECT_ID: 8018
+    PROJECT_ID: 13753
     SHOW_PRELOADER_AD: 
-    TOKEN: UsC60f0mEGsjt3vrycgNcFbsyjew1jN7
+    TOKEN: loh5dWV3STissI7ndoqUUXBseo4qINZb
   mobileMTRendering:
     Android: 1
     iPhone: 1

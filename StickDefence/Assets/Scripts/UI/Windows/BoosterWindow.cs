@@ -10,16 +10,12 @@ using I2.Loc;
 using Models.Battle.Boosters;
 using Models.IAP;
 using Models.Timers;
-using Sirenix.OdinInspector.Editor.Drawers;
 using TonkoGames.StateMachine;
 using TonkoGames.StateMachine.Enums;
-using Ui.Common;
 using UI.Common;
 using UI.UIManager;
-using UI.Windows;
-using Unity.VisualScripting;
 using UnityEngine.UI;
-using Random = UnityEngine.Random;
+
 
 namespace Ui.Windows
 {

@@ -1,0 +1,13 @@
+
+RedCar_Cl.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Red_car копия
+  rotate: false
+  xy: 2, 2
+  size: 1689, 854
+  orig: 1689, 854
+  offset: 0, 0
+  index: -1

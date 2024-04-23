@@ -1,0 +1,13 @@
+
+MilCar_Op.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Car_2 open копия
+  rotate: false
+  xy: 2, 2
+  size: 1732, 1087
+  orig: 1732, 1087
+  offset: 0, 0
+  index: -1

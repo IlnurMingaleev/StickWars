@@ -6,9 +6,10 @@ using UniRx;
 using UnityEngine;
 namespace Models.IAP.Models
 {
-    public class MobileAddModel : IapModel
+
+    public class MobileAddModel //: IapModel
     {
-#if UNITY_EDITOR || DEVELOPMENT_BUILD
+/*#if UNITY_EDITOR || DEVELOPMENT_BUILD
 #if UNITY_ANDROID
 //TODO: REmove back
 #elif UNITY_IPHONE
@@ -247,5 +248,7 @@ namespace Models.IAP.Models
         }
 
         #endregion
+#endregion*/
     }
+
 }

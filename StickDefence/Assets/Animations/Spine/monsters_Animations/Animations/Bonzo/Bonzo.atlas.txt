@@ -1,0 +1,55 @@
+
+Bonzo.png
+size: 4096,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Foot_1 копия 2
+  rotate: false
+  xy: 2786, 63
+  size: 362, 265
+  orig: 362, 265
+  offset: 0, 0
+  index: -1
+Foot_1 копия 3
+  rotate: false
+  xy: 2378, 32
+  size: 406, 296
+  orig: 406, 296
+  offset: 0, 0
+  index: -1
+Head_body копия
+  rotate: true
+  xy: 2, 62
+  size: 939, 1614
+  orig: 939, 1614
+  offset: 0, 0
+  index: -1
+Leg_1 копия 2
+  rotate: false
+  xy: 3578, 102
+  size: 368, 899
+  orig: 368, 899
+  offset: 0, 0
+  index: -1
+Leg_1 копия 3
+  rotate: false
+  xy: 3171, 2
+  size: 405, 999
+  orig: 412, 1000
+  offset: 7, 0
+  index: -1
+arm_1 копия
+  rotate: true
+  xy: 2378, 330
+  size: 671, 791
+  orig: 671, 791
+  offset: 0, 0
+  index: -1
+arm_2 копия
+  rotate: false
+  xy: 1618, 259
+  size: 758, 742
+  orig: 758, 742
+  offset: 0, 0
+  index: -1
