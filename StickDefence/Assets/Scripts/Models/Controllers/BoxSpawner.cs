@@ -46,9 +46,9 @@ namespace Models.Controllers
             _mainTimerDisposable.Clear();
             _currentSec = _cooldownTime; 
            //TODO BoxSpawner
-            /*Observable.Timer(TimeSpan.FromMilliseconds(100)).Repeat()
-                .Subscribe(_ => TimerSet()).AddTo(_mainTimerDisposable);*/
-            _timerModel = _timerService.AddGameTimer(_cooldownTime,
+            Observable.Timer(TimeSpan.FromMilliseconds(100)).Repeat()
+                .Subscribe(_ => TimerSet()).AddTo(_mainTimerDisposable);
+            /*_timerModel = _timerService.AddGameTimer(_cooldownTime,
                     f => { UpdateFill(f); },
                     () =>
                     {
@@ -57,7 +57,7 @@ namespace Models.Controllers
                         else
                             _mergeController.PlaceDefinedItem((int)PlayerUnitTypeEnum.One);
                         SetTimerAccordingAvailability();
-                    });
+                    });*/
             
         }
 
@@ -65,11 +65,11 @@ namespace Models.Controllers
         {
             _isAvailableDisposable.Clear();
             //TODO BoxSpawner
-           // Observable.Timer(TimeSpan.FromSeconds(IsAvailableCheckInterval))
-            //    .Subscribe(_ => SetTimerAccordingAvailability()).AddTo(_isAvailableDisposable);
-            _timerModel = _timerService.AddGameTimer(IsAvailableCheckInterval,
+            Observable.Timer(TimeSpan.FromSeconds(IsAvailableCheckInterval))
+                .Subscribe(_ => SetTimerAccordingAvailability()).AddTo(_isAvailableDisposable);
+            /*_timerModel = _timerService.AddGameTimer(IsAvailableCheckInterval,
                 f => { },
-                () => { SetTimerAccordingAvailability(); });
+                () => { SetTimerAccordingAvailability(); });*/
         }
 
         private void SetTimerAccordingAvailability()
@@ -91,9 +91,9 @@ namespace Models.Controllers
 
         private void OnDisable()
         {
-           // _isAvailableDisposable.Clear();
-           // _mainTimerDisposable.Clear();
-            _timerModel.StopTick();
+            _isAvailableDisposable.Clear();
+            _mainTimerDisposable.Clear();
+            /*_timerModel.StopTick();*/
         }
         private void TimerSet()
         {

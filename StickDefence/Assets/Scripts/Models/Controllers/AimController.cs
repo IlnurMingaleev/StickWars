@@ -26,6 +26,7 @@ namespace Models.Controllers
 
         private void Start()
         {
+            _cameraMain = Camera.main;
             SkillDictioary.Clear();
             SkillDictioary.Add(SkillTypesEnum.Grenade, _skills[0]);
             SkillDictioary.Add(SkillTypesEnum.Rocket, _skills[1]);

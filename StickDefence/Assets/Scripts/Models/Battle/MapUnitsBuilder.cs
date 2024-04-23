@@ -231,9 +231,11 @@ namespace Models.Battle
                 
             var dayGroup = DayGroups.Peek();
             _spawnUnitsDisposable.Clear();
-           //TODO Observable.Timer(TimeSpan.FromSeconds(dayGroup.Delay)).Subscribe(_ => EndTimerToSpawnGroup())
-                //.AddTo(_spawnUnitsDisposable);*/
-            _timerDayGroups = _timerService.AddGameTimer(dayGroup.Delay, null, EndTimerToSpawnGroup, false);
+           //TODO MapUnitsbuilder
+           
+           Observable.Timer(TimeSpan.FromSeconds(dayGroup.Delay)).Subscribe(_ => EndTimerToSpawnGroup())
+                .AddTo(_spawnUnitsDisposable);
+            /*_timerDayGroups = _timerService.AddGameTimer(dayGroup.Delay, null, EndTimerToSpawnGroup, false);*/
         }
 
         private void EndTimerToSpawnGroup()
