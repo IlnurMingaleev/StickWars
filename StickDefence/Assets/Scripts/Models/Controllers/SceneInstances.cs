@@ -17,17 +17,7 @@ namespace Models.Controllers
         public AimController AimController => _aimController;
         public BoosterManager BoosterManager => _boosterManager;
         public MergeController MergeController => _mergeController;
-        /*
-        private static SceneInstances _instance;
-        public static SceneInstances Instance 
-        {
-            get
-            {
-                if (_instance == null) _instance = FindObjectOfType<SceneInstances>();
-                return _instance;
-            }
-            
-         }*/
+       
        
     }
     

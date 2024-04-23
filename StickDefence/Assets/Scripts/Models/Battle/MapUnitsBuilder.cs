@@ -49,7 +49,6 @@ namespace Models.Battle
 
         private CompositeDisposable _disposable = new CompositeDisposable();
         private CompositeDisposable _updateDisposable = new CompositeDisposable();
-        private CompositeDisposable _spawnUnitsDisposable = new CompositeDisposable();
         private TopPanelWindow _topPanelWindow;
         private int _maxUnitsCount = 0;
         private bool _gainCoins = false;
@@ -99,7 +98,6 @@ namespace Models.Battle
             RunTimeStateMachine.UnSubscriptionAction(RunTimeStateEnum.Pause, OnPause);
             _disposable.Clear();
             _updateDisposable.Clear();
-            _spawnUnitsDisposable.Clear();
             DestroyStage();
         }
 
@@ -230,12 +228,8 @@ namespace Models.Battle
                 return;
                 
             var dayGroup = DayGroups.Peek();
-            _spawnUnitsDisposable.Clear();
-           //TODO MapUnitsbuilder
-           
-           Observable.Timer(TimeSpan.FromSeconds(dayGroup.Delay)).Subscribe(_ => EndTimerToSpawnGroup())
-                .AddTo(_spawnUnitsDisposable);
-            /*_timerDayGroups = _timerService.AddGameTimer(dayGroup.Delay, null, EndTimerToSpawnGroup, false);*/
+
+            _timerDayGroups = _timerService.AddGameTimer(dayGroup.Delay, null, EndTimerToSpawnGroup, false);
         }
 
         private void EndTimerToSpawnGroup()

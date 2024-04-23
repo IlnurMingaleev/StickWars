@@ -31,9 +31,6 @@ namespace Models.Controllers
         private ITimerModel _timerModel;
         private BottomPanelWindow _bottomPanelWindow;
         private const float IsAvailableCheckInterval = 5.0f;
-        private CompositeDisposable _isAvailableDisposable = new CompositeDisposable();
-        private CompositeDisposable _mainTimerDisposable = new CompositeDisposable();
-        private float _currentSec;
         [Inject] private IDataCentralService _dataCentralService;
         private void Start()
         {
@@ -43,12 +40,8 @@ namespace Models.Controllers
 
         private void StartTimer()
         {
-            _mainTimerDisposable.Clear();
-            _currentSec = _cooldownTime; 
-           //TODO BoxSpawner
-            Observable.Timer(TimeSpan.FromMilliseconds(100)).Repeat()
-                .Subscribe(_ => TimerSet()).AddTo(_mainTimerDisposable);
-            /*_timerModel = _timerService.AddGameTimer(_cooldownTime,
+
+            _timerModel = _timerService.AddGameTimer(_cooldownTime,
                     f => { UpdateFill(f); },
                     () =>
                     {
@@ -57,19 +50,16 @@ namespace Models.Controllers
                         else
                             _mergeController.PlaceDefinedItem((int)PlayerUnitTypeEnum.One);
                         SetTimerAccordingAvailability();
-                    });*/
+                    });
             
         }
 
         private void StartSlotAvailableCheckTimer()
         {
-            _isAvailableDisposable.Clear();
-            //TODO BoxSpawner
-            Observable.Timer(TimeSpan.FromSeconds(IsAvailableCheckInterval))
-                .Subscribe(_ => SetTimerAccordingAvailability()).AddTo(_isAvailableDisposable);
-            /*_timerModel = _timerService.AddGameTimer(IsAvailableCheckInterval,
+
+            _timerModel = _timerService.AddGameTimer(IsAvailableCheckInterval,
                 f => { },
-                () => { SetTimerAccordingAvailability(); });*/
+                () => { SetTimerAccordingAvailability(); });
         }
 
         private void SetTimerAccordingAvailability()
@@ -91,26 +81,7 @@ namespace Models.Controllers
 
         private void OnDisable()
         {
-            _isAvailableDisposable.Clear();
-            _mainTimerDisposable.Clear();
-            /*_timerModel.StopTick();*/
-        }
-        private void TimerSet()
-        {
-            _currentSec -= 0.1f;
-            if (_currentSec <= 0)
-            {
-                _currentSec = 0;
-                if((int)_dataCentralService.PumpingDataModel.MaxStickmanLevel.Value >= (int)PlayerUnitTypeEnum.Four )
-                    _mergeController.PlaceDefinedItem(((int)_dataCentralService.PumpingDataModel.MaxStickmanLevel.Value - 3));
-                else
-                    _mergeController.PlaceDefinedItem((int)PlayerUnitTypeEnum.One);
-                _mainTimerDisposable.Clear();
-                SetTimerAccordingAvailability();
-               
-            }
-            UpdateFill(_currentSec);
-            
+            _timerModel.StopTick();
         }
     }
 }
