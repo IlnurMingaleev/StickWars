@@ -279,16 +279,20 @@ namespace Models.Merge
                 {
                     for (int innerSlotIndex = slotIndex + 1; innerSlotIndex < slots.Length - 5; innerSlotIndex++)
                     {
-                        PlayerUnitTypeEnum unitType = slots[slotIndex].currentItem.UnitTypeEnum;
-                        PlayerUnitTypeEnum innerUnitType= slots[innerSlotIndex].currentItem.UnitTypeEnum;
-                        if (slots[innerSlotIndex].state == SlotState.Full &&
-                           unitType == innerUnitType && unitType != PlayerUnitTypeEnum.Twenty)
+
+                        if (slots[innerSlotIndex].state == SlotState.Full)
                         {
-                            slots[slotIndex].DestroyItem(); 
-                            slots[innerSlotIndex].DestroyItem();
-                            slots[innerSlotIndex].CreateItem((int)unitType + 1, _playerBuilder);
-                            return;
+                            PlayerUnitTypeEnum unitType = slots[slotIndex].currentItem.UnitTypeEnum;
+                            PlayerUnitTypeEnum innerUnitType= slots[innerSlotIndex].currentItem.UnitTypeEnum;
+                            if( unitType == innerUnitType && unitType != PlayerUnitTypeEnum.Twenty)
+                            {
+                                slots[slotIndex].DestroyItem(); 
+                                slots[innerSlotIndex].DestroyItem();
+                                slots[innerSlotIndex].CreateItem((int)unitType + 1, _playerBuilder);
+                                return;
+                            }
                         }
+
                     }
                 }
             }

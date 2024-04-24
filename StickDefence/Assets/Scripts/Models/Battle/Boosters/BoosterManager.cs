@@ -44,7 +44,7 @@ namespace Models.Battle.Boosters
 
         private Dictionary<BoosterTypeEnum, Booster> _activeBoosters = new Dictionary<BoosterTypeEnum,Booster>();
 
-        public void ApplyBooster(BoosterTypeEnum boosterTypeEnum)
+        public void ApplyBooster(BoosterTypeEnum boosterTypeEnum, Action OnBoosterTimerEnd = null)
         {
             
             if (_activeBoosters.ContainsKey(boosterTypeEnum))
@@ -58,6 +58,7 @@ namespace Models.Battle.Boosters
                 {
                     _activeBoosters[boosterTypeEnum].Dispose();
                     _activeBoosters.Remove(boosterTypeEnum);
+                    OnBoosterTimerEnd?.Invoke();
                 }, boosterTypeEnum);
             }
             if(_activeBoosters.ContainsKey(boosterTypeEnum))

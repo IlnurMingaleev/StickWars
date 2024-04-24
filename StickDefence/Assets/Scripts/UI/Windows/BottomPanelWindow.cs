@@ -5,6 +5,7 @@ using I2.Loc;
 using Models.Battle.Boosters;
 using Models.Controllers;
 using Models.DataModels;
+using Models.IAP;
 using Models.Merge;
 using Models.Player;
 using Models.SO.Core;
@@ -63,6 +64,7 @@ namespace UI.Windows
         [Inject] private IDataCentralService _dataCentralService;
         [Inject] private ConfigManager _configManager;
         [Inject] private IPlayer _player;
+        [Inject] private IIAPService _iapService;
         private WindowPriority Priority = WindowPriority.TopPanel;
         private MergeController _mergeController;
         private StickmanShopWindow _stickmanShopWindow;
@@ -108,7 +110,7 @@ namespace UI.Windows
             }).AddTo(ActivateDisposables);
             _mergeBtn.OnClickAsObservable.Subscribe(_ =>
             {
-                _boosterManager.ApplyBooster(BoosterTypeEnum.AutoMerge);
+               RewardMergeButton();
             }).AddTo(ActivateDisposables);
             PlayerUnitTypeEnum playerUnitType = PlayerUnitTypeEnum.One;
             if(_dataCentralService.PumpingDataModel.MaxStickmanLevel.Value >= PlayerUnitTypeEnum.Four)
@@ -265,5 +267,25 @@ namespace UI.Windows
         {
             _alertShopIcon.SetActive(value);
         }
+
+        #region Ads
+
+        private void RewardMergeButton()
+        {
+           
+            _iapService.ShowRewardedBreak(RewardSpinBreakComplete);
+            _mergeBtn.IsInteractable = false;
+        }
+        
+        private void RewardSpinBreakComplete(bool value)
+        {
+            if (value)
+            {
+                _boosterManager.ApplyBooster(BoosterTypeEnum.AutoMerge, () => _mergeBtn.IsInteractable = true);
+            }
+
+        }
+
+        #endregion
     }
 }

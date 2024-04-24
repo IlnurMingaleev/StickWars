@@ -1296,6 +1296,15 @@ MonoBehaviour:
       - 
       Flags: 000000
       Languages_Touch: []
+    - Term: Labels/Wave
+      TermType: 0
+      Description: 
+      Languages:
+      - Wave
+      - "\u0412\u043E\u043B\u043D\u0430"
+      - 
+      Flags: 000000
+      Languages_Touch: []
     CaseInsensitiveTerms: 0
     OnMissingTranslation: 1
     mTerm_AppName: 

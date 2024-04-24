@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3940995702483341177
 RectTransform:
   m_ObjectHideFlags: 0
@@ -306,4 +306,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isUndestroyable: 0
   _isTransparent: 1
+  _windowAnimations: []
   _button: {fileID: 2626774431564013895}

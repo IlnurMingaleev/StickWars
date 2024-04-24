@@ -106,19 +106,10 @@ namespace Models.Battle
             _unitsCount.Value = 0;
             SubscribeToUnitsKill();
             _dataCentralService.PumpingDataModel.CalculateRequiredExp(_configManager);
-            SubscribeToExpLvl();
+            
         }
 
-        private void SubscribeToExpLvl()
-        {
-            if (_topPanelWindow == null)
-                _topPanelWindow = _windowManager.GetWindow<TopPanelWindow>();
-            else
-                _dataCentralService.PumpingDataModel.LevelReactive.Subscribe(levelData =>
-                {
-                    _topPanelWindow.ExperienceBar.SetBarFiilAmount(levelData.CurrentExp, levelData.RequiredExp);
-                }).AddTo(_disposable);
-        }
+       
 
         private void SubscribeToUnitsKill()
         {

@@ -37,6 +37,7 @@ namespace UI.Windows
         protected override void OnActivate()
         {
             base.OnActivate();
+            SubscribeToExpLvl();
             _dataCentralService.PumpingDataModel.StageLoadType.Subscribe(_ => _levelNumber.text = $"{(int) _}")
                 .AddTo(ActivateDisposables);
             _backArrow.OnClickAsObservable.Subscribe(_ => ExitGameToMainMenu()).AddTo(ActivateDisposables);
@@ -45,17 +46,27 @@ namespace UI.Windows
             _settingsButton.OnClickAsObservable.Subscribe(_ => _manager.Show<SettingsWindow>(WindowPriority.AboveTopPanel)).AddTo(ActivateDisposables);
         }
 
+        private void SubscribeToExpLvl()
+        {
+            _dataCentralService.PumpingDataModel.LevelReactive.Subscribe(levelData =>
+            {
+                ExperienceBar.SetBarFiilAmount(levelData.CurrentExp, levelData.RequiredExp);
+            }).AddTo(ActivateDisposables);
+        }
+
         public void SetTopGameState()
         {
             _backArrow.gameObject.SetActive(true);
             _statusBar.SetActive(false);
             _settingsButton.gameObject.SetActive(false);
+            _levelProgressBar.gameObject.SetActive(true);
         }
         
         public void SetTopLobbyState()
         {
             _statusBar.SetActive(true);
             _buttonExit.gameObject.SetActive(false);
+            _levelProgressBar.gameObject.SetActive(false);
             _settingsButton.gameObject.SetActive(true);
         }
 

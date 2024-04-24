@@ -13,10 +13,7 @@ namespace Views.Home
 {
     public class LobbyView : MonoBehaviour
     {
-        [SerializeField] private LobbyGameButton _shopButton;
-        [SerializeField] private LobbyGameButton _storageButton;
-        [SerializeField] private LobbyGameButton _coinSmeltingButton;
-        [SerializeField] private LobbyGameButton _upgradeBaseButton;
+       
         [SerializeField] private GameObject _blocker;
         [SerializeField] private ScaleCameraSize2D _cameraScaler;
         
@@ -26,11 +23,7 @@ namespace Views.Home
 
         private void OnEnable()
         {
-            _shopButton.AddListener(OnShopButton);
-            _storageButton.AddListener(OnStorageButton);
-            _coinSmeltingButton.AddListener(OnCoinSmeltingButton);
-            _upgradeBaseButton.AddListener(OnUpgradeBaseButton);
-
+          
             _windowManager.GetWindow<LobbyWindow>().CanClickableLobby.Subscribe(value => _blocker.SetActive(!value)).AddTo(_disposables);
             
             _blocker.SetActive(false);

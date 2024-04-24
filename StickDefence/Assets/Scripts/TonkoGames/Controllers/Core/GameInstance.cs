@@ -63,9 +63,9 @@ namespace TonkoGames.Controllers.Core
             _coreStateMachine.TutorialStateMachine.InitTutorials(_dataCentralService.SubData);
 
 #if UNITY_WEBGL && !UNITY_EDITOR
-                var loadingScreenWindow = _windowManager.Show<LoadingScreenWindow>();
-                loadingScreenWindow.EndTransitAnim += LogoScreenShown;
-                loadingScreenWindow.ShowWebgl(!GamePush.GP_Device.IsMobile());
+                /*var loadingScreenWindow = _windowManager.Show<LoadingScreenWindow>();*/
+                /*loadingScreenWindow.EndTransitAnim += LogoScreenShown;*/
+                /*loadingScreenWindow.ShowWebgl(!GamePush.GP_Device.IsMobile());*/
 #else
             _coreStateMachine.SceneStateMachine.SetScenesState(ScenesStateEnum.Game);
 #endif
@@ -91,11 +91,11 @@ namespace TonkoGames.Controllers.Core
         private void SceneEndLoad(ScenesStateEnum scenesStateEnum)
         {
             _coreStateMachine.SceneStateMachine.SceneEndLoad -= SceneEndLoad;
-            var loadingScreenWindow = _windowManager.GetWindow<LoadingScreenWindow>();
+            /*var loadingScreenWindow = _windowManager.GetWindow<LoadingScreenWindow>();
             if (loadingScreenWindow.IsShowing)
             {
                 _windowManager.Hide<LoadingScreenWindow>().EndTransitAnim -= LogoScreenShown;
-            }
+            }*/
   
             _tutorialService.Init(_coreStateMachine, _dataCentralService, _windowManager, _configManager);
         }
