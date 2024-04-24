@@ -76,14 +76,15 @@ namespace UI.Windows
             SaveStats(rewardContains);
         }
         
-        public void SetWin(RewardContains rewardContains, int stars, Action claim,Action goOn)
+        public void SetWin(RewardContains rewardContains, int stars, Action claim, Action goOn,
+            SceneInstances sceneInstances)
         {
             _claim = claim;
             _continue = goOn;
             
             _resurrectBlock.SetActive(false);
             _winBlock.SetActive(true);
-            SceneInstances.Instance.PlayerBuilder.DestroyStage();
+            sceneInstances.PlayerBuilder.DestroyStage();
             _title.text = LocalizationManager.GetTranslation(ScriptTerms.Windows_PlayResult.StageClear);
             
             foreach (var star in _stars)

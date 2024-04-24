@@ -17,6 +17,7 @@ using UI.Content.Spin;
 using UI.UIManager;
 using UniRx;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 using VContainer;
 
@@ -78,26 +79,31 @@ namespace UI.Windows
 
         protected override void OnActivate()
         {
-            if (_mergeController == null) _mergeController = SceneInstances.Instance.MergeController;
-            if (_boosterManager == null) _boosterManager = SceneInstances.Instance.BoosterManager;
+          
             if (!_stickmanShopWindow) _stickmanShopWindow = _manager.GetWindow<StickmanShopWindow>();
             base.OnActivate();
             InitWindowButtons();
             InitWallUpgradeButtonClick(UpgradeWallClickedEvent);
             InitAlertEvents();
         }
-        
-        private void InitWindowButtons()
+
+        public void Init(SceneInstances sceneInstances)
         {
+           if (_mergeController == null) _mergeController = sceneInstances.MergeController;
+           if (_boosterManager == null) _boosterManager = sceneInstances.BoosterManager;
             _rocketSkillBtn.OnClickAsObservable
-                .Subscribe(_ => SceneInstances.Instance.AimController.StartAiming(SkillTypesEnum.Rocket))
+                .Subscribe(_ =>sceneInstances.AimController.StartAiming(SkillTypesEnum.Rocket))
                 .AddTo(ActivateDisposables);
             _greandesSkillBtn.OnClickAsObservable
-                .Subscribe(_ => SceneInstances.Instance.AimController.StartAiming(SkillTypesEnum.Grenade))
+                .Subscribe(_ =>sceneInstances.AimController.StartAiming(SkillTypesEnum.Grenade))
                 .AddTo(ActivateDisposables);
             _poisonSkillBtn.OnClickAsObservable
-                .Subscribe(_ => SceneInstances.Instance.AimController.StartAiming(SkillTypesEnum.Gas))
+                .Subscribe(_ =>sceneInstances.AimController.StartAiming(SkillTypesEnum.Gas))
                 .AddTo(ActivateDisposables);
+        }
+
+        private void InitWindowButtons()
+        { 
             _stickmanShopBtn.OnClickAsObservable.Subscribe(_ =>
                 {
                    _stickmanShopWindow.Init(_mergeController.GetComponent<IPlaceableUnit>());

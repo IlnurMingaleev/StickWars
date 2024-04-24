@@ -1,4 +1,5 @@
-﻿using TonkoGames.Sound;
+﻿using Models.Battle;
+using TonkoGames.Sound;
 using TonkoGames.StateMachine;
 using TonkoGames.StateMachine.Enums;
 using Models.DataModels;
@@ -29,6 +30,8 @@ namespace Models.Controllers
         [Inject] private readonly PrefabInject _prefabInject;
         
         private CompositeDisposable _disposables = new CompositeDisposable();
+
+        public SceneInstances SceneInstances;
         
         public void OnEnable()
         {
@@ -50,6 +53,9 @@ namespace Models.Controllers
             Destroy(_stageMap);
             _stageMap = Instantiate(_stageMapPrefab, _stageMapParent);
             _prefabInject.InjectGameObject(_stageMap);
+            /*var battleStageControl = _stageMap.GetComponent<BattleStageControl>();
+            SceneInstances = _stageMap.GetComponent<SceneInstances>();
+            battleStageControl.Init(this);*/
             _lobby.SetActive(true);
             _windowManager.Show<LobbyWindow>();
             _windowManager.Show<TopPanelWindow>(WindowPriority.TopPanel).SetTopLobbyState();
@@ -57,8 +63,8 @@ namespace Models.Controllers
 
         private void OnStageBattleState()
         {
-            _stageMap.SetActive(true);
             _lobby.SetActive(false);
+            _stageMap.SetActive(true);
             _windowManager.FindWindow<TopPanelWindow>().SetTopGameState(); 
         }
     }

@@ -1,4 +1,5 @@
 ﻿using Enums;
+using Models.Controllers;
 using TonkoGames.Controllers.Core;
 using TonkoGames.StateMachine;
 using TonkoGames.StateMachine.Enums;
@@ -20,9 +21,11 @@ namespace Models.Battle
         private readonly IPlayer _player;
         private readonly IDataCentralService _dataCentralService;
         private readonly ICoreStateMachine _coreStateMachine;
+        private readonly SceneInstances _sceneInstances;
         
-        public BattleResult(PlayerFortressInstantiate playerFortressInstantiate, IWindowManager windowManager, 
-            ConfigManager configManager, IPlayer player, IDataCentralService dataCentralService, ICoreStateMachine coreStateMachine)
+        public BattleResult(PlayerFortressInstantiate playerFortressInstantiate, IWindowManager windowManager,
+            ConfigManager configManager, IPlayer player, IDataCentralService dataCentralService,
+            ICoreStateMachine coreStateMachine, SceneInstances sceneInstances)
         {
             _playerFortressInstantiate = playerFortressInstantiate;
             _windowManager = windowManager;
@@ -30,6 +33,7 @@ namespace Models.Battle
             _player = player;
             _dataCentralService = dataCentralService;
             _coreStateMachine = coreStateMachine;
+            _sceneInstances = sceneInstances;
         }
 
         public void OnLoadBattleState()
@@ -82,7 +86,7 @@ namespace Models.Battle
             if (isWin)
             {
                 
-                playResultWindow.SetWin(rewardContains, stars, OnPlayResultWindowClaim,Continue);
+                playResultWindow.SetWin(rewardContains, stars, OnPlayResultWindowClaim,Continue,_sceneInstances);
             }
             else
             {

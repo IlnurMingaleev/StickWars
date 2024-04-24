@@ -1,5 +1,6 @@
 ﻿using Anim.Battle;
 using Enums;
+using Models.Controllers;
 using TonkoGames.Controllers.Core;
 using TonkoGames.StateMachine;
 using TonkoGames.StateMachine.Enums;
@@ -12,6 +13,7 @@ using UI.UIManager;
 using UI.Windows;
 using UniRx;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 using VContainer;
 
 namespace Models.Battle
@@ -36,14 +38,13 @@ namespace Models.Battle
 
         public MapStageConfig MapStageConfig;
         private ReactiveProperty<int> _currentDayIndex = new ReactiveProperty<int>(-1);
-
         public IReadOnlyReactiveProperty<int> CurrentDayIndex => _currentDayIndex;
 
         private void Awake()
         {
             _battleAnimations = new BattleAnimations(_playerFortressInstantiate, _coreStateMachine);
             _battleResult = new BattleResult(_playerFortressInstantiate, _windowManager, _configManager, _player,
-                _dataCentralService, _coreStateMachine);
+                _dataCentralService, _coreStateMachine, gameObject.GetComponent<SceneInstances>());
         }
 
         public void OnEnable()
@@ -71,6 +72,7 @@ namespace Models.Battle
             BattleStateMachine.EndBattle -= OnBattleEnd;
             _timerService.RestartGameTimers();
         }
+        
 
         private void OnCloseBattle()
         {
@@ -100,8 +102,9 @@ namespace Models.Battle
         private void OnStartBattleState()
         {
             _coreStateMachine.RunTimeStateMachine.SetRunTimeState(RunTimeStateEnum.Play);
-            _windowManager.Show<BottomPanelWindow>();
-            _windowManager.Show<TopPanelWindow>();
+            _windowManager.Show<BottomPanelWindow>(WindowPriority.TopPanel);
+            _windowManager.GetWindow<BottomPanelWindow>().Init(gameObject.GetComponent<SceneInstances>());
+            _windowManager.Show<TopPanelWindow>(WindowPriority.TopPanel);
 
             _currentDayIndex.Value = 0;
            

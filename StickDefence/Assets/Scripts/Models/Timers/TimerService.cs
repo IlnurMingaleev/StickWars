@@ -33,7 +33,6 @@ namespace Models.Timers
 
         private void OnRunTimePlay()
         {
-            Time.timeScale = 1.0f;
             foreach (var gameTimeModels in _gameTimeModels)
             {
                 gameTimeModels.PauseTick();
@@ -43,7 +42,6 @@ namespace Models.Timers
 
         private void OnRunTimePause()
         {
-            Time.timeScale = 0.0f;
             foreach (var gameTimeModels in _gameTimeModels)
             {
                 gameTimeModels.PauseTick();
