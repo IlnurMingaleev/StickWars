@@ -26,4 +26,29 @@ namespace UI.Content.Rewards
             Type = RewardType.Gem;
         }
     }
+
+    public class CollectibleAttackSpeed : Collectible
+    {
+        public CollectibleAttackSpeed(int attackSpeedTime)
+        {
+            Amount = attackSpeedTime;
+            Type = RewardType.AttackSpeed;
+        }
+    }
+    public class CollectibleGainCoins : Collectible
+    {
+        public CollectibleGainCoins(int gainCoinsTime)
+        {
+            Amount = gainCoinsTime;
+            Type = RewardType.GainCoins;
+        }
+    }
+    public class CollectibleAutoMerge : Collectible
+    {
+        public CollectibleAutoMerge(int automergeTime)
+        {
+            Amount = automergeTime;
+            Type = RewardType.AutoMerge;
+        }
+    }
 }

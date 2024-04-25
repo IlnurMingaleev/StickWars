@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2cc83d4eb174a12bba8830034a9e17a, type: 3}
   m_Name: IAPsConfigSOUpdater
   m_EditorClassIdentifier: 
-  documentID: 1dV1jWH8q0vZdXHckJ9HrQMcwTtWyyXKSqdMvaJXljuc
+  documentID: 12oIKswhQvuS3_tuBN_bfR_fghh0zLutQkqWQiRmB72g
   _iAPSO: {fileID: 11400000, guid: 80ae67f4e481b3940aa88552b5b383e6, type: 2}
   IapRewardData:
   - IapType: 0
@@ -56,24 +56,24 @@ MonoBehaviour:
     CoinReward: 700
     GemReward: 30
   LuckySpin:
-  - RewardIconType: 3
+  - RewardIconType: 0
     CoinReward: 700
-    GemReward: 20
+    GemReward: 0
   - RewardIconType: 0
     CoinReward: 350
     GemReward: 0
-  - RewardIconType: 1
+  - RewardIconType: 0
     CoinReward: 0
-    GemReward: 15
-  - RewardIconType: 2
+    GemReward: 0
+  - RewardIconType: 0
     CoinReward: 500
-    GemReward: 5
+    GemReward: 0
   - RewardIconType: 0
     CoinReward: 700
     GemReward: 0
-  - RewardIconType: 1
+  - RewardIconType: 0
     CoinReward: 0
-    GemReward: 10
+    GemReward: 0
   - RewardIconType: 0
     CoinReward: 700
     GemReward: 0

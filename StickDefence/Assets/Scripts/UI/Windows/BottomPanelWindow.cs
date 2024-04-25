@@ -11,6 +11,7 @@ using Models.Player;
 using Models.SO.Core;
 using TMPro;
 using TonkoGames.Controllers.Core;
+using Tools.Extensions;
 using Ui.Common;
 using UI.Common;
 using UI.Content.Spin;
@@ -60,6 +61,8 @@ namespace UI.Windows
         [Header("Buttons")] 
         [SerializeField] private UIButton _fortuneWheelBtn;
         [SerializeField] private UIButton _mergeBtn;
+        public UIButton FortuneWheelBtn => _fortuneWheelBtn;
+        public UIButton MergeBtn => _mergeBtn;
         
         
         [Inject] private IDataCentralService _dataCentralService;
@@ -202,7 +205,7 @@ namespace UI.Windows
         #region UpdateUIElements
         private void UpdateMoneyLabel(int money)
         {
-            _moneyText.text = $"{money}";
+            _moneyText.text = $"{SetScoreExt.ConvertIntToStringValue(money)}";
         }
 
         public void SetBoxImageFill(float value)
@@ -221,7 +224,7 @@ namespace UI.Windows
 
         public void UpdateWallCost(int cost)
         {
-            _wallUpgradeCost.text = $"{cost}";
+            _wallUpgradeCost.text = $"{SetScoreExt.ConvertIntToStringValue(cost)}";
         }
         public void UpdateRocketFill(float value)
         {

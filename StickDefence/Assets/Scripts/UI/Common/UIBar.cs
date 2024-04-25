@@ -1,5 +1,6 @@
 ﻿using Enums;
 using TMPro;
+using Tools.Extensions;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,7 +18,7 @@ namespace UI.Common
         public void SetBarFiilAmount(int currentValue, int maxValue)
         {
             _barSlider.value = (float) currentValue / maxValue;
-            _healthLabel.text = $"{currentValue}/{maxValue}";
+            _healthLabel.text = $"{SetScoreExt.ConvertIntToStringValue(currentValue)}/{SetScoreExt.ConvertIntToStringValue(maxValue)}";
         }
 
         

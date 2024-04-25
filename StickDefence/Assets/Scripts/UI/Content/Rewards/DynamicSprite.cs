@@ -13,7 +13,7 @@ namespace UI.Content.Rewards
         
         public int Index { get; private set; }
         
-        public void UpdateSprite(float value)
+        public virtual void UpdateSprite(float value)
         {
             if (_sprites.DynamicSprites.Count == 0) throw new Exception("No ranges were found.");
 

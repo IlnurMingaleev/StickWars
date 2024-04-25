@@ -6,5 +6,9 @@ namespace UI.Content.Rewards
     {
         public int Coin;
         public int Gem;
+        public int AttackSpeed;
+        public int GainCoins;
+        public int AutoMerge;
+
     }
 }

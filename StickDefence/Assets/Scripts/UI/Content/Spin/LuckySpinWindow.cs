@@ -147,9 +147,11 @@ namespace UI.Content.Spin
             _windowManager.Show<RewardCollectWindow>().Collect(new RewardContains()
             {
                 Coin = rewardConfig.CoinReward,
-                Gem = rewardConfig.GemReward
+                Gem = rewardConfig.GemReward,
+                AttackSpeed = rewardConfig.AttackSpeedReward,
+                AutoMerge = rewardConfig.AutoMergeReward,
+                GainCoins = rewardConfig.GainCoinsReward,
             }).Forget();
-            
             _player.DailyModel.UpdateSpin(rewardConfig);
             _rewardSpinButton.gameObject.SetActive(!_player.DailyModel.CanSpin.Value);
             _spin.IsInteractable = _player.DailyModel.CanSpin.Value;

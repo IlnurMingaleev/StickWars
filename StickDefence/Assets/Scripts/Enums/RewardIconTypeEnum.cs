@@ -4,7 +4,8 @@
     {
         Gold,
         Gem,
-        DefaultChest,
-        VipChest
+        AttackSpeed,
+        AutoMerge,
+        GainConis,
     }
 }

@@ -78,12 +78,7 @@ namespace UI.Content.DailyBonus
                 case RewardIconTypeEnum.Gem:
                     _countLabel.text = _rewardConfig.GemReward.ToString();
                     break;
-                case RewardIconTypeEnum.DefaultChest:
-                    _countLabel.text = LocalizationManager.GetTranslation(ScriptTerms.Windows_WeeklyDailyBonus.DefaultChest) + 1;
-                    break;
-                case RewardIconTypeEnum.VipChest:
-                    _countLabel.text = LocalizationManager.GetTranslation(ScriptTerms.Windows_WeeklyDailyBonus.VipChest) + 1;
-                    break;
+               
             }
         }
     }

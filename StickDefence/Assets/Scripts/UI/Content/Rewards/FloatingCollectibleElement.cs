@@ -12,6 +12,9 @@ namespace UI.Content.Rewards
         [SerializeField] private UICollectible _uiCollectible;
         [SerializeField] private GameObject _coinCoin;
         [SerializeField] private GameObject _gemCoin;
+        [SerializeField] private GameObject _attackSpeedBooster;
+        [SerializeField] private GameObject _gainCoinsBooster;
+        [SerializeField] private GameObject _autoMergeBooster;
         [SerializeField] private Transform _scalableTransform;
         [SerializeField] private float _moveDelaySeconds;
         [SerializeField] private float _moveDurationSeconds;
@@ -34,7 +37,7 @@ namespace UI.Content.Rewards
 
             Transform scalableTransform = null;
 
-            if (collectible.Type is RewardType.Coin or RewardType.Gem)
+            if (collectible.Type is RewardType.Coin or RewardType.Gem or RewardType.AttackSpeed or RewardType.AutoMerge or RewardType.GainCoins)
             {
                 _uiCollectible.gameObject.SetActive(false);
                 if (collectible.Type == RewardType.Coin)
@@ -47,6 +50,22 @@ namespace UI.Content.Rewards
                     scalableTransform = _gemCoin.transform;
                     SetupActiveCoins(isGemCoin: true);
                 }
+                else if (collectible.Type == RewardType.AttackSpeed)
+                {
+                    scalableTransform = _gemCoin.transform;
+                    SetupActiveCoins(isGemCoin: true);
+                }
+                else if (collectible.Type == RewardType.GainCoins)
+                {
+                    scalableTransform = _gemCoin.transform;
+                    SetupActiveCoins(isGemCoin: true);
+                }
+                else if (collectible.Type == RewardType.AutoMerge)
+                {
+                    scalableTransform = _gemCoin.transform;
+                    SetupActiveCoins(isGemCoin: true);
+                }
+
             }
             else
             {

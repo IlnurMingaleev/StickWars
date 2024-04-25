@@ -1,6 +1,9 @@
 ﻿using System;
+using Cysharp.Threading.Tasks;
+using Enums;
 using TonkoGames.Controllers.Core;
 using Helpers.Time;
+using Models.Battle.Boosters;
 using Models.DataModels;
 using Models.DataModels.Data;
 using Models.SO.Core;
@@ -20,6 +23,7 @@ namespace Models.Controllers
         IReadOnlyReactiveProperty<int> SpinTimer { get; }
         void UpdateSpin(RewardConfig rewardConfig);
         void RewardSpinShown();
+        void InitBoosterManager(BoosterManager boosterManager);
     }
     public class DailyModel : IDailyModel
     {
@@ -30,19 +34,27 @@ namespace Models.Controllers
         private readonly ITimerService _timerService;
         private ReactiveProperty<bool> _canSpin = new ReactiveProperty<bool>();
         private ReactiveProperty<int> _spinTimer = new ReactiveProperty<int>();
-        
+        private BoosterManager _boosterManager;
         private ITimerModel _timerModelSpin = null;
-        private const int SecondsCooldownSpin = 3600;
+        private const int SecondsCooldownSpin = 20; //TODO Fix spin cooldown time
         public IReadOnlyReactiveProperty<int> SpinTimer => _spinTimer;
 
         public IReadOnlyReactiveProperty<bool> CanSpin => _canSpin; 
 
-        public DailyModel(IDataCentralService dataCentralService, ConfigManager configManager, ITimerService timerService)
+        public DailyModel(IDataCentralService dataCentralService, ConfigManager configManager,
+            ITimerService timerService)
         {
             _dataCentralService = dataCentralService;
             _configManager = configManager;
             _timerService = timerService;
+           
         }
+
+        public void InitBoosterManager(BoosterManager boosterManager)
+        {
+            _boosterManager = boosterManager;
+        }
+
         public void CheckDailyModel()
         {
             CheckCoinFarmerIncomeLastTimeDelta();
@@ -131,6 +143,23 @@ namespace Models.Controllers
         {
             _dataCentralService.StatsDataModel.AddCoinsCount(rewardConfig.CoinReward);
             _dataCentralService.StatsDataModel.AddGemsCount(rewardConfig.GemReward);
+            if (_boosterManager)
+            {
+                if (rewardConfig.AttackSpeedReward > 0)
+                {
+                    _boosterManager.ApplyBooster(BoosterTypeEnum.AttackSpeed);
+                }
+
+                if (rewardConfig.AutoMergeReward > 0)
+                {
+                    _boosterManager.ApplyBooster(BoosterTypeEnum.AutoMerge);
+                }
+
+                if (rewardConfig.GainCoinsReward > 0)
+                {
+                    _boosterManager.ApplyBooster(BoosterTypeEnum.GainCoins);
+                }
+            }
 
             var nowTime = TimeHelpers.DataTimeToTimeStamp(DateTime.Now);
             nowTime += SecondsCooldownSpin;

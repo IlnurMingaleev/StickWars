@@ -48,7 +48,22 @@ namespace UI.Windows
                 _floatingCollectibles.Add(new CollectibleGem(rewardContains.Gem));
                 _fullCollectibles.Add(_floatingCollectibles.Last());
             }
-            
+
+            if (rewardContains.AttackSpeed > 0)
+            {
+                _floatingCollectibles.Add(new CollectibleAttackSpeed(rewardContains.AttackSpeed));
+                _fullCollectibles.Add(_floatingCollectibles.Last());
+            }
+            if (rewardContains.GainCoins > 0)
+            {
+                _floatingCollectibles.Add(new CollectibleGainCoins(rewardContains.GainCoins));
+                _fullCollectibles.Add(_floatingCollectibles.Last());
+            }
+            if (rewardContains.AutoMerge > 0)
+            {
+                _floatingCollectibles.Add(new CollectibleAutoMerge(rewardContains.AutoMerge));
+                _fullCollectibles.Add(_floatingCollectibles.Last());
+            }
             _uiCollectible.UpdateCollectibleAnimation(_fullCollectibles);
             
             IsShowInProgress = true;

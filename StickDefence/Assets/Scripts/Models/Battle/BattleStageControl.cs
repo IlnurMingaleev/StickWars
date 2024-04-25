@@ -35,13 +35,14 @@ namespace Models.Battle
         private IBattleStateMachine BattleStateMachine => _coreStateMachine.BattleStateMachine;
         private BattleResult _battleResult;
         private CompositeDisposable _activeDisposables = new CompositeDisposable();
-
+        private SceneInstances _sceneInstances;
         public MapStageConfig MapStageConfig;
         private ReactiveProperty<int> _currentDayIndex = new ReactiveProperty<int>(-1);
         public IReadOnlyReactiveProperty<int> CurrentDayIndex => _currentDayIndex;
 
         private void Awake()
         {
+            _sceneInstances = GetComponent<SceneInstances>();
             _battleAnimations = new BattleAnimations(_playerFortressInstantiate, _coreStateMachine);
             _battleResult = new BattleResult(_playerFortressInstantiate, _windowManager, _configManager, _player,
                 _dataCentralService, _coreStateMachine, gameObject.GetComponent<SceneInstances>());
@@ -103,7 +104,8 @@ namespace Models.Battle
         {
             _coreStateMachine.RunTimeStateMachine.SetRunTimeState(RunTimeStateEnum.Play);
             _windowManager.Show<BottomPanelWindow>(WindowPriority.TopPanel);
-            _windowManager.GetWindow<BottomPanelWindow>().Init(gameObject.GetComponent<SceneInstances>());
+            _windowManager.GetWindow<BottomPanelWindow>().Init(_sceneInstances);
+            _player.DailyModel.InitBoosterManager(_sceneInstances.BoosterManager);
             _windowManager.Show<TopPanelWindow>(WindowPriority.TopPanel);
 
             _currentDayIndex.Value = 0;

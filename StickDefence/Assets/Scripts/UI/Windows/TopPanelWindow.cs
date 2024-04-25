@@ -19,8 +19,9 @@ namespace UI.Windows
         [SerializeField] private GameObject _statusBar;
         [SerializeField] private Transform _playerRespect;
         [SerializeField] private UIBar _experienceBar;
-        [SerializeField] private UIBar _levelProgressBar;
         [SerializeField] private TMP_Text _levelNumber;
+        [SerializeField] private UIBar _levelProgressBar;
+        [SerializeField] private TMP_Text _waveNumber;
         [Inject] private IDataCentralService _dataCentralService;
         [Inject] private ICoreStateMachine _coreStateMachine;
         private CompositeDisposable _openShopDisposable = new CompositeDisposable();
@@ -38,7 +39,9 @@ namespace UI.Windows
         {
             base.OnActivate();
             SubscribeToExpLvl();
-            _dataCentralService.PumpingDataModel.StageLoadType.Subscribe(_ => _levelNumber.text = $"{(int) _}")
+            _dataCentralService.PumpingDataModel.LevelReactive.Subscribe(_ => _levelNumber.text = $"{_.Level}")
+                .AddTo(ActivateDisposables);
+            _dataCentralService.PumpingDataModel.StageLoadType.Subscribe(_ => _waveNumber.text = $"{(int) _}")
                 .AddTo(ActivateDisposables);
             _backArrow.OnClickAsObservable.Subscribe(_ => ExitGameToMainMenu()).AddTo(ActivateDisposables);
             _financeBar.SetAction(ShowShopWindow, ShowShopWindow);

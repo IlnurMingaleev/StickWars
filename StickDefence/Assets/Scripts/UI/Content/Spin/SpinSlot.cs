@@ -36,8 +36,9 @@ namespace UI.Content.Spin
                 case RewardIconTypeEnum.Gem:
                     _count.text = SetScoreExt.ConvertIntToStringValue(Config.GemReward, 1).ToString();
                     break;
-                case RewardIconTypeEnum.DefaultChest:
-                case RewardIconTypeEnum.VipChest:
+                case RewardIconTypeEnum.AttackSpeed:
+                case RewardIconTypeEnum.AutoMerge:
+                case RewardIconTypeEnum.GainConis:
                     _count.text = 1.ToString();
                     break;
             }

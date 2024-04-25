@@ -18,9 +18,11 @@ MonoBehaviour:
   - <RewardIconType>k__BackingField: 1
     <Image>k__BackingField: {fileID: 21300000, guid: f434a60f1f85c47e085d09cab598d63d, type: 3}
   - <RewardIconType>k__BackingField: 2
-    <Image>k__BackingField: {fileID: 21300000, guid: d74df393288c94e0e8791c98c247f31e, type: 3}
+    <Image>k__BackingField: {fileID: 21300000, guid: 22f0596543ce94bf5a521ca3139cfe02, type: 3}
   - <RewardIconType>k__BackingField: 3
-    <Image>k__BackingField: {fileID: 21300000, guid: 2b5ca3519d4074c88afd1edc401c2aba, type: 3}
+    <Image>k__BackingField: {fileID: 21300000, guid: e5d106e16c6241d4e9dc195972849be3, type: 3}
+  - <RewardIconType>k__BackingField: 4
+    <Image>k__BackingField: {fileID: 21300000, guid: c249affb68c10448491cf5f21db84c12, type: 3}
   _uiSkillsIconsConfig:
   - <SkillType>k__BackingField: 1
     <Value>k__BackingField: {fileID: 21300000, guid: dc2325e2b3c1fef4485ffbacce3c9723, type: 3}

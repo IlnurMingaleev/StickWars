@@ -131,6 +131,7 @@ namespace UI.Windows
             if (backupDestinationButton == null)
             {
                 TopPanelWindow topPanel = _manager.GetWindow<TopPanelWindow>();
+                BottomPanelWindow bottomPanelWindow = _manager.GetWindow<BottomPanelWindow>();
 
                 BackupDestinationButton.OriginButton originButton;
                 switch (rewardType)
@@ -140,6 +141,11 @@ namespace UI.Windows
                         break;
                     case RewardType.Gem:
                         originButton = GetOriginButton(topPanel.GoldLabelTransform.gameObject);
+                        break;
+                    case RewardType.AttackSpeed:
+                    case RewardType.GainCoins:
+                    case RewardType.AutoMerge:
+                        originButton = GetOriginButton(bottomPanelWindow.FortuneWheelBtn.gameObject);
                         break;
                     default:
                         originButton = GetOriginButton(topPanel.RespectLabelTransform.gameObject);

@@ -9,6 +9,9 @@ namespace UI.Content.Rewards
     {
         [SerializeField] private DynamicSpriteCurrency _collectibleCoin;
         [SerializeField] private DynamicSpriteCurrency _collectibleGem;
+        [SerializeField] private DynamicSpriteBooster _collectibleAttackSpeed;
+        [SerializeField] private DynamicSpriteBooster _collectibleGainCoins;
+        [SerializeField] private DynamicSpriteBooster _collectibleAutoMerge;
         [SerializeField] private float _collectibleDownDuration = default;
         [SerializeField] private float _delayDownValue = default;
         
@@ -38,6 +41,17 @@ namespace UI.Content.Rewards
                     _collectibleGem.UpdateSprite(collectible.Amount);
                     _collectibleGem.UpdateValue(collectible.Amount);
                     break;
+                case RewardType.AttackSpeed:
+                    _collectibleAttackSpeed.UpdateValue(collectible.Amount);
+                    break;
+                case RewardType.GainCoins:
+                    _collectibleGainCoins.UpdateValue(collectible.Amount);
+                    break;
+                case RewardType.AutoMerge:
+                    _collectibleAutoMerge.UpdateValue(collectible.Amount);
+                    break;
+
+
             }
 
             _collectibleCoin.gameObject.SetActive(collectible.Type == RewardType.Coin);
@@ -55,6 +69,18 @@ namespace UI.Content.Rewards
                 case RewardType.Gem:
                     _collectibleGem.UpdateValue(collectible.Amount);
                     _collectiblesAnim.Add(_collectibleGem.transform);
+                    break;
+                case RewardType.AttackSpeed:
+                    _collectibleAttackSpeed.UpdateValue(collectible.Amount);
+                    _collectiblesAnim.Add(_collectibleAttackSpeed.transform);
+                    break;
+                case RewardType.GainCoins:
+                    _collectibleGainCoins.UpdateValue(collectible.Amount);
+                    _collectiblesAnim.Add(_collectibleGainCoins.transform);
+                    break;
+                case RewardType.AutoMerge:
+                    _collectibleAutoMerge.UpdateValue(collectible.Amount);
+                    _collectiblesAnim.Add(_collectibleAutoMerge.transform);
                     break;
             }
         }
@@ -97,6 +123,9 @@ namespace UI.Content.Rewards
         {
             _collectibleCoin.gameObject.SetActive(false);
             _collectibleGem.gameObject.SetActive(false);
+            _collectibleAttackSpeed.gameObject.SetActive(false);
+            _collectibleAutoMerge.gameObject.SetActive(false);
+            _collectibleGainCoins.gameObject.SetActive(false);
         }
     }
 }

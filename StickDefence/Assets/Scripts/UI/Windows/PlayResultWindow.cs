@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using I2.Loc;
-using Models.Battle;
 using Models.Controllers;
 using Models.DataModels;
 using Models.IAP;

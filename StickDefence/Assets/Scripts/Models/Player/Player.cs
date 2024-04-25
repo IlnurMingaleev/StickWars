@@ -1,4 +1,5 @@
 ﻿using Enums;
+using Models.Battle.Boosters;
 using TonkoGames.Controllers.Core;
 using Models.Controllers;
 using Models.DataModels;
@@ -13,6 +14,7 @@ namespace Models.Player
         IDailyModel DailyModel { get; }
         IReadOnlyReactiveProperty<int> SubscribeToCurrencyBuyType(CurrencyTypeEnum currencyTypeEnum);
         void ChangeCurrencyBuyType(CurrencyTypeEnum currencyTypeEnum, int count);
+        void InitBoosterManager(BoosterManager boosterManager);
     }
 
     public interface IPlayerRoot : IPlayer
@@ -25,6 +27,7 @@ namespace Models.Player
     {
         private readonly IDataCentralService _dataCentralService;
         private readonly ConfigManager _configManager;
+        private BoosterManager _boosterManager;
 
         private Pumping _pumping;
         
@@ -46,6 +49,12 @@ namespace Models.Player
         {
             _pumping.Init();
         }
+
+        public void InitBoosterManager(BoosterManager boosterManager)
+        {
+            _boosterManager = boosterManager;
+        }
+
         public void Reinit()
         {
         }
