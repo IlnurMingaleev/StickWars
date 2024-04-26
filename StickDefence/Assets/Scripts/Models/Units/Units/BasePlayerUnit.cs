@@ -13,25 +13,21 @@ namespace Models.Units.Units
 {
     public class BasePlayerUnit: IDisposable
     {
-        public readonly PlayerView View;
+        protected readonly PlayerView View;
         protected readonly ITimerService TimerService;
         protected readonly ISoundManager SoundManager;
 
         protected Action<BasePlayerUnit> UnitKilledAction;
-        protected Action<ProjectileView> CreateProjectileAction;
-        protected Action<ProjectileView> ProjectileDestroyedAction;
 
         private bool _isPlayable = false;
-        private bool _isAttacking = false;
+        private bool IsAttacking => AttackModel.IsEnemyFound;
 
-        private CompositeDisposable _disposable = new CompositeDisposable();
-        private CompositeDisposable _disposableDead = new CompositeDisposable();
+        private readonly CompositeDisposable _disposable = new();
+        private readonly CompositeDisposable _disposableDead = new();
         protected RangeOneTargetAttack AttackModel;
 
-        protected 
-
-        private ReactiveProperty<bool> _isMoving = new ReactiveProperty<bool>(false);
-        private ReactiveProperty<SlotTypeEnum> _parentSlotType = new ReactiveProperty<SlotTypeEnum>();
+        private readonly ReactiveProperty<bool> _isMoving = new(false);
+        private readonly ReactiveProperty<SlotTypeEnum> _parentSlotType = new();
         public IReadOnlyReactiveProperty<SlotTypeEnum> ParentSlotType => _parentSlotType;
       
         public IReadOnlyReactiveProperty<bool> IsMoving => _isMoving;
@@ -56,22 +52,18 @@ namespace Models.Units.Units
         public virtual void InitAttack(Action<ProjectileView> createProjectile,
             Action<ProjectileView> projectileDestroyed)
         {
-        
-            CreateProjectileAction = createProjectile;
-            ProjectileDestroyedAction = projectileDestroyed;
         }
 
         public void InitUnitConfigStats(StickmanStatsConfig unitStatsConfig)
         {
-            StickmanStatsConfig stickmanStatsConfig = unitStatsConfig;
-            AttackModel.SetDamage(stickmanStatsConfig.Damage);
-            AttackModel.SetReloading(stickmanStatsConfig.Reloading);
+            StickmanStatsConfig stickManStatsConfig = unitStatsConfig;
+            AttackModel.SetDamage(stickManStatsConfig.Damage);
+            AttackModel.SetReloading(stickManStatsConfig.Reloading);
         }
 
         protected virtual void OnEnable()
         {
             View.UnitAnimationCallbacks.AttackAction += AttackActionAnimCallback;
-            View.UnitAnimationCallbacks.StartCooldownAttackAction += StartCooldownAttackAnimCallback;
             View.BodyAnimator.speed = 1;
             AttackModel.StartPlay();
             /*_parentSlotType.Subscribe(_ =>
@@ -91,7 +83,6 @@ namespace Models.Units.Units
         {
             _disposable.Clear();
             View.UnitAnimationCallbacks.AttackAction -= AttackActionAnimCallback;
-            View.UnitAnimationCallbacks.StartCooldownAttackAction -= StartCooldownAttackAnimCallback;
             View.BodyAnimator.speed = 0;
             AttackModel.StopPlay();
            
@@ -110,17 +101,11 @@ namespace Models.Units.Units
 
         protected virtual void StartAttackAnim()
         {
-            _isAttacking = true;
         }
 
         protected virtual void AttackActionAnimCallback()
         {
             AttackModel.Attack();
-        }
-
-        protected virtual void StartCooldownAttackAnimCallback()
-        {
-            AttackModel.StartCooldown(() => _isAttacking = false);
         }
 
         public void Dispose()

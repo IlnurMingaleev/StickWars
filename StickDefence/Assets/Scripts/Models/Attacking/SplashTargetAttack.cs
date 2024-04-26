@@ -4,12 +4,12 @@ namespace Models.Attacking
 {
     public class SplashTargetAttack : DefaultAttackModel
     {
-        protected override bool EndFindAttackTick()
+        protected override void EndFindAttackTick()
         {
             base.EndFindAttackTick();
             
-            if (IsEnemyFinded)
-                return false;
+            if (IsEnemyFound)
+                return;
             
             var collider2Ds = AttackingCircle.GetAllEntity();
 
@@ -18,16 +18,17 @@ namespace Models.Attacking
                 if (collider2D.TryGetComponent<IDamageable>(out IDamageable damageable))
                 {
                     SplashDamageables.Add(damageable);
-                    IsEnemyFinded = true;
+                    IsEnemyFound = true;
                 }
             }
 
-            if (IsEnemyFinded)
+            if (IsEnemyFound)
             {
-                StopCanAttacking();
-                StartAttackAnimAction?.Invoke();
+                StartAttackAnim();
+                return;
             }
-            return false;
+            
+            IsEnemyFound = false;
         }
     }
 }

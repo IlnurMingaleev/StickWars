@@ -10,7 +10,7 @@ namespace Models.SO.Core
         public int Health;
         public float Armor;
         public int Damage;
-        public float Reloading;
+        public int Reloading;
         public int Experience;
         public int Coins;
     }
