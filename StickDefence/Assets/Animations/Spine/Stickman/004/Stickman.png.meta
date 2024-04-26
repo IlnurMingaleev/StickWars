@@ -1,0 +1,2542 @@
+fileFormatVersion: 2
+guid: b0f79f3b18f791f40acbacea80b651e9
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 0
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 0
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Pistol1/Arm2
+      rect:
+        serializedVersion: 2
+        x: 2698
+        y: 1560
+        width: 205
+        height: 425
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b684e51094197590800000000000000
+      internalID: -7676081480801155402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pistol2/Arm2
+      rect:
+        serializedVersion: 2
+        x: 2698
+        y: 1560
+        width: 205
+        height: 425
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 391305ecc7b814da0800000000000000
+      internalID: -5962331063508258413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pistol3/Arm2
+      rect:
+        serializedVersion: 2
+        x: 2698
+        y: 1560
+        width: 205
+        height: 425
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a8c9a22170f29a10800000000000000
+      internalID: 1914857160289405092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SM1/Arm2
+      rect:
+        serializedVersion: 2
+        x: 2698
+        y: 1560
+        width: 205
+        height: 425
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9abda9f8987ca9f0800000000000000
+      internalID: -455856863851988322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SM2/Arm2
+      rect:
+        serializedVersion: 2
+        x: 2698
+        y: 1560
+        width: 205
+        height: 425
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 833bf49ac58501980800000000000000
+      internalID: -8570252935885245640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SM3/Arm2
+      rect:
+        serializedVersion: 2
+        x: 2698
+        y: 1560
+        width: 205
+        height: 425
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4458b23335b4dc50800000000000000
+      internalID: 6689170578050929743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rifle1/Arm2
+      rect:
+        serializedVersion: 2
+        x: 2698
+        y: 1560
+        width: 205
+        height: 425
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68970f9df0bbb8d30800000000000000
+      internalID: 4434843934831704454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RIfle2/Arm2
+      rect:
+        serializedVersion: 2
+        x: 2698
+        y: 1560
+        width: 205
+        height: 425
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6509d90d200566fd0800000000000000
+      internalID: -2349102182606991274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rifle3/Arm2
+      rect:
+        serializedVersion: 2
+        x: 2698
+        y: 1560
+        width: 205
+        height: 425
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fa2cfa68f06889e0800000000000000
+      internalID: -1618937445976626441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rifle4/Arm2
+      rect:
+        serializedVersion: 2
+        x: 2698
+        y: 1560
+        width: 205
+        height: 425
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8869ff74192980b10800000000000000
+      internalID: 1947967991513585288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: empty/Arm2
+      rect:
+        serializedVersion: 2
+        x: 2698
+        y: 1560
+        width: 205
+        height: 425
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2454433d18f53b00800000000000000
+      internalID: 807824512480728107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pistol1/Body
+      rect:
+        serializedVersion: 2
+        x: 1354
+        y: 190
+        width: 357
+        height: 873
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63c5dbc0a377f5370800000000000000
+      internalID: 8313494528354769974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pistol2/Body
+      rect:
+        serializedVersion: 2
+        x: 1354
+        y: 190
+        width: 357
+        height: 873
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e669bb76a209078b0800000000000000
+      internalID: -5156463061535844754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pistol3/Body
+      rect:
+        serializedVersion: 2
+        x: 1354
+        y: 190
+        width: 357
+        height: 873
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be1f8a8b602074f50800000000000000
+      internalID: 6865458384840749547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SM1/Body
+      rect:
+        serializedVersion: 2
+        x: 1354
+        y: 190
+        width: 357
+        height: 873
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eed365bd30307edb0800000000000000
+      internalID: -4762834765821362706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SM2/Body
+      rect:
+        serializedVersion: 2
+        x: 1354
+        y: 190
+        width: 357
+        height: 873
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92e97e1591310aaf0800000000000000
+      internalID: -387288568484618711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SM3/Body
+      rect:
+        serializedVersion: 2
+        x: 1354
+        y: 190
+        width: 357
+        height: 873
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8ab4851d4899cd10800000000000000
+      internalID: 2146414154259675789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rifle1/Body
+      rect:
+        serializedVersion: 2
+        x: 1354
+        y: 190
+        width: 357
+        height: 873
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccdc811a7f4abe570800000000000000
+      internalID: 8497066505431207372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RIfle2/Body
+      rect:
+        serializedVersion: 2
+        x: 1354
+        y: 190
+        width: 357
+        height: 873
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec122d9f786ddf570800000000000000
+      internalID: 8502187551045591502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rifle3/Body
+      rect:
+        serializedVersion: 2
+        x: 1354
+        y: 190
+        width: 357
+        height: 873
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ebdb840f14de2cd0800000000000000
+      internalID: -2580892306751366173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rifle4/Body
+      rect:
+        serializedVersion: 2
+        x: 1354
+        y: 190
+        width: 357
+        height: 873
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e17c37c63af4e040800000000000000
+      internalID: 4676137426295222760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: empty/Body
+      rect:
+        serializedVersion: 2
+        x: 1354
+        y: 190
+        width: 357
+        height: 873
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a34532e4152ee350800000000000000
+      internalID: 6047812121229869991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pistol1/Foot1
+      rect:
+        serializedVersion: 2
+        x: 3846
+        y: 1647
+        width: 371
+        height: 239
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4de82267f56ca7b20800000000000000
+      internalID: 3133034604095770324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pistol2/Foot1
+      rect:
+        serializedVersion: 2
+        x: 3846
+        y: 1647
+        width: 371
+        height: 239
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f440453ea1595ae90800000000000000
+      internalID: -7015036901844057009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pistol3/Foot1
+      rect:
+        serializedVersion: 2
+        x: 3846
+        y: 1647
+        width: 371
+        height: 239
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93d022f4b5f5d42c0800000000000000
+      internalID: -4445792411370517191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SM1/Foot1
+      rect:
+        serializedVersion: 2
+        x: 3846
+        y: 1647
+        width: 371
+        height: 239
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cc7eca648baa73a0800000000000000
+      internalID: -6666827713152647992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SM2/Foot1
+      rect:
+        serializedVersion: 2
+        x: 3846
+        y: 1647
+        width: 371
+        height: 239
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8b8bb9ff37abdaf0800000000000000
+      internalID: -370518651113337973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SM3/Foot1
+      rect:
+        serializedVersion: 2
+        x: 3846
+        y: 1647
+        width: 371
+        height: 239
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 755596ce413fd0930800000000000000
+      internalID: 4111209306050352471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rifle1/Foot1
+      rect:
+        serializedVersion: 2
+        x: 3846
+        y: 1647
+        width: 371
+        height: 239
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad19233e580d439e0800000000000000
+      internalID: -1642458690622418470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RIfle2/Foot1
+      rect:
+        serializedVersion: 2
+        x: 3846
+        y: 1647
+        width: 371
+        height: 239
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac86aa4831bf37d10800000000000000
+      internalID: 2122315910670346442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rifle3/Foot1
+      rect:
+        serializedVersion: 2
+        x: 3846
+        y: 1647
+        width: 371
+        height: 239
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a44f13f5156194790800000000000000
+      internalID: -7545475161937284022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rifle4/Foot1
+      rect:
+        serializedVersion: 2
+        x: 3846
+        y: 1647
+        width: 371
+        height: 239
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2fe8a3857a4bb1b0800000000000000
+      internalID: -5639832239770898646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: empty/Foot1
+      rect:
+        serializedVersion: 2
+        x: 3846
+        y: 1647
+        width: 371
+        height: 239
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b55c5b6f6aa008c0800000000000000
+      internalID: -4035037870604659272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pistol1/Hand2
+      rect:
+        serializedVersion: 2
+        x: 3125
+        y: 1780
+        width: 162
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60b10d5c1b3b5a200800000000000000
+      internalID: 190756135342447366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pistol2/Hand2
+      rect:
+        serializedVersion: 2
+        x: 3125
+        y: 1780
+        width: 162
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f256d95e77fef9e40800000000000000
+      internalID: 5665510154487817519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pistol3/Hand2
+      rect:
+        serializedVersion: 2
+        x: 3125
+        y: 1780
+        width: 162
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2c57b542d43d8ea0800000000000000
+      internalID: -5868976661676467153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SM1/Hand2
+      rect:
+        serializedVersion: 2
+        x: 3125
+        y: 1780
+        width: 162
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27cea00b03060d230800000000000000
+      internalID: 3661532259280415858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SM2/Hand2
+      rect:
+        serializedVersion: 2
+        x: 3125
+        y: 1780
+        width: 162
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05bd4e6ad06690eb0800000000000000
+      internalID: -4753155722892223664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SM3/Hand2
+      rect:
+        serializedVersion: 2
+        x: 3125
+        y: 1780
+        width: 162
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2e93bca6b49cc830800000000000000
+      internalID: 4092809673675349546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rifle1/Hand2
+      rect:
+        serializedVersion: 2
+        x: 3125
+        y: 1780
+        width: 162
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35e961ec2c2951c90800000000000000
+      internalID: -7199687063902970285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RIfle2/Hand2
+      rect:
+        serializedVersion: 2
+        x: 3125
+        y: 1780
+        width: 162
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efebfc0ba647b6de0800000000000000
+      internalID: -1338848462630830338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rifle3/Hand2
+      rect:
+        serializedVersion: 2
+        x: 3125
+        y: 1780
+        width: 162
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b12b2abfe50c0ce80800000000000000
+      internalID: -8160311010614136293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rifle4/Hand2
+      rect:
+        serializedVersion: 2
+        x: 3125
+        y: 1780
+        width: 162
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9021a537f7bad5540800000000000000
+      internalID: 4998339725335597577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: empty/Hand2
+      rect:
+        serializedVersion: 2
+        x: 3125
+        y: 1780
+        width: 162
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 102ce548d07800650800000000000000
+      internalID: 6197101579386929665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pistol1/Head
+      rect:
+        serializedVersion: 2
+        x: 2229
+        y: 706
+        width: 499
+        height: 499
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c07962303150399e0800000000000000
+      internalID: -1615942262080497908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pistol2/Head
+      rect:
+        serializedVersion: 2
+        x: 2229
+        y: 706
+        width: 499
+        height: 499
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b3d287351d0daef0800000000000000
+      internalID: -95405632328117321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pistol3/Head
+      rect:
+        serializedVersion: 2
+        x: 2229
+        y: 706
+        width: 499
+        height: 499
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e4d53888a25d91e0800000000000000
+      internalID: -2189502960038980381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SM1/Head
+      rect:
+        serializedVersion: 2
+        x: 2229
+        y: 706
+        width: 499
+        height: 499
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fdcc81839442ef60800000000000000
+      internalID: 8062081683270979060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SM2/Head
+      rect:
+        serializedVersion: 2
+        x: 2229
+        y: 706
+        width: 499
+        height: 499
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31fe685582f3e6730800000000000000
+      internalID: 3994199361990356755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SM3/Head
+      rect:
+        serializedVersion: 2
+        x: 2229
+        y: 706
+        width: 499
+        height: 499
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e10651039b4503250800000000000000
+      internalID: 5922326664344592414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rifle1/Head
+      rect:
+        serializedVersion: 2
+        x: 2229
+        y: 706
+        width: 499
+        height: 499
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72182e511dcc10820800000000000000
+      internalID: 2882810434881224999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RIfle2/Head
+      rect:
+        serializedVersion: 2
+        x: 2229
+        y: 706
+        width: 499
+        height: 499
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 405c2f3c6d9c287e0800000000000000
+      internalID: -1764626179728161532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rifle3/Head
+      rect:
+        serializedVersion: 2
+        x: 2229
+        y: 706
+        width: 499
+        height: 499
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9362dfb44f6b3a8c0800000000000000
+      internalID: -3989143684556970439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rifle4/Head
+      rect:
+        serializedVersion: 2
+        x: 2229
+        y: 706
+        width: 499
+        height: 499
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9add64447e7f5b230800000000000000
+      internalID: 3654099245336026537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: empty/Head
+      rect:
+        serializedVersion: 2
+        x: 2229
+        y: 706
+        width: 499
+        height: 499
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f90fb632005c40770800000000000000
+      internalID: 8576196194805215391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pistol2/Head_1
+      rect:
+        serializedVersion: 2
+        x: 1724
+        y: 1661
+        width: 604
+        height: 385
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e09bb38754e571e0800000000000000
+      internalID: -2200601778377223960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pistol3/Head_1
+      rect:
+        serializedVersion: 2
+        x: 1724
+        y: 1661
+        width: 604
+        height: 385
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6df320e772c689860800000000000000
+      internalID: 7536892893278126038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Pistol1/Head_1 \u043A\u043E\u043F\u0438\u044F"
+      rect:
+        serializedVersion: 2
+        x: 3349
+        y: 1220
+        width: 605
+        height: 385
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5fada81369263150800000000000000
+      internalID: 5851910271407075167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rifle1/Head_3
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 1000
+        width: 617
+        height: 482
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba85a3c28008d47e0800000000000000
+      internalID: -1779625505151362901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RIfle2/Head_3
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 1000
+        width: 617
+        height: 482
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5ddb40af8c393bc0800000000000000
+      internalID: -3802941822770356901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rifle3/Head_3
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 1000
+        width: 617
+        height: 482
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d4047b452182f270800000000000000
+      internalID: 8282824661867431120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rifle4/Head_4
+      rect:
+        serializedVersion: 2
+        x: 2111
+        y: 1207
+        width: 588
+        height: 431
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd46bcea0220fe0f0800000000000000
+      internalID: -1085646645778225955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pistol1/Leg1
+      rect:
+        serializedVersion: 2
+        x: 2701
+        y: 1167
+        width: 294
+        height: 611
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65aa0b582159d3820800000000000000
+      internalID: 2899637641881365078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pistol2/Leg1
+      rect:
+        serializedVersion: 2
+        x: 2701
+        y: 1167
+        width: 294
+        height: 611
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f72115badd668160800000000000000
+      internalID: 7027425054666336245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pistol3/Leg1
+      rect:
+        serializedVersion: 2
+        x: 2701
+        y: 1167
+        width: 294
+        height: 611
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6b7faf56cea2b610800000000000000
+      internalID: 1635561781721004906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SM1/Leg1
+      rect:
+        serializedVersion: 2
+        x: 2701
+        y: 1167
+        width: 294
+        height: 611
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30531846546b6c600800000000000000
+      internalID: 488278018771465475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SM2/Leg1
+      rect:
+        serializedVersion: 2
+        x: 2701
+        y: 1167
+        width: 294
+        height: 611
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 491f0f4fb6f525380800000000000000
+      internalID: -8984013389375147628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SM3/Leg1
+      rect:
+        serializedVersion: 2
+        x: 2701
+        y: 1167
+        width: 294
+        height: 611
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb5883f5bbef78cd0800000000000000
+      internalID: -2555794182799587909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rifle1/Leg1
+      rect:
+        serializedVersion: 2
+        x: 2701
+        y: 1167
+        width: 294
+        height: 611
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 841e260e1509b6050800000000000000
+      internalID: 5794884026873602376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RIfle2/Leg1
+      rect:
+        serializedVersion: 2
+        x: 2701
+        y: 1167
+        width: 294
+        height: 611
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 028257fa7d8957f20800000000000000
+      internalID: 3419807544186841120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rifle3/Leg1
+      rect:
+        serializedVersion: 2
+        x: 2701
+        y: 1167
+        width: 294
+        height: 611
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bb672b039ead2f10800000000000000
+      internalID: 2246643735698303924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rifle4/Leg1
+      rect:
+        serializedVersion: 2
+        x: 2701
+        y: 1167
+        width: 294
+        height: 611
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 440ac71d0573e4160800000000000000
+      internalID: 7011602490113957956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: empty/Leg1
+      rect:
+        serializedVersion: 2
+        x: 2701
+        y: 1167
+        width: 294
+        height: 611
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9496a12fb6476cfe0800000000000000
+      internalID: -1169119046283925175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rifle1/Rifle_1
+      rect:
+        serializedVersion: 2
+        x: 2736
+        y: 8
+        width: 1111
+        height: 544
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 644d1a759a494d690800000000000000
+      internalID: -7578268817917094842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RIfle2/Rifle_2
+      rect:
+        serializedVersion: 2
+        x: 1354
+        y: 8
+        width: 1380
+        height: 696
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c355f282354168940800000000000000
+      internalID: 5297944359036998972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rifle3/Rifle_3
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 749
+        width: 1202
+        height: 654
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cc7581d8f0608700800000000000000
+      internalID: 540538577067801792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rifle4/Rifle_4
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 8
+        width: 1350
+        height: 739
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1211cb719d16cc520800000000000000
+      internalID: 2723659459686306081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SM1/SM_1
+      rect:
+        serializedVersion: 2
+        x: 2736
+        y: 554
+        width: 931
+        height: 444
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cb4b9a7cef597940800000000000000
+      internalID: 5294368306224647108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SM2/SM_2
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1405
+        width: 885
+        height: 495
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 997f803ea2fef9900800000000000000
+      internalID: 693535835115026329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SM3/SM_3
+      rect:
+        serializedVersion: 2
+        x: 889
+        y: 1442
+        width: 833
+        height: 432
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f88714e0853379620800000000000000
+      internalID: 2780747748213880975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pistol1/Shin1
+      rect:
+        serializedVersion: 2
+        x: 3849
+        y: 8
+        width: 181
+        height: 551
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11413c94db43e04a0800000000000000
+      internalID: -6625300014224436207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pistol2/Shin1
+      rect:
+        serializedVersion: 2
+        x: 3849
+        y: 8
+        width: 181
+        height: 551
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d7539b9327db5ff0800000000000000
+      internalID: -46206823223306285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pistol3/Shin1
+      rect:
+        serializedVersion: 2
+        x: 3849
+        y: 8
+        width: 181
+        height: 551
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e08b94ed2f5156a60800000000000000
+      internalID: 7666558073523779598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SM1/Shin1
+      rect:
+        serializedVersion: 2
+        x: 3849
+        y: 8
+        width: 181
+        height: 551
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54b250e89c48030f0800000000000000
+      internalID: -1139264704518739131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SM2/Shin1
+      rect:
+        serializedVersion: 2
+        x: 3849
+        y: 8
+        width: 181
+        height: 551
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9654041e0057bee50800000000000000
+      internalID: 6839689105731765609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SM3/Shin1
+      rect:
+        serializedVersion: 2
+        x: 3849
+        y: 8
+        width: 181
+        height: 551
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce512f0be71cd5d50800000000000000
+      internalID: 6727746168240084460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rifle1/Shin1
+      rect:
+        serializedVersion: 2
+        x: 3849
+        y: 8
+        width: 181
+        height: 551
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1c3e310ab1bfead0800000000000000
+      internalID: -2670720641564525537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RIfle2/Shin1
+      rect:
+        serializedVersion: 2
+        x: 3849
+        y: 8
+        width: 181
+        height: 551
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41998369461522440800000000000000
+      internalID: 4909576036246133012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rifle3/Shin1
+      rect:
+        serializedVersion: 2
+        x: 3849
+        y: 8
+        width: 181
+        height: 551
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3805119abb0ddd870800000000000000
+      internalID: 8709346758818353283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rifle4/Shin1
+      rect:
+        serializedVersion: 2
+        x: 3849
+        y: 8
+        width: 181
+        height: 551
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6436bd74021f0790800000000000000
+      internalID: -7561805438833511317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: empty/Shin1
+      rect:
+        serializedVersion: 2
+        x: 3849
+        y: 8
+        width: 181
+        height: 551
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44b931108caca1940800000000000000
+      internalID: 5267745674523548484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pistol1/Shoulder2
+      rect:
+        serializedVersion: 2
+        x: 3669
+        y: 561
+        width: 326
+        height: 432
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4894b3f26cc3a010800000000000000
+      internalID: 1199026651178244174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pistol2/Shoulder2
+      rect:
+        serializedVersion: 2
+        x: 3669
+        y: 561
+        width: 326
+        height: 432
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a12d6d606f7bd470800000000000000
+      internalID: 8420463980428730787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pistol3/Shoulder2
+      rect:
+        serializedVersion: 2
+        x: 3669
+        y: 561
+        width: 326
+        height: 432
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d35d507ff82266c0800000000000000
+      internalID: -4151710828915239981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SM1/Shoulder2
+      rect:
+        serializedVersion: 2
+        x: 3669
+        y: 561
+        width: 326
+        height: 432
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bd17c7250985d440800000000000000
+      internalID: 4960021219853671860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SM2/Shoulder2
+      rect:
+        serializedVersion: 2
+        x: 3669
+        y: 561
+        width: 326
+        height: 432
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5054796e226b6a640800000000000000
+      internalID: 5090956689802740997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SM3/Shoulder2
+      rect:
+        serializedVersion: 2
+        x: 3669
+        y: 561
+        width: 326
+        height: 432
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f758b074a49dc24d0800000000000000
+      internalID: -3157910325650815617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rifle1/Shoulder2
+      rect:
+        serializedVersion: 2
+        x: 3669
+        y: 561
+        width: 326
+        height: 432
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba9e476d9eed423c0800000000000000
+      internalID: -4385135041245288021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RIfle2/Shoulder2
+      rect:
+        serializedVersion: 2
+        x: 3669
+        y: 561
+        width: 326
+        height: 432
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa946bc8f121c6280800000000000000
+      internalID: -9048837624580126294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rifle3/Shoulder2
+      rect:
+        serializedVersion: 2
+        x: 3669
+        y: 561
+        width: 326
+        height: 432
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90b7e26591bf341b0800000000000000
+      internalID: -5673415019318052087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rifle4/Shoulder2
+      rect:
+        serializedVersion: 2
+        x: 3669
+        y: 561
+        width: 326
+        height: 432
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a077c2b6e59064b40800000000000000
+      internalID: 5424033102343993098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: empty/Shoulder2
+      rect:
+        serializedVersion: 2
+        x: 3669
+        y: 561
+        width: 326
+        height: 432
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d66d61fb1acb6a60800000000000000
+      internalID: 7668445011891807958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SM2/head_2
+      rect:
+        serializedVersion: 2
+        x: 3314
+        y: 1607
+        width: 530
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11f0392817ef57200800000000000000
+      internalID: 177327523826437905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SM1/head_2
+      rect:
+        serializedVersion: 2
+        x: 3314
+        y: 1607
+        width: 530
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01c9d003ed38f1480800000000000000
+      internalID: -8926270946112857072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SM3/head_2
+      rect:
+        serializedVersion: 2
+        x: 3314
+        y: 1607
+        width: 530
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a60b5fd95f990a450800000000000000
+      internalID: 6098043175655813226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Pistol1/pistol_1 \u043A\u043E\u043F\u0438\u044F"
+      rect:
+        serializedVersion: 2
+        x: 3736
+        y: 1186
+        width: 518
+        height: 327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5444c5bac5bcb6f70800000000000000
+      internalID: 9181655864197268549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pistol2/pistol_2
+      rect:
+        serializedVersion: 2
+        x: 2111
+        y: 1640
+        width: 585
+        height: 376
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a8c2ae27cbd244f0800000000000000
+      internalID: -845872131464836954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pistol3/pistol_3
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 1065
+        width: 859
+        height: 375
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65dfa279a9110a0c0800000000000000
+      internalID: -4566630666494870186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Pistol1/Arm2: -7676081480801155402
+      Pistol1/Body: 8313494528354769974
+      Pistol1/Foot1: 3133034604095770324
+      Pistol1/Hand2: 190756135342447366
+      Pistol1/Head: -1615942262080497908
+      "Pistol1/Head_1 \u043A\u043E\u043F\u0438\u044F": 5851910271407075167
+      Pistol1/Leg1: 2899637641881365078
+      Pistol1/Shin1: -6625300014224436207
+      Pistol1/Shoulder2: 1199026651178244174
+      "Pistol1/pistol_1 \u043A\u043E\u043F\u0438\u044F": 9181655864197268549
+      Pistol2/Arm2: -5962331063508258413
+      Pistol2/Body: -5156463061535844754
+      Pistol2/Foot1: -7015036901844057009
+      Pistol2/Hand2: 5665510154487817519
+      Pistol2/Head: -95405632328117321
+      Pistol2/Head_1: -2200601778377223960
+      Pistol2/Leg1: 7027425054666336245
+      Pistol2/Shin1: -46206823223306285
+      Pistol2/Shoulder2: 8420463980428730787
+      Pistol2/pistol_2: -845872131464836954
+      Pistol3/Arm2: 1914857160289405092
+      Pistol3/Body: 6865458384840749547
+      Pistol3/Foot1: -4445792411370517191
+      Pistol3/Hand2: -5868976661676467153
+      Pistol3/Head: -2189502960038980381
+      Pistol3/Head_1: 7536892893278126038
+      Pistol3/Leg1: 1635561781721004906
+      Pistol3/Shin1: 7666558073523779598
+      Pistol3/Shoulder2: -4151710828915239981
+      Pistol3/pistol_3: -4566630666494870186
+      RIfle2/Arm2: -2349102182606991274
+      RIfle2/Body: 8502187551045591502
+      RIfle2/Foot1: 2122315910670346442
+      RIfle2/Hand2: -1338848462630830338
+      RIfle2/Head: -1764626179728161532
+      RIfle2/Head_3: -3802941822770356901
+      RIfle2/Leg1: 3419807544186841120
+      RIfle2/Rifle_2: 5297944359036998972
+      RIfle2/Shin1: 4909576036246133012
+      RIfle2/Shoulder2: -9048837624580126294
+      Rifle1/Arm2: 4434843934831704454
+      Rifle1/Body: 8497066505431207372
+      Rifle1/Foot1: -1642458690622418470
+      Rifle1/Hand2: -7199687063902970285
+      Rifle1/Head: 2882810434881224999
+      Rifle1/Head_3: -1779625505151362901
+      Rifle1/Leg1: 5794884026873602376
+      Rifle1/Rifle_1: -7578268817917094842
+      Rifle1/Shin1: -2670720641564525537
+      Rifle1/Shoulder2: -4385135041245288021
+      Rifle3/Arm2: -1618937445976626441
+      Rifle3/Body: -2580892306751366173
+      Rifle3/Foot1: -7545475161937284022
+      Rifle3/Hand2: -8160311010614136293
+      Rifle3/Head: -3989143684556970439
+      Rifle3/Head_3: 8282824661867431120
+      Rifle3/Leg1: 2246643735698303924
+      Rifle3/Rifle_3: 540538577067801792
+      Rifle3/Shin1: 8709346758818353283
+      Rifle3/Shoulder2: -5673415019318052087
+      Rifle4/Arm2: 1947967991513585288
+      Rifle4/Body: 4676137426295222760
+      Rifle4/Foot1: -5639832239770898646
+      Rifle4/Hand2: 4998339725335597577
+      Rifle4/Head: 3654099245336026537
+      Rifle4/Head_4: -1085646645778225955
+      Rifle4/Leg1: 7011602490113957956
+      Rifle4/Rifle_4: 2723659459686306081
+      Rifle4/Shin1: -7561805438833511317
+      Rifle4/Shoulder2: 5424033102343993098
+      SM1/Arm2: -455856863851988322
+      SM1/Body: -4762834765821362706
+      SM1/Foot1: -6666827713152647992
+      SM1/Hand2: 3661532259280415858
+      SM1/Head: 8062081683270979060
+      SM1/Leg1: 488278018771465475
+      SM1/SM_1: 5294368306224647108
+      SM1/Shin1: -1139264704518739131
+      SM1/Shoulder2: 4960021219853671860
+      SM1/head_2: -8926270946112857072
+      SM2/Arm2: -8570252935885245640
+      SM2/Body: -387288568484618711
+      SM2/Foot1: -370518651113337973
+      SM2/Hand2: -4753155722892223664
+      SM2/Head: 3994199361990356755
+      SM2/Leg1: -8984013389375147628
+      SM2/SM_2: 693535835115026329
+      SM2/Shin1: 6839689105731765609
+      SM2/Shoulder2: 5090956689802740997
+      SM2/head_2: 177327523826437905
+      SM3/Arm2: 6689170578050929743
+      SM3/Body: 2146414154259675789
+      SM3/Foot1: 4111209306050352471
+      SM3/Hand2: 4092809673675349546
+      SM3/Head: 5922326664344592414
+      SM3/Leg1: -2555794182799587909
+      SM3/SM_3: 2780747748213880975
+      SM3/Shin1: 6727746168240084460
+      SM3/Shoulder2: -3157910325650815617
+      SM3/head_2: 6098043175655813226
+      empty/Arm2: 807824512480728107
+      empty/Body: 6047812121229869991
+      empty/Foot1: -4035037870604659272
+      empty/Hand2: 6197101579386929665
+      empty/Head: 8576196194805215391
+      empty/Leg1: -1169119046283925175
+      empty/Shin1: 5267745674523548484
+      empty/Shoulder2: 7668445011891807958
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
