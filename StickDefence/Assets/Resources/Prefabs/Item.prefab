@@ -163,4 +163,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   parentSlot: {fileID: 0}
+  UnitTypeEnum: 0
   unitParent: {fileID: 8941145748193512555}
+  unitGameObject: {fileID: 0}

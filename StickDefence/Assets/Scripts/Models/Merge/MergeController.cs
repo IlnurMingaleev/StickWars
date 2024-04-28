@@ -52,7 +52,7 @@ namespace Models.Merge
                 if(playerUnitType == PlayerUnitTypeEnum.None)
                      continue;
                 else
-                     slot.CreateItem((int)playerUnitType,_playerUnitsBuilder);
+                     slot.CreateItem((int)playerUnitType,_playerBuilder);
 
             }
         }
@@ -114,7 +114,7 @@ namespace Models.Merge
                     {
                         var itemGO = (GameObject) Instantiate(Resources.Load("Prefabs/ItemDummy"));
                         itemGO.transform.position = slot.transform.position;
-                        itemGO.transform.localScale = Vector3.one * 2;
+                        itemGO.transform.localScale = Vector3.one * 0.5f;
 
                         carryingItem = itemGO.GetComponent<ItemInfo>();
                         carryingItem.InitDummy(slot.id, slot.currentItem.id,_configManager);

@@ -6,7 +6,7 @@ namespace Models.Units.Units.Skeleton
     public class SkeletonMeleeUnitModel : UnitMeleeOneTargetAttack
     {
         private static readonly int Dead = Animator.StringToHash("Dead");
-        private static readonly int Walk = Animator.StringToHash("Walk");
+        private static readonly int Walk = Animator.StringToHash("Run");
         private static readonly int Attack = Animator.StringToHash("Attack");
 
         protected override void OnDead(bool value)

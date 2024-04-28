@@ -135,10 +135,10 @@ namespace Models.Fortress
         {
             _rangeAttackModel.SetDamage(_stickmanStatsConfig.Damage);
 
-            float roundsPerMinute = _stickmanStatsConfig.AttackSpeed * 1.5f;
+            /*float roundsPerMinute = _stickmanStatsConfig.AttackSpeed * 1.5f;
             float ticks = 60f;
-            float reloading = ticks / roundsPerMinute; 
-            
+            float reloading = ticks / roundsPerMinute; */
+            float reloading = _stickmanStatsConfig.Reloading * 0.8f;
             _rangeAttackModel.SetReloading(reloading);
         }
         

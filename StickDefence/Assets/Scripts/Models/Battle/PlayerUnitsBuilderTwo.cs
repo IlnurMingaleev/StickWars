@@ -97,7 +97,13 @@ namespace Models.Battle
         private void InitFortress(PlayerUnitTypeEnum unitType, Transform parent,SlotTypeEnum slotType, out PlayerViewTwo playerViewTwo)
         { 
             var unitConfig = _configManager.UnitsStatsSo.DictionaryStickmanConfigs[unitType];
-            var unitView = Instantiate(_configManager.PrefabsUnitsSO.PlayerUnitPrefabs[unitType].GO,parent).GetComponent<PlayerViewTwo>();
+            var unitView = Instantiate(_configManager.PrefabsUnitsSO.PlayerUnitPrefabs[unitType].GO).GetComponent<PlayerViewTwo>();
+            if (unitView != null)
+            {
+                unitView.transform.SetParent(parent);
+                unitView.transform.position = parent.position;
+                 unitView.gameObject.SetActive(true);
+            }
             _fortressView = unitView;
             _fortressModel = new PlayerUnitModel(unitView, _soundManager, _timerService,unitConfig, _attackSpeedActive);
             _fortressModel.SetParentSlotType(slotType);

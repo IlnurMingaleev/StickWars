@@ -9,9 +9,9 @@
 
         public bool IsLaunchIsProgress { get; private set; }
         
-        private readonly int _launchAnim = Animator.StringToHash("fortress_launch");
-        private readonly int _prepareAnim = Animator.StringToHash("fortress_prepare_launch");
-        private readonly int _defaultAnim = Animator.StringToHash("fortress_default_state");
+       // private readonly int _launchAnim = Animator.StringToHash("fortress_launch");
+        private readonly int Attack = Animator.StringToHash("Attack");
+        private readonly int Idle = Animator.StringToHash("Idle");
 
         private void OnEnable()
         {
@@ -25,14 +25,14 @@
 
         public void StartPrepare()
         {
-            _animator.Play(_prepareAnim);
+            _animator.Play(Attack);
         }
         
         public void StartLaunchAnim()
         {
             IsLaunchIsProgress = true;
-            _animator.StopPlayback();
-            _animator.Play(_launchAnim);
+            _animator.StartPlayback();
+            _animator.SetTrigger(Attack);
         }
 
         private void EndLaunchAnim()
@@ -43,7 +43,7 @@
 
         private void SetDefault()
         {
-            _animator.Play(_defaultAnim);
+            _animator.Play(Idle);
             _animator.StopPlayback();
         }
     }

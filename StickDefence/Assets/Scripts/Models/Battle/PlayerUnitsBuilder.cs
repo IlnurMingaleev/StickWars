@@ -114,7 +114,13 @@ namespace Models.Battle
         public PlayerView InstantiateUnit(PlayerUnitTypeEnum unitType, Transform parent,SlotTypeEnum slotType)
         {
             var unitConfig = _configManager.UnitsStatsSo.DictionaryStickmanConfigs[unitType];
-            var unitView = Instantiate(_configManager.PrefabsUnitsSO.PlayerUnitPrefabs[unitType].GO,parent).GetComponent<PlayerView>();
+            var unitView = Instantiate(_configManager.PrefabsUnitsSO.PlayerUnitPrefabs[unitType].GO).GetComponent<PlayerView>();
+            if (unitView != null)
+            {
+                unitView.transform.SetParent(parent,false);
+                unitView.transform.position = parent.position;
+                unitView.gameObject.SetActive(true);
+            }
             //var baseUnit = UnitCreate(unitType, unitView); ;
            // baseUnit.InitAttack(CreateProjectile, RemoveProjectile);
           

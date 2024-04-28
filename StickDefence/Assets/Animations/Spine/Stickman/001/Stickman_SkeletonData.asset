@@ -29,4 +29,4 @@ MonoBehaviour:
   toAnimation: []
   duration: []
   defaultMix: 0.2
-  controller: {fileID: 0}
+  controller: {fileID: 9100000, guid: 62550c9834814ba4daae4a1927e67a6e, type: 2}
