@@ -16,7 +16,6 @@ namespace Views.Units.Fortress
         private ReactiveProperty<bool> _isActive = new ReactiveProperty<bool>(false);
         
         public Damageable Damageable => _damageable;
-        public AttackBlockView AttackBlockView => _attackBlockView;
 
         public IReadOnlyReactiveProperty<int> HealthCurrent => _damageable.HealthCurrent;
         public IReadOnlyReactiveProperty<int> HealthMax => _damageable.HealthMax;

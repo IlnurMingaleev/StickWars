@@ -114,7 +114,7 @@ namespace Models.Merge
                     {
                         var itemGO = (GameObject) Instantiate(Resources.Load("Prefabs/ItemDummy"));
                         itemGO.transform.position = slot.transform.position;
-                        itemGO.transform.localScale = Vector3.one * 0.5f;
+                        itemGO.transform.localScale = Vector3.one;
 
                         carryingItem = itemGO.GetComponent<ItemInfo>();
                         carryingItem.InitDummy(slot.id, slot.currentItem.id,_configManager);

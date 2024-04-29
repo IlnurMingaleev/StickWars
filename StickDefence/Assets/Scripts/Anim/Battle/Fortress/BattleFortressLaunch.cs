@@ -31,7 +31,6 @@
         public void StartLaunchAnim()
         {
             IsLaunchIsProgress = true;
-            _animator.StartPlayback();
             _animator.SetTrigger(Attack);
         }
 
@@ -44,7 +43,6 @@
         private void SetDefault()
         {
             _animator.Play(Idle);
-            _animator.StopPlayback();
         }
     }
 }

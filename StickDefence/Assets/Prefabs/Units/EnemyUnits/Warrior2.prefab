@@ -394,8 +394,8 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -558339751
-  m_SortingLayer: 2
+  m_SortingLayerID: 1631867061
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!95 &8187774599031287723
@@ -684,7 +684,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6763861916387599452}
@@ -793,8 +793,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <PosAttack>k__BackingField: {fileID: 455957511960908655}
-  <PosSpawnProjectile>k__BackingField: {fileID: 0}
-  <AttackRange>k__BackingField: 1
+  <PosSpawnProjectile>k__BackingField: {fileID: 455957511960908655}
+  <AttackRange>k__BackingField: 50
   <ContactFilter>k__BackingField:
     useTriggers: 0
     useLayerMask: 1

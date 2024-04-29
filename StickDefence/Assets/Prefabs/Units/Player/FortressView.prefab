@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3279122831344319208}
   - component: {fileID: 5226584660470430938}
   - component: {fileID: 7790035769800290002}
-  - component: {fileID: 4882154369729840398}
   - component: {fileID: 3834306640955565368}
   - component: {fileID: 5746387820971978580}
   - component: {fileID: 606688736252694831}
@@ -88,36 +87,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _battleFortressLaunch: {fileID: 1422742849659984724}
   _damageable: {fileID: 3834306640955565368}
-  _attackBlockView: {fileID: 4882154369729840398}
---- !u!114 &4882154369729840398
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 136137670363336605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fbc3c326ef745f4a8b09d3ed1f1a953, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <PosAttack>k__BackingField: {fileID: 6572703725803894647}
-  <AttackRange>k__BackingField: 1
-  <ContactFilter>k__BackingField:
-    useTriggers: 0
-    useLayerMask: 1
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 256
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
-  <ProjectileView>k__BackingField: {fileID: -4069476757777184573, guid: 2531e8442480fb343afa046281eda6c7, type: 3}
+  _attackBlockView: {fileID: 0}
 --- !u!114 &3834306640955565368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damageableFlash:
   - {fileID: 7829432818851595088}
+  _centerPoint: {fileID: 914594955935657576}
 --- !u!70 &5746387820971978580
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

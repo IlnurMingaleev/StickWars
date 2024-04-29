@@ -27,7 +27,6 @@ namespace Models.Fortress
         private bool _isDead;
         
         private CompositeDisposable _disposable = new CompositeDisposable();
-        private RangeOneTargetAttack _rangeAttackModel;
         private CompositeDisposable _disposableIsActive = new CompositeDisposable();
         public event Action IsDeadAction;
         
@@ -112,10 +111,10 @@ namespace Models.Fortress
         
         public void InitAttack(Action<ProjectileView> createProjectile, Action<ProjectileView> projectileDestroyed)
         {
-            _rangeAttackModel = new RangeOneTargetAttack();
-            _rangeAttackModel.Init(View.AttackBlockView, _timerService, _soundManager, StartAttackAnim);
-            _rangeAttackModel.InitProjectileActions(createProjectile, projectileDestroyed);
-            _rangeAttackModel.SetProjectile(View.AttackBlockView.ProjectileView);
+           // _rangeAttackModel = new RangeOneTargetAttack();
+            //_rangeAttackModel.Init(View.AttackBlockView, _timerService, _soundManager, StartAttackAnim);
+           // _rangeAttackModel.InitProjectileActions(createProjectile, projectileDestroyed);
+           // _rangeAttackModel.SetProjectile(View.AttackBlockView.ProjectileView);
         }
         
         private void OnEnable()
@@ -125,14 +124,14 @@ namespace Models.Fortress
             SubscribeStats();
             if (!_isDead)
             {
-                _rangeAttackModel.StartPlay();
+                //_rangeAttackModel.StartPlay();
             }
         }
 
         private void OnDisable()
         {
             _disposable.Clear();
-            _rangeAttackModel.StopPlay();
+            //_rangeAttackModel.StopPlay();
             UnsubscribeToOnClickEvent();
         }
 
@@ -146,15 +145,15 @@ namespace Models.Fortress
         private void OnDead(bool value)
         {
             _isDead = true;
-            _rangeAttackModel.Dead();
+            //_rangeAttackModel.Dead();
             _coreStateMachine.BattleStateMachine.OnEndBattle(false);
             IsDeadAction?.Invoke();
         }
 
         private void StartAttackAnim()
         {
-            _rangeAttackModel.Attack();
-            _rangeAttackModel.StartCooldown(null);
+           // _rangeAttackModel.Attack();
+           // _rangeAttackModel.StartCooldown(null);
         }
 
         public void Resurrect()

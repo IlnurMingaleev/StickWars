@@ -88,7 +88,6 @@ namespace Models.Battle
             _fortressModel = new FortressModel(_fortressView, _soundManager, _timerService,
                 _player.Pumping, _windowManager,_coreStateMachine);
             _fortressModel.InitBottomPanelButton();
-            _fortressModel.InitAttack(CreateProjectile, RemoveProjectile);
             _fortressModel.InitSubActive();
 
         }
