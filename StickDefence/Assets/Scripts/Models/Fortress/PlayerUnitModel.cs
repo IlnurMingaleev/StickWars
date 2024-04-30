@@ -76,7 +76,7 @@ namespace Models.Fortress
         public void InitAttack(Action<ProjectileView> createProjectile, Action<ProjectileView> projectileDestroyed)
         {
             _rangeAttackModel = new RangeOneTargetAttack();
-            _rangeAttackModel.Init(View.AttackBlockView, _timerService, _soundManager, StartAttackAnim, null);
+            _rangeAttackModel.Init(View.AttackBlockView, _timerService, _soundManager, StartAttackAnim);
             _rangeAttackModel.InitProjectileActions(createProjectile, projectileDestroyed);
             _rangeAttackModel.SetProjectile(View.AttackBlockView.ProjectileView);
         }
@@ -91,7 +91,7 @@ namespace Models.Fortress
             {
                 if (slotType == SlotTypeEnum.Attack)
                 {
-                    _rangeAttackModel.StartCooldown();
+                    _rangeAttackModel.StartCooldown(null);
                     _rangeAttackModel.StartPlay();
                 }
                 else
@@ -139,7 +139,7 @@ namespace Models.Fortress
             float ticks = 60f;
             float reloading = ticks / roundsPerMinute; 
             
-            _rangeAttackModel.SetReloading((int) (reloading * 1000));
+            _rangeAttackModel.SetReloading(reloading);
         }
         
         private void OnDead(bool value)
@@ -153,7 +153,7 @@ namespace Models.Fortress
         {
             View.StartLaunchAnim();
             _rangeAttackModel.Attack();
-            _rangeAttackModel.StartCooldown();
+            _rangeAttackModel.StartCooldown(null);
         }
         
         ~PlayerUnitModel()

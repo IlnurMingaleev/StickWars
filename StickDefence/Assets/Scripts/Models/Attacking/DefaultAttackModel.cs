@@ -14,10 +14,10 @@ namespace Models.Attacking
         private const float WaitTickFind = 0.06f;
         
         private float _attackRange;
-        private int _cooldownMillisecondsDuration;
-        private int _damage;
-        private float _criticalChance;
-        private float _criticalMultiplier = 1;
+        private float _cooldownDuration;
+        protected int Damage;
+        protected float CriticalChance;
+        protected float CriticalMultiplier = 1;
         
         protected Transform PosAttack;
         protected Transform PosSpawnProjectile;
@@ -30,18 +30,17 @@ namespace Models.Attacking
         protected ContactFilter2D ContactFilter;
 
         protected readonly DefaultAttackingCircle AttackingCircle = new();
-        private readonly CompositeDisposable _timerFindDisposable = new();
-        private readonly ReloadingTimer _reloadingTimer = new();
-        public bool IsEnemyFound  { get; protected set; }
+        protected ITimerModel TimerModelCooldown;
+        protected Action StartAttackAnimAction;
+        protected CompositeDisposable _timerFindDisposable = new CompositeDisposable();
+        protected bool IsEnemyFinded = false;
 
         private bool _isPlay;
         private bool _canFindAttack;
-        protected Action _startAttackAnimAction;
-        private Action _endCooldownAttackAction;
         
-        public int GetDamage()=> _damage;
+        public int GetDamage()=> Damage;
 
-        public virtual void Init(AttackBlockView attackView, ITimerService timerService, ISoundManager soundManager, Action startAttackAnim, Action endCooldownAttackAction)
+        public virtual void Init(AttackBlockView attackView, ITimerService timerService, ISoundManager soundManager, Action startAttackAnim)
         {
             PosAttack = attackView.PosAttack;
             _attackRange = attackView.AttackRange;
@@ -49,29 +48,21 @@ namespace Models.Attacking
             ContactFilter = attackView.ContactFilter;
             SoundManager = soundManager;
             AttackingCircle.Init(_attackRange, attackView.ContactFilter, PosAttack);
-            _startAttackAnimAction = startAttackAnim;
-            _endCooldownAttackAction = endCooldownAttackAction;
+            StartAttackAnimAction = startAttackAnim;
             StartLoopUpdate();
         }
-        public void ReSetupRangeAttack(float attackRange){
-            _attackRange = attackRange;
-            AttackingCircle.ReSetupAttackRange(_attackRange);
-        }
-        public void SetReloading(int reloading) => _cooldownMillisecondsDuration = reloading;
-        public void SetDamage(int value) => _damage = value;
-        public void SetCriticalChance(float value) => _criticalChance = value;
-        public void SetCriticalMultiplier(float value = 1) => _criticalMultiplier = value;
+        public void ReSetupRangeAttack(float attackRange) => _attackRange = attackRange;
+        public void SetReloading(float reloading) => _cooldownDuration = reloading;
+        public void SetDamage(int value) => Damage = value;
+        public void SetCriticalChance(float value) => CriticalChance = value;
+        public void SetCriticalMultiplier(float value = 1) => CriticalMultiplier = value;
         
         public void StartPlay()
         {
             _isPlay = true;
-            if (!_reloadingTimer.IsReloading)
+            if (!IsEnemyFinded && TimerModelCooldown == null)
             {
                 StartFindAttack();
-            }
-            else
-            {
-                _reloadingTimer.StartTick();
             }
         }
 
@@ -79,26 +70,15 @@ namespace Models.Attacking
         {
             _isPlay = false;
             StopCanAttacking();
-            _reloadingTimer.Clear();
         }
-        
-        public void SetTargetUnit(IDamageable damageable)
-        {
-            AttackingCircle.SetTarget(damageable);
-        }
-        
+
         public void Dead()
         {
-            _canFindAttack = false;
+            StopPlay();
             ClearAllTimers();
         }
         
-        public void Resurrect()
-        {
-            StartLoopUpdate();
-        }
-        
-        private void StartLoopUpdate()
+        protected void StartLoopUpdate()
         {
             Observable.Timer(TimeSpan.FromSeconds(WaitTickFind)).Repeat().Subscribe(_ => TickUpdate()).AddTo(_timerFindDisposable);
         }
@@ -114,40 +94,45 @@ namespace Models.Attacking
         protected void StartFindAttack(Action endCooldown = null)
         {
             ClearCooldownTimer();
+            var result = EndFindAttackTick();
             
-            _canFindAttack = true;
-        }
-        
-        protected virtual void EndFindAttackTick()
-        {
-        }
-        
-        public void StartCooldown()
-        {
-            ClearCooldownTimer();
-            
-            _reloadingTimer.Init(_cooldownMillisecondsDuration, EndCooldown);
-
-            if (_isPlay)
+            if (!result)
             {
-                _reloadingTimer.StartTick();
+                endCooldown?.Invoke();
+                _canFindAttack = true;
             }
         }
-
-        private void EndCooldown()
+        
+        protected virtual bool EndFindAttackTick()
         {
-            _endCooldownAttackAction?.Invoke();
-            if (_isPlay)
-                StartFindAttack();
-        }
-  
-        protected void StartAttackAnim()
-        {
-            StopCanAttacking();
-            _startAttackAnimAction?.Invoke();
-            StartCooldown();
+            return false;
         }
         
+        public void StartCooldown(Action endCooldown)
+        {
+            ClearCooldownTimer();
+            IsEnemyFinded = false;
+            TimerModelCooldown = TimerService.AddGameTimer(_cooldownDuration, null, () =>
+            {
+                EndCooldown(endCooldown);
+            }, false);
+            
+        }
+
+        private void EndCooldown(Action endCooldown)
+        {
+            TimerModelCooldown = null;
+            
+            if (_isPlay)
+            {
+                StartFindAttack(endCooldown);
+            }
+            else
+            {
+                endCooldown?.Invoke();
+            }
+        }
+  
         public virtual void Attack()
         {
         }
@@ -165,11 +150,15 @@ namespace Models.Attacking
 
         private void ClearCooldownTimer()
         {
-            _reloadingTimer.FinishTimer();
+            if (TimerModelCooldown != null)
+            {
+                TimerModelCooldown.StopTick();
+                TimerModelCooldown = null;
+            }
         }
 
-        protected bool IsCritical() => Random.Range(0, 100) <= _criticalChance;
-        protected int DamageCritical(bool value) => value ? (int)(_damage * _criticalMultiplier) : _damage;
+        protected bool IsCritical() => Random.Range(0, 100) <= CriticalChance;
+        protected int DamageCritical(bool value) => value ? (int)(Damage * CriticalMultiplier) : Damage;
         protected void SetDamage(IDamageable damageable)
         {
             damageable?.SetDamage(DamageCritical(IsCritical()));

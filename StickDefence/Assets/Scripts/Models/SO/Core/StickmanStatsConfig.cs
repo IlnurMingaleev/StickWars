@@ -9,7 +9,7 @@ namespace Models.SO.Core
         public PlayerUnitTypeEnum UnitType;
         public int Level;
         public int Damage;
-        public int Reloading;
+        public float Reloading;
         public int Price;
         public float AttackSpeed;
         

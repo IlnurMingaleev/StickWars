@@ -13,36 +13,39 @@ namespace Models.Units
 {
     public class BaseUnit
     {
-        protected UnitView View;
+        public UnitView View;
         protected ITimerService TimerService;
         protected ISoundManager SoundManager;
 
-        private Action<BaseUnit> UnitKilledAction;
+        protected Action<BaseUnit> UnitKilledAction;
+        protected Action<ProjectileView> CreateProjectileAction;
+        protected Action<ProjectileView> ProjectileDestroyedAction;
+
         private bool _isPlayable = false;    
         private bool _isDead;
-        private bool IsAttacking => AttackModel.IsEnemyFound;
-        
-        private readonly CompositeDisposable _disposable = new();
-        private readonly CompositeDisposable _disposableDead = new();
-        protected DefaultAttackModel AttackModel;
+        private bool _isAttacking = false;
 
-        private UnitStatsConfig _unitStatsConfig;
-        private UnitRewardConfig _unitRewardConfig;
+        private CompositeDisposable _disposable = new CompositeDisposable();
+        private CompositeDisposable _disposableDead = new CompositeDisposable();
+        protected DefaultAttackModel AttackModel;
         
-        private readonly ReactiveProperty<bool> _isMoving = new(false);
-      
+        protected UnitStatsConfig UnitStatsConfig;
+        protected UnitRewardConfig UnitRewardConfig;
+        
+        private ReactiveProperty<bool> _isMoving = new ReactiveProperty<bool>(false);
+        
         public IReadOnlyReactiveProperty<bool> IsMoving => _isMoving;
 
-        public int Experience => _unitRewardConfig.Experience;
-        public int Coins => _unitRewardConfig.RewardCount;
+        public int Experience => UnitRewardConfig.Experience;
+        public int Coins => UnitRewardConfig.RewardCount;
         public void InitBase(UnitView unitView, ITimerService timerService, ISoundManager soundManager,
             UnitStatsConfig unitStatsConfig, UnitRewardConfig unitRewardConfig) 
         {
             View = unitView;
             TimerService = timerService;
             SoundManager = soundManager;
-            _unitStatsConfig = unitStatsConfig;
-            _unitRewardConfig = unitRewardConfig;
+            UnitStatsConfig = unitStatsConfig;
+            UnitRewardConfig = unitRewardConfig;
             unitView.InitUnityActions(OnEnable, OnDisable);
         }
 
@@ -54,20 +57,24 @@ namespace Models.Units
         public virtual void InitAttack(Action<ProjectileView> createProjectile,
             Action<ProjectileView> projectileDestroyed)
         {
+            CreateProjectileAction = createProjectile;
+            ProjectileDestroyedAction = projectileDestroyed;
+            
         }
 
         public void InitUnitConfigStats()
         {
-            View.Damageable.Init(_unitStatsConfig.Health, _unitStatsConfig.Armor, View.Speed);
+            View.Damageable.Init(UnitStatsConfig.Health, UnitStatsConfig.Armor, View.Speed);
             _isMoving.Subscribe(OnWalk).AddTo(_disposable);
-            AttackModel.SetDamage(_unitStatsConfig.Damage);
-            AttackModel.SetReloading(_unitStatsConfig.Reloading);
+            AttackModel.SetDamage(UnitStatsConfig.Damage);
+            AttackModel.SetReloading(UnitStatsConfig.Reloading);
         }
 
         protected virtual void OnEnable()
         {
             View.Damageable.IsEmptyHealth.SkipLatestValueOnSubscribe().Subscribe(OnDead).AddTo(_disposable);
             View.UnitAnimationCallbacks.AttackAction += AttackActionAnimCallback;
+            View.UnitAnimationCallbacks.StartCooldownAttackAction += StartCooldownAttackAnimCallback;
             View.BodyAnimator.speed = 1;
 
             if (!_isDead)
@@ -80,6 +87,7 @@ namespace Models.Units
         {
             _disposable.Clear();
             View.UnitAnimationCallbacks.AttackAction -= AttackActionAnimCallback;
+            View.UnitAnimationCallbacks.StartCooldownAttackAction -= StartCooldownAttackAnimCallback;
             View.BodyAnimator.speed = 0;
             AttackModel.StopPlay();
         }
@@ -96,7 +104,7 @@ namespace Models.Units
 
         public void Update()
         {
-            if (!_isPlayable || _isDead || IsAttacking)
+            if (!_isPlayable || _isDead || _isAttacking)
             {
                 _isMoving.Value = false;
                 return;
@@ -121,10 +129,17 @@ namespace Models.Units
 
         protected virtual void StartAttackAnim()
         {
+            _isAttacking = true;
         }
 
         protected virtual void AttackActionAnimCallback()
         {
+            AttackModel.Attack();
+        }
+
+        protected virtual void StartCooldownAttackAnimCallback()
+        {
+            AttackModel.StartCooldown(() => _isAttacking = false);
         }
 
         protected async UniTaskVoid DeadDelay()
