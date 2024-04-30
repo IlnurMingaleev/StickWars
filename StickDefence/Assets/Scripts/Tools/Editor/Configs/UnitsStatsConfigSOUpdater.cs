@@ -36,7 +36,7 @@ namespace Tools.Configs
             public int Health;
             public float Armor;
             public int Damage;
-            public float Reloading;
+            public int Reloading;
             public RewardType RewardType;
             public int RewardCount;
             public int Experience;

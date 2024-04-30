@@ -11,7 +11,6 @@ namespace Models.Units.UnitType
         {
             AttackModel = new MeleeOneTargetAttack();
             base.InitAttack(createProjectile, projectileDestroyed);
-            AttackModel.Init(View.AttackBlockView, TimerService, SoundManager, StartAttackAnim);
         }
     }
 }

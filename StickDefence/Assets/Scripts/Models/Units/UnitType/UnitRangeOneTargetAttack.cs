@@ -14,10 +14,8 @@ namespace Models.Units.UnitType
             AttackModel = tmpAttack;
             base.InitAttack(createProjectile, projectileDestroyed);
             
-            tmpAttack.Init(View.AttackBlockView, TimerService, SoundManager, StartAttackAnim);
             tmpAttack.SetProjectile(View.AttackBlockView.ProjectileView);
             tmpAttack.InitProjectileActions(createProjectile, projectileDestroyed);
-           
         }
     }
 }
