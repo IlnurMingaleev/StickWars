@@ -20,7 +20,7 @@ namespace Models.Units.Units
             Action<ProjectileView> projectileDestroyed)
         {
             AttackModel = new RangeOneTargetAttack();
-            AttackModel.Init(View.AttackBlockView, TimerService, SoundManager, StartAttackAnim);
+            AttackModel.Init(View.AttackBlockView, TimerService, SoundManager, StartAttackAnim, null);
             AttackModel.InitProjectileActions(createProjectile, projectileDestroyed);
             AttackModel.SetProjectile(View.AttackBlockView.ProjectileView);
         }

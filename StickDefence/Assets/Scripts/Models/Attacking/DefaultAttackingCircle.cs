@@ -11,6 +11,7 @@ namespace Models.Attacking
         private ContactFilter2D _contactFilter2D;
         private Transform _posAttack;
         private readonly List<Collider2D> _results = new List<Collider2D>(new Collider2D[2]);
+        private IDamageable _targetDamageable;
 
         public void Init(float attackRange, ContactFilter2D ContactFilter2D, Transform posAttack)
         {
@@ -25,7 +26,10 @@ namespace Models.Attacking
 
             return _results;
         }
-        
+        public void ReSetupAttackRange(float attackRange)
+        {
+            _attackRange = attackRange;
+        }
         public IDamageable GetFirstEntity()
         {
             Find();
@@ -34,8 +38,18 @@ namespace Models.Attacking
             return _results.First().TryGetComponent(out IDamageable iDamageable) ? iDamageable : null;
         }
 
+        public void SetTarget(IDamageable damageable)
+        {
+            _targetDamageable = damageable;
+        }
+        
         public IDamageable GetNearestEntity(Vector2 position)
         {
+            if (IsTargetClosest(position))
+            {
+                return _targetDamageable;
+            }
+            
             Find();
             
             var closestCollider = FindClosestEntity(position); 
@@ -70,6 +84,17 @@ namespace Models.Attacking
             
             return closest;
         }
+        private bool IsTargetClosest(Vector2 position)
+        {
+            if (_targetDamageable == null)
+            {
+                return false;
+            }
+            
+            var diff =  (Vector2) _targetDamageable.GetTransformCenterPoint().position - position;
+            return diff.magnitude < _attackRange;
+        }
+        
         
         private void Find() => Physics2D.OverlapCircle(_posAttack.position, _attackRange, _contactFilter2D, _results);
     }

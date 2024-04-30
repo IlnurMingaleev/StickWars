@@ -10,7 +10,7 @@ namespace Views.Health
     public interface IDamageable
     {
         void SetDamage(int damage);
-        Transform GetTransformToCenterPoint();
+        Transform GetTransformCenterPoint();
         Transform GetTransform();
         ReactiveProperty<float> SpeedToCalculatePredict { get; }
     }
