@@ -1,15 +1,12 @@
 ﻿using System;
 using Enums;
 using TonkoGames.Sound;
-using Models.Attacking.TypesAttack;
 using Models.Player;
 using Models.Timers;
 using TonkoGames.StateMachine;
 using UI.UIManager;
 using UI.Windows;
 using UniRx;
-using UnityEngine;
-using UnityEngine.PlayerLoop;
 using Views.Projectiles;
 using Views.Units.Fortress;
 

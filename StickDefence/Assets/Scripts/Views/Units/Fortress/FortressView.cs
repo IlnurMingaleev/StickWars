@@ -16,6 +16,7 @@ namespace Views.Units.Fortress
         private ReactiveProperty<bool> _isActive = new ReactiveProperty<bool>(false);
         
         public Damageable Damageable => _damageable;
+        public ReactiveProperty<float> Speed  = new ReactiveProperty<float>(0);
 
         public IReadOnlyReactiveProperty<int> HealthCurrent => _damageable.HealthCurrent;
         public IReadOnlyReactiveProperty<int> HealthMax => _damageable.HealthMax;
@@ -26,6 +27,7 @@ namespace Views.Units.Fortress
         private void OnEnable()
         {
             _isActive.Value = true;
+            _damageable.SetSpeedToCalculatePredict(Speed);
         }
 
         private void OnDisable()

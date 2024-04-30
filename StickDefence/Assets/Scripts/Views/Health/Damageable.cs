@@ -30,14 +30,25 @@ namespace Views.Health
         public IReadOnlyReactiveProperty<int> HealthCurrent => _healthCurrent;
         public IReadOnlyReactiveProperty<int> HealthMax => _healthMax;
         public IReadOnlyReactiveProperty<bool> IsEmptyHealth => _isEmptyHealth;
-        
+
+        public Transform GetTransformToCenterPoint() => _centerPoint;
+        public Transform GetTransform() => transform;
+        public ReactiveProperty<float> _speedToCalculatePredict;
+        public ReactiveProperty<float> SpeedToCalculatePredict => _speedToCalculatePredict;
+
+        public void SetSpeedToCalculatePredict(ReactiveProperty<float> speed)
+        {
+            _speedToCalculatePredict = speed;
+        }
+
         public void Init(int health, float armor, ReactiveProperty<float> speed)
         {
             _healthMax.Value = health;
             _healthCurrent.Value = health;
             _armor = armor;
-            SpeedToCalculatePredict = speed;
+            _speedToCalculatePredict = speed;
         }
+
         public void Init(int health, float armor)
         {
             _healthMax.Value = health;
@@ -45,7 +56,7 @@ namespace Views.Health
             _armor = armor;
            
         }
-        
+
         public void SetDamage(int value)
         {
             if (_isInvulnerability)
@@ -105,15 +116,11 @@ namespace Views.Health
         {
             _armor = armor;
         }
-        
+
         public void Resurrect()
         {
             _healthCurrent.Value = _healthMax.Value;
             _isEmptyHealth.Value = false;
         }
-
-        public Transform GetTransformToCenterPoint() => _centerPoint;
-        public Transform GetTransform() => transform;
-        public ReactiveProperty<float> SpeedToCalculatePredict { get; private set; }
     }
 }
