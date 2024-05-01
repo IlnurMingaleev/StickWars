@@ -139,7 +139,7 @@ namespace Models.Fortress
             float ticks = 60f;
             float reloading = ticks / roundsPerMinute; */
             float reloading = _stickmanStatsConfig.Reloading * 0.8f;
-            _rangeAttackModel.SetReloading(reloading);
+            _rangeAttackModel.SetReloading((int) reloading);
         }
         
         private void OnDead(bool value)

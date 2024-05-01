@@ -31,7 +31,7 @@ namespace Views.Health
         public IReadOnlyReactiveProperty<int> HealthMax => _healthMax;
         public IReadOnlyReactiveProperty<bool> IsEmptyHealth => _isEmptyHealth;
 
-        public Transform GetTransformToCenterPoint() => _centerPoint;
+        public Transform GetTransformCenterPoint() => _centerPoint;
         public Transform GetTransform() => transform;
         public ReactiveProperty<float> _speedToCalculatePredict;
         public ReactiveProperty<float> SpeedToCalculatePredict => _speedToCalculatePredict;

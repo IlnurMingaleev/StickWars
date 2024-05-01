@@ -12,6 +12,7 @@
             {
                 IsEnemyFound = true;
                 StartAttackAnim();
+                Attack();
                 return;
             }
             

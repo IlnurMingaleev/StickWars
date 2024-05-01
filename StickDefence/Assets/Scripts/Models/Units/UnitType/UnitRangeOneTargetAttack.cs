@@ -1,5 +1,6 @@
 ﻿using System;
 using Models.Attacking.TypesAttack;
+using UnityEngine;
 using Views.Projectiles;
 
 namespace Models.Units.UnitType
@@ -11,11 +12,11 @@ namespace Models.Units.UnitType
         {
             RangeOneTargetAttack tmpAttack = new RangeOneTargetAttack();
             
-            AttackModel = tmpAttack;
-            base.InitAttack(createProjectile, projectileDestroyed);
-            
             tmpAttack.SetProjectile(View.AttackBlockView.ProjectileView);
             tmpAttack.InitProjectileActions(createProjectile, projectileDestroyed);
+            AttackModel = tmpAttack;
+            AttackModel.Init(View.AttackBlockView,TimerService,SoundManager,StartAttackAnim,null);
+            base.InitAttack(createProjectile, projectileDestroyed);
         }
     }
 }

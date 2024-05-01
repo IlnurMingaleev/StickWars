@@ -33,11 +33,12 @@ namespace Models.Attacking.TypesAttack
                 var isCritical = IsCritical();
 
                 var predictCollisionPoint = projectile.transform.position.CalculatePredictCollision(projectile.Speed, 
-                    TargetDamageable.GetTransformToCenterPoint().position,
+                    TargetDamageable.GetTransformCenterPoint().position,
                     TargetDamageable.SpeedToCalculatePredict.Value);
                 projectile.Init(DamageCritical(isCritical),predictCollisionPoint, isCritical, ContactFilter.layerMask, SoundManager, _projectileDestroyed, TimerService);
                 _createProjectile?.Invoke(projectile);
             }
+           
         }
     }
 }

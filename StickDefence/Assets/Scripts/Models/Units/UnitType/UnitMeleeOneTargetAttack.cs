@@ -10,7 +10,7 @@ namespace Models.Units.UnitType
             Action<ProjectileView> projectileDestroyed)
         {
             AttackModel = new MeleeOneTargetAttack();
-            base.InitAttack(createProjectile, projectileDestroyed);
+            AttackModel.Init(View.AttackBlockView,TimerService,SoundManager,StartAttackAnim,null);
         }
     }
 }
