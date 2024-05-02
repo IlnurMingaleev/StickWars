@@ -6037,9 +6037,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scenePrefabInstances:
   - _gameObject: {fileID: 2079169158}
-    _prefab: Assets/Prefabs/GameContent/Home.prefab
+    _prefab: Assets/Animations/Spine/GameContent/Home.prefab
   - _gameObject: {fileID: 768815829}
-    _prefab: Assets/Prefabs/GameContent/BattleStage.prefab
+    _prefab: Assets/Animations/Spine/GameContent/BattleStage.prefab
   - _gameObject: {fileID: 1440489448}
     _prefab: Assets/Resources/Prefabs/Slot.prefab
   - _gameObject: {fileID: 1440489447}

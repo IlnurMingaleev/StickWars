@@ -103,7 +103,7 @@ namespace Models.Battle
         private void OnStartBattleState()
         {
             _coreStateMachine.RunTimeStateMachine.SetRunTimeState(RunTimeStateEnum.Play);
-            _windowManager.Show<BottomPanelWindow>(WindowPriority.TopPanel);
+            _windowManager.Show<BottomPanelWindow>();
             _windowManager.GetWindow<BottomPanelWindow>().Init(_sceneInstances);
             _player.DailyModel.InitBoosterManager(_sceneInstances.BoosterManager);
             _windowManager.Show<TopPanelWindow>(WindowPriority.TopPanel);

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Enums;
+using Models.Attacking;
 using Models.DataModels;
 using TonkoGames.Controllers.Core;
 using TonkoGames.StateMachine;
@@ -12,6 +13,7 @@ using Models.Timers;
 using Models.Units;
 using Models.Units.Units.Skeleton;
 using TonkoGames.Sound;
+using Tools.GameTools;
 using UI.UIManager;
 using UI.Windows;
 using UniRx;
@@ -27,6 +29,7 @@ namespace Models.Battle
     {
         [SerializeField] private MovementPathGroups _meleeMovementPathGroups;
         [SerializeField] private Transform _parentSpawnPoint;
+        [SerializeField] private CoroutineTimer _coroutineTimer;
         [Inject] private readonly IPlayer _player;
         [Inject] private readonly ConfigManager _configManager;
         [Inject] private readonly ITimerService _timerService;
@@ -99,6 +102,7 @@ namespace Models.Battle
             _disposable.Clear();
             _updateDisposable.Clear();
             DestroyStage();
+            _coroutineTimer.FinishTimer();
         }
 
         private void Start()
@@ -147,6 +151,8 @@ namespace Models.Battle
 
         private void OnPlay()
         {
+            _coroutineTimer.StartTick();
+            
             foreach (var baseUnit in _spawnedUnits)
             {
                 baseUnit.OnPlay();
@@ -162,6 +168,7 @@ namespace Models.Battle
 
         private void OnPause()
         {
+            _coroutineTimer.Pause();
             foreach (var baseUnit in _spawnedUnits)
             {
                 baseUnit.OnPause();
@@ -220,7 +227,9 @@ namespace Models.Battle
                 
             var dayGroup = DayGroups.Peek();
 
-            _timerDayGroups = _timerService.AddGameTimer(dayGroup.Delay, null, EndTimerToSpawnGroup, false);
+            //_timerDayGroups = _timerService.AddGameTimer(dayGroup.Delay, null, EndTimerToSpawnGroup, false);
+            _coroutineTimer.InitAndStart((int) (dayGroup.Delay*1000), EndTimerToSpawnGroup);
+              
         }
 
         private void EndTimerToSpawnGroup()

@@ -7,13 +7,16 @@ namespace Models.Attacking
     {
         private int _currentMilliseconds = 0;
         private event Action TimeEnd;
-        private readonly CompositeDisposable _disposable = new();
+        private event Action<float> TickTimerEvent;
+        private CompositeDisposable _disposable = new();
         
         public bool IsReloading { get; private set; }
-        public void Init(int milliseconds, Action timeEnd)
+        public void Init(int milliseconds, Action timeEnd, Action<float> tickTimerEvent = null)
         {
             _currentMilliseconds = milliseconds;
             TimeEnd = timeEnd;
+            TickTimerEvent = tickTimerEvent;
+          
         }
         
         public void StartTick()
@@ -45,6 +48,7 @@ namespace Models.Attacking
             {
                 EndTick();
             }
+            TickTimerEvent?.Invoke(_currentMilliseconds);
         }
 
         private void EndTick()

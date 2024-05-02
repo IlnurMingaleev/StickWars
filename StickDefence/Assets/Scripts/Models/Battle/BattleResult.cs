@@ -74,7 +74,7 @@ namespace Models.Battle
                 Coin = rewardModel.Coin,
                 Gem = rewardModel.Gem
             };
-            var mapStageData = _dataCentralService.MapStageDataModel.GetMapStageData(_dataCentralService.PumpingDataModel.StageLoadType.Value);
+            /*var mapStageData = _dataCentralService.MapStageDataModel.GetMapStageData(_dataCentralService.PumpingDataModel.StageLoadType.Value);
 
             if (!mapStageData.IsCompleted)
             {
@@ -82,7 +82,7 @@ namespace Models.Battle
                 _dataCentralService.MapStageDataModel.UpdateMapStageData(mapStageData);
                 _dataCentralService.SaveFull();
                 
-            }
+            }*/
             if (isWin)
             {
                 
