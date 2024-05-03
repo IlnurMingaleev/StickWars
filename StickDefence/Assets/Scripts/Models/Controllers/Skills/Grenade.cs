@@ -32,7 +32,7 @@ namespace Models.Controllers.Skills
 
         public void DetectAndDestroyEnemies()
         {
-            _explosionRadius = 3f;
+            _explosionRadius = 6f;
             Collider2D[]
                 hitColliders =
                     Physics2D.OverlapCircleAll(_projectileView.transform.position,
