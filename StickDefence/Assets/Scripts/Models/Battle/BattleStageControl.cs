@@ -144,6 +144,7 @@ namespace Models.Battle
                 _battleResult.OnLoseEvent();
         }
 
+       
         private void DefaultStates()
         {
             _currentDayIndex.Value = -1;

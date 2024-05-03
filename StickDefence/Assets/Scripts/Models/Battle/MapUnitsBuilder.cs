@@ -376,6 +376,7 @@ namespace Models.Battle
 
             _dataCentralService.StatsDataModel.AddCoinsCount(coins);
         }
+       
         
     }
 }

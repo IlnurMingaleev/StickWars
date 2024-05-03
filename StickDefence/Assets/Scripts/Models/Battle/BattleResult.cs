@@ -50,7 +50,7 @@ namespace Models.Battle
         public void OnWinEvent()
         {
             var percentWin = _playerFortressInstantiate.GetDeltaHealth();
-
+            UpgradeStageIndex();
             int stars = 0;
             if (percentWin > 0.7)
                 stars = 3;
@@ -86,7 +86,7 @@ namespace Models.Battle
             if (isWin)
             {
                 
-                playResultWindow.SetWin(rewardContains, stars, OnPlayResultWindowClaim,Continue,UpgradeStageIndex,_sceneInstances);
+                playResultWindow.SetWin(rewardContains, stars, OnPlayResultWindowClaim,Continue,_sceneInstances);
             }
             else
             {
@@ -94,12 +94,7 @@ namespace Models.Battle
             }
         }
 
-        private void UpgradeStageIndex()
-        {
-            _dataCentralService.PumpingDataModel.SetStageIndex((int) _dataCentralService.PumpingDataModel.StageLoadType.Value +
-                                                               1);
-            _dataCentralService.SaveFull();
-        }
+       
 
         private void OnPlayResultWindowClaim()
         {
@@ -127,6 +122,12 @@ namespace Models.Battle
         {
             _windowManager.Hide<PlayResultWindow>();
             _windowManager.GetWindow<LobbyWindow>().SetupStage();
+        }
+        private void UpgradeStageIndex()
+        {
+            _dataCentralService.PumpingDataModel.SetStageIndex((int) _dataCentralService.PumpingDataModel.StageLoadType.Value +
+                                                               1);
+            _dataCentralService.SaveFull();
         }
     }
 }

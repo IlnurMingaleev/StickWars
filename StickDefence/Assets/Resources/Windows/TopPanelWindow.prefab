@@ -816,9 +816,9 @@ MonoBehaviour:
   _statusBar: {fileID: 7156362736253313615}
   _playerRespect: {fileID: 0}
   _experienceBar: {fileID: 1735605914155594497}
-  _levelNumber: {fileID: 5168459568889524745}
+  _levelNumber: {fileID: 3905049404178789334}
   _levelProgressBar: {fileID: 3150952769234723615}
-  _waveNumber: {fileID: 3905049404178789334}
+  _waveNumber: {fileID: 5168459568889524745}
 --- !u!1 &3543073392500990612
 GameObject:
   m_ObjectHideFlags: 0

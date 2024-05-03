@@ -247,14 +247,14 @@ namespace UI.Windows
 
         private void ActivateStickmanTab()
         {
-            _stickmanShopBtn.TargetImage.color = Color.green;
+            _stickmanShopBtn.TargetImage.color = Color.blue;
             _perksShopBtn.TargetImage.color = Color.white;
         }
 
         private void ActivatePerksTab()
         {
             _stickmanShopBtn.TargetImage.color = Color.white;
-            _perksShopBtn.TargetImage.color = Color.green;
+            _perksShopBtn.TargetImage.color = Color.blue;
         }
 
         protected override void OnDeactivate()

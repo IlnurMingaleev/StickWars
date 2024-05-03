@@ -77,13 +77,12 @@ namespace UI.Windows
             SaveStats(rewardContains);
         }
         
-        public void SetWin(RewardContains rewardContains, int stars, Action claim, Action goOn,Action upgradeStage,
+        public void SetWin(RewardContains rewardContains, int stars, Action claim, Action goOn,
             SceneInstances sceneInstances)
         {
             _isWin = true;
             _claim = claim;
             _continue = goOn;
-            _upgradeStageIndex = upgradeStage;
             _resurrectBlock.SetActive(false);
             _winBlock.SetActive(true);
             sceneInstances.PlayerBuilder.DestroyStage();

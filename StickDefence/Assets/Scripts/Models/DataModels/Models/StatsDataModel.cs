@@ -131,7 +131,8 @@ namespace Models.DataModels.Models
         
         public void SetAndInitEmptyStatsData(StatsData statsData)
         {
-            statsData.GemsCount = 30;
+            statsData.CoinsCount = 200;
+            statsData.GemsCount = 0;
             statsData.StorageLevel = 1;
             statsData.CoinSmeltingLevel = 1;
             statsData.LastDataTimeVisit = TimeHelpers.DataTimeToTimeStamp(DateTime.Now);
