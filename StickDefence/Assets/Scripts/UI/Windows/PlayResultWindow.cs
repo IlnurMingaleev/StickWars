@@ -38,6 +38,7 @@ namespace UI.Windows
         private Action _claim;
         private Action _resurrect;
         private Action _continue;
+        private Action _upgradeStageIndex;
 
         private int _coinsCount = 0;
         private int _gemCount = 0;
@@ -75,12 +76,12 @@ namespace UI.Windows
             SaveStats(rewardContains);
         }
         
-        public void SetWin(RewardContains rewardContains, int stars, Action claim, Action goOn,
+        public void SetWin(RewardContains rewardContains, int stars, Action claim, Action goOn,Action upgradeStage,
             SceneInstances sceneInstances)
         {
             _claim = claim;
             _continue = goOn;
-            
+            _upgradeStageIndex = upgradeStage;
             _resurrectBlock.SetActive(false);
             _winBlock.SetActive(true);
             sceneInstances.PlayerBuilder.DestroyStage();
@@ -97,8 +98,7 @@ namespace UI.Windows
             }
             
             _starsBlock.SetActive(true);
-            _dataCentralService.PumpingDataModel.SetStageIndex((int)_dataCentralService.PumpingDataModel.StageLoadType.Value + 1);
-            _dataCentralService.SaveFull();
+           
 
             SaveStats(rewardContains);
             
@@ -119,6 +119,7 @@ namespace UI.Windows
             _dataCentralService.StatsDataModel.AddGemsCount(_gemCount);
             _dataCentralService.SaveFull();
             _continue?.Invoke();
+            _upgradeStageIndex?.Invoke();
         }
 
         private void OnRewardClaim()
@@ -133,8 +134,7 @@ namespace UI.Windows
             {
                 _coinsCount *= 2;
                 _coinRewardCountBlock.SetValue(_coinsCount);
-                _dataCentralService.PumpingDataModel.SetStageIndex((int)_dataCentralService.PumpingDataModel.StageLoadType.Value + 1);
-                _dataCentralService.SaveFull();
+                OnClaim();
             }
         }
 

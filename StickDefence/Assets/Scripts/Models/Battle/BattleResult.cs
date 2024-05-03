@@ -86,12 +86,19 @@ namespace Models.Battle
             if (isWin)
             {
                 
-                playResultWindow.SetWin(rewardContains, stars, OnPlayResultWindowClaim,Continue,_sceneInstances);
+                playResultWindow.SetWin(rewardContains, stars, OnPlayResultWindowClaim,Continue,UpgradeStageIndex,_sceneInstances);
             }
             else
             {
                 playResultWindow.SetLose(rewardContains, isResurrect,OnPlayResultWindowClaim, Resurrect);
             }
+        }
+
+        private void UpgradeStageIndex()
+        {
+            _dataCentralService.PumpingDataModel.SetStageIndex((int) _dataCentralService.PumpingDataModel.StageLoadType.Value +
+                                                               1);
+            _dataCentralService.SaveFull();
         }
 
         private void OnPlayResultWindowClaim()
