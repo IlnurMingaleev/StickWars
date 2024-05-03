@@ -14,7 +14,7 @@ namespace Models.DataModels.PlatformModels
         #region Save
         public override void SaveSubData() => _jsonSerializationSubData.Serialization(SubDataModel.GetSubData());
         public override void SaveStatsDataModel() => _jsonSerializationStatsData.Serialization(StatsDataModel.GetStatsData());
-        public override void SaveCharacterPumpingDataModel() => _jsonSerializationCharacterPumpingData.Serialization(PumpingDataModel.GetCharacterPumpingData());
+        public override void SaveCharacterPumpingDataModel() => _jsonSerializationCharacterPumpingData.Serialization(PumpingDataModel.GetData());
         public override void SaveMapStageDataModel() => _jsonSerializationCharacterMapStageData.Serialization(MapStageDataModel.GetMapStageData());
 
         #endregion

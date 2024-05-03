@@ -163,7 +163,7 @@ namespace Models.DataModels.Models
         #endregion
 
         #region Storage
-        public PlayerPumpingData GetCharacterPumpingData()
+        public PlayerPumpingData GetData()
         {
             PlayerPumpingData statsData = new PlayerPumpingData
             {

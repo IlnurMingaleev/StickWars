@@ -17,22 +17,30 @@ namespace Models.DataModels.PlatformModels
         #region Save
         public override void SaveSubData()
         {
-            GP_Player.Set((PRENAME + nameof(SubDataModel)), JsonConvert.SerializeObject((object)SubDataModel.GetSubData()));
+            var data = StatsDataModel.GetStatsData();
+            GP_Player.Set((PRENAME + nameof(StatsDataModel)), JsonConvert.SerializeObject(data));
+            PlayerPrefsSingleton.Instance.StatsDataCash.Value = data;
         }
         
         public override void SaveStatsDataModel()
         {
-            GP_Player.Set((PRENAME + nameof(StatsDataModel)), JsonConvert.SerializeObject((object)StatsDataModel.GetStatsData()));
+            var data = SubDataModel.GetSubData();
+            GP_Player.Set((PRENAME + nameof(SubDataModel)), JsonConvert.SerializeObject(data));
+            PlayerPrefsSingleton.Instance.SubDataCash.Value = data;
         }
         
         public override void SaveCharacterPumpingDataModel()
         {
-            GP_Player.Set((PRENAME + nameof(PumpingDataModel)), JsonConvert.SerializeObject((object)PumpingDataModel.GetCharacterPumpingData()));
+            var data = PumpingDataModel.GetData();
+            GP_Player.Set((PRENAME + nameof(PumpingDataModel)), JsonConvert.SerializeObject(data));
+            PlayerPrefsSingleton.Instance.PlayerPumpingDataCash.Value = data;
         }
         
         public override void SaveMapStageDataModel()
         {
-            GP_Player.Set((PRENAME + nameof(MapStageDataModel)), JsonConvert.SerializeObject((object)MapStageDataModel.GetMapStageData()));
+            var data = MapStageDataModel.GetMapStageData();
+            GP_Player.Set((PRENAME + nameof(MapStageDataModel)), JsonConvert.SerializeObject(data));
+            PlayerPrefsSingleton.Instance.MapStagesDataCash.Value = data;
         }
 
         #endregion

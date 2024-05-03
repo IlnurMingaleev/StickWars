@@ -62,13 +62,7 @@ namespace TonkoGames.Controllers.Core
             _dataCentralService.SaveFull();
             _coreStateMachine.TutorialStateMachine.InitTutorials(_dataCentralService.SubData);
 
-#if UNITY_WEBGL && !UNITY_EDITOR
-                /*var loadingScreenWindow = _windowManager.Show<LoadingScreenWindow>();*/
-                /*loadingScreenWindow.EndTransitAnim += LogoScreenShown;*/
-                /*loadingScreenWindow.ShowWebgl(!GamePush.GP_Device.IsMobile());*/
-#else
             _coreStateMachine.SceneStateMachine.SetScenesState(ScenesStateEnum.Game);
-#endif
             
             _iapService.PaymentModel.Fetch();
         }
