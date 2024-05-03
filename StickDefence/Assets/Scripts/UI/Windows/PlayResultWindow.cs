@@ -42,8 +42,8 @@ namespace UI.Windows
 
         private int _coinsCount = 0;
         private int _gemCount = 0;
-
         private bool _rewarded = false;
+        private bool _isWin = false; 
         
         protected override void OnActivate()
         {
@@ -60,6 +60,7 @@ namespace UI.Windows
 
         public void SetLose(RewardContains rewardContains, bool isResurrect, Action claim, Action resurrect)
         {
+            _isWin = false;
             _claim = claim;
             _resurrect = resurrect;
             
@@ -79,6 +80,7 @@ namespace UI.Windows
         public void SetWin(RewardContains rewardContains, int stars, Action claim, Action goOn,Action upgradeStage,
             SceneInstances sceneInstances)
         {
+            _isWin = true;
             _claim = claim;
             _continue = goOn;
             _upgradeStageIndex = upgradeStage;
@@ -119,7 +121,7 @@ namespace UI.Windows
             _dataCentralService.StatsDataModel.AddGemsCount(_gemCount);
             _dataCentralService.SaveFull();
             _continue?.Invoke();
-            _upgradeStageIndex?.Invoke();
+            if (_isWin) _upgradeStageIndex?.Invoke();
         }
 
         private void OnRewardClaim()
