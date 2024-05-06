@@ -27,7 +27,7 @@ namespace Models.Controllers
         [Inject] private ConfigManager _configManager;
         [Inject] private IDataCentralService _dataCentralService;
         [Inject] private ICoreStateMachine _coreStateMachine;
-        private int _cooldownTime =25000;
+        private int _cooldownTime =120000;
 
 
         [Header("MergeController")] [SerializeField]

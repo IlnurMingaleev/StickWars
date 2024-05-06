@@ -376,7 +376,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f3e791402bec2234cbc89c775faf8fb2, type: 2}
+  - {fileID: 2100000, guid: eea0dea264cbfb14a859dd88dae15e39, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -431,8 +431,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9db98c60740638449864eb028fbe7ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeletonDataAsset: {fileID: 11400000, guid: f4b1a078ab5bd4d43b079ae325918653, type: 2}
-  initialSkinName: shieldman
+  skeletonDataAsset: {fileID: 11400000, guid: 05356f0fcb80d6b48b07f9fb3dd83aa9, type: 2}
+  initialSkinName: band
   fixPrefabOverrideViaMeshFilter: 2
   initialFlipX: 1
   initialFlipY: 0

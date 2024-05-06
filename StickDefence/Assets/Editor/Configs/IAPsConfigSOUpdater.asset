@@ -37,49 +37,94 @@ MonoBehaviour:
   - RewardIconType: 0
     CoinReward: 350
     GemReward: 0
+    AttackSpeedReward: 0
+    GainCoinsReward: 0
+    AutoMergeReward: 0
   - RewardIconType: 0
     CoinReward: 700
     GemReward: 0
+    AttackSpeedReward: 0
+    GainCoinsReward: 0
+    AutoMergeReward: 0
   - RewardIconType: 1
     CoinReward: 0
     GemReward: 10
+    AttackSpeedReward: 0
+    GainCoinsReward: 0
+    AutoMergeReward: 0
   - RewardIconType: 2
     CoinReward: 500
     GemReward: 5
+    AttackSpeedReward: 0
+    GainCoinsReward: 0
+    AutoMergeReward: 0
   - RewardIconType: 0
     CoinReward: 700
     GemReward: 0
+    AttackSpeedReward: 0
+    GainCoinsReward: 0
+    AutoMergeReward: 0
   - RewardIconType: 1
     CoinReward: 0
     GemReward: 15
+    AttackSpeedReward: 0
+    GainCoinsReward: 0
+    AutoMergeReward: 0
   - RewardIconType: 3
     CoinReward: 700
     GemReward: 30
+    AttackSpeedReward: 0
+    GainCoinsReward: 0
+    AutoMergeReward: 0
   LuckySpin:
-  - RewardIconType: 0
-    CoinReward: 700
+  - RewardIconType: 3
+    CoinReward: 0
     GemReward: 0
+    AttackSpeedReward: 0
+    GainCoinsReward: 0
+    AutoMergeReward: 1
   - RewardIconType: 0
-    CoinReward: 350
+    CoinReward: 200
     GemReward: 0
+    AttackSpeedReward: 0
+    GainCoinsReward: 0
+    AutoMergeReward: 0
+  - RewardIconType: 2
+    CoinReward: 0
+    GemReward: 0
+    AttackSpeedReward: 1
+    GainCoinsReward: 0
+    AutoMergeReward: 0
+  - RewardIconType: 0
+    CoinReward: 300
+    GemReward: 0
+    AttackSpeedReward: 0
+    GainCoinsReward: 0
+    AutoMergeReward: 0
   - RewardIconType: 0
     CoinReward: 0
     GemReward: 0
-  - RewardIconType: 0
-    CoinReward: 500
-    GemReward: 0
-  - RewardIconType: 0
-    CoinReward: 700
-    GemReward: 0
+    AttackSpeedReward: 0
+    GainCoinsReward: 1
+    AutoMergeReward: 0
   - RewardIconType: 0
     CoinReward: 0
     GemReward: 0
+    AttackSpeedReward: 0
+    GainCoinsReward: 0
+    AutoMergeReward: 0
   - RewardIconType: 0
-    CoinReward: 700
+    CoinReward: 400
     GemReward: 0
-  - RewardIconType: 0
-    CoinReward: 350
+    AttackSpeedReward: 0
+    GainCoinsReward: 0
+    AutoMergeReward: 0
+  - RewardIconType: 2
+    CoinReward: 0
     GemReward: 0
+    AttackSpeedReward: 1
+    GainCoinsReward: 0
+    AutoMergeReward: 0
   InApp:
   - PaymentProduct: 1
     Gem: 29

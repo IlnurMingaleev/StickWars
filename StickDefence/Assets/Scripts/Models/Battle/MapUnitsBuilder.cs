@@ -240,6 +240,8 @@ namespace Models.Battle
 
         private void InstantiateUnits()
         {
+            if (DayGroups.Count == 0)
+                return;
             var dayGroup = DayGroups.Dequeue();
             var unitsGroup = _configManager.MapStageSO.UnitGroups[dayGroup.GroupUnitsIndex];
 
