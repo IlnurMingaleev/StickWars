@@ -184,6 +184,7 @@ namespace UI.Windows
             if (price <= _dataCentralService.StatsDataModel.CoinsCount.Value)
             {
                 stickman.AddStickmanToPlayGround();
+                _dataCentralService.StatsDataModel.MinusCoinsCount(price);
             }
             else
             {

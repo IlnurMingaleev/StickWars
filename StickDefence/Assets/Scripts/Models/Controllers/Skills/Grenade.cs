@@ -10,7 +10,7 @@ namespace Models.Controllers.Skills
     public class Grenade : Skill
     {
         public AnimationCurve curve;
-        [SerializeField] private float duration = 4.0f;
+        [SerializeField] private float duration = 3.0f;
         [SerializeField] private float maxHeightY = 3.0f;
         [SerializeField] private Transform _start;
 

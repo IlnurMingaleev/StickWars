@@ -31,10 +31,10 @@ namespace UI.Content.Spin
             switch (Config.RewardIconType)
             {
                 case RewardIconTypeEnum.Gold:
-                    _count.text = SetScoreExt.ConvertIntToStringValue(Config.CoinReward, 1).ToString();
+                    _count.text = SetScoreExt.ConvertIntToStringValue(Config.CoinReward, 2).ToString();
                     break;
                 case RewardIconTypeEnum.Gem:
-                    _count.text = SetScoreExt.ConvertIntToStringValue(Config.GemReward, 1).ToString();
+                    _count.text = SetScoreExt.ConvertIntToStringValue(Config.GemReward, 2).ToString();
                     break;
                 case RewardIconTypeEnum.AttackSpeed:
                 case RewardIconTypeEnum.AutoMerge:

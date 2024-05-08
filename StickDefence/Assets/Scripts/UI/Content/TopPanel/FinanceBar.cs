@@ -160,12 +160,12 @@ namespace UI.Content.TopPanel
         
         private void _UpdateGem(long value)
         {
-            _gemLabel.text = SetScoreExt.ConvertIntToStringValue(value, 1);
+            _gemLabel.text = SetScoreExt.ConvertIntToStringValue(value, 2);
         }
 
         private void _UpdateCoin(long value)
         {
-            _coinLabel.text = SetScoreExt.ConvertIntToStringValue(value, 1);
+            _coinLabel.text = SetScoreExt.ConvertIntToStringValue(value, 2);
         }
 
         protected override void ResetAnimateInfluence()

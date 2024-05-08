@@ -70,7 +70,7 @@ namespace UI.Content.UpgradeBlock
                 _maxBlock.SetActive(false);
                 _currencyIconBlock.gameObject.SetActive(true);
                 _costLabel.gameObject.SetActive(true);
-                _costLabel.text = SetScoreExt.ConvertIntToStringValue(pumpingPerkData.Cost, 1);
+                _costLabel.text = SetScoreExt.ConvertIntToStringValue(pumpingPerkData.Cost, 2);
                 _currencyIconBlock.SetPerType(pumpingPerkData.CurrencyType);
                 _player.SubscribeToCurrencyBuyType(pumpingPerkData.CurrencyType).Subscribe(CurrencyChange).AddTo(_disposable);
                 _buttonBuy.OnClickAsObservable.Subscribe(_ => OnBuy()).AddTo(_disposable);

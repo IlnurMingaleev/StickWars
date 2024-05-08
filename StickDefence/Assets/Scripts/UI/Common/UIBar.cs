@@ -18,7 +18,7 @@ namespace UI.Common
         public void SetBarFiilAmount(int currentValue, int maxValue)
         {
             _barSlider.value = (float) currentValue / maxValue;
-            _healthLabel.text = $"{SetScoreExt.ConvertIntToStringValue(currentValue)}/{SetScoreExt.ConvertIntToStringValue(maxValue)}";
+            _healthLabel.text = $"{SetScoreExt.ConvertIntToStringValue(currentValue,2)}/{SetScoreExt.ConvertIntToStringValue(maxValue,2)}";
         }
 
         

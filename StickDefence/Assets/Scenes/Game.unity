@@ -6073,37 +6073,37 @@ MonoBehaviour:
   - _gameObject: {fileID: 1543190423}
     _prefab: Assets/FX/Epic Toon FX/Prefabs/Combat/Explosions/GrenadeExplosion/GrenadeExplosionGreen.prefab
   - _gameObject: {fileID: 38306842}
-    _prefab: Assets/Prefabs/Units/EnemyUnits/Band.prefab
+    _prefab: Assets/Prefabs/Units/EnemyUnits/First/Band.prefab
   - _gameObject: {fileID: 1103062318}
-    _prefab: Assets/Prefabs/Units/EnemyUnits/Band.prefab
+    _prefab: Assets/Prefabs/Units/EnemyUnits/First/Band.prefab
   - _gameObject: {fileID: 1002782629}
-    _prefab: Assets/Prefabs/Units/EnemyUnits/Capman.prefab
+    _prefab: Assets/Prefabs/Units/EnemyUnits/First/Capman.prefab
   - _gameObject: {fileID: 1072009882}
-    _prefab: Assets/Prefabs/Units/EnemyUnits/Greenmask.prefab
+    _prefab: Assets/Prefabs/Units/EnemyUnits/First/Greenmask.prefab
   - _gameObject: {fileID: 637432418}
-    _prefab: Assets/Prefabs/Units/EnemyUnits/Hood.prefab
+    _prefab: Assets/Prefabs/Units/EnemyUnits/First/Hood.prefab
   - _gameObject: {fileID: 384671164}
-    _prefab: Assets/Prefabs/Units/EnemyUnits/Jason.prefab
+    _prefab: Assets/Prefabs/Units/EnemyUnits/First/Jason.prefab
   - _gameObject: {fileID: 915822171}
-    _prefab: Assets/Prefabs/Units/EnemyUnits/Leather.prefab
+    _prefab: Assets/Prefabs/Units/EnemyUnits/First/Leather.prefab
   - _gameObject: {fileID: 1495823652}
-    _prefab: Assets/Prefabs/Units/EnemyUnits/Raider1.prefab
+    _prefab: Assets/Prefabs/Units/EnemyUnits/First/Raider1.prefab
   - _gameObject: {fileID: 1204723148}
-    _prefab: Assets/Prefabs/Units/EnemyUnits/Raider2.prefab
+    _prefab: Assets/Prefabs/Units/EnemyUnits/First/Raider2.prefab
   - _gameObject: {fileID: 1965735481}
-    _prefab: Assets/Prefabs/Units/EnemyUnits/Raider3.prefab
+    _prefab: Assets/Prefabs/Units/EnemyUnits/First/Raider3.prefab
   - _gameObject: {fileID: 224154041}
-    _prefab: Assets/Prefabs/Units/EnemyUnits/Redmask.prefab
+    _prefab: Assets/Prefabs/Units/EnemyUnits/First/Redmask.prefab
   - _gameObject: {fileID: 2029834379}
-    _prefab: Assets/Prefabs/Units/EnemyUnits/Sniper.prefab
+    _prefab: Assets/Prefabs/Units/EnemyUnits/First/Sniper.prefab
   - _gameObject: {fileID: 1305473845}
-    _prefab: Assets/Prefabs/Units/EnemyUnits/Soldier.prefab
+    _prefab: Assets/Prefabs/Units/EnemyUnits/First/Soldier.prefab
   - _gameObject: {fileID: 961030365}
-    _prefab: Assets/Prefabs/Units/EnemyUnits/Warrior.prefab
+    _prefab: Assets/Prefabs/Units/EnemyUnits/First/Warrior.prefab
   - _gameObject: {fileID: 621415420}
-    _prefab: Assets/Prefabs/Units/EnemyUnits/Warrior2.prefab
+    _prefab: Assets/Prefabs/Units/EnemyUnits/First/Warrior2.prefab
   - _gameObject: {fileID: 799229121}
-    _prefab: Assets/Prefabs/Units/EnemyUnits/Water.prefab
+    _prefab: Assets/Prefabs/Units/EnemyUnits/First/Water.prefab
 --- !u!4 &1991934399
 Transform:
   m_ObjectHideFlags: 11

@@ -14,64 +14,64 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mapStageRewardModels:
   - StageType: 1
-    Coin: 50
-    Gem: 0
-  - StageType: 2
-    Coin: 100
-    Gem: 0
-  - StageType: 3
-    Coin: 150
-    Gem: 0
-  - StageType: 4
-    Coin: 200
-    Gem: 0
-  - StageType: 5
-    Coin: 250
-    Gem: 0
-  - StageType: 6
-    Coin: 300
-    Gem: 0
-  - StageType: 7
-    Coin: 350
-    Gem: 0
-  - StageType: 8
     Coin: 400
     Gem: 0
-  - StageType: 9
-    Coin: 450
-    Gem: 0
-  - StageType: 10
-    Coin: 500
-    Gem: 0
-  - StageType: 11
-    Coin: 550
-    Gem: 0
-  - StageType: 12
+  - StageType: 2
     Coin: 600
     Gem: 0
-  - StageType: 13
-    Coin: 650
-    Gem: 0
-  - StageType: 14
-    Coin: 700
-    Gem: 0
-  - StageType: 15
-    Coin: 750
-    Gem: 0
-  - StageType: 16
+  - StageType: 3
     Coin: 800
     Gem: 0
+  - StageType: 4
+    Coin: 1000
+    Gem: 0
+  - StageType: 5
+    Coin: 1200
+    Gem: 0
+  - StageType: 6
+    Coin: 1400
+    Gem: 0
+  - StageType: 7
+    Coin: 1600
+    Gem: 0
+  - StageType: 8
+    Coin: 1800
+    Gem: 0
+  - StageType: 9
+    Coin: 2000
+    Gem: 0
+  - StageType: 10
+    Coin: 2200
+    Gem: 0
+  - StageType: 11
+    Coin: 2400
+    Gem: 0
+  - StageType: 12
+    Coin: 2600
+    Gem: 0
+  - StageType: 13
+    Coin: 2800
+    Gem: 0
+  - StageType: 14
+    Coin: 3000
+    Gem: 0
+  - StageType: 15
+    Coin: 3200
+    Gem: 0
+  - StageType: 16
+    Coin: 3400
+    Gem: 0
   - StageType: 17
-    Coin: 850
+    Coin: 3600
     Gem: 0
   - StageType: 18
-    Coin: 900
+    Coin: 3800
     Gem: 0
   - StageType: 19
-    Coin: 950
+    Coin: 4000
     Gem: 0
   - StageType: 20
-    Coin: 1000
+    Coin: 4200
     Gem: 0
   _mapBuilder:
   - MapStage: 1
@@ -96,16 +96,16 @@ MonoBehaviour:
         Delay: 10
     - IsBossDay: 0
       Groups:
-      - GroupUnitsIndex: 60
-        Delay: 10
-      - GroupUnitsIndex: 61
-        Delay: 10
-      - GroupUnitsIndex: 60
-        Delay: 10
+      - GroupUnitsIndex: 40
+        Delay: 20
+      - GroupUnitsIndex: 21
+        Delay: 20
+      - GroupUnitsIndex: 40
+        Delay: 20
     - IsBossDay: 0
       Groups:
       - GroupUnitsIndex: 20
-        Delay: 10
+        Delay: 20
       - GroupUnitsIndex: 1
         Delay: 10
       - GroupUnitsIndex: 0
@@ -171,29 +171,29 @@ MonoBehaviour:
     - IsBossDay: 0
       Groups:
       - GroupUnitsIndex: 40
-        Delay: 10
+        Delay: 20
       - GroupUnitsIndex: 41
-        Delay: 10
+        Delay: 20
     - IsBossDay: 0
       Groups:
       - GroupUnitsIndex: 20
         Delay: 10
       - GroupUnitsIndex: 20
         Delay: 10
-      - GroupUnitsIndex: 60
-        Delay: 10
+      - GroupUnitsIndex: 40
+        Delay: 20
     - IsBossDay: 0
       Groups:
-      - GroupUnitsIndex: 61
-        Delay: 10
+      - GroupUnitsIndex: 41
+        Delay: 20
       - GroupUnitsIndex: 20
         Delay: 10
     - IsBossDay: 0
       Groups:
       - GroupUnitsIndex: 40
-        Delay: 10
+        Delay: 20
       - GroupUnitsIndex: 41
-        Delay: 10
+        Delay: 20
     - IsBossDay: 0
       Groups:
       - GroupUnitsIndex: 21
@@ -251,11 +251,11 @@ MonoBehaviour:
     - IsBossDay: 0
       Groups:
       - GroupUnitsIndex: 60
-        Delay: 10
-      - GroupUnitsIndex: 61
-        Delay: 10
+        Delay: 30
+      - GroupUnitsIndex: 21
+        Delay: 40
       - GroupUnitsIndex: 60
-        Delay: 10
+        Delay: 40
       - GroupUnitsIndex: 20
         Delay: 10
       - GroupUnitsIndex: 21

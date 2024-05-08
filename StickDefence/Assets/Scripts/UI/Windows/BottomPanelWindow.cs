@@ -194,6 +194,7 @@ namespace UI.Windows
                 if (_mergeController)
                 {
                     _mergeController.PlaceDefinedItem((int)playerUnitType);
+                    _dataCentralService.StatsDataModel.MinusCoinsCount(stickmanStatsConfig.Price);
                 }
             }
             else
@@ -205,7 +206,7 @@ namespace UI.Windows
         #region UpdateUIElements
         private void UpdateMoneyLabel(int money)
         {
-            _moneyText.text = $"{SetScoreExt.ConvertIntToStringValue(money)}";
+            _moneyText.text = $"{SetScoreExt.ConvertIntToStringValue(money,2)}";
         }
 
         public void SetBoxImageFill(float value)
@@ -224,7 +225,7 @@ namespace UI.Windows
 
         public void UpdateWallCost(int cost)
         {
-            _wallUpgradeCost.text = $"{SetScoreExt.ConvertIntToStringValue(cost)}";
+            _wallUpgradeCost.text = $"{SetScoreExt.ConvertIntToStringValue(cost,2)}";
         }
         public void UpdateRocketFill(float value)
         {

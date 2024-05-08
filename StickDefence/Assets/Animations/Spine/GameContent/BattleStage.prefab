@@ -350,7 +350,7 @@ MonoBehaviour:
   _particleSystem: {fileID: 2455952236917037710}
   _projectileView: {fileID: 1707792005569786176}
   _aimView: {fileID: 5036778243563962317}
-  _cooldownTime: 10
+  _skillTimer: {fileID: 6450852120950901447}
   duration: 2
   _start: {fileID: 2314033778550780498}
 --- !u!1 &426864826086511797
@@ -10927,6 +10927,50 @@ Transform:
   - {fileID: 856700926485364928}
   m_Father: {fileID: 3884223201034413500}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1119431179048155453
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8210083155798243940}
+  - component: {fileID: 6534381840813536080}
+  m_Layer: 0
+  m_Name: GrenadeTimer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8210083155798243940
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119431179048155453}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6984447956144081847}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6534381840813536080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119431179048155453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 242272b144484a97b0a50fc5c0d9d87a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1185795584910676481
 GameObject:
   m_ObjectHideFlags: 0
@@ -10958,6 +11002,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3069288943949998396}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1255481080774575031
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 938338231046044133}
+  - component: {fileID: 4602127318670815582}
+  m_Layer: 0
+  m_Name: GasTimer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &938338231046044133
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255481080774575031}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6984447956144081847}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4602127318670815582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255481080774575031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 242272b144484a97b0a50fc5c0d9d87a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1304487227430041162
 GameObject:
   m_ObjectHideFlags: 0
@@ -49110,6 +49198,50 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &7527227341924777048
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4380433513812578196}
+  - component: {fileID: 6450852120950901447}
+  m_Layer: 0
+  m_Name: RocketTimer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4380433513812578196
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7527227341924777048}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6984447956144081847}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6450852120950901447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7527227341924777048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 242272b144484a97b0a50fc5c0d9d87a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7610143115243092117
 GameObject:
   m_ObjectHideFlags: 0
@@ -49442,7 +49574,7 @@ MonoBehaviour:
   _particleSystem: {fileID: 8452461195761342474}
   _projectileView: {fileID: 8174093191253591072}
   _aimView: {fileID: 5251472068900007151}
-  _cooldownTime: 10
+  _skillTimer: {fileID: 6534381840813536080}
   curve:
     serializedVersion: 2
     m_Curve:
@@ -49612,7 +49744,7 @@ MonoBehaviour:
   _particleSystem: {fileID: 6193662301371696811}
   _projectileView: {fileID: 7284987585460837399}
   _aimView: {fileID: 8212517825943427381}
-  _cooldownTime: 10
+  _skillTimer: {fileID: 4602127318670815582}
 --- !u!1 &7933624892612316941
 GameObject:
   m_ObjectHideFlags: 0
@@ -74454,6 +74586,9 @@ Transform:
   m_Children:
   - {fileID: 5257842996663914627}
   - {fileID: 2729685022083105357}
+  - {fileID: 8210083155798243940}
+  - {fileID: 938338231046044133}
+  - {fileID: 4380433513812578196}
   m_Father: {fileID: 251069352935000877}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8644341746721511858
@@ -74565,7 +74700,7 @@ Transform:
   m_GameObject: {fileID: 8653128020597005272}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

@@ -81,7 +81,7 @@ namespace UI.Content.Battle
                     _valueLabel.text = $"{value * 100}%";
                     break;*/
                 default:
-                    _valueLabel.text = SetScoreExt.ConvertIntToStringValue(value, 1);
+                    _valueLabel.text = SetScoreExt.ConvertIntToStringValue(value, 2);
                     break;
             }
         }

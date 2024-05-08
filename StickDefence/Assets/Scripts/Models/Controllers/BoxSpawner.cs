@@ -27,7 +27,7 @@ namespace Models.Controllers
         [Inject] private ConfigManager _configManager;
         [Inject] private IDataCentralService _dataCentralService;
         [Inject] private ICoreStateMachine _coreStateMachine;
-        private int _cooldownTime =120000;
+        private int _cooldownTime =50000;
 
 
         [Header("MergeController")] [SerializeField]
@@ -58,17 +58,7 @@ namespace Models.Controllers
                     _mergeController.PlaceDefinedItem((int)PlayerUnitTypeEnum.One);
                 SetTimerAccordingAvailability();
             }, f => { UpdateFill(f); });
-            /*_timerModel = _timerService.AddGameTimer(_cooldownTime,
-                    f => { UpdateFill(f); },
-                    () =>
-                    {
-                        if((int)_dataCentralService.PumpingDataModel.MaxStickmanLevel.Value >= (int)PlayerUnitTypeEnum.Four )
-                         _mergeController.PlaceDefinedItem(((int)_dataCentralService.PumpingDataModel.MaxStickmanLevel.Value - 3));
-                        else
-                            _mergeController.PlaceDefinedItem((int)PlayerUnitTypeEnum.One);
-                        SetTimerAccordingAvailability();
-                    });*/
-            
+
         }
 
         private void OnRunTimeStateSwitch(RunTimeStateEnum runTimeStateEnum)

@@ -30,7 +30,10 @@ namespace Tools.GameTools
                 if (_pause) break;
             }
 
-            TimeEnd?.Invoke();
+            if (_currentMilliseconds <= 0)
+            {
+                TimeEnd?.Invoke();
+            }
 
         }
 
