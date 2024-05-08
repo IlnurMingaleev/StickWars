@@ -180,55 +180,55 @@ MonoBehaviour:
     Level: 1
     Damage: 5
     Reloading: 4000
-    Price: 15
+    Price: 80
     AttackSpeed: 15
   - UnitType: 2
     Level: 2
     Damage: 8
     Reloading: 4000
-    Price: 20
+    Price: 130
     AttackSpeed: 15
   - UnitType: 3
     Level: 3
     Damage: 10
     Reloading: 4000
-    Price: 25
+    Price: 180
     AttackSpeed: 15
   - UnitType: 4
     Level: 4
     Damage: 13
     Reloading: 4000
-    Price: 30
+    Price: 300
     AttackSpeed: 15
   - UnitType: 5
     Level: 5
     Damage: 15
     Reloading: 4000
-    Price: 35
+    Price: 400
     AttackSpeed: 15
   - UnitType: 6
     Level: 6
     Damage: 18
     Reloading: 3000
-    Price: 40
+    Price: 500
     AttackSpeed: 20
   - UnitType: 7
     Level: 7
     Damage: 20
     Reloading: 3000
-    Price: 45
+    Price: 600
     AttackSpeed: 20
   - UnitType: 8
     Level: 8
     Damage: 23
     Reloading: 3000
-    Price: 50
+    Price: 700
     AttackSpeed: 20
   - UnitType: 9
     Level: 9
     Damage: 25
     Reloading: 3000
-    Price: 55
+    Price: 800
     AttackSpeed: 20
   - UnitType: 10
     Level: 10

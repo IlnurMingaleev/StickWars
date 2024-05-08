@@ -38,66 +38,66 @@ MonoBehaviour:
     BaseValue: 0
     AdditionalValue: 5
     LevelCount: 10
-    BaseCost: 10
-    AdditionalCost: 2
+    BaseCost: 500
+    AdditionalCost: 2000
     CurrencyType: 0
   - PerkType: 1
     BaseValue: 0
     AdditionalValue: 5
     LevelCount: 10
-    BaseCost: 10
-    AdditionalCost: 2
+    BaseCost: 500
+    AdditionalCost: 2000
     CurrencyType: 0
   - PerkType: 2
     BaseValue: 0
     AdditionalValue: 5
     LevelCount: 10
-    BaseCost: 10
-    AdditionalCost: 2
+    BaseCost: 500
+    AdditionalCost: 2000
     CurrencyType: 0
   _gamePlayerPerks:
   - PerkType: 0
     BaseValue: 0
     AdditionalValue: 0
     LevelCount: 10
-    BaseCost: 500
-    AdditionalCost: 500
+    BaseCost: 2000
+    AdditionalCost: 4000
     CurrencyType: 0
   - PerkType: 1
     BaseValue: 0
     AdditionalValue: 0
     LevelCount: 10
-    BaseCost: 500
-    AdditionalCost: 500
+    BaseCost: 2000
+    AdditionalCost: 4000
     CurrencyType: 0
   - PerkType: 2
     BaseValue: 0
     AdditionalValue: 0
     LevelCount: 10
-    BaseCost: 500
-    AdditionalCost: 500
+    BaseCost: 2000
+    AdditionalCost: 4000
     CurrencyType: 0
   _playerSkills:
   - SkillType: 1
     BaseDamage: 0
     AdditionalDamage: 0
     LevelCount: 10
-    BaseCost: 100
-    AdditionalCost: 50
+    BaseCost: 1000
+    AdditionalCost: 2000
     CurrencyType: 0
   - SkillType: 2
     BaseDamage: 0
     AdditionalDamage: 0
     LevelCount: 10
-    BaseCost: 100
-    AdditionalCost: 50
+    BaseCost: 1000
+    AdditionalCost: 2000
     CurrencyType: 0
   - SkillType: 3
     BaseDamage: 0
     AdditionalDamage: 0
     LevelCount: 10
-    BaseCost: 100
-    AdditionalCost: 50
+    BaseCost: 1000
+    AdditionalCost: 2000
     CurrencyType: 0
   _skillCellConfigs:
   - Cost: 10
@@ -113,8 +113,8 @@ MonoBehaviour:
     BaseValue: 0
     AdditionalValue: 0
     LevelCount: 10
-    BaseCost: 150
-    AdditionalCost: 300
+    BaseCost: 2000
+    AdditionalCost: 2000
     BaseHealthValue: 100
     AdditionalHaalthValue: 0
     CurrencyType: 0

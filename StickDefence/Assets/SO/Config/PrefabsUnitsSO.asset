@@ -122,3 +122,4 @@ MonoBehaviour:
   - PerkType: 2
     PerkIcon: {fileID: 0}
   <FortressView>k__BackingField: {fileID: 7790035769800290002, guid: c317f1d4acbdd52449cae52858026148, type: 3}
+  <FortressViewMilitary>k__BackingField: {fileID: 7790035769800290002, guid: 43b2fcb56bead5440a3545651744f4f6, type: 3}

@@ -14,6 +14,7 @@ namespace SO.Visual
         [SerializeField] private List<PlayerPrefabModel> _playerUnitPrefabsModels;
         [SerializeField] private List<PerkIconsModel> _perkIconModels;
         [field: SerializeField] public FortressView FortressView { get; private set; }
+        [field: SerializeField] public FortressView FortressViewMilitary { get; private set; }
         
         private Dictionary<UnitTypeEnum, GameObject> _dictionaryUnitPrefabs =
             new Dictionary<UnitTypeEnum, GameObject>();

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO.Pipes;
+using Models.DataModels;
 using TonkoGames.Controllers.Core;
 using TonkoGames.Sound;
 using TonkoGames.StateMachine;
@@ -27,6 +28,7 @@ namespace Models.Battle
         [Inject] private readonly ITimerService _timerService;
         [Inject] private readonly IPlayer _player;
         [Inject] private readonly IWindowManager _windowManager;
+        [Inject] private readonly IDataCentralService _dataCentralService;
         
         private int _maxHealth = 1;
         private List<ProjectileView> _projectiles = new();
@@ -84,12 +86,24 @@ namespace Models.Battle
             {
                 Destroy(_spawnPoint.GetChild(0).gameObject);
             }*/
-            _fortressView = Instantiate(_configManager.PrefabsUnitsSO.FortressView, _spawnPoint);
+            _fortressView = CreateFortressView();
             _fortressModel = new FortressModel(_fortressView, _soundManager, _timerService,
                 _player.Pumping, _windowManager,_coreStateMachine);
             _fortressModel.InitBottomPanelButton();
             _fortressModel.InitSubActive();
 
+        }
+
+        private FortressView CreateFortressView()
+        {
+            if ((int) _dataCentralService.PumpingDataModel.StageLoadType.Value > 10)
+            {
+                return  Instantiate(_configManager.PrefabsUnitsSO.FortressViewMilitary, _spawnPoint);
+            }
+            else
+            {
+                return  Instantiate(_configManager.PrefabsUnitsSO.FortressView, _spawnPoint);
+            }
         }
 
         private void CreateProjectile(ProjectileView projectileView)
