@@ -13,7 +13,7 @@ namespace Models.SO.Core
         public int BaseCost;
         public int AdditionalCost;
         public int BaseHealthValue;
-        public int AdditionalHaalthValue;
+        public int AdditionalHealthValue;
         public CurrencyTypeEnum CurrencyType;
     }
 }

@@ -50,7 +50,7 @@ namespace Models.Player.PumpingFragments
                 WallType = wallType,
                 Value = configData.BaseValue + configData.AdditionalValue,
                 Cost = configData.BaseCost + configData.AdditionalCost,
-                HealthValue = configData.BaseHealthValue + configData.AdditionalHaalthValue,
+                HealthValue = configData.BaseHealthValue + configData.AdditionalHealthValue,
                 CurrentLevel = 0,
                 IsMaxLevel = 0 == configData.LevelCount - 1,
                 CurrencyType = configData.CurrencyType
@@ -80,7 +80,7 @@ namespace Models.Player.PumpingFragments
             pumpingWallData.CurrencyType = configData.CurrencyType;
             pumpingWallData.Value = configData.BaseValue + configData.AdditionalValue * pumpingWallData.CurrentLevel;
             pumpingWallData.Cost = configData.BaseCost + configData.AdditionalCost * pumpingWallData.CurrentLevel;
-            pumpingWallData.HealthValue = configData.BaseHealthValue + configData.AdditionalHaalthValue * pumpingWallData.CurrentLevel;
+            pumpingWallData.HealthValue = configData.BaseHealthValue + configData.AdditionalHealthValue * pumpingWallData.CurrentLevel;
             pumpingWallData.IsMaxLevel = pumpingWallData.CurrentLevel == configData.LevelCount - 1;
            
             WallCostUpgradeEvent?.Invoke(pumpingWallData.Cost);
