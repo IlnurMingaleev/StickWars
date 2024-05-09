@@ -306,7 +306,7 @@ Transform:
   m_GameObject: {fileID: 2957990166730104373}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.7, y: 14.5, z: 0}
+  m_LocalPosition: {x: 14.2, y: 14.5, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -727,7 +727,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movementType: 0
-  _speed: 12
+  _speed: 15
   _maxDistance: 0.1
   _movementDirection: 1
   _scalableBodyX: {fileID: 6763861916387599452}

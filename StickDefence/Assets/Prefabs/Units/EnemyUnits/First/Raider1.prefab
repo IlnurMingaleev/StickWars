@@ -758,7 +758,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movementType: 0
-  _speed: 12
+  _speed: 15
   _maxDistance: 0.1
   _movementDirection: 1
   _scalableBodyX: {fileID: 6763861916387599452}

@@ -394,17 +394,17 @@ MonoBehaviour:
   - MapStage: 2
     Day: 12
     GroupUnitsIndex: 60
-    Delay: 30
+    Delay: 20
     IsBossDay: 0
   - MapStage: 2
     Day: 12
     GroupUnitsIndex: 21
-    Delay: 40
+    Delay: 20
     IsBossDay: 0
   - MapStage: 2
     Day: 12
     GroupUnitsIndex: 60
-    Delay: 40
+    Delay: 20
     IsBossDay: 0
   - MapStage: 2
     Day: 12
@@ -624,12 +624,12 @@ MonoBehaviour:
   - MapStage: 3
     Day: 12
     GroupUnitsIndex: 62
-    Delay: 10
+    Delay: 20
     IsBossDay: 0
   - MapStage: 3
     Day: 12
     GroupUnitsIndex: 63
-    Delay: 10
+    Delay: 20
     IsBossDay: 0
   - MapStage: 3
     Day: 12
@@ -644,12 +644,12 @@ MonoBehaviour:
   - MapStage: 3
     Day: 12
     GroupUnitsIndex: 62
-    Delay: 10
+    Delay: 13
     IsBossDay: 0
   - MapStage: 3
     Day: 12
     GroupUnitsIndex: 63
-    Delay: 10
+    Delay: 13
     IsBossDay: 0
   - MapStage: 3
     Day: 12

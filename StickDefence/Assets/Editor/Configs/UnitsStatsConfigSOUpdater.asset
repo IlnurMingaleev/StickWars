@@ -16,7 +16,7 @@ MonoBehaviour:
   unitsStatsSo: {fileID: 11400000, guid: d77f93fd8f995024eb8229f22f5a1552, type: 2}
   EnemyUnitConfigModel:
   - UnitType: 1
-    Health: 70
+    Health: 140
     Armor: 0.2
     Damage: 5
     Reloading: 4000
@@ -32,7 +32,7 @@ MonoBehaviour:
     RewardCount: 10
     Experience: 10
   - UnitType: 3
-    Health: 90
+    Health: 180
     Armor: 0.2
     Damage: 10
     Reloading: 3800
@@ -48,7 +48,7 @@ MonoBehaviour:
     RewardCount: 20
     Experience: 20
   - UnitType: 5
-    Health: 110
+    Health: 220
     Armor: 0.2
     Damage: 15
     Reloading: 3600
@@ -64,7 +64,7 @@ MonoBehaviour:
     RewardCount: 30
     Experience: 30
   - UnitType: 7
-    Health: 130
+    Health: 260
     Armor: 0.2
     Damage: 20
     Reloading: 3400
@@ -80,7 +80,7 @@ MonoBehaviour:
     RewardCount: 40
     Experience: 40
   - UnitType: 9
-    Health: 150
+    Health: 300
     Armor: 0.2
     Damage: 25
     Reloading: 3200
@@ -96,7 +96,7 @@ MonoBehaviour:
     RewardCount: 50
     Experience: 50
   - UnitType: 11
-    Health: 170
+    Health: 340
     Armor: 0.2
     Damage: 30
     Reloading: 3000
@@ -112,7 +112,7 @@ MonoBehaviour:
     RewardCount: 60
     Experience: 60
   - UnitType: 13
-    Health: 190
+    Health: 380
     Armor: 0.2
     Damage: 35
     Reloading: 2800
@@ -128,7 +128,7 @@ MonoBehaviour:
     RewardCount: 70
     Experience: 70
   - UnitType: 15
-    Health: 210
+    Health: 420
     Armor: 0.2
     Damage: 40
     Reloading: 2600
@@ -144,7 +144,7 @@ MonoBehaviour:
     RewardCount: 80
     Experience: 80
   - UnitType: 17
-    Health: 230
+    Health: 460
     Armor: 0.2
     Damage: 45
     Reloading: 2400
@@ -160,7 +160,7 @@ MonoBehaviour:
     RewardCount: 90
     Experience: 90
   - UnitType: 19
-    Health: 250
+    Health: 500
     Armor: 0.2
     Damage: 50
     Reloading: 2200
