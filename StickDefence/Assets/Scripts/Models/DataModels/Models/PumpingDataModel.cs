@@ -26,6 +26,7 @@ namespace Models.DataModels.Models
         
         #region Setters
 
+        void UpgradeWallLevel();
         void SetStageIndex(int mapStageIndex);
         void UpdatePlayerPerkData(PerkData perkData);
         PerkData GetPlayerPerkData(PerkTypesEnum unitTypeEnum);
@@ -69,6 +70,13 @@ namespace Models.DataModels.Models
         #endregion
 
         #region Setters
+
+        public void UpgradeWallLevel() => _wallData.Value = new WallData()
+        {
+            WallTypeEnum = WallTypeEnum.Basic,
+            WallLevel = _wallData.Value.WallLevel + 1,
+        };
+
         public void SetStageIndex(int mapStageIndex) => _stageLoadType.Value = (mapStageIndex <= ((int) MapStagesEnum.Stage1_20))?(MapStagesEnum)mapStageIndex: MapStagesEnum.Stage1_20;
         public void UpgradeMaxStickmanLevel() => _maxStickmanLevel.Value += 1;
 
@@ -173,6 +181,7 @@ namespace Models.DataModels.Models
                 MaxStickmanLevel = _maxStickmanLevel.Value,
                 LevelData =  _currentLevelData.Value,
                 MapStagesType = _stageLoadType.Value,
+                WallData = _wallData.Value,
             };
             return statsData;
         }
@@ -196,6 +205,7 @@ namespace Models.DataModels.Models
             _maxStickmanLevel.Value = playerPumpingData.MaxStickmanLevel;
             _currentLevelData.Value = playerPumpingData.LevelData;
             _stageLoadType.Value = playerPumpingData.MapStagesType;
+            _wallData.Value = playerPumpingData.WallData;
         }
         
         
@@ -245,6 +255,11 @@ namespace Models.DataModels.Models
                 CurrentExp = 0,
                 Level = 1,
                 RequiredExp = 10,
+            };
+            playerPumpingData.WallData = new WallData()
+            {
+                WallTypeEnum = WallTypeEnum.Basic,
+                WallLevel = 0,
             };
             SetPlayerPumpingData(playerPumpingData);
         }

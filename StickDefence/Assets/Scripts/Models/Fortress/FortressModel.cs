@@ -64,6 +64,10 @@ namespace Models.Fortress
             {
                 if(_bottomPanelWindow) _bottomPanelWindow.UpdateWallCost(cost);
                 SubscribeStats();
+            }, health =>
+            {
+                if(_bottomPanelWindow) UpdateWallHealthMax(health);
+                SubscribeStats();
             });
         }
 
@@ -89,7 +93,7 @@ namespace Models.Fortress
         private void UpdateWallHealthMax(int healthMax)
         {
             if(_bottomPanelWindow)
-                _bottomPanelWindow.UpdateWallHealthBar( View.Damageable.HealthCurrent.Value,healthMax);
+                _bottomPanelWindow.UpdateWallHealthBar( healthMax,healthMax);
         }
         public void InitSubActive()
         {

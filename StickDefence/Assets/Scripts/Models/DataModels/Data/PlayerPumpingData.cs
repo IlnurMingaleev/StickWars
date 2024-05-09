@@ -14,6 +14,7 @@ namespace Models.DataModels.Data
         public PlayerUnitTypeEnum MaxStickmanLevel;
         public LevelData LevelData;
         public MapStagesEnum MapStagesType;
+        public WallData WallData;
     }
     
     [Serializable]

@@ -8,7 +8,7 @@ namespace Models.Player.PumpingFragments
 {
     public interface IWallPumpingEvents
     {
-        void InitEvents(Action<int> wallUpgradeEvent);
+        void InitEvents(Action<int> wallUpgradeEvent,Action<int> wallHealthUpgradeEvent);
     }
 
     public class WallPumping : IWallPumpingEvents
@@ -19,6 +19,7 @@ namespace Models.Player.PumpingFragments
         private readonly IDataCentralService _dataCentralService;
 
         public Action<int> WallCostUpgradeEvent;
+        public Action<int> WallHealthUpgradeEvent;
         public IReadOnlyReactiveDictionary<WallTypeEnum, PumpingWallData> WallData => _wallData;
 
         public WallPumping(ConfigManager configManager, IDataCentralService dataCentralService)
@@ -27,9 +28,10 @@ namespace Models.Player.PumpingFragments
             _dataCentralService = dataCentralService;
         }
 
-        public void InitEvents(Action<int> wallUpgradeEvent)
+        public void InitEvents(Action<int> wallUpgradeEvent,Action<int> wallHealthUpgradeEvent)
         {
             WallCostUpgradeEvent = wallUpgradeEvent;
+            WallHealthUpgradeEvent = wallHealthUpgradeEvent;
         }
 
         public void Init()
@@ -44,19 +46,20 @@ namespace Models.Player.PumpingFragments
         public PumpingWallData CreateWallData(WallTypeEnum wallType)
         {
             var configData = _configManager.PumpingConfigSo.WallConfigs[wallType];
-
+            var level = _dataCentralService.PumpingDataModel.WallLevelReactive.Value.WallLevel;
             var wallData = new PumpingWallData()
             {
                 WallType = wallType,
-                Value = configData.BaseValue + configData.AdditionalValue,
-                Cost = configData.BaseCost + configData.AdditionalCost,
-                HealthValue = configData.BaseHealthValue + configData.AdditionalHealthValue,
-                CurrentLevel = 0,
-                IsMaxLevel = 0 == configData.LevelCount - 1,
+                Value = configData.BaseValue +level* configData.AdditionalValue,
+                Cost = configData.BaseCost + level*configData.AdditionalCost,
+                HealthValue = configData.BaseHealthValue +level* configData.AdditionalHealthValue,
+                CurrentLevel = level,
+                IsMaxLevel = level == configData.LevelCount - 1,
                 CurrencyType = configData.CurrencyType
             };
             
             WallCostUpgradeEvent?.Invoke(wallData.Cost);
+            WallHealthUpgradeEvent?.Invoke(wallData.HealthValue);
             return wallData;
         }
 
@@ -64,10 +67,12 @@ namespace Models.Player.PumpingFragments
         {
             var configData = _configManager.PumpingConfigSo.WallConfigs[wallType];
             var wallData = _wallData[wallType];
-            
+            _dataCentralService.PumpingDataModel.UpgradeWallLevel();
+            _dataCentralService.SaveFull();
+            var level = _dataCentralService.PumpingDataModel.WallLevelReactive.Value.WallLevel;
             if (!wallData.IsMaxLevel)
             {
-                wallData.CurrentLevel++;
+                wallData.CurrentLevel = level;
                 wallData.IsMaxLevel = wallData.CurrentLevel == configData.LevelCount - 1;
                 
                 _wallData[wallType] = UpdateWallData(wallData);
@@ -84,6 +89,7 @@ namespace Models.Player.PumpingFragments
             pumpingWallData.IsMaxLevel = pumpingWallData.CurrentLevel == configData.LevelCount - 1;
            
             WallCostUpgradeEvent?.Invoke(pumpingWallData.Cost);
+            WallHealthUpgradeEvent?.Invoke(pumpingWallData.HealthValue);
             return pumpingWallData;
         }
     }
