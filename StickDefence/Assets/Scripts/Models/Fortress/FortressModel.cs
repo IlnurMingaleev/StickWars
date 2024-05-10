@@ -1,5 +1,6 @@
 ﻿using System;
 using Enums;
+using Models.DataModels;
 using TonkoGames.Sound;
 using Models.Player;
 using Models.Timers;
@@ -20,6 +21,7 @@ namespace Models.Fortress
         private readonly ITimerService _timerService;
         private readonly IWindowManager _windowManager;
         private readonly ICoreStateMachine _coreStateMachine;
+        private readonly IDataCentralService _dataCentralService;
         private BottomPanelWindow _bottomPanelWindow;
         private bool _isDead;
         
@@ -29,7 +31,7 @@ namespace Models.Fortress
         
         public FortressModel(FortressView fortressView, ISoundManager soundManager,
             ITimerService timerService, IPumping pumping, IWindowManager windowManager,
-            ICoreStateMachine coreStateMachine)
+            ICoreStateMachine coreStateMachine, IDataCentralService dataCentralService)
         {
             _coreStateMachine = coreStateMachine;
             _windowManager = windowManager;
@@ -37,6 +39,7 @@ namespace Models.Fortress
             View = fortressView;
             _soundManager = soundManager;
             _timerService = timerService;
+            _dataCentralService = dataCentralService;
             View.Damageable.Init(_pumping.WallData[WallTypeEnum.Basic].HealthValue, _pumping.WallData[WallTypeEnum.Basic].Defense);
             _bottomPanelWindow = _windowManager.GetWindow<BottomPanelWindow>();
         }
@@ -50,6 +53,7 @@ namespace Models.Fortress
 
         public void InitHealthBar()
         {
+            View.SetLevelLabel(_dataCentralService.PumpingDataModel.WallLevelReactive.Value.WallLevel);
             View.Damageable.HealthCurrent.Subscribe(health =>UpdateWallHealthBar(health) ).AddTo(_disposable);
             View.Damageable.HealthMax.Subscribe(healthMax => UpdateWallHealthMax(healthMax)).AddTo(_disposable);
         }
@@ -82,6 +86,7 @@ namespace Models.Fortress
         private void UpgradeWall()
         {
             _pumping.UpgradeWall(WallTypeEnum.Basic);
+            View.SetLevelLabel(_dataCentralService.PumpingDataModel.WallLevelReactive.Value.WallLevel);
         }
 
         private void UpdateWallHealthBar(int health)

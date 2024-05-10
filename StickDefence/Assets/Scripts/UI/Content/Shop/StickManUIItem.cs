@@ -52,7 +52,7 @@ namespace UI.Content.Shop
             _mergeController = mergeController;
             _stickmanUnitType = stickmanStatsConfig.UnitType;
             _levelLabel.text = stickmanStatsConfig.Level.ToString();
-            _stickmanImage.sprite = playerPrefabModel.uiIcon;
+           // _stickmanImage.sprite = playerPrefabModel.uiIcon;
              PumpingPerkData perkDataDamage = player.Pumping.GamePerks[PerkTypesEnum.RecruitsDamage];
              PumpingPerkData perkDataPrice = player.Pumping.GamePerks[PerkTypesEnum.DecreasePrice];
             _damageLabel.text = $"Damage: {(int)(stickmanStatsConfig.Damage*(1+perkDataDamage.Value/100))}";

@@ -116,10 +116,10 @@ MonoBehaviour:
     uiIcon: {fileID: 21300000, guid: 51c0b03b5c4bd41b0a3faeb00048fbe9, type: 3}
   _perkIconModels:
   - PerkType: 0
-    PerkIcon: {fileID: 21300000, guid: 413710b631bd5493ebbf1a29b2d82eb3, type: 3}
+    PerkIcon: {fileID: 21300000, guid: a9a4001dc62d2f846b2fa39bd7cd1cc4, type: 3}
   - PerkType: 1
-    PerkIcon: {fileID: 21300000, guid: c3189121f7e3342a3b2fcc2f495c9e31, type: 3}
+    PerkIcon: {fileID: 21300000, guid: c3a0e1d38c4c9254f86b8acf44dad0f7, type: 3}
   - PerkType: 2
-    PerkIcon: {fileID: 0}
+    PerkIcon: {fileID: 21300000, guid: fe0e772b71d5d1448961fe988b0a9e30, type: 3}
   <FortressView>k__BackingField: {fileID: 7790035769800290002, guid: c317f1d4acbdd52449cae52858026148, type: 3}
   <FortressViewMilitary>k__BackingField: {fileID: 7790035769800290002, guid: 43b2fcb56bead5440a3545651744f4f6, type: 3}

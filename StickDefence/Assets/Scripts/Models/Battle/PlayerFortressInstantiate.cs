@@ -88,7 +88,7 @@ namespace Models.Battle
             }*/
             _fortressView = CreateFortressView();
             _fortressModel = new FortressModel(_fortressView, _soundManager, _timerService,
-                _player.Pumping, _windowManager,_coreStateMachine);
+                _player.Pumping, _windowManager,_coreStateMachine,_dataCentralService);
             _fortressModel.InitBottomPanelButton();
             _fortressModel.InitSubActive();
 

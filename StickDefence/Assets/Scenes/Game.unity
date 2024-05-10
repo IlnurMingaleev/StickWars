@@ -2724,10 +2724,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: BattleStage
       objectReference: {fileID: 0}
+    - target: {fileID: 2573299026537956282, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2880774866835792301, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -347.8
+      objectReference: {fileID: 0}
     - target: {fileID: 3384835847364885298, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
       propertyPath: _cameraMain
       value: 
       objectReference: {fileID: 1709641390}
+    - target: {fileID: 8185644927721827941, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -344.6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5378,11 +5390,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
+  near clip plane: 0.1
+  far clip plane: 100
   field of view: 60
   orthographic: 1
-  orthographic size: 130
+  orthographic size: 170
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

@@ -1,6 +1,7 @@
 ﻿using System;
 using Anim.Battle.Fortress;
 using Models.Attacking;
+using TMPro;
 using UniRx;
 using UnityEngine;
 using Views.Health;
@@ -12,6 +13,7 @@ namespace Views.Units.Fortress
         [SerializeField] private BattleFortressLaunch _battleFortressLaunch;
         [SerializeField] private Damageable _damageable;
         [SerializeField] private AttackBlockView _attackBlockView;
+        [SerializeField] private TMP_Text _levelLabel;
 
         private ReactiveProperty<bool> _isActive = new ReactiveProperty<bool>(false);
         
@@ -23,7 +25,12 @@ namespace Views.Units.Fortress
         public IReadOnlyReactiveProperty<bool> IsActive => _isActive;
           
         public bool IsLaunchIsProgress => _battleFortressLaunch.IsLaunchIsProgress;
-        
+
+        public void SetLevelLabel(int level)
+        {
+            _levelLabel.text = $"{level}";
+        }
+
         private void OnEnable()
         {
             _isActive.Value = true;
