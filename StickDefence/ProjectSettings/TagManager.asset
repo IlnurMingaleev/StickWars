@@ -62,3 +62,9 @@ TagManager:
   - name: AdDrone
     uniqueID: 1236358425
     locked: 0
+  - name: TrashBin
+    uniqueID: 487431639
+    locked: 0
+  - name: Level
+    uniqueID: 1880204903
+    locked: 0

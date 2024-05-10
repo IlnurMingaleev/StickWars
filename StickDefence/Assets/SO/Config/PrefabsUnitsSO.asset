@@ -85,34 +85,34 @@ MonoBehaviour:
     <GO>k__BackingField: {fileID: 3643846031575893046, guid: 155250d0781ba804ebf6b1ac173b715a, type: 3}
     uiIcon: {fileID: 21300000, guid: 43e81a0faabee4fa8a93ce6c09a8d026, type: 3}
   - <UnitType>k__BackingField: 11
-    <GO>k__BackingField: {fileID: 3643846031575893046, guid: 3a69ab7969a4214478b234325ea1713c, type: 3}
+    <GO>k__BackingField: {fileID: 3643846031575893046, guid: e730efed69b253c45b47bbcc14ead8a5, type: 3}
     uiIcon: {fileID: 21300000, guid: ff58c718f1da9462aa7733e52d5dc0aa, type: 3}
   - <UnitType>k__BackingField: 12
-    <GO>k__BackingField: {fileID: 3643846031575893046, guid: 2d0edab9b49910e4b839f5af0ddeb1d0, type: 3}
+    <GO>k__BackingField: {fileID: 3643846031575893046, guid: 64d3f1b136a021740b5d504b505e65c5, type: 3}
     uiIcon: {fileID: 21300000, guid: aaeaefe59d58b459d8a87d83ac106ef9, type: 3}
   - <UnitType>k__BackingField: 13
-    <GO>k__BackingField: {fileID: 3643846031575893046, guid: cf861682ba4ace844a3ef6c633522657, type: 3}
+    <GO>k__BackingField: {fileID: 3643846031575893046, guid: 2da6e13e38dccf041a6184bca2923f40, type: 3}
     uiIcon: {fileID: 21300000, guid: ec5b6ef21f12c4c168be3b8357462eba, type: 3}
   - <UnitType>k__BackingField: 14
-    <GO>k__BackingField: {fileID: 3643846031575893046, guid: c0a727c53495a774380004936285732e, type: 3}
+    <GO>k__BackingField: {fileID: 3643846031575893046, guid: c38bfd34c163e774a9ae905f71d7ddc9, type: 3}
     uiIcon: {fileID: 21300000, guid: d7a04cb5ddc9745dcb3ad1d317190ae0, type: 3}
   - <UnitType>k__BackingField: 15
-    <GO>k__BackingField: {fileID: 3643846031575893046, guid: f3b2c73535834a04c8e29c4e98c04f00, type: 3}
+    <GO>k__BackingField: {fileID: 3643846031575893046, guid: 92ac029d247a4ec4ebfddfe7879e4830, type: 3}
     uiIcon: {fileID: 21300000, guid: b012d35a6ad8345b79b1bf3862b9efb8, type: 3}
   - <UnitType>k__BackingField: 16
-    <GO>k__BackingField: {fileID: 3643846031575893046, guid: ce0e6f28ad1e303479d8f950e2c7c154, type: 3}
+    <GO>k__BackingField: {fileID: 3643846031575893046, guid: ac7dba581baf5054381ca05e228fe81a, type: 3}
     uiIcon: {fileID: 21300000, guid: 081bc2a1c80274d2f9cabbc8baa0b266, type: 3}
   - <UnitType>k__BackingField: 17
-    <GO>k__BackingField: {fileID: 3643846031575893046, guid: 92d5216aa1151f844adae29adfc8cd99, type: 3}
+    <GO>k__BackingField: {fileID: 3643846031575893046, guid: 02fecb6eda5c8644098b642e05ec1dd1, type: 3}
     uiIcon: {fileID: 21300000, guid: 0755cc80394904ced8fbee83bb3507f7, type: 3}
   - <UnitType>k__BackingField: 18
-    <GO>k__BackingField: {fileID: 3643846031575893046, guid: ab708e6383e60704a8f4ac483250a475, type: 3}
+    <GO>k__BackingField: {fileID: 3643846031575893046, guid: e9ffcf5b00c77634cae3458de2df6234, type: 3}
     uiIcon: {fileID: 21300000, guid: 85d119cfcb3214895b4ee6112040e6dc, type: 3}
   - <UnitType>k__BackingField: 19
-    <GO>k__BackingField: {fileID: 3643846031575893046, guid: c4e643079a44c29429a3940bef602fde, type: 3}
+    <GO>k__BackingField: {fileID: 3643846031575893046, guid: 31db15a2b6b01c94baacde324e686473, type: 3}
     uiIcon: {fileID: 21300000, guid: b05fb54b13ab3487f8e548faae82e72d, type: 3}
   - <UnitType>k__BackingField: 20
-    <GO>k__BackingField: {fileID: 3643846031575893046, guid: 155250d0781ba804ebf6b1ac173b715a, type: 3}
+    <GO>k__BackingField: {fileID: 3643846031575893046, guid: e00d4d95c553b40468346bfdf13d8544, type: 3}
     uiIcon: {fileID: 21300000, guid: 51c0b03b5c4bd41b0a3faeb00048fbe9, type: 3}
   _perkIconModels:
   - PerkType: 0

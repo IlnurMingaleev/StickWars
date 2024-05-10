@@ -30,9 +30,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 136137670363336605}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 9179756824312568833}
@@ -88,6 +88,8 @@ MonoBehaviour:
   _battleFortressLaunch: {fileID: 1422742849659984724}
   _damageable: {fileID: 3834306640955565368}
   _attackBlockView: {fileID: 0}
+  Speed:
+    value: 0
 --- !u!114 &3834306640955565368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,6 +105,8 @@ MonoBehaviour:
   _damageableFlash:
   - {fileID: 7829432818851595088}
   _centerPoint: {fileID: 914594955935657576}
+  _speedToCalculatePredict:
+    value: 0
 --- !u!70 &5746387820971978580
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
