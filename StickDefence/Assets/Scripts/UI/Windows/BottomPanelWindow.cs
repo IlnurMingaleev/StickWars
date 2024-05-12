@@ -36,6 +36,8 @@ namespace UI.Windows
         
         [Header("Quick Buy Btn")]
         [SerializeField] private UIButton _quickBuyBtn;
+        [SerializeField] private TMP_Text _stickmanPrice;
+        [SerializeField] private TMP_Text _levelLabel;
 
         [Header("Stickman Shop Btn")] 
         [SerializeField] private UIButton _stickmanShopBtn;
@@ -126,8 +128,17 @@ namespace UI.Windows
                 playerUnitType = (PlayerUnitTypeEnum)((int)_dataCentralService.PumpingDataModel.MaxStickmanLevel.Value - 3);
             _quickBuyBtn.OnClickAsObservable.Subscribe(_ =>
                 BuyStickman(_configManager.UnitsStatsSo.DictionaryStickmanConfigs[playerUnitType], playerUnitType));
+            UpdateMainBuyButton(playerUnitType);
+            _dataCentralService.PumpingDataModel.MaxStickmanLevel.Subscribe(level => UpdateMainBuyButton(level))
+                .AddTo(ActivateDisposables);
             _dataCentralService.StatsDataModel.CoinsCount.Subscribe(money => UpdateMoneyLabel(money)).AddTo(ActivateDisposables);
             
+        }
+
+        private void UpdateMainBuyButton(PlayerUnitTypeEnum playerUnitType)
+        {
+            _levelLabel.text = $"{(int) playerUnitType}";
+            _stickmanPrice.text = $"{_configManager.UnitsStatsSo.DictionaryStickmanConfigs[playerUnitType].Price}";
         }
 
         private void InitAlertEvents()
