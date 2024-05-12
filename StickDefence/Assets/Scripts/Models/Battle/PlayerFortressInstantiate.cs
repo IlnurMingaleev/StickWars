@@ -66,7 +66,7 @@ namespace Models.Battle
             _fortressModel.Resurrect();
         }
         
-        public float GetDeltaHealth() => (float)_fortressView.HealthCurrent.Value / (float) _maxHealth;
+        public float GetDeltaHealth() => (float)_fortressView.Damageable.HealthCurrent.Value / (float)_fortressView.Damageable.HealthMax.Value;
 
         public void DestroyStage()
         {

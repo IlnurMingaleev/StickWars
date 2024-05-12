@@ -87,11 +87,13 @@ namespace Models.Units
         public void OnPlay()
         {
             _isPlayable = true;
+            View.BodyAnimator.enabled = true;
         }
 
         public void OnPause()
         {
             _isPlayable = false;
+            View.BodyAnimator.enabled = false;
         }
 
         public void Update()

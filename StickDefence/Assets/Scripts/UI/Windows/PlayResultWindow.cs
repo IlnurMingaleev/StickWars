@@ -5,6 +5,8 @@ using Models.Controllers;
 using Models.DataModels;
 using Models.IAP;
 using TMPro;
+using TonkoGames.StateMachine;
+using TonkoGames.StateMachine.Enums;
 using UI.Common;
 using UI.Content.PlayResult;
 using UI.Content.Rewards;
@@ -19,6 +21,7 @@ namespace UI.Windows
     {
         [SerializeField] private GameObject _resurrectBlock;
         [SerializeField] private GameObject _winBlock;
+        [SerializeField] private GameObject _exitGameBlock;
 
         [Header("WinBlock")]
         [SerializeField] private TMP_Text _title;
@@ -31,9 +34,13 @@ namespace UI.Windows
         [Header("Resurrect")]
         [SerializeField] private UIButton _rewardResurrectButton;
         [SerializeField] private UIButton _defeatButton;
+        [Header("ExitGameBlock")]
+        [SerializeField] private UIButton _returnBackToGame;
+        [SerializeField] private UIButton _exitGameButton;
 
         [Inject] private readonly IIAPService _iapService;
         [Inject] private readonly IDataCentralService _dataCentralService;
+        [Inject] private readonly ICoreStateMachine _coreStateMachine;
 
         private Action _claim;
         private Action _resurrect;
@@ -56,16 +63,36 @@ namespace UI.Windows
             
             _defeatButton.OnClick.AsObservable().Subscribe(_ => OnDefeatButton()).AddTo(ActivateDisposables);
             _rewardResurrectButton.OnClick.AsObservable().Subscribe(_ => OnResurrect()).AddTo(ActivateDisposables);
+
+            _returnBackToGame.OnClickAsObservable.Subscribe(_ => OnReturn()).AddTo(ActivateDisposables);
+            _exitGameButton.OnClickAsObservable.Subscribe(_ => OnDefeatButton()).AddTo(ActivateDisposables);
         }
 
-        public void SetLose(RewardContains rewardContains, bool isResurrect, Action claim, Action resurrect)
+        private void OnReturn()
+        {
+            _manager.Hide(this);
+            _manager.Show<BottomPanelWindow>();
+            _coreStateMachine.RunTimeStateMachine.SetRunTimeState(RunTimeStateEnum.Play);
+        }
+
+        public void SetLose(RewardContains rewardContains, bool isResurrect, Action claim, Action resurrect, bool isExitGame=false)
         {
             _isWin = false;
             _claim = claim;
             _resurrect = resurrect;
-            
-            _resurrectBlock.SetActive(isResurrect);
-            _winBlock.SetActive(!isResurrect);
+            if (isExitGame)
+            {
+                _resurrectBlock.SetActive(false);
+                _winBlock.SetActive(false);
+                _exitGameBlock.SetActive(true);
+            }
+            else
+            {
+                _exitGameBlock.SetActive(false);
+                _resurrectBlock.SetActive(isResurrect);
+                _winBlock.SetActive(!isResurrect);  
+            }
+
             _title.text = LocalizationManager.GetTranslation(ScriptTerms.Messages.Defeat);
             
             _starsBlock.SetActive(false);
@@ -83,6 +110,7 @@ namespace UI.Windows
             _isWin = true;
             _claim = claim;
             _continue = goOn;
+            _exitGameBlock.SetActive(false);
             _resurrectBlock.SetActive(false);
             _winBlock.SetActive(true);
             sceneInstances.PlayerBuilder.DestroyStage();

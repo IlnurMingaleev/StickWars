@@ -28,7 +28,7 @@ namespace Models.Controllers.Skills
         protected float _cooldownTime = 60000f;
         protected BottomPanelWindow _bottomPanelWindow;
         protected CompositeDisposable _disposable = new CompositeDisposable();
-
+        public bool SkillCooldownPassed => _skillCooldownPassed;
         public Transform AimView
         {
             get { return _aimView; }

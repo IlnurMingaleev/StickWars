@@ -41,10 +41,12 @@ namespace Models.Battle
             _isResurrected = false;
         }
             
-        public void OnLoseEvent()
+        public void OnLoseEvent(bool isExitGame = false)
         {
-            ShowPlayResult(0, false, !_isResurrected);
+            ShowPlayResult(0, false, !_isResurrected, isExitGame);
+
             _isResurrected = true;
+
         }
         
         public void OnWinEvent()
@@ -62,7 +64,7 @@ namespace Models.Battle
             ShowPlayResult(stars, true);
         }
         
-        private void ShowPlayResult(int stars, bool isWin, bool isResurrect = false)
+        private void ShowPlayResult(int stars, bool isWin, bool isResurrect = false, bool isExitGame = false)
         {
             var playResultWindow = _windowManager.Show<PlayResultWindow>(WindowPriority.AboveTopPanel);
             var rewardModel = _configManager.MapStageSO.MapStageRewardModels[ _dataCentralService.PumpingDataModel.StageLoadType.Value];
@@ -90,7 +92,15 @@ namespace Models.Battle
             }
             else
             {
-                playResultWindow.SetLose(rewardContains, isResurrect,OnPlayResultWindowClaim, Resurrect);
+                playResultWindow.SetLose(rewardContains, isResurrect,OnPlayResultWindowClaim, Resurrect, isExitGame);
+            }
+            if (isExitGame)
+            {
+                _isResurrected = false; 
+            }
+            else
+            {
+                _isResurrected = true;
             }
         }
 

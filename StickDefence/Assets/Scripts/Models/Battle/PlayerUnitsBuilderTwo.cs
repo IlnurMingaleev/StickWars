@@ -152,10 +152,10 @@ namespace Models.Battle
 
         private void OnPlayRunTimes()
         {
-            /*foreach (var unit in _spawnedUnits)
+            foreach (var unit in _spawnedUnits)
             {
-                unit.Play();
-            }*/
+                unit.OnPlay();
+            }
             foreach (var projectileView in _projectiles)
             {
                 projectileView.StartMove();
@@ -164,10 +164,10 @@ namespace Models.Battle
 
         private void OnPauseRunTime()
         {
-            /*foreach (var unit in _spawnedUnits)
+            foreach (var unit in _spawnedUnits)
             {
-                unit.Pause();
-            }*/
+                unit.OnPause();
+            }
             foreach (var projectileView in _projectiles)
             {
                 projectileView.StopMove();

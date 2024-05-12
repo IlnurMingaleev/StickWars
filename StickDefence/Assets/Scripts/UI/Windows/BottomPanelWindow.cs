@@ -17,6 +17,7 @@ using UI.Common;
 using UI.Content.Spin;
 using UI.UIManager;
 using UniRx;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
@@ -65,7 +66,7 @@ namespace UI.Windows
         [SerializeField] private UIButton _mergeBtn;
         public UIButton FortuneWheelBtn => _fortuneWheelBtn;
         public UIButton MergeBtn => _mergeBtn;
-        
+        public Transform WalletOrigin => _moneyText.transform;
         
         [Inject] private IDataCentralService _dataCentralService;
         [Inject] private ConfigManager _configManager;
@@ -90,6 +91,7 @@ namespace UI.Windows
             InitWindowButtons();
             InitWallUpgradeButtonClick(UpgradeWallClickedEvent);
             InitAlertEvents();
+            _manager.GetWindow<StickmanShopWindow>().StartAdTimer();
         }
 
         public void Init(SceneInstances sceneInstances)

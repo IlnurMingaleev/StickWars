@@ -292,7 +292,8 @@ namespace UI.Windows
         }
 
         public void StartAdTimer()
-        {
+        {   
+            if(_timerModel != null) _timerModel.StopTick();
             _timerModel = _timerService.AddGameTimer(_adTimerCooldown, f => { }, () =>
             {
                 _showAd = true;

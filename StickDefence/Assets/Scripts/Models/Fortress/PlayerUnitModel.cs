@@ -161,14 +161,14 @@ namespace Models.Fortress
             _disposableIsActive.Clear();
         }
 
-        public void Pause()
+        public void OnPause()
         {
-            throw new NotImplementedException();
+           View.OnPause();
         }
 
-        public void Play()
+        public void OnPlay()
         {
-            throw new NotImplementedException();
+            View.OnPlay();
         }
     }
 }

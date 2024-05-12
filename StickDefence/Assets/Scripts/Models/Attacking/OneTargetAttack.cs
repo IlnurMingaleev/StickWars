@@ -5,8 +5,8 @@
         protected override void EndFindAttackTick()
         {
             base.EndFindAttackTick();
-            
-            TargetDamageable = AttackingCircle.GetNearestEntity(PosAttack.position);
+            if(TargetDamageable == null) TargetDamageable = AttackingCircle.GetNearestEntity(PosAttack.position);
+            else if(TargetDamageable.Dead) TargetDamageable = AttackingCircle.GetNearestEntity(PosAttack.position);
             
             if (TargetDamageable != null)
             {

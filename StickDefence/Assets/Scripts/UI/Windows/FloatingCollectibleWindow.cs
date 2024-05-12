@@ -137,10 +137,12 @@ namespace UI.Windows
                 switch (rewardType)
                 {
                     case RewardType.Coin:
-                        originButton = GetOriginButton(topPanel.CashLabelTransform.gameObject);
+                        originButton = GetOriginButton(bottomPanelWindow.WalletOrigin.gameObject);
+                       // originButton = GetOriginButton(topPanel.CashLabelTransform.gameObject);
                         break;
                     case RewardType.Gem:
-                        originButton = GetOriginButton(topPanel.GoldLabelTransform.gameObject);
+                        originButton = GetOriginButton(bottomPanelWindow.WalletOrigin.gameObject);
+                        //originButton = GetOriginButton(topPanel.GoldLabelTransform.gameObject);
                         break;
                     case RewardType.AttackSpeed:
                     case RewardType.GainCoins:

@@ -13,19 +13,23 @@ namespace Views.Health
         Transform GetTransformCenterPoint();
         Transform GetTransform();
         ReactiveProperty<float> SpeedToCalculatePredict { get; }
+        IReadOnlyReactiveProperty<int> HealthCurrent { get; }
+        bool Dead { get; }
     }
 
-    public class Damageable : MonoBehaviour, IDamageable
+    public class Damageable : MonoBehaviour, IDamageable,IDisposable
     {
         [SerializeField] private List<DamageableFlashAnim> _damageableFlash;
         [SerializeField] private Transform _centerPoint;
         private IEnumerator flashingCoroutine;
         private float _armor = 0;
         private bool _isInvulnerability = false;
+        private bool _dead = false;
         
         private ReactiveProperty<int> _healthCurrent = new ReactiveProperty<int>();
         private ReactiveProperty<int> _healthMax = new ReactiveProperty<int>();
         private ReactiveProperty<bool> _isEmptyHealth = new ReactiveProperty<bool>();
+        private CompositeDisposable _disposable = new CompositeDisposable();
 
         public IReadOnlyReactiveProperty<int> HealthCurrent => _healthCurrent;
         public IReadOnlyReactiveProperty<int> HealthMax => _healthMax;
@@ -35,6 +39,7 @@ namespace Views.Health
         public Transform GetTransform() => transform;
         public ReactiveProperty<float> _speedToCalculatePredict;
         public ReactiveProperty<float> SpeedToCalculatePredict => _speedToCalculatePredict;
+        public bool Dead => _dead;
 
         public void SetSpeedToCalculatePredict(ReactiveProperty<float> speed)
         {
@@ -47,6 +52,10 @@ namespace Views.Health
             _healthCurrent.Value = health;
             _armor = armor;
             _speedToCalculatePredict = speed;
+            _healthCurrent.Subscribe(health =>
+            {
+                if (health <= 0) _dead = true;
+            }).AddTo(_disposable);
         }
 
         public void Init(int health, float armor)
@@ -121,6 +130,11 @@ namespace Views.Health
         {
             _healthCurrent.Value = _healthMax.Value;
             _isEmptyHealth.Value = false;
+        }
+
+        public void Dispose()
+        {
+            _disposable.Clear();
         }
     }
 }

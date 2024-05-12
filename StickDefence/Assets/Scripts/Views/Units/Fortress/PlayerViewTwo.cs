@@ -46,6 +46,15 @@ namespace Views.Units.Fortress
         {
             _battleFortressLaunch.StartLaunchAnim();
         }
-        
+
+        public void OnPause()
+        {
+            _battleFortressLaunch.Animator.enabled = false;
+        }
+
+        public void OnPlay()
+        {
+            _battleFortressLaunch.Animator.enabled = true;
+        }
     }
 }

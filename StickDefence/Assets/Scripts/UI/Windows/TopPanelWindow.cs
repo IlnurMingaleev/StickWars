@@ -39,8 +39,8 @@ namespace UI.Windows
         {
             base.OnActivate();
             SubscribeToExpLvl();
-            _dataCentralService.PumpingDataModel.LevelReactive.Subscribe(_ => _levelNumber.text = $"{_.Level}")
-                .AddTo(ActivateDisposables);
+            /*_dataCentralService.PumpingDataModel.LevelReactive.Subscribe(_ => _levelNumber.text = $"{_.Level}")
+                .AddTo(ActivateDisposables);*/
             _dataCentralService.PumpingDataModel.StageLoadType.Subscribe(_ => _waveNumber.text = $"{(int) _}")
                 .AddTo(ActivateDisposables);
             _backArrow.OnClickAsObservable.Subscribe(_ => ExitGameToMainMenu()).AddTo(ActivateDisposables);
@@ -108,7 +108,7 @@ namespace UI.Windows
 
         private void ExitGameToMainMenu()
         {
-            _coreStateMachine.BattleStateMachine.OnEndBattle(false);
+            _coreStateMachine.BattleStateMachine.OnEndBattle(false,true);
         }
 
         public void SetIgnoreNextProfileChange()

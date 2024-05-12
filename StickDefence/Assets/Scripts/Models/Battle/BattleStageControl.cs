@@ -132,7 +132,7 @@ namespace Models.Battle
             }
         }
 
-        private void OnBattleEnd(bool value)
+        private void OnBattleEnd(bool value,bool isExitGame = false)
         {
             _windowManager.Hide<BottomPanelWindow>();
             _coreStateMachine.RunTimeStateMachine.SetRunTimeState(RunTimeStateEnum.Pause);
@@ -141,7 +141,7 @@ namespace Models.Battle
             if (value)
                 _battleResult.OnWinEvent();
             else
-                _battleResult.OnLoseEvent();
+                _battleResult.OnLoseEvent(isExitGame);
         }
 
        

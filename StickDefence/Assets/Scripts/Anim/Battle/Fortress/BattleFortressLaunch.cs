@@ -8,7 +8,7 @@
         [SerializeField] private FortressCallback _fortressCallback;
 
         public bool IsLaunchIsProgress { get; private set; }
-        
+        public Animator Animator => _animator;
        // private readonly int _launchAnim = Animator.StringToHash("fortress_launch");
         private readonly int Attack = Animator.StringToHash("Attack");
         private readonly int Idle = Animator.StringToHash("Idle");

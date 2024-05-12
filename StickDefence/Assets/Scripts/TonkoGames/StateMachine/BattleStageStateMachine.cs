@@ -8,19 +8,19 @@ namespace TonkoGames.StateMachine
 {
     public interface IBattleStateMachineCheat
     {
-        void CheatEndBattle(bool value);
+        void CheatEndBattle(bool value,bool isExitGame=false);
     }
     
     public interface IBattleStateMachine : IBattleStateMachineCheat
     {
-        event Action<bool> EndBattle;
+        event Action<bool,bool> EndBattle;
         BattleStateEnum LastBattleState{ get; }
         IReadOnlyReactiveProperty<BattleStateEnum> BattleState { get; }
         void SetBattleState(BattleStateEnum gameStateEnum);
         void SubscriptionAction(BattleStateEnum state, Action action);
         void UnSubscriptionAction(BattleStateEnum state, Action action);
 
-        void OnEndBattle(bool value);
+        void OnEndBattle(bool value, bool isExitGame=false);
     }
 
     public class BattleStateMachine : IBattleStateMachine
@@ -31,7 +31,7 @@ namespace TonkoGames.StateMachine
         public IReadOnlyReactiveProperty<BattleStateEnum> BattleState => _battleState;
         public BattleStateEnum LastBattleState{ get; private set; }
 
-        public event Action<bool> EndBattle; 
+        public event Action<bool,bool> EndBattle; 
 
         public BattleStateMachine()
         {
@@ -60,8 +60,8 @@ namespace TonkoGames.StateMachine
         
         public void UnSubscriptionAction(BattleStateEnum state, Action action) => _actionSubscribes[state].Remove(action);
 
-        public void OnEndBattle(bool value) => EndBattle?.Invoke(value);
+        public void OnEndBattle(bool value,bool isExitGame = false) => EndBattle?.Invoke(value, isExitGame);
         
-        public void CheatEndBattle(bool value) => EndBattle?.Invoke(value);
+        public void CheatEndBattle(bool value,bool isExitGame = false) => EndBattle?.Invoke(value,isExitGame);
     }
 }

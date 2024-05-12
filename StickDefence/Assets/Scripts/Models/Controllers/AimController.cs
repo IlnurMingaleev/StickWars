@@ -71,7 +71,9 @@ namespace Models.Controllers
             _skillType = skillTypesEnum;
             _currentSkill = SkillDictioary[_skillType];
             aiming = true;
-            _currentSkill.AimView.gameObject.SetActive(true);
+            _currentSkill.AimView.transform.position = _cameraMain.ScreenToWorldPoint(UnityEngine.Input.mousePosition);
+            
+            if(_currentSkill.SkillCooldownPassed) _currentSkill.AimView.gameObject.SetActive(true);
         }
 
         void LaunchMissile(Vector3 mousePosition)
