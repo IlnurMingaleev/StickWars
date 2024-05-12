@@ -55,6 +55,7 @@ namespace UI.Windows
         private WindowPriority Priority = WindowPriority.AboveTopPanel;
         private IPlaceableUnit _mergeController;
         private CompositeDisposable _shopDisposable = new CompositeDisposable();
+        private CompositeDisposable _buyButtonDisposable = new CompositeDisposable();
 
         private Dictionary<PlayerUnitTypeEnum, StickManUIItem> _stickManUIItems =
             new Dictionary<PlayerUnitTypeEnum, StickManUIItem>();
@@ -110,6 +111,7 @@ namespace UI.Windows
         private void InitStickmanTab()
         {
             _shopDisposable.Clear();
+            _buyButtonDisposable.Clear();
             InitStickmanUIItems();
             ActivateStickmanTab();
             
@@ -137,7 +139,7 @@ namespace UI.Windows
         private void OpenLevelsLess(StickmanStatsConfig stickmanStatsConfig, StickManUIItem stickman,
             PumpingPerkData pumpingGamePerk)
         {
-            if ((int) stickmanStatsConfig.UnitType <= (int) (_dataCentralService.PumpingDataModel.MaxStickmanLevel.Value - 3))
+            if (/*stickmanStatsConfig.UnitType != PlayerUnitTypeEnum.One &&*/(int) stickmanStatsConfig.UnitType <= (int) (_dataCentralService.PumpingDataModel.MaxStickmanLevel.Value - 3))
             {
                 stickman.BuyButton.IsInteractable = true;
                 stickman.LockTemplate.gameObject.SetActive(false);
@@ -165,16 +167,19 @@ namespace UI.Windows
         private void SubscribeToBuyEvent(StickmanStatsConfig stickmanStatsConfig, StickManUIItem stickman,
             PumpingPerkData pumpingGamePerk)
         {
-            stickman.BuyButton.OnClickAsObservable.Subscribe(_ => { BuyStickman(stickmanStatsConfig,stickman,pumpingGamePerk); })
-                .AddTo(_shopDisposable);
-            stickman.FreeUnitBtn.OnClickAsObservable.Subscribe(_ =>
-            {
-                OnRewardClaim();
-            });
             if (stickmanStatsConfig.UnitType == _dataCentralService.PumpingDataModel.MaxStickmanLevel.Value - 3 && _showAd)
             {
                 stickman.ActiveAdButton();
+                _buyButtonDisposable.Clear();
+                stickman.FreeUnitBtn.OnClickAsObservable.Subscribe(_ =>
+                {
+                    OnRewardClaim(stickmanStatsConfig,stickman,pumpingGamePerk);
+                }).AddTo(_buyButtonDisposable);
             }
+            stickman.BuyButton.OnClickAsObservable.Subscribe(_ => { BuyStickman(stickmanStatsConfig,stickman,pumpingGamePerk); })
+                .AddTo(_buyButtonDisposable);
+           
+            
         }
 
         private void BuyStickman(StickmanStatsConfig stickmanStatsConfig, StickManUIItem stickman,
@@ -261,10 +266,12 @@ namespace UI.Windows
         protected override void OnDeactivate()
         {
             _shopDisposable.Clear();
+            _buyButtonDisposable.Clear();
             _coreStateMachine.RunTimeStateMachine.SetRunTimeState(RunTimeStateEnum.Play);
         }
        
-        private void OnRewardClaim()
+        private void OnRewardClaim(StickmanStatsConfig stickmanStatsConfig, StickManUIItem stickman,
+            PumpingPerkData pumpingGamePerk)
         {
             _iapService.ShowRewardedBreak(value =>
             {
@@ -274,6 +281,9 @@ namespace UI.Windows
                         _stickManUIItems[_dataCentralService.PumpingDataModel.MaxStickmanLevel.Value - 3];
                     stickman.AddStickmanToPlayGround();
                     stickman.ActivateCommonButton();
+                    _buyButtonDisposable.Clear();
+                    stickman.BuyButton.OnClickAsObservable.Subscribe(_ => { BuyStickman(stickmanStatsConfig,stickman,pumpingGamePerk); })
+                        .AddTo(_buyButtonDisposable);
                     _showAd = false;
                     AlertUnitsTab(false);
                     _manager.GetWindow<BottomPanelWindow>().AlertShopBtn(_perksShopBtnAlert.activeSelf);
