@@ -59,7 +59,7 @@ namespace Models.Controllers
                 aiming = false; 
                 _currentSkill.AimView.gameObject.SetActive(false);// Exit aiming mode.
             }
-            if(aiming && UnityEngine.Input.GetMouseButton(1))
+            if(aiming && (UnityEngine.Input.GetMouseButton(1)||UnityEngine.Input.GetTouch(0).phase == TouchPhase.Ended))
             {
                 aiming = false;
                 _currentSkill.AimView.gameObject.SetActive(false);
