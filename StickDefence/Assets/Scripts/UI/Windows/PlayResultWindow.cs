@@ -65,7 +65,7 @@ namespace UI.Windows
             _rewardResurrectButton.OnClick.AsObservable().Subscribe(_ => OnResurrect()).AddTo(ActivateDisposables);
 
             _returnBackToGame.OnClickAsObservable.Subscribe(_ => OnReturn()).AddTo(ActivateDisposables);
-            _exitGameButton.OnClickAsObservable.Subscribe(_ => OnDefeatButton()).AddTo(ActivateDisposables);
+            _exitGameButton.OnClickAsObservable.Subscribe(_ => OnExitButton()).AddTo(ActivateDisposables);
         }
 
         private void OnReturn()
@@ -179,7 +179,12 @@ namespace UI.Windows
             _resurrectBlock.SetActive(false);
             _winBlock.SetActive(true);
         }
-        
+        private void OnExitButton()
+        {
+            _exitGameBlock.SetActive(false);
+            _winBlock.SetActive(true);
+        }
+
         private void OnResurrect()
         {
             _iapService.ShowRewardedBreak(RewardResurrect);
