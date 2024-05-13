@@ -3338,6 +3338,74 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5685439457548488733, guid: e5124f36d8a868944b03330da53a6c6d, type: 3}
   m_PrefabInstance: {fileID: 961030363}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &987051945
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 987051948}
+  - component: {fileID: 987051947}
+  - component: {fileID: 987051946}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &987051946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987051945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &987051947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987051945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &987051948
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987051945}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1002782627
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5318,6 +5386,8 @@ GameObject:
   - component: {fileID: 1709641389}
   - component: {fileID: 1709641392}
   - component: {fileID: 1709641393}
+  - component: {fileID: 1709641394}
+  - component: {fileID: 1709641395}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5366,7 +5436,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 100
-  field of view: 60
+  field of view: 98.21322
   orthographic: 1
   orthographic size: 250
   m_Depth: -1
@@ -5428,7 +5498,7 @@ MonoBehaviour:
   m_StopNaN: 0
   m_Dithering: 0
   m_ClearDepth: 1
-  m_AllowXRRendering: 1
+  m_AllowXRRendering: 0
   m_AllowHDROutput: 1
   m_UseScreenCoordOverride: 0
   m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -5450,7 +5520,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1709641388}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b06686d761764df68240d27f20e86310, type: 3}
   m_Name: 
@@ -5459,6 +5529,39 @@ MonoBehaviour:
   UnitsSize: 750
   constraint: 0
   camera: {fileID: 1709641390}
+--- !u!114 &1709641394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709641388}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc454f700fb418243a0a03f52526340f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetAspectRatio: {x: 3, y: 2}
+--- !u!114 &1709641395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709641388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ebdb9c5e3d6f044782bf2a7b1a6cdcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ct: 0
+  _adjustMode: 0
+  _mainAreaWidth: 2.211111
+  _mainAreaHeight: 1
+  _verticalFOV: 98.21322
+  _horizontalFOV: 120.00001
+  _verticalSize: 250
+  _horizontalSize: 750
 --- !u!1 &1744152163
 GameObject:
   m_ObjectHideFlags: 0
@@ -6570,3 +6673,4 @@ SceneRoots:
   - {fileID: 1490746693}
   - {fileID: 1991934399}
   - {fileID: 386163210}
+  - {fileID: 987051948}
