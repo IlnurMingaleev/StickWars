@@ -19,15 +19,15 @@ MonoBehaviour:
     Health: 140
     Armor: 0.2
     Damage: 5
-    Reloading: 4000
+    Reloading: 3000
     RewardType: 0
     RewardCount: 10
     Experience: 10
   - UnitType: 2
-    Health: 70
+    Health: 100
     Armor: 0.1
     Damage: 5
-    Reloading: 4000
+    Reloading: 3000
     RewardType: 0
     RewardCount: 10
     Experience: 10
@@ -35,15 +35,15 @@ MonoBehaviour:
     Health: 180
     Armor: 0.2
     Damage: 10
-    Reloading: 3800
+    Reloading: 2800
     RewardType: 0
     RewardCount: 20
     Experience: 20
   - UnitType: 4
-    Health: 90
+    Health: 120
     Armor: 0.1
     Damage: 10
-    Reloading: 3800
+    Reloading: 2800
     RewardType: 0
     RewardCount: 20
     Experience: 20
@@ -51,15 +51,15 @@ MonoBehaviour:
     Health: 220
     Armor: 0.2
     Damage: 15
-    Reloading: 3600
+    Reloading: 2600
     RewardType: 0
     RewardCount: 30
     Experience: 30
   - UnitType: 6
-    Health: 110
+    Health: 140
     Armor: 0.1
     Damage: 15
-    Reloading: 3600
+    Reloading: 2600
     RewardType: 0
     RewardCount: 30
     Experience: 30
@@ -67,15 +67,15 @@ MonoBehaviour:
     Health: 260
     Armor: 0.2
     Damage: 20
-    Reloading: 3400
+    Reloading: 2400
     RewardType: 0
     RewardCount: 40
     Experience: 40
   - UnitType: 8
-    Health: 130
+    Health: 160
     Armor: 0.1
     Damage: 20
-    Reloading: 3400
+    Reloading: 2400
     RewardType: 0
     RewardCount: 40
     Experience: 40
@@ -83,15 +83,15 @@ MonoBehaviour:
     Health: 300
     Armor: 0.2
     Damage: 25
-    Reloading: 3200
+    Reloading: 2200
     RewardType: 0
     RewardCount: 50
     Experience: 50
   - UnitType: 10
-    Health: 150
+    Health: 180
     Armor: 0.1
     Damage: 25
-    Reloading: 3200
+    Reloading: 2200
     RewardType: 0
     RewardCount: 50
     Experience: 50
@@ -99,15 +99,15 @@ MonoBehaviour:
     Health: 340
     Armor: 0.2
     Damage: 30
-    Reloading: 3000
+    Reloading: 2000
     RewardType: 0
     RewardCount: 60
     Experience: 60
   - UnitType: 12
-    Health: 170
+    Health: 200
     Armor: 0.1
     Damage: 30
-    Reloading: 3000
+    Reloading: 2000
     RewardType: 0
     RewardCount: 60
     Experience: 60
@@ -115,15 +115,15 @@ MonoBehaviour:
     Health: 380
     Armor: 0.2
     Damage: 35
-    Reloading: 2800
+    Reloading: 1900
     RewardType: 0
     RewardCount: 70
     Experience: 70
   - UnitType: 14
-    Health: 190
+    Health: 230
     Armor: 0.1
     Damage: 35
-    Reloading: 2800
+    Reloading: 1900
     RewardType: 0
     RewardCount: 70
     Experience: 70
@@ -131,15 +131,15 @@ MonoBehaviour:
     Health: 420
     Armor: 0.2
     Damage: 40
-    Reloading: 2600
+    Reloading: 1800
     RewardType: 0
     RewardCount: 80
     Experience: 80
   - UnitType: 16
-    Health: 210
+    Health: 240
     Armor: 0.1
     Damage: 40
-    Reloading: 2600
+    Reloading: 1800
     RewardType: 0
     RewardCount: 80
     Experience: 80
@@ -147,15 +147,15 @@ MonoBehaviour:
     Health: 460
     Armor: 0.2
     Damage: 45
-    Reloading: 2400
+    Reloading: 1700
     RewardType: 0
     RewardCount: 90
     Experience: 90
   - UnitType: 18
-    Health: 230
+    Health: 260
     Armor: 0.1
     Damage: 45
-    Reloading: 2400
+    Reloading: 1700
     RewardType: 0
     RewardCount: 90
     Experience: 90
@@ -163,136 +163,136 @@ MonoBehaviour:
     Health: 500
     Armor: 0.2
     Damage: 50
-    Reloading: 2200
+    Reloading: 1600
     RewardType: 0
     RewardCount: 100
     Experience: 100
   - UnitType: 20
-    Health: 250
+    Health: 280
     Armor: 0.1
     Damage: 50
-    Reloading: 2200
+    Reloading: 1600
     RewardType: 0
     RewardCount: 100
     Experience: 100
   StickmanStatsConfigModel:
   - UnitType: 1
     Level: 1
-    Damage: 5
+    Damage: 10
     Reloading: 4000
     Price: 80
     AttackSpeed: 15
   - UnitType: 2
     Level: 2
-    Damage: 8
+    Damage: 14
     Reloading: 4000
     Price: 130
     AttackSpeed: 15
   - UnitType: 3
     Level: 3
-    Damage: 10
+    Damage: 18
     Reloading: 4000
     Price: 180
     AttackSpeed: 15
   - UnitType: 4
     Level: 4
-    Damage: 13
+    Damage: 22
     Reloading: 4000
     Price: 300
     AttackSpeed: 15
   - UnitType: 5
     Level: 5
-    Damage: 15
+    Damage: 26
     Reloading: 4000
     Price: 350
     AttackSpeed: 15
   - UnitType: 6
     Level: 6
-    Damage: 18
+    Damage: 30
     Reloading: 3000
     Price: 400
     AttackSpeed: 20
   - UnitType: 7
     Level: 7
-    Damage: 20
+    Damage: 35
     Reloading: 3000
     Price: 450
     AttackSpeed: 20
   - UnitType: 8
     Level: 8
-    Damage: 23
+    Damage: 40
     Reloading: 3000
     Price: 500
     AttackSpeed: 20
   - UnitType: 9
     Level: 9
-    Damage: 25
+    Damage: 45
     Reloading: 3000
     Price: 550
     AttackSpeed: 20
   - UnitType: 10
     Level: 10
-    Damage: 28
+    Damage: 50
     Reloading: 3000
     Price: 600
     AttackSpeed: 20
   - UnitType: 11
     Level: 11
-    Damage: 30
+    Damage: 55
     Reloading: 2400
     Price: 650
     AttackSpeed: 25
   - UnitType: 12
     Level: 12
-    Damage: 33
+    Damage: 60
     Reloading: 2400
     Price: 700
     AttackSpeed: 25
   - UnitType: 13
     Level: 13
-    Damage: 35
+    Damage: 65
     Reloading: 2400
     Price: 750
     AttackSpeed: 25
   - UnitType: 14
     Level: 14
-    Damage: 38
+    Damage: 70
     Reloading: 2400
     Price: 800
     AttackSpeed: 25
   - UnitType: 15
     Level: 15
-    Damage: 40
+    Damage: 75
     Reloading: 2400
     Price: 850
     AttackSpeed: 25
   - UnitType: 16
     Level: 16
-    Damage: 43
+    Damage: 80
     Reloading: 2000
     Price: 900
     AttackSpeed: 30
   - UnitType: 17
     Level: 17
-    Damage: 45
+    Damage: 85
     Reloading: 2000
     Price: 950
     AttackSpeed: 30
   - UnitType: 18
     Level: 18
-    Damage: 48
+    Damage: 90
     Reloading: 2000
     Price: 1000
     AttackSpeed: 30
   - UnitType: 19
     Level: 19
-    Damage: 50
+    Damage: 95
     Reloading: 2000
     Price: 1050
     AttackSpeed: 30
   - UnitType: 20
     Level: 20
-    Damage: 55
+    Damage: 100
     Reloading: 2000
     Price: 1100
     AttackSpeed: 30

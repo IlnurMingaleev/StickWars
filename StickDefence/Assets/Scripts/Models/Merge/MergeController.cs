@@ -74,17 +74,17 @@ namespace Models.Merge
         //handle user input
         private void Update() 
         {
-            if (UnityEngine.Input.GetMouseButtonDown(0)||UnityEngine.Input.GetTouch(0).phase == TouchPhase.Began )
+            if (UnityEngine.Input.GetMouseButtonDown(0)||(UnityEngine.Input.touchCount >0 && UnityEngine.Input.GetTouch(0).phase == TouchPhase.Began ))
             {
                 SendRayCast();
             }
 
-            if ((UnityEngine.Input.GetMouseButton(0)||UnityEngine.Input.GetTouch(0).phase == TouchPhase.Began) && carryingItem)
+            if ((UnityEngine.Input.GetMouseButton(0)||(UnityEngine.Input.touchCount >0 &&UnityEngine.Input.GetTouch(0).phase == TouchPhase.Began)) && carryingItem)
             {
                 OnItemSelected();
             }
 
-            if (UnityEngine.Input.GetMouseButtonUp(0)||UnityEngine.Input.GetTouch(0).phase == TouchPhase.Began)
+            if (UnityEngine.Input.GetMouseButtonUp(0)||(UnityEngine.Input.touchCount >0 &&UnityEngine.Input.GetTouch(0).phase == TouchPhase.Began))
             {
                 //Drop item
                 SendRayCast();

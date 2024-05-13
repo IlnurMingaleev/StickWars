@@ -25,7 +25,7 @@ namespace Models.Controllers.Skills
         protected ITimerModel _timerModel;
         protected float _explosionRadius;
         protected bool _skillCooldownPassed = true; 
-        protected float _cooldownTime = 60000f;
+        protected float _cooldownTime = 30000f;
         protected BottomPanelWindow _bottomPanelWindow;
         protected CompositeDisposable _disposable = new CompositeDisposable();
         public bool SkillCooldownPassed => _skillCooldownPassed;

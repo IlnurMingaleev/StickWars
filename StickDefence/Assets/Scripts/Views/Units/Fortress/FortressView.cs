@@ -28,7 +28,7 @@ namespace Views.Units.Fortress
 
         public void SetLevelLabel(int level)
         {
-            _levelLabel.text = $"{level}";
+            _levelLabel.text = $"{level + 1}";
         }
 
         private void OnEnable()

@@ -52,14 +52,14 @@ namespace Models.Controllers
             }
 
             // Check for left mouse button click to launch missile.
-            if (aiming && UnityEngine.Input.GetMouseButtonDown(0))
+            if (aiming && UnityEngine.Input.GetMouseButtonDown(0)||(UnityEngine.Input.touchCount >0 &&UnityEngine.Input.GetTouch(0).phase == TouchPhase.Began))
             {
                 
                 LaunchMissile(_cameraMain.ScreenToWorldPoint(UnityEngine.Input.mousePosition));
                 aiming = false; 
                 _currentSkill.AimView.gameObject.SetActive(false);// Exit aiming mode.
             }
-            if(aiming && (UnityEngine.Input.GetMouseButton(1)||UnityEngine.Input.GetTouch(0).phase == TouchPhase.Ended))
+            if(aiming && (UnityEngine.Input.GetMouseButton(1)||(UnityEngine.Input.touchCount >0 &&UnityEngine.Input.GetTouch(0).phase == TouchPhase.Ended)))
             {
                 aiming = false;
                 _currentSkill.AimView.gameObject.SetActive(false);
