@@ -7,8 +7,9 @@ namespace Tools.GameTools
     public class ScaleCameraSize2D : MonoBehaviour
     {
         [SerializeField] private Camera _camera;
+        [SerializeField] private float _sizeCamera;
         private const float DefaultWidth = 2400f;
-        private const float DefaultHeight = 1080f;
+        private const float DefaultHeight = 1600f;
         private const float MaxDelta = 1f;
         
         private float _defOrthographicSize = 0;
@@ -24,6 +25,7 @@ namespace Tools.GameTools
         
         private void Awake()
         {
+            if (_camera != null) _camera.orthographicSize = _sizeCamera;
             _defOrthographicSize = _camera.orthographicSize;
         }
 

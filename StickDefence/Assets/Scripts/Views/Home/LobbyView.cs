@@ -15,7 +15,7 @@ namespace Views.Home
     {
        
         [SerializeField] private GameObject _blocker;
-        [SerializeField] private ScaleCameraSize2D _cameraScaler;
+        //[SerializeField] private ScaleCameraSize2D _cameraScaler;
         
         [Inject] private readonly IWindowManager _windowManager;
 
@@ -27,7 +27,7 @@ namespace Views.Home
             _windowManager.GetWindow<LobbyWindow>().CanClickableLobby.Subscribe(value => _blocker.SetActive(!value)).AddTo(_disposables);
             
             _blocker.SetActive(false);
-            _cameraScaler.StartSnap(SnapCamera.Bottom);
+            //_cameraScaler.StartSnap(SnapCamera.Bottom);
         }
 
         private void OnDisable()
