@@ -6011,7 +6011,7 @@ Camera:
   far clip plane: 100
   field of view: 98.21322
   orthographic: 1
-  orthographic size: 270
+  orthographic size: 280
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -6133,7 +6133,7 @@ MonoBehaviour:
   _mainAreaHeight: 1
   _verticalFOV: 98.21322
   _horizontalFOV: 120.00001
-  _verticalSize: 270
+  _verticalSize: 280
   _horizontalSize: 750
 --- !u!1 &1744152163
 GameObject:

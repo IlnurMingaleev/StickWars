@@ -5,9 +5,9 @@ namespace Enums
 {
     public enum PerkTypesEnum
     {
-        DecreasePrice,
-        IncreaseProfit,
-        RecruitsDamage,
+        DecreasePrice = 0,
+        IncreaseProfit = 1,
+        RecruitsDamage = 2,
     }
     
     public static class PerkTypeEnumExtensions

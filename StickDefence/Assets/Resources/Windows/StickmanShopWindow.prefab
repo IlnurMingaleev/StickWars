@@ -1201,7 +1201,7 @@ MonoBehaviour:
   _stickmanShopBtn: {fileID: 9120301405113423400}
   _perksShopBtn: {fileID: 8718936776504360480}
   _stickmanShopBtnAlert: {fileID: 71946677553375539}
-  _perksShopBtnAlert: {fileID: 8228586093946854704}
+  _perksShopBtnAlert: {fileID: 1423825409633674685}
 --- !u!1 &5918337960106414611
 GameObject:
   m_ObjectHideFlags: 0
@@ -2178,6 +2178,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b61b0f1f9f774c244afb5094ee488e71, type: 3}
+--- !u!1 &1423825409633674685 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6306657953888986203, guid: b61b0f1f9f774c244afb5094ee488e71, type: 3}
+  m_PrefabInstance: {fileID: 4920127978736845286}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &5296208005040037514 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 952554522569334636, guid: b61b0f1f9f774c244afb5094ee488e71, type: 3}

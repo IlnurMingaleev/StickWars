@@ -237,124 +237,124 @@ MonoBehaviour:
   _stickmanUnitsStatsConfigs:
   - UnitType: 1
     Level: 1
-    Damage: 10
-    Reloading: 4000
+    Damage: 100
+    Reloading: 2250
     Price: 80
-    AttackSpeed: 20
+    AttackSpeed: 25
   - UnitType: 2
     Level: 2
-    Damage: 14
-    Reloading: 4000
+    Damage: 140
+    Reloading: 2250
     Price: 130
-    AttackSpeed: 20
+    AttackSpeed: 25
   - UnitType: 3
     Level: 3
-    Damage: 18
-    Reloading: 4000
+    Damage: 180
+    Reloading: 2250
     Price: 180
-    AttackSpeed: 20
+    AttackSpeed: 25
   - UnitType: 4
     Level: 4
-    Damage: 22
-    Reloading: 4000
+    Damage: 220
+    Reloading: 2250
     Price: 300
-    AttackSpeed: 20
+    AttackSpeed: 25
   - UnitType: 5
     Level: 5
-    Damage: 26
-    Reloading: 4000
+    Damage: 260
+    Reloading: 2250
     Price: 350
-    AttackSpeed: 20
+    AttackSpeed: 25
   - UnitType: 6
     Level: 6
-    Damage: 30
-    Reloading: 3000
+    Damage: 300
+    Reloading: 2000
     Price: 400
-    AttackSpeed: 20
+    AttackSpeed: 30
   - UnitType: 7
     Level: 7
-    Damage: 35
-    Reloading: 3000
+    Damage: 350
+    Reloading: 2000
     Price: 450
-    AttackSpeed: 20
+    AttackSpeed: 30
   - UnitType: 8
     Level: 8
-    Damage: 40
-    Reloading: 3000
+    Damage: 400
+    Reloading: 2000
     Price: 500
-    AttackSpeed: 20
+    AttackSpeed: 30
   - UnitType: 9
     Level: 9
-    Damage: 45
-    Reloading: 3000
+    Damage: 450
+    Reloading: 2000
     Price: 550
-    AttackSpeed: 20
+    AttackSpeed: 30
   - UnitType: 10
     Level: 10
-    Damage: 50
-    Reloading: 3000
+    Damage: 500
+    Reloading: 2000
     Price: 600
-    AttackSpeed: 20
+    AttackSpeed: 30
   - UnitType: 11
     Level: 11
-    Damage: 55
-    Reloading: 2400
+    Damage: 550
+    Reloading: 1750
     Price: 650
-    AttackSpeed: 25
+    AttackSpeed: 35
   - UnitType: 12
     Level: 12
-    Damage: 60
-    Reloading: 2400
+    Damage: 600
+    Reloading: 1750
     Price: 700
-    AttackSpeed: 25
+    AttackSpeed: 35
   - UnitType: 13
     Level: 13
-    Damage: 65
-    Reloading: 2400
+    Damage: 650
+    Reloading: 1750
     Price: 750
-    AttackSpeed: 25
+    AttackSpeed: 35
   - UnitType: 14
     Level: 14
-    Damage: 70
-    Reloading: 2400
+    Damage: 700
+    Reloading: 1750
     Price: 800
-    AttackSpeed: 25
+    AttackSpeed: 35
   - UnitType: 15
     Level: 15
-    Damage: 75
-    Reloading: 2400
+    Damage: 750
+    Reloading: 1750
     Price: 850
-    AttackSpeed: 25
+    AttackSpeed: 35
   - UnitType: 16
     Level: 16
-    Damage: 80
-    Reloading: 2000
+    Damage: 800
+    Reloading: 1500
     Price: 900
-    AttackSpeed: 30
+    AttackSpeed: 40
   - UnitType: 17
     Level: 17
-    Damage: 85
-    Reloading: 2000
+    Damage: 850
+    Reloading: 1500
     Price: 950
-    AttackSpeed: 30
+    AttackSpeed: 40
   - UnitType: 18
     Level: 18
-    Damage: 90
-    Reloading: 2000
+    Damage: 900
+    Reloading: 1500
     Price: 1000
-    AttackSpeed: 30
+    AttackSpeed: 40
   - UnitType: 19
     Level: 19
-    Damage: 95
-    Reloading: 2000
+    Damage: 950
+    Reloading: 1500
     Price: 1050
-    AttackSpeed: 30
+    AttackSpeed: 40
   - UnitType: 20
     Level: 20
-    Damage: 100
-    Reloading: 2000
+    Damage: 1000
+    Reloading: 1500
     Price: 1100
-    AttackSpeed: 30
+    AttackSpeed: 40
   animationCurve:
     serializedVersion: 2
     m_Curve:

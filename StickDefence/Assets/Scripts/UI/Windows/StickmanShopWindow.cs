@@ -63,6 +63,13 @@ namespace UI.Windows
         private ITimerModel _timerModel;
         private const float _adTimerCooldown = 10;
         private bool _showAd = false;
+
+        private ReactiveProperty<bool> _perksAlert = new ReactiveProperty<bool>(false);
+        private ReactiveProperty<bool> _unitsAlert = new ReactiveProperty<bool>(false);
+
+        public IReadOnlyReactiveProperty<bool> PerksAlert => _perksAlert;
+        public IReadOnlyReactiveProperty<bool> UnitsAlert => _unitsAlert;
+
         public void Init(IPlaceableUnit mergeController)
         {
             _mergeController = mergeController;
@@ -211,10 +218,10 @@ namespace UI.Windows
                 foreach (var perkType in _configManager.PrefabsUnitsSO.PerkIcons.Keys)
                 {
                     PerkUIItem perk = Instantiate(_perkUIItem, _scrollContentTransform);
-                    PlayerPerkConfigModel perkConfigModel = _configManager.PumpingConfigSo.GamePerks[perkType];
+                    /*PlayerPerkConfigModel perkConfigModel = _configManager.PumpingConfigSo.GamePerks[perkType];
                     PerkData perkData = _dataCentralService.PumpingDataModel.PerksReactive[perkType];
                     var nextLevel = perkData.PerkLevel + 1;
-                    var perkCost = perkConfigModel.BaseValue + nextLevel * perkConfigModel.AdditionalCost;
+                    var perkCost = perkConfigModel.BaseValue + nextLevel * perkConfigModel.AdditionalCost;*/
                     perk.Init(_player.Pumping.GamePerks[perkType], _configManager, perkType);
                    _player.Pumping.GamePerks.ObserveReplace().Subscribe(_ =>
                        {
@@ -222,22 +229,23 @@ namespace UI.Windows
                            
                        })
                        .AddTo(_shopDisposable);
-                    SubscribeToPerkUpgrade(perk, perkType, perkCost);
+                    SubscribeToPerkUpgrade(perk, perkType, _player.Pumping.GamePerks[perkType]);
                 }
             }
         }
 
-        private void SubscribeToPerkUpgrade(PerkUIItem perk, PerkTypesEnum perkType,float perkCost)
+        private void SubscribeToPerkUpgrade(PerkUIItem perk, PerkTypesEnum perkType,PumpingPerkData pumpingPerkData)
         {
             _dataCentralService.StatsDataModel.CoinsCount.Subscribe(_ =>
             {
-                perk.BuyButton.IsInteractable = (_ >= perkCost);
+                perk.BuyButton.IsInteractable = (_ >= pumpingPerkData.Cost);
             }).AddTo(_shopDisposable);
             perk.BuyButton.OnClickAsObservable.Subscribe(_ =>
                 {
-                    if (_dataCentralService.StatsDataModel.CoinsCount.Value >= perkCost)
+                    if (_dataCentralService.StatsDataModel.CoinsCount.Value >= pumpingPerkData.Cost )
                     {
                         _player.Pumping.UpgradeGamePerk(perkType);
+                        _dataCentralService.StatsDataModel.MinusCoinsCount( pumpingPerkData.Cost);
                     }
                 }).AddTo(_shopDisposable);
           
@@ -286,7 +294,6 @@ namespace UI.Windows
                         .AddTo(_buyButtonDisposable);
                     _showAd = false;
                     AlertUnitsTab(false);
-                    _manager.GetWindow<BottomPanelWindow>().AlertShopBtn(_perksShopBtnAlert.activeSelf);
                 }    
             });
         }
@@ -298,17 +305,19 @@ namespace UI.Windows
             {
                 _showAd = true;
                 AlertUnitsTab(true);
-                _manager.GetWindow<BottomPanelWindow>().AlertShopBtn(true);
+               
             });
         }
 
         public void AlertUnitsTab(bool value)
         {
+            _unitsAlert.Value = value;
             _stickmanShopBtnAlert.SetActive(value);
         }
 
         public void AlertPerksTab(bool value)
         {
+            _perksAlert.Value = value;
             _perksShopBtnAlert.SetActive(value);
         }
 

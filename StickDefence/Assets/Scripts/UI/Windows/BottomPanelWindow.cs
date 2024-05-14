@@ -5,6 +5,7 @@ using I2.Loc;
 using Models.Battle.Boosters;
 using Models.Controllers;
 using Models.DataModels;
+using Models.DataModels.Data;
 using Models.IAP;
 using Models.Merge;
 using Models.Player;
@@ -92,6 +93,14 @@ namespace UI.Windows
             InitWallUpgradeButtonClick(UpgradeWallClickedEvent);
             InitAlertEvents();
             _manager.GetWindow<StickmanShopWindow>().StartAdTimer();
+            _stickmanShopWindow.PerksAlert.Subscribe(perkFlag =>
+            { 
+                AlertShopBtn( (perkFlag|| _stickmanShopWindow.UnitsAlert.Value));
+            }).AddTo(ActivateDisposables);
+            _stickmanShopWindow.UnitsAlert.Subscribe(unitFlag =>
+            { 
+                AlertShopBtn( (unitFlag || _stickmanShopWindow.PerksAlert.Value));
+            }).AddTo(ActivateDisposables);
         }
 
         public void Init(SceneInstances sceneInstances)
@@ -156,7 +165,23 @@ namespace UI.Windows
                     _alertWallIcon.SetActive(false);
                 }
             }).AddTo(ActivateDisposables);
-            
+            _dataCentralService.StatsDataModel.CoinsCount.Subscribe(coins =>
+            {
+                bool alertFlag = false;
+                for(int index = 0; index < 3; index++)
+                {
+                    PerkTypesEnum perkType = (PerkTypesEnum) index;
+                    PlayerPerkConfigModel perkConfigModel = _configManager.PumpingConfigSo.GamePerks[perkType];
+                    PerkData perkData = _dataCentralService.PumpingDataModel.PerksReactive[perkType];
+                    var nextLevel = perkData.PerkLevel + 1;
+                    var perkCost = perkConfigModel.BaseValue + nextLevel * perkConfigModel.AdditionalCost;
+                   
+                    alertFlag = alertFlag || (coins >= perkCost);
+                  
+                }
+                _stickmanShopWindow.AlertPerksTab(alertFlag);
+            }).AddTo(ActivateDisposables);
+
         }
 
        
