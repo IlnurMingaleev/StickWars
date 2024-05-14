@@ -156,6 +156,7 @@ namespace Models.Merge
                 }
                 OnItemCarryFail();
             }
+            
         }
 
         private void SwitchItems(Slot slot)
