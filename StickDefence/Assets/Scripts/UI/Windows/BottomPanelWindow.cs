@@ -302,7 +302,7 @@ namespace UI.Windows
             if (uiBooster != null)
             {
                 uiBooster.gameObject.SetActive(true);
-                uiBooster.TimerText.text = String.Format($"{minutes}:{sec}");
+                uiBooster.TimerText.text = String.Format("{0:00}:{1:00}",minutes,sec);
             }
         } 
         public void RemoveBooster(BoosterTypeEnum boosterType)
