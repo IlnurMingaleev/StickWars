@@ -55,7 +55,6 @@ namespace Models.Fortress
             _soundManager = soundManager;
             _timerService = timerService;
             _attackSpeedActive = attackSpeedActive;
-            // View.Damageable.InitHealthBar((int)_pumping.GamePerks[PerkTypesEnum.Health].Damage, (int)_pumping.GamePerks[PerkTypesEnum.Defense].Damage);
         }
 
         public void InitSubActive()
@@ -83,10 +82,7 @@ namespace Models.Fortress
         
         private void OnEnable()
         {
-           
-           // View.Damageable.IsEmptyHealth.SkipLatestValueOnSubscribe().Subscribe(OnDead).AddTo(_disposable);
-           // _pumping.GamePerks.ObserveReplace().Subscribe(_ => SubscribeStats()).AddTo(_disposable);
-           SetAttackStats();
+            SetAttackStats();
            _parentSlotType.Subscribe(slotType =>
             {
                 if (slotType == SlotTypeEnum.Attack)
@@ -123,21 +119,12 @@ namespace Models.Fortress
         public void SubscribeStats()
         {
             _rangeAttackModel.SetDamage(_stickmanStatsConfig.Damage);
-
-            /*float roundsPerMinute = _stickmanStatsConfig.AttackSpeed;
-            float ticks = 60f;
-            float reloading = (ticks / roundsPerMinute);*/
-            
             _rangeAttackModel.SetReloading(_stickmanStatsConfig.Reloading); ;
         }
 
         public void SubscribeStatsWhileAttackSpeedActive()
         {
             _rangeAttackModel.SetDamage(_stickmanStatsConfig.Damage);
-
-            /*float roundsPerMinute = _stickmanStatsConfig.AttackSpeed * 1.5f;
-            float ticks = 60f;
-            float reloading = ticks / roundsPerMinute; */
             float reloading = _stickmanStatsConfig.Reloading * 0.8f;
             _rangeAttackModel.SetReloading((int) reloading);
         }
@@ -164,11 +151,25 @@ namespace Models.Fortress
         public void OnPause()
         {
            View.OnPause();
+           _rangeAttackModel.StopPlay();
         }
 
         public void OnPlay()
         {
             View.OnPlay();
+            _disposable.Clear();
+            _parentSlotType.Subscribe(slotType =>
+            {
+                if (slotType == SlotTypeEnum.Attack)
+                {
+                    _rangeAttackModel.StartCooldown();
+                    _rangeAttackModel.StartPlay();
+                }
+                else
+                {
+                    _rangeAttackModel.StopPlay();
+                }
+            }).AddTo(_disposable);
         }
     }
 }

@@ -88,12 +88,17 @@ namespace Models.Units
         {
             _isPlayable = true;
             View.BodyAnimator.enabled = true;
+            if (!_isDead)
+            {
+                AttackModel.StartPlay();
+            }
         }
 
         public void OnPause()
         {
             _isPlayable = false;
             View.BodyAnimator.enabled = false;
+            AttackModel.StopPlay();
         }
 
         public void Update()

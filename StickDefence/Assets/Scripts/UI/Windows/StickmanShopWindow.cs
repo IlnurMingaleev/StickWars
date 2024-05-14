@@ -218,10 +218,6 @@ namespace UI.Windows
                 foreach (var perkType in _configManager.PrefabsUnitsSO.PerkIcons.Keys)
                 {
                     PerkUIItem perk = Instantiate(_perkUIItem, _scrollContentTransform);
-                    /*PlayerPerkConfigModel perkConfigModel = _configManager.PumpingConfigSo.GamePerks[perkType];
-                    PerkData perkData = _dataCentralService.PumpingDataModel.PerksReactive[perkType];
-                    var nextLevel = perkData.PerkLevel + 1;
-                    var perkCost = perkConfigModel.BaseValue + nextLevel * perkConfigModel.AdditionalCost;*/
                     perk.Init(_player.Pumping.GamePerks[perkType], _configManager, perkType);
                    _player.Pumping.GamePerks.ObserveReplace().Subscribe(_ =>
                        {

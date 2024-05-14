@@ -5168,51 +5168,6 @@ MonoBehaviour:
   _stageMapPrefab: {fileID: 2573299026537956282, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
   _stageMapParent: {fileID: 1744152164}
   SceneInstances: {fileID: 0}
---- !u!1 &1440489434 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8895229305150407179, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
-  m_PrefabInstance: {fileID: 768815827}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1440489435 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2599547963025912929, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
-  m_PrefabInstance: {fileID: 768815827}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1440489436 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4236386739764149595, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
-  m_PrefabInstance: {fileID: 768815827}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1440489437 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2876274002972318034, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
-  m_PrefabInstance: {fileID: 768815827}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1440489438 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6880983813188434510, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
-  m_PrefabInstance: {fileID: 768815827}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1440489439 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4396247730363128486, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
-  m_PrefabInstance: {fileID: 768815827}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1440489440 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 234810599889116482, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
-  m_PrefabInstance: {fileID: 768815827}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1440489441 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5178802634402473714, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
-  m_PrefabInstance: {fileID: 768815827}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1440489442 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3887524086462247080, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
-  m_PrefabInstance: {fileID: 768815827}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1440489443 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6008670936516829068, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
@@ -6879,24 +6834,6 @@ MonoBehaviour:
   - _gameObject: {fileID: 387323082}
     _prefab: Assets/Resources/Prefabs/Slot.prefab
   - _gameObject: {fileID: 620020598}
-    _prefab: Assets/Resources/Prefabs/Slot.prefab
-  - _gameObject: {fileID: 1440489442}
-    _prefab: Assets/Resources/Prefabs/Slot.prefab
-  - _gameObject: {fileID: 1440489441}
-    _prefab: Assets/Resources/Prefabs/Slot.prefab
-  - _gameObject: {fileID: 1440489440}
-    _prefab: Assets/Resources/Prefabs/Slot.prefab
-  - _gameObject: {fileID: 1440489439}
-    _prefab: Assets/Resources/Prefabs/Slot.prefab
-  - _gameObject: {fileID: 1440489438}
-    _prefab: Assets/Resources/Prefabs/Slot.prefab
-  - _gameObject: {fileID: 1440489437}
-    _prefab: Assets/Resources/Prefabs/Slot.prefab
-  - _gameObject: {fileID: 1440489436}
-    _prefab: Assets/Resources/Prefabs/Slot.prefab
-  - _gameObject: {fileID: 1440489435}
-    _prefab: Assets/Resources/Prefabs/Slot.prefab
-  - _gameObject: {fileID: 1440489434}
     _prefab: Assets/Resources/Prefabs/Slot.prefab
   - _gameObject: {fileID: 767862765}
     _prefab: Assets/Prefabs/Units/Player/FortressView.prefab
