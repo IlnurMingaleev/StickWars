@@ -304,6 +304,7 @@ public class CameraFit : MonoBehaviour
             _cameraPrevPixelHeight = _aspectCamera.pixelHeight;
             ChangeViewForCamera();
         }
+        
         if (_aspectCamera.orthographic)
         {
             if (_ct == CameraType.Perspective)

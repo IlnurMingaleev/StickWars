@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Models.Controllers
 {
-    public class SceneInstances:Singleton<SceneInstances>
+    public class SceneInstances : Singleton<SceneInstances>
     {
         [SerializeField] private MergeController _mergeController;
         [SerializeField] private PlayerFortressInstantiate _plaerBuilder;
@@ -16,8 +16,5 @@ namespace Models.Controllers
         public AimController AimController => _aimController;
         public BoosterManager BoosterManager => _boosterManager;
         public MergeController MergeController => _mergeController;
-       
-       
     }
-    
 }

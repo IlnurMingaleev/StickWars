@@ -1,5 +1,4 @@
-﻿using Enums;
-using Models.Controllers;
+﻿using Models.Controllers;
 using TonkoGames.Controllers.Core;
 using TonkoGames.StateMachine;
 using TonkoGames.StateMachine.Enums;
@@ -46,7 +45,6 @@ namespace Models.Battle
             ShowPlayResult(0, false, !_isResurrected, isExitGame);
 
             _isResurrected = true;
-
         }
         
         public void OnWinEvent()
