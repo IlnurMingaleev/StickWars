@@ -146,7 +146,7 @@ namespace UI.Windows
         private void OpenLevelsLess(StickmanStatsConfig stickmanStatsConfig, StickManUIItem stickman,
             PumpingPerkData pumpingGamePerk)
         {
-            if (/*stickmanStatsConfig.UnitType != PlayerUnitTypeEnum.One &&*/(int) stickmanStatsConfig.UnitType <= (int) (_dataCentralService.PumpingDataModel.MaxStickmanLevel.Value - 3))
+            if (stickmanStatsConfig.UnitType != PlayerUnitTypeEnum.One &&(int) stickmanStatsConfig.UnitType <= (int) (_dataCentralService.PumpingDataModel.MaxStickmanLevel.Value - 3))
             {
                 stickman.BuyButton.IsInteractable = true;
                 stickman.LockTemplate.gameObject.SetActive(false);
@@ -184,7 +184,7 @@ namespace UI.Windows
                 }).AddTo(_buyButtonDisposable);
             }
             stickman.BuyButton.OnClickAsObservable.Subscribe(_ => { BuyStickman(stickmanStatsConfig,stickman,pumpingGamePerk); })
-                .AddTo(_buyButtonDisposable);
+                .AddTo(_shopDisposable);
            
             
         }
@@ -286,8 +286,6 @@ namespace UI.Windows
                     stickman.AddStickmanToPlayGround();
                     stickman.ActivateCommonButton();
                     _buyButtonDisposable.Clear();
-                    stickman.BuyButton.OnClickAsObservable.Subscribe(_ => { BuyStickman(stickmanStatsConfig,stickman,pumpingGamePerk); })
-                        .AddTo(_buyButtonDisposable);
                     _showAd = false;
                     AlertUnitsTab(false);
                 }    

@@ -78,6 +78,7 @@ namespace UI.Windows
         private StickmanShopWindow _stickmanShopWindow;
         private BoosterManager _boosterManager;
         private SceneInstances _sceneInstances;
+        private CompositeDisposable _quicKBuyBtnDisposable = new CompositeDisposable();
         public UIBooster TimerUI => _timerUI;
         private ReactiveDictionary<BoosterTypeEnum, UIBooster> _boostersDictionary =
             new ReactiveDictionary<BoosterTypeEnum, UIBooster>(); 
@@ -142,8 +143,9 @@ namespace UI.Windows
             PlayerUnitTypeEnum playerUnitType = PlayerUnitTypeEnum.One;
             if(_dataCentralService.PumpingDataModel.MaxStickmanLevel.Value >= PlayerUnitTypeEnum.Four)
                 playerUnitType = (PlayerUnitTypeEnum)((int)_dataCentralService.PumpingDataModel.MaxStickmanLevel.Value - 3);
+            _quicKBuyBtnDisposable.Clear();
             _quickBuyBtn.OnClickAsObservable.Subscribe(_ =>
-                BuyStickman(_configManager.UnitsStatsSo.DictionaryStickmanConfigs[playerUnitType], playerUnitType));
+                BuyStickman(_configManager.UnitsStatsSo.DictionaryStickmanConfigs[playerUnitType], playerUnitType)).AddTo(_quicKBuyBtnDisposable);
             UpdateMainBuyButton(playerUnitType);
             _dataCentralService.PumpingDataModel.MaxStickmanLevel.Subscribe(level => UpdateMainBuyButton(level))
                 .AddTo(ActivateDisposables);
@@ -340,5 +342,10 @@ namespace UI.Windows
         }
 
         #endregion
+
+        protected override void OnDeactivate()
+        {
+            _quicKBuyBtnDisposable.Clear();
+        }
     }
 }
