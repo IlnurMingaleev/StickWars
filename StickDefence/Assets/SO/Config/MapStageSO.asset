@@ -26,10 +26,10 @@ MonoBehaviour:
     Coin: 1000
     Gem: 0
   - StageType: 5
-    Coin: 1200
+    Coin: 4000
     Gem: 0
   - StageType: 6
-    Coin: 1400
+    Coin: 4000
     Gem: 0
   - StageType: 7
     Coin: 1600
@@ -82,14 +82,28 @@ MonoBehaviour:
         Delay: 1
       - GroupUnitsIndex: 0
         Delay: 1
+      - GroupUnitsIndex: 20
+        Delay: 1
+      - GroupUnitsIndex: 20
+        Delay: 1
+      - GroupUnitsIndex: 20
+        Delay: 1
+      - GroupUnitsIndex: 21
+        Delay: 1
+      - GroupUnitsIndex: 21
+        Delay: 1
     - IsBossDay: 0
       Groups:
       - GroupUnitsIndex: 0
         Delay: 1
       - GroupUnitsIndex: 1
         Delay: 1
-    - IsBossDay: 0
-      Groups:
+      - GroupUnitsIndex: 20
+        Delay: 1
+      - GroupUnitsIndex: 20
+        Delay: 1
+      - GroupUnitsIndex: 21
+        Delay: 1
       - GroupUnitsIndex: 20
         Delay: 1
       - GroupUnitsIndex: 20
@@ -98,6 +112,24 @@ MonoBehaviour:
       Groups:
       - GroupUnitsIndex: 40
         Delay: 1
+      - GroupUnitsIndex: 40
+        Delay: 1
+      - GroupUnitsIndex: 40
+        Delay: 1
+      - GroupUnitsIndex: 41
+        Delay: 1
+      - GroupUnitsIndex: 41
+        Delay: 1
+      - GroupUnitsIndex: 20
+        Delay: 1
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 40
+        Delay: 1
+      - GroupUnitsIndex: 40
+        Delay: 1
+      - GroupUnitsIndex: 41
+        Delay: 1
       - GroupUnitsIndex: 21
         Delay: 1
       - GroupUnitsIndex: 40
@@ -106,31 +138,53 @@ MonoBehaviour:
       Groups:
       - GroupUnitsIndex: 20
         Delay: 1
-      - GroupUnitsIndex: 1
-        Delay: 1
-      - GroupUnitsIndex: 0
-        Delay: 1
-    - IsBossDay: 0
-      Groups:
-      - GroupUnitsIndex: 1
-        Delay: 1
-      - GroupUnitsIndex: 0
-        Delay: 1
-      - GroupUnitsIndex: 0
-        Delay: 1
-    - IsBossDay: 0
-      Groups:
       - GroupUnitsIndex: 20
         Delay: 1
-      - GroupUnitsIndex: 21
+      - GroupUnitsIndex: 20
         Delay: 1
-      - GroupUnitsIndex: 0
+      - GroupUnitsIndex: 40
+        Delay: 1
+      - GroupUnitsIndex: 41
+        Delay: 1
+      - GroupUnitsIndex: 41
         Delay: 1
     - IsBossDay: 0
       Groups:
       - GroupUnitsIndex: 40
         Delay: 1
-      - GroupUnitsIndex: 1
+      - GroupUnitsIndex: 20
+        Delay: 1
+      - GroupUnitsIndex: 20
+        Delay: 1
+      - GroupUnitsIndex: 20
+        Delay: 1
+      - GroupUnitsIndex: 21
+        Delay: 1
+      - GroupUnitsIndex: 21
+        Delay: 1
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 20
+        Delay: 1
+      - GroupUnitsIndex: 21
+        Delay: 1
+      - GroupUnitsIndex: 20
+        Delay: 1
+      - GroupUnitsIndex: 40
+        Delay: 1
+      - GroupUnitsIndex: 20
+        Delay: 1
+      - GroupUnitsIndex: 21
+        Delay: 1
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 20
+        Delay: 1
+      - GroupUnitsIndex: 20
+        Delay: 1
+      - GroupUnitsIndex: 20
+        Delay: 1
+      - GroupUnitsIndex: 21
         Delay: 1
       - GroupUnitsIndex: 1
         Delay: 1
@@ -142,18 +196,32 @@ MonoBehaviour:
         Delay: 1
       - GroupUnitsIndex: 21
         Delay: 1
-    - IsBossDay: 0
-      Groups:
+      - GroupUnitsIndex: 21
+        Delay: 1
+      - GroupUnitsIndex: 21
+        Delay: 1
+      - GroupUnitsIndex: 21
+        Delay: 1
       - GroupUnitsIndex: 20
         Delay: 1
+    - IsBossDay: 0
+      Groups:
+      - GroupUnitsIndex: 21
+        Delay: 1
+      - GroupUnitsIndex: 21
+        Delay: 1
+      - GroupUnitsIndex: 21
+        Delay: 1
+      - GroupUnitsIndex: 20
+        Delay: 1
+    - IsBossDay: 0
+      Groups:
       - GroupUnitsIndex: 20
         Delay: 1
       - GroupUnitsIndex: 21
         Delay: 1
       - GroupUnitsIndex: 21
         Delay: 1
-    - IsBossDay: 0
-      Groups:
       - GroupUnitsIndex: 20
         Delay: 1
       - GroupUnitsIndex: 20
@@ -506,9 +574,37 @@ MonoBehaviour:
         Delay: 1
       - GroupUnitsIndex: 25
         Delay: 1
+      - GroupUnitsIndex: 24
+        Delay: 1
+      - GroupUnitsIndex: 25
+        Delay: 1
+      - GroupUnitsIndex: 24
+        Delay: 1
+      - GroupUnitsIndex: 24
+        Delay: 1
+      - GroupUnitsIndex: 24
+        Delay: 1
+      - GroupUnitsIndex: 25
+        Delay: 1
+      - GroupUnitsIndex: 25
+        Delay: 1
     - IsBossDay: 0
       Groups:
       - GroupUnitsIndex: 44
+        Delay: 1
+      - GroupUnitsIndex: 44
+        Delay: 1
+      - GroupUnitsIndex: 45
+        Delay: 1
+      - GroupUnitsIndex: 45
+        Delay: 1
+      - GroupUnitsIndex: 45
+        Delay: 1
+      - GroupUnitsIndex: 44
+        Delay: 1
+      - GroupUnitsIndex: 44
+        Delay: 1
+      - GroupUnitsIndex: 45
         Delay: 1
       - GroupUnitsIndex: 45
         Delay: 1

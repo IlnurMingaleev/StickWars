@@ -77,6 +77,7 @@ namespace UI.Windows
         private MergeController _mergeController;
         private StickmanShopWindow _stickmanShopWindow;
         private BoosterManager _boosterManager;
+        private SceneInstances _sceneInstances;
         public UIBooster TimerUI => _timerUI;
         private ReactiveDictionary<BoosterTypeEnum, UIBooster> _boostersDictionary =
             new ReactiveDictionary<BoosterTypeEnum, UIBooster>(); 
@@ -101,21 +102,25 @@ namespace UI.Windows
             { 
                 AlertShopBtn( (unitFlag || _stickmanShopWindow.PerksAlert.Value));
             }).AddTo(ActivateDisposables);
+            if (_sceneInstances != null)
+            {
+                if (_mergeController == null) _mergeController = _sceneInstances.MergeController;
+                if (_boosterManager == null) _boosterManager = _sceneInstances.BoosterManager;
+                _rocketSkillBtn.OnClickAsObservable
+                    .Subscribe(_ => _sceneInstances.AimController.StartAiming(SkillTypesEnum.Rocket))
+                    .AddTo(ActivateDisposables);
+                _greandesSkillBtn.OnClickAsObservable
+                    .Subscribe(_ => _sceneInstances.AimController.StartAiming(SkillTypesEnum.Grenade))
+                    .AddTo(ActivateDisposables);
+                _poisonSkillBtn.OnClickAsObservable
+                    .Subscribe(_ => _sceneInstances.AimController.StartAiming(SkillTypesEnum.Gas))
+                    .AddTo(ActivateDisposables);
+            }
         }
 
         public void Init(SceneInstances sceneInstances)
         {
-           if (_mergeController == null) _mergeController = sceneInstances.MergeController;
-           if (_boosterManager == null) _boosterManager = sceneInstances.BoosterManager;
-            _rocketSkillBtn.OnClickAsObservable
-                .Subscribe(_ =>sceneInstances.AimController.StartAiming(SkillTypesEnum.Rocket))
-                .AddTo(ActivateDisposables);
-            _greandesSkillBtn.OnClickAsObservable
-                .Subscribe(_ =>sceneInstances.AimController.StartAiming(SkillTypesEnum.Grenade))
-                .AddTo(ActivateDisposables);
-            _poisonSkillBtn.OnClickAsObservable
-                .Subscribe(_ =>sceneInstances.AimController.StartAiming(SkillTypesEnum.Gas))
-                .AddTo(ActivateDisposables);
+            _sceneInstances = sceneInstances;
         }
 
         private void InitWindowButtons()

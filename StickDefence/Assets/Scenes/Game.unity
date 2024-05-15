@@ -3005,14 +3005,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 995282376506241856, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1900408014095377066, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2573299026537956282, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
       propertyPath: m_Name
       value: BattleStage
+      objectReference: {fileID: 0}
+    - target: {fileID: 2573299026537956282, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3384835847364885298, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
       propertyPath: _cameraMain
       value: 
       objectReference: {fileID: 1709641390}
+    - target: {fileID: 8388188014381986920, guid: d83d4383fc19d924c8d0cf6f1c47652d, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

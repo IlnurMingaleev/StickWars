@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using Enums;
+using UI.Windows;
 using UnityEngine;
 using Views.Health;
 using Views.Units.Units;
@@ -10,6 +11,13 @@ namespace Models.Controllers.Skills
     {
         [SerializeField] private float duration = 4.0f;
         [SerializeField] private Transform _start;
+
+        protected void Start()
+        {
+            _bottomPanelWindow = _windowManager.GetWindow<BottomPanelWindow>();
+            _skillCooldownPassed = true;
+            UpdateUIBar(1.0f);
+        }
 
         public override void LaunchMissile(Vector3 mousePosition)
         {
@@ -29,7 +37,7 @@ namespace Models.Controllers.Skills
 
         public void DetectAndDestroyEnemies()
         {
-            _explosionRadius = 15f;
+          
             Collider2D[]
                 hitColliders =
                     Physics2D.OverlapCircleAll(_projectileView.transform.position,

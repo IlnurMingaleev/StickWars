@@ -38,6 +38,7 @@ namespace Models.Controllers
         {
             if (aiming)
             {
+                
                 // Convert mouse position to a ray from camera to mouse.
                 Ray ray = _cameraMain.ScreenPointToRay(UnityEngine.Input.mousePosition);
                 RaycastHit2D hit = Physics2D.GetRayIntersection(ray, Mathf.Infinity);
@@ -72,8 +73,7 @@ namespace Models.Controllers
             _currentSkill = SkillDictioary[_skillType];
             aiming = true;
             _currentSkill.AimView.transform.position = _cameraMain.ScreenToWorldPoint(UnityEngine.Input.mousePosition);
-            
-            if(_currentSkill.SkillCooldownPassed) _currentSkill.AimView.gameObject.SetActive(true);
+            _currentSkill.AimView.gameObject.SetActive(true);
         }
 
         void LaunchMissile(Vector3 mousePosition)

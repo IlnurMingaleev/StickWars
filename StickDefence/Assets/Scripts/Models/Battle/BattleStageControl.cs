@@ -1,4 +1,5 @@
-﻿using Anim.Battle;
+﻿using System;
+using Anim.Battle;
 using Enums;
 using Models.Controllers;
 using TonkoGames.Controllers.Core;
@@ -42,10 +43,15 @@ namespace Models.Battle
 
         private void Awake()
         {
-            _sceneInstances = GetComponent<SceneInstances>();
+           
             _battleAnimations = new BattleAnimations(_playerFortressInstantiate, _coreStateMachine);
             _battleResult = new BattleResult(_playerFortressInstantiate, _windowManager, _configManager, _player,
                 _dataCentralService, _coreStateMachine, gameObject.GetComponent<SceneInstances>());
+        }
+
+        private void Start()
+        {
+            _sceneInstances = GetComponent<SceneInstances>();
         }
 
         public void OnEnable()
@@ -103,8 +109,8 @@ namespace Models.Battle
         private void OnStartBattleState()
         {
             _coreStateMachine.RunTimeStateMachine.SetRunTimeState(RunTimeStateEnum.Play);
-            _windowManager.Show<BottomPanelWindow>();
             _windowManager.GetWindow<BottomPanelWindow>().Init(_sceneInstances);
+            _windowManager.Show<BottomPanelWindow>();
             _player.DailyModel.InitBoosterManager(_sceneInstances.BoosterManager);
             _windowManager.Show<TopPanelWindow>(WindowPriority.TopPanel);
 

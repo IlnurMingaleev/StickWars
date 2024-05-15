@@ -37,9 +37,10 @@ namespace Models.Controllers.Skills
 
         public abstract void LaunchMissile(Vector3 mousePosition);
 
-        private void Start()
+        protected void Start()
         {
-            _bottomPanelWindow = _windowManager.GetWindow<BottomPanelWindow>();
+            _explosionRadius = 60f;
+            _disposable.Clear();
             _coreStateMachine.RunTimeStateMachine.RunTimeState.Subscribe(_ => OnRunTimeStateSwitch(_))
                 .AddTo(_disposable);
         }
@@ -85,6 +86,7 @@ namespace Models.Controllers.Skills
         private void OnDisable()
         {
            // _timerModel.StopTick();
+           _skillCooldownPassed = true;
            _skillTimer.FinishTimer();
            _disposable.Clear();
         }

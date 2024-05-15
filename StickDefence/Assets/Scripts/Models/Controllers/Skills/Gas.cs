@@ -1,4 +1,5 @@
 ﻿using Enums;
+using UI.Windows;
 using UnityEngine;
 using Views.Health;
 using Views.Units.Units;
@@ -7,11 +8,17 @@ namespace Models.Controllers.Skills
 {
     public class Gas: Skill
     {
+        protected void Start()
+        {
+            _bottomPanelWindow = _windowManager.GetWindow<BottomPanelWindow>();
+            _skillCooldownPassed = true;
+            UpdateUIBar(1.0f);
+        }
+
         public override void LaunchMissile(Vector3 mousePosition)
         {
             if (_skillCooldownPassed)
             {
-                _skillCooldownPassed = false;
                 DetectAndDestroyEnemies(mousePosition);
                 StartTimer();
             }
@@ -26,7 +33,6 @@ namespace Models.Controllers.Skills
         public void DetectAndDestroyEnemies(Vector3 mousePosition)
         {
             _projectileView.transform.position = mousePosition;
-            _explosionRadius = 15f;
             Collider2D[]
                 hitColliders =
                     Physics2D.OverlapCircleAll(_projectileView.transform.position,

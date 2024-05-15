@@ -28,10 +28,10 @@ MonoBehaviour:
     Coin: 1000
     Gem: 0
   - StageType: 5
-    Coin: 1200
+    Coin: 4000
     Gem: 0
   - StageType: 6
-    Coin: 1400
+    Coin: 4000
     Gem: 0
   - StageType: 7
     Coin: 1600
@@ -87,6 +87,31 @@ MonoBehaviour:
     Delay: 1
     IsBossDay: 0
   - MapStage: 1
+    Day: 1
+    GroupUnitsIndex: 20
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 1
+    Day: 1
+    GroupUnitsIndex: 20
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 1
+    Day: 1
+    GroupUnitsIndex: 20
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 1
+    Day: 1
+    GroupUnitsIndex: 21
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 1
+    Day: 1
+    GroupUnitsIndex: 21
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 1
     Day: 2
     GroupUnitsIndex: 0
     Delay: 1
@@ -97,18 +122,73 @@ MonoBehaviour:
     Delay: 1
     IsBossDay: 0
   - MapStage: 1
+    Day: 2
+    GroupUnitsIndex: 20
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 1
+    Day: 2
+    GroupUnitsIndex: 20
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 1
+    Day: 2
+    GroupUnitsIndex: 21
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 1
+    Day: 2
+    GroupUnitsIndex: 20
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 1
+    Day: 2
+    GroupUnitsIndex: 20
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 1
+    Day: 3
+    GroupUnitsIndex: 40
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 1
+    Day: 3
+    GroupUnitsIndex: 40
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 1
+    Day: 3
+    GroupUnitsIndex: 40
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 1
+    Day: 3
+    GroupUnitsIndex: 41
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 1
+    Day: 3
+    GroupUnitsIndex: 41
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 1
     Day: 3
     GroupUnitsIndex: 20
     Delay: 1
     IsBossDay: 0
   - MapStage: 1
-    Day: 3
-    GroupUnitsIndex: 20
+    Day: 4
+    GroupUnitsIndex: 40
     Delay: 1
     IsBossDay: 0
   - MapStage: 1
     Day: 4
     GroupUnitsIndex: 40
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 1
+    Day: 4
+    GroupUnitsIndex: 41
     Delay: 1
     IsBossDay: 0
   - MapStage: 1
@@ -128,27 +208,57 @@ MonoBehaviour:
     IsBossDay: 0
   - MapStage: 1
     Day: 5
-    GroupUnitsIndex: 1
+    GroupUnitsIndex: 20
     Delay: 1
     IsBossDay: 0
   - MapStage: 1
     Day: 5
-    GroupUnitsIndex: 0
+    GroupUnitsIndex: 20
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 1
+    Day: 5
+    GroupUnitsIndex: 40
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 1
+    Day: 5
+    GroupUnitsIndex: 41
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 1
+    Day: 5
+    GroupUnitsIndex: 41
     Delay: 1
     IsBossDay: 0
   - MapStage: 1
     Day: 6
-    GroupUnitsIndex: 1
+    GroupUnitsIndex: 40
     Delay: 1
     IsBossDay: 0
   - MapStage: 1
     Day: 6
-    GroupUnitsIndex: 0
+    GroupUnitsIndex: 20
     Delay: 1
     IsBossDay: 0
   - MapStage: 1
     Day: 6
-    GroupUnitsIndex: 0
+    GroupUnitsIndex: 20
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 1
+    Day: 6
+    GroupUnitsIndex: 20
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 1
+    Day: 6
+    GroupUnitsIndex: 21
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 1
+    Day: 6
+    GroupUnitsIndex: 21
     Delay: 1
     IsBossDay: 0
   - MapStage: 1
@@ -163,17 +273,42 @@ MonoBehaviour:
     IsBossDay: 0
   - MapStage: 1
     Day: 7
-    GroupUnitsIndex: 0
+    GroupUnitsIndex: 20
     Delay: 1
     IsBossDay: 0
   - MapStage: 1
-    Day: 8
+    Day: 7
     GroupUnitsIndex: 40
     Delay: 1
     IsBossDay: 0
   - MapStage: 1
+    Day: 7
+    GroupUnitsIndex: 20
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 1
+    Day: 7
+    GroupUnitsIndex: 21
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 1
     Day: 8
-    GroupUnitsIndex: 1
+    GroupUnitsIndex: 20
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 1
+    Day: 8
+    GroupUnitsIndex: 20
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 1
+    Day: 8
+    GroupUnitsIndex: 20
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 1
+    Day: 8
+    GroupUnitsIndex: 21
     Delay: 1
     IsBossDay: 0
   - MapStage: 1
@@ -197,12 +332,22 @@ MonoBehaviour:
     Delay: 1
     IsBossDay: 0
   - MapStage: 1
-    Day: 10
-    GroupUnitsIndex: 20
+    Day: 9
+    GroupUnitsIndex: 21
     Delay: 1
     IsBossDay: 0
   - MapStage: 1
-    Day: 10
+    Day: 9
+    GroupUnitsIndex: 21
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 1
+    Day: 9
+    GroupUnitsIndex: 21
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 1
+    Day: 9
     GroupUnitsIndex: 20
     Delay: 1
     IsBossDay: 0
@@ -213,6 +358,31 @@ MonoBehaviour:
     IsBossDay: 0
   - MapStage: 1
     Day: 10
+    GroupUnitsIndex: 21
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 1
+    Day: 10
+    GroupUnitsIndex: 21
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 1
+    Day: 10
+    GroupUnitsIndex: 20
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 1
+    Day: 11
+    GroupUnitsIndex: 20
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 1
+    Day: 11
+    GroupUnitsIndex: 21
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 1
+    Day: 11
     GroupUnitsIndex: 21
     Delay: 1
     IsBossDay: 0
@@ -907,8 +1077,78 @@ MonoBehaviour:
     Delay: 1
     IsBossDay: 0
   - MapStage: 5
+    Day: 1
+    GroupUnitsIndex: 24
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 5
+    Day: 1
+    GroupUnitsIndex: 25
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 5
+    Day: 1
+    GroupUnitsIndex: 24
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 5
+    Day: 1
+    GroupUnitsIndex: 24
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 5
+    Day: 1
+    GroupUnitsIndex: 24
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 5
+    Day: 1
+    GroupUnitsIndex: 25
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 5
+    Day: 1
+    GroupUnitsIndex: 25
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 5
     Day: 2
     GroupUnitsIndex: 44
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 5
+    Day: 2
+    GroupUnitsIndex: 44
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 5
+    Day: 2
+    GroupUnitsIndex: 45
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 5
+    Day: 2
+    GroupUnitsIndex: 45
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 5
+    Day: 2
+    GroupUnitsIndex: 45
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 5
+    Day: 2
+    GroupUnitsIndex: 44
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 5
+    Day: 2
+    GroupUnitsIndex: 44
+    Delay: 1
+    IsBossDay: 0
+  - MapStage: 5
+    Day: 2
+    GroupUnitsIndex: 45
     Delay: 1
     IsBossDay: 0
   - MapStage: 5
