@@ -21,6 +21,7 @@ namespace Models.Merge
     public class MergeController : MonoBehaviour, IPlaceableUnit
     {
         [SerializeField] private PlayerUnitsBuilderTwo _playerUnitsBuilder;
+        [SerializeField] private ItemInfo _itemDummyPrefab;
         private Camera _mainCamera;
         public static MergeController instance;
         
@@ -30,7 +31,6 @@ namespace Models.Merge
         private ItemInfo carryingItem;
 
         private Dictionary<int, Slot> slotDictionary;
-        private IPlayerUnitsBuilderTwo _playerBuilder;
         [Inject] private ConfigManager _configManager;
         [Inject] private IDataCentralService _dataCentralService;
         [Inject] private IWindowManager _windowManager;
@@ -40,27 +40,24 @@ namespace Models.Merge
         {
           
             instance = this;
-            _playerUnitsBuilder.GetComponent<IPlayerUnitsBuilder>();
             Utils.InitResources();
         }
 
-        public void Init()
+        private void Init()
         {
             foreach (var slot in slots)
             {
-                PlayerUnitTypeEnum playerUnitType = _dataCentralService.MapStageDataModel.SlotItems[slot.SlotIdType].PlayerUnitType; 
+                var playerUnitType = _dataCentralService.MapStageDataModel.SlotItems[slot.SlotIdType].PlayerUnitType; 
+              
                 if(playerUnitType == PlayerUnitTypeEnum.None)
                      continue;
-                else
-                     slot.CreateItem((int)playerUnitType,_playerBuilder);
-
+                CreateSlot(slot, (int)playerUnitType);
             }
         }
 
         private void Start()
         {
             _mainCamera = Camera.main;
-            _playerBuilder = _playerUnitsBuilder.GetComponent<IPlayerUnitsBuilderTwo>();
             slotDictionary = new Dictionary<int, Slot>();
 
             for (int i = 0; i < slots.Length; i++)
@@ -112,11 +109,10 @@ namespace Models.Merge
                 {
                     if (slot.State == SlotState.Full && carryingItem == null)
                     {
-                        var itemGO = (GameObject) Instantiate(Resources.Load("Prefabs/ItemDummy"));
-                        itemGO.transform.position = slot.transform.position;
-                        itemGO.transform.localScale = Vector3.one;
-
-                        carryingItem = itemGO.GetComponent<ItemInfo>();
+                        carryingItem = Instantiate(_itemDummyPrefab, transform);
+                        carryingItem.transform.position = slot.transform.position;
+                        carryingItem.transform.localScale = Vector3.one;
+                        
                         carryingItem.InitDummy(slot.Id, slot.CurrentItem.Id,_configManager);
 
                         slot.ItemGrabbed();
@@ -126,7 +122,7 @@ namespace Models.Merge
                     //we are dropping an item to empty slot
                     else if (slot.State == SlotState.Empty && carryingItem != null)
                     {
-                        slot.CreateItem(carryingItem.itemId,_playerBuilder);
+                        CreateSlot(slot, carryingItem.itemId);
                         SetGrabbedFlag();
                         Destroy(carryingItem.gameObject);
                     }
@@ -163,9 +159,9 @@ namespace Models.Merge
         {
             var targetSlot = GetSlotById(slot.Id);
             var startSlot = GetSlotById(carryingItem.slotId);
-            startSlot.CreateItem(targetSlot.CurrentItem.Id, _playerBuilder);
+            CreateSlot(startSlot, targetSlot.CurrentItem.Id);
             targetSlot.DestroyItem();
-            targetSlot.CreateItem(carryingItem.itemId,_playerBuilder);
+            CreateSlot(targetSlot, carryingItem.itemId);
             SetGrabbedFlag();
             Destroy(carryingItem.gameObject);
         }
@@ -189,7 +185,7 @@ namespace Models.Merge
             } 
             var slot = GetSlotById(targetSlotId);
             slot.DestroyItem();
-            slot.CreateItem(carryingItem.itemId + 1, _playerBuilder);
+            CreateSlot(slot, carryingItem.itemId + 1);
             SetGrabbedFlag();
             Destroy(carryingItem.gameObject);
         }
@@ -203,7 +199,7 @@ namespace Models.Merge
         void OnItemCarryFail()
         {
             var slot = GetSlotById(carryingItem.slotId);
-            slot.CreateItem(carryingItem.itemId,_playerBuilder);
+            CreateSlot(slot, carryingItem.itemId);
             SetGrabbedFlag();
             Destroy(carryingItem.gameObject);
         }
@@ -225,7 +221,7 @@ namespace Models.Merge
                 slot = GetSlotById(rand);
             }
 
-            slot.CreateItem(0,_playerBuilder);
+            CreateSlot(slot, 0);
         }
 
         public void PlaceDefinedItem(int level)
@@ -248,7 +244,8 @@ namespace Models.Merge
                 }
 
             }
-            slot.CreateItem(level,_playerBuilder);
+            
+            CreateSlot(slot, level);
         }
 
 
@@ -289,7 +286,7 @@ namespace Models.Merge
                             {
                                 slots[slotIndex].DestroyItem(); 
                                 slots[innerSlotIndex].DestroyItem();
-                                slots[innerSlotIndex].CreateItem((int)unitType + 1, _playerBuilder);
+                                CreateSlot(slots[innerSlotIndex], (int)unitType + 1);
                                 return;
                             }
                         }
@@ -298,13 +295,12 @@ namespace Models.Merge
                 }
             }
         }
-
         
         #endregion
 
-        private void CreateSlot(int id, IPlayerUnitsBuilderTwo playerUnitBuilder)
+        private void CreateSlot(Slot slot, int id)
         {
-            
+            slot.CreateItem(id, _playerUnitsBuilder, _dataCentralService);
         }
     }
 }

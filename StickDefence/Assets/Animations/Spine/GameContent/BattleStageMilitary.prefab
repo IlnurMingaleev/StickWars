@@ -37793,6 +37793,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerUnitsBuilder: {fileID: 2662367301964055688}
+  _itemDummyPrefab: {fileID: -4497150350292486443, guid: dbc4f8effdeff4182a44bf0e3b14bdaf, type: 3}
   slots:
   - {fileID: 3324015660068254981}
   - {fileID: 5237987973263514145}

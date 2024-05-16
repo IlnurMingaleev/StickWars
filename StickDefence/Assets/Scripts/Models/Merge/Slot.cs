@@ -1,9 +1,9 @@
-﻿using Enums;
+﻿using System;
+using Enums;
 using Models.Battle;
 using Models.DataModels;
 using Models.DataModels.Data;
 using UnityEngine;
-using VContainer;
 
 namespace Models.Merge
 {
@@ -19,13 +19,21 @@ namespace Models.Merge
 
         public bool IsItemGrabbed { get; private set; }
         
-        [Inject] private IDataCentralService _dataCentralService;
+        private IDataCentralService _dataCentralService;
 
-        public void CreateItem(int id, IPlayerUnitsBuilderTwo playerUnitBuilder) 
+        public Action<Slot> OnSlotClick;
+        public Action<Slot> OnSlotUp;
+
+        public void CreateItem(int id, IPlayerUnitsBuilderTwo playerUnitBuilder, IDataCentralService dataCentralService,
+            Action<Slot> onSlotClick = null, Action<Slot> onSlotUp = null) 
         {
+            _dataCentralService = dataCentralService;
+            
             CurrentItem = Instantiate(_itemPrefab, transform);
             
             CurrentItem.Init(id, this, playerUnitBuilder);
+            OnSlotClick = onSlotClick;
+            OnSlotUp = onSlotUp;
             
             _dataCentralService.MapStageDataModel.UpdateSlotItemData(
                new SlotItemData()
@@ -96,6 +104,18 @@ namespace Models.Merge
                     }
                     break;
             }
+        }
+
+        private void OnMouseDown()
+        {
+            Debug.Log("OnMouseDown");
+            OnSlotClick?.Invoke(this);
+        }
+
+        private void OnMouseUp()
+        {
+            Debug.Log("OnMouseUp");
+            OnSlotUp?.Invoke(this);
         }
     }
 
