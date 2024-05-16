@@ -7,9 +7,8 @@ namespace Tools.GameTools
     public class ScaleCameraSize2D : MonoBehaviour
     {
         [SerializeField] private Camera _camera;
-        [SerializeField] private float _sizeCamera;
         private const float DefaultWidth = 2400f;
-        private const float DefaultHeight = 1600f;
+        private const float DefaultHeight = 1080f;
         private const float MaxDelta = 1f;
         
         private float _defOrthographicSize = 0;
@@ -25,7 +24,6 @@ namespace Tools.GameTools
         
         private void Awake()
         {
-            if (_camera != null) _camera.orthographicSize = _sizeCamera;
             _defOrthographicSize = _camera.orthographicSize;
         }
 
@@ -38,7 +36,7 @@ namespace Tools.GameTools
         {
             StopSnap();
             if (snapCamera == SnapCamera.Center)
-                _camera.transform.localPosition = Vector3.zero;
+                _camera.transform.localPosition = new Vector3(0, 0, _camera.transform.localPosition.z);
             _snapCamera = snapCamera;
 #if UNITY_WEBGL
             Observable.EveryFixedUpdate().Subscribe(_ => CheckDelta()).AddTo(_compositeDisposable);
@@ -71,6 +69,11 @@ namespace Tools.GameTools
                 
                 switch (_snapCamera)
                 {
+                    case SnapCamera.Center:
+                        newSize = _defOrthographicSize * tmpDelta;
+                        _camera.orthographicSize = newSize;
+                        break;
+                    
                     case SnapCamera.Bottom:
                         newSize = _defOrthographicSize * tmpDelta;
                         _camera.orthographicSize = newSize;
@@ -89,6 +92,7 @@ namespace Tools.GameTools
             // };
 
         }
+
         private void SetBottom(float deltaSize)
         {
             var contentLocalPosition = new Vector3(0,0, _camera.transform.localPosition.z);

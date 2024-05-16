@@ -16,10 +16,9 @@ namespace Models.Controllers
 {
     public class GameSceneControl : MonoBehaviour
     {
-        [SerializeField] private GameObject _stageMap;
         [SerializeField] private GameObject _lobby;
+        [SerializeField] private GameObject _battleParent;
         [SerializeField] private GameObject _stageMapPrefab;
-        [SerializeField] private Transform _stageMapParent;
         
         [Inject] private readonly ICoreStateMachine _coreStateMachine;
         [Inject] private readonly IWindowManager _windowManager;
@@ -30,6 +29,7 @@ namespace Models.Controllers
         [Inject] private readonly PrefabInject _prefabInject;
         
         private CompositeDisposable _disposables = new CompositeDisposable();
+        private GameObject _stageMap;
 
         public SceneInstances SceneInstances;
         
@@ -50,9 +50,10 @@ namespace Models.Controllers
 
         private void OnLobbyState()
         {
-            Destroy(_stageMap);
-            _stageMap = Instantiate(_stageMapPrefab, _stageMapParent);
-            _prefabInject.InjectGameObject(_stageMap);
+            if (_stageMap != null)
+                Destroy(_stageMap);
+            _battleParent.SetActive(false);
+            
             /*var battleStageControl = _stageMap.GetComponent<BattleStageControl>();
             SceneInstances = _stageMap.GetComponent<SceneInstances>();
             battleStageControl.Init(this);*/
@@ -63,8 +64,10 @@ namespace Models.Controllers
 
         private void OnStageBattleState()
         {
+            _prefabInject.InjectGameObject(_stageMap = Instantiate(_stageMapPrefab, _battleParent.transform));
+            _battleParent.SetActive(true);
+            
             _lobby.SetActive(false);
-            _stageMap.SetActive(true);
             _windowManager.FindWindow<TopPanelWindow>().SetTopGameState(); 
         }
     }
