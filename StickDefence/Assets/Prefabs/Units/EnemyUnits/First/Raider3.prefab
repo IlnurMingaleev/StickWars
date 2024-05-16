@@ -667,6 +667,7 @@ GameObject:
   - component: {fileID: 7518601619015936490}
   - component: {fileID: 6411806245254276639}
   - component: {fileID: 1289460091143962387}
+  - component: {fileID: 8808599714832016787}
   m_Layer: 8
   m_Name: Raider3
   m_TagString: Untagged
@@ -813,6 +814,18 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   <ProjectileView>k__BackingField: {fileID: -4069476757777184573, guid: 2531e8442480fb343afa046281eda6c7, type: 3}
+--- !u!114 &8808599714832016787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5685439457548488733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89b4d47b38c74e0b868ab589b8b60fa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5720429962604555516
 GameObject:
   m_ObjectHideFlags: 0

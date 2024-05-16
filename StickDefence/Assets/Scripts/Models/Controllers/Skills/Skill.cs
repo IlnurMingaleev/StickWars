@@ -18,6 +18,7 @@ namespace Models.Controllers.Skills
         [SerializeField] protected Transform _projectileView;
         [SerializeField] protected Transform _aimView;
         [SerializeField] protected CoroutineTimer _skillTimer;
+        [SerializeField] protected int _enemyLayer;
         [Inject] protected IPlayer _player;
         [Inject] protected ITimerService _timerService;
         [Inject] protected IWindowManager _windowManager;
@@ -26,8 +27,12 @@ namespace Models.Controllers.Skills
         protected float _explosionRadius;
         protected bool _skillCooldownPassed = true; 
         protected float _cooldownTime = 30000f;
+        protected int _skillDamage = 7000;
+        protected int _enemyLayerMask;
         protected BottomPanelWindow _bottomPanelWindow;
         protected CompositeDisposable _disposable = new CompositeDisposable();
+        
+
         public bool SkillCooldownPassed => _skillCooldownPassed;
         public Transform AimView
         {
@@ -39,7 +44,9 @@ namespace Models.Controllers.Skills
 
         protected void Start()
         {
-            _explosionRadius = 60f;
+            _enemyLayer = LayerMask.NameToLayer("Enemy");
+            _enemyLayerMask = (1 << _enemyLayer);
+            _explosionRadius = 150f;
             _disposable.Clear();
             _coreStateMachine.RunTimeStateMachine.RunTimeState.Subscribe(_ => OnRunTimeStateSwitch(_))
                 .AddTo(_disposable);

@@ -37,14 +37,14 @@ namespace Models.Controllers.Skills
 
         public void DetectAndDestroyEnemies()
         {
-          
+            _explosionRadius = 100f;
             Collider2D[]
                 hitColliders =
                     Physics2D.OverlapCircleAll(_projectileView.transform.position,
-                        _explosionRadius); // Assuming the radius of your aim is 1 unit.
+                        _explosionRadius,1<<LayerMask.NameToLayer("Enemy")); // Assuming the radius of your aim is 1 unit.
             foreach (var hitCollider in hitColliders)
             {
-                hitCollider.gameObject.TryGetComponent(out IDamageable damageable);
+                hitCollider.gameObject.TryGetComponent(out Damageable damageable);
                 PlayParticleOneShot(damageable, (int) _player.Pumping.Skills[SkillTypesEnum.Grenade].Damage);
             }
 
@@ -68,7 +68,7 @@ namespace Models.Controllers.Skills
             _projectileView.gameObject.SetActive(false);
             DetectAndDestroyEnemies();
         }
-        public void PlayParticleOneShot(IDamageable damageable, int damage)
+        public void PlayParticleOneShot(Damageable damageable, int damage)
         {
             _particleSystem.transform.position =new Vector3(_projectileView.position.x, _projectileView.position.y, _particleSystem.transform.position.z);
             _particleSystem.Play();

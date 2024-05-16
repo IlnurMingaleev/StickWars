@@ -44,8 +44,7 @@ namespace Models.Battle
         public void OnLoseEvent(bool isExitGame = false)
         {
             ShowPlayResult(0, false, !_isResurrected, isExitGame);
-
-            _isResurrected = true;
+            if(!isExitGame) _isResurrected = true;
 
         }
         
@@ -94,14 +93,6 @@ namespace Models.Battle
             {
                 playResultWindow.SetLose(rewardContains, isResurrect,OnPlayResultWindowClaim, Resurrect, isExitGame);
             }
-            if (isExitGame)
-            {
-                _isResurrected = false; 
-            }
-            else
-            {
-                _isResurrected = true;
-            }
         }
 
        
@@ -135,8 +126,7 @@ namespace Models.Battle
         }
         private void UpgradeStageIndex()
         {
-            _dataCentralService.PumpingDataModel.SetStageIndex((int) _dataCentralService.PumpingDataModel.StageLoadType.Value +
-                                                               1);
+            _dataCentralService.PumpingDataModel.SetStageIndex((int) _dataCentralService.PumpingDataModel.StageLoadType.Value + 1);
             _dataCentralService.SaveFull();
         }
     }
