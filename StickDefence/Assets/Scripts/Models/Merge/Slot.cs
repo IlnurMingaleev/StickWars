@@ -2,9 +2,6 @@
 using Models.Battle;
 using Models.DataModels;
 using Models.DataModels.Data;
-using Models.Timers;
-using TonkoGames.Controllers.Core;
-using TonkoGames.Sound;
 using UnityEngine;
 using VContainer;
 
@@ -13,44 +10,53 @@ namespace Models.Merge
     public class Slot : MonoBehaviour
     {
         [SerializeField] private Item _itemPrefab;
+        [field: SerializeField] public SlotTypeEnum SlotType { get; private set; }
+        [field: SerializeField] public SlotIdTypeEnum SlotIdType { get; private set; }
         
-        public int id;
-        public Item currentItem;
-        public SlotState state = SlotState.Empty;
-        public SlotTypeEnum slotType = SlotTypeEnum.None;
-        public SlotIdTypeEnum slotIdType = SlotIdTypeEnum.None;
-        public bool itemGrabbed = false;
-        [Inject] private ConfigManager _configManager;
-        [Inject] private ITimerService _timerService;
-        [Inject] private ISoundManager _soundManager;
+        public int Id { get; private set; }
+        public Item CurrentItem { get; private set; }
+        public SlotState State { get; private set; }
+
+        public bool IsItemGrabbed { get; private set; }
+        
         [Inject] private IDataCentralService _dataCentralService;
 
-        public void CreateItem(int id, IPlayerUnitsBuilderTwo _playerUnitBuilder) 
+        public void CreateItem(int id, IPlayerUnitsBuilderTwo playerUnitBuilder) 
         {
-            currentItem = Instantiate(_itemPrefab, transform);
+            CurrentItem = Instantiate(_itemPrefab, transform);
             
-            currentItem.Init(id, this, _playerUnitBuilder);
+            CurrentItem.Init(id, this, playerUnitBuilder);
             
             _dataCentralService.MapStageDataModel.UpdateSlotItemData(
                new SlotItemData()
                {
-                   SlotIdTypeEnum = slotIdType,
+                   SlotIdTypeEnum = SlotIdType,
                    PlayerUnitType = (PlayerUnitTypeEnum)id,
                });
             _dataCentralService.SaveFull();    
             ChangeStateTo(SlotState.Full);
         }
 
+        public void SetId(int id)
+        {
+            Id = id;
+        }
+
+        public void SetIsItemGrabbed(bool value)
+        {
+            IsItemGrabbed = value;
+        }
+
         public void DestroyItem()
         {
             ChangeStateTo(SlotState.Empty);
-            if(currentItem != null)
-                Destroy(currentItem.gameObject);
+            if(CurrentItem != null)
+                Destroy(CurrentItem.gameObject);
           
             _dataCentralService.MapStageDataModel.UpdateSlotItemData(
                 new SlotItemData()
                 {
-                    SlotIdTypeEnum = slotIdType,
+                    SlotIdTypeEnum = SlotIdType,
                     PlayerUnitType = PlayerUnitTypeEnum.None,
                 });
             _dataCentralService.SaveFull();  
@@ -58,18 +64,18 @@ namespace Models.Merge
 
         private void ChangeStateTo(SlotState targetState)
         {
-            state = targetState;
+            State = targetState;
         }
 
         public void ItemGrabbed()
         {
-            itemGrabbed = true;
+            IsItemGrabbed = true;
            DestroyItem();
         }
 
         private void ReceiveItem(int id)
         {
-            switch (state)
+            switch (State)
             {
                 case SlotState.Empty: 
 
@@ -78,7 +84,7 @@ namespace Models.Merge
                     break;
 
                 case SlotState.Full: 
-                    if (currentItem.Id == id)
+                    if (CurrentItem.Id == id)
                     {
                         //Merged
                         Debug.Log("Merged");

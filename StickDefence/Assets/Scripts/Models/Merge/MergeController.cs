@@ -48,7 +48,7 @@ namespace Models.Merge
         {
             foreach (var slot in slots)
             {
-                PlayerUnitTypeEnum playerUnitType = _dataCentralService.MapStageDataModel.SlotItems[slot.slotIdType].PlayerUnitType; 
+                PlayerUnitTypeEnum playerUnitType = _dataCentralService.MapStageDataModel.SlotItems[slot.SlotIdType].PlayerUnitType; 
                 if(playerUnitType == PlayerUnitTypeEnum.None)
                      continue;
                 else
@@ -65,7 +65,7 @@ namespace Models.Merge
 
             for (int i = 0; i < slots.Length; i++)
             {
-                slots[i].id = i;
+                slots[i].SetId(i);
                 slotDictionary.Add(i, slots[i]);
             }
             Init();
@@ -110,21 +110,21 @@ namespace Models.Merge
                 //we are grabbing the item in a full slot
                 if (hit.collider.gameObject.TryGetComponent(out Slot slot))
                 {
-                    if (slot.state == SlotState.Full && carryingItem == null)
+                    if (slot.State == SlotState.Full && carryingItem == null)
                     {
                         var itemGO = (GameObject) Instantiate(Resources.Load("Prefabs/ItemDummy"));
                         itemGO.transform.position = slot.transform.position;
                         itemGO.transform.localScale = Vector3.one;
 
                         carryingItem = itemGO.GetComponent<ItemInfo>();
-                        carryingItem.InitDummy(slot.id, slot.currentItem.Id,_configManager);
+                        carryingItem.InitDummy(slot.Id, slot.CurrentItem.Id,_configManager);
 
                         slot.ItemGrabbed();
 
                     }
 
                     //we are dropping an item to empty slot
-                    else if (slot.state == SlotState.Empty && carryingItem != null)
+                    else if (slot.State == SlotState.Empty && carryingItem != null)
                     {
                         slot.CreateItem(carryingItem.itemId,_playerBuilder);
                         SetGrabbedFlag();
@@ -132,13 +132,13 @@ namespace Models.Merge
                     }
 
                     //we are dropping to full
-                    else if (slot.state == SlotState.Full && carryingItem != null)
+                    else if (slot.State == SlotState.Full && carryingItem != null)
                     {
                         //check item in the slot
-                        if (slot.currentItem.Id == carryingItem.itemId)
+                        if (slot.CurrentItem.Id == carryingItem.itemId)
                         {
                             print("merged");
-                            OnItemMergedWithTarget(slot.id);
+                            OnItemMergedWithTarget(slot.Id);
                         }
                         else
                         {
@@ -161,9 +161,9 @@ namespace Models.Merge
 
         private void SwitchItems(Slot slot)
         {
-            var targetSlot = GetSlotById(slot.id);
+            var targetSlot = GetSlotById(slot.Id);
             var startSlot = GetSlotById(carryingItem.slotId);
-            startSlot.CreateItem(targetSlot.currentItem.Id, _playerBuilder);
+            startSlot.CreateItem(targetSlot.CurrentItem.Id, _playerBuilder);
             targetSlot.DestroyItem();
             targetSlot.CreateItem(carryingItem.itemId,_playerBuilder);
             SetGrabbedFlag();
@@ -197,7 +197,7 @@ namespace Models.Merge
         private void SetGrabbedFlag()
         {
             var prevSlot = GetSlotById(carryingItem.slotId);
-            prevSlot.itemGrabbed = false;
+            prevSlot.SetIsItemGrabbed(false);
         }
 
         void OnItemCarryFail()
@@ -219,7 +219,7 @@ namespace Models.Merge
             var rand = UnityEngine.Random.Range(0, slots.Length - 5);
             var slot = GetSlotById(rand);
 
-            while (slot.state == SlotState.Full)
+            while (slot.State == SlotState.Full)
             {
                 rand = UnityEngine.Random.Range(0, slots.Length- 5);
                 slot = GetSlotById(rand);
@@ -242,7 +242,7 @@ namespace Models.Merge
             for (int index = 0; index < slots.Length - 5 ; index++)
             {
                 slot = GetSlotById(index);
-                if (slot.state == SlotState.Empty && (!slot.itemGrabbed))
+                if (slot.State == SlotState.Empty && (!slot.IsItemGrabbed))
                 {
                     break;
                 }
@@ -256,7 +256,7 @@ namespace Models.Merge
         {
             for (var i = 0; i < slots.Length - 5; i++)
             {
-                if (slots[i].state == SlotState.Empty && (!slots[i].itemGrabbed))
+                if (slots[i].State == SlotState.Empty && (!slots[i].IsItemGrabbed))
                 {
                     return false;
                 }
@@ -276,15 +276,15 @@ namespace Models.Merge
         {
             for (int slotIndex = 0; slotIndex < slots.Length - 5; slotIndex++)
             {
-                if (slots[slotIndex].state == SlotState.Full)
+                if (slots[slotIndex].State == SlotState.Full)
                 {
                     for (int innerSlotIndex = slotIndex + 1; innerSlotIndex < slots.Length - 5; innerSlotIndex++)
                     {
 
-                        if (slots[innerSlotIndex].state == SlotState.Full)
+                        if (slots[innerSlotIndex].State == SlotState.Full)
                         {
-                            PlayerUnitTypeEnum unitType = slots[slotIndex].currentItem.UnitTypeEnum;
-                            PlayerUnitTypeEnum innerUnitType= slots[innerSlotIndex].currentItem.UnitTypeEnum;
+                            PlayerUnitTypeEnum unitType = slots[slotIndex].CurrentItem.UnitTypeEnum;
+                            PlayerUnitTypeEnum innerUnitType= slots[innerSlotIndex].CurrentItem.UnitTypeEnum;
                             if( unitType == innerUnitType && unitType != PlayerUnitTypeEnum.Twenty)
                             {
                                 slots[slotIndex].DestroyItem(); 
@@ -301,6 +301,10 @@ namespace Models.Merge
 
         
         #endregion
-        
+
+        private void CreateSlot(int id, IPlayerUnitsBuilderTwo playerUnitBuilder)
+        {
+            
+        }
     }
 }

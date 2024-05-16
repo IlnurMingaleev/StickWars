@@ -7,8 +7,9 @@ namespace Models.Merge
 {
     public class Item : MonoBehaviour
     {
+        [SerializeField] private Transform _unitParent; 
+        
         private Slot _parentSlot;
-        private Transform _unitParent;
         private PlayerViewTwo _unitGameObject;
         
         public int Id { get; private set; }
@@ -18,7 +19,7 @@ namespace Models.Merge
             Id = id;
             _parentSlot = slot;
             UnitTypeEnum = (PlayerUnitTypeEnum) id;
-            _unitGameObject = playerBuilder.InitStageLoadBattle((PlayerUnitTypeEnum) id, _unitParent, _parentSlot.slotType);
+            _unitGameObject = playerBuilder.InitStageLoadBattle((PlayerUnitTypeEnum) id, _unitParent, _parentSlot.SlotType);
         }
        
         private void OnDestroy()

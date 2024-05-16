@@ -162,11 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25e34fbcc4a3e4dc2aa3f3b5d1916000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
-  parentSlot: {fileID: 0}
-  UnitTypeEnum: 0
-  unitParent: {fileID: 8941145748193512555}
-  unitGameObject: {fileID: 0}
+  _unitParent: {fileID: 8941145748193512555}
 --- !u!70 &3259027602916941198
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
