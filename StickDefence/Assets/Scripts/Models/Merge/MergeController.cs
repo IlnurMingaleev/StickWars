@@ -117,7 +117,7 @@ namespace Models.Merge
                         itemGO.transform.localScale = Vector3.one;
 
                         carryingItem = itemGO.GetComponent<ItemInfo>();
-                        carryingItem.InitDummy(slot.id, slot.currentItem.id,_configManager);
+                        carryingItem.InitDummy(slot.id, slot.currentItem.Id,_configManager);
 
                         slot.ItemGrabbed();
 
@@ -135,7 +135,7 @@ namespace Models.Merge
                     else if (slot.state == SlotState.Full && carryingItem != null)
                     {
                         //check item in the slot
-                        if (slot.currentItem.id == carryingItem.itemId)
+                        if (slot.currentItem.Id == carryingItem.itemId)
                         {
                             print("merged");
                             OnItemMergedWithTarget(slot.id);
@@ -163,7 +163,7 @@ namespace Models.Merge
         {
             var targetSlot = GetSlotById(slot.id);
             var startSlot = GetSlotById(carryingItem.slotId);
-            startSlot.CreateItem(targetSlot.currentItem.id, _playerBuilder);
+            startSlot.CreateItem(targetSlot.currentItem.Id, _playerBuilder);
             targetSlot.DestroyItem();
             targetSlot.CreateItem(carryingItem.itemId,_playerBuilder);
             SetGrabbedFlag();

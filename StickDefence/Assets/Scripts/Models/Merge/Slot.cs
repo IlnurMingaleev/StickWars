@@ -12,6 +12,8 @@ namespace Models.Merge
 {
     public class Slot : MonoBehaviour
     {
+        [SerializeField] private Item _itemPrefab;
+        
         public int id;
         public Item currentItem;
         public SlotState state = SlotState.Empty;
@@ -25,14 +27,10 @@ namespace Models.Merge
 
         public void CreateItem(int id, IPlayerUnitsBuilderTwo _playerUnitBuilder) 
         {
-            var itemGO = Instantiate((GameObject)Resources.Load("Prefabs/Item"));
-        
-            itemGO.transform.SetParent(this.transform);
-            itemGO.transform.localPosition = Vector3.zero;
-            itemGO.transform.localScale = Vector3.one;
-
-            currentItem = itemGO.GetComponent<Item>();
-            currentItem.Init(id, this,_playerUnitBuilder);
+            currentItem = Instantiate(_itemPrefab, transform);
+            
+            currentItem.Init(id, this, _playerUnitBuilder);
+            
             _dataCentralService.MapStageDataModel.UpdateSlotItemData(
                new SlotItemData()
                {
@@ -56,7 +54,6 @@ namespace Models.Merge
                     PlayerUnitType = PlayerUnitTypeEnum.None,
                 });
             _dataCentralService.SaveFull();  
-            
         }
 
         private void ChangeStateTo(SlotState targetState)
@@ -81,7 +78,7 @@ namespace Models.Merge
                     break;
 
                 case SlotState.Full: 
-                    if (currentItem.id == id)
+                    if (currentItem.Id == id)
                     {
                         //Merged
                         Debug.Log("Merged");
