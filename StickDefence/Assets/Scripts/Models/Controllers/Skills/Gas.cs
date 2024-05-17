@@ -32,7 +32,7 @@ namespace Models.Controllers.Skills
 
         public void DetectAndDestroyEnemies(Vector3 mousePosition)
         {
-            _explosionRadius = 100f;
+            _explosionRadius = 80f;
             _projectileView.transform.position = mousePosition;
             Collider2D[]
                 hitColliders =

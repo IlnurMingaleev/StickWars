@@ -54,9 +54,9 @@ namespace UI.Content.Shop
             _levelLabel.text = stickmanStatsConfig.Level.ToString();
            // _stickmanImage.sprite = playerPrefabModel.uiIcon;
              PumpingPerkData perkDataDamage = player.Pumping.GamePerks[PerkTypesEnum.RecruitsDamage];
-             PumpingPerkData perkDataPrice = player.Pumping.GamePerks[PerkTypesEnum.DecreasePrice];
+             PumpingPerkData perkData = player.Pumping.GamePerks[PerkTypesEnum.DecreasePrice];
             _damageLabel.text = $"Damage: {(int)(stickmanStatsConfig.Damage*(1+perkDataDamage.Value/100))}";
-            _buyBtnLabel.text = $"Buy: {(int)(stickmanStatsConfig.Price *(1 - perkDataPrice.Value/100))}";
+            _buyBtnLabel.text = $"Buy: {(int)(stickmanStatsConfig.Price *(1 - (perkData.Value/100)))}";;
            
 
         }

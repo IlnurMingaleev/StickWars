@@ -306,7 +306,7 @@ Transform:
   m_GameObject: {fileID: 2957990166730104373}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.9, y: 14.5, z: 0}
+  m_LocalPosition: {x: 14.2, y: 14.5, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -667,9 +667,9 @@ GameObject:
   - component: {fileID: 7518601619015936490}
   - component: {fileID: 6411806245254276639}
   - component: {fileID: 1289460091143962387}
-  - component: {fileID: -4733956251101352563}
+  - component: {fileID: -1441301692326492482}
   m_Layer: 8
-  m_Name: Warrior2
+  m_Name: Warrior 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -688,7 +688,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 3282681552738686159}
+  - {fileID: 85449601800745463}
   - {fileID: 6763861916387599452}
   - {fileID: 455957511960908655}
   - {fileID: 428044763128758539}
@@ -746,7 +746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damageableFlash: []
-  _centerPoint: {fileID: 3282681552738686159}
+  _centerPoint: {fileID: 85449601800745463}
   _speedToCalculatePredict:
     value: 0
 --- !u!70 &6411806245254276639
@@ -814,7 +814,7 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   <ProjectileView>k__BackingField: {fileID: -4069476757777184573, guid: 2531e8442480fb343afa046281eda6c7, type: 3}
---- !u!114 &-4733956251101352563
+--- !u!114 &-1441301692326492482
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -931,9 +931,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 591134320449594219}
   - {fileID: 2534788742936848092}
   - {fileID: 6263818426517615697}
-  - {fileID: 591134320449594219}
   m_Father: {fileID: 428044763128758539}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1006,7 +1006,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _barSlider: {fileID: 6358575158086888731}
   _healthLabel: {fileID: 8735584714392418062}
---- !u!1 &7973426495723473667
+--- !u!1 &6187049154520897799
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1014,7 +1014,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3282681552738686159}
+  - component: {fileID: 85449601800745463}
   m_Layer: 8
   m_Name: Center
   m_TagString: Untagged
@@ -1022,13 +1022,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3282681552738686159
+--- !u!4 &85449601800745463
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7973426495723473667}
+  m_GameObject: {fileID: 6187049154520897799}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 12.8, z: 0}

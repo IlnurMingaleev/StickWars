@@ -63,7 +63,7 @@ namespace Models.Player.PumpingFragments
             var pumpingPerkData = new PumpingPerkData()
             {
                 PerkType = perkType,
-                Value = _basePerks[perkType].Value + configData.BaseValue + configData.AdditionalValue * perkData.PerkLevel,
+                Value  = configData.BaseValue + configData.AdditionalValue * perkData.PerkLevel,
                 Cost = configData.BaseCost + configData.AdditionalCost* perkData.PerkLevel,
                 CurrentLevel =  perkData.PerkLevel,
                 IsMaxLevel = perkData.PerkLevel == configData.LevelCount - 1,

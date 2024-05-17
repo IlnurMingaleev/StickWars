@@ -76,7 +76,7 @@ namespace Models.Controllers
 
         private void OnPlay()
         {
-            SetTimerAccordingAvailability();
+            _spawnTimer.StartTick();
         }
 
         private void OnPause()

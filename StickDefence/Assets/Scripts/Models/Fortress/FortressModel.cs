@@ -92,7 +92,7 @@ namespace Models.Fortress
         private void UpdateWallHealthBar(int health)
         {
             if(_bottomPanelWindow)
-                _bottomPanelWindow.UpdateWallHealthBar(health, View.Damageable.HealthMax.Value);
+                _bottomPanelWindow.UpdateWallHealthBar(health,_pumping.WallData[WallTypeEnum.Basic].HealthValue);
         }
         
         private void UpdateWallHealthMax(int healthMax)

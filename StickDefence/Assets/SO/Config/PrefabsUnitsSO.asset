@@ -44,15 +44,15 @@ MonoBehaviour:
   - <UnitType>k__BackingField: 15
     <GO>k__BackingField: {fileID: 5685439457548488733, guid: e5124f36d8a868944b03330da53a6c6d, type: 3}
   - <UnitType>k__BackingField: 16
-    <GO>k__BackingField: {fileID: 5685439457548488733, guid: a2c67fdd4a2218548b9bec81ce352e3e, type: 3}
-  - <UnitType>k__BackingField: 17
     <GO>k__BackingField: {fileID: 5685439457548488733, guid: 4b2ddeb5bbcb3594c855b0bc7acffd76, type: 3}
+  - <UnitType>k__BackingField: 17
+    <GO>k__BackingField: {fileID: 5685439457548488733, guid: b9c925d1a9407744f8c71195e7fb0cb3, type: 3}
   - <UnitType>k__BackingField: 18
-    <GO>k__BackingField: {fileID: 5685439457548488733, guid: 03af90721c2f7894cb7c86a787df563e, type: 3}
-  - <UnitType>k__BackingField: 19
     <GO>k__BackingField: {fileID: 5685439457548488733, guid: b1194f5f6a912bd46aad634549203b93, type: 3}
-  - <UnitType>k__BackingField: 20
+  - <UnitType>k__BackingField: 19
     <GO>k__BackingField: {fileID: 5685439457548488733, guid: f42b7a2f323e4664c94fe922fe85a1b2, type: 3}
+  - <UnitType>k__BackingField: 20
+    <GO>k__BackingField: {fileID: 5685439457548488733, guid: b9c925d1a9407744f8c71195e7fb0cb3, type: 3}
   _playerUnitPrefabsModels:
   - <UnitType>k__BackingField: 1
     <GO>k__BackingField: {fileID: 3643846031575893046, guid: 3a69ab7969a4214478b234325ea1713c, type: 3}

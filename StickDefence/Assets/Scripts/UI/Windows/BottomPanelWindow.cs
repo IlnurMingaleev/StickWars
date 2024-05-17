@@ -9,6 +9,7 @@ using Models.DataModels.Data;
 using Models.IAP;
 using Models.Merge;
 using Models.Player;
+using Models.Player.PumpingFragments;
 using Models.SO.Core;
 using TMPro;
 using TonkoGames.Controllers.Core;
@@ -140,23 +141,32 @@ namespace UI.Windows
             {
                RewardMergeButton();
             }).AddTo(ActivateDisposables);
-            PlayerUnitTypeEnum playerUnitType = PlayerUnitTypeEnum.One;
-            if(_dataCentralService.PumpingDataModel.MaxStickmanLevel.Value >= PlayerUnitTypeEnum.Four)
-                playerUnitType = (PlayerUnitTypeEnum)((int)_dataCentralService.PumpingDataModel.MaxStickmanLevel.Value - 3);
+            PlayerUnitTypeEnum playerUnitType = (_dataCentralService.PumpingDataModel.MaxStickmanLevel.Value >= PlayerUnitTypeEnum.Four)?(PlayerUnitTypeEnum)((int)_dataCentralService.PumpingDataModel.MaxStickmanLevel.Value - 3): PlayerUnitTypeEnum.One;
             _quicKBuyBtnDisposable.Clear();
-            _quickBuyBtn.OnClickAsObservable.Subscribe(_ =>
-                BuyStickman(_configManager.UnitsStatsSo.DictionaryStickmanConfigs[playerUnitType], playerUnitType)).AddTo(_quicKBuyBtnDisposable);
+            _quickBuyBtn.OnClickAsObservable.Subscribe(_ => { OnClickQuickBuyBtn(playerUnitType); }).AddTo(_quicKBuyBtnDisposable);
             UpdateMainBuyButton(playerUnitType);
-            _dataCentralService.PumpingDataModel.MaxStickmanLevel.Subscribe(level => UpdateMainBuyButton(level))
+            _dataCentralService.PumpingDataModel.MaxStickmanLevel.Subscribe(level =>
+                {
+                    level = (level >= PlayerUnitTypeEnum.Four) ? level - 3: PlayerUnitTypeEnum.One ;
+                    UpdateMainBuyButton(level);
+                })
                 .AddTo(ActivateDisposables);
             _dataCentralService.StatsDataModel.CoinsCount.Subscribe(money => UpdateMoneyLabel(money)).AddTo(ActivateDisposables);
             
         }
 
+        private void OnClickQuickBuyBtn(PlayerUnitTypeEnum playerUnitType)
+        {
+            BuyStickman(_configManager.UnitsStatsSo.DictionaryStickmanConfigs[playerUnitType], playerUnitType);
+        }
+
         private void UpdateMainBuyButton(PlayerUnitTypeEnum playerUnitType)
         {
-            _levelLabel.text = $"{(int) playerUnitType}";
-            _stickmanPrice.text = $"{_configManager.UnitsStatsSo.DictionaryStickmanConfigs[playerUnitType].Price}";
+            _levelLabel.text = $"{(int) playerUnitType }";
+            StickmanStatsConfig stickmanStatsConfig =
+                _configManager.UnitsStatsSo.StickmanUnitsStatsConfigs[(int) playerUnitType-1];
+            PumpingPerkData perkData = _player.Pumping.GamePerks[PerkTypesEnum.DecreasePrice]; 
+            _stickmanPrice.text = $"Buy: {(int)(stickmanStatsConfig.Price *(1 - (perkData.Value/100)))}";
         }
 
         private void InitAlertEvents()

@@ -206,7 +206,7 @@ namespace Models.Merge
         {
             if ((PlayerUnitTypeEnum) _carryingItem.itemId == _dataCentralService.PumpingDataModel.MaxStickmanLevel.Value)
             {
-                _dataCentralService.PumpingDataModel.UpgradeMaxStickmanLevel();
+                if(_dataCentralService.PumpingDataModel.MaxStickmanLevel.Value != PlayerUnitTypeEnum.Twenty) _dataCentralService.PumpingDataModel.UpgradeMaxStickmanLevel();
                 _dataCentralService.SaveFull();
             }
 
