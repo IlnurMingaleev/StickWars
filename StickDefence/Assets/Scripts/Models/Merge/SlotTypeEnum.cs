@@ -4,6 +4,7 @@
     {
         None,
         Attack,
-        Peaceful
+        Peaceful,
+        TrashBin
     }
 }

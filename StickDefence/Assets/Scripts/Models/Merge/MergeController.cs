@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Enums;
 using I2.Loc;
@@ -5,9 +6,12 @@ using Models.Battle;
 using Models.DataModels;
 using Models.Timers;
 using TonkoGames.Controllers.Core;
+using TonkoGames.StateMachine;
+using TonkoGames.StateMachine.Enums;
 using UI.Content.Battle;
 using UI.UIManager;
 using UI.Windows;
+using UniRx;
 using UnityEngine;
 using VContainer;
 
@@ -24,36 +28,74 @@ namespace Models.Merge
         [SerializeField] private ItemInfo _itemDummyPrefab;
         private Camera _mainCamera;
         public static MergeController instance;
-        
+
         public Slot[] slots;
 
         private Vector3 _target;
-        private ItemInfo carryingItem;
+        private ItemInfo _carryingItem;
 
         private Dictionary<int, Slot> slotDictionary;
         [Inject] private ConfigManager _configManager;
         [Inject] private IDataCentralService _dataCentralService;
         [Inject] private IWindowManager _windowManager;
-        [Inject] private ITimerService _timerService;
+        [Inject] private ICoreStateMachine _coreStateMachine;
 
+        private CompositeDisposable _moveDisposable = new CompositeDisposable();
+        private CompositeDisposable _mainDisposable = new CompositeDisposable();
         private void Awake()
         {
-          
+
             instance = this;
             Utils.InitResources();
         }
 
         private void Init()
         {
+            SubscribeToMouseEvents();
             foreach (var slot in slots)
             {
-                var playerUnitType = _dataCentralService.MapStageDataModel.SlotItems[slot.SlotIdType].PlayerUnitType; 
-              
-                if(playerUnitType == PlayerUnitTypeEnum.None)
-                     continue;
-                CreateSlot(slot, (int)playerUnitType);
+                var playerUnitType = _dataCentralService.MapStageDataModel.SlotItems[slot.SlotIdType].PlayerUnitType;
+
+                if (playerUnitType == PlayerUnitTypeEnum.None)
+                    continue;
+                CreateSlotItem(slot, (int) playerUnitType);
+            }
+
+            _coreStateMachine.RunTimeStateMachine.RunTimeState.Subscribe(state => OnRuntimeStateChange(state))
+                .AddTo(_mainDisposable);
+        }
+
+        private void OnRuntimeStateChange(RunTimeStateEnum state)
+        {
+            if (state == RunTimeStateEnum.Pause)
+            {
+                if(_carryingItem != null)OnItemCarryFail();
+                UnsubscribeFromMouseEvents();
+            }
+            else if (state == RunTimeStateEnum.Play)
+            {
+                SubscribeToMouseEvents();
             }
         }
+
+        private void SubscribeToMouseEvents()
+        {
+            foreach (var slot in slots)
+            {
+                slot.OnSlotClick += OnSlotClick;
+                slot.OnSlotUp += OnReleaseSlotClick;
+            }
+        }
+
+        private void UnsubscribeFromMouseEvents()
+        {
+            foreach (var slot in slots)
+            {
+                slot.OnSlotClick -= OnSlotClick;
+                slot.OnSlotUp -= OnReleaseSlotClick;
+            }
+        }
+
 
         private void Start()
         {
@@ -65,143 +107,128 @@ namespace Models.Merge
                 slots[i].SetId(i);
                 slotDictionary.Add(i, slots[i]);
             }
+
             Init();
         }
-
-        //handle user input
-        private void Update() 
+        
+        void OnReleaseSlotClick(Slot mouseClickSlot)
         {
-            if (UnityEngine.Input.GetMouseButtonDown(0))
-            {
-                SendRayCast();
-            }
-
-            if ((UnityEngine.Input.GetMouseButton(0)) && carryingItem)
-            {
-                OnItemSelected();
-            }
-
-            if (UnityEngine.Input.GetMouseButtonUp(0))
-            {
-                //Drop item
-                SendRayCast();
-            }
-            
-        }
-
-        void SendRayCast()
-        {
+            Slot slot = mouseClickSlot;
             RaycastHit2D hit = Physics2D.Raycast(_mainCamera.ScreenToWorldPoint(UnityEngine.Input.mousePosition), Vector2.zero);
- 
-            //we hit something
-            if(hit.collider != null)
+           if(hit.collider!= null)
+           {
+               if (hit.collider.TryGetComponent(out Slot raycastSlot))
+               {
+                   slot = raycastSlot;
+               }
+
+           }
+            if (slot.SlotType == SlotTypeEnum.TrashBin)
             {
-                if(hit.collider.gameObject.TryGetComponent(out TrashBinSlot trashBin))
+                if (_carryingItem != null)
                 {
-                    if (carryingItem != null)
-                    {
-                        Destroy(carryingItem.gameObject);
-                        SetGrabbedFlag();
-                    }
+                    Destroy(_carryingItem.gameObject);
+                    SetGrabbedFlag();
                 }
-                //we are grabbing the item in a full slot
-                if (hit.collider.gameObject.TryGetComponent(out Slot slot))
-                {
-                    if (slot.State == SlotState.Full && carryingItem == null)
-                    {
-                        carryingItem = Instantiate(_itemDummyPrefab, transform);
-                        carryingItem.transform.position = slot.transform.position;
-                        carryingItem.transform.localScale = Vector3.one;
-                        
-                        carryingItem.InitDummy(slot.Id, slot.CurrentItem.Id,_configManager);
-
-                        slot.ItemGrabbed();
-
-                    }
-
-                    //we are dropping an item to empty slot
-                    else if (slot.State == SlotState.Empty && carryingItem != null)
-                    {
-                        CreateSlot(slot, carryingItem.itemId);
-                        SetGrabbedFlag();
-                        Destroy(carryingItem.gameObject);
-                    }
-
-                    //we are dropping to full
-                    else if (slot.State == SlotState.Full && carryingItem != null)
-                    {
-                        //check item in the slot
-                        if (slot.CurrentItem.Id == carryingItem.itemId)
-                        {
-                            print("merged");
-                            OnItemMergedWithTarget(slot.Id);
-                        }
-                        else
-                        {
-                            SwitchItems(slot);
-                        }
-                    }
-                }
-
             }
             else
             {
-                if (!carryingItem)
+                if (slot.State == SlotState.Empty && _carryingItem != null)
                 {
-                    return;
+                    CreateSlotItem(slot, _carryingItem.itemId);
+                    SetGrabbedFlag();
+                    Destroy(_carryingItem.gameObject);
                 }
-                OnItemCarryFail();
+                else if (slot.State == SlotState.Full && _carryingItem != null)
+                {
+                    //check item in the slot
+                    if (slot.CurrentItem.Id == _carryingItem.itemId)
+                    {
+                        print("merged");
+                        OnItemMergedWithTarget(slot.Id);
+                    }
+                    else
+                    {
+                        SwitchItems(slot);
+                    }
+                }
+                else
+                {
+                    if (!_carryingItem)
+                    {
+                        return;
+                    }
+
+                    OnItemCarryFail();
+                }
+                _moveDisposable.Clear();
             }
-            
+        }
+
+        void OnSlotClick(Slot slot)
+        {
+            if (slot.State == SlotState.Full && _carryingItem == null)
+            {
+                _carryingItem = Instantiate(_itemDummyPrefab, transform);
+                _carryingItem.transform.position = slot.transform.position;
+                _carryingItem.transform.localScale = Vector3.one;
+
+                _carryingItem.InitDummy(slot.Id, slot.CurrentItem.Id, _configManager);
+
+                slot.ItemGrabbed();
+                Observable.EveryUpdate().Subscribe(_ => { OnItemSelected();}).AddTo(_moveDisposable);
+            }
         }
 
         private void SwitchItems(Slot slot)
         {
             var targetSlot = GetSlotById(slot.Id);
-            var startSlot = GetSlotById(carryingItem.slotId);
-            CreateSlot(startSlot, targetSlot.CurrentItem.Id);
+            var startSlot = GetSlotById(_carryingItem.slotId);
+            CreateSlotItem(startSlot, targetSlot.CurrentItem.Id);
             targetSlot.DestroyItem();
-            CreateSlot(targetSlot, carryingItem.itemId);
+            CreateSlotItem(targetSlot, _carryingItem.itemId);
             SetGrabbedFlag();
-            Destroy(carryingItem.gameObject);
+            Destroy(_carryingItem.gameObject);
         }
 
         void OnItemSelected()
         {
-            _target = Camera.main.ScreenToWorldPoint(UnityEngine.Input.mousePosition);
+            if(_carryingItem == null) return;
+            _target = _mainCamera.ScreenToWorldPoint(UnityEngine.Input.mousePosition);
             _target.z = 0;
             var delta = 10 * Time.deltaTime;
-        
+
             delta *= Vector3.Distance(transform.position, _target);
-            carryingItem.transform.position = Vector3.MoveTowards(carryingItem.transform.position, _target, delta);
+            _carryingItem.transform.position = Vector3.MoveTowards(_carryingItem.transform.position, _target, delta);
         }
 
         void OnItemMergedWithTarget(int targetSlotId)
         {
-            if ((PlayerUnitTypeEnum) carryingItem.itemId == _dataCentralService.PumpingDataModel.MaxStickmanLevel.Value)
+            if ((PlayerUnitTypeEnum) _carryingItem.itemId == _dataCentralService.PumpingDataModel.MaxStickmanLevel.Value)
             {
                 _dataCentralService.PumpingDataModel.UpgradeMaxStickmanLevel();
                 _dataCentralService.SaveFull();
-            } 
+            }
+
             var slot = GetSlotById(targetSlotId);
             slot.DestroyItem();
-            CreateSlot(slot, carryingItem.itemId + 1);
+            CreateSlotItem(slot, _carryingItem.itemId + 1);
             SetGrabbedFlag();
-            Destroy(carryingItem.gameObject);
+            Destroy(_carryingItem.gameObject);
         }
 
         private void SetGrabbedFlag()
         {
-            var prevSlot = GetSlotById(carryingItem.slotId);
+            var prevSlot = GetSlotById(_carryingItem.slotId);
             prevSlot.SetIsItemGrabbed(false);
         }
 
         void OnItemCarryFail()
         {
-            var slot = GetSlotById(carryingItem.slotId);
-            CreateSlot(slot, carryingItem.itemId);
+            var slot = GetSlotById(_carryingItem.slotId);
+            CreateSlotItem(slot, _carryingItem.itemId);
             SetGrabbedFlag();
-            Destroy(carryingItem.gameObject);
+            Destroy(_carryingItem.gameObject);
         }
 
         void PlaceRandomItem()
@@ -217,11 +244,11 @@ namespace Models.Merge
 
             while (slot.State == SlotState.Full)
             {
-                rand = UnityEngine.Random.Range(0, slots.Length- 5);
+                rand = UnityEngine.Random.Range(0, slots.Length - 5);
                 slot = GetSlotById(rand);
             }
 
-            CreateSlot(slot, 0);
+            CreateSlotItem(slot, 0);
         }
 
         public void PlaceDefinedItem(int level)
@@ -229,13 +256,14 @@ namespace Models.Merge
             if (AllSlotsOccupied())
             {
                 Debug.Log("No empty slot available!");
-                _windowManager.GetWindow<PopupMessageWindow>().Init(ScriptLocalization.Messages.WarningTitle, ScriptLocalization.Messages.SlotsFull);
-                _windowManager.Show<PopupMessageWindow>(); 
+                _windowManager.GetWindow<PopupMessageWindow>().Init(ScriptLocalization.Messages.WarningTitle,
+                    ScriptLocalization.Messages.SlotsFull);
+                _windowManager.Show<PopupMessageWindow>();
                 return;
             }
-        
+
             Slot slot = null;
-            for (int index = 0; index < slots.Length - 5 ; index++)
+            for (int index = 0; index < slots.Length - 5; index++)
             {
                 slot = GetSlotById(index);
                 if (slot.State == SlotState.Empty && (!slot.IsItemGrabbed))
@@ -244,12 +272,12 @@ namespace Models.Merge
                 }
 
             }
-            
-            CreateSlot(slot, level);
+
+            CreateSlotItem(slot, level);
         }
 
 
-       public  bool AllSlotsOccupied()
+        public bool AllSlotsOccupied()
         {
             for (var i = 0; i < slots.Length - 5; i++)
             {
@@ -258,6 +286,7 @@ namespace Models.Merge
                     return false;
                 }
             }
+
             //no slot empty 
             return true;
         }
@@ -281,12 +310,12 @@ namespace Models.Merge
                         if (slots[innerSlotIndex].State == SlotState.Full)
                         {
                             PlayerUnitTypeEnum unitType = slots[slotIndex].CurrentItem.UnitTypeEnum;
-                            PlayerUnitTypeEnum innerUnitType= slots[innerSlotIndex].CurrentItem.UnitTypeEnum;
-                            if( unitType == innerUnitType && unitType != PlayerUnitTypeEnum.Twenty)
+                            PlayerUnitTypeEnum innerUnitType = slots[innerSlotIndex].CurrentItem.UnitTypeEnum;
+                            if (unitType == innerUnitType && unitType != PlayerUnitTypeEnum.Twenty)
                             {
-                                slots[slotIndex].DestroyItem(); 
+                                slots[slotIndex].DestroyItem();
                                 slots[innerSlotIndex].DestroyItem();
-                                CreateSlot(slots[innerSlotIndex], (int)unitType + 1);
+                                CreateSlotItem(slots[innerSlotIndex], (int) unitType + 1);
                                 return;
                             }
                         }
@@ -295,12 +324,19 @@ namespace Models.Merge
                 }
             }
         }
-        
+
         #endregion
 
-        private void CreateSlot(Slot slot, int id)
+        private void CreateSlotItem(Slot slot, int id)
         {
             slot.CreateItem(id, _playerUnitsBuilder, _dataCentralService);
+        }
+
+        private void OnDisable()
+        {
+            if(_carryingItem != null)OnItemCarryFail();
+            UnsubscribeFromMouseEvents();
+            _moveDisposable.Clear();
         }
     }
 }

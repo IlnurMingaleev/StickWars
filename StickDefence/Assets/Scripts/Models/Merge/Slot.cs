@@ -3,6 +3,7 @@ using Enums;
 using Models.Battle;
 using Models.DataModels;
 using Models.DataModels.Data;
+using UniRx;
 using UnityEngine;
 
 namespace Models.Merge
@@ -20,21 +21,19 @@ namespace Models.Merge
         public bool IsItemGrabbed { get; private set; }
         
         private IDataCentralService _dataCentralService;
+        
 
-        public Action<Slot> OnSlotClick;
-        public Action<Slot> OnSlotUp;
+        public event Action<Slot> OnSlotClick;
+        public event Action<Slot> OnSlotUp;
+        
 
-        public void CreateItem(int id, IPlayerUnitsBuilderTwo playerUnitBuilder, IDataCentralService dataCentralService,
-            Action<Slot> onSlotClick = null, Action<Slot> onSlotUp = null) 
+        public void CreateItem(int id, IPlayerUnitsBuilderTwo playerUnitBuilder, IDataCentralService dataCentralService) 
         {
             _dataCentralService = dataCentralService;
             
             CurrentItem = Instantiate(_itemPrefab, transform);
             
             CurrentItem.Init(id, this, playerUnitBuilder);
-            OnSlotClick = onSlotClick;
-            OnSlotUp = onSlotUp;
-            
             _dataCentralService.MapStageDataModel.UpdateSlotItemData(
                new SlotItemData()
                {
