@@ -46788,6 +46788,7 @@ GameObject:
   - component: {fileID: 2290676731367406484}
   - component: {fileID: 806510650784300051}
   - component: {fileID: 2139824796604386092}
+  - component: {fileID: 2024803307977872832}
   m_Layer: 0
   m_Name: TrashBin
   m_TagString: Untagged
@@ -46922,6 +46923,35 @@ MonoBehaviour:
   _itemPrefab: {fileID: 0}
   <SlotType>k__BackingField: 3
   <SlotIdType>k__BackingField: 0
+--- !u!114 &2024803307977872832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7933624892612316941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2139824796604386092}
+          m_TargetAssemblyTypeName: Models.Merge.Slot, Assembly-CSharp
+          m_MethodName: OnPointerUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &8169797943637860769
 GameObject:
   m_ObjectHideFlags: 0
@@ -76654,14 +76684,17 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9175619701168879490, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7161279036661531093}
   m_SourcePrefab: {fileID: 100100000, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
 --- !u!114 &332561394882028735 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 149754862174182667, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
   m_PrefabInstance: {fileID: 471039111104575924}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 8781788460194926134}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b725f37000b7549f1812f7263fe585d8, type: 3}
@@ -76672,6 +76705,56 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9175619701168879489, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
   m_PrefabInstance: {fileID: 471039111104575924}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8781788460194926134 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9175619701168879490, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
+  m_PrefabInstance: {fileID: 471039111104575924}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7161279036661531093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8781788460194926134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 332561394882028735}
+          m_TargetAssemblyTypeName: Models.Merge.Slot, Assembly-CSharp
+          m_MethodName: OnPointerDown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 332561394882028735}
+          m_TargetAssemblyTypeName: Models.Merge.Slot, Assembly-CSharp
+          m_MethodName: OnPointerUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &937379052050477439
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -76807,19 +76890,72 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9175619701168879490, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6220705304045231708}
   m_SourcePrefab: {fileID: 100100000, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
 --- !u!114 &1087113573217070196 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 149754862174182667, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
   m_PrefabInstance: {fileID: 937379052050477439}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 8238320432741304061}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b725f37000b7549f1812f7263fe585d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &8238320432741304061 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9175619701168879490, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
+  m_PrefabInstance: {fileID: 937379052050477439}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6220705304045231708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8238320432741304061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1087113573217070196}
+          m_TargetAssemblyTypeName: Models.Merge.Slot, Assembly-CSharp
+          m_MethodName: OnPointerDown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1087113573217070196}
+          m_TargetAssemblyTypeName: Models.Merge.Slot, Assembly-CSharp
+          m_MethodName: OnPointerUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!4 &8238320432741304062 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9175619701168879489, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
@@ -76964,19 +77100,72 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9175619701168879490, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5059069733052291767}
   m_SourcePrefab: {fileID: 100100000, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
 --- !u!114 &1342114334801461193 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 149754862174182667, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
   m_PrefabInstance: {fileID: 1203636068781089474}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 8062135065069770048}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b725f37000b7549f1812f7263fe585d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &8062135065069770048 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9175619701168879490, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
+  m_PrefabInstance: {fileID: 1203636068781089474}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5059069733052291767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8062135065069770048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1342114334801461193}
+          m_TargetAssemblyTypeName: Models.Merge.Slot, Assembly-CSharp
+          m_MethodName: OnPointerDown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1342114334801461193}
+          m_TargetAssemblyTypeName: Models.Merge.Slot, Assembly-CSharp
+          m_MethodName: OnPointerUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!4 &8062135065069770051 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9175619701168879489, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
@@ -77219,19 +77408,72 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9175619701168879490, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4483733458958729804}
   m_SourcePrefab: {fileID: 100100000, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
 --- !u!114 &2169836875412815484 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 149754862174182667, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
   m_PrefabInstance: {fileID: 2020082568371741559}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 7160336260559443189}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b725f37000b7549f1812f7263fe585d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &7160336260559443189 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9175619701168879490, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
+  m_PrefabInstance: {fileID: 2020082568371741559}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4483733458958729804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7160336260559443189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2169836875412815484}
+          m_TargetAssemblyTypeName: Models.Merge.Slot, Assembly-CSharp
+          m_MethodName: OnPointerDown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2169836875412815484}
+          m_TargetAssemblyTypeName: Models.Merge.Slot, Assembly-CSharp
+          m_MethodName: OnPointerUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!4 &7160336260559443190 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9175619701168879489, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
@@ -77372,19 +77614,72 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9175619701168879490, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6742732402840376365}
   m_SourcePrefab: {fileID: 100100000, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
 --- !u!114 &3324015660068254981 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 149754862174182667, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
   m_PrefabInstance: {fileID: 3185540140654372878}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 6008670936516829068}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b725f37000b7549f1812f7263fe585d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &6008670936516829068 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9175619701168879490, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
+  m_PrefabInstance: {fileID: 3185540140654372878}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6742732402840376365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6008670936516829068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3324015660068254981}
+          m_TargetAssemblyTypeName: Models.Merge.Slot, Assembly-CSharp
+          m_MethodName: OnPointerDown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3324015660068254981}
+          m_TargetAssemblyTypeName: Models.Merge.Slot, Assembly-CSharp
+          m_MethodName: OnPointerUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!4 &6008670936516829071 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9175619701168879489, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
@@ -77529,19 +77824,72 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9175619701168879490, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8884755307307357148}
   m_SourcePrefab: {fileID: 100100000, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
 --- !u!114 &3460998694693710280 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 149754862174182667, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
   m_PrefabInstance: {fileID: 3608481409603777731}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 5568066769139499841}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b725f37000b7549f1812f7263fe585d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &5568066769139499841 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9175619701168879490, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
+  m_PrefabInstance: {fileID: 3608481409603777731}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8884755307307357148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5568066769139499841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3460998694693710280}
+          m_TargetAssemblyTypeName: Models.Merge.Slot, Assembly-CSharp
+          m_MethodName: OnPointerDown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3460998694693710280}
+          m_TargetAssemblyTypeName: Models.Merge.Slot, Assembly-CSharp
+          m_MethodName: OnPointerUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!4 &5568066769139499842 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9175619701168879489, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
@@ -77682,14 +78030,17 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9175619701168879490, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4278945713445092621}
   m_SourcePrefab: {fileID: 100100000, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
 --- !u!114 &3956126146351761034 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 149754862174182667, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
   m_PrefabInstance: {fileID: 3815378491485526913}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 5450669487098833923}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b725f37000b7549f1812f7263fe585d8, type: 3}
@@ -77700,6 +78051,56 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9175619701168879489, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
   m_PrefabInstance: {fileID: 3815378491485526913}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5450669487098833923 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9175619701168879490, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
+  m_PrefabInstance: {fileID: 3815378491485526913}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4278945713445092621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5450669487098833923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3956126146351761034}
+          m_TargetAssemblyTypeName: Models.Merge.Slot, Assembly-CSharp
+          m_MethodName: OnPointerDown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3956126146351761034}
+          m_TargetAssemblyTypeName: Models.Merge.Slot, Assembly-CSharp
+          m_MethodName: OnPointerUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &4653856402134140688
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -77835,19 +78236,72 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9175619701168879490, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2891545254008453516}
   m_SourcePrefab: {fileID: 100100000, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
 --- !u!4 &4594665842148192401 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9175619701168879489, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
   m_PrefabInstance: {fileID: 4653856402134140688}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4594665842148192402 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9175619701168879490, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
+  m_PrefabInstance: {fileID: 4653856402134140688}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2891545254008453516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4594665842148192402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4792350061376150043}
+          m_TargetAssemblyTypeName: Models.Merge.Slot, Assembly-CSharp
+          m_MethodName: OnPointerDown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4792350061376150043}
+          m_TargetAssemblyTypeName: Models.Merge.Slot, Assembly-CSharp
+          m_MethodName: OnPointerUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &4792350061376150043 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 149754862174182667, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
   m_PrefabInstance: {fileID: 4653856402134140688}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 4594665842148192402}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b725f37000b7549f1812f7263fe585d8, type: 3}
@@ -77988,8 +78442,61 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9175619701168879490, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7577182616100765609}
   m_SourcePrefab: {fileID: 100100000, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
+--- !u!1 &4139524390686710336 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9175619701168879490, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
+  m_PrefabInstance: {fileID: 5054395582476283330}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7577182616100765609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4139524390686710336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4913668262669775049}
+          m_TargetAssemblyTypeName: Models.Merge.Slot, Assembly-CSharp
+          m_MethodName: OnPointerDown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4913668262669775049}
+          m_TargetAssemblyTypeName: Models.Merge.Slot, Assembly-CSharp
+          m_MethodName: OnPointerUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!4 &4139524390686710339 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9175619701168879489, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
@@ -78000,7 +78507,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 149754862174182667, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
   m_PrefabInstance: {fileID: 5054395582476283330}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 4139524390686710336}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b725f37000b7549f1812f7263fe585d8, type: 3}
@@ -78141,8 +78648,61 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9175619701168879490, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 375251315899284525}
   m_SourcePrefab: {fileID: 100100000, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
+--- !u!1 &3590936319415232304 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9175619701168879490, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
+  m_PrefabInstance: {fileID: 5657585521039511730}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &375251315899284525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3590936319415232304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5519092411545128377}
+          m_TargetAssemblyTypeName: Models.Merge.Slot, Assembly-CSharp
+          m_MethodName: OnPointerDown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5519092411545128377}
+          m_TargetAssemblyTypeName: Models.Merge.Slot, Assembly-CSharp
+          m_MethodName: OnPointerUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!4 &3590936319415232307 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9175619701168879489, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
@@ -78153,7 +78713,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 149754862174182667, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
   m_PrefabInstance: {fileID: 5657585521039511730}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 3590936319415232304}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b725f37000b7549f1812f7263fe585d8, type: 3}
@@ -78372,19 +78932,72 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9175619701168879490, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5901425047797119058}
   m_SourcePrefab: {fileID: 100100000, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
 --- !u!4 &3065753651252079016 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9175619701168879489, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
   m_PrefabInstance: {fileID: 6187355669667225129}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3065753651252079019 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9175619701168879490, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
+  m_PrefabInstance: {fileID: 6187355669667225129}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5901425047797119058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3065753651252079019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6325849333178827554}
+          m_TargetAssemblyTypeName: Models.Merge.Slot, Assembly-CSharp
+          m_MethodName: OnPointerDown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6325849333178827554}
+          m_TargetAssemblyTypeName: Models.Merge.Slot, Assembly-CSharp
+          m_MethodName: OnPointerUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &6325849333178827554 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 149754862174182667, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
   m_PrefabInstance: {fileID: 6187355669667225129}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 3065753651252079019}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b725f37000b7549f1812f7263fe585d8, type: 3}
@@ -78525,19 +79138,72 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9175619701168879490, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5324388626496393470}
   m_SourcePrefab: {fileID: 100100000, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
 --- !u!4 &3002442985185380528 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9175619701168879489, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
   m_PrefabInstance: {fileID: 6268034848429555505}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3002442985185380531 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9175619701168879490, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
+  m_PrefabInstance: {fileID: 6268034848429555505}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5324388626496393470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3002442985185380531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6118282191822529082}
+          m_TargetAssemblyTypeName: Models.Merge.Slot, Assembly-CSharp
+          m_MethodName: OnPointerDown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6118282191822529082}
+          m_TargetAssemblyTypeName: Models.Merge.Slot, Assembly-CSharp
+          m_MethodName: OnPointerUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &6118282191822529082 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 149754862174182667, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
   m_PrefabInstance: {fileID: 6268034848429555505}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 3002442985185380531}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b725f37000b7549f1812f7263fe585d8, type: 3}
@@ -78678,19 +79344,72 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9175619701168879490, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6174593820565345978}
   m_SourcePrefab: {fileID: 100100000, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
 --- !u!4 &2745316032624383608 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9175619701168879489, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
   m_PrefabInstance: {fileID: 6435375458279088633}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2745316032624383611 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9175619701168879490, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
+  m_PrefabInstance: {fileID: 6435375458279088633}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6174593820565345978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2745316032624383611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6582858179061382386}
+          m_TargetAssemblyTypeName: Models.Merge.Slot, Assembly-CSharp
+          m_MethodName: OnPointerDown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6582858179061382386}
+          m_TargetAssemblyTypeName: Models.Merge.Slot, Assembly-CSharp
+          m_MethodName: OnPointerUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &6582858179061382386 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 149754862174182667, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
   m_PrefabInstance: {fileID: 6435375458279088633}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2745316032624383611}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b725f37000b7549f1812f7263fe585d8, type: 3}
@@ -78901,19 +79620,72 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9175619701168879490, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7852874162953446521}
   m_SourcePrefab: {fileID: 100100000, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
 --- !u!4 &1035083364707569161 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9175619701168879489, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
   m_PrefabInstance: {fileID: 8145608023099881864}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1035083364707569162 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9175619701168879490, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
+  m_PrefabInstance: {fileID: 8145608023099881864}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7852874162953446521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035083364707569162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8295360128433464451}
+          m_TargetAssemblyTypeName: Models.Merge.Slot, Assembly-CSharp
+          m_MethodName: OnPointerDown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8295360128433464451}
+          m_TargetAssemblyTypeName: Models.Merge.Slot, Assembly-CSharp
+          m_MethodName: OnPointerUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &8295360128433464451 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 149754862174182667, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
   m_PrefabInstance: {fileID: 8145608023099881864}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1035083364707569162}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b725f37000b7549f1812f7263fe585d8, type: 3}
@@ -79058,19 +79830,72 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9175619701168879490, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 452586850919944185}
   m_SourcePrefab: {fileID: 100100000, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
 --- !u!4 &851638807577422868 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9175619701168879489, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
   m_PrefabInstance: {fileID: 8396954338150964117}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &851638807577422871 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9175619701168879490, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
+  m_PrefabInstance: {fileID: 8396954338150964117}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &452586850919944185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851638807577422871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8544437057398654622}
+          m_TargetAssemblyTypeName: Models.Merge.Slot, Assembly-CSharp
+          m_MethodName: OnPointerDown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8544437057398654622}
+          m_TargetAssemblyTypeName: Models.Merge.Slot, Assembly-CSharp
+          m_MethodName: OnPointerUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &8544437057398654622 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 149754862174182667, guid: 8e259d0ae15d243d8b1b2ff3b4d87461, type: 3}
   m_PrefabInstance: {fileID: 8396954338150964117}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 851638807577422871}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b725f37000b7549f1812f7263fe585d8, type: 3}

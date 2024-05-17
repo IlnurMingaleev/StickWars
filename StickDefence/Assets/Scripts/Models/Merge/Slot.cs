@@ -105,13 +105,13 @@ namespace Models.Merge
             }
         }
 
-        private void OnMouseDown()
+        public void OnPointerDown()
         {
             Debug.Log("OnMouseDown");
             OnSlotClick?.Invoke(this);
         }
 
-        private void OnMouseUp()
+        public void OnPointerUp()
         {
             Debug.Log("OnMouseUp");
             OnSlotUp?.Invoke(this);
