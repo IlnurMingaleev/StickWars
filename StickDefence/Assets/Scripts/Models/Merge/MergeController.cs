@@ -204,9 +204,15 @@ namespace Models.Merge
 
         void OnItemMergedWithTarget(int targetSlotId)
         {
+            if ((PlayerUnitTypeEnum) _carryingItem.itemId == PlayerUnitTypeEnum.Twenty)
+            {
+                _windowManager.GetWindow<BottomPanelWindow>().ShowMaxLevelReachedWarning();
+                OnItemCarryFail();
+                return;
+            }
             if ((PlayerUnitTypeEnum) _carryingItem.itemId == _dataCentralService.PumpingDataModel.MaxStickmanLevel.Value)
             {
-                if(_dataCentralService.PumpingDataModel.MaxStickmanLevel.Value != PlayerUnitTypeEnum.Twenty) _dataCentralService.PumpingDataModel.UpgradeMaxStickmanLevel();
+                _dataCentralService.PumpingDataModel.UpgradeMaxStickmanLevel();
                 _dataCentralService.SaveFull();
             }
 

@@ -30,7 +30,7 @@ namespace Models.GameRewards
             IsTurretOpen = true;
             IsTurretActiveChange?.Invoke(true);
     //        OnSecondTimerTurret(ConfigManager.Instance.TimersSO.GameTurretTimer);
-       //     _timerService.AddGameTimer(ConfigManager.Instance.TimersSO.GameTurretTimer, OnSecondTimerTurret, EndTurretTimer);
+       //     _boosterTimer.AddGameTimer(ConfigManager.Instance.TimersSO.GameTurretTimer, OnSecondTimerTurret, EndTurretTimer);
         }
 
         private void OnSecondTimerTurret(int value)
@@ -51,7 +51,7 @@ namespace Models.GameRewards
             IsDroneOpen = true;
             IsDroneActiveChange?.Invoke(true);
        //     OnSecondTimerDrone(ConfigManager.Instance.TimersSO.GameDroneTimer);
-       //     _timerService.AddGameTimer(ConfigManager.Instance.TimersSO.GameDroneTimer, OnSecondTimerDrone, EndDroneTimer);
+       //     _boosterTimer.AddGameTimer(ConfigManager.Instance.TimersSO.GameDroneTimer, OnSecondTimerDrone, EndDroneTimer);
         }
 
         private void OnSecondTimerDrone(int value){

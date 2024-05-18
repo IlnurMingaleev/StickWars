@@ -235,8 +235,8 @@ namespace UI.Windows
                 ScriptLocalization.Messages.NotEnoughFunds);
             _manager.Show<PopupMessageWindow>();
         }
-        
-        private void ShowMaxLevelReachedWarning()
+
+        public void ShowMaxLevelReachedWarning()
         {
             _manager.GetWindow<PopupMessageWindow>().Init(ScriptLocalization.Messages.WarningTitle,
                 ScriptLocalization.Messages.MaxLevel);

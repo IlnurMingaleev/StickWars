@@ -1,5 +1,6 @@
 ﻿using System;
 using Models.Timers;
+using Tools.GameTools;
 using UI.UIManager;
 using UI.Windows;
 
@@ -9,8 +10,8 @@ namespace Models.Battle.Boosters
     {
         private PlayerUnitsBuilder _unitsBuilder;
         private PlayerUnitsBuilderTwo _playerUnitsBuilderTwo;
-        public AttackSpeed(BoosterManager boosterManager, ITimerService timerService, IWindowManager windowManager, 
-            PlayerUnitsBuilderTwo playerUnitsBuilderTwo) : base(boosterManager, timerService, windowManager)
+        public AttackSpeed(BoosterManager boosterManager, CoroutineTimer boosterTimer, IWindowManager windowManager, 
+            PlayerUnitsBuilderTwo playerUnitsBuilderTwo) : base(boosterManager, boosterTimer, windowManager)
         {
             _playerUnitsBuilderTwo = playerUnitsBuilderTwo;
         }

@@ -20,6 +20,11 @@ namespace Tools.GameTools
 
         }
 
+        public void AddToExistingTimer(int milliseconds)
+        {
+            _currentMilliseconds += milliseconds;
+        }
+
         public IEnumerator TimerTick()
         {
             while (_currentMilliseconds > 0)

@@ -149,7 +149,7 @@ namespace Models.Battle
         // [Inject] private readonly IPlayerGameStats _playerGameStats;
         // 
         // [Inject] private readonly IDataCentralService _dataCentralService;
-        // [Inject] private readonly ITimerService _timerService;
+        // [Inject] private readonly ITimerService _boosterTimer;
         // [Inject] private readonly ISoundManager _soundManager;
         // [Inject] private readonly IWindowManager _windowManager;
         //
@@ -164,8 +164,8 @@ namespace Models.Battle
         //     var tankPumpingConfigModel = _configManager.PumpingConfigSo.TanksConfigModels[_playerGameStats.PlayerCharacterData.Damage.UnitType]
         //         .TankPumpingDatas[_playerGameStats.PlayerCharacterData.Damage.LevelPumping - 1];
         //     _tankModelView.TankVisual.InitHealthBar(_dataCentralService.SubData);
-        //     _tankModelView.InitHealthBar(_timerService, _soundManager, _coreStateMachine.RunTimeState, _playerGameStats.PlayerCharacterData.Damage.Rangefinder);
-        //     _playerTankModel = new PlayerTankModel(_tankModelView, _inputController, tankPumpingConfigModel, this, _timerService);
+        //     _tankModelView.InitHealthBar(_boosterTimer, _soundManager, _coreStateMachine.RunTimeState, _playerGameStats.PlayerCharacterData.Damage.Rangefinder);
+        //     _playerTankModel = new PlayerTankModel(_tankModelView, _inputController, tankPumpingConfigModel, this, _boosterTimer);
         //     _parallaxBackGround.InitHealthBar(_tankModelView.transform);
         //     _cameraView.InitHealthBar(_tankModelView.transform);
         //     MaxHealth = tankPumpingConfigModel.Health;

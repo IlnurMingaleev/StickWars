@@ -149,14 +149,14 @@ namespace Models.Battle
             /*switch (unitType)
             {
                 case PlayerUnitTypeEnum.PlayerOne:
-                    return new BasePlayerUnitUnitOne(unitView, _timerService, _soundManager);
+                    return new BasePlayerUnitUnitOne(unitView, _boosterTimer, _soundManager);
                 case PlayerUnitTypeEnum.PLayerTwo:
-                    return new BasePlayerUnitUnitTwo(unitView, _timerService, _soundManager);
+                    return new BasePlayerUnitUnitTwo(unitView, _boosterTimer, _soundManager);
                 case PlayerUnitTypeEnum.PLayerThree:
                     return new
             }#1#
             
-            //return new (unitView,  _soundManager,_timerService, _player.Pumping);
+            //return new (unitView,  _soundManager,_boosterTimer, _player.Pumping);
         }*/
         
         private void CreateProjectile(ProjectileView projectileView)

@@ -227,7 +227,7 @@ namespace Models.Battle
                 
             var dayGroup = DayGroups.Peek();
 
-            //_timerDayGroups = _timerService.AddGameTimer(dayGroup.Delay, null, EndTimerToSpawnGroup, false);
+            //_timerDayGroups = _boosterTimer.AddGameTimer(dayGroup.Delay, null, EndTimerToSpawnGroup, false);
             _coroutineTimer.InitAndStart((int) (dayGroup.Delay*1000), EndTimerToSpawnGroup);
               
         }

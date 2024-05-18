@@ -32,7 +32,7 @@ namespace Models.Attacking.TypesAttack
 
                 var isCritical = IsCritical();
 
-                if (projectile != null)
+                if (projectile != null&& TargetDamageable.GetTransformCenterPoint()!= null)
                 {
                     var predictCollisionPoint = projectile.transform.position.CalculatePredictCollision(
                         projectile.Speed,
