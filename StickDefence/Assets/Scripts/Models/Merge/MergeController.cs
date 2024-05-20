@@ -110,19 +110,21 @@ namespace Models.Merge
 
             Init();
         }
-        
-        void OnReleaseSlotClick(Slot mouseClickSlot)
+
+        private void OnReleaseSlotClick(Slot mouseClickSlot)
         {
-            Slot slot = mouseClickSlot;
-            RaycastHit2D hit = Physics2D.Raycast(_mainCamera.ScreenToWorldPoint(UnityEngine.Input.mousePosition), Vector2.zero);
-           if(hit.collider!= null)
-           {
+            var slot = mouseClickSlot;
+            var hit = Physics2D.Raycast(_mainCamera.ScreenToWorldPoint(UnityEngine.Input.mousePosition), Vector2.zero);
+          
+            if(hit.collider!= null)
+            {
                if (hit.collider.TryGetComponent(out Slot raycastSlot))
                {
                    slot = raycastSlot;
                }
 
-           }
+            }
+            
             if (slot.SlotType == SlotTypeEnum.TrashBin)
             {
                 if (_carryingItem != null)
@@ -133,23 +135,22 @@ namespace Models.Merge
             }
             else
             {
-                if (slot.State == SlotState.Empty && _carryingItem != null)
+                if (_carryingItem != null)
                 {
-                    CreateSlotItem(slot, _carryingItem.itemId);
-                    SetGrabbedFlag();
-                    Destroy(_carryingItem.gameObject);
-                }
-                else if (slot.State == SlotState.Full && _carryingItem != null)
-                {
-                    //check item in the slot
-                    if (slot.CurrentItem.Id == _carryingItem.itemId)
+                    switch (slot.State)
                     {
-                        print("merged");
-                        OnItemMergedWithTarget(slot.Id);
-                    }
-                    else
-                    {
-                        SwitchItems(slot);
+                        case SlotState.Empty:
+                            CreateSlotItem(slot, _carryingItem.itemId);
+                            SetGrabbedFlag();
+                            Destroy(_carryingItem.gameObject);
+                            break;
+                        
+                        case SlotState.Full:
+                            if (slot.CurrentItem.Id == _carryingItem.itemId)
+                                OnItemMergedWithTarget(slot.Id);
+                            else
+                                SwitchItems(slot);
+                            break;
                     }
                 }
                 else
@@ -161,6 +162,7 @@ namespace Models.Merge
 
                     OnItemCarryFail();
                 }
+                
                 _moveDisposable.Clear();
             }
         }
@@ -176,7 +178,7 @@ namespace Models.Merge
                 _carryingItem.InitDummy(slot.Id, slot.CurrentItem.Id, _configManager);
 
                 slot.ItemGrabbed();
-                Observable.EveryUpdate().Subscribe(_ => { OnItemSelected();}).AddTo(_moveDisposable);
+                Observable.EveryUpdate().Subscribe(_ => OnItemSelected()).AddTo(_moveDisposable);
             }
         }
 

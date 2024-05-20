@@ -21,8 +21,8 @@ namespace Anim.Battle
         
         public async UniTaskVoid LaunchAnimation()
         {
-            _playerFortressInstantiate.StartLaunchAnim();
-            await UniTask.WaitUntil(() => _playerFortressInstantiate.IsLaunchIsProgress);
+         //  _playerFortressInstantiate.StartLaunchAnim();
+       //     await UniTask.WaitUntil(() => _playerFortressInstantiate.IsLaunchIsProgress);
             await UniTask.Delay(TimeSpan.FromSeconds(SecondsWaitAfterLaunchAnim), ignoreTimeScale: false);
             _coreStateMachine.BattleStateMachine.SetBattleState(BattleStateEnum.StartBattle);
         }
