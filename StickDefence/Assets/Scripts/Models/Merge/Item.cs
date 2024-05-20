@@ -11,6 +11,8 @@ namespace Models.Merge
         
         private Slot _parentSlot;
         private PlayerUnitView _unitGameObject;
+
+        public Slot ParentSlot => _parentSlot;
         
         public int Id { get; private set; }
         public PlayerUnitTypeEnum UnitTypeEnum { get; private set; }

@@ -274,7 +274,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1
+  m_text: 11
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c7c26a51e56857f4686ed5efa400d8d2, type: 2}
   m_sharedMaterial: {fileID: -5775674566100319267, guid: c7c26a51e56857f4686ed5efa400d8d2, type: 2}
@@ -491,7 +491,7 @@ GameObject:
   - component: {fileID: 4757968482565009768}
   - component: {fileID: -9187576295333667636}
   m_Layer: 7
-  m_Name: LVL1
+  m_Name: LVL11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -530,7 +530,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <PosAttack>k__BackingField: {fileID: 5585230998466015193}
   <PosSpawnProjectile>k__BackingField: {fileID: 0}
-  <AttackRange>k__BackingField: 450
+  <AttackRange>k__BackingField: 40
   <ContactFilter>k__BackingField:
     useTriggers: 0
     useLayerMask: 1
