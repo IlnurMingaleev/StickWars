@@ -46,7 +46,7 @@ namespace Models.Controllers.Skills
         {
             _enemyLayer = LayerMask.NameToLayer("Enemy");
             _enemyLayerMask = (1 << _enemyLayer);
-            _explosionRadius = 80f;
+            _explosionRadius = 4f;
             _disposable.Clear();
             _coreStateMachine.RunTimeStateMachine.RunTimeState.Subscribe(_ => OnRunTimeStateSwitch(_))
                 .AddTo(_disposable);
