@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &80519268729907509
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 509278606775972716, guid: 3b76f827684d86945b06089e8389fbfc, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 509278606775972716, guid: 3b76f827684d86945b06089e8389fbfc, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4463234257800567346, guid: 3b76f827684d86945b06089e8389fbfc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4463234257800567346, guid: 3b76f827684d86945b06089e8389fbfc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4463234257800567346, guid: 3b76f827684d86945b06089e8389fbfc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4463234257800567346, guid: 3b76f827684d86945b06089e8389fbfc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4463234257800567346, guid: 3b76f827684d86945b06089e8389fbfc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4463234257800567346, guid: 3b76f827684d86945b06089e8389fbfc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4463234257800567346, guid: 3b76f827684d86945b06089e8389fbfc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4463234257800567346, guid: 3b76f827684d86945b06089e8389fbfc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4463234257800567346, guid: 3b76f827684d86945b06089e8389fbfc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4463234257800567346, guid: 3b76f827684d86945b06089e8389fbfc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6040119936875299553, guid: 3b76f827684d86945b06089e8389fbfc, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6229535606157526746, guid: 3b76f827684d86945b06089e8389fbfc, type: 3}
+      propertyPath: m_Name
+      value: Capman Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7581155958676126060, guid: 3b76f827684d86945b06089e8389fbfc, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 2ee24af1fa492c94c94e15801d134ce5, type: 2}
+    - target: {fileID: 8819244946870228545, guid: 3b76f827684d86945b06089e8389fbfc, type: 3}
+      propertyPath: initialSkinName
+      value: greenmask
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3b76f827684d86945b06089e8389fbfc, type: 3}

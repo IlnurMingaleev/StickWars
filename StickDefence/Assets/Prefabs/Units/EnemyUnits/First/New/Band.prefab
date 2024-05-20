@@ -306,7 +306,7 @@ Transform:
   m_GameObject: {fileID: 2957990166730104373}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.96, y: 1.8, z: 0}
+  m_LocalPosition: {x: 1.08, y: 1.806, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -434,7 +434,7 @@ MonoBehaviour:
   skeletonDataAsset: {fileID: 11400000, guid: 05356f0fcb80d6b48b07f9fb3dd83aa9, type: 2}
   initialSkinName: band
   fixPrefabOverrideViaMeshFilter: 2
-  initialFlipX: 1
+  initialFlipX: 0
   initialFlipY: 0
   updateWhenInvisible: 3
   separatorSlotNames: []
@@ -577,7 +577,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.12, y: 0.12, z: 0.12}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6763861916387599452}
   m_Father: {fileID: 2694818721784827125}
@@ -764,7 +764,7 @@ MonoBehaviour:
   _maxDistance: 0.1
   _movementDirection: 1
   _scalableBodyX: {fileID: 6763861916387599452}
-  _isBodyLookLeft: 1
+  _isBodyLookLeft: 0
 --- !u!114 &7518601619015936490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -830,7 +830,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <PosAttack>k__BackingField: {fileID: 455957511960908655}
   <PosSpawnProjectile>k__BackingField: {fileID: 455957511960908655}
-  <AttackRange>k__BackingField: 2
+  <AttackRange>k__BackingField: 1
   <ContactFilter>k__BackingField:
     useTriggers: 0
     useLayerMask: 1
