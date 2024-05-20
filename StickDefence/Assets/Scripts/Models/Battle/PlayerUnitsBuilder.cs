@@ -18,12 +18,12 @@ using Views.Units.Units;
 
 namespace Models.Battle
 {
-    public interface IPlayerUnitsBuilderTwo
+    public interface IPlayerUnitsBuilder
     {
         PlayerUnitView InitPlayerUnit(PlayerUnitTypeEnum playerUnitType, Transform parent, SlotTypeEnum slotTypeEnum);
     }
 
-    public class PlayerUnitsBuilder : MonoBehaviour, IPlayerUnitsBuilderTwo
+    public class PlayerUnitsBuilder : MonoBehaviour, IPlayerUnitsBuilder
     {
 
         [Inject] private readonly ICoreStateMachine _coreStateMachine;

@@ -1,11 +1,12 @@
 ﻿ using UnityEngine;
+ using UnityEngine.Serialization;
 
  namespace Anim.Battle.Fortress
 {
     public class BattleFortressLaunch : MonoBehaviour
     {
         [SerializeField] private Animator _animator;
-        [SerializeField] private FortressCallback _fortressCallback;
+        [FormerlySerializedAs("_fortressCallback")] [SerializeField] private PlayerUnitCallback playerUnitCallback;
 
         public bool IsLaunchIsProgress { get; private set; }
         public Animator Animator => _animator;
@@ -15,12 +16,12 @@
 
         private void OnEnable()
         {
-            _fortressCallback.EndLaunchAnim += EndLaunchAnim;
+            playerUnitCallback.EndAttackAnim += EndAttackAnim;
         }
 
         private void OnDisable()
         {
-            _fortressCallback.EndLaunchAnim -= EndLaunchAnim;
+            playerUnitCallback.EndAttackAnim -= EndAttackAnim;
         }
 
         public void StartPrepare()
@@ -34,7 +35,7 @@
             _animator.SetTrigger(Attack);
         }
 
-        private void EndLaunchAnim()
+        private void EndAttackAnim()
         {
             IsLaunchIsProgress = false;
             SetDefault();

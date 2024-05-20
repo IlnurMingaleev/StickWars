@@ -114,16 +114,17 @@ namespace Models.Merge
         private void OnReleaseSlotClick(Slot mouseClickSlot)
         {
             var slot = mouseClickSlot;
-            var hit = Physics2D.Raycast(_mainCamera.ScreenToWorldPoint(UnityEngine.Input.mousePosition), Vector2.zero);
-          
-            if(hit.collider!= null)
+            if (Physics.Raycast(_mainCamera.ScreenToWorldPoint(UnityEngine.Input.mousePosition), Vector3.forward,
+                    out RaycastHit hit, 100f))
             {
-               if (hit.collider.TryGetComponent(out Slot raycastSlot))
-               {
-                   slot = raycastSlot;
-               }
-
+                if (hit.collider.TryGetComponent(out Slot raycastSlot))
+                {
+                    slot = raycastSlot;
+                }
             }
+            
+          
+           
             
             if (slot.SlotType == SlotTypeEnum.TrashBin)
             {

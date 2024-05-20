@@ -16,7 +16,7 @@ namespace Models.Merge
         
         public int Id { get; private set; }
         public PlayerUnitTypeEnum UnitTypeEnum { get; private set; }
-        public void Init(int id, Slot slot, IPlayerUnitsBuilderTwo playerBuilder)
+        public void Init(int id, Slot slot, IPlayerUnitsBuilder playerBuilder)
         {
             Id = id;
             _parentSlot = slot;

@@ -27,7 +27,7 @@ namespace Models.Merge
         public event Action<Slot> OnSlotUp;
         
 
-        public void CreateItem(int id, IPlayerUnitsBuilderTwo playerUnitBuilder, IDataCentralService dataCentralService) 
+        public void CreateItem(int id, IPlayerUnitsBuilder playerUnitBuilder, IDataCentralService dataCentralService) 
         {
             _dataCentralService = dataCentralService;
             
