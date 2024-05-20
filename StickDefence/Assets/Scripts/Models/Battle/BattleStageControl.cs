@@ -62,7 +62,6 @@ namespace Models.Battle
             _currentDayIndex.SkipLatestValueOnSubscribe().Subscribe( CheckStartSpawnNextDay).AddTo(_activeDisposables);
             BattleStateMachine.SubscriptionAction(BattleStateEnum.None, OnCloseBattle);
             BattleStateMachine.SubscriptionAction(BattleStateEnum.LoadBattle, OnLoadBattleState);
-            BattleStateMachine.SubscriptionAction(BattleStateEnum.LaunchAnim, OnLaunchState);
             BattleStateMachine.SubscriptionAction(BattleStateEnum.StartBattle, OnStartBattleState);
             BattleStateMachine.EndBattle += OnBattleEnd;
         }
@@ -73,7 +72,6 @@ namespace Models.Battle
             
             BattleStateMachine.SubscriptionAction(BattleStateEnum.None, OnCloseBattle);
             BattleStateMachine.UnSubscriptionAction(BattleStateEnum.LoadBattle, OnLoadBattleState);
-            BattleStateMachine.UnSubscriptionAction(BattleStateEnum.LaunchAnim, OnLaunchState);
             BattleStateMachine.UnSubscriptionAction(BattleStateEnum.StartBattle, OnStartBattleState);
             _coreStateMachine.BattleStateMachine.SetBattleState(BattleStateEnum.None);
             BattleStateMachine.EndBattle -= OnBattleEnd;
@@ -98,12 +96,7 @@ namespace Models.Battle
         
         private void OnBattleEndFade()
         {
-            BattleStateMachine.SetBattleState(BattleStateEnum.LaunchAnim);
-        }
-        
-        private void OnLaunchState()
-        {
-            _battleAnimations.LaunchAnimation().Forget();
+            BattleStateMachine.SetBattleState(BattleStateEnum.StartBattle);
         }
         
         private void OnStartBattleState()

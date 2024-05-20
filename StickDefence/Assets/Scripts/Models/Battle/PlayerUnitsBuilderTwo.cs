@@ -64,9 +64,7 @@ namespace Models.Battle
         
         public PlayerViewTwo InitStageLoadBattle(PlayerUnitTypeEnum playerUnitType, Transform parent, SlotTypeEnum slotTypeEnum)
         {
-            PlayerViewTwo playerViewTwo = null;
-            InitFortress(playerUnitType, parent, slotTypeEnum,out playerViewTwo );
-            return playerViewTwo;
+            return InitFortress(playerUnitType, parent, slotTypeEnum);
         }
         
         public void StartLaunchAnim()
@@ -94,24 +92,19 @@ namespace Models.Battle
             _projectiles.Clear();
         }
 
-        private void InitFortress(PlayerUnitTypeEnum unitType, Transform parent,SlotTypeEnum slotType, out PlayerViewTwo playerViewTwo)
+        private PlayerViewTwo InitFortress(PlayerUnitTypeEnum unitType, Transform parent, SlotTypeEnum slotType)
         { 
             var unitConfig = _configManager.UnitsStatsSo.DictionaryStickmanConfigs[unitType];
-            var unitView = Instantiate(_configManager.PrefabsUnitsSO.PlayerUnitPrefabs[unitType].GO).GetComponent<PlayerViewTwo>();
-            if (unitView != null)
-            {
-                unitView.transform.SetParent(parent);
-                unitView.transform.position = parent.position;
-                 unitView.gameObject.SetActive(true);
-            }
-            _fortressView = unitView;
-            _fortressModel = new PlayerUnitModel(unitView, _soundManager, _timerService,unitConfig, _attackSpeedActive);
+
+            _fortressView = Instantiate(_configManager.PrefabsUnitsSO.PlayerUnitPrefabs[unitType].GO, parent).GetComponent<PlayerViewTwo>();
+            _fortressView.gameObject.SetActive(true);
+            _fortressModel = new PlayerUnitModel(_fortressView, _soundManager, _timerService,unitConfig, _attackSpeedActive);
             _fortressModel.SetParentSlotType(slotType);
             _fortressModel.InitAttack(CreateProjectile, RemoveProjectile);
             _fortressModel.InitSubActive();
             _fortressModel.OnModelRemove += FortressModelOnModelRemove;
             _spawnedUnits.Add(_fortressModel);
-            playerViewTwo = unitView;
+            return _fortressView;
         }
 
         private void FortressModelOnModelRemove(PlayerUnitModel playerUnitModel)

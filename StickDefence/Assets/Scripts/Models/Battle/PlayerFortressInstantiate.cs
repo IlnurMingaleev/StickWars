@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO.Pipes;
+﻿using System.Collections.Generic;
 using Models.DataModels;
 using TonkoGames.Controllers.Core;
 using TonkoGames.Sound;
@@ -10,7 +8,6 @@ using Models.Fortress;
 using Models.Player;
 using Models.Timers;
 using UI.UIManager;
-using Unity.VisualScripting;
 using UnityEngine;
 using VContainer;
 using Views.Projectiles;
@@ -21,6 +18,7 @@ namespace Models.Battle
     public class PlayerFortressInstantiate : MonoBehaviour
     {
         [SerializeField] private Transform _spawnPoint;
+        [SerializeField] private FortressView _fortressView;
         
         [Inject] private readonly ICoreStateMachine _coreStateMachine;
         [Inject] private readonly ConfigManager _configManager;
@@ -33,9 +31,7 @@ namespace Models.Battle
         private int _maxHealth = 1;
         private List<ProjectileView> _projectiles = new();
         
-        private FortressView _fortressView;
         private FortressModel _fortressModel;
-        public bool IsLaunchIsProgress => _fortressView.IsLaunchIsProgress;
 
         private void OnEnable()
         {
@@ -53,14 +49,8 @@ namespace Models.Battle
         public void InitStageLoadBattle()
         {
             InitFortress();
-            _fortressView.StartPrepare();
         }
         
-        public void StartLaunchAnim()
-        {
-            _fortressView.StartLaunchAnim();
-        }
-
         public void Resurrect()
         {
             _fortressModel.Resurrect();
@@ -80,30 +70,11 @@ namespace Models.Battle
 
         private void InitFortress()
         {
-            if(_fortressView != null) Destroy(_fortressView.gameObject);
-               // Destroy(_fortressView.gameObject);
-            /*if (_spawnPoint.childCount > 0)
-            {
-                Destroy(_spawnPoint.GetChild(0).gameObject);
-            }*/
-            _fortressView = CreateFortressView();
             _fortressModel = new FortressModel(_fortressView, _soundManager, _timerService,
                 _player.Pumping, _windowManager,_coreStateMachine,_dataCentralService);
             _fortressModel.InitBottomPanelButton();
             _fortressModel.InitSubActive();
 
-        }
-
-        private FortressView CreateFortressView()
-        {
-            if ((int) _dataCentralService.PumpingDataModel.StageLoadType.Value > 10)
-            {
-                return  Instantiate(_configManager.PrefabsUnitsSO.FortressViewMilitary, _spawnPoint);
-            }
-            else
-            {
-                return  Instantiate(_configManager.PrefabsUnitsSO.FortressView, _spawnPoint);
-            }
         }
 
         private void CreateProjectile(ProjectileView projectileView)

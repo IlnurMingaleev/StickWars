@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Enums;
 using Models.Controllers.Skills;
 using Models.Player;
-using Models.SO.Core;
-using TonkoGames.Controllers.Core;
 using UnityEngine;
 using VContainer;
-using Views.Health;
-using Views.Units.Units;
-using Views.Units.VFX;
 
 namespace Models.Controllers
 {

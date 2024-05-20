@@ -10,7 +10,6 @@ namespace Views.Units.Fortress
 {
     public class FortressView : MonoBehaviour
     {
-        [SerializeField] private BattleFortressLaunch _battleFortressLaunch;
         [SerializeField] private Damageable _damageable;
         [SerializeField] private AttackBlockView _attackBlockView;
         [SerializeField] private TMP_Text _levelLabel;
@@ -24,8 +23,6 @@ namespace Views.Units.Fortress
         public IReadOnlyReactiveProperty<int> HealthMax => _damageable.HealthMax;
         public IReadOnlyReactiveProperty<bool> IsActive => _isActive;
           
-        public bool IsLaunchIsProgress => _battleFortressLaunch.IsLaunchIsProgress;
-
         public void SetLevelLabel(int level)
         {
             _levelLabel.text = $"{level + 1}";
@@ -42,16 +39,6 @@ namespace Views.Units.Fortress
             _isActive.Value = false;
         }
         
-        public void StartPrepare()
-        {
-            _battleFortressLaunch.StartPrepare();
-        }
-        
-        public void StartLaunchAnim()
-        {
-            _battleFortressLaunch.StartLaunchAnim();
-        }
-
         public void RessurectHealth()
         {
             

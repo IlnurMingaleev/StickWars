@@ -19,8 +19,6 @@ namespace Tools.Extensions
             Vector3 collisionPoint = velocityTarget + velocityTarget * timeToCollision;
             collisionPoint *= -1;
 
-            Debug.Log("asdf " + collisionPoint + " " + positionOrigin + " " + speedOrigin + " " + positionTarget + " " +
-                      speedTarget);
             return collisionPoint;
         }
     }
