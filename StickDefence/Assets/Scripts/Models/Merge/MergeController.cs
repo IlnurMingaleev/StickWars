@@ -24,7 +24,7 @@ namespace Models.Merge
 
     public class MergeController : MonoBehaviour, IPlaceableUnit
     {
-        [SerializeField] private PlayerUnitsBuilderTwo _playerUnitsBuilder;
+        [SerializeField] private PlayerUnitsBuilder _playerUnitsBuilder;
         [SerializeField] private ItemInfo _itemDummyPrefab;
         private Camera _mainCamera;
         public static MergeController instance;

@@ -13,7 +13,7 @@ namespace Models.Fortress
 {
     public class PlayerUnitModel
     {
-        public readonly PlayerViewTwo View;
+        public readonly PlayerUnitView UnitView;
         private readonly IPumping _pumping;
         private readonly ISoundManager _soundManager;
         private readonly ITimerService _timerService;
@@ -47,11 +47,11 @@ namespace Models.Fortress
         }
 
         #endregion
-        public PlayerUnitModel(PlayerViewTwo playerView, ISoundManager soundManager, ITimerService timerService,
+        public PlayerUnitModel(PlayerUnitView playerUnitView, ISoundManager soundManager, ITimerService timerService,
             StickmanStatsConfig stickmanStatsConfig, bool attackSpeedActive)
         {
             _stickmanStatsConfig = stickmanStatsConfig;
-            View = playerView;
+            UnitView = playerUnitView;
             _soundManager = soundManager;
             _timerService = timerService;
             _attackSpeedActive = attackSpeedActive;
@@ -59,7 +59,7 @@ namespace Models.Fortress
 
         public void InitSubActive()
         {
-            View.IsActive.Subscribe(value =>
+            UnitView.IsActive.Subscribe(value =>
             {
                 if (value)
                 {
@@ -75,9 +75,9 @@ namespace Models.Fortress
         public void InitAttack(Action<ProjectileView> createProjectile, Action<ProjectileView> projectileDestroyed)
         {
             _rangeAttackModel = new RangeOneTargetAttack();
-            _rangeAttackModel.Init(View.AttackBlockView, _timerService, _soundManager, StartAttackAnim, null);
+            _rangeAttackModel.Init(UnitView.AttackBlockView, _timerService, _soundManager, StartAttackAnim, null);
             _rangeAttackModel.InitProjectileActions(createProjectile, projectileDestroyed);
-            _rangeAttackModel.SetProjectile(View.AttackBlockView.ProjectileView);
+            _rangeAttackModel.SetProjectile(UnitView.AttackBlockView.ProjectileView);
         }
         
         private void OnEnable()
@@ -138,7 +138,7 @@ namespace Models.Fortress
 
         private void StartAttackAnim()
         {
-            View.StartLaunchAnim();
+            UnitView.StartAttackAnim();
             _rangeAttackModel.Attack();
             _rangeAttackModel.StartCooldown();
         }
@@ -150,13 +150,13 @@ namespace Models.Fortress
 
         public void OnPause()
         {
-           View.OnPause();
+           UnitView.OnPause();
            _rangeAttackModel.StopPlay();
         }
 
         public void OnPlay()
         {
-            View.OnPlay();
+            UnitView.OnPlay();
             _disposable.Clear();
             _parentSlotType.Subscribe(slotType =>
             {

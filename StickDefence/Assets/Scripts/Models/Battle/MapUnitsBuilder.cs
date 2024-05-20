@@ -292,7 +292,7 @@ namespace Models.Battle
         {
             _dataCentralService.PumpingDataModel.IncreaseExperience(baseUnit.Experience,_configManager);
             AddCoins(baseUnit);
-            //Destroy(baseUnit.View.gameObject);
+            //Destroy(baseUnit.UnitView.gameObject);
             _spawnedUnits.Remove(baseUnit);
             CheckIsEmptyDay();
             _unitsCount.Value += 1;

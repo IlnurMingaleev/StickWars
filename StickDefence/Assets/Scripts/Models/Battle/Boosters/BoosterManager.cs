@@ -11,6 +11,7 @@ using UI.Windows;
 using UniRx;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.Serialization;
 using VContainer;
 
 namespace Models.Battle.Boosters
@@ -18,7 +19,7 @@ namespace Models.Battle.Boosters
     public class BoosterManager: MonoBehaviour, IDisposable
     {
         [SerializeField] private MergeController _mergeController;
-        [SerializeField] private PlayerUnitsBuilderTwo _playerUnitsBuilderTwo;
+        [FormerlySerializedAs("_playerUnitsBuilderTwo")] [SerializeField] private PlayerUnitsBuilder playerUnitsBuilder;
         [SerializeField] private MapUnitsBuilder _mapUnitsBuilder;
         [SerializeField] private BoosterDrone _boosterDrone;
         [SerializeField] private CoroutineTimer[] _boosterTimers;
@@ -84,7 +85,7 @@ namespace Models.Battle.Boosters
             switch (boosterTypeEnum)
             {
                 case BoosterTypeEnum.AttackSpeed:
-                    result= new AttackSpeed(this, _boosterTimers[0], _windowManager, _playerUnitsBuilderTwo);
+                    result= new AttackSpeed(this, _boosterTimers[0], _windowManager, playerUnitsBuilder);
                     break;
                 case BoosterTypeEnum.AutoMerge:
                     result = new AutoMerge(this,  _boosterTimers[1], _windowManager,_mergeController);

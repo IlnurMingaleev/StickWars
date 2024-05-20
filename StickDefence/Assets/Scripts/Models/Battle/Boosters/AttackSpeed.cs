@@ -8,18 +8,17 @@ namespace Models.Battle.Boosters
 {
     public class AttackSpeed: Booster
     {
-        private PlayerUnitsBuilder _unitsBuilder;
-        private PlayerUnitsBuilderTwo _playerUnitsBuilderTwo;
+        private PlayerUnitsBuilder _playerUnitsBuilder;
         public AttackSpeed(BoosterManager boosterManager, CoroutineTimer boosterTimer, IWindowManager windowManager, 
-            PlayerUnitsBuilderTwo playerUnitsBuilderTwo) : base(boosterManager, boosterTimer, windowManager)
+            PlayerUnitsBuilder playerUnitsBuilder) : base(boosterManager, boosterTimer, windowManager)
         {
-            _playerUnitsBuilderTwo = playerUnitsBuilderTwo;
+            _playerUnitsBuilder = playerUnitsBuilder;
         }
         
         public override void SwitchBoosterOn()
         {
-            _playerUnitsBuilderTwo.SetAttackSpeedActive(true);
-            foreach (var playerUnit in _playerUnitsBuilderTwo.SpawnedUnits)
+            _playerUnitsBuilder.SetAttackSpeedActive(true);
+            foreach (var playerUnit in _playerUnitsBuilder.SpawnedUnits)
             {
                 playerUnit.SetAttackSpeedActive(true);
                 playerUnit.SubscribeStatsWhileAttackSpeedActive();
@@ -28,8 +27,8 @@ namespace Models.Battle.Boosters
 
         public override void SwitchBoosterOff()
         {
-            _playerUnitsBuilderTwo.SetAttackSpeedActive(false);
-            foreach (var playerUnit in _playerUnitsBuilderTwo.SpawnedUnits)
+            _playerUnitsBuilder.SetAttackSpeedActive(false);
+            foreach (var playerUnit in _playerUnitsBuilder.SpawnedUnits)
             {
                 playerUnit.SetAttackSpeedActive(false);
                 playerUnit.SubscribeStatsWhileAttackSpeedActive();

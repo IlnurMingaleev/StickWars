@@ -9,7 +9,7 @@ using Views.Health;
 
 namespace Views.Units.Fortress
 {
-    public class PlayerViewTwo : MonoBehaviour
+    public class PlayerUnitView : MonoBehaviour
     {
         [SerializeField] private BattleFortressLaunch _battleFortressLaunch;
         [SerializeField] private Damageable _damageable;
@@ -25,7 +25,7 @@ namespace Views.Units.Fortress
           
         public bool IsLaunchIsProgress => _battleFortressLaunch.IsLaunchIsProgress;
 
-        private PlayerUnitsBuilderTwo _playerUnitsBuilder;
+        private PlayerUnitsBuilder _playerUnitsBuilder;
         private PlayerUnitModel _playerUnitModel;
         private void OnEnable()
         {
@@ -42,7 +42,7 @@ namespace Views.Units.Fortress
             _battleFortressLaunch.StartPrepare();
         }
         
-        public void StartLaunchAnim()
+        public void StartAttackAnim()
         {
             _battleFortressLaunch.StartLaunchAnim();
         }

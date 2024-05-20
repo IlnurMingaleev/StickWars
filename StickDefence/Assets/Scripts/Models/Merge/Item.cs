@@ -10,7 +10,7 @@ namespace Models.Merge
         [SerializeField] private Transform _unitParent; 
         
         private Slot _parentSlot;
-        private PlayerViewTwo _unitGameObject;
+        private PlayerUnitView _unitGameObject;
         
         public int Id { get; private set; }
         public PlayerUnitTypeEnum UnitTypeEnum { get; private set; }
@@ -19,7 +19,7 @@ namespace Models.Merge
             Id = id;
             _parentSlot = slot;
             UnitTypeEnum = (PlayerUnitTypeEnum) id;
-            _unitGameObject = playerBuilder.InitStageLoadBattle((PlayerUnitTypeEnum) id, _unitParent, _parentSlot.SlotType);
+            _unitGameObject = playerBuilder.InitPlayerUnit((PlayerUnitTypeEnum) id, _unitParent, _parentSlot.SlotType);
         }
        
         private void OnDestroy()

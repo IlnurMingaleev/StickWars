@@ -118,9 +118,9 @@ namespace Models.Fortress
         public void InitAttack(Action<ProjectileView> createProjectile, Action<ProjectileView> projectileDestroyed)
         {
            // _rangeAttackModel = new RangeOneTargetAttack();
-            //_rangeAttackModel.Init(View.AttackBlockView, _boosterTimer, _soundManager, StartAttackAnim);
+            //_rangeAttackModel.Init(UnitView.AttackBlockView, _boosterTimer, _soundManager, StartAttackAnim);
            // _rangeAttackModel.InitProjectileActions(createProjectile, projectileDestroyed);
-           // _rangeAttackModel.SetProjectile(View.AttackBlockView.ProjectileView);
+           // _rangeAttackModel.SetProjectile(UnitView.AttackBlockView.ProjectileView);
         }
         
         private void OnEnable()

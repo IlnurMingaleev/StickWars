@@ -1,164 +1,103 @@
-﻿
+﻿using System;
 using System.Collections.Generic;
 using Enums;
-using Models.Fortress;
-using Models.Merge;
 using TonkoGames.Controllers.Core;
+using TonkoGames.Sound;
 using TonkoGames.StateMachine;
 using TonkoGames.StateMachine.Enums;
+using Models.Fortress;
+using Models.Merge;
 using Models.Player;
 using Models.Timers;
-using Models.Units.Units;
-using TonkoGames.Sound;
 using UniRx;
 using UnityEngine;
 using VContainer;
 using Views.Projectiles;
+using Views.Units.Fortress;
 using Views.Units.Units;
-
 
 namespace Models.Battle
 {
-    public interface IPlayerUnitsBuilder
+    public interface IPlayerUnitsBuilderTwo
     {
-        PlayerView InstantiateUnit(PlayerUnitTypeEnum unitType, Transform parent, SlotTypeEnum slotType);
+        PlayerUnitView InitPlayerUnit(PlayerUnitTypeEnum playerUnitType, Transform parent, SlotTypeEnum slotTypeEnum);
     }
 
-    public class PlayerUnitsBuilder : MonoBehaviour, IPlayerUnitsBuilder
+    public class PlayerUnitsBuilder : MonoBehaviour, IPlayerUnitsBuilderTwo
     {
-        [Inject] private readonly IPlayer _player;
-        [Inject] private readonly ConfigManager _configManager;
-        [Inject] private readonly ITimerService _timerService;
+
         [Inject] private readonly ICoreStateMachine _coreStateMachine;
+        [Inject] private readonly ConfigManager _configManager;
         [Inject] private readonly ISoundManager _soundManager;
-        private IBattleStateMachine BattleStateMachine => _coreStateMachine.BattleStateMachine;
-        private IRunTimeStateMachine RunTimeStateMachine => _coreStateMachine.RunTimeStateMachine;
-
-        private readonly List<PlayerUnitModel> _spawnedUnits   = new();
-       // private Queue<MapStageDayGroupConfig> DayGroups = new();
-        private ReactiveProperty<bool> _isEmptyDay      = new();
+        [Inject] private readonly ITimerService _timerService;
+        [Inject] private readonly IPlayer _player;
+        
+        private int _maxHealth = 1;
         private List<ProjectileView> _projectiles = new();
-        private List<ProjectileView> _playerProjectiles = new();
-
-        public IReadOnlyReactiveProperty<bool> IsEmptyDay => _isEmptyDay;
-
-        private ITimerModel _timerDayGroups;
-
+        private readonly List<PlayerUnitModel> _spawnedUnits   = new();
+        private PlayerUnitView _playerUnitView;
+        private PlayerUnitModel _playerUnitModel;
+        private bool _attackSpeedActive = false;
         private CompositeDisposable _disposable = new CompositeDisposable();
-        private CompositeDisposable _updateDisposable = new CompositeDisposable();
-
+        
         public List<PlayerUnitModel> SpawnedUnits => _spawnedUnits;
+        public void SetAttackSpeedActive(bool value) => _attackSpeedActive = value;
 
         private void OnEnable()
         {
-            BattleStateMachine.SubscriptionAction(BattleStateEnum.StartBattle, OnStartBattleState);
-            RunTimeStateMachine.SubscriptionAction(RunTimeStateEnum.Play, OnPlay);
-            RunTimeStateMachine.SubscriptionAction(RunTimeStateEnum.Pause, OnPause);
+            _coreStateMachine.RunTimeStateMachine.SubscriptionAction(RunTimeStateEnum.Play, OnPlayRunTimes);
+            _coreStateMachine.RunTimeStateMachine.SubscriptionAction(RunTimeStateEnum.Pause, OnPauseRunTime);
+            _player.Pumping.GamePerks.ObserveReplace().Subscribe(_ => UpdateDamage()).AddTo(_disposable);
         }
 
         private void OnDisable()
         {
-            BattleStateMachine.UnSubscriptionAction(BattleStateEnum.StartBattle, OnStartBattleState);
-            RunTimeStateMachine.UnSubscriptionAction(RunTimeStateEnum.Play, OnPlay);
-            RunTimeStateMachine.UnSubscriptionAction(RunTimeStateEnum.Pause, OnPause);
-            _disposable.Clear();
-            _updateDisposable.Clear();
+            _coreStateMachine.RunTimeStateMachine.UnSubscriptionAction(RunTimeStateEnum.Play, OnPlayRunTimes);
+            _coreStateMachine.RunTimeStateMachine.UnSubscriptionAction(RunTimeStateEnum.Pause, OnPauseRunTime);
             DestroyStage();
-        }
-
-        private void OnStartBattleState()
-        {
-        }
-
-        private void OnPlay()
-        {
-            /*
-            foreach (var baseUnit in _spawnedUnits)
-            {
-                baseUnit.OnPlay();
-            }
-            */
-            
-            foreach (var projectileView in _projectiles)
-            {
-                projectileView.StartMove();
-            }
-            
-        }
-
-        private void OnPause()
-        {
-            /*foreach (var baseUnit in _spawnedUnits)
-            {
-                baseUnit.OnPause();
-            }*/
-            
-            foreach (var projectileView in _projectiles)
-            {
-                projectileView.StopMove();
-            }  
-            
-            _updateDisposable.Clear();
+            _disposable.Clear();
         }
         
+        public void StartAttackAnim()
+        {
+            _playerUnitView.StartAttackAnim();
+        }
+        
+        public float GetDeltaHealth() => (float)_playerUnitView.HealthCurrent.Value / (float) _maxHealth;
+
         private void DestroyStage()
         {
             foreach (var projectileView in _projectiles)
             {
-                Destroy(projectileView.gameObject);
+                if (projectileView != null)
+                {
+                    projectileView.DisposeTopDownMove();
+                    Destroy(projectileView.gameObject);
+                }
             }
             _projectiles.Clear();
         }
 
-
-        public PlayerView InstantiateUnit(PlayerUnitTypeEnum unitType, Transform parent,SlotTypeEnum slotType)
-        {
+        public PlayerUnitView InitPlayerUnit(PlayerUnitTypeEnum unitType, Transform parent, SlotTypeEnum slotType)
+        { 
             var unitConfig = _configManager.UnitsStatsSo.DictionaryStickmanConfigs[unitType];
-            var unitView = Instantiate(_configManager.PrefabsUnitsSO.PlayerUnitPrefabs[unitType].GO).GetComponent<PlayerView>();
-            if (unitView != null)
-            {
-                unitView.transform.SetParent(parent,false);
-                unitView.transform.position = parent.position;
-                unitView.gameObject.SetActive(true);
-            }
-            //var baseUnit = UnitCreate(unitType, unitView); ;
-           // baseUnit.InitAttack(CreateProjectile, RemoveProjectile);
-          
-           // _spawnedUnits.Add(baseUnit);
-            return unitView;
-        }
-        
 
-        private void SetupUnitRunTime(BasePlayerUnit baseUnit)
-        {
-            switch (RunTimeStateMachine.RunTimeState.Value)
-            {
-                case RunTimeStateEnum.Play:
-                    baseUnit.OnPlay();
-                    break;
-                case RunTimeStateEnum.Pause:
-                    baseUnit.OnPause();
-                    break;
-            }
+            _playerUnitView = Instantiate(_configManager.PrefabsUnitsSO.PlayerUnitPrefabs[unitType].GO, parent).GetComponent<PlayerUnitView>();
+            _playerUnitView.gameObject.SetActive(true);
+            _playerUnitModel = new PlayerUnitModel(_playerUnitView, _soundManager, _timerService,unitConfig, _attackSpeedActive);
+            _playerUnitModel.SetParentSlotType(slotType);
+            _playerUnitModel.InitAttack(CreateProjectile, RemoveProjectile);
+            _playerUnitModel.InitSubActive();
+            _playerUnitModel.OnModelRemove += PlayerUnitOnModelRemove;
+            _spawnedUnits.Add(_playerUnitModel);
+            return _playerUnitView;
         }
 
-     
-
-        /*private PlayerUnitModel UnitCreate(PlayerUnitTypeEnum unitType, PlayerView unitView)
+        private void PlayerUnitOnModelRemove(PlayerUnitModel playerUnitModel)
         {
-            /*switch (unitType)
-            {
-                case PlayerUnitTypeEnum.PlayerOne:
-                    return new BasePlayerUnitUnitOne(unitView, _boosterTimer, _soundManager);
-                case PlayerUnitTypeEnum.PLayerTwo:
-                    return new BasePlayerUnitUnitTwo(unitView, _boosterTimer, _soundManager);
-                case PlayerUnitTypeEnum.PLayerThree:
-                    return new
-            }#1#
-            
-            //return new (unitView,  _soundManager,_boosterTimer, _player.Pumping);
-        }*/
-        
+           _spawnedUnits.Remove(playerUnitModel);
+           playerUnitModel.OnModelRemove -= PlayerUnitOnModelRemove;
+        }
         private void CreateProjectile(ProjectileView projectileView)
         {
             _projectiles.Add(projectileView);
@@ -177,6 +116,40 @@ namespace Models.Battle
         private void RemoveProjectile(ProjectileView projectileView)
         {
             _projectiles.Remove(projectileView);
+        }
+
+        private void OnPlayRunTimes()
+        {
+            foreach (var unit in _spawnedUnits)
+            {
+                unit.OnPlay();
+            }
+            foreach (var projectileView in _projectiles)
+            {
+                projectileView.StartMove();
+            }
+        }
+
+        private void OnPauseRunTime()
+        {
+            foreach (var unit in _spawnedUnits)
+            {
+                unit.OnPause();
+            }
+            foreach (var projectileView in _projectiles)
+            {
+                projectileView.StopMove();
+            }  
+        }
+
+        public void UpdateDamage()
+        {
+            foreach (var playerUnitModel in _spawnedUnits)
+            {
+                int oldDamage = playerUnitModel.RangeAttackModel.GetDamage();
+                int newDamage = (int) (oldDamage * (1 +_player.Pumping.GamePerks[PerkTypesEnum.RecruitsDamage].Value/100));
+                    playerUnitModel.RangeAttackModel.SetDamage(newDamage);
+            }
         }
     }
 }
