@@ -109,13 +109,13 @@ namespace UI.Windows
                 if (_mergeController == null) _mergeController = _sceneInstances.MergeController;
                 if (_boosterManager == null) _boosterManager = _sceneInstances.BoosterManager;
                 _rocketSkillBtn.OnClickAsObservable
-                    .Subscribe(_ => _sceneInstances.AimController.StartAiming(SkillTypesEnum.Rocket))
+                    .Subscribe(_ => _sceneInstances.SkillLifetimeController.StartAiming(SkillTypesEnum.Rocket))
                     .AddTo(ActivateDisposables);
                 _greandesSkillBtn.OnClickAsObservable
-                    .Subscribe(_ => _sceneInstances.AimController.StartAiming(SkillTypesEnum.Grenade))
+                    .Subscribe(_ => _sceneInstances.SkillLifetimeController.StartAiming(SkillTypesEnum.Grenade))
                     .AddTo(ActivateDisposables);
                 _poisonSkillBtn.OnClickAsObservable
-                    .Subscribe(_ => _sceneInstances.AimController.StartAiming(SkillTypesEnum.Gas))
+                    .Subscribe(_ => _sceneInstances.SkillLifetimeController.StartAiming(SkillTypesEnum.Gas))
                     .AddTo(ActivateDisposables);
             }
         }

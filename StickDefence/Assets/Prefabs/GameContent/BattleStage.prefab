@@ -214,7 +214,7 @@ MonoBehaviour:
   - {fileID: 4265866860960614646}
   - {fileID: 2242914867410249882}
   - {fileID: 5949727449106974457}
-  _speed: 3
+  _speed: 1
 --- !u!61 &8110401556534269589
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -21227,7 +21227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mergeController: {fileID: 2592980357291104582}
   _plaerBuilder: {fileID: 6221916866098216297}
-  _aimController: {fileID: 3384835847364885298}
+  skillLifetimeController: {fileID: 3384835847364885298}
   _boosterManager: {fileID: 3929034204951258700}
 --- !u!1 &2576529369458464990
 GameObject:
@@ -26109,8 +26109,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -558339751
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 63f17b1a0b59c4f49bc605873d683c1f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -36639,9 +36639,7 @@ MonoBehaviour:
   - {fileID: 5493634608993818701}
   - {fileID: 8411296698106420705}
   - {fileID: 4888591207717664643}
-  aiming: 0
   restrictedAreaCollider: {fileID: 6933737034982869779}
-  _cameraMain: {fileID: 0}
   _skillType: 0
   _currentSkill: {fileID: 0}
 --- !u!1 &4845461065019618552
@@ -41605,8 +41603,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -558339751
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 63f17b1a0b59c4f49bc605873d683c1f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -46649,6 +46647,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1019810959151549175}
   - component: {fileID: 6933737034982869779}
+  - component: {fileID: 7293562715808719673}
   m_Layer: 10
   m_Name: BattleAreaCollider
   m_TagString: Untagged
@@ -46716,6 +46715,35 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 15.9874325, y: 4.699505}
   m_EdgeRadius: 0
+--- !u!114 &7293562715808719673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6352265568248683728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3384835847364885298}
+          m_TargetAssemblyTypeName: Models.Controllers.AimController, Assembly-CSharp
+          m_MethodName: OnPointerUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &6378187796624141798
 GameObject:
   m_ObjectHideFlags: 0
@@ -46867,8 +46895,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -558339751
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 63f17b1a0b59c4f49bc605873d683c1f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

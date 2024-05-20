@@ -3,6 +3,7 @@ using Models.Battle.Boosters;
 using Models.Merge;
 using Tools.GameTools;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Models.Controllers
 {
@@ -10,10 +11,10 @@ namespace Models.Controllers
     {
         [SerializeField] private MergeController _mergeController;
         [SerializeField] private PlayerFortressInstantiate _plaerBuilder;
-        [SerializeField] private AimController _aimController;
+        [FormerlySerializedAs("_aimController")] [SerializeField] private SkillLifetimeController skillLifetimeController;
         [SerializeField] private BoosterManager _boosterManager;
         public PlayerFortressInstantiate PlayerBuilder=> _plaerBuilder;
-        public AimController AimController => _aimController;
+        public SkillLifetimeController SkillLifetimeController => skillLifetimeController;
         public BoosterManager BoosterManager => _boosterManager;
         public MergeController MergeController => _mergeController;
     }

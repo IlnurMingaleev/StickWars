@@ -26,7 +26,7 @@ namespace Models.Controllers.Skills
         protected ITimerModel _timerModel;
         protected float _explosionRadius;
         protected bool _skillCooldownPassed = true; 
-        protected float _cooldownTime = 30000f;
+        protected float _cooldownTime = 30f;
         protected int _skillDamage = 7000;
         protected int _enemyLayerMask;
         protected BottomPanelWindow _bottomPanelWindow;

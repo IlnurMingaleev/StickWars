@@ -14,7 +14,7 @@ namespace Models.Battle.Boosters
         protected BoosterManager _boosterManager;
         protected CoroutineTimer _boosterTimer;
         protected IWindowManager _windowManager;
-        protected const int _boosterActiveTime = 60000;
+        protected const float _boosterActiveTime = 60f;
         protected BoosterTypeEnum _boosterType;
         protected BottomPanelWindow _bottomPanelWindow;
 
@@ -23,6 +23,7 @@ namespace Models.Battle.Boosters
             _boosterManager = boosterManager;
             _boosterTimer = boosterTimer;
             _windowManager = windowManager;
+            _bottomPanelWindow = _windowManager.GetWindow<BottomPanelWindow>();
         }
         public float BoostersActiveTime => _boosterActiveTime;
 
@@ -38,7 +39,7 @@ namespace Models.Battle.Boosters
                 },
                 f =>
                 {
-                    _windowManager.GetWindow<BottomPanelWindow>().SetTimer(f, _boosterType);
+                    _bottomPanelWindow.SetTimer(f, _boosterType);
                    
                 });
             SwitchBoosterOn();

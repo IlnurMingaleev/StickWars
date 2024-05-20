@@ -6,36 +6,36 @@ namespace Tools.GameTools
 {
     public class CoroutineTimer : MonoBehaviour
     {
-        private int _currentMilliseconds = 0;
+        private float _currentSeconds = 0;
         private event Action TimeEnd;
         private event Action<float> TickTimerEvent;
         private bool _pause = false;
         public bool IsReloading { get; private set; }
 
-        public void Init(int milliseconds, Action timeEnd, Action<float> tickTimerEvent = null)
+        public void Init(float seconds, Action timeEnd, Action<float> tickTimerEvent = null)
         {
-            _currentMilliseconds = milliseconds;
+            _currentSeconds = seconds;
             TimeEnd = timeEnd;
             TickTimerEvent = tickTimerEvent;
 
         }
 
-        public void AddToExistingTimer(int milliseconds)
+        public void AddToExistingTimer(float seconds)
         {
-            _currentMilliseconds += milliseconds;
+            _currentSeconds += seconds;
         }
 
         public IEnumerator TimerTick()
         {
-            while (_currentMilliseconds > 0)
+            while (_currentSeconds > 0)
             {
-                yield return new WaitForSeconds(0.1f);
-                _currentMilliseconds -= 100;
-                TickTimerEvent?.Invoke((float) _currentMilliseconds);
+                yield return new WaitForSeconds(1f);
+                _currentSeconds -= 1f;
+                TickTimerEvent?.Invoke((float) _currentSeconds);
                 if (_pause) break;
             }
 
-            if (_currentMilliseconds <= 0)
+            if (_currentSeconds <= 0)
             {
                 TimeEnd?.Invoke();
             }
@@ -45,7 +45,7 @@ namespace Tools.GameTools
         public void StartTick()
         {
             _pause = false;
-            if (_currentMilliseconds <= 0)
+            if (_currentSeconds <= 0)
                 return;
             IsReloading = true;
             StartCoroutine(TimerTick());
@@ -60,7 +60,7 @@ namespace Tools.GameTools
         {
             IsReloading = false;
             TimeEnd = null;
-            _currentMilliseconds = 0;
+            _currentSeconds = 0;
 
         }
 
@@ -69,9 +69,9 @@ namespace Tools.GameTools
             TimeEnd?.Invoke();
         }
 
-        public void InitAndStart(int milliseconds, Action timeEnd, Action<float> tickTimerEvent = null)
+        public void InitAndStart(float seconds, Action timeEnd, Action<float> tickTimerEvent = null)
         {
-            Init(milliseconds,timeEnd,tickTimerEvent);
+            Init(seconds,timeEnd,tickTimerEvent);
             StartTick();
         }
 

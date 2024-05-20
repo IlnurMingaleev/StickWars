@@ -27,7 +27,7 @@ namespace Models.Controllers
         [Inject] private ConfigManager _configManager;
         [Inject] private IDataCentralService _dataCentralService;
         [Inject] private ICoreStateMachine _coreStateMachine;
-        private int _cooldownTime = 30000;
+        private float _cooldownTime = 30f;
 
 
         [Header("MergeController")] [SerializeField]
@@ -37,7 +37,7 @@ namespace Models.Controllers
         private bool _cooldown;
         private ITimerModel _timerModel;
         private BottomPanelWindow _bottomPanelWindow;
-        private const int IsAvailableCheckInterval = 5000;
+        private const float IsAvailableCheckInterval = 5f;
         [SerializeField] private CoroutineTimer _spawnTimer;
         private CompositeDisposable _disposable = new CompositeDisposable();
         private void Start()
