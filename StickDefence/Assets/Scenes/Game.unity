@@ -318,7 +318,7 @@ Camera:
   far clip plane: 100
   field of view: 98.21322
   orthographic: 1
-  orthographic size: 8
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -411,7 +411,7 @@ MonoBehaviour:
   _mainAreaHeight: 1
   _verticalFOV: 98.21322
   _horizontalFOV: 0
-  _verticalSize: 8
+  _verticalSize: 6
   _horizontalSize: 0
 --- !u!114 &1709641394
 MonoBehaviour:

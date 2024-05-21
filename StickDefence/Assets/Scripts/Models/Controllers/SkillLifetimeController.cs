@@ -49,9 +49,18 @@ namespace Models.Controllers
 
         public void OnPointerUp()
         {
-            _currentSkill.AimView.gameObject.SetActive(false);
-            LaunchMissile(_cameraMain.ScreenToWorldPoint(UnityEngine.Input.mousePosition));
-           _aimDisposable.Clear();
+            if (_aiming.Value == true)
+            {
+                foreach(Skill skill in _skills)
+                {
+                    skill.AimView.gameObject.SetActive(false);
+                }
+                LaunchMissile(_cameraMain.ScreenToWorldPoint(UnityEngine.Input.mousePosition));
+                _aimDisposable.Clear();
+                _aiming.Value = false;
+            }
+
+          
           // Exit aiming mode.
         }
 
@@ -65,6 +74,7 @@ namespace Models.Controllers
             _currentSkill = SkillDictioary[_skillType];
             _currentSkill.AimView.transform.position = _cameraMain.ScreenToWorldPoint(UnityEngine.Input.mousePosition);
             _currentSkill.AimView.gameObject.SetActive(true);
+            _aiming.Value = true;
             Observable.EveryUpdate().Subscribe(_ => OnAimUpdate()).AddTo(_aimDisposable);
 
         }
