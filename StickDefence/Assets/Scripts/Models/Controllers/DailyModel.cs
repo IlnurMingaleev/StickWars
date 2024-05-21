@@ -36,7 +36,7 @@ namespace Models.Controllers
         private ReactiveProperty<int> _spinTimer = new ReactiveProperty<int>();
         private BoosterManager _boosterManager;
         private ITimerModel _timerModelSpin = null;
-        private const int SecondsCooldownSpin = 20; //TODO Fix spin cooldown time
+        private const int SecondsCooldownSpin = 20; //TODO Fix spin cooldown time 86400
         public IReadOnlyReactiveProperty<int> SpinTimer => _spinTimer;
 
         public IReadOnlyReactiveProperty<bool> CanSpin => _canSpin; 

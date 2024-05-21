@@ -238,6 +238,9 @@ namespace UI.Windows
         {
             if (backupDestinationButton.RewardType == RewardType.Coin
                 || backupDestinationButton.RewardType == RewardType.Gem
+                || backupDestinationButton.RewardType == RewardType.AttackSpeed
+                || backupDestinationButton.RewardType == RewardType.AutoMerge
+                || backupDestinationButton.RewardType == RewardType.GainCoins
                 )
             {
                 bool isFinalAnimationStarted = finalAnimationStarted.ContainsKey(backupDestinationButton.CollectionHash);
@@ -313,6 +316,9 @@ namespace UI.Windows
             {
                 case RewardType.Coin:
                 case RewardType.Gem:
+                case RewardType.AutoMerge:
+                case RewardType.GainCoins:
+                case RewardType.AttackSpeed:
                     return MULTUPLAY;
                 default:
                     return 1;

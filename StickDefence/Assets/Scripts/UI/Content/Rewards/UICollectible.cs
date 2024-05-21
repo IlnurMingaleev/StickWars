@@ -56,6 +56,9 @@ namespace UI.Content.Rewards
 
             _collectibleCoin.gameObject.SetActive(collectible.Type == RewardType.Coin);
             _collectibleGem.gameObject.SetActive(collectible.Type == RewardType.Gem);
+            _collectibleAttackSpeed.gameObject.SetActive(collectible.Type == RewardType.AttackSpeed);
+            _collectibleGainCoins.gameObject.SetActive(collectible.Type == RewardType.GainCoins);
+            _collectibleAutoMerge.gameObject.SetActive(collectible.Type == RewardType.AutoMerge);
         }
         
         private void UpdateLocalCollectible(Collectible collectible)
