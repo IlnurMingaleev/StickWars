@@ -19,9 +19,9 @@ namespace UI.Content.Spin
         
         public RewardConfig Config { get; private set; }
         
-        public void Init(RewardConfig rewardIconType)
+        public void Init(RewardConfig rewardConfig)
         {
-            Config = rewardIconType;
+            Config = rewardConfig;
             _icon.sprite = _configManager.SpritesSo.RewardConfigIconModels[Config.RewardIconType].Image;
             SetCountLabel();
         }

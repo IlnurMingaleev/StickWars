@@ -43,10 +43,9 @@ namespace UI.Content.Spin
         [Inject] private readonly ICoreStateMachine _coreStateMachine;
         
         private WindowPriority Priority = WindowPriority.AboveTopPanel;
-        
-        protected override void Awake()
+
+        void Start()
         {
-            base.Awake();
             for (int i = 0; i < _spinSlots.Count; i++)
             {
                 _spinSlots[i].Init(_configManager.IapSO.LuckySpin[i]);
@@ -56,19 +55,18 @@ namespace UI.Content.Spin
         protected override void OnActivate()
         {
             base.OnActivate();
-
+            
+            _coreStateMachine.RunTimeStateMachine.SetRunTimeState(RunTimeStateEnum.Pause);
             _exitButton.OnClickAsObservable.Subscribe(_ => ClosePopup()).AddTo(_disposable);
-            _spin.OnClickAsObservable.Subscribe(_ => StartSpin()).AddTo(_disposable);
-            _rewardSpinButton.OnClickAsObservable.Subscribe(_ => RewardSpinButton()).AddTo(_disposable);
+            
             
             _player.DailyModel.SpinTimer.Subscribe(SetTimeCooldown).AddTo(_disposable);
+            SetSpinInteractable(_player.DailyModel.CanSpin.Value);
             _player.DailyModel.CanSpin.Subscribe(value =>
             {
-                _spin.IsInteractable = value;
-                _rewardSpinButton.gameObject.SetActive(!value);
+                SetSpinInteractable(value);
             }).AddTo(_disposable);
-
-            _iapService.CanShowReward.Subscribe(value => _rewardSpinButton.IsInteractable = value).AddTo(_disposable);
+            
             
             if (!_coreStateMachine.TutorialStateMachine.IsLuckySpinTutorialShown && _coreStateMachine.TutorialStateMachine.LuckySpinTutorialStep.Value == TutorialStepsEnum.NoneStart) 
             {
@@ -76,16 +74,28 @@ namespace UI.Content.Spin
             }
         }
 
-        
+        private void SetSpinInteractable(bool value)
+        {
+            _spin.IsInteractable = value;
+            _rewardSpinButton.gameObject.SetActive(!value);
+            _rewardSpinButton.IsInteractable = value;
+            if (value)
+            {
+                _spin.OnClickAsObservable.Subscribe(_ => StartSpin()).AddTo(_disposable);
+                _rewardSpinButton.OnClickAsObservable.Subscribe(_ => RewardSpinButton()).AddTo(_disposable);
+            }
+        }
+
+
         protected override void OnDeactivate()
         {
             base.OnDeactivate();
+            _coreStateMachine.RunTimeStateMachine.SetRunTimeState(RunTimeStateEnum.Play);
             _disposable.Clear();
 
             if (_tween != null)
             {
                 _tween.Kill();
-                ShowReward(CheckSlot(Random.Range(0, 360)));
                 _tween = null;
             }
         }
@@ -101,7 +111,7 @@ namespace UI.Content.Spin
         {
             GameAnalytics.Instance.PushEvent(StringsHelper.Analytics.spin, StringsHelper.Analytics.start_spin);
             _spin.IsInteractable = false;
-            _tween = _spinBlock.DOLocalRotate(new Vector3(0, 0, -360), 115, RotateMode.LocalAxisAdd)
+            _tween = _spinBlock.DOLocalRotate(new Vector3(0, 0, 360), 115, RotateMode.LocalAxisAdd)
                 .SetEase(Ease.InBack)
                 .SetSpeedBased(true)
                 .OnComplete(EndStartTween);
@@ -109,7 +119,7 @@ namespace UI.Content.Spin
         
         private void EndStartTween()
         {
-            _tween = _spinBlock.DOLocalRotate(new Vector3(0, 0, -360), 450, RotateMode.LocalAxisAdd)
+            _tween = _spinBlock.DOLocalRotate(new Vector3(0, 0, 360), 450, RotateMode.LocalAxisAdd)
                 .SetEase(Ease.Linear)
                 .SetSpeedBased(true)
                 .SetLoops(2, LoopType.Incremental)
@@ -118,7 +128,7 @@ namespace UI.Content.Spin
         
         private void EndEndlessTween()
         {
-            _tween = _spinBlock.DOLocalRotate(new Vector3(0, 0, -Random.Range(0, 360)), 450, RotateMode.LocalAxisAdd)
+            _tween = _spinBlock.DOLocalRotate(new Vector3(0, 0, -Random.Range(0, -360)), 450, RotateMode.LocalAxisAdd)
                 .SetEase(Ease.Linear)
                 .SetSpeedBased(true)
                 .SetLoops(1, LoopType.Incremental)
@@ -127,7 +137,7 @@ namespace UI.Content.Spin
         
         private void EndEndlessRandomTween()
         {
-            _tween = _spinBlock.DOLocalRotate(new Vector3(0, 0, -360), 115, RotateMode.LocalAxisAdd)
+            _tween = _spinBlock.DOLocalRotate(new Vector3(0, 0, 360), 115, RotateMode.LocalAxisAdd)
                 .SetEase(Ease.OutBack)
                 .SetSpeedBased(true)
                 .OnComplete(EndTweens);
