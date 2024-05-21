@@ -123,13 +123,13 @@ namespace Models.Merge
                 }
             }
             
-          
-           
             
             if (slot.SlotType == SlotTypeEnum.TrashBin)
             {
                 if (_carryingItem != null)
                 {
+                    var startSlot = GetSlotById(_carryingItem.slotId);
+                    startSlot.DestroyItem();
                     Destroy(_carryingItem.gameObject);
                     SetGrabbedFlag();
                 }
@@ -141,13 +141,19 @@ namespace Models.Merge
                     switch (slot.State)
                     {
                         case SlotState.Empty:
+                            var startSlot = GetSlotById(_carryingItem.slotId);
+                            startSlot.DestroyItem();
                             CreateSlotItem(slot, _carryingItem.itemId);
                             SetGrabbedFlag();
                             Destroy(_carryingItem.gameObject);
                             break;
                         
                         case SlotState.Full:
-                            if (slot.CurrentItem.Id == _carryingItem.itemId)
+                            if (_carryingItem.slotId == slot.Id)
+                            {
+                                OnItemCarryFail();   
+                            }
+                            else if (slot.CurrentItem.Id == _carryingItem.itemId)
                                 OnItemMergedWithTarget(slot.Id);
                             else
                                 SwitchItems(slot);
@@ -187,6 +193,7 @@ namespace Models.Merge
         {
             var targetSlot = GetSlotById(slot.Id);
             var startSlot = GetSlotById(_carryingItem.slotId);
+            startSlot.DestroyItem();
             CreateSlotItem(startSlot, targetSlot.CurrentItem.Id);
             targetSlot.DestroyItem();
             CreateSlotItem(targetSlot, _carryingItem.itemId);
@@ -207,6 +214,7 @@ namespace Models.Merge
 
         void OnItemMergedWithTarget(int targetSlotId)
         {
+            
             if ((PlayerUnitTypeEnum) _carryingItem.itemId == PlayerUnitTypeEnum.Twenty)
             {
                 _windowManager.GetWindow<BottomPanelWindow>().ShowMaxLevelReachedWarning();
@@ -219,6 +227,8 @@ namespace Models.Merge
                 _dataCentralService.SaveFull();
             }
 
+            var startSlot = GetSlotById(_carryingItem.slotId);
+            startSlot.DestroyItem();
             var slot = GetSlotById(targetSlotId);
             slot.DestroyItem();
             CreateSlotItem(slot, _carryingItem.itemId + 1);
@@ -235,6 +245,7 @@ namespace Models.Merge
         void OnItemCarryFail()
         {
             var slot = GetSlotById(_carryingItem.slotId);
+            slot.DestroyItem();
             CreateSlotItem(slot, _carryingItem.itemId);
             SetGrabbedFlag();
             Destroy(_carryingItem.gameObject);

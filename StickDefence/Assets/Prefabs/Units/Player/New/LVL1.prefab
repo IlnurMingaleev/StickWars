@@ -577,6 +577,7 @@ MonoBehaviour:
   _battleFortressLaunch: {fileID: 4382308816624942831}
   _damageable: {fileID: 3445178745871096933}
   _attackBlockView: {fileID: 4687277581640827482}
+  _meshRenderer: {fileID: 1707870944486102010}
 --- !u!70 &-9187576295333667636
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

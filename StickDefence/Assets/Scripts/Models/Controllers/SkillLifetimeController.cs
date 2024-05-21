@@ -60,8 +60,6 @@ namespace Models.Controllers
                 _aiming.Value = false;
             }
 
-          
-          // Exit aiming mode.
         }
 
         public void StartAiming(SkillTypesEnum skillTypesEnum)

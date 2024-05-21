@@ -14,6 +14,7 @@ namespace Views.Units.Fortress
         [SerializeField] private BattleFortressLaunch _battleFortressLaunch;
         [SerializeField] private Damageable _damageable;
         [SerializeField] private AttackBlockView _attackBlockView;
+        [SerializeField] private MeshRenderer _meshRenderer;
 
         private ReactiveProperty<bool> _isActive = new ReactiveProperty<bool>(false);
         public Damageable Damageable => _damageable;
@@ -55,6 +56,11 @@ namespace Views.Units.Fortress
         public void OnPlay()
         {
             _battleFortressLaunch.Animator.enabled = true;
+        }
+
+        public void SetStickmanMaterial(Material material)
+        {
+            if (_meshRenderer != null) _meshRenderer.material = material;
         }
     }
 }

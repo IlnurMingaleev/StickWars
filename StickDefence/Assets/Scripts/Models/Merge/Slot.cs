@@ -3,6 +3,7 @@ using Enums;
 using Models.Battle;
 using Models.DataModels;
 using Models.DataModels.Data;
+using TonkoGames.StateMachine;
 using UniRx;
 using UnityEngine;
 
@@ -52,6 +53,7 @@ namespace Models.Merge
         public void SetIsItemGrabbed(bool value)
         {
             IsItemGrabbed = value;
+            
         }
 
         public void DestroyItem()
@@ -77,7 +79,7 @@ namespace Models.Merge
         public void ItemGrabbed()
         {
             IsItemGrabbed = true;
-           DestroyItem();
+           
         }
 
         private void ReceiveItem(int id)
@@ -107,12 +109,16 @@ namespace Models.Merge
 
         public void OnPointerDown()
         {
+            if(CurrentItem != null)
+                CurrentItem.ActivateOutline();
             Debug.Log("OnMouseDown");
             OnSlotClick?.Invoke(this);
         }
 
         public void OnPointerUp()
         {
+            if(CurrentItem != null)
+                CurrentItem.DeactivateOutline();
             Debug.Log("OnMouseUp");
             OnSlotUp?.Invoke(this);
         }
