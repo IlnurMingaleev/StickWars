@@ -44,7 +44,25 @@ namespace Models.Merge
             _dataCentralService.SaveFull();    
             ChangeStateTo(SlotState.Full);
         }
+        public void MoveItem(int id, Item carryingItem, IDataCentralService dataCentralService) 
+        {
+            _dataCentralService = dataCentralService;
 
+            CurrentItem = carryingItem;
+            CurrentItem.gameObject.transform.SetParent(transform);
+            CurrentItem.gameObject.transform.position = transform.position; 
+            
+            
+            CurrentItem.SetProperties (CurrentItem,this);
+            _dataCentralService.MapStageDataModel.UpdateSlotItemData(
+                new SlotItemData()
+                {
+                    SlotIdTypeEnum = SlotIdType,
+                    PlayerUnitType = (PlayerUnitTypeEnum)id,
+                });
+            _dataCentralService.SaveFull();    
+            ChangeStateTo(SlotState.Full);
+        }
         public void SetId(int id)
         {
             Id = id;
@@ -53,6 +71,19 @@ namespace Models.Merge
         public void SetIsItemGrabbed(bool value)
         {
             IsItemGrabbed = value;
+            
+        }
+
+        public Item PassItem()
+        {
+            Item tmpItem = null;
+            if(CurrentItem != null && State== SlotState.Empty) tmpItem = CurrentItem;
+            ZeroSlotData();
+            return tmpItem;
+        }
+
+        public void RecieveItem(Item item)
+        {
             
         }
 
@@ -71,7 +102,19 @@ namespace Models.Merge
             _dataCentralService.SaveFull();  
         }
 
-        private void ChangeStateTo(SlotState targetState)
+        public void ZeroSlotData()
+        {
+            ChangeStateTo(SlotState.Empty);
+            CurrentItem = null;
+            _dataCentralService.MapStageDataModel.UpdateSlotItemData(
+                new SlotItemData()
+                {
+                    SlotIdTypeEnum = SlotIdType,
+                    PlayerUnitType = PlayerUnitTypeEnum.None,
+                });
+            _dataCentralService.SaveFull();  
+        }
+        public void ChangeStateTo(SlotState targetState)
         {
             State = targetState;
         }
@@ -79,7 +122,6 @@ namespace Models.Merge
         public void ItemGrabbed()
         {
             IsItemGrabbed = true;
-           
         }
 
         private void ReceiveItem(int id)
@@ -109,16 +151,12 @@ namespace Models.Merge
 
         public void OnPointerDown()
         {
-            if(CurrentItem != null)
-                CurrentItem.ActivateOutline();
             Debug.Log("OnMouseDown");
             OnSlotClick?.Invoke(this);
         }
 
         public void OnPointerUp()
         {
-            if(CurrentItem != null)
-                CurrentItem.DeactivateOutline();
             Debug.Log("OnMouseUp");
             OnSlotUp?.Invoke(this);
         }

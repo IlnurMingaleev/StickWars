@@ -20,7 +20,7 @@ namespace Models.Battle
 {
     public interface IPlayerUnitsBuilder
     {
-        PlayerUnitView InitPlayerUnit(PlayerUnitTypeEnum playerUnitType, Transform parent, SlotTypeEnum slotTypeEnum);
+        (PlayerUnitView,PlayerUnitModel) InitPlayerUnit(PlayerUnitTypeEnum playerUnitType, Transform parent, SlotTypeEnum slotTypeEnum);
     }
 
     public class PlayerUnitsBuilder : MonoBehaviour, IPlayerUnitsBuilder
@@ -78,7 +78,7 @@ namespace Models.Battle
             _projectiles.Clear();
         }
 
-        public PlayerUnitView InitPlayerUnit(PlayerUnitTypeEnum unitType, Transform parent, SlotTypeEnum slotType)
+        public (PlayerUnitView,PlayerUnitModel) InitPlayerUnit(PlayerUnitTypeEnum unitType, Transform parent, SlotTypeEnum slotType)
         { 
             var unitConfig = _configManager.UnitsStatsSo.DictionaryStickmanConfigs[unitType];
 
@@ -90,7 +90,7 @@ namespace Models.Battle
             _playerUnitModel.InitSubActive();
             _playerUnitModel.OnModelRemove += PlayerUnitOnModelRemove;
             _spawnedUnits.Add(_playerUnitModel);
-            return _playerUnitView;
+            return (_playerUnitView,_playerUnitModel);
         }
 
         private void PlayerUnitOnModelRemove(PlayerUnitModel playerUnitModel)

@@ -2,6 +2,7 @@
 using Enums;
 using I2.Loc;
 using Models.Battle;
+using Models.Fortress;
 using TonkoGames.StateMachine;
 using UnityEngine;
 using Views.Units.Fortress;
@@ -16,9 +17,13 @@ namespace Models.Merge
         
         private Slot _parentSlot;
         private PlayerUnitView _unitGameObject;
+        private PlayerUnitModel _playerUnitModel;
 
         public Slot ParentSlot => _parentSlot;
         private Action<Slot> OnItemPointerDown;
+        
+        public int SlotId =>_parentSlot.Id;
+        public int ItemId => Id;
         public int Id { get; private set; }
         public PlayerUnitTypeEnum UnitTypeEnum { get; private set; }
         public void Init(int id, Slot slot, IPlayerUnitsBuilder playerBuilder)
@@ -26,7 +31,16 @@ namespace Models.Merge
             Id = id;
             _parentSlot = slot;
             UnitTypeEnum = (PlayerUnitTypeEnum) id;
-            _unitGameObject = playerBuilder.InitPlayerUnit((PlayerUnitTypeEnum) id, _unitParent, _parentSlot.SlotType);
+            (PlayerUnitView view, PlayerUnitModel model) playerUnit= playerBuilder.InitPlayerUnit((PlayerUnitTypeEnum) id, _unitParent, _parentSlot.SlotType);
+            _playerUnitModel = playerUnit.model;
+            _unitGameObject = playerUnit.view;
+        }
+        public void SetProperties(Item item, Slot slot)
+        {
+            Id = item.ItemId;
+            _parentSlot = slot;
+            UnitTypeEnum = (PlayerUnitTypeEnum) item.ItemId;
+            if(_playerUnitModel != null) _playerUnitModel.SetParentSlotType(_parentSlot.SlotType);
         }
 
         public void OnPointerDown()
