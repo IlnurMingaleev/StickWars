@@ -111,7 +111,6 @@ namespace Models.Merge
         {
             if(CurrentItem != null)
                 CurrentItem.ActivateOutline();
-            Debug.Log("OnMouseDown");
             OnSlotClick?.Invoke(this);
         }
 
@@ -119,7 +118,6 @@ namespace Models.Merge
         {
             if(CurrentItem != null)
                 CurrentItem.DeactivateOutline();
-            Debug.Log("OnMouseUp");
             OnSlotUp?.Invoke(this);
         }
     }
