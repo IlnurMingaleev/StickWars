@@ -30,6 +30,16 @@ namespace Models.Controllers.Skills
             _bottomPanelWindow.UpdateGasFill(value);
         }
 
+        protected override void ActivateSkillButton()
+        {
+            _bottomPanelWindow.SetGasBtnInteractability(true);
+        }
+
+        protected override void DeacivateSkillButton()
+        {
+            _bottomPanelWindow.SetGasBtnInteractability(false);
+        }
+
         public void DetectAndDestroyEnemies(Vector3 mousePosition)
         {
             _explosionRadius = 4f;

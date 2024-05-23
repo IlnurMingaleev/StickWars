@@ -85,5 +85,15 @@ namespace Models.Controllers.Skills
             if(damageable != null)
                 damageable.SetDamage(damage);
         }
+        protected override void ActivateSkillButton()
+        {
+            _bottomPanelWindow.SetGrenadeBtnInteractability(true);
+        }
+
+        protected override void DeacivateSkillButton()
+        {
+            _bottomPanelWindow.SetGrenadeBtnInteractability(false);
+        }
+
     }
 }

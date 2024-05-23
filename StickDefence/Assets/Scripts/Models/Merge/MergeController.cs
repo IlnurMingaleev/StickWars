@@ -33,6 +33,7 @@ namespace Models.Merge
 
         private Vector3 _target;
         private Item _carryingItem;
+        private BottomPanelWindow _bottomPanelWindow;
 
         private Dictionary<int, Slot> slotDictionary;
         [Inject] private ConfigManager _configManager;
@@ -128,6 +129,7 @@ namespace Models.Merge
             {
                 if (_carryingItem != null)
                 {
+                    SetGrabbedFlag();
                     Destroy(_carryingItem.gameObject);
                 }
             }
@@ -162,7 +164,6 @@ namespace Models.Merge
                     OnItemCarryFail();
                 }
                 if(_carryingItem != null) _carryingItem.DeactivateOutline();;
-                SetGrabbedFlag();
                 _carryingItem = null;
                 _moveDisposable.Clear();
             }
@@ -218,10 +219,13 @@ namespace Models.Merge
             }
             var slot = GetSlotById(targetSlotId);
             slot.DestroyItem();
+            SetGrabbedFlag();
             var tmpId = _carryingItem.ItemId;
             Destroy(_carryingItem.gameObject);
             CreateSlotItem(slot, tmpId+ 1);
-           
+            if (_bottomPanelWindow == null) _bottomPanelWindow = _windowManager.GetWindow<BottomPanelWindow>();
+            _bottomPanelWindow.UpdateQuickBuyBtn();
+
         }
 
         private void SetGrabbedFlag()
@@ -338,6 +342,7 @@ namespace Models.Merge
         }
         private void MoveSlotItem(Slot targetSlot, int id, Item item)
         {
+            SetGrabbedFlag();
             targetSlot.MoveItem(id,item,_dataCentralService);
         }
         private void OnDisable()

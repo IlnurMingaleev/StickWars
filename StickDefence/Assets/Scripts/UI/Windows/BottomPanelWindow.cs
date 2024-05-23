@@ -20,6 +20,7 @@ using UI.Content.Spin;
 using UI.UIManager;
 using UniRx;
 using Unity.VisualScripting;
+using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
@@ -141,18 +142,17 @@ namespace UI.Windows
             {
                RewardMergeButton();
             }).AddTo(ActivateDisposables);
+            UpdateQuickBuyBtn();
+            _dataCentralService.StatsDataModel.CoinsCount.Subscribe(money => UpdateMoneyLabel(money)).AddTo(ActivateDisposables);
+            
+        }
+
+        public void UpdateQuickBuyBtn()
+        {
             PlayerUnitTypeEnum playerUnitType = (_dataCentralService.PumpingDataModel.MaxStickmanLevel.Value >= PlayerUnitTypeEnum.Four)?(PlayerUnitTypeEnum)((int)_dataCentralService.PumpingDataModel.MaxStickmanLevel.Value - 3): PlayerUnitTypeEnum.One;
             _quicKBuyBtnDisposable.Clear();
             _quickBuyBtn.OnClickAsObservable.Subscribe(_ => { OnClickQuickBuyBtn(playerUnitType); }).AddTo(_quicKBuyBtnDisposable);
             UpdateMainBuyButton(playerUnitType);
-            _dataCentralService.PumpingDataModel.MaxStickmanLevel.Subscribe(level =>
-                {
-                    level = (level >= PlayerUnitTypeEnum.Four) ? level - 3: PlayerUnitTypeEnum.One ;
-                    UpdateMainBuyButton(level);
-                })
-                .AddTo(ActivateDisposables);
-            _dataCentralService.StatsDataModel.CoinsCount.Subscribe(money => UpdateMoneyLabel(money)).AddTo(ActivateDisposables);
-            
         }
 
         private void OnClickQuickBuyBtn(PlayerUnitTypeEnum playerUnitType)
@@ -356,6 +356,19 @@ namespace UI.Windows
         protected override void OnDeactivate()
         {
             _quicKBuyBtnDisposable.Clear();
+        }
+
+        public void SetGrenadeBtnInteractability(bool value)
+        {
+            _greandesSkillBtn.IsInteractable = value;
+        }
+        public void SetGasBtnInteractability(bool value)
+        {
+            _poisonSkillBtn.IsInteractable = value;
+        }
+        public void SetRocketBtnInteractability(bool value)
+        {
+            _rocketSkillBtn.IsInteractable = value;
         }
     }
 }

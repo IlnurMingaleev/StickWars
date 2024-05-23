@@ -56,8 +56,10 @@ namespace Models.Controllers.Skills
         protected void StartTimer()
         {
             _skillCooldownPassed = false;
+            DeacivateSkillButton();
             _skillTimer.InitAndStart((int) _cooldownTime, () =>
             {
+                ActivateSkillButton();
                 _skillCooldownPassed = true;
                 _skillTimer.FinishTimer();
             }, f => { UpdateUIBar((float) (1.0f - f / _cooldownTime)); });
@@ -97,5 +99,9 @@ namespace Models.Controllers.Skills
            _skillTimer.FinishTimer();
            _disposable.Clear();
         }
+
+        protected abstract void ActivateSkillButton();
+
+        protected abstract void DeacivateSkillButton();
     }
 }
