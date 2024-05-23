@@ -14,7 +14,7 @@ namespace Models.Merge
         [SerializeField] private Material _coloredMaterail;
         
         private Slot _parentSlot;
-        private PlayerUnitView _unitGameObject;
+        private PlayerUnitView _playerUnitView;
         private PlayerUnitModel _playerUnitModel;
 
         public Slot ParentSlot => _parentSlot;
@@ -31,7 +31,8 @@ namespace Models.Merge
             UnitTypeEnum = (PlayerUnitTypeEnum) id;
             (PlayerUnitView view, PlayerUnitModel model) playerUnit= playerBuilder.InitPlayerUnit((PlayerUnitTypeEnum) id, _unitParent, _parentSlot.SlotType);
             _playerUnitModel = playerUnit.model;
-            _unitGameObject = playerUnit.view;
+            _playerUnitView = playerUnit.view;
+            SetPlayerSortOrder(_parentSlot.SortingOrder);
         }
         public void SetProperties(Item item, Slot slot)
         {
@@ -39,6 +40,7 @@ namespace Models.Merge
             _parentSlot = slot;
             UnitTypeEnum = (PlayerUnitTypeEnum) item.ItemId;
             if(_playerUnitModel != null) _playerUnitModel.SetParentSlotType(_parentSlot.SlotType);
+            SetPlayerSortOrder(_parentSlot.SortingOrder);
         }
 
         public void OnPointerDown()
@@ -54,17 +56,22 @@ namespace Models.Merge
 
         private void OnDestroy()
         {
-            Destroy(_unitGameObject);
+            Destroy(_playerUnitView);
         }
 
         public void ActivateOutline()
         {
-            _unitGameObject.SetStickmanMaterial(_outlineMaterial);
+            _playerUnitView.SetStickmanMaterial(_outlineMaterial);
         }
 
         public void DeactivateOutline()
         {
-            _unitGameObject.SetStickmanMaterial(_coloredMaterail);
+            _playerUnitView.SetStickmanMaterial(_coloredMaterail);
+        }
+
+        public void SetPlayerSortOrder(int sortOrder)
+        {
+            _playerUnitView.SetSortingOrder(sortOrder);
         }
     }
 }

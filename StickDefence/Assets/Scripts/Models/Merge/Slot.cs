@@ -12,13 +12,13 @@ namespace Models.Merge
         [SerializeField] private Item _itemPrefab;
         [field: SerializeField] public SlotTypeEnum SlotType { get; private set; }
         [field: SerializeField] public SlotIdTypeEnum SlotIdType { get; private set; }
-        
+        [field: SerializeField] private int _sortingOrder;
         public int Id { get; private set; }
         public Item CurrentItem { get; private set; }
         public SlotState State { get; private set; }
 
         public bool IsItemGrabbed { get; private set; }
-        
+        public int SortingOrder => _sortingOrder;
         private IDataCentralService _dataCentralService;
         
 

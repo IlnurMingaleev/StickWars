@@ -28,6 +28,8 @@ namespace Views.Units.Fortress
 
         private PlayerUnitsBuilder _playerUnitsBuilder;
         private PlayerUnitModel _playerUnitModel;
+
+        public MeshRenderer MeshRenderer => _meshRenderer;
         private void OnEnable()
         {
             _isActive.Value = true;
@@ -61,6 +63,12 @@ namespace Views.Units.Fortress
         public void SetStickmanMaterial(Material material)
         {
             if (_meshRenderer != null) _meshRenderer.material = material;
+        }
+
+
+        public void SetSortingOrder(int sortOrder)
+        {
+            _meshRenderer.sortingOrder = sortOrder;
         }
     }
 }
