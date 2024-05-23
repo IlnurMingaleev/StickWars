@@ -152,12 +152,16 @@ namespace Models.Merge
         public void OnPointerDown()
         {
             Debug.Log("OnMouseDown");
+            if(CurrentItem != null)
+                CurrentItem.ActivateOutline();
             OnSlotClick?.Invoke(this);
         }
 
         public void OnPointerUp()
         {
             Debug.Log("OnMouseUp");
+            if(CurrentItem != null)
+                CurrentItem.DeactivateOutline();
             OnSlotUp?.Invoke(this);
         }
     }

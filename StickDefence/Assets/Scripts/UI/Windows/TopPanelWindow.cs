@@ -61,7 +61,6 @@ namespace UI.Windows
         {
             _backArrow.gameObject.SetActive(true);
             _statusBar.SetActive(false);
-            _settingsButton.gameObject.SetActive(false);
             _levelProgressBar.gameObject.SetActive(true);
         }
         
@@ -70,15 +69,8 @@ namespace UI.Windows
             _statusBar.SetActive(true);
             _buttonExit.gameObject.SetActive(false);
             _levelProgressBar.gameObject.SetActive(false);
-            _settingsButton.gameObject.SetActive(true);
         }
 
-        public void SetMapStageState()
-        {
-            _statusBar.SetActive(false);
-            _settingsButton.gameObject.SetActive(false);
-        }
-        
         private void ShowShopWindow()
         {
             _manager.Hide(_manager.GetLastWindow(false));
