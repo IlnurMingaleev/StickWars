@@ -84,72 +84,72 @@ MonoBehaviour:
     Experience: 0
     Coins: 0
   - UnitType: 11
-    Health: 12000
+    Health: 10000
     Armor: 0.2
     Damage: 30
     Reloading: 1600
     Experience: 0
     Coins: 0
   - UnitType: 12
-    Health: 12000
+    Health: 10000
     Armor: 0.2
     Damage: 30
     Reloading: 1600
     Experience: 0
     Coins: 0
   - UnitType: 13
-    Health: 12500
+    Health: 10000
     Armor: 0.2
     Damage: 35
     Reloading: 1500
     Experience: 0
     Coins: 0
   - UnitType: 14
-    Health: 12500
+    Health: 10000
     Armor: 0.2
     Damage: 35
     Reloading: 1500
     Experience: 0
     Coins: 0
   - UnitType: 15
-    Health: 13000
+    Health: 10000
     Armor: 0.2
     Damage: 40
     Reloading: 1400
     Experience: 0
     Coins: 0
   - UnitType: 16
-    Health: 13000
+    Health: 10000
     Armor: 0.2
     Damage: 40
     Reloading: 1400
     Experience: 0
     Coins: 0
   - UnitType: 17
-    Health: 13500
+    Health: 10000
     Armor: 0.2
-    Damage: 45
+    Damage: 40
     Reloading: 1300
     Experience: 0
     Coins: 0
   - UnitType: 18
-    Health: 13500
+    Health: 10000
     Armor: 0.2
-    Damage: 45
+    Damage: 40
     Reloading: 1300
     Experience: 0
     Coins: 0
   - UnitType: 19
-    Health: 20000
+    Health: 10000
     Armor: 0.2
-    Damage: 50
+    Damage: 40
     Reloading: 1200
     Experience: 0
     Coins: 0
   - UnitType: 20
-    Health: 20000
+    Health: 10000
     Armor: 0.2
-    Damage: 50
+    Damage: 40
     Reloading: 1200
     Experience: 0
     Coins: 0
@@ -333,25 +333,25 @@ MonoBehaviour:
     AttackSpeed: 40
   - UnitType: 17
     Level: 17
-    Damage: 1500
+    Damage: 3000
     Reloading: 1500
     Price: 950
     AttackSpeed: 40
   - UnitType: 18
     Level: 18
-    Damage: 1500
+    Damage: 3000
     Reloading: 1500
     Price: 1000
     AttackSpeed: 40
   - UnitType: 19
     Level: 19
-    Damage: 2000
+    Damage: 4000
     Reloading: 1500
     Price: 1050
     AttackSpeed: 40
   - UnitType: 20
     Level: 20
-    Damage: 2000
+    Damage: 4000
     Reloading: 1500
     Price: 1100
     AttackSpeed: 40

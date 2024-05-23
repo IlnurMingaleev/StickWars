@@ -81,21 +81,21 @@ MonoBehaviour:
     CurrencyType: 0
   PlayerSkills:
   - SkillType: 1
-    BaseDamage: 5000
+    BaseDamage: 8000
     AdditionalDamage: 100
     LevelCount: 10
     BaseCost: 1000
     AdditionalCost: 2000
     CurrencyType: 0
   - SkillType: 2
-    BaseDamage: 5000
+    BaseDamage: 8000
     AdditionalDamage: 100
     LevelCount: 10
     BaseCost: 1000
     AdditionalCost: 2000
     CurrencyType: 0
   - SkillType: 3
-    BaseDamage: 5000
+    BaseDamage: 8000
     AdditionalDamage: 100
     LevelCount: 10
     BaseCost: 1000

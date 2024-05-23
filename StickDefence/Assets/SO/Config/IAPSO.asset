@@ -44,15 +44,15 @@ MonoBehaviour:
     AttackSpeedReward: 0
     GainCoinsReward: 0
     AutoMergeReward: 0
-  - RewardIconType: 0
-    CoinReward: 900
-    GemReward: 0
+  - RewardIconType: 1
+    CoinReward: 0
+    GemReward: 10
     AttackSpeedReward: 0
     GainCoinsReward: 0
     AutoMergeReward: 0
-  - RewardIconType: 0
-    CoinReward: 1100
-    GemReward: 0
+  - RewardIconType: 2
+    CoinReward: 500
+    GemReward: 5
     AttackSpeedReward: 0
     GainCoinsReward: 0
     AutoMergeReward: 0
@@ -62,15 +62,15 @@ MonoBehaviour:
     AttackSpeedReward: 0
     GainCoinsReward: 0
     AutoMergeReward: 0
-  - RewardIconType: 0
-    CoinReward: 1400
-    GemReward: 0
+  - RewardIconType: 1
+    CoinReward: 0
+    GemReward: 15
     AttackSpeedReward: 0
     GainCoinsReward: 0
     AutoMergeReward: 0
-  - RewardIconType: 0
-    CoinReward: 2000
-    GemReward: 0
+  - RewardIconType: 3
+    CoinReward: 700
+    GemReward: 30
     AttackSpeedReward: 0
     GainCoinsReward: 0
     AutoMergeReward: 0
@@ -103,7 +103,7 @@ MonoBehaviour:
     CoinReward: 0
     GemReward: 0
     AttackSpeedReward: 0
-    GainCoinsReward: 0
+    GainCoinsReward: 1
     AutoMergeReward: 0
   - RewardIconType: 0
     CoinReward: 0
