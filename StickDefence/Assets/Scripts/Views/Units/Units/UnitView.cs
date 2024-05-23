@@ -2,6 +2,7 @@
 using Enums;
 using Models.Attacking;
 using Models.Move;
+using Spine.Unity;
 using UI.Common;
 using UniRx;
 using UnityEngine;
@@ -23,6 +24,7 @@ namespace Views.Units.Units
         [SerializeField] private float _timeToDestroy = 1f;
         [SerializeField] private UnitAnimationCallbacks _unitAnimationCallbacks;
         [SerializeField] private UIBar _healthBar;
+        [SerializeField] private MeshRenderer _meshRenderer;
         public UnitFollowPath UnitFollowPath => _unitFollowPath;
         public Animator BodyAnimator => _bodyAnimator;
         public Damageable Damageable => _damageable;
@@ -69,6 +71,14 @@ namespace Views.Units.Units
             _damageable.HealthCurrent
                 .Subscribe(health => HealthBar.SetBarFiilAmount(health, _damageable.HealthMax.Value, unitType))
                 .AddTo(_disposable);
+        }
+
+        public void SetSortingOrder(int pathCount,int pathIndex)
+        {
+            _meshRenderer.sortingOrder= pathCount - pathIndex;
+            /*var vector3 = _body.position;
+            vector3.z = 2 * pathIndex;
+            _body.position = vector3;*/
         }
     }
 }

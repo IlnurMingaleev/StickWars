@@ -7,9 +7,10 @@ namespace Views.Move
     {
         [SerializeField] private List<MovementPath> _movementPaths;
 
-        public MovementPath GetRandomPath()
+        public (MovementPath movementPath, int[] pathProperties) GetRandomPath()
         {
-            return _movementPaths[Random.Range(0, _movementPaths.Count)];
+            var index = Random.Range(0, _movementPaths.Count);
+            return (_movementPaths[index],new int[]{_movementPaths.Count,index});
         }
     }
 }

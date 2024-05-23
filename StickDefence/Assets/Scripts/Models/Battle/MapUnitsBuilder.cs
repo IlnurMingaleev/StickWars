@@ -255,20 +255,21 @@ namespace Models.Battle
             }
         }
 
-        private void InstantiateUnit(UnitTypeEnum unitType, MovementPath movementPath,
+        private void InstantiateUnit(UnitTypeEnum unitType,(MovementPath movementPath, int[] pathProperties) path,
             UnitMovementTypeEnum unitMovementTypeEnum, float delay)
         {
             var unitConfig = _configManager.UnitsStatsSo.EnemyUnitConfigs[unitType];
             var rewardConfig = _configManager.UnitsStatsSo.UnitRewardConfigs[unitType];
             
             var unitView = Instantiate(_configManager.PrefabsUnitsSO
-                .UnitPrefabs[unitType], movementPath.SpawnPoint.position, Quaternion.identity, _parentSpawnPoint).GetComponent<UnitView>();
+                .UnitPrefabs[unitType], path.movementPath.SpawnPoint.position, Quaternion.identity, _parentSpawnPoint).GetComponent<UnitView>();
             
            
             unitView.gameObject.SetActive(false);
+            unitView.SetSortingOrder(path.pathProperties[0],path.pathProperties[1]);
             unitView.SetRandomBodyZ();
             
-            unitView.InitUnitMove(movementPath.PathTypes, movementPath.PathElements);
+            unitView.InitUnitMove(path.movementPath.PathTypes, path.movementPath.PathElements);
             
             var baseUnit = UnitCreate(unitType, unitView,unitMovementTypeEnum);
             baseUnit.InitBase(unitView,_timerService,_soundManager,unitConfig,rewardConfig);
@@ -319,7 +320,7 @@ namespace Models.Battle
             }
         }
 
-        private MovementPath GetUnitMovementPath(UnitMovementTypeEnum unitTypeEnum)
+        private  (MovementPath movementPath, int[] pathProperties) GetUnitMovementPath(UnitMovementTypeEnum unitTypeEnum)
         {
             switch (unitTypeEnum)
             {

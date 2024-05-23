@@ -619,7 +619,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: -0.24}
+  m_AnchoredPosition: {x: 0, y: 1.5}
   m_SizeDelta: {x: 1000, y: 1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &5039548178857619755
@@ -642,7 +642,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: -558339751
+  m_SortingLayerID: 250200845
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &3852113435265786558
@@ -739,7 +739,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _unitFollowPath: {fileID: 8556914971002716062}
-  _body: {fileID: 6763861916387599452}
+  _body: {fileID: 1323537843733628983}
   _bodyAnimator: {fileID: 8187774599031287723}
   _damageable: {fileID: 7518601619015936490}
   _attackBlockView: {fileID: 1289460091143962387}
@@ -747,6 +747,7 @@ MonoBehaviour:
   _timeToDestroy: 1
   _unitAnimationCallbacks: {fileID: 8178772189851887829}
   _healthBar: {fileID: 7203539016948899690}
+  _meshRenderer: {fileID: 595252005295646299}
 --- !u!114 &8556914971002716062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -760,7 +761,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movementType: 0
-  _speed: 5
+  _speed: 4
   _maxDistance: 0.1
   _movementDirection: 1
   _scalableBodyX: {fileID: 6763861916387599452}
@@ -968,9 +969,9 @@ RectTransform:
   - {fileID: 6263818426517615697}
   m_Father: {fileID: 428044763128758539}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -50}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -40}
   m_SizeDelta: {x: 400, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6358575158086888731
