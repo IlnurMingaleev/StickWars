@@ -1,11 +1,8 @@
 ﻿using System;
 using Enums;
-using Models.Timers;
 using Tools.GameTools;
 using UI.UIManager;
 using UI.Windows;
-using UnityEngine.Rendering;
-using VContainer;
 
 namespace Models.Battle.Boosters
 {

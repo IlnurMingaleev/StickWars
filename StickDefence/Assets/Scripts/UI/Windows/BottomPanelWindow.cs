@@ -19,10 +19,7 @@ using UI.Common;
 using UI.Content.Spin;
 using UI.UIManager;
 using UniRx;
-using Unity.VisualScripting;
-using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 using VContainer;
 

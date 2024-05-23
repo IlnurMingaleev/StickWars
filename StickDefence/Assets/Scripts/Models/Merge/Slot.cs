@@ -3,8 +3,6 @@ using Enums;
 using Models.Battle;
 using Models.DataModels;
 using Models.DataModels.Data;
-using TonkoGames.StateMachine;
-using UniRx;
 using UnityEngine;
 
 namespace Models.Merge

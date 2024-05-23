@@ -2,7 +2,6 @@
 using UI.Windows;
 using UnityEngine;
 using Views.Health;
-using Views.Units.Units;
 
 namespace Models.Controllers.Skills
 {

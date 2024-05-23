@@ -1,14 +1,11 @@
-using System;
 using System.Collections.Generic;
 using Enums;
 using I2.Loc;
 using Models.Battle;
 using Models.DataModels;
-using Models.Timers;
 using TonkoGames.Controllers.Core;
 using TonkoGames.StateMachine;
 using TonkoGames.StateMachine.Enums;
-using UI.Content.Battle;
 using UI.UIManager;
 using UI.Windows;
 using UniRx;

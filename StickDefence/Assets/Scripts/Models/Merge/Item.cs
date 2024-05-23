@@ -1,9 +1,7 @@
 ﻿using System;
 using Enums;
-using I2.Loc;
 using Models.Battle;
 using Models.Fortress;
-using TonkoGames.StateMachine;
 using UnityEngine;
 using Views.Units.Fortress;
 
