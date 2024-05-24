@@ -9,6 +9,7 @@ using TonkoGames.Controllers.Core;
 using TonkoGames.MultiScene;
 using TonkoGames.Sound;
 using TonkoGames.StateMachine;
+using Tools.GameTools;
 using UI.UIManager;
 using UnityEngine;
 using VContainer;
@@ -23,6 +24,7 @@ namespace TonkoGames.Controllers.LifeTimeScopes
             builder.RegisterComponent(Object.FindObjectOfType<SoundManager>()).As<ISoundManager>();
             builder.RegisterComponent(Object.FindObjectOfType<WindowManager>()).As<IWindowManager>();
             builder.RegisterComponent(Object.FindObjectOfType<ConfigManager>()).As<ConfigManager>();
+            builder.RegisterComponent(Object.FindObjectOfType<CoroutineTimer>()).As<CoroutineTimer>();
 
             builder.RegisterEntryPoint<ScenesControllerModel>();
             

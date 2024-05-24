@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Enums;
-using Models.Attacking;
+﻿using Enums;
 using Models.DataModels;
 using Models.Fabrics;
 using Models.Merge;
@@ -27,17 +24,17 @@ namespace Models.Controllers
         [Inject] private ConfigManager _configManager;
         [Inject] private IDataCentralService _dataCentralService;
         [Inject] private ICoreStateMachine _coreStateMachine;
-        private float _cooldownTime = 30f;
+        private int _cooldownTime = 30;
 
 
         [Header("MergeController")] [SerializeField]
         private MergeController _mergeController;
 
-        private float _currentCooldownTime;
+        private int _currentCooldownTime;
         private bool _cooldown;
         private ITimerModel _timerModel;
         private BottomPanelWindow _bottomPanelWindow;
-        private const float IsAvailableCheckInterval = 5f;
+        private const int IsAvailableCheckInterval = 5;
         [SerializeField] private CoroutineTimer _spawnTimer;
         private CompositeDisposable _disposable = new CompositeDisposable();
         private void Start()

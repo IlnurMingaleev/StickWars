@@ -6,13 +6,13 @@ namespace Tools.GameTools
 {
     public class CoroutineTimer : MonoBehaviour
     {
-        private float _currentSeconds = 0;
+        private int _currentSeconds = 0;
         private event Action TimeEnd;
         private event Action<float> TickTimerEvent;
         private bool _pause = false;
         public bool IsReloading { get; private set; }
 
-        public void Init(float seconds, Action timeEnd, Action<float> tickTimerEvent = null)
+        public void Init(int seconds, Action timeEnd, Action<float> tickTimerEvent = null)
         {
             _currentSeconds = seconds;
             TimeEnd = timeEnd;
@@ -20,7 +20,7 @@ namespace Tools.GameTools
 
         }
 
-        public void AddToExistingTimer(float seconds)
+        public void AddToExistingTimer(int seconds)
         {
             _currentSeconds += seconds;
         }
@@ -29,9 +29,9 @@ namespace Tools.GameTools
         {
             while (_currentSeconds > 0)
             {
-                yield return new WaitForSeconds(1f);
-                _currentSeconds -= 1f;
                 TickTimerEvent?.Invoke((float) _currentSeconds);
+                yield return new WaitForSeconds(1f);
+                _currentSeconds -= 1;
                 if (_pause) break;
             }
 
@@ -69,7 +69,7 @@ namespace Tools.GameTools
             TimeEnd?.Invoke();
         }
 
-        public void InitAndStart(float seconds, Action timeEnd, Action<float> tickTimerEvent = null)
+        public void InitAndStart(int seconds, Action timeEnd, Action<float> tickTimerEvent = null)
         {
             Init(seconds,timeEnd,tickTimerEvent);
             StartTick();

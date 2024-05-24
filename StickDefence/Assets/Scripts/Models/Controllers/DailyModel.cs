@@ -10,6 +10,7 @@ using Models.SO.Core;
 using Models.SO.Iaps;
 using Models.Timers;
 using Tools.Extensions;
+using Tools.GameTools;
 using UniRx;
 using UnityEngine;
 
@@ -28,26 +29,25 @@ namespace Models.Controllers
     public class DailyModel : IDailyModel
     {
         private const int ForgeTickRate = 5; //Тик каждые 5 секунд
-        
+        private CoroutineTimer _luckySpinTimer;
         private readonly IDataCentralService _dataCentralService;
         private readonly ConfigManager _configManager;
         private readonly ITimerService _timerService;
         private ReactiveProperty<bool> _canSpin = new ReactiveProperty<bool>();
         private ReactiveProperty<int> _spinTimer = new ReactiveProperty<int>();
         private BoosterManager _boosterManager;
-        private ITimerModel _timerModelSpin = null;
-        private const int SecondsCooldownSpin = 20; //TODO Fix spin cooldown time 86400
+        private const int SecondsCooldownSpin = 86400; //TODO Fix spin cooldown time 86400
         public IReadOnlyReactiveProperty<int> SpinTimer => _spinTimer;
 
         public IReadOnlyReactiveProperty<bool> CanSpin => _canSpin; 
 
         public DailyModel(IDataCentralService dataCentralService, ConfigManager configManager,
-            ITimerService timerService)
+            ITimerService timerService, CoroutineTimer luckySpinWindowTimer)
         {
             _dataCentralService = dataCentralService;
             _configManager = configManager;
             _timerService = timerService;
-           
+           _luckySpinTimer = luckySpinWindowTimer;
         }
 
         public void InitBoosterManager(BoosterManager boosterManager)
@@ -120,18 +120,12 @@ namespace Models.Controllers
         private void CheckCanSpin()
         {
             long currentUnix = TimeHelpers.DataTimeToTimeStamp(DateTime.Now);
-            if (_timerModelSpin != null)
-            {
-                _timerModelSpin.StopTick();
-                _timerModelSpin = null;
-            }
-            
             if (_dataCentralService.StatsDataModel.NextDataLuckySpin.Value > currentUnix)
             {
                 _canSpin.Value = false;
                 var delta = _dataCentralService.StatsDataModel.NextDataLuckySpin.Value - currentUnix;
                 _spinTimer.Value = (int)delta;
-                _timerModelSpin = _timerService.AddDefaultTimer(delta, _ => _spinTimer.Value = (int)_, () => _canSpin.Value = true);
+                _luckySpinTimer.InitAndStart((int)delta,() => _canSpin.Value = true,_ => _spinTimer.Value = (int)_ ); 
             }
             else
             {
@@ -171,10 +165,9 @@ namespace Models.Controllers
 
         public void RewardSpinShown()
         {
-            if (_timerModelSpin != null)
+            if (_luckySpinTimer != null)
             {
-                _timerModelSpin.StopTick();
-                _timerModelSpin = null;
+                _luckySpinTimer.FinishTimer();
             }
         }
     }

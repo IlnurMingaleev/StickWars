@@ -4,6 +4,7 @@ using TonkoGames.Controllers.Core;
 using Models.Controllers;
 using Models.DataModels;
 using Models.Timers;
+using Tools.GameTools;
 using UniRx;
 
 namespace Models.Player
@@ -28,7 +29,7 @@ namespace Models.Player
         private readonly IDataCentralService _dataCentralService;
         private readonly ConfigManager _configManager;
         private BoosterManager _boosterManager;
-
+        private CoroutineTimer _luckySpinWindowTimer;
         private Pumping _pumping;
         
         private ReactiveProperty<int> _silverCurrency = new ReactiveProperty<int>();
@@ -38,12 +39,13 @@ namespace Models.Player
         private DailyModel _dailyModel;
         public IDailyModel DailyModel => _dailyModel;
         public IPumping Pumping => _pumping;
-        public Player(IDataCentralService dataCentralService, ConfigManager configManager, ITimerService timerService)
+        public Player(IDataCentralService dataCentralService, ConfigManager configManager, ITimerService timerService, CoroutineTimer luckySpinTimer)
         {
             _dataCentralService = dataCentralService;
             _configManager = configManager;
-            _dailyModel = new DailyModel(dataCentralService, configManager, timerService);
+            _dailyModel = new DailyModel(dataCentralService, configManager, timerService,luckySpinTimer);
             _pumping = new Pumping(configManager, dataCentralService);
+            _luckySpinWindowTimer = luckySpinTimer;
         }
         public void Init()
         {

@@ -11,7 +11,7 @@ namespace Models.Battle.Boosters
         protected BoosterManager _boosterManager;
         protected CoroutineTimer _boosterTimer;
         protected IWindowManager _windowManager;
-        protected const float _boosterActiveTime = 60f;
+        protected const int _boosterActiveTime = 60;
         protected BoosterTypeEnum _boosterType;
         protected BottomPanelWindow _bottomPanelWindow;
 
