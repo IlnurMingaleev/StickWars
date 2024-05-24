@@ -11,6 +11,7 @@ using Models.SO.Core;
 using Models.Timers;
 using TMPro;
 using TonkoGames.Controllers.Core;
+using TonkoGames.Sound;
 using TonkoGames.StateMachine;
 using TonkoGames.StateMachine.Enums;
 using UI.Common;
@@ -51,6 +52,7 @@ namespace UI.Windows
         [Inject] private ICoreStateMachine _coreStateMachine;
         [Inject] private IIAPService _iapService;
         [Inject] private ITimerService _timerService;
+        [Inject] private ISoundManager _soundManager;
 
         private WindowPriority Priority = WindowPriority.AboveTopPanel;
         private IPlaceableUnit _mergeController;
@@ -197,6 +199,7 @@ namespace UI.Windows
             {
                 stickman.AddStickmanToPlayGround();
                 _dataCentralService.StatsDataModel.MinusCoinsCount(price);
+                _soundManager.PlayMoneySoundOneShot();
             }
             else
             {
@@ -242,6 +245,7 @@ namespace UI.Windows
                     {
                         _player.Pumping.UpgradeGamePerk(perkType);
                         _dataCentralService.StatsDataModel.MinusCoinsCount( pumpingPerkData.Cost);
+                        _soundManager.PlayMoneySoundOneShot();
                     }
                 }).AddTo(_shopDisposable);
           

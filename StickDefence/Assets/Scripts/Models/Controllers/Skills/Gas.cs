@@ -51,6 +51,7 @@ namespace Models.Controllers.Skills
             {
                 hitCollider.gameObject.TryGetComponent(out Damageable damageable);
                 PlayParticleOneShot(damageable, (int) _player.Pumping.Skills[SkillTypesEnum.Grenade].Damage);
+                _soundManager.PlayExplosionOneShot();
             }
         }
         public void PlayParticleOneShot(Damageable damageable, int damage)

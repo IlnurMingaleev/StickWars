@@ -103,7 +103,7 @@ namespace Views.Projectiles
         {
             if (_hitTargetClip != null)
             {
-                _soundManager.PlayExplosionSourceOneShot(_hitTargetClip);
+                _soundManager.PlayBulletFireOneShot();
             }
         }
 

@@ -4,6 +4,7 @@ using TonkoGames.StateMachine;
 using TonkoGames.StateMachine.Enums;
 using Models.DataModels;
 using Models.Player;
+using TonkoGames.Sound;
 using UI.Content.Rewards;
 using UI.UIManager;
 using UI.Windows;
@@ -21,10 +22,11 @@ namespace Models.Battle
         private readonly IDataCentralService _dataCentralService;
         private readonly ICoreStateMachine _coreStateMachine;
         private readonly SceneInstances _sceneInstances;
+        private readonly ISoundManager _soundManager;
         
         public BattleResult(PlayerFortressInstantiate playerFortressInstantiate, IWindowManager windowManager,
             ConfigManager configManager, IPlayer player, IDataCentralService dataCentralService,
-            ICoreStateMachine coreStateMachine, SceneInstances sceneInstances)
+            ICoreStateMachine coreStateMachine, SceneInstances sceneInstances, ISoundManager soundManager)
         {
             _playerFortressInstantiate = playerFortressInstantiate;
             _windowManager = windowManager;
@@ -33,6 +35,7 @@ namespace Models.Battle
             _dataCentralService = dataCentralService;
             _coreStateMachine = coreStateMachine;
             _sceneInstances = sceneInstances;
+            _soundManager = soundManager;
         }
 
         public void OnLoadBattleState()
@@ -87,10 +90,12 @@ namespace Models.Battle
             {
                 
                 playResultWindow.SetWin(rewardContains, stars, OnPlayResultWindowClaim,Continue,_sceneInstances);
+                _soundManager.PlayWinSourceOneShot();
             }
             else
             {
                 playResultWindow.SetLose(rewardContains, isResurrect,OnPlayResultWindowClaim, Resurrect, isExitGame);
+                _soundManager.PlayLooseSourceOneShot();
             }
         }
 

@@ -1,9 +1,11 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using System;
+using Cysharp.Threading.Tasks;
 using Models.Controllers;
 using Models.DataModels;
 using Models.IAP;
 using Models.Player;
 using TonkoGames.Controllers.Tutorial;
+using TonkoGames.Sound;
 using TonkoGames.StateMachine;
 using TonkoGames.StateMachine.Enums;
 using UI.UIManager;
@@ -22,6 +24,7 @@ namespace TonkoGames.Controllers.Core
         [Inject] private readonly IPlayerRoot _player;
         [Inject] private readonly ILobbyModelsRoot _lobbyModels;
         [Inject] private readonly ConfigManager _configManager;
+        [Inject] private readonly ISoundManager _soundManager;
         
         private readonly TutorialService _tutorialService = new();
         
@@ -40,7 +43,7 @@ namespace TonkoGames.Controllers.Core
             _coreStateMachine.SceneStateMachine.SceneEndLoad += SceneEndLoad;
             
             RegServices().Forget();
-
+            _soundManager.PlayMusic();
             _windowManager.GetWindow<TutorialWindow>();
         }
 
@@ -113,5 +116,11 @@ namespace TonkoGames.Controllers.Core
  
         private void OnPause() => AudioListener.pause = true;
         private void OnResume() => AudioListener.pause = false;
+
+        private void OnDisable()
+        {
+            _soundManager.StopPlayMusic();
+        }
     }
+    
 }

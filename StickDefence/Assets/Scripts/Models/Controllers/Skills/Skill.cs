@@ -1,5 +1,6 @@
 ﻿using Models.Player;
 using Models.Timers;
+using TonkoGames.Sound;
 using TonkoGames.StateMachine;
 using TonkoGames.StateMachine.Enums;
 using Tools.GameTools;
@@ -23,6 +24,7 @@ namespace Models.Controllers.Skills
         [Inject] protected ITimerService _timerService;
         [Inject] protected IWindowManager _windowManager;
         [Inject] protected ICoreStateMachine _coreStateMachine;
+        [Inject] protected ISoundManager _soundManager;
         protected ITimerModel _timerModel;
         protected float _explosionRadius;
         protected bool _skillCooldownPassed = true; 

@@ -9,6 +9,7 @@ using Models.DataModels;
 using Models.Player;
 using Models.SO.Core;
 using Models.Timers;
+using TonkoGames.Sound;
 using Tools.GameTools;
 using UI.UIManager;
 using UI.Windows;
@@ -32,6 +33,7 @@ namespace Models.Battle
         [Inject] private readonly IPlayer _player;
         [Inject] private readonly IDataCentralService _dataCentralService;
         [Inject] private readonly ITimerService _timerService;
+        [Inject] private readonly ISoundManager _soundManager;
 
         private IBattleStateMachine BattleStateMachine => _coreStateMachine.BattleStateMachine;
         private BattleResult _battleResult;
@@ -46,7 +48,7 @@ namespace Models.Battle
            
             _battleAnimations = new BattleAnimations(_playerFortressInstantiate, _coreStateMachine);
             _battleResult = new BattleResult(_playerFortressInstantiate, _windowManager, _configManager, _player,
-                _dataCentralService, _coreStateMachine, gameObject.GetComponent<SceneInstances>());
+                _dataCentralService, _coreStateMachine, gameObject.GetComponent<SceneInstances>(),_soundManager);
         }
 
         private void Start()

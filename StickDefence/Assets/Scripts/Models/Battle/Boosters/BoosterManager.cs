@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Enums;
 using Models.Merge;
 using Models.Timers;
+using TonkoGames.Sound;
 using TonkoGames.StateMachine.Enums;
 using Tools.GameTools;
 using UI.UIManager;
@@ -25,6 +26,7 @@ namespace Models.Battle.Boosters
         [SerializeField] private CoroutineTimer[] _boosterTimers;
         [Inject] private IWindowManager _windowManager;
         [Inject] private ITimerService _timerService;
+        [Inject] private ISoundManager _soundManager;
         private const float _rewardedCooldown = 2f;
         private CompositeDisposable _disposable = new CompositeDisposable();
 
@@ -65,6 +67,7 @@ namespace Models.Battle.Boosters
                     OnBoosterTimerEnd?.Invoke();
                 }, boosterTypeEnum);
             }
+            _soundManager.PlayBoosterSourceOneShot();
 
         }
 

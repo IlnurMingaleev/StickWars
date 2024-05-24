@@ -13,6 +13,7 @@ using Models.Player.PumpingFragments;
 using Models.SO.Core;
 using TMPro;
 using TonkoGames.Controllers.Core;
+using TonkoGames.Sound;
 using Tools.Extensions;
 using Ui.Common;
 using UI.Common;
@@ -72,6 +73,7 @@ namespace UI.Windows
         [Inject] private ConfigManager _configManager;
         [Inject] private IPlayer _player;
         [Inject] private IIAPService _iapService;
+        [Inject] private ISoundManager _soundManager;
         private WindowPriority Priority = WindowPriority.TopPanel;
         private MergeController _mergeController;
         private StickmanShopWindow _stickmanShopWindow;
@@ -208,8 +210,8 @@ namespace UI.Windows
                 {
                     if (!_player.Pumping.WallData[WallTypeEnum.Basic].IsMaxLevel)
                     {
-                        _dataCentralService.StatsDataModel.MinusCoinsCount(_player.Pumping.WallData[WallTypeEnum.Basic]
-                            .Cost);
+                        _dataCentralService.StatsDataModel.MinusCoinsCount(_player.Pumping.WallData[WallTypeEnum.Basic].Cost);
+                        _soundManager.PlayMoneySoundOneShot();
                         action?.Invoke();
                     }
                     else
@@ -247,6 +249,7 @@ namespace UI.Windows
                 {
                     _mergeController.PlaceDefinedItem((int)playerUnitType);
                     _dataCentralService.StatsDataModel.MinusCoinsCount(stickmanStatsConfig.Price);
+                    _soundManager.PlayMoneySoundOneShot();
                 }
             }
             else

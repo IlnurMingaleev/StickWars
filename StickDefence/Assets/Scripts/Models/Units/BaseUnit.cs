@@ -116,6 +116,7 @@ namespace Models.Units
 
         protected virtual void OnDead(bool value)
         {
+            SoundManager.PlayEnemyDeadOneShot();
             _isDead = true;
             AttackModel.Dead();
             View.UnitCollider.enabled = false;

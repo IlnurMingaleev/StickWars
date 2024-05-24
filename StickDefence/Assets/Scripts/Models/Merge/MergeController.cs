@@ -4,6 +4,7 @@ using I2.Loc;
 using Models.Battle;
 using Models.DataModels;
 using TonkoGames.Controllers.Core;
+using TonkoGames.Sound;
 using TonkoGames.StateMachine;
 using TonkoGames.StateMachine.Enums;
 using UI.UIManager;
@@ -37,6 +38,7 @@ namespace Models.Merge
         [Inject] private IDataCentralService _dataCentralService;
         [Inject] private IWindowManager _windowManager;
         [Inject] private ICoreStateMachine _coreStateMachine;
+        [Inject] private ISoundManager _soundManager;
 
         private CompositeDisposable _moveDisposable = new CompositeDisposable();
         private CompositeDisposable _mainDisposable = new CompositeDisposable();
@@ -168,6 +170,7 @@ namespace Models.Merge
                 _carryingItem = null;
                 _moveDisposable.Clear();
             }
+            _soundManager.PlayPutOneShot();
         }
 
         void OnSlotClick(Slot slot)
@@ -180,6 +183,7 @@ namespace Models.Merge
                 slot.ItemGrabbed();
                 Observable.EveryUpdate().Subscribe(_ => OnItemSelected()).AddTo(_moveDisposable);
                 if(_carryingItem != null) _carryingItem.ActivateOutline();
+                _soundManager.PlayPickUpOneShot();
             }
         }
 
@@ -202,6 +206,7 @@ namespace Models.Merge
 
             delta *= Vector3.Distance(transform.position, _target);
             _carryingItem.transform.position = Vector3.MoveTowards(_carryingItem.transform.position, _target, delta);
+           
         }
 
         void OnItemMergedWithTarget(int targetSlotId)
