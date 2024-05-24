@@ -38,6 +38,7 @@ namespace Views.Projectiles
         private ITimerModel _timerModel;
         private bool _isCritical;
         public float Speed => _speed;
+        private bool _isHit;
 
         private void Awake()
         {
@@ -80,8 +81,12 @@ namespace Views.Projectiles
 
         public void OnTriggerEnter2D(Collider2D other)
         {
+            if (_isHit)
+                return;
+            
             if ((_layerMask.value & (1 << other.gameObject.layer)) > 0)
             {
+                _isHit = true;
                 OnHit(other);
 
                 _timerModel?.StopTick();
