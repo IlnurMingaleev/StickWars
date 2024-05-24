@@ -132,6 +132,7 @@ namespace Models.Battle
         {
             _dataCentralService.PumpingDataModel.SetStageIndex((int) _dataCentralService.PumpingDataModel.StageLoadType.Value + 1);
             _dataCentralService.SaveFull();
+            _dataCentralService.Sync();
         }
     }
 }
