@@ -214,14 +214,6 @@ namespace UI.Windows
                         _soundManager.PlayMoneySoundOneShot();
                         action?.Invoke();
                     }
-                    else
-                    {
-                        ShowMaxLevelReachedWarning();
-                    }
-                }
-                else
-                {
-                    ShowNotEnoughFundsWarning();
                 }
 
 
@@ -230,17 +222,9 @@ namespace UI.Windows
 
         private void ShowNotEnoughFundsWarning()
         {
-            _manager.GetWindow<PopupMessageWindow>().Init(ScriptLocalization.Messages.WarningTitle,
-                ScriptLocalization.Messages.NotEnoughFunds);
-            _manager.Show<PopupMessageWindow>();
+           
         }
-
-        public void ShowMaxLevelReachedWarning()
-        {
-            _manager.GetWindow<PopupMessageWindow>().Init(ScriptLocalization.Messages.WarningTitle,
-                ScriptLocalization.Messages.MaxLevel);
-            _manager.Show<PopupMessageWindow>();
-        }
+        
         private void BuyStickman(StickmanStatsConfig stickmanStatsConfig, PlayerUnitTypeEnum playerUnitType)
         {
             if (stickmanStatsConfig.Price <= _dataCentralService.StatsDataModel.CoinsCount.Value)
@@ -251,10 +235,6 @@ namespace UI.Windows
                     _dataCentralService.StatsDataModel.MinusCoinsCount(stickmanStatsConfig.Price);
                     _soundManager.PlayMoneySoundOneShot();
                 }
-            }
-            else
-            {
-               ShowNotEnoughFundsWarning();
             }
         }
 

@@ -214,7 +214,6 @@ namespace Models.Merge
             
             if ((PlayerUnitTypeEnum) _carryingItem.ItemId == PlayerUnitTypeEnum.Twenty)
             {
-                _windowManager.GetWindow<BottomPanelWindow>().ShowMaxLevelReachedWarning();
                 OnItemCarryFail();
                 return;
             }
@@ -271,9 +270,6 @@ namespace Models.Merge
             if (AllSlotsOccupied())
             {
                 Debug.Log("No empty slot available!");
-                _windowManager.GetWindow<PopupMessageWindow>().Init(ScriptLocalization.Messages.WarningTitle,
-                    ScriptLocalization.Messages.SlotsFull);
-                _windowManager.Show<PopupMessageWindow>();
                 return;
             }
 

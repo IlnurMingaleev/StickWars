@@ -201,11 +201,6 @@ namespace UI.Windows
                 _dataCentralService.StatsDataModel.MinusCoinsCount(price);
                 _soundManager.PlayMoneySoundOneShot();
             }
-            else
-            {
-                _manager.GetWindow<PopupMessageWindow>().Init(ScriptLocalization.Messages.WarningTitle,ScriptLocalization.Messages.NotEnoughFunds);
-                _manager.Show<PopupMessageWindow>();
-            }
         }
 
         private void AddFreeUnitForAdWatch()
