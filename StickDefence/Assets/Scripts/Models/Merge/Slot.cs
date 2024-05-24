@@ -10,6 +10,7 @@ namespace Models.Merge
     public class Slot : MonoBehaviour
     {
         [SerializeField] private Item _itemPrefab;
+        [SerializeField] private ParticleSystem _particleSystem;
         [field: SerializeField] public SlotTypeEnum SlotType { get; private set; }
         [field: SerializeField] public SlotIdTypeEnum SlotIdType { get; private set; }
         [field: SerializeField] private int _sortingOrder;
@@ -162,6 +163,15 @@ namespace Models.Merge
                 CurrentItem.DeactivateOutline();
             OnSlotUp?.Invoke(this);
         }
+        public void PlayParticle()
+        {
+            _particleSystem.Play();        
+        }
+        
+        public void StopParticle()
+        {
+            _particleSystem.Stop();        
+        }
     }
 
     public enum SlotState
@@ -169,4 +179,5 @@ namespace Models.Merge
         Empty,
         Full
     }
+   
 }

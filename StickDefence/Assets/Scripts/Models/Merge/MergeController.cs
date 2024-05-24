@@ -10,6 +10,7 @@ using TonkoGames.StateMachine.Enums;
 using UI.UIManager;
 using UI.Windows;
 using UniRx;
+using Unity.VisualScripting;
 using UnityEngine;
 using VContainer;
 
@@ -171,6 +172,7 @@ namespace Models.Merge
                 _moveDisposable.Clear();
             }
             _soundManager.PlayPutOneShot();
+            StopLevelUpVFX();
         }
 
         void OnSlotClick(Slot slot)
@@ -184,6 +186,7 @@ namespace Models.Merge
                 Observable.EveryUpdate().Subscribe(_ => OnItemSelected()).AddTo(_moveDisposable);
                 if(_carryingItem != null) _carryingItem.ActivateOutline();
                 _soundManager.PlayPickUpOneShot();
+                PlayLevelUpVFX();
             }
         }
 
@@ -231,6 +234,28 @@ namespace Models.Merge
             if (_bottomPanelWindow == null) _bottomPanelWindow = _windowManager.GetWindow<BottomPanelWindow>();
             _bottomPanelWindow.UpdateQuickBuyBtn();
 
+        }
+
+        public void PlayLevelUpVFX()
+        {
+            foreach (Slot slot in slots)
+            {
+                if (slot.CurrentItem != null)
+                {
+                    if (slot.CurrentItem.ItemId ==_carryingItem.ItemId)
+                    {
+                        slot.PlayParticle();
+                    }
+                }
+            }
+        }
+
+        public void StopLevelUpVFX()
+        {
+            foreach (Slot slot in slots)
+            {
+                slot.StopParticle();
+            }
         }
 
         private void SetGrabbedFlag()
