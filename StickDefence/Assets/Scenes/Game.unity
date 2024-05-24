@@ -405,13 +405,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ct: 0
-  _adjustMode: 0
+  _adjustMode: 2
   _mainAreaWidth: 2.2222223
   _mainAreaHeight: 1
   _verticalFOV: 98.21322
-  _horizontalFOV: 0
+  _horizontalFOV: 137.41714
   _verticalSize: 6
-  _horizontalSize: 0
+  _horizontalSize: 13.333334
 --- !u!114 &1709641395
 MonoBehaviour:
   m_ObjectHideFlags: 0
