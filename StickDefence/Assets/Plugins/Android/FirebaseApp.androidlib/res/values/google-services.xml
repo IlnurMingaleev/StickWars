@@ -3,7 +3,7 @@
   <string name="gcm_defaultSenderId" translatable="false">543704393970</string>
   <string name="google_storage_bucket" translatable="false">flyingtowerlands.appspot.com</string>
   <string name="project_id" translatable="false">flyingtowerlands</string>
-  <string name="google_api_key" translatable="false">""</string>
-  <string name="google_crash_reporting_api_key" translatable="false">""</string>
-  <string name="google_app_id" translatable="false">""</string>
+  <string name="google_api_key" translatable="false">AIzaSyDSTBTf6x9xeIw6VOelNKjhS3FcdeP82-Y</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDSTBTf6x9xeIw6VOelNKjhS3FcdeP82-Y</string>
+  <string name="google_app_id" translatable="false">1:543704393970:android:cc133424af035a421d086b</string>
 </resources>
